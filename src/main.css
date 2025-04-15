@@ -1,0 +1,38 @@
+@tailwind utilities;
+
+@layer components {
+  .bookmark-input {
+    @apply w-full px-5 py-3.5 rounded-xl bg-bookmark-input text-white border border-[#444] text-lg 
+           transition-all duration-300 ease-in-out shadow-sm shadow-black/20
+           placeholder:text-gray-400;
+  }
+
+  .bookmark-input:focus {
+    @apply outline-none ring-2 ring-blue-500/50 ring-offset-2 ring-offset-bookmark-dark border-transparent
+           shadow-lg shadow-blue-500/20;
+  }
+
+  .bookmark-button {
+    @apply px-6 py-3.5 bg-blue-600 hover:bg-blue-500 rounded-xl text-lg 
+           transition-all duration-300 ease-in-out text-white font-medium
+           shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30
+           hover:scale-105 active:scale-95;
+  }
+
+  .bookmark-item {
+    @apply flex justify-between items-center bg-bookmark-card px-6 py-4 rounded-xl
+           hover:bg-bookmark-input transition-all duration-300 shadow-md shadow-black/10
+           hover:shadow-lg hover:shadow-black/20 border border-transparent
+           hover:border-gray-700/50 group;
+  }
+
+  .bookmark-link {
+    @apply text-blue-400 hover:text-blue-300 truncate text-lg max-w-[80%] 
+           transition-colors duration-300 group-hover:translate-x-1;
+  }
+
+  .delete-button {
+    @apply text-red-400/70 hover:text-red-500 text-xl transition-all duration-300
+           opacity-0 group-hover:opacity-100 hover:scale-110 active:scale-90;
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark Save</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="output.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" />
+    <style>
+      /* Custom scrollbar styles */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #1a1b1e;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #373a40;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4a4d52;
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Input autofill styles */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        -webkit-text-fill-color: white;
+        -webkit-box-shadow: 0 0 0px 1000px #25262b inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    </style>
+  </head>
+
+  <body
+    class="w-[700px] h-[570px] flex flex-col bg-[#1a1b1e] text-white font-sans leading-relaxed overflow-hidden"
+  >
+    <!-- ====== Header Section ====== -->
+    <header
+      class="text-center bg-[#25262b] py-4 rounded-b-2xl shadow-lg relative overflow-hidden"
+    >
+      <div class="relative z-5">
+        <h1
+          class="text-xl font-bold text-white mb-2 font-display tracking-tight"
+        >
+          🔖 Bookmark Save
+        </h1>
+        <p class="text-sm text-gray-300 font-medium">
+          Securely store your favorite links
+        </p>
+      </div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10"
+      ></div>
+    </header>
+
+    <!-- ====== Main Content ====== -->
+    <main class="p-8 flex-grow flex flex-col">
+      <!-- Bookmark Input Section -->
+      <section class="mb-8 flex gap-4">
+        <button
+          id="lockButton"
+          class="px-6 py-4 bg-[#25262b] hover:bg-[#2c2d33] rounded-xl text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 border border-gray-700/30"
+          aria-label="Lock bookmarks"
+        >
+          <span class="text-xl">🔒</span>
+        </button>
+        <input
+          type="url"
+          id="bookmarkInput"
+          placeholder="Enter a link: https://example.com"
+          class="flex-grow px-6 py-4 rounded-xl bg-[#25262b] text-white border border-gray-700/30 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300 shadow-inner shadow-black/10 placeholder:text-gray-500"
+          aria-label="Bookmark URL input"
+        />
+        <button
+          id="addBookmark"
+          class="px-6 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 active:scale-95 flex items-center gap-2"
+          aria-label="Add bookmark"
+        >
+          <span class="text-xl">➕</span>
+          <span>Add</span>
+        </button>
+      </section>
+
+      <!-- Bookmarks List Section -->
+      <section
+        class="flex-grow overflow-y-auto max-h-[350px] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"
+      >
+        <h2 class="sr-only">Saved Bookmarks</h2>
+        <ul id="bookmarkList" class="space-y-3">
+          <!-- Example Bookmark Item -->
+          <li
+            class="flex justify-between items-center bg-[#25262b] px-6 py-4 rounded-xl hover:bg-[#2c2d33] transition-all duration-300 shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/20 border border-gray-700/20 hover:border-gray-700/30 group"
+          >
+            <a
+              href="https://example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-400 hover:text-blue-300 truncate text-lg transition-all duration-300 hover:translate-x-1 font-medium"
+            >
+              https://example.com
+            </a>
+            <button
+              class="text-red-400/70 hover:text-red-500 text-xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 active:scale-90"
+              aria-label="Delete bookmark"
+            >
+              🗑️
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ====== Footer Section ====== -->
+    <footer
+      class="bg-[#25262b] shadow-inner shadow-black/10 w-full text-center py-6 rounded-t-2xl"
+    >
+      <a
+        href="https://t.me/Saifer710"
+        title="Contact me"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-300 hover:text-blue-300 transition-colors duration-300 inline-block hover:scale-105 transform-gpu"
+      >
+        <p class="text-xl font-medium">
+          📢 Post your ads here — Telegram @Saifer710
+        </p>
+      </a>
+    </footer>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
