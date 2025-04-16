@@ -578,10 +578,6 @@ video {
   inset: 0px;
 }
 
-.z-10 {
-  z-index: 10;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -604,10 +600,6 @@ video {
 
 .max-h-\[350px\] {
   max-height: 350px;
-}
-
-.min-h-\[570px\] {
-  min-height: 570px;
 }
 
 .w-\[700px\] {
@@ -740,11 +732,6 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .text-center {
   text-align: center;
 }
@@ -757,24 +744,19 @@ video {
   font-family: Inter, system-ui, sans-serif;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
