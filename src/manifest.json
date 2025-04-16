@@ -1,8 +1,8 @@
 {
-  "name": "Bookmark save",
+  "name": "Private Bookmark Locker",
   "version": "0.0.1",
   "manifest_version": 3,
-  "description": "Bookmarks Store – Save and Protect Your Bookmarks with a Password Bookmarks Store is a secure and easy-to-use browser extension that lets you save bookmarks directly inside the app. Unlike standard bookmark managers, all your bookmarks are safely stored and protected with a strong password, giving you full privacy and control. Whether you're bookmarking favorite websites, tools, or private links, Bookmarks Store is your encrypted bookmark save solution. Keep your links safe, organized, and accessible only to you.",
+  "description": "Private bookmark storage. Save and protect links with a password — no one else can see them.",
   "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
