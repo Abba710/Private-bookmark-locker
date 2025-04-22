@@ -1,16 +1,22 @@
 {
   "name": "Private Bookmark Locker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 3,
   "description": "Private bookmark storage. Save and protect links with a password — no one else can see them.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "activeTab", "tabs", "sidePanel"],
   "action": {
-    "default_popup": "popup.html",
     "default_icon": {
       "16": "images/icon16.png",
       "48": "images/icon48.png",
       "128": "images/icon128.png"
     }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "popup.html"
   },
   "icons": {
     "16": "images/icon16.png",
