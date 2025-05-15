@@ -1,8 +1,9 @@
 {
-  "name": "Private Bookmark Locker",
-  "version": "0.0.2",
+  "name": "__MSG_app_name__",
+  "default_locale": "en",
+  "version": "0.1.1 Beta",
   "manifest_version": 3,
-  "description": "Private bookmark storage. Save and protect links with a password — no one else can see them.",
+  "description": "__MSG_app_description__",
   "permissions": ["storage", "activeTab", "tabs", "sidePanel"],
   "action": {
     "default_icon": {

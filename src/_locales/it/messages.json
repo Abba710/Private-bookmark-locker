@@ -1,0 +1,62 @@
+{
+  "app_name": {
+    "message": "Archivio Segreto di Segnalibri"
+  },
+  "app_description": {
+    "message": "Archivio privato di segnalibri. Salva e proteggi i link con una password — nessun altro potrà vederli."
+  },
+  "app_header": {
+    "message": "🔖 Salva Segnalibro"
+  },
+  "app_header_description": {
+    "message": "Conserva in modo sicuro i tuoi link preferiti"
+  },
+  "app_enter_password": {
+    "message": "🔒 Inserisci Password"
+  },
+  "app_create_password": {
+    "message": "🔒 Crea Password"
+  },
+  "app_set_password": {
+    "message": "Imposta Password"
+  },
+  "app_create_password_placeholder": {
+    "message": "Crea la tua password"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Inserisci la tua password"
+  },
+  "app_unlock": {
+    "message": "🔓 Sblocca"
+  },
+  "app_save": {
+    "message": "Segnalibri Salvati"
+  },
+  "app_save_button": {
+    "message": "Salva Pagina Corrente"
+  },
+  "app_ads": {
+    "message": "📢 Pubblica i tuoi annunci qui — Telegram @Saifer714"
+  },
+  "app_pass_short_error": {
+    "message": "La password deve contenere almeno 4 caratteri"
+  },
+  "app_pass_incorrect_error": {
+    "message": "Password errata"
+  },
+  "app_feedback_title": {
+    "message": "⭐ Ti piace l'estensione?"
+  },
+  "app_feedback_text": {
+    "message": "Ti saremmo grati se potessi lasciare una recensione!"
+  },
+  "app_feedback_button_review": {
+    "message": "Lascia una recensione"
+  },
+  "app_feedback_button_later": {
+    "message": "Più tardi"
+  },
+  "app_feedback_button_never": {
+    "message": "Non mostrare più"
+  }
+}

@@ -98,26 +98,31 @@
     <header
       class="bg-[#25262b] py-4 rounded-2xl mb-[5px] shadow-lg relative flex-shrink-0"
     >
-      <div class="relative rounded-2xl flex items-center px-6">
-        <div class="relative z-50">
+      <div class="relative rounded-2xl flex items-start px-6">
+        <div class="relative z-50 mt-[4px]">
           <button
             id="lockButton"
-            class="w-12 h-12 flex items-center justify-center rounded-xl text-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+            class="w-12 h-12 flex items-start justify-center rounded-xl text-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
             aria-label="Lock bookmarks"
           >
             <span
               class="transform hover:scale-110 transition-transform duration-200"
-              >🔒</span
             >
+              🔒
+            </span>
           </button>
         </div>
         <div class="absolute left-0 right-0 text-center">
           <h1
             class="text-xl font-bold text-white mb-2 font-display tracking-tight"
+            data-i18n="app_header"
           >
             🔖 Bookmark Save
           </h1>
-          <p class="text-sm text-gray-300 font-medium">
+          <p
+            class="text-sm text-gray-300 font-medium"
+            data-i18n="app_header_description"
+          >
             Securely store your favorite links
           </p>
         </div>
@@ -135,18 +140,23 @@
       <div
         class="w-full max-w-md bg-[#25262b] rounded-2xl p-8 shadow-2xl border border-gray-700/30"
       >
-        <h2 class="text-2xl font-bold mb-6 text-center font-display">
+        <h2
+          class="text-2xl font-bold mb-6 text-center font-display"
+          data-i18n="app_enter_password"
+        >
           🔒 Enter Password
         </h2>
         <input
           type="password"
           id="passwordInput"
           class="w-full px-6 py-4 rounded-xl bg-[#2c2d33] text-white border border-gray-700/30 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300 shadow-inner shadow-black/10 mb-4"
+          data-i18n="app_enter_password_placeholder"
           placeholder="Enter your password"
         />
         <button
           id="submitPassword"
           class="w-full px-6 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 active:scale-95"
+          data-i18n="app_unlock"
         >
           Unlock
         </button>
@@ -159,7 +169,7 @@
     <main class="p-6 flex flex-col">
       <!-- Bookmarks List Section -->
       <section>
-        <h2 class="sr-only">Saved Bookmarks</h2>
+        <h2 class="sr-only" data-i18n="app_save">Saved Bookmarks</h2>
         <ul id="bookmarkList" class="space-y-3">
           <!-- Example Bookmark Item -->
           <li
@@ -182,10 +192,57 @@
       <button
         id="saveCurrentPage"
         class="w-full px-6 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+        data-i18n="app_save_button"
       >
         <span class="text-xl">💾</span>
         Save Current Page
       </button>
+    </div>
+
+    <!-- Feedback Dialog -->
+    <div
+      id="feedbackDialog"
+      class="fixed inset-0 bg-black/50 z-50 items-center justify-center p-8 hidden"
+    >
+      <div
+        class="w-full max-w-md bg-[#25262b] rounded-2xl p-8 shadow-2xl border border-gray-700/30 transform transition-all duration-300 scale-95 opacity-0"
+      >
+        <h2
+          class="text-2xl font-bold mb-4 text-center font-display"
+          data-i18n="app_feedback_title"
+        >
+          ⭐ Like the extension?
+        </h2>
+        <p
+          class="text-gray-300 text-lg text-center mb-8"
+          data-i18n="app_feedback_text"
+        >
+          We'd be grateful if you could leave a review!
+        </p>
+        <div class="space-y-4">
+          <button
+            id="feedbackReview"
+            class="w-full px-6 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 active:scale-95"
+            data-i18n="app_feedback_button_review"
+          >
+            Leave a review
+          </button>
+          <button
+            id="feedbackLater"
+            class="w-full px-6 py-4 bg-gray-700 hover:bg-gray-600 rounded-xl text-lg font-medium transition-all duration-300 hover:scale-105 active:scale-95"
+            data-i18n="app_feedback_button_later"
+          >
+            Later
+          </button>
+          <button
+            id="feedbackNever"
+            class="w-full px-6 py-4 bg-transparent hover:bg-gray-800 rounded-xl text-lg font-medium text-gray-400 hover:text-gray-300 transition-all duration-300"
+            data-i18n="app_feedback_button_never"
+          >
+            Don't show again
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- ====== Footer Section ====== -->
@@ -199,7 +256,7 @@
         rel="noopener noreferrer"
         class="text-gray-300 hover:text-blue-300 transition-colors duration-300 inline-block hover:scale-105 transform-gpu"
       >
-        <p class="text-xl font-medium">
+        <p class="text-xl font-medium" data-i18n="app_ads">
           📢 Post your ads here — Telegram @Saifer714
         </p>
       </a>

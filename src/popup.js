@@ -1,11 +1,37 @@
 // Constants
 const SESSION_UNLOCKED_KEY = "sessionUnlocked";
+const BOOKMARK_COUNT_KEY = "bookmarkCount";
+const FEEDBACK_DISABLED_KEY = "feedbackDisabled";
+const CHROME_STORE_URL =
+  "https://chromewebstore.google.com/detail/private-bookmark-locker/fagjclghcmnfinjdkdnkejodfjgkpljd/reviews";
 
 // DOMContentLoaded initialization
 document.addEventListener("DOMContentLoaded", () => {
+  localizeHtmlPage();
   initializePopup();
   initializeLock();
+  initializeFeedback();
 });
+
+function localizeHtmlPage() {
+  const elements = document.querySelectorAll("[data-i18n]");
+  elements.forEach((el) => {
+    const messageKey = el.getAttribute("data-i18n");
+    const message = chrome.i18n.getMessage(messageKey);
+    if (message) {
+      if (
+        el.tagName.toLowerCase() === "input" ||
+        el.tagName.toLowerCase() === "textarea"
+      ) {
+        el.setAttribute("placeholder", message);
+      } else if (el.tagName.toLowerCase() === "title") {
+        document.title = message;
+      } else {
+        el.textContent = message;
+      }
+    }
+  });
+}
 
 // Popup logic
 function initializePopup() {
@@ -20,7 +46,13 @@ function initializePopup() {
   });
 
   // Event listeners
-  lockButton.addEventListener("click", () => showLockOverlay());
+  lockButton.addEventListener("click", () => {
+    // Устанавливаем флаг сессии в false, чтобы заблокировать расширение
+    chrome.storage.session.set({ [SESSION_UNLOCKED_KEY]: false }, () => {
+      // Показываем оверлей блокировки
+      showLockOverlay();
+    });
+  });
   saveButton.addEventListener("click", saveCurrentPage);
   window.onload = displayBookmarks;
 }
@@ -31,18 +63,21 @@ function showInitialPasswordSetup() {
   const submitPassword = document.getElementById("submitPassword");
   const passwordInput = document.getElementById("passwordInput");
 
-  document.querySelector("#lockOverlay h2").textContent = "🔐 Create Password";
-  submitPassword.textContent = "Set Password";
-  passwordInput.placeholder = "Create your password";
+  document.querySelector("#lockOverlay h2").textContent =
+    chrome.i18n.getMessage("app_create_password");
+  submitPassword.textContent = chrome.i18n.getMessage("app_set_password");
+  passwordInput.placeholder = chrome.i18n.getMessage(
+    "app_create_password_placeholder"
+  );
 
   lockOverlay.classList.remove("hidden");
   lockOverlay.classList.add("flex", "flex-col");
   passwordInput.focus();
 
   submitPassword.onclick = async () => {
-    const input = passwordInput.value;
+    const input = document.getElementById("passwordInput").value;
     if (input.length < 4) {
-      showError("Password must be at least 4 characters long");
+      showError(chrome.i18n.getMessage("app_pass_short_error"));
       return;
     }
 
@@ -83,7 +118,7 @@ function showLockOverlay() {
   overlay.classList.remove("hidden");
   overlay.classList.add("flex", "flex-col");
   input.value = "";
-  input.placeholder = "Enter your password";
+  input.placeholder = chrome.i18n.getMessage("app_create_password_placeholder");
   error.classList.add("hidden");
   input.focus();
 }
@@ -139,7 +174,7 @@ async function checkPassword(inputPassword) {
 async function handlePasswordSubmit() {
   const input = document.getElementById("passwordInput").value;
   if (input.length < 4) {
-    showError("Password must be at least 4 characters long");
+    showError(chrome.i18n.getMessage("app_pass_short_error"));
     return;
   }
 
@@ -154,7 +189,7 @@ async function handlePasswordSubmit() {
           hideLockOverlay
         );
       } else {
-        showError("Incorrect password");
+        showError(chrome.i18n.getMessage("app_pass_incorrect_error"));
       }
     }
   });
@@ -166,13 +201,31 @@ function saveCurrentPage() {
     const tab = tabs[0];
     const { url, title, incognito } = tab;
 
-    chrome.storage.local.get(["bookmarks"], (result) => {
-      const bookmarks = result.bookmarks || [];
-      if (!bookmarks.some((b) => b.url === url)) {
-        bookmarks.push({ url, title, incognito });
-        chrome.storage.local.set({ bookmarks }, displayBookmarks);
+    chrome.storage.local.get(
+      ["bookmarks", BOOKMARK_COUNT_KEY, FEEDBACK_DISABLED_KEY],
+      (result) => {
+        const bookmarks = result.bookmarks || [];
+        if (!bookmarks.some((b) => b.url === url)) {
+          bookmarks.push({ url, title, incognito });
+          const bookmarkCount = (result[BOOKMARK_COUNT_KEY] || 0) + 1;
+
+          chrome.storage.local.set(
+            {
+              bookmarks,
+              [BOOKMARK_COUNT_KEY]: bookmarkCount,
+            },
+            () => {
+              displayBookmarks();
+
+              // Show feedback dialog every 5 bookmarks if not disabled
+              if (!result[FEEDBACK_DISABLED_KEY] && bookmarkCount % 5 === 0) {
+                showFeedbackDialog();
+              }
+            }
+          );
+        }
       }
-    });
+    );
   });
 }
 
@@ -233,4 +286,65 @@ function displayBookmarks() {
       list.appendChild(li);
     });
   });
+}
+
+// Feedback dialog functions
+function initializeFeedback() {
+  const dialog = document.getElementById("feedbackDialog");
+  const dialogContent = dialog.querySelector("div");
+
+  // Review button
+  document.getElementById("feedbackReview").addEventListener("click", () => {
+    chrome.storage.local.set({ [FEEDBACK_DISABLED_KEY]: true }, () => {
+      window.open(CHROME_STORE_URL, "_blank");
+      hideFeedbackDialog();
+    });
+  });
+
+  // Later button
+  document
+    .getElementById("feedbackLater")
+    .addEventListener("click", hideFeedbackDialog);
+
+  // Never button
+  document.getElementById("feedbackNever").addEventListener("click", () => {
+    chrome.storage.local.set(
+      { [FEEDBACK_DISABLED_KEY]: true },
+      hideFeedbackDialog
+    );
+  });
+
+  // Handle click outside the dialog
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      hideFeedbackDialog();
+    }
+  });
+}
+
+function showFeedbackDialog() {
+  const dialog = document.getElementById("feedbackDialog");
+  const dialogContent = dialog.querySelector("div");
+
+  dialog.classList.remove("hidden");
+  dialog.classList.add("flex");
+
+  // Trigger animation
+  requestAnimationFrame(() => {
+    dialogContent.classList.remove("scale-95", "opacity-0");
+    dialogContent.classList.add("scale-100", "opacity-100");
+  });
+}
+
+function hideFeedbackDialog() {
+  const dialog = document.getElementById("feedbackDialog");
+  const dialogContent = dialog.querySelector("div");
+
+  dialogContent.classList.remove("scale-100", "opacity-100");
+  dialogContent.classList.add("scale-95", "opacity-0");
+
+  setTimeout(() => {
+    dialog.classList.remove("flex");
+    dialog.classList.add("hidden");
+  }, 300); // Match the duration in the CSS transition
 }

@@ -1,0 +1,62 @@
+{
+  "app_name": {
+    "message": "Özel Yer İmi Kasası"
+  },
+  "app_description": {
+    "message": "Özel yer imi depolama. Bağlantılarınızı bir şifre ile kaydedin ve koruyun — başkası göremez."
+  },
+  "app_header": {
+    "message": "🔖 Yer İmi Kaydet"
+  },
+  "app_header_description": {
+    "message": "Favori bağlantılarınızı güvenle saklayın"
+  },
+  "app_enter_password": {
+    "message": "🔒 Şifreyi Girin"
+  },
+  "app_create_password": {
+    "message": "🔒 Şifre Oluştur"
+  },
+  "app_set_password": {
+    "message": "Şifreyi Ayarla"
+  },
+  "app_create_password_placeholder": {
+    "message": "Şifrenizi oluşturun"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Şifrenizi girin"
+  },
+  "app_unlock": {
+    "message": "🔓 Kilidi Aç"
+  },
+  "app_save": {
+    "message": "Kaydedilen Yer İmleri"
+  },
+  "app_save_button": {
+    "message": "Mevcut Sayfayı Kaydet"
+  },
+  "app_ads": {
+    "message": "📢 Reklamlarınızı burada yayınlayın — Telegram @Saifer714"
+  },
+  "app_pass_short_error": {
+    "message": "Şifre en az 4 karakter uzunluğunda olmalıdır"
+  },
+  "app_pass_incorrect_error": {
+    "message": "Yanlış şifre"
+  },
+  "app_feedback_title": {
+    "message": "⭐ Eklentiyi beğendiniz mi?"
+  },
+  "app_feedback_text": {
+    "message": "Bir değerlendirme bırakırsanız çok mutlu oluruz!"
+  },
+  "app_feedback_button_review": {
+    "message": "Değerlendirme bırak"
+  },
+  "app_feedback_button_later": {
+    "message": "Daha sonra"
+  },
+  "app_feedback_button_never": {
+    "message": "Bir daha gösterme"
+  }
+}

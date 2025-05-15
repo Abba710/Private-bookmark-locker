@@ -1,0 +1,62 @@
+{
+  "app_name": {
+    "message": "Locker de Marcadores Privados"
+  },
+  "app_description": {
+    "message": "Almacenamiento privado de marcadores. Guarda y protege enlaces con una contraseña — nadie más podrá verlos."
+  },
+  "app_header": {
+    "message": "🔖 Guardar Marcador"
+  },
+  "app_header_description": {
+    "message": "Guarda de forma segura tus enlaces favoritos"
+  },
+  "app_enter_password": {
+    "message": "🔒 Ingresa la Contraseña"
+  },
+  "app_create_password": {
+    "message": "🔒 Crea una Contraseña"
+  },
+  "app_set_password": {
+    "message": "Establecer Contraseña"
+  },
+  "app_create_password_placeholder": {
+    "message": "Crea tu contraseña"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Ingresa tu contraseña"
+  },
+  "app_unlock": {
+    "message": "🔓 Desbloquear"
+  },
+  "app_save": {
+    "message": "Marcadores Guardados"
+  },
+  "app_save_button": {
+    "message": "Guardar Página Actual"
+  },
+  "app_ads": {
+    "message": "📢 Publica tus anuncios aquí — Telegram @Saifer714"
+  },
+  "app_pass_short_error": {
+    "message": "La contraseña debe tener al menos 4 caracteres"
+  },
+  "app_pass_incorrect_error": {
+    "message": "Contraseña incorrecta"
+  },
+  "app_feedback_title": {
+    "message": "⭐ ¿Te gusta la extensión?"
+  },
+  "app_feedback_text": {
+    "message": "¡Te agradeceríamos si pudieras dejar una reseña!"
+  },
+  "app_feedback_button_review": {
+    "message": "Dejar reseña"
+  },
+  "app_feedback_button_later": {
+    "message": "Más tarde"
+  },
+  "app_feedback_button_never": {
+    "message": "No mostrar más"
+  }
+}

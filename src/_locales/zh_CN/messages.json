@@ -1,0 +1,62 @@
+{
+  "app_name": {
+    "message": "私人书签锁"
+  },
+  "app_description": {
+    "message": "私人书签存储。使用密码保存和保护链接——只有你能看到它们。"
+  },
+  "app_header": {
+    "message": "🔖 书签保存"
+  },
+  "app_header_description": {
+    "message": "安全地存储您喜爱的链接"
+  },
+  "app_enter_password": {
+    "message": "🔒 输入密码"
+  },
+  "app_create_password": {
+    "message": "🔒 创建密码"
+  },
+  "app_set_password": {
+    "message": "设置密码"
+  },
+  "app_create_password_placeholder": {
+    "message": "创建您的密码"
+  },
+  "app_enter_password_placeholder": {
+    "message": "输入您的密码"
+  },
+  "app_unlock": {
+    "message": "🔓 解锁"
+  },
+  "app_save": {
+    "message": "已保存的书签"
+  },
+  "app_save_button": {
+    "message": "保存当前页面"
+  },
+  "app_ads": {
+    "message": "📢 在这里发布您的广告 — Telegram @Saifer714"
+  },
+  "app_pass_short_error": {
+    "message": "密码长度至少为4个字符"
+  },
+  "app_pass_incorrect_error": {
+    "message": "密码错误"
+  },
+  "app_feedback_title": {
+    "message": "⭐ 喜欢这个扩展吗？"
+  },
+  "app_feedback_text": {
+    "message": "如果您能留下评价，我们将不胜感激！"
+  },
+  "app_feedback_button_review": {
+    "message": "留下评价"
+  },
+  "app_feedback_button_later": {
+    "message": "稍后再说"
+  },
+  "app_feedback_button_never": {
+    "message": "不再显示"
+  }
+}
