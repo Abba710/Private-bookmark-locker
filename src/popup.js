@@ -118,7 +118,7 @@ function showLockOverlay() {
   overlay.classList.remove("hidden");
   overlay.classList.add("flex", "flex-col");
   input.value = "";
-  input.placeholder = chrome.i18n.getMessage("app_create_password_placeholder");
+  input.placeholder = chrome.i18n.getMessage("app_enter_password_placeholder");
   error.classList.add("hidden");
   input.focus();
 }
