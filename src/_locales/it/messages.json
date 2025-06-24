@@ -1,24 +1,19 @@
 {
   "app_name": {
-    "message": "Archivio Segreto di Segnalibri"
+    "message": "Gestore Privato di Segnalibri"
   },
   "app_description": {
-    "message": "Archivio privato di segnalibri. Salva e proteggi i link con una password — nessun altro potrà vederli."
+    "message": "Archivia i tuoi segnalibri privati. Salva e proteggi i link con una password: nessun altro potrà vederli."
   },
-  "app_header": {
-    "message": "🔖 Salva Segnalibro"
-  },
-  "app_header_description": {
-    "message": "Conserva in modo sicuro i tuoi link preferiti"
-  },
+
   "app_enter_password": {
-    "message": "🔒 Inserisci Password"
+    "message": "🔒 Inserisci la password"
   },
   "app_create_password": {
-    "message": "🔒 Crea Password"
+    "message": "🔒 Crea una password"
   },
   "app_set_password": {
-    "message": "Imposta Password"
+    "message": "Imposta la password"
   },
   "app_create_password_placeholder": {
     "message": "Crea la tua password"
@@ -26,17 +21,17 @@
   "app_enter_password_placeholder": {
     "message": "Inserisci la tua password"
   },
+  "app_password_warning": {
+    "message": "⚠️ Importante:\nSe dimentichi la password, non potrà essere recuperata o reimpostata. I tuoi dati sono memorizzati solo su questo dispositivo e non sono accessibili senza la password corretta."
+  },
+  "app_instruction": {
+    "message": "📌 Per salvare un segnalibro, fai clic sul pulsante 💾 nell'intestazione.\n🔒 Per bloccare i segnalibri, fai clic sul pulsante 🔒.\n👁️ Per visualizzare i segnalibri normali, fai clic su 👁️.\n🕶️ Per visualizzare i segnalibri privati, fai clic su 🕶️."
+  },
   "app_unlock": {
     "message": "🔓 Sblocca"
   },
-  "app_save": {
-    "message": "Segnalibri Salvati"
-  },
-  "app_save_button": {
-    "message": "Salva Pagina Corrente"
-  },
   "app_ads": {
-    "message": "📢 Pubblica i tuoi annunci qui — Telegram @Saifer714"
+    "message": "📢 L'IA non ti dà buone risposte? Automatizza i tuoi prompt."
   },
   "app_pass_short_error": {
     "message": "La password deve contenere almeno 4 caratteri"
@@ -48,7 +43,7 @@
     "message": "⭐ Ti piace l'estensione?"
   },
   "app_feedback_text": {
-    "message": "Ti saremmo grati se potessi lasciare una recensione!"
+    "message": "Ci farebbe piacere se lasciassi una recensione!"
   },
   "app_feedback_button_review": {
     "message": "Lascia una recensione"

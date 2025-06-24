@@ -1,24 +1,19 @@
 {
   "app_name": {
-    "message": "Locker de Marcadores Privados"
+    "message": "Gestor Privado de Marcadores"
   },
   "app_description": {
-    "message": "Almacenamiento privado de marcadores. Guarda y protege enlaces con una contraseña — nadie más podrá verlos."
+    "message": "Almacena tus marcadores privados. Guarda y protege enlaces con una contraseña: nadie más podrá verlos."
   },
-  "app_header": {
-    "message": "🔖 Guardar Marcador"
-  },
-  "app_header_description": {
-    "message": "Guarda de forma segura tus enlaces favoritos"
-  },
+
   "app_enter_password": {
-    "message": "🔒 Ingresa la Contraseña"
+    "message": "🔒 Introducir contraseña"
   },
   "app_create_password": {
-    "message": "🔒 Crea una Contraseña"
+    "message": "🔒 Crear contraseña"
   },
   "app_set_password": {
-    "message": "Establecer Contraseña"
+    "message": "Establecer contraseña"
   },
   "app_create_password_placeholder": {
     "message": "Crea tu contraseña"
@@ -26,17 +21,17 @@
   "app_enter_password_placeholder": {
     "message": "Ingresa tu contraseña"
   },
+  "app_password_warning": {
+    "message": "⚠️ Importante:\nSi olvidas tu contraseña, no podrá ser recuperada ni restablecida. Tus datos se almacenan solo en este dispositivo y no se puede acceder a ellos sin la contraseña correcta."
+  },
+  "app_instruction": {
+    "message": "📌 Para guardar un marcador, haz clic en el botón 💾 en el encabezado.\n🔒 Para bloquear marcadores, haz clic en el botón 🔒.\n👁️ Para ver los marcadores normales, haz clic en 👁️.\n🕶️ Para ver los marcadores privados, haz clic en 🕶️."
+  },
   "app_unlock": {
     "message": "🔓 Desbloquear"
   },
-  "app_save": {
-    "message": "Marcadores Guardados"
-  },
-  "app_save_button": {
-    "message": "Guardar Página Actual"
-  },
   "app_ads": {
-    "message": "📢 Publica tus anuncios aquí — Telegram @Saifer714"
+    "message": "📢 ¿Tu IA no da buenas respuestas? Automatiza tus prompts."
   },
   "app_pass_short_error": {
     "message": "La contraseña debe tener al menos 4 caracteres"
@@ -48,15 +43,15 @@
     "message": "⭐ ¿Te gusta la extensión?"
   },
   "app_feedback_text": {
-    "message": "¡Te agradeceríamos si pudieras dejar una reseña!"
+    "message": "¡Nos encantaría que dejaras una reseña!"
   },
   "app_feedback_button_review": {
-    "message": "Dejar reseña"
+    "message": "Dejar una reseña"
   },
   "app_feedback_button_later": {
     "message": "Más tarde"
   },
   "app_feedback_button_never": {
-    "message": "No mostrar más"
+    "message": "No mostrar de nuevo"
   }
 }

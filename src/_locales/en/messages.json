@@ -5,12 +5,7 @@
   "app_description": {
     "message": "Private bookmark storage. Save and protect links with a password — no one else can see them."
   },
-  "app_header": {
-    "message": "🔖 Bookmark Save"
-  },
-  "app_header_description": {
-    "message": "Securely store your favorite links"
-  },
+
   "app_enter_password": {
     "message": "🔒 Enter Password"
   },
@@ -26,17 +21,17 @@
   "app_enter_password_placeholder": {
     "message": "Enter your password"
   },
+  "app_password_warning": {
+    "message": "⚠️ Important: \n If you forget your password, it cannot be recovered or reset. Your data is stored only on this device and cannot be accessed without the correct password."
+  },
+  "app_instruction": {
+    "message": "📌 To save a bookmark, click the 💾 button in the header. \n🔒 To lock bookmarks, click the 🔒 button in the header. \n👁️ To view basic bookmarks, click the 👁️ button in the header. \n🕶️ To view incognito bookmarks, click the 🕶️ button in the header."
+  },
   "app_unlock": {
     "message": "🔓 Unlock"
   },
-  "app_save": {
-    "message": "Saved Bookmarks"
-  },
-  "app_save_button": {
-    "message": "Save Current Page"
-  },
   "app_ads": {
-    "message": "📢 Post your ads here — Telegram @Saifer714"
+    "message": "📢 AI not giving great answers? Automate your prompts."
   },
   "app_pass_short_error": {
     "message": "Password must be at least 4 characters long"

@@ -1,0 +1,57 @@
+{
+  "app_name": {
+    "message": "Gestionnaire Privé de Favoris"
+  },
+  "app_description": {
+    "message": "Stockez vos favoris en toute confidentialité. Enregistrez et protégez vos liens avec un mot de passe — personne d’autre ne pourra les voir."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Entrer le mot de passe"
+  },
+  "app_create_password": {
+    "message": "🔒 Créer un mot de passe"
+  },
+  "app_set_password": {
+    "message": "Définir le mot de passe"
+  },
+  "app_create_password_placeholder": {
+    "message": "Créez votre mot de passe"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Entrez votre mot de passe"
+  },
+  "app_password_warning": {
+    "message": "⚠️ Important :\nSi vous oubliez votre mot de passe, il ne pourra pas être récupéré ou réinitialisé. Vos données sont stockées uniquement sur cet appareil et ne peuvent être consultées sans le mot de passe correct."
+  },
+  "app_instruction": {
+    "message": "📌 Pour enregistrer un favori, cliquez sur le bouton 💾 en haut.\n🔒 Pour verrouiller vos favoris, cliquez sur 🔒.\n👁️ Pour voir les favoris normaux, cliquez sur 👁️.\n🕶️ Pour voir les favoris privés, cliquez sur 🕶️."
+  },
+  "app_unlock": {
+    "message": "🔓 Déverrouiller"
+  },
+  "app_ads": {
+    "message": "📢 L’IA ne donne pas de bonnes réponses ? Automatisez vos prompts."
+  },
+  "app_pass_short_error": {
+    "message": "Le mot de passe doit contenir au moins 4 caractères"
+  },
+  "app_pass_incorrect_error": {
+    "message": "Mot de passe incorrect"
+  },
+  "app_feedback_title": {
+    "message": "⭐ Vous aimez l’extension ?"
+  },
+  "app_feedback_text": {
+    "message": "Nous serions ravis que vous laissiez un avis !"
+  },
+  "app_feedback_button_review": {
+    "message": "Laisser un avis"
+  },
+  "app_feedback_button_later": {
+    "message": "Plus tard"
+  },
+  "app_feedback_button_never": {
+    "message": "Ne plus afficher"
+  }
+}

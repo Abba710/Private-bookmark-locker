@@ -1,0 +1,57 @@
+{
+  "app_name": {
+    "message": "Privé Bladwijzerbeheerder"
+  },
+  "app_description": {
+    "message": "Privé bladwijzers opslaan. Bewaar en bescherm links met een wachtwoord — niemand anders kan ze bekijken."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Voer wachtwoord in"
+  },
+  "app_create_password": {
+    "message": "🔒 Maak een wachtwoord"
+  },
+  "app_set_password": {
+    "message": "Stel wachtwoord in"
+  },
+  "app_create_password_placeholder": {
+    "message": "Maak je wachtwoord aan"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Voer je wachtwoord in"
+  },
+  "app_password_warning": {
+    "message": "⚠️ Belangrijk:\nAls je je wachtwoord vergeet, kan het niet worden hersteld of opnieuw ingesteld. Je gegevens worden alleen op dit apparaat opgeslagen en zijn niet toegankelijk zonder het juiste wachtwoord."
+  },
+  "app_instruction": {
+    "message": "📌 Om een bladwijzer op te slaan, klik op de 💾 knop bovenaan.\n🔒 Om bladwijzers te vergrendelen, klik op 🔒.\n👁️ Om normale bladwijzers te bekijken, klik op 👁️.\n🕶️ Om privé bladwijzers te bekijken, klik op 🕶️."
+  },
+  "app_unlock": {
+    "message": "🔓 Ontgrendelen"
+  },
+  "app_ads": {
+    "message": "📢 Geeft AI slechte antwoorden? Automatiseer je prompts."
+  },
+  "app_pass_short_error": {
+    "message": "Wachtwoord moet minimaal 4 tekens lang zijn"
+  },
+  "app_pass_incorrect_error": {
+    "message": "Onjuist wachtwoord"
+  },
+  "app_feedback_title": {
+    "message": "⭐ Tevreden over de extensie?"
+  },
+  "app_feedback_text": {
+    "message": "We zouden het geweldig vinden als je een beoordeling achterlaat!"
+  },
+  "app_feedback_button_review": {
+    "message": "Geef een beoordeling"
+  },
+  "app_feedback_button_later": {
+    "message": "Later"
+  },
+  "app_feedback_button_never": {
+    "message": "Niet meer tonen"
+  }
+}

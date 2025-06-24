@@ -4,13 +4,46 @@ const BOOKMARK_COUNT_KEY = "bookmarkCount";
 const FEEDBACK_DISABLED_KEY = "feedbackDisabled";
 const CHROME_STORE_URL =
   "https://chromewebstore.google.com/detail/private-bookmark-locker/fagjclghcmnfinjdkdnkejodfjgkpljd/reviews";
+const BOOKMARK_SWITCH_KEY = "switchKey";
 
 // DOMContentLoaded initialization
 document.addEventListener("DOMContentLoaded", () => {
   localizeHtmlPage();
+  initalizeSwitchButtons();
+  bookmarkSwitch(false); // Default to basic bookmarks
   initializePopup();
   initializeLock();
   initializeFeedback();
+  turnOffWarning();
+  trunOffInstructions();
+});
+
+function turnOffWarning() {
+  const warning = document.getElementById("passwordWarning");
+  chrome.storage.local.get(["hash", "salt"], (result) => {
+    const passwordSet = result.hash && result.salt;
+    if (passwordSet) {
+      warning.classList.add("hidden");
+    }
+  });
+}
+
+function trunOffInstructions() {
+  const instructions = document.getElementById("instructions");
+  chrome.storage.local.get(["bookmarks"], (result) => {
+    const bookmarks = result.bookmarks || [];
+    if (bookmarks && bookmarks.length > 0) {
+      instructions.classList.add("hidden");
+    } else {
+      instructions.classList.remove("hidden");
+    }
+  });
+}
+
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === "local" && "bookmarks" in changes) {
+    displayBookmarks();
+  }
 });
 
 function localizeHtmlPage() {
@@ -107,6 +140,25 @@ function initializeLock() {
   passwordInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") handlePasswordSubmit();
   });
+}
+
+function initalizeSwitchButtons() {
+  const basicBookmarksSwitch = document.getElementById("basicBookmarks");
+  const incognitoBookmarksSwitch =
+    document.getElementById("incognitoBookmarks");
+  basicBookmarksSwitch.addEventListener("click", () => {
+    bookmarkSwitch(false);
+  });
+  incognitoBookmarksSwitch.addEventListener("click", () => {
+    bookmarkSwitch(true);
+  });
+}
+
+function bookmarkSwitch(state) {
+  chrome.storage.local.set({ [BOOKMARK_SWITCH_KEY]: state }, () => {
+    console.log("Bookmark switch initialized.");
+  });
+  displayBookmarks();
 }
 
 // Lock overlay functions
@@ -216,6 +268,9 @@ function saveCurrentPage() {
             },
             () => {
               displayBookmarks();
+              chrome.storage.local.getBytesInUse(null, (bytes) => {
+                console.log(`Used: ${bytes} bytes`);
+              });
 
               // Show feedback dialog every 5 bookmarks if not disabled
               if (!result[FEEDBACK_DISABLED_KEY] && bookmarkCount % 5 === 0) {
@@ -230,60 +285,64 @@ function saveCurrentPage() {
 }
 
 function displayBookmarks() {
-  chrome.storage.local.get(["bookmarks"], (result) => {
+  trunOffInstructions();
+  chrome.storage.local.get(["bookmarks", BOOKMARK_SWITCH_KEY], (result) => {
     const bookmarks = result.bookmarks || [];
+    const switchState = result[BOOKMARK_SWITCH_KEY];
     const list = document.getElementById("bookmarkList");
     list.innerHTML = "";
 
     bookmarks.forEach((bookmark, index) => {
-      const li = document.createElement("li");
-      li.className =
-        "flex justify-between items-center bg-[#25262b] p-4 rounded-xl hover:bg-[#2c2d33] transition-all duration-300 shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/20 border border-gray-700/20 hover:border-gray-700/30 group cursor-pointer mb-3";
+      if (bookmark.incognito === switchState) {
+        const li = document.createElement("li");
+        li.className =
+          "flex justify-between items-center bg-[#25262b] p-4 rounded-xl hover:bg-[#2c2d33] transition-all duration-300 shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/20 border border-gray-700/20 hover:border-gray-700/30 group cursor-pointer mb-3";
 
-      const container = document.createElement("div");
-      container.className = "flex items-center flex-grow min-w-0 gap-3";
+        const container = document.createElement("div");
+        container.className = "flex items-center flex-grow min-w-0 gap-3";
 
-      const icon = document.createElement("span");
-      icon.textContent = bookmark.incognito ? "🕶️" : "👁️";
-      icon.className = "flex-shrink-0 opacity-50";
+        const icon = document.createElement("span");
+        icon.textContent = bookmark.incognito ? "🕶️" : "👁️";
+        icon.className = "flex-shrink-0 opacity-50";
 
-      const text = document.createElement("div");
-      text.textContent = bookmark.title || bookmark.url;
-      text.title = bookmark.url;
-      text.className =
-        "text-blue-400 hover:text-blue-300 truncate text-base transition-all duration-300 hover:translate-x-1 font-medium";
+        const text = document.createElement("div");
+        text.textContent = bookmark.title || bookmark.url;
+        text.title = bookmark.url;
+        text.className =
+          "text-blue-400 hover:text-blue-300 truncate text-base transition-all duration-300 hover:translate-x-1 font-medium";
 
-      container.appendChild(icon);
-      container.appendChild(text);
+        container.appendChild(icon);
+        container.appendChild(text);
 
-      const delBtn = document.createElement("button");
-      delBtn.innerHTML = "🗑️";
-      delBtn.className =
-        "text-red-400/70 hover:text-red-500 text-xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 active:scale-90";
-      delBtn.setAttribute("aria-label", "Delete bookmark");
+        const delBtn = document.createElement("button");
+        delBtn.innerHTML = "🗑️";
+        delBtn.className =
+          "text-red-400/70 hover:text-red-500 text-xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 active:scale-90";
+        delBtn.setAttribute("aria-label", "Delete bookmark");
 
-      delBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        bookmarks.splice(index, 1);
-        chrome.storage.local.set({ bookmarks }, displayBookmarks);
-      });
-
-      li.addEventListener("click", () => {
-        chrome.windows.getCurrent((window) => {
-          if (window.incognito === bookmark.incognito) {
-            chrome.tabs.create({ url: bookmark.url, windowId: window.id });
-          } else {
-            chrome.windows.create({
-              url: bookmark.url,
-              incognito: bookmark.incognito,
-            });
-          }
+        delBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          bookmarks.splice(index, 1);
+          chrome.storage.local.set({ bookmarks }, displayBookmarks);
         });
-      });
 
-      li.appendChild(container);
-      li.appendChild(delBtn);
-      list.appendChild(li);
+        li.addEventListener("click", () => {
+          chrome.windows.getCurrent((window) => {
+            if (window.incognito === bookmark.incognito) {
+              chrome.tabs.create({ url: bookmark.url, windowId: window.id });
+            } else {
+              chrome.windows.create({
+                url: bookmark.url,
+                incognito: bookmark.incognito,
+              });
+            }
+          });
+        });
+
+        li.appendChild(container);
+        li.appendChild(delBtn);
+        list.appendChild(li);
+      }
     });
   });
 }

@@ -1,18 +1,12 @@
 {
   "app_name": {
-    "message": "Özel Yer İmi Kasası"
+    "message": "Gizli Yer İmi Yöneticisi"
   },
   "app_description": {
-    "message": "Özel yer imi depolama. Bağlantılarınızı bir şifre ile kaydedin ve koruyun — başkası göremez."
-  },
-  "app_header": {
-    "message": "🔖 Yer İmi Kaydet"
-  },
-  "app_header_description": {
-    "message": "Favori bağlantılarınızı güvenle saklayın"
+    "message": "Özel yer imlerinizi saklayın. Bağlantıları bir şifreyle kaydedin ve koruyun — başkaları göremez."
   },
   "app_enter_password": {
-    "message": "🔒 Şifreyi Girin"
+    "message": "🔒 Şifreyi Gir"
   },
   "app_create_password": {
     "message": "🔒 Şifre Oluştur"
@@ -26,32 +20,32 @@
   "app_enter_password_placeholder": {
     "message": "Şifrenizi girin"
   },
+  "app_password_warning": {
+    "message": "⚠️ Önemli:\nŞifrenizi unutursanız, kurtarılamaz veya sıfırlanamaz. Veriler yalnızca bu cihazda saklanır ve doğru şifre olmadan erişilemez."
+  },
+  "app_instruction": {
+    "message": "📌 Bir yer imi kaydetmek için üst kısımdaki 💾 düğmesine tıklayın.\n🔒 Yer imlerini kilitlemek için 🔒 düğmesine tıklayın.\n👁️ Normal yer imlerini görmek için 👁️'ye tıklayın.\n🕶️ Gizli yer imlerini görmek için 🕶️'ye tıklayın."
+  },
   "app_unlock": {
     "message": "🔓 Kilidi Aç"
   },
-  "app_save": {
-    "message": "Kaydedilen Yer İmleri"
-  },
-  "app_save_button": {
-    "message": "Mevcut Sayfayı Kaydet"
-  },
   "app_ads": {
-    "message": "📢 Reklamlarınızı burada yayınlayın — Telegram @Saifer714"
+    "message": "📢 Yapay zeka kötü yanıtlar mı veriyor? İstemleri otomatikleştir."
   },
   "app_pass_short_error": {
-    "message": "Şifre en az 4 karakter uzunluğunda olmalıdır"
+    "message": "Şifre en az 4 karakter uzunluğunda olmalı"
   },
   "app_pass_incorrect_error": {
-    "message": "Yanlış şifre"
+    "message": "Şifre yanlış"
   },
   "app_feedback_title": {
-    "message": "⭐ Eklentiyi beğendiniz mi?"
+    "message": "⭐ Uzantıyı beğendiniz mi?"
   },
   "app_feedback_text": {
-    "message": "Bir değerlendirme bırakırsanız çok mutlu oluruz!"
+    "message": "Lütfen bir yorum bırakın, çok memnun oluruz!"
   },
   "app_feedback_button_review": {
-    "message": "Değerlendirme bırak"
+    "message": "Yorum yap"
   },
   "app_feedback_button_later": {
     "message": "Daha sonra"

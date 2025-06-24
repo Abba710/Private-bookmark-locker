@@ -11,7 +11,6 @@
       rel="stylesheet"
     />
     <link href="output.css" rel="stylesheet" />
-    <link href="custom.css" rel="stylesheet" />
     <style>
       /* Custom scrollbar styles */
       ::-webkit-scrollbar {
@@ -43,22 +42,56 @@
     class="flex flex-col bg-[#1a1b1e] text-white font-sans leading-relaxed w-full h-screen overflow-hidden"
   >
     <!-- ====== Header Section ====== -->
-     <header class="bg-[#25262b] flex shadow-inner w-full h-14 items-center justify-start">
-      <div class="flex w-full h-full px-2 py-1">
-        <button
-          id="lockButton"
-          class="w-12 h-12 bg-blue-600 hover:bg-blue-500 flex items-center justify-center rounded-xl text-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
-          aria-label="Lock bookmarks"
+    <header
+    class="bg-[#25262b] flex shadow-lg w-full h-16 items-center justify-start sticky top-0 z-10 border-b border-white/5"
+  >
+    <div class="flex w-full justify-center h-full px-3 py-2 gap-3">
+      <button
+        id="lockButton"
+        class="w-12 h-12  hover:bg-[#45E3B8] focus:ring-2 focus:ring-[#45E3B8] flex items-center justify-center rounded-xl text-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shadow-lg shadow-[#45E3B8]/10 hover:shadow-xl hover:shadow-[#45E3B8]/20"
+        aria-label="Lock bookmarks"
+      >
+        <span
+          class="transform hover:scale-110 transition-transform duration-200"
         >
-          <span
-            class="transform hover:scale-110 transition-transform duration-200"
-          >
-            🔒
-          </span>
-        </button>
-      </div>
-     </header>
+          🔒
+        </span>
+      </button>
+      <button
+        id="basicBookmarks"
+        class="w-12 h-12 hover:bg-[#45E3B8] focus:ring-2 focus:ring-[#45E3B8] flex items-center justify-center rounded-xl text-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shadow-lg shadow-[#45E3B8]/10 hover:shadow-xl hover:shadow-[#45E3B8]/20"
+        aria-label="View basic bookmarks"
+      >
+        <span
+          class="transform hover:scale-110 transition-transform duration-200"
+        >
+          👁️
+        </span>
+      </button>
+      <button
+        id="incognitoBookmarks"
+        class="w-12 h-12 hover:bg-[#45E3B8] focus:ring-2 focus:ring-[#45E3B8] flex items-center justify-center rounded-xl text-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shadow-lg shadow-[#45E3B8]/10 hover:shadow-xl hover:shadow-[#45E3B8]/20"
+        aria-label="View incognito bookmarks"
+      >
+        <span
+          class="transform hover:scale-110 transition-transform duration-200"
+        >
+          🕶️
+        </span>
+      </button>
+      <button
+        id="saveCurrentPage"
+        class="w-12 h-12  hover:bg-[#45E3B8] focus:ring-2 focus:ring-[#45E3B8] flex items-center justify-center rounded-xl text-2xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shadow-lg shadow-[#45E3B8]/10 hover:shadow-xl hover:shadow-[#45E3B8]/20"
+        aria-label="Save current page"
+      >
+        <span
+          class="transform hover:scale-110 transition-transform duration-200"
+        >
+          💾
+        </span>
+      </button>
     </div>
+  </header>
 
     <!-- Lock Overlay -->
     <div
@@ -77,19 +110,28 @@
         <input
           type="password"
           id="passwordInput"
-          class="w-full px-6 py-4 rounded-xl bg-[#2c2d33] text-white border border-gray-700/30 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300 shadow-inner shadow-black/10 mb-4"
+          class="w-full px-6 py-4 rounded-xl bg-[#2c2d33] text-white border border-gray-700/30 text-lg focus:outline-none focus:ring-2 focus:ring-[#45E3B8]/50 focus:border-transparent transition-all duration-300 shadow-inner shadow-black/10 mb-4"
           data-i18n="app_enter_password_placeholder"
           placeholder="Enter your password"
         />
         <button
           id="submitPassword"
-          class="w-full px-6 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 active:scale-95"
+          class="w-full px-6 py-4  hover:bg-[#45E3B8]/80 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg shadow-[#45E3B8]/20 hover:shadow-xl hover:shadow-[#45E3B8]/30 hover:scale-105 active:scale-95"
           data-i18n="app_unlock"
         >
           Unlock
         </button>
         <p id="passwordError" class="mt-4 text-red-400 text-center hidden"></p>
+
       </div>
+      <h1
+        id="passwordWarning"
+        class="text-sm mt-2 font-bold mb-6 text-left font-display"
+        data-i18n="app_password_warning"
+      >
+        ⚠️ Important: <br> If you forget your password, it cannot be recovered or reset.
+        Your data is stored only on this device and cannot be accessed without the correct password.
+    </h1>
     </div>
 
     <!-- ====== Main Content ====== -->
@@ -97,12 +139,19 @@
     <main class="p-6 flex flex-col flex-1 overflow-hidden">
       <!-- Bookmarks List Section -->
       <section class="h-full">
-        <h2 class="sr-only" data-i18n="app_save">Saved Bookmarks</h2>
+        <h1
+        id="instructions"
+        class="text-sm font-medium mb-6 text-left  text-[#45E3B8] p-4 rounded-xl border border-[#45E3B8]/20"
+        data-i18n="app_instructions"
+      >
+        📌 To save a bookmark, click the 💾 button in the header <br />
+        🔒 To lock bookmarks, click the 🔒 button in the header <br />
+        👁️ To view basic bookmarks, click the 👁️ button in the header <br />
+        🕶️ To view incognito bookmarks, click the 🕶️ button in the header
+      </h1>
         <ul id="bookmarkList" class="space-y-3 h-full overflow-y-auto pr-2">
           <!-- Example Bookmark Item -->
-          <li
-            class="bookmark-item flex justify-between items-center bg-[#25262b] px-4 py-3 rounded-xl hover:bg-[#2c2d33] transition-all duration-300 shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/20 border border-gray-700/20 hover:border-gray-700/30 group"
-          >
+
             <!--List will be displayed here-->
             <button
               class="text-red-400/70 hover:text-red-500 text-xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 active:scale-90"
@@ -114,18 +163,6 @@
         </ul>
       </section>
     </main>
-
-    <!-- Save Bookmark Button -->
-    <div class="p-4 mt-auto">
-      <button
-        id="saveCurrentPage"
-        class="w-full px-6 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
-        data-i18n="app_save_button"
-      >
-        <span class="text-xl">💾</span>
-        Save Current Page
-      </button>
-    </div>
 
     <!-- Feedback Dialog -->
     <div
@@ -150,7 +187,7 @@
         <div class="space-y-4">
           <button
             id="feedbackReview"
-            class="w-full px-6 py-4 bg-blue-600 hover:bg-blue-500 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 active:scale-95"
+            class="w-full px-6 py-4 bg-[#45E3B8] hover:bg-[#45E3B8]/80 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg shadow-[#45E3B8]/20 hover:shadow-xl hover:shadow-[#45E3B8]/30 hover:scale-105 active:scale-95"
             data-i18n="app_feedback_button_review"
           >
             Leave a review
@@ -178,14 +215,14 @@
       class="bg-[#25262b] shadow-inner w-full text-center py-6 flex-shrink-0"
     >
       <a
-        href="https://t.me/saifer714"
+        href="https://blog-abba710s-projects.vercel.app/auto-prompts"
         title="Contact me"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-gray-300 hover:text-blue-300 transition-colors duration-300 inline-block hover:scale-105 transform-gpu"
+        class="text-gray-300 hover:text-[#45E3B8] transition-colors duration-300 inline-block hover:scale-105 transform-gpu"
       >
         <p class="text-xl font-medium" data-i18n="app_ads">
-          📢 Post your ads here — Telegram @Saifer714
+          📢 AI not giving great answers? Automate your prompts.
         </p>
       </a>
     </footer>

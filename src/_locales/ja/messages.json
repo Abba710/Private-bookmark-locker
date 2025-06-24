@@ -1,0 +1,57 @@
+{
+  "app_name": {
+    "message": "プライベートブックマークマネージャー"
+  },
+  "app_description": {
+    "message": "プライベートなブックマークを保存。リンクをパスワードで保護して、他の誰にも見られないようにします。"
+  },
+
+  "app_enter_password": {
+    "message": "🔒 パスワードを入力"
+  },
+  "app_create_password": {
+    "message": "🔒 パスワードを作成"
+  },
+  "app_set_password": {
+    "message": "パスワードを設定"
+  },
+  "app_create_password_placeholder": {
+    "message": "パスワードを作成してください"
+  },
+  "app_enter_password_placeholder": {
+    "message": "パスワードを入力してください"
+  },
+  "app_password_warning": {
+    "message": "⚠️ 重要:\nパスワードを忘れた場合、復元やリセットはできません。データはこのデバイスのみに保存されており、正しいパスワードがないとアクセスできません。"
+  },
+  "app_instruction": {
+    "message": "📌 ブックマークを保存するには、上部の 💾 ボタンをクリックしてください。\n🔒 ブックマークをロックするには、🔒 をクリック。\n👁️ 通常のブックマークを見るには、👁️ をクリック。\n🕶️ プライベートブックマークを見るには、🕶️ をクリック。"
+  },
+  "app_unlock": {
+    "message": "🔓 ロック解除"
+  },
+  "app_ads": {
+    "message": "📢 AIの回答がイマイチ？プロンプトを自動化しよう。"
+  },
+  "app_pass_short_error": {
+    "message": "パスワードは4文字以上である必要があります"
+  },
+  "app_pass_incorrect_error": {
+    "message": "パスワードが正しくありません"
+  },
+  "app_feedback_title": {
+    "message": "⭐ この拡張機能は気に入りましたか？"
+  },
+  "app_feedback_text": {
+    "message": "レビューを残していただけると嬉しいです！"
+  },
+  "app_feedback_button_review": {
+    "message": "レビューを書く"
+  },
+  "app_feedback_button_later": {
+    "message": "後で"
+  },
+  "app_feedback_button_never": {
+    "message": "今後表示しない"
+  }
+}
