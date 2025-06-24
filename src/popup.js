@@ -47,9 +47,9 @@ function initializePopup() {
 
   // Event listeners
   lockButton.addEventListener("click", () => {
-    // Устанавливаем флаг сессии в false, чтобы заблокировать расширение
+    // Set session flag to false to lock the extension
     chrome.storage.session.set({ [SESSION_UNLOCKED_KEY]: false }, () => {
-      // Показываем оверлей блокировки
+      // Show the lock overlay
       showLockOverlay();
     });
   });
