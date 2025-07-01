@@ -296,7 +296,7 @@ function displayBookmarks() {
       if (bookmark.incognito === switchState) {
         const li = document.createElement("li");
         li.className =
-          "flex justify-between items-center bg-[#25262b] w-[300px] max-h-[40px] p-2 overflow-hidden rounded-xl hover:bg-[#2c2d33] text-gray-300 hover:text-[#45E3B8] transition-all duration-300 shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/20 border border-gray-700/20 hover:border-gray-700/30 group cursor-pointer mb-3";
+          "flex justify-between items-center bg-[#25262b] w-[295px] max-h-[40px] p-2 overflow-hidden rounded-xl hover:bg-[#2c2d33] text-gray-300 hover:text-[#45E3B8] transition-all duration-300 shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/20 border border-gray-700/20 hover:border-gray-700/30 group cursor-pointer mb-3";
 
         const container = document.createElement("div");
         container.className = "items-center min-w-0 p-[2px] min-w-0";

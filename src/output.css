@@ -664,10 +664,6 @@ video {
   height: 100vh;
 }
 
-.max-h-\[20px\] {
-  max-height: 20px;
-}
-
 .max-h-\[40px\] {
   max-height: 40px;
 }
@@ -680,44 +676,20 @@ video {
   width: 3rem;
 }
 
+.w-\[295px\] {
+  width: 295px;
+}
+
 .w-full {
   width: 100%;
-}
-
-.w-\[200px\] {
-  width: 200px;
-}
-
-.w-\[300px\] {
-  width: 300px;
 }
 
 .min-w-0 {
   min-width: 0px;
 }
 
-.min-w-\[200px\] {
-  min-width: 200px;
-}
-
 .max-w-md {
   max-width: 28rem;
-}
-
-.max-w-\[50px\] {
-  max-width: 50px;
-}
-
-.max-w-\[150px\] {
-  max-width: 150px;
-}
-
-.max-w-\[200px\] {
-  max-width: 200px;
-}
-
-.max-w-\[400px\] {
-  max-width: 400px;
 }
 
 .flex-1 {
@@ -726,10 +698,6 @@ video {
 
 .flex-shrink-0 {
   flex-shrink: 0;
-}
-
-.flex-grow {
-  flex-grow: 1;
 }
 
 .scale-100 {
@@ -780,34 +748,22 @@ video {
   justify-content: space-between;
 }
 
-.gap-3 {
-  gap: 0.75rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .gap-y-1 {
   row-gap: 0.25rem;
 }
 
-.space-y-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-}
-
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
-
-.space-y-1 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
 .overflow-hidden {
@@ -889,6 +845,10 @@ video {
   background-color: transparent;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -903,14 +863,6 @@ video {
 
 .p-\[2px\] {
   padding: 2px;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
 }
 
 .px-3 {
@@ -936,11 +888,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .pr-2 {
