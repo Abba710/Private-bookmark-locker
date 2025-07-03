@@ -5,6 +5,7 @@
   "app_description": {
     "message": "Özel yer imlerinizi saklayın. Bağlantıları bir şifreyle kaydedin ve koruyun — başkaları göremez."
   },
+
   "app_enter_password": {
     "message": "🔒 Şifreyi Gir"
   },
@@ -21,11 +22,25 @@
     "message": "Şifrenizi girin"
   },
   "app_password_warning": {
-    "message": "⚠️ Önemli:\nŞifrenizi unutursanız, kurtarılamaz veya sıfırlanamaz. Veriler yalnızca bu cihazda saklanır ve doğru şifre olmadan erişilemez."
+    "message": "⚠️ Önemli: Şifrenizi unutursanız, kurtarılamaz veya sıfırlanamaz. Veriler yalnızca bu cihazda saklanır ve doğru şifre olmadan erişilemez."
   },
-  "app_instruction": {
-    "message": "📌 Bir yer imi kaydetmek için üst kısımdaki 💾 düğmesine tıklayın.\n🔒 Yer imlerini kilitlemek için 🔒 düğmesine tıklayın.\n👁️ Normal yer imlerini görmek için 👁️'ye tıklayın.\n🕶️ Gizli yer imlerini görmek için 🕶️'ye tıklayın."
+
+  "app_instruction_save": {
+    "message": "📌 Bir yer imi kaydetmek için üst kısımdaki 💾 düğmesine tıklayın."
   },
+  "app_instruction_lock": {
+    "message": "🔒 Yer imlerini kilitlemek için üstteki 🔒 simgesine tıklayın."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Normal yer imlerini görmek için üstteki 👁️ simgesine tıklayın."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Gizli yer imlerini görmek için üstteki 🕶️ simgesine tıklayın."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Eklentiyi gizli modda kullanmak için simgeye sağ tıklayın, 'Uzantıyı Yönet' seçeneğine tıklayın ve 'Gizli modda izin ver' seçeneğini etkinleştirin."
+  },
+
   "app_unlock": {
     "message": "🔓 Kilidi Aç"
   },

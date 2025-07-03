@@ -1,19 +1,19 @@
 {
   "app_name": {
-    "message": "Private Bookmark Locker"
+    "message": "Bookmark Vault"
   },
   "app_description": {
-    "message": "Private bookmark storage. Save and protect links with a password — no one else can see them."
+    "message": "Private bookmark storage. Save and protect links with a password — only you can see them."
   },
 
   "app_enter_password": {
-    "message": "🔒 Enter Password"
+    "message": "🔒 Enter password"
   },
   "app_create_password": {
-    "message": "🔒 Create Password"
+    "message": "🔒 Create password"
   },
   "app_set_password": {
-    "message": "Set Password"
+    "message": "Set password"
   },
   "app_create_password_placeholder": {
     "message": "Create your password"
@@ -22,16 +22,30 @@
     "message": "Enter your password"
   },
   "app_password_warning": {
-    "message": "⚠️ Important: \n If you forget your password, it cannot be recovered or reset. Your data is stored only on this device and cannot be accessed without the correct password."
+    "message": "⚠️ Important: If you forget your password, it cannot be recovered. All data is stored only on this device and cannot be accessed without the correct password."
   },
-  "app_instruction": {
-    "message": "📌 To save a bookmark, click the 💾 button in the header. \n🔒 To lock bookmarks, click the 🔒 button in the header. \n👁️ To view basic bookmarks, click the 👁️ button in the header. \n🕶️ To view incognito bookmarks, click the 🕶️ button in the header."
+
+  "app_instruction_save": {
+    "message": "📌 To save a bookmark, click the 💾 button in the header."
   },
+  "app_instruction_lock": {
+    "message": "🔒 To lock bookmarks, click the 🔒 icon in the header."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ To view regular bookmarks, click the 👁️ icon in the header."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ To view incognito bookmarks, click the 🕶️ icon in the header."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "To use the extension in incognito mode, right-click the icon, choose 'Manage extension', and enable 'Allow in incognito'."
+  },
+
   "app_unlock": {
     "message": "🔓 Unlock"
   },
   "app_ads": {
-    "message": "📢 AI not giving great answers? Automate your prompts."
+    "message": "📢 Not getting good answers from AI? Automate your prompts."
   },
   "app_pass_short_error": {
     "message": "Password must be at least 4 characters long"
@@ -40,10 +54,10 @@
     "message": "Incorrect password"
   },
   "app_feedback_title": {
-    "message": "⭐ Like the extension?"
+    "message": "⭐ Enjoying the extension?"
   },
   "app_feedback_text": {
-    "message": "We'd be grateful if you could leave a review!"
+    "message": "We’d appreciate it if you left a review!"
   },
   "app_feedback_button_review": {
     "message": "Leave a review"
@@ -52,6 +66,6 @@
     "message": "Later"
   },
   "app_feedback_button_never": {
-    "message": "Don't show again"
+    "message": "Don’t show again"
   }
 }

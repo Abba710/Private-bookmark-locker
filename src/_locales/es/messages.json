@@ -1,13 +1,13 @@
 {
   "app_name": {
-    "message": "Gestor Privado de Marcadores"
+    "message": "Bóveda de Marcadores"
   },
   "app_description": {
-    "message": "Almacena tus marcadores privados. Guarda y protege enlaces con una contraseña: nadie más podrá verlos."
+    "message": "Almacenamiento privado de marcadores. Guarda y protege enlaces con una contraseña — solo tú puedes verlos."
   },
 
   "app_enter_password": {
-    "message": "🔒 Introducir contraseña"
+    "message": "🔒 Ingresar contraseña"
   },
   "app_create_password": {
     "message": "🔒 Crear contraseña"
@@ -22,16 +22,30 @@
     "message": "Ingresa tu contraseña"
   },
   "app_password_warning": {
-    "message": "⚠️ Importante:\nSi olvidas tu contraseña, no podrá ser recuperada ni restablecida. Tus datos se almacenan solo en este dispositivo y no se puede acceder a ellos sin la contraseña correcta."
+    "message": "⚠️ Importante: Si olvidas tu contraseña, no podrá recuperarse. Todos los datos se almacenan solo en este dispositivo y no se pueden acceder sin la contraseña correcta."
   },
-  "app_instruction": {
-    "message": "📌 Para guardar un marcador, haz clic en el botón 💾 en el encabezado.\n🔒 Para bloquear marcadores, haz clic en el botón 🔒.\n👁️ Para ver los marcadores normales, haz clic en 👁️.\n🕶️ Para ver los marcadores privados, haz clic en 🕶️."
+
+  "app_instruction_save": {
+    "message": "📌 Para guardar un marcador, haz clic en el botón 💾 en la parte superior."
   },
+  "app_instruction_lock": {
+    "message": "🔒 Para bloquear los marcadores, haz clic en el icono 🔒 en la parte superior."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Para ver los marcadores normales, haz clic en el icono 👁️ en la parte superior."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Para ver los marcadores de incógnito, haz clic en el icono 🕶️ en la parte superior."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Para usar la extensión en modo incógnito, haz clic derecho en el icono, selecciona 'Administrar extensión' y activa 'Permitir en incógnito'."
+  },
+
   "app_unlock": {
     "message": "🔓 Desbloquear"
   },
   "app_ads": {
-    "message": "📢 ¿Tu IA no da buenas respuestas? Automatiza tus prompts."
+    "message": "📢 ¿La IA no te da buenas respuestas? Automatiza tus prompts."
   },
   "app_pass_short_error": {
     "message": "La contraseña debe tener al menos 4 caracteres"
@@ -43,10 +57,10 @@
     "message": "⭐ ¿Te gusta la extensión?"
   },
   "app_feedback_text": {
-    "message": "¡Nos encantaría que dejaras una reseña!"
+    "message": "¡Agradeceríamos mucho si dejas una reseña!"
   },
   "app_feedback_button_review": {
-    "message": "Dejar una reseña"
+    "message": "Dejar reseña"
   },
   "app_feedback_button_later": {
     "message": "Más tarde"

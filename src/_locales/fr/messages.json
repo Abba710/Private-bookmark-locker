@@ -1,9 +1,9 @@
 {
   "app_name": {
-    "message": "Gestionnaire Privé de Favoris"
+    "message": "Coffre-fort de Favoris"
   },
   "app_description": {
-    "message": "Stockez vos favoris en toute confidentialité. Enregistrez et protégez vos liens avec un mot de passe — personne d’autre ne pourra les voir."
+    "message": "Stockage privé de favoris. Enregistre et protège les liens avec un mot de passe — toi seul peux les voir."
   },
 
   "app_enter_password": {
@@ -16,22 +16,36 @@
     "message": "Définir le mot de passe"
   },
   "app_create_password_placeholder": {
-    "message": "Créez votre mot de passe"
+    "message": "Crée ton mot de passe"
   },
   "app_enter_password_placeholder": {
-    "message": "Entrez votre mot de passe"
+    "message": "Entre ton mot de passe"
   },
   "app_password_warning": {
-    "message": "⚠️ Important :\nSi vous oubliez votre mot de passe, il ne pourra pas être récupéré ou réinitialisé. Vos données sont stockées uniquement sur cet appareil et ne peuvent être consultées sans le mot de passe correct."
+    "message": "⚠️ Important : Si tu oublies ton mot de passe, il ne pourra pas être récupéré. Toutes les données sont stockées uniquement sur cet appareil et sont inaccessibles sans le mot de passe correct."
   },
-  "app_instruction": {
-    "message": "📌 Pour enregistrer un favori, cliquez sur le bouton 💾 en haut.\n🔒 Pour verrouiller vos favoris, cliquez sur 🔒.\n👁️ Pour voir les favoris normaux, cliquez sur 👁️.\n🕶️ Pour voir les favoris privés, cliquez sur 🕶️."
+
+  "app_instruction_save": {
+    "message": "📌 Pour enregistrer un favori, clique sur le bouton 💾 en haut."
   },
+  "app_instruction_lock": {
+    "message": "🔒 Pour verrouiller les favoris, clique sur l'icône 🔒 en haut."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Pour voir les favoris normaux, clique sur l'icône 👁️ en haut."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Pour voir les favoris incognito, clique sur l'icône 🕶️ en haut."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Pour utiliser l'extension en mode incognito, fais un clic droit sur l'icône, choisis « Gérer l’extension » puis active « Autoriser en navigation privée »."
+  },
+
   "app_unlock": {
     "message": "🔓 Déverrouiller"
   },
   "app_ads": {
-    "message": "📢 L’IA ne donne pas de bonnes réponses ? Automatisez vos prompts."
+    "message": "📢 L'IA ne donne pas de bonnes réponses ? Automatise tes prompts."
   },
   "app_pass_short_error": {
     "message": "Le mot de passe doit contenir au moins 4 caractères"
@@ -40,10 +54,10 @@
     "message": "Mot de passe incorrect"
   },
   "app_feedback_title": {
-    "message": "⭐ Vous aimez l’extension ?"
+    "message": "⭐ Tu aimes l’extension ?"
   },
   "app_feedback_text": {
-    "message": "Nous serions ravis que vous laissiez un avis !"
+    "message": "Nous serions ravis que tu laisses un avis !"
   },
   "app_feedback_button_review": {
     "message": "Laisser un avis"

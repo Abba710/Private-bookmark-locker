@@ -22,11 +22,25 @@
     "message": "请输入你的密码"
   },
   "app_password_warning": {
-    "message": "⚠️ 重要提示：\n如果你忘记了密码，将无法找回或重置。你的数据仅保存在本设备中，且无法在没有正确密码的情况下访问。"
+    "message": "⚠️ 重要提示：如果你忘记了密码，将无法找回或重置。你的数据仅保存在本设备中，且无法在没有正确密码的情况下访问。"
   },
-  "app_instruction": {
-    "message": "📌 要保存书签，请点击顶部的 💾 按钮。\n🔒 要锁定书签，请点击 🔒。\n👁️ 要查看普通书签，请点击 👁️。\n🕶️ 要查看私密书签，请点击 🕶️。"
+
+  "app_instruction_save": {
+    "message": "📌 要保存书签，请点击顶部的 💾 按钮。"
   },
+  "app_instruction_lock": {
+    "message": "🔒 要锁定书签，请点击顶部的 🔒 图标。"
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ 要查看普通书签，请点击顶部的 👁️ 图标。"
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ 要查看私密书签，请点击顶部的 🕶️ 图标。"
+  },
+  "app_instruction_incognito_hint": {
+    "message": "要在无痕模式中使用扩展程序，请右键点击图标，选择“管理扩展程序”，然后启用“允许在无痕模式中运行”。"
+  },
+
   "app_unlock": {
     "message": "🔓 解锁"
   },

@@ -139,15 +139,28 @@
     <main class="p-6 flex flex-col flex-1 overflow-hidden">
       <!-- Bookmarks List Section -->
       <section class="h-full">
+        <div id="instructions" class="rounded-xl gap-1 border border-[#45E3B8]/20">
+          <h1
+            class="text-sm font-medium text-left  text-[#45E3B8] p-4"
+            data-i18n="app_instruction_save"
+      ></h1>
+          <h1
+            class="text-sm font-medium text-left text-[#45E3B8] p-4"
+            data-i18n="app_instruction_lock"
+      ></h1>
         <h1
-        id="instructions"
-        class="text-sm font-medium mb-6 text-left  text-[#45E3B8] p-4 rounded-xl border border-[#45E3B8]/20"
-        data-i18n="app_instructions"
-      >
-        📌 To save a bookmark, click the 💾 button in the header <br />
-        🔒 To lock bookmarks, click the 🔒 button in the header <br />
-        👁️ To view basic bookmarks, click the 👁️ button in the header <br />
-        🕶️ To view incognito bookmarks, click the 🕶️ button in the header
+            class="text-sm font-medium text-left text-[#45E3B8] p-4"
+            data-i18n="app_instruction_view_basic"
+        ></h1>
+        <h1
+            class="text-sm font-medium text-left text-[#45E3B8] p-4"
+            data-i18n="app_instruction_view_incognito"
+        ></h1>
+        <h1
+            class="text-sm font-medium text-left text-[#45E3B8] p-4"
+            data-i18n="app_instruction_incognito_hint"
+        ></h1>
+      </div>
       </h1>
         <ul id="bookmarkList" class="gap-2 gap-y-1 w-full flex-wrap flex max-h-full overflow-y-auto pr-2">
           <!-- Example Bookmark Item -->
