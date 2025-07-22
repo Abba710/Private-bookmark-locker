@@ -1,0 +1,48 @@
+{
+  "app_name": { "message": "Pribadong Bookmark Locker" },
+  "app_description": {
+    "message": "Pribadong imbakan ng bookmark. I-save at protektahan ang mga link gamit ang password — ikaw lang ang makakakita nito."
+  },
+  "app_enter_password": { "message": "🔒 Ipasok ang password" },
+  "app_create_password": { "message": "🔒 Gumawa ng password" },
+  "app_set_password": { "message": "Itakda ang password" },
+  "app_create_password_placeholder": { "message": "Gumawa ng iyong password" },
+  "app_enter_password_placeholder": { "message": "Ipasok ang iyong password" },
+  "app_password_warning": {
+    "message": "⚠️ Mahalaga: Kung makalimutan mo ang iyong password, hindi ito maibabalik. Lahat ng data ay nakaimbak lamang sa device na ito at hindi maa-access kung walang tamang password."
+  },
+  "app_instruction_save": {
+    "message": "📌 Para mag-save ng bookmark, i-click ang 💾 button sa header."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Para i-lock ang mga bookmark, i-click ang 🔒 icon sa header."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Para makita ang regular na bookmark, i-click ang 👁️ icon sa header."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Para makita ang incognito bookmark, i-click ang 🕶️ icon sa header."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Para gamitin ang extension sa incognito mode, i-right click ang icon, piliin ang 'Manage extension', at i-enable ang 'Allow in incognito'."
+  },
+  "app_unlock": { "message": "🔓 I-unlock" },
+  "app_donate_using": { "message": "Salamat sa paggamit ng extension!" },
+  "app_donate_call": {
+    "message": "Ang tool na ito ay ginawa para sa privacy. Kung nakatulong ito sa iyo, suportahan ang development ☕"
+  },
+  "app_donate_now": { "message": "Suportahan ang proyekto ng ₱250" },
+  "app_donate_leter": { "message": "Siguro mamaya" },
+  "app_ads": {
+    "message": "📢 Hindi ka nakakakuha ng magagandang sagot mula sa AI? I-automate ang iyong mga prompt."
+  },
+  "app_pass_short_error": {
+    "message": "Ang password ay dapat hindi bababa sa 4 na character"
+  },
+  "app_pass_incorrect_error": { "message": "Maling password" },
+  "app_feedback_title": { "message": "⭐ Nagugustuhan mo ba ang extension?" },
+  "app_feedback_text": { "message": "Ang mabilis na review ay mahalaga! 🙏" },
+  "app_feedback_button_review": { "message": "Mag-iwan ng review" },
+  "app_feedback_button_later": { "message": "Mamaya" },
+  "app_feedback_button_never": { "message": "Huwag ipakita muli" }
+}

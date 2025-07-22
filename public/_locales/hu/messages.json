@@ -1,0 +1,48 @@
+{
+  "app_name": { "message": "Privát könyvjelző tároló" },
+  "app_description": {
+    "message": "Privát könyvjelzőtároló. Mentsd és védd a linkeket jelszóval — csak te láthatod őket."
+  },
+  "app_enter_password": { "message": "🔒 Jelszó megadása" },
+  "app_create_password": { "message": "🔒 Jelszó létrehozása" },
+  "app_set_password": { "message": "Jelszó beállítása" },
+  "app_create_password_placeholder": { "message": "Hozd létre a jelszavad" },
+  "app_enter_password_placeholder": { "message": "Add meg a jelszavad" },
+  "app_password_warning": {
+    "message": "⚠️ Fontos: Ha elfelejted a jelszavad, nem lehet visszaállítani. Minden adat csak ezen az eszközön tárolódik, és a helyes jelszó nélkül nem érhető el."
+  },
+  "app_instruction_save": {
+    "message": "📌 Könyvjelző mentéséhez kattints a fejlécben a 💾 gombra."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Könyvjelzők zárolásához kattints a fejlécben a 🔒 ikonra."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Normál könyvjelzők megtekintéséhez kattints a fejlécben a 👁️ ikonra."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Inkognitó könyvjelzők megtekintéséhez kattints a fejlécben a 🕶️ ikonra."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "A bővítmény inkognitó módban való használatához kattints jobb gombbal az ikonra, válaszd a 'Bővítmény kezelése' lehetőséget, és engedélyezd az 'Engedélyezés inkognitóban' opciót."
+  },
+  "app_unlock": { "message": "🔓 Feloldás" },
+  "app_donate_using": { "message": "Köszönjük, hogy használod a bővítményt!" },
+  "app_donate_call": {
+    "message": "Ez az eszköz a magánélet védelméért készült. Ha hasznos volt számodra, támogasd a fejlesztést ☕"
+  },
+  "app_donate_now": { "message": "Támogasd a projektet 2000 Ft-ért" },
+  "app_donate_leter": { "message": "Talán később" },
+  "app_ads": {
+    "message": "📢 Nem kapsz jó válaszokat az AI-tól? Automatizáld a promptjaidat."
+  },
+  "app_pass_short_error": {
+    "message": "A jelszónak legalább 4 karakter hosszúnak kell lennie"
+  },
+  "app_pass_incorrect_error": { "message": "Hibás jelszó" },
+  "app_feedback_title": { "message": "⭐ Tetszik a bővítmény?" },
+  "app_feedback_text": { "message": "Egy rövid értékelés sokat jelentene! 🙏" },
+  "app_feedback_button_review": { "message": "Értékelés írása" },
+  "app_feedback_button_later": { "message": "Később" },
+  "app_feedback_button_never": { "message": "Ne jelenjen meg többször" }
+}

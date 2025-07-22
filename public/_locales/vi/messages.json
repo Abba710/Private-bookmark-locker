@@ -1,0 +1,46 @@
+{
+  "app_name": { "message": "Kho lưu trữ Dấu trang Riêng tư" },
+  "app_description": {
+    "message": "Lưu trữ dấu trang riêng tư. Lưu và bảo vệ liên kết bằng mật khẩu — chỉ bạn mới có thể xem."
+  },
+  "app_enter_password": { "message": "🔒 Nhập mật khẩu" },
+  "app_create_password": { "message": "🔒 Tạo mật khẩu" },
+  "app_set_password": { "message": "Đặt mật khẩu" },
+  "app_create_password_placeholder": { "message": "Tạo mật khẩu của bạn" },
+  "app_enter_password_placeholder": { "message": "Nhập mật khẩu của bạn" },
+  "app_password_warning": {
+    "message": "⚠️ Quan trọng: Nếu bạn quên mật khẩu, không thể khôi phục. Tất cả dữ liệu chỉ lưu trên thiết bị này và không thể truy cập nếu không có mật khẩu đúng."
+  },
+  "app_instruction_save": {
+    "message": "📌 Để lưu dấu trang, nhấn nút 💾 ở đầu trang."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Để khóa dấu trang, nhấn biểu tượng 🔒 ở đầu trang."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Để xem dấu trang thông thường, nhấn biểu tượng 👁️ ở đầu trang."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Để xem dấu trang ẩn, nhấn biểu tượng 🕶️ ở đầu trang."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Để sử dụng tiện ích ở chế độ ẩn danh, nhấn chuột phải vào biểu tượng, chọn 'Quản lý tiện ích', và bật 'Cho phép ở chế độ ẩn danh'."
+  },
+  "app_unlock": { "message": "🔓 Mở khóa" },
+  "app_donate_using": { "message": "Cảm ơn bạn đã sử dụng tiện ích!" },
+  "app_donate_call": {
+    "message": "Công cụ này được tạo ra vì quyền riêng tư. Nếu hữu ích, hãy ủng hộ phát triển ☕"
+  },
+  "app_donate_now": { "message": "Ủng hộ dự án 120,000₫" },
+  "app_donate_leter": { "message": "Có thể sau" },
+  "app_ads": {
+    "message": "📢 Không nhận được câu trả lời tốt từ AI? Tự động hóa prompt của bạn."
+  },
+  "app_pass_short_error": { "message": "Mật khẩu phải có ít nhất 4 ký tự" },
+  "app_pass_incorrect_error": { "message": "Mật khẩu không đúng" },
+  "app_feedback_title": { "message": "⭐ Bạn thích tiện ích này?" },
+  "app_feedback_text": { "message": "Đánh giá ngắn sẽ rất ý nghĩa! 🙏" },
+  "app_feedback_button_review": { "message": "Để lại đánh giá" },
+  "app_feedback_button_later": { "message": "Sau" },
+  "app_feedback_button_never": { "message": "Không hiển thị lại" }
+}

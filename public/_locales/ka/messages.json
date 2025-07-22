@@ -1,0 +1,48 @@
+{
+  "app_name": { "message": "პირადი სანიშნების საცავი" },
+  "app_description": {
+    "message": "პირადი სანიშნების შენახვა. შეინახეთ და დაიცავით ბმულები პაროლით — მხოლოდ თქვენ შეგიძლიათ ნახოთ ისინი."
+  },
+  "app_enter_password": { "message": "🔒 შეიყვანეთ პაროლი" },
+  "app_create_password": { "message": "🔒 შექმენით პაროლი" },
+  "app_set_password": { "message": "პაროლის დაყენება" },
+  "app_create_password_placeholder": { "message": "შექმენით თქვენი პაროლი" },
+  "app_enter_password_placeholder": { "message": "შეიყვანეთ თქვენი პაროლი" },
+  "app_password_warning": {
+    "message": "⚠️ მნიშვნელოვანია: თუ პაროლი დაგავიწყდათ, მისი აღდგენა შეუძლებელია. ყველა მონაცემი ინახება მხოლოდ ამ მოწყობილობაზე და სწორ პაროლის გარეშე მიუწვდომელია."
+  },
+  "app_instruction_save": {
+    "message": "📌 სანიშნის შესანახად დააწკაპუნეთ სათაურის 💾 ღილაკზე."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 სანიშნების დასაბლოკად დააწკაპუნეთ სათაურის 🔒 ხატზე."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ ჩვეულებრივი სანიშნების სანახავად დააწკაპუნეთ სათაურის 👁️ ხატზე."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ ინკოგნიტო სანიშნების სანახავად დააწკაპუნეთ სათაურის 🕶️ ხატზე."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "გაფართოების ინკოგნიტო რეჟიმში გამოსაყენებლად, დააწკაპუნეთ ხატზე მარჯვენა ღილაკით, აირჩიეთ 'გაფართოების მართვა' და ჩართეთ 'ინკოგნიტოში დაშვება'."
+  },
+  "app_unlock": { "message": "🔓 განბლოკვა" },
+  "app_donate_using": { "message": "გმადლობთ გაფართოების გამოყენებისთვის!" },
+  "app_donate_call": {
+    "message": "ეს ინსტრუმენტი შექმნილია კონფიდენციალურობისთვის. თუ დაგეხმარათ, მხარი დაუჭირეთ განვითარებას ☕"
+  },
+  "app_donate_now": { "message": "მხარი დაუჭირეთ პროექტს ₾15" },
+  "app_donate_leter": { "message": "შეიძლება მოგვიანებით" },
+  "app_ads": {
+    "message": "📢 AI-სგან კარგი პასუხები არ მიიღეთ? ავტომატიზეთ თქვენი მოთხოვნები."
+  },
+  "app_pass_short_error": { "message": "პაროლი უნდა იყოს მინიმუმ 4 სიმბოლო" },
+  "app_pass_incorrect_error": { "message": "პაროლი არასწორია" },
+  "app_feedback_title": { "message": "⭐ მოგწონთ გაფართოება?" },
+  "app_feedback_text": {
+    "message": "მოკლე შეფასება ძალიან მნიშვნელოვანია! 🙏"
+  },
+  "app_feedback_button_review": { "message": "დატოვეთ შეფასება" },
+  "app_feedback_button_later": { "message": "მოგვიანებით" },
+  "app_feedback_button_never": { "message": "აღარ აჩვენო" }
+}

@@ -1,0 +1,80 @@
+{
+  "app_name": {
+    "message": "私人书签保险箱"
+  },
+  "app_description": {
+    "message": "私密存储你的书签。使用密码保存并保护链接 — 只有你能查看它们。"
+  },
+  "app_enter_password": {
+    "message": "🔒 输入密码"
+  },
+  "app_create_password": {
+    "message": "🔒 创建密码"
+  },
+  "app_set_password": {
+    "message": "设置密码"
+  },
+  "app_create_password_placeholder": {
+    "message": "创建你的密码"
+  },
+  "app_enter_password_placeholder": {
+    "message": "请输入你的密码"
+  },
+  "app_password_warning": {
+    "message": "⚠️ 重要提示：如果你忘记了密码，将无法找回或重置。你的数据仅保存在本设备中，且无法在没有正确密码的情况下访问。"
+  },
+  "app_instruction_save": {
+    "message": "📌 要保存书签，请点击顶部的 💾 按钮。"
+  },
+  "app_instruction_lock": {
+    "message": "🔒 要锁定书签，请点击顶部的 🔒 图标。"
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ 要查看普通书签，请点击顶部的 👁️ 图标。"
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ 要查看私密书签，请点击顶部的 🕶️ 图标。"
+  },
+  "app_instruction_incognito_hint": {
+    "message": "要在无痕模式中使用扩展程序，请右键点击图标，选择“管理扩展程序”，然后启用“允许在无痕模式中运行”。"
+  },
+  "app_unlock": {
+    "message": "🔓 解锁"
+  },
+  "app_donate_using": {
+    "message": "感谢你使用此扩展程序！"
+  },
+  "app_donate_call": {
+    "message": "这个工具是出于对隐私的热爱而开发的。如果它对你有帮助，欢迎支持开发 ☕"
+  },
+  "app_donate_now": {
+    "message": "赞助项目 5💲"
+  },
+  "app_donate_leter": {
+    "message": "以后再说"
+  },
+  "app_ads": {
+    "message": "📢 AI 回答不理想？试试自动化提示。"
+  },
+  "app_pass_short_error": {
+    "message": "密码至少需要 4 个字符"
+  },
+  "app_pass_incorrect_error": {
+    "message": "密码错误"
+  },
+  "app_feedback_title": {
+    "message": "⭐ 你喜欢这个扩展吗？"
+  },
+  "app_feedback_text": {
+    "message": "如果你能留下评论，我们将不胜感激！"
+  },
+  "app_feedback_button_review": {
+    "message": "留下评论"
+  },
+  "app_feedback_button_later": {
+    "message": "稍后提醒"
+  },
+  "app_feedback_button_never": {
+    "message": "不再显示"
+  }
+}

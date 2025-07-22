@@ -1,0 +1,46 @@
+{
+  "app_name": { "message": "Penyimpanan Bookmark Pribadi" },
+  "app_description": {
+    "message": "Penyimpanan bookmark pribadi. Simpan dan lindungi tautan dengan kata sandi — hanya Anda yang dapat melihatnya."
+  },
+  "app_enter_password": { "message": "🔒 Masukkan kata sandi" },
+  "app_create_password": { "message": "🔒 Buat kata sandi" },
+  "app_set_password": { "message": "Setel kata sandi" },
+  "app_create_password_placeholder": { "message": "Buat kata sandi Anda" },
+  "app_enter_password_placeholder": { "message": "Masukkan kata sandi Anda" },
+  "app_password_warning": {
+    "message": "⚠️ Penting: Jika Anda lupa kata sandi, tidak dapat dipulihkan. Semua data hanya disimpan di perangkat ini dan tidak dapat diakses tanpa kata sandi yang benar."
+  },
+  "app_instruction_save": {
+    "message": "📌 Untuk menyimpan bookmark, klik tombol 💾 di header."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Untuk mengunci bookmark, klik ikon 🔒 di header."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Untuk melihat bookmark biasa, klik ikon 👁️ di header."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Untuk melihat bookmark incognito, klik ikon 🕶️ di header."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Untuk menggunakan ekstensi di mode incognito, klik kanan ikon, pilih 'Kelola ekstensi', dan aktifkan 'Izinkan di incognito'."
+  },
+  "app_unlock": { "message": "🔓 Buka kunci" },
+  "app_donate_using": { "message": "Terima kasih telah menggunakan ekstensi!" },
+  "app_donate_call": {
+    "message": "Alat ini dibuat dengan cinta untuk privasi. Jika bermanfaat, dukung pengembangannya ☕"
+  },
+  "app_donate_now": { "message": "Dukung proyek Rp75.000" },
+  "app_donate_leter": { "message": "Mungkin nanti" },
+  "app_ads": {
+    "message": "📢 Tidak mendapatkan jawaban bagus dari AI? Otomatiskan prompt Anda."
+  },
+  "app_pass_short_error": { "message": "Kata sandi minimal 4 karakter" },
+  "app_pass_incorrect_error": { "message": "Kata sandi salah" },
+  "app_feedback_title": { "message": "⭐ Menyukai ekstensi ini?" },
+  "app_feedback_text": { "message": "Ulasan singkat sangat berarti! 🙏" },
+  "app_feedback_button_review": { "message": "Tinggalkan ulasan" },
+  "app_feedback_button_later": { "message": "Nanti" },
+  "app_feedback_button_never": { "message": "Jangan tampilkan lagi" }
+}

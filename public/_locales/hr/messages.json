@@ -1,0 +1,46 @@
+{
+  "app_name": { "message": "Privatni spremnik za oznake" },
+  "app_description": {
+    "message": "Privatno spremanje oznaka. Spremite i zaštitite poveznice lozinkom — samo vi ih možete vidjeti."
+  },
+  "app_enter_password": { "message": "🔒 Unesite lozinku" },
+  "app_create_password": { "message": "🔒 Kreirajte lozinku" },
+  "app_set_password": { "message": "Postavi lozinku" },
+  "app_create_password_placeholder": { "message": "Kreirajte svoju lozinku" },
+  "app_enter_password_placeholder": { "message": "Unesite svoju lozinku" },
+  "app_password_warning": {
+    "message": "⚠️ Važno: Ako zaboravite lozinku, ne može se vratiti. Svi podaci su pohranjeni samo na ovom uređaju i nisu dostupni bez ispravne lozinke."
+  },
+  "app_instruction_save": {
+    "message": "📌 Za spremanje oznake kliknite gumb 💾 u zaglavlju."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Za zaključavanje oznaka kliknite ikonu 🔒 u zaglavlju."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Za prikaz običnih oznaka kliknite ikonu 👁️ u zaglavlju."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Za prikaz incognito oznaka kliknite ikonu 🕶️ u zaglavlju."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Za korištenje ekstenzije u incognito načinu, desnim klikom na ikonu odaberite 'Upravljanje ekstenzijom' i omogućite 'Dopusti u incognito'."
+  },
+  "app_unlock": { "message": "🔓 Otključaj" },
+  "app_donate_using": { "message": "Hvala što koristite ekstenziju!" },
+  "app_donate_call": {
+    "message": "Ovaj alat je napravljen s ljubavlju prema privatnosti. Ako vam je koristan, podržite razvoj ☕"
+  },
+  "app_donate_now": { "message": "Podržite projekt za 5€" },
+  "app_donate_leter": { "message": "Možda kasnije" },
+  "app_ads": {
+    "message": "📢 Ne dobivate dobre odgovore od AI-a? Automatizirajte svoje upite."
+  },
+  "app_pass_short_error": { "message": "Lozinka mora imati najmanje 4 znaka" },
+  "app_pass_incorrect_error": { "message": "Pogrešna lozinka" },
+  "app_feedback_title": { "message": "⭐ Sviđa li vam se ekstenzija?" },
+  "app_feedback_text": { "message": "Kratka recenzija puno znači! 🙏" },
+  "app_feedback_button_review": { "message": "Ostavite recenziju" },
+  "app_feedback_button_later": { "message": "Kasnije" },
+  "app_feedback_button_never": { "message": "Ne prikazuj više" }
+}

@@ -1,0 +1,44 @@
+{
+  "app_name": { "message": "私人書籤保管箱" },
+  "app_description": {
+    "message": "私人書籤儲存。用密碼保存和保護連結 — 只有你能看到它們。"
+  },
+  "app_enter_password": { "message": "🔒 輸入密碼" },
+  "app_create_password": { "message": "🔒 創建密碼" },
+  "app_set_password": { "message": "設定密碼" },
+  "app_create_password_placeholder": { "message": "創建你的密碼" },
+  "app_enter_password_placeholder": { "message": "輸入你的密碼" },
+  "app_password_warning": {
+    "message": "⚠️ 重要提示：如果你忘記密碼，將無法恢復。所有資料只儲存在此裝置，沒有正確密碼無法存取。"
+  },
+  "app_instruction_save": {
+    "message": "📌 要保存書籤，請點擊標題中的 💾 按鈕。"
+  },
+  "app_instruction_lock": {
+    "message": "🔒 要鎖定書籤，請點擊標題中的 🔒 圖示。"
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ 查看普通書籤，請點擊標題中的 👁️ 圖示。"
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ 查看隱身書籤，請點擊標題中的 🕶️ 圖示。"
+  },
+  "app_instruction_incognito_hint": {
+    "message": "要在隱身模式下使用擴展，右鍵點擊圖示，選擇“管理擴展”，並啟用“允許在隱身中”。"
+  },
+  "app_unlock": { "message": "🔓 解鎖" },
+  "app_donate_using": { "message": "感謝使用本擴展！" },
+  "app_donate_call": {
+    "message": "這個工具是為了隱私而打造。如果對你有幫助，請考慮支持開發 ☕"
+  },
+  "app_donate_now": { "message": "支持項目 HK💲40" },
+  "app_donate_leter": { "message": "稍後再說" },
+  "app_ads": { "message": "📢 AI 回答不理想？自動化你的提示。" },
+  "app_pass_short_error": { "message": "密碼至少需要 4 個字符" },
+  "app_pass_incorrect_error": { "message": "密碼錯誤" },
+  "app_feedback_title": { "message": "⭐ 喜歡這個擴展嗎？" },
+  "app_feedback_text": { "message": "一個簡短的評價對我們很重要！🙏" },
+  "app_feedback_button_review": { "message": "留下評價" },
+  "app_feedback_button_later": { "message": "稍後" },
+  "app_feedback_button_never": { "message": "不再顯示" }
+}

@@ -1,0 +1,46 @@
+{
+  "app_name": { "message": "Soukromý správce záložek" },
+  "app_description": {
+    "message": "Soukromé ukládání záložek. Ukládejte a chraňte odkazy heslem — pouze vy je můžete vidět."
+  },
+  "app_enter_password": { "message": "🔒 Zadejte heslo" },
+  "app_create_password": { "message": "🔒 Vytvořte heslo" },
+  "app_set_password": { "message": "Nastavit heslo" },
+  "app_create_password_placeholder": { "message": "Vytvořte své heslo" },
+  "app_enter_password_placeholder": { "message": "Zadejte své heslo" },
+  "app_password_warning": {
+    "message": "⚠️ Důležité: Pokud zapomenete heslo, nelze jej obnovit. Všechna data jsou uložena pouze na tomto zařízení a bez správného hesla nejsou dostupná."
+  },
+  "app_instruction_save": {
+    "message": "📌 Pro uložení záložky klikněte na tlačítko 💾 v záhlaví."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Pro uzamčení záložek klikněte na ikonu 🔒 v záhlaví."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Pro zobrazení běžných záložek klikněte na ikonu 👁️ v záhlaví."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Pro zobrazení anonymních záložek klikněte na ikonu 🕶️ v záhlaví."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Pro použití rozšíření v anonymním režimu klikněte pravým tlačítkem na ikonu, zvolte 'Spravovat rozšíření' a povolte 'Povolit v anonymním režimu'."
+  },
+  "app_unlock": { "message": "🔓 Odemknout" },
+  "app_donate_using": { "message": "Děkujeme za používání rozšíření!" },
+  "app_donate_call": {
+    "message": "Tento nástroj byl vytvořen s láskou k soukromí. Pokud vám pomohl, podpořte jeho vývoj ☕"
+  },
+  "app_donate_now": { "message": "Podpořte projekt za 120 Kč" },
+  "app_donate_leter": { "message": "Možná později" },
+  "app_ads": {
+    "message": "📢 Nedostáváte dobré odpovědi od AI? Automatizujte své dotazy."
+  },
+  "app_pass_short_error": { "message": "Heslo musí mít alespoň 4 znaky" },
+  "app_pass_incorrect_error": { "message": "Nesprávné heslo" },
+  "app_feedback_title": { "message": "⭐ Líbí se vám rozšíření?" },
+  "app_feedback_text": { "message": "Krátká recenze je velmi důležitá! 🙏" },
+  "app_feedback_button_review": { "message": "Zanechte recenzi" },
+  "app_feedback_button_later": { "message": "Později" },
+  "app_feedback_button_never": { "message": "Nezobrazovat znovu" }
+}

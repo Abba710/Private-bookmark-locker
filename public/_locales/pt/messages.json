@@ -1,0 +1,50 @@
+{
+  "app_name": { "message": "Cofre de Favoritos Privados" },
+  "app_description": {
+    "message": "Armazenamento privado de favoritos. Salve e proteja links com uma senha — só você pode vê-los."
+  },
+  "app_enter_password": { "message": "🔒 Digite a senha" },
+  "app_create_password": { "message": "🔒 Criar senha" },
+  "app_set_password": { "message": "Definir senha" },
+  "app_create_password_placeholder": { "message": "Crie sua senha" },
+  "app_enter_password_placeholder": { "message": "Digite sua senha" },
+  "app_password_warning": {
+    "message": "⚠️ Importante: Se você esquecer sua senha, ela não poderá ser recuperada. Todos os dados são armazenados apenas neste dispositivo e não podem ser acessados sem a senha correta."
+  },
+  "app_instruction_save": {
+    "message": "📌 Para salvar um favorito, clique no botão 💾 no cabeçalho."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Para bloquear favoritos, clique no ícone 🔒 no cabeçalho."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Para ver favoritos normais, clique no ícone 👁️ no cabeçalho."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Para ver favoritos anônimos, clique no ícone 🕶️ no cabeçalho."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Para usar a extensão no modo anônimo, clique com o botão direito no ícone, escolha 'Gerenciar extensão' e habilite 'Permitir no modo anônimo'."
+  },
+  "app_unlock": { "message": "🔓 Desbloquear" },
+  "app_donate_using": { "message": "Obrigado por usar a extensão!" },
+  "app_donate_call": {
+    "message": "Esta ferramenta foi criada com amor pela privacidade. Se foi útil para você, considere apoiar o desenvolvimento ☕"
+  },
+  "app_donate_now": { "message": "Apoie o projeto por R💲25" },
+  "app_donate_leter": { "message": "Talvez depois" },
+  "app_ads": {
+    "message": "📢 Não está recebendo boas respostas da IA? Automatize seus prompts."
+  },
+  "app_pass_short_error": {
+    "message": "A senha deve ter pelo menos 4 caracteres"
+  },
+  "app_pass_incorrect_error": { "message": "Senha incorreta" },
+  "app_feedback_title": { "message": "⭐ Está gostando da extensão?" },
+  "app_feedback_text": {
+    "message": "Uma avaliação rápida seria muito importante! 🙏"
+  },
+  "app_feedback_button_review": { "message": "Deixe uma avaliação" },
+  "app_feedback_button_later": { "message": "Depois" },
+  "app_feedback_button_never": { "message": "Não mostrar novamente" }
+}

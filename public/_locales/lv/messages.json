@@ -1,0 +1,46 @@
+{
+  "app_name": { "message": "Privātā grāmatzīmju glabātuve" },
+  "app_description": {
+    "message": "Privāta grāmatzīmju glabāšana. Saglabājiet un aizsargājiet saites ar paroli — tikai jūs varat tās redzēt."
+  },
+  "app_enter_password": { "message": "🔒 Ievadiet paroli" },
+  "app_create_password": { "message": "🔒 Izveidojiet paroli" },
+  "app_set_password": { "message": "Iestatīt paroli" },
+  "app_create_password_placeholder": { "message": "Izveidojiet savu paroli" },
+  "app_enter_password_placeholder": { "message": "Ievadiet savu paroli" },
+  "app_password_warning": {
+    "message": "⚠️ Svarīgi: Ja aizmirstat paroli, to nevar atjaunot. Visi dati tiek glabāti tikai šajā ierīcē un nav pieejami bez pareizās paroles."
+  },
+  "app_instruction_save": {
+    "message": "📌 Lai saglabātu grāmatzīmi, noklikšķiniet uz 💾 pogas augšpusē."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Lai bloķētu grāmatzīmes, noklikšķiniet uz 🔒 ikonas augšpusē."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Lai skatītu parastās grāmatzīmes, noklikšķiniet uz 👁️ ikonas augšpusē."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Lai skatītu inkognito grāmatzīmes, noklikšķiniet uz 🕶️ ikonas augšpusē."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Lai izmantotu paplašinājumu inkognito režīmā, noklikšķiniet ar peles labo pogu uz ikonas, izvēlieties 'Pārvaldīt paplašinājumu' un aktivizējiet 'Atļaut inkognito'."
+  },
+  "app_unlock": { "message": "🔓 Atslēgt" },
+  "app_donate_using": { "message": "Paldies, ka izmantojat paplašinājumu!" },
+  "app_donate_call": {
+    "message": "Šis rīks ir izveidots privātuma dēļ. Ja tas jums palīdzēja, atbalstiet izstrādi ☕"
+  },
+  "app_donate_now": { "message": "Atbalstiet projektu par €5" },
+  "app_donate_leter": { "message": "Varbūt vēlāk" },
+  "app_ads": {
+    "message": "📢 Nesaņemat labas atbildes no AI? Automatizējiet savus pieprasījumus."
+  },
+  "app_pass_short_error": { "message": "Parolei jābūt vismaz 4 rakstzīmēm" },
+  "app_pass_incorrect_error": { "message": "Nepareiza parole" },
+  "app_feedback_title": { "message": "⭐ Patīk paplašinājums?" },
+  "app_feedback_text": { "message": "Īsa atsauksme ir ļoti svarīga! 🙏" },
+  "app_feedback_button_review": { "message": "Atstāt atsauksmi" },
+  "app_feedback_button_later": { "message": "Vēlāk" },
+  "app_feedback_button_never": { "message": "Nerādīt vairs" }
+}

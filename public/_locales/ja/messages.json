@@ -1,0 +1,80 @@
+{
+  "app_name": {
+    "message": "プライベートブックマークロッカー"
+  },
+  "app_description": {
+    "message": "プライベートなブックマークを保存。リンクをパスワードで保護して、他の誰にも見られないようにします。"
+  },
+  "app_enter_password": {
+    "message": "🔒 パスワードを入力"
+  },
+  "app_create_password": {
+    "message": "🔒 パスワードを作成"
+  },
+  "app_set_password": {
+    "message": "パスワードを設定"
+  },
+  "app_create_password_placeholder": {
+    "message": "パスワードを作成してください"
+  },
+  "app_enter_password_placeholder": {
+    "message": "パスワードを入力してください"
+  },
+  "app_password_warning": {
+    "message": "⚠️ 重要: パスワードを忘れた場合、復元やリセットはできません。データはこのデバイスのみに保存されており、正しいパスワードがないとアクセスできません。"
+  },
+  "app_instruction_save": {
+    "message": "📌 ブックマークを保存するには、上部の 💾 ボタンをクリックしてください。"
+  },
+  "app_instruction_lock": {
+    "message": "🔒 ブックマークをロックするには、🔒 アイコンをクリックしてください。"
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ 通常のブックマークを見るには、👁️ アイコンをクリックしてください。"
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ プライベートブックマークを見るには、🕶️ アイコンをクリックしてください。"
+  },
+  "app_instruction_incognito_hint": {
+    "message": "シークレットモードで拡張機能を使用するには、アイコンを右クリックして「拡張機能を管理」を選び、「シークレットモードでの実行を許可」を有効にしてください。"
+  },
+  "app_unlock": {
+    "message": "🔓 ロック解除"
+  },
+  "app_donate_using": {
+    "message": "ご利用ありがとうございます！"
+  },
+  "app_donate_call": {
+    "message": "このツールはプライバシーを大切にする気持ちから生まれました。もしお役に立ったなら、開発支援をご検討ください ☕"
+  },
+  "app_donate_now": {
+    "message": "このプロジェクトを 5💲 で支援する"
+  },
+  "app_donate_leter": {
+    "message": "あとで"
+  },
+  "app_ads": {
+    "message": "📢 AIの回答がイマイチ？プロンプトを自動化しよう。"
+  },
+  "app_pass_short_error": {
+    "message": "パスワードは4文字以上である必要があります"
+  },
+  "app_pass_incorrect_error": {
+    "message": "パスワードが正しくありません"
+  },
+  "app_feedback_title": {
+    "message": "⭐ この拡張機能は気に入りましたか？"
+  },
+  "app_feedback_text": {
+    "message": "レビューを残していただけると嬉しいです！"
+  },
+  "app_feedback_button_review": {
+    "message": "レビューを書く"
+  },
+  "app_feedback_button_later": {
+    "message": "後で"
+  },
+  "app_feedback_button_never": {
+    "message": "今後表示しない"
+  }
+}

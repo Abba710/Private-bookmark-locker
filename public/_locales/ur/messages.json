@@ -1,0 +1,48 @@
+{
+  "app_name": { "message": "نجی بُک مارک لاکر" },
+  "app_description": {
+    "message": "نجی بُک مارک اسٹوریج۔ لنکس کو پاس ورڈ کے ساتھ محفوظ کریں اور تحفظ فراہم کریں — صرف آپ ہی انہیں دیکھ سکتے ہیں۔"
+  },
+  "app_enter_password": { "message": "🔒 پاس ورڈ درج کریں" },
+  "app_create_password": { "message": "🔒 پاس ورڈ بنائیں" },
+  "app_set_password": { "message": "پاس ورڈ سیٹ کریں" },
+  "app_create_password_placeholder": { "message": "اپنا پاس ورڈ بنائیں" },
+  "app_enter_password_placeholder": { "message": "اپنا پاس ورڈ درج کریں" },
+  "app_password_warning": {
+    "message": "⚠️ اہم: اگر آپ اپنا پاس ورڈ بھول جاتے ہیں تو اسے بحال نہیں کیا جا سکتا۔ تمام ڈیٹا صرف اس ڈیوائس پر محفوظ ہے اور درست پاس ورڈ کے بغیر رسائی ممکن نہیں۔"
+  },
+  "app_instruction_save": {
+    "message": "📌 بُک مارک محفوظ کرنے کے لیے ہیڈر میں 💾 بٹن پر کلک کریں۔"
+  },
+  "app_instruction_lock": {
+    "message": "🔒 بُک مارک لاک کرنے کے لیے ہیڈر میں 🔒 آئیکن پر کلک کریں۔"
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ عام بُک مارک دیکھنے کے لیے ہیڈر میں 👁️ آئیکن پر کلک کریں۔"
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ خفیہ بُک مارک دیکھنے کے لیے ہیڈر میں 🕶️ آئیکن پر کلک کریں۔"
+  },
+  "app_instruction_incognito_hint": {
+    "message": "ایکسٹینشن کو خفیہ موڈ میں استعمال کرنے کے لیے آئیکن پر رائٹ کلک کریں، 'ایکسٹینشن مینیج کریں' منتخب کریں، اور 'خفیہ میں اجازت دیں' کو فعال کریں۔"
+  },
+  "app_unlock": { "message": "🔓 ان لاک کریں" },
+  "app_donate_using": { "message": "ایکسٹینشن استعمال کرنے کا شکریہ!" },
+  "app_donate_call": {
+    "message": "یہ ٹول پرائیویسی کے لیے بنایا گیا ہے۔ اگر یہ آپ کے لیے مددگار رہا ہے تو اس کی ترقی میں تعاون کریں ☕"
+  },
+  "app_donate_now": { "message": "پروجیکٹ کو سپورٹ کریں PKR 1500 میں" },
+  "app_donate_leter": { "message": "شاید بعد میں" },
+  "app_ads": {
+    "message": "📢 AI سے اچھے جواب نہیں مل رہے؟ اپنے پرامپٹس کو خودکار بنائیں۔"
+  },
+  "app_pass_short_error": {
+    "message": "پاس ورڈ کم از کم 4 حروف کا ہونا چاہیے"
+  },
+  "app_pass_incorrect_error": { "message": "غلط پاس ورڈ" },
+  "app_feedback_title": { "message": "⭐ ایکسٹینشن پسند آئی؟" },
+  "app_feedback_text": { "message": "ایک مختصر جائزہ بہت اہم ہوگا! 🙏" },
+  "app_feedback_button_review": { "message": "جائزہ دیں" },
+  "app_feedback_button_later": { "message": "بعد میں" },
+  "app_feedback_button_never": { "message": "دوبارہ نہ دکھائیں" }
+}

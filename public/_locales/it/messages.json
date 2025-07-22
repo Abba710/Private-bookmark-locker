@@ -1,0 +1,80 @@
+{
+  "app_name": {
+    "message": "Cassaforte segnalibri privata"
+  },
+  "app_description": {
+    "message": "Archivio privato di segnalibri. Salva e proteggi i link con una password — solo tu puoi vederli."
+  },
+  "app_enter_password": {
+    "message": "🔒 Inserisci la password"
+  },
+  "app_create_password": {
+    "message": "🔒 Crea una password"
+  },
+  "app_set_password": {
+    "message": "Imposta la password"
+  },
+  "app_create_password_placeholder": {
+    "message": "Crea la tua password"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Inserisci la tua password"
+  },
+  "app_password_warning": {
+    "message": "⚠️ Importante: Se dimentichi la password, non potrà essere recuperata. I dati sono memorizzati solo su questo dispositivo e non possono essere accessibili senza la password corretta."
+  },
+  "app_instruction_save": {
+    "message": "📌 Per salvare un segnalibro, clicca sul pulsante 💾 in alto."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Per bloccare i segnalibri, clicca sull'icona 🔒 in alto."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Per visualizzare i segnalibri normali, clicca sull'icona 👁️ in alto."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Per visualizzare i segnalibri in incognito, clicca sull'icona 🕶️ in alto."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Per usare l'estensione in modalità incognito, fai clic destro sull'icona, seleziona 'Gestisci estensione' e abilita 'Consenti in incognito'."
+  },
+  "app_unlock": {
+    "message": "🔓 Sblocca"
+  },
+  "app_donate_using": {
+    "message": "Grazie per aver utilizzato l'estensione!"
+  },
+  "app_donate_call": {
+    "message": "Questo strumento è stato creato con amore per la privacy. Se ti è stato utile, considera di supportarne lo sviluppo ☕"
+  },
+  "app_donate_now": {
+    "message": "Supporta il progetto con 5💲"
+  },
+  "app_donate_leter": {
+    "message": "Magari più tardi"
+  },
+  "app_ads": {
+    "message": "📢 L'IA non dà buone risposte? Automatizza i tuoi prompt."
+  },
+  "app_pass_short_error": {
+    "message": "La password deve contenere almeno 4 caratteri"
+  },
+  "app_pass_incorrect_error": {
+    "message": "Password errata"
+  },
+  "app_feedback_title": {
+    "message": "⭐ Ti piace l’estensione?"
+  },
+  "app_feedback_text": {
+    "message": "Ci farebbe piacere se lasciassi una recensione!"
+  },
+  "app_feedback_button_review": {
+    "message": "Lascia una recensione"
+  },
+  "app_feedback_button_later": {
+    "message": "Più tardi"
+  },
+  "app_feedback_button_never": {
+    "message": "Non mostrare più"
+  }
+}

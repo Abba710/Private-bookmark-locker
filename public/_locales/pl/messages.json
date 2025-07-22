@@ -1,0 +1,48 @@
+{
+  "app_name": { "message": "Prywatny schowek zakładek" },
+  "app_description": {
+    "message": "Prywatne przechowywanie zakładek. Zapisuj i chroń linki hasłem — tylko Ty możesz je zobaczyć."
+  },
+  "app_enter_password": { "message": "🔒 Wprowadź hasło" },
+  "app_create_password": { "message": "🔒 Utwórz hasło" },
+  "app_set_password": { "message": "Ustaw hasło" },
+  "app_create_password_placeholder": { "message": "Utwórz swoje hasło" },
+  "app_enter_password_placeholder": { "message": "Wprowadź swoje hasło" },
+  "app_password_warning": {
+    "message": "⚠️ Ważne: Jeśli zapomnisz hasło, nie można go odzyskać. Wszystkie dane są przechowywane tylko na tym urządzeniu i nie są dostępne bez prawidłowego hasła."
+  },
+  "app_instruction_save": {
+    "message": "📌 Aby zapisać zakładkę, kliknij przycisk 💾 w nagłówku."
+  },
+  "app_instruction_lock": {
+    "message": "🔒 Aby zablokować zakładki, kliknij ikonę 🔒 w nagłówku."
+  },
+  "app_instruction_view_basic": {
+    "message": "👁️ Aby zobaczyć zwykłe zakładki, kliknij ikonę 👁️ w nagłówku."
+  },
+  "app_instruction_view_incognito": {
+    "message": "🕶️ Aby zobaczyć zakładki incognito, kliknij ikonę 🕶️ w nagłówku."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Aby używać rozszerzenia w trybie incognito, kliknij prawym przyciskiem ikonę, wybierz 'Zarządzaj rozszerzeniem' i włącz 'Zezwól w trybie incognito'."
+  },
+  "app_unlock": { "message": "🔓 Odblokuj" },
+  "app_donate_using": {
+    "message": "Dziękujemy za korzystanie z rozszerzenia!"
+  },
+  "app_donate_call": {
+    "message": "To narzędzie powstało z myślą o prywatności. Jeśli było pomocne, wesprzyj rozwój ☕"
+  },
+  "app_donate_now": { "message": "Wesprzyj projekt za 25 zł" },
+  "app_donate_leter": { "message": "Może później" },
+  "app_ads": {
+    "message": "📢 Nie otrzymujesz dobrych odpowiedzi od AI? Zautomatyzuj swoje zapytania."
+  },
+  "app_pass_short_error": { "message": "Hasło musi mieć co najmniej 4 znaki" },
+  "app_pass_incorrect_error": { "message": "Nieprawidłowe hasło" },
+  "app_feedback_title": { "message": "⭐ Podoba Ci się rozszerzenie?" },
+  "app_feedback_text": { "message": "Krótka recenzja jest bardzo ważna! 🙏" },
+  "app_feedback_button_review": { "message": "Zostaw recenzję" },
+  "app_feedback_button_later": { "message": "Później" },
+  "app_feedback_button_never": { "message": "Nie pokazuj ponownie" }
+}
