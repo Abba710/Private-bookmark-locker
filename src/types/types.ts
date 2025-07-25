@@ -23,5 +23,6 @@ export type DraggableItemProps = {
   children: (props: {
     listeners: Record<string, any>;
     attributes: Record<string, any>;
+    setDroppableRef?: (node: HTMLElement | null) => void;
   }) => JSX.Element;
 };
