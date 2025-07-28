@@ -35,11 +35,11 @@ export function LinkBookmark({
   };
 
   return (
-    <div className="flex items-center gap-1 min-h-[32px] w-[300px] px-2 py-1 bg-white/10 rounded-lg hover:bg-white/20 transition group">
+    <div className="flex items-center gap-1 w-[90vw] max-w-[300px] min-h-[32px] px-2 py-1 bg-white/10 rounded-lg hover:bg-white/20 transition group">
       {/* Drag handle */}
       <button
         type="button"
-        className="cursor-grab text-white/30 hover:text-white/60 text-sm shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+        className="cursor-grab text-white/30 select-none hover:text-white/60 text-xl text-center shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
         {...listeners}
         {...attributes}
         onClick={(e) => {
@@ -71,7 +71,7 @@ export function LinkBookmark({
         }}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-1 no-underline flex-grow min-w-0"
+        className="flex items-center select-none gap-1 no-underline flex-grow min-w-0"
         ref={setDroppableRef}
         title={`${bookmark.title}\n${bookmark.url}`}
       >
@@ -79,7 +79,7 @@ export function LinkBookmark({
         <img
           src={getFaviconUrl(bookmark.url)}
           alt=""
-          className="w-3 h-3 shrink-0"
+          className="w-4 h-4 shrink-0"
           onError={(e) => {
             const img = e.currentTarget as HTMLImageElement;
             const sibling = img.nextElementSibling as HTMLElement | null;
@@ -88,7 +88,7 @@ export function LinkBookmark({
             if (sibling) sibling.style.display = "inline";
           }}
         />
-        <span className="text-xs shrink-0 hidden">🔗</span>
+        <span className="text-xs select-none shrink-0 hidden">🔗</span>
 
         {/* Title and domain */}
         <div className="flex flex-col justify-center min-w-0 flex-grow">
@@ -104,13 +104,13 @@ export function LinkBookmark({
 
         {/* Incognito indicator */}
         {bookmark.incognito && (
-          <span className="text-white/50 text-xs shrink-0">🕶️</span>
+          <span className="text-white/50 select-none text-xs shrink-0">🕶️</span>
         )}
       </a>
 
       {/* Delete button */}
       <button
-        className="text-white/30 hover:text-white/80 text-xs shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+        className="text-white/30 select-none hover:text-white/80 text-xs shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();

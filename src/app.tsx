@@ -1,6 +1,6 @@
 import UserHeader from "./components/header";
 import ControlPanel from "./components/controlpanel";
-import BookmarkList from "./components/bookmarkList";
+import BookmarkList from "./components/bookmarks/bookmarkList";
 import OptionsPanel from "./components/optionsPanel";
 import PremiumBlock from "./components/premium";
 import { useEffect } from "preact/hooks";

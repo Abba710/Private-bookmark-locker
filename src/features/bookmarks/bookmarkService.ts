@@ -28,10 +28,18 @@ export function loadBookmarks(): Promise<Bookmark[]> {
   });
 }
 
+function removeById(list: Bookmark[], id: string): Bookmark[] {
+  return list
+    .filter((b) => b.id !== id)
+    .map((b) =>
+      b.children ? { ...b, children: removeById(b.children, id) } : b
+    );
+}
+
 export function deleteBookmarks(bookmarks: Bookmark[], id?: string) {
   if (!id) return;
 
-  const updated = bookmarks.filter((b) => b.id !== id);
+  const updated = removeById(bookmarks, id);
 
   chrome.storage.local.set({ bookmarks: updated }, () => {
     useBookmarkStore.getState().setBookmarks(updated);

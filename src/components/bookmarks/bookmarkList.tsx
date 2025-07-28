@@ -65,7 +65,7 @@ function BookmarkList() {
         onDragEnd={(e: DragEndEvent) => handleDragEnd(e)}
       >
         <SortableContext items={allIds}>
-          <div className="flex flex-wrap items-start content-start overflow-x-hidden gap-1 min-h-[400px] max-h-[400px] overflow-y-auto p-1">
+          <div className="flex flex-wrap items-start content-start overflow-x-hidden gap-1 w-full min-h-[400px] max-h-[400px] overflow-y-auto p-1">
             {filtered.length < 1 ? (
               <Instructions />
             ) : (
