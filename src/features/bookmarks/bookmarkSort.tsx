@@ -206,7 +206,7 @@ function getInsertPosition(
     return { shouldMove: false, reason: "Path not found" };
   }
 
-  // Проверяем, находятся ли элементы на одном уровне
+  // Check if the elements are on the same level
   const sameParent =
     activePath.length === overPath.length &&
     activePath.slice(0, -1).every((val, i) => val === overPath[i]);
@@ -215,10 +215,10 @@ function getInsertPosition(
     const activeIndex = activePath[activePath.length - 1];
     const overIndex = overPath[overPath.length - 1];
 
-    // Проверяем логику перемещения на одном уровне
+    // Check the logic of movement on one level
     if (hoverLine === "top") {
-      // Хотим вставить ПЕРЕД over элементом
-      // Если active уже перед over - не двигаем
+      // We want to insert BEFORE the over element
+      // If active is already before over - don't move
       if (activeIndex === overIndex - 1) {
         return {
           shouldMove: false,
@@ -226,8 +226,8 @@ function getInsertPosition(
         };
       }
     } else if (hoverLine === "bottom") {
-      // Хотим вставить ПОСЛЕ over элемента
-      // Если active уже после over - не двигаем
+      // We want to insert AFTER the over element
+      // If active is already after over - don't move
       if (activeIndex === overIndex + 1) {
         return {
           shouldMove: false,
@@ -237,14 +237,14 @@ function getInsertPosition(
     }
   }
 
-  // Проверяем вставку в папку
+  // Check insertion into folder
   if (hoverLine === "inside") {
     const overBookmark = findBookmarkById(bookmarks, overId);
     if (!overBookmark?.isFolder) {
       return { shouldMove: false, reason: "Target is not a folder" };
     }
 
-    // Проверяем, не пытаемся ли мы вставить папку саму в себя
+    // Check if we are trying to insert a folder into itself
     if (activeId === overId) {
       return { shouldMove: false, reason: "Cannot move folder into itself" };
     }
@@ -269,7 +269,7 @@ export function handleDragEnd(event: DragEndEvent) {
     | "inside"
     | null;
 
-  // Проверяем, нужно ли перемещение
+  // Check if a move is needed
   const { shouldMove, reason } = getInsertPosition(
     activeId,
     overId,
@@ -282,23 +282,23 @@ export function handleDragEnd(event: DragEndEvent) {
     return;
   }
 
-  // Находим пути к элементам
+  // Find paths to elements
   const activePath = findBookmarkPath(bookmarks, activeId);
   const overPath = findBookmarkPath(bookmarks, overId);
 
   if (!activePath || !overPath) return;
 
   try {
-    // Удаляем перемещаемый элемент
+    // Remove the moved element
     const [bookmarksAfterRemove, movedBookmark] = removeBookmarkAtPath(
       bookmarks,
       activePath
     );
 
-    // Корректируем путь для вставки, если нужно
+    // Adjust the insertion path if necessary
     let adjustedOverPath = [...overPath];
 
-    // Если удаленный элемент был перед целевым на том же уровне
+    // If the removed element was before the target at the same level
     const sameParent =
       activePath.length === overPath.length &&
       activePath.slice(0, -1).every((val, i) => val === overPath[i]);
@@ -310,7 +310,7 @@ export function handleDragEnd(event: DragEndEvent) {
       adjustedOverPath[adjustedOverPath.length - 1]--;
     }
 
-    // Определяем позицию вставки
+    // Determine the insertion position
     let insertPosition: "before" | "after" | "inside";
     if (hoverLine === "inside") {
       insertPosition = "inside";
@@ -320,7 +320,7 @@ export function handleDragEnd(event: DragEndEvent) {
       insertPosition = "after";
     }
 
-    // Вставляем элемент
+    // Insert element
     const finalBookmarks = insertBookmarkAtPath(
       bookmarksAfterRemove,
       adjustedOverPath,

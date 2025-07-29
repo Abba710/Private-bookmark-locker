@@ -21,7 +21,7 @@ export function FolderBookmark({
 
   return (
     <div className=" bg-white/10 w-[100vw] max-w-[300px] rounded-lg hover:bg-white/20">
-      {/* Основной элемент папки */}
+      {/* Main element folder */}
       <div className="flex items-center gap-1 px-2 py-1 transition group">
         {/* Drag handle */}
         <button
@@ -77,10 +77,10 @@ export function FolderBookmark({
         </button>
       </div>
 
-      {/* Дочерние элементы - в grid layout для компактности */}
+      {/* Child elements - in grid layout for compactness */}
       {isExpanded && bookmark.children && bookmark.children.length > 0 && (
         <div className=" mt-1 rounded-2xl">
-          <div className="flex flex-wrap gap-1">
+          <div className="flex-row gap-1">
             {bookmark.children.map((child) => (
               <Sortable id={child.id} key={child.id}>
                 {({ listeners, attributes, setDroppableRef }) =>

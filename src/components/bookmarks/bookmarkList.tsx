@@ -28,7 +28,7 @@ function BookmarkList() {
       : bookmarks.filter((bookmark) => !bookmark.incognito);
   }, [bookmarks, isIncognito]);
 
-  // Собираем все ID для SortableContext (включая вложенные)
+  // Collect all IDs for SortableContext (including nested ones)
   const getAllIds = (bookmarks: Bookmark[]): string[] => {
     let ids: string[] = [];
     for (const bookmark of bookmarks) {

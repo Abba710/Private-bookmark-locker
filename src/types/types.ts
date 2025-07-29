@@ -26,3 +26,10 @@ export type DraggableItemProps = {
     setDroppableRef?: (node: HTMLElement | null) => void;
   }) => JSX.Element;
 };
+
+export interface LockOverlayStore {
+  isLocked: boolean;
+  mode: "unlock" | "setup";
+  setIsLocked: (locked: boolean) => void;
+  setMode: (mode: "unlock" | "setup") => void;
+}

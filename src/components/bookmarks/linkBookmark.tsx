@@ -13,7 +13,7 @@ export function LinkBookmark({
   setDroppableRef: (node: HTMLElement | null) => void;
   onDelete: (id: string) => void;
 }) {
-  // Извлекаем favicon из URL
+  // Extract favicon from URL
   const getFaviconUrl = (url?: string) => {
     if (!url) return "🔗";
     try {
@@ -24,7 +24,7 @@ export function LinkBookmark({
     }
   };
 
-  // Извлекаем домен для отображения
+  // Retrieve the domain for display
   const getDomain = (url?: string) => {
     if (!url) return "";
     try {

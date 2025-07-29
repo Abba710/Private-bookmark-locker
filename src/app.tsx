@@ -3,27 +3,46 @@ import ControlPanel from "./components/controlpanel";
 import BookmarkList from "./components/bookmarks/bookmarkList";
 import OptionsPanel from "./components/optionsPanel";
 import PremiumBlock from "./components/premium";
+import LockOverlay from "@/components/lock/lockoverlay";
 import { useEffect } from "preact/hooks";
 
-import { useBookmarkStore } from "@/storage/statelibrary";
+import { useBookmarkStore, useLockOverlayStore } from "@/storage/statelibrary";
 import { loadBookmarks } from "@/features/bookmarks/bookmarkService";
+import { getInitialLockState } from "@/features/lock/lockservice";
 
-function app() {
+function App() {
+  const setIsLocked = useLockOverlayStore((state) => state.setIsLocked);
+  const isLocked = useLockOverlayStore((state) => state.isLocked);
   const setBookmarks = useBookmarkStore((state) => state.setBookmarks);
 
+  // Load bookmarks on startup
   useEffect(() => {
     loadBookmarks().then(setBookmarks);
   }, []);
 
+  // Check session and lock status on startup
+  useEffect(() => {
+    (async () => {
+      const locked = await getInitialLockState();
+      setIsLocked(locked);
+    })();
+  }, []);
+
   return (
     <div className="min-w-full min-h-screen p-4 bg-black text-white flex flex-col gap-[10px]">
-      <UserHeader />
-      <ControlPanel />
-      <BookmarkList />
-      <OptionsPanel />
-      <PremiumBlock />
+      {isLocked ? (
+        <LockOverlay />
+      ) : (
+        <>
+          <UserHeader />
+          <ControlPanel />
+          <BookmarkList />
+          <OptionsPanel />
+          <PremiumBlock />
+        </>
+      )}
     </div>
   );
 }
 
-export default app;
+export default App;
