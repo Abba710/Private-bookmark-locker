@@ -45,22 +45,42 @@ export function deleteBookmarks(bookmarks: Bookmark[], id?: string) {
     useBookmarkStore.getState().setBookmarks(updated);
   });
 }
+function createFolder(title: string, children: Bookmark[] = []): Bookmark {
+  return {
+    id: crypto.randomUUID(),
+    title,
+    incognito: useSwitchStore.getState().Switch,
+    isFolder: true,
+    children,
+  };
+}
+
+function addFolderToBookmarks(newFolder: Bookmark) {
+  const bookmarks = useBookmarkStore.getState().bookmarks;
+  const updated = [...bookmarks, newFolder];
+
+  chrome.storage.local.set({ bookmarks: updated }, () => {
+    useBookmarkStore.getState().setBookmarks(updated);
+  });
+}
 
 export function createBookmarkFolder() {
   const folderName = prompt("Enter folder name:");
   if (folderName === null) return;
 
-  const bookmarks = useBookmarkStore.getState().bookmarks;
-  const newFolder: Bookmark = {
-    id: crypto.randomUUID(),
-    title: folderName || "",
-    incognito: useSwitchStore.getState().Switch,
-    isFolder: true,
-    children: [],
-  };
+  addFolderToBookmarks(createFolder(folderName || ""));
+}
 
-  const updated = [...bookmarks, newFolder];
-  chrome.storage.local.set({ bookmarks: updated }, () => {
-    useBookmarkStore.getState().setBookmarks(updated);
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.action === "save_tabs") {
+    addFolderToBookmarks(createFolder("", message.data));
+  }
+});
+
+export function getChromeBookmarks() {
+  chrome.runtime.sendMessage({ action: "collect_bookmarks" }, (response) => {
+    if (response?.data) {
+      addFolderToBookmarks(createFolder("ChromeBookmarks", response.data));
+    }
   });
 }

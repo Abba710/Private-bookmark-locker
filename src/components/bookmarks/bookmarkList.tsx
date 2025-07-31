@@ -16,6 +16,7 @@ import { Sortable, handleDragEnd } from "@/features/bookmarks/bookmarkSort";
 import { FolderBookmark } from "./folderBookmark";
 import { LinkBookmark } from "./linkBookmark";
 import type { Bookmark } from "@/types/types";
+import { BookmarkSearch } from "./bookmarksearch";
 
 function BookmarkList() {
   const sensors = useSensors(useSensor(PointerSensor));
@@ -46,17 +47,25 @@ function BookmarkList() {
     deleteBookmarks(bookmarks, id);
   };
 
+  // Handle bookmark selection from search results
+  const handleBookmarkSelect = (bookmark: Bookmark) => {
+    if (bookmark.url) {
+      // Open bookmark in new tab
+      window.open(bookmark.url, "_blank");
+    }
+    // You can add additional logic here, such as:
+    // - Highlighting the selected bookmark in the list
+    // - Adding to recently accessed
+    // - Custom navigation logic
+  };
+
   return (
     <div className="w-full">
       {/* Search input */}
-      <div className="relative mb-3">
-        <input
-          type="text"
-          placeholder="🔍 Search"
-          className="w-full px-4 py-2 text-sm text-white bg-white/10 rounded-xl placeholder-white/60"
-        />
-        <span className="absolute right-3 top-2.5 text-white/50">👑</span>
-      </div>
+      <BookmarkSearch
+        onBookmarkSelect={handleBookmarkSelect}
+        placeholder="🔍 Search bookmarks"
+      />
 
       {/* Bookmark list */}
       <DndContext
