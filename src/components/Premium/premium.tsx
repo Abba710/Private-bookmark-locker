@@ -1,4 +1,8 @@
+import { usePremiumModalStore } from "@/storage/statelibrary";
+
 function PremiumBlock() {
+  const { openPremium } = usePremiumModalStore();
+
   return (
     <div className="w-full px-4 py-3 mt-4 bg-white/10 rounded-2xl flex gap-3 items-start">
       <div className="w-9 h-9 bg-white rounded-xl flex items-center justify-center">
@@ -12,7 +16,10 @@ function PremiumBlock() {
         <p className="text-white/60 text-xs leading-snug">
           Try new experiences with premium features.
         </p>
-        <button className="px-3 py-1.5 bg-white text-black rounded-xl text-sm font-medium mt-1">
+        <button
+          className="px-3 py-1.5 bg-white text-black rounded-xl text-sm font-medium mt-1 hover:bg-white/90 active:scale-95 transition-transform duration-150"
+          onClick={openPremium}
+        >
           Upgrade Plan
         </button>
       </div>

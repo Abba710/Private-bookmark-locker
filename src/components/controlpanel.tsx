@@ -3,6 +3,7 @@ import {
   saveCurrentPage,
 } from "@/features/bookmarks/bookmarkService";
 import { setSessionStatus } from "@/features/lock/lockservice";
+import { PremiumGate } from "@/features/premium/premiumGate";
 import { useSwitchStore, useLockOverlayStore } from "@/storage/statelibrary";
 
 function ControlPanel() {
@@ -32,14 +33,11 @@ function ControlPanel() {
         >
           🕵️
         </button>
-        <button
-          className="w-10 h-10 bg-white/20 rounded-xl flex text-2xl  items-center justify-center cursor-pointer hover:bg-white/30 transition"
-          onClick={() => {
-            createBookmarkFolder();
-          }}
-        >
-          📁
-        </button>
+        <PremiumGate action={createBookmarkFolder}>
+          <button className="w-10 h-10 bg-white/20 rounded-xl flex text-2xl  items-center justify-center cursor-pointer hover:bg-white/30 transition">
+            📁
+          </button>
+        </PremiumGate>
         <button
           className="w-10 h-10 bg-white/20 rounded-xl flex text-2xl  items-center justify-center cursor-pointer hover:bg-white/30 transition"
           onClick={saveCurrentPage}

@@ -4,71 +4,59 @@ import ExportDialog from "@/components/ImportExport/export";
 import { useBookmarkStore } from "@/storage/statelibrary";
 import exportBookmarks from "@/features/importExport/export";
 import { getChromeBookmarks } from "@/features/bookmarks/bookmarkService";
-
-const options = [
-  { label: "Import", icon: "📥", premium: true, action: "import" },
-  { label: "Export", icon: "📤", premium: true, action: "export" },
-  { label: "Settings", icon: "⚙️", premium: true, action: "settings" },
-  { label: "Collect", icon: "🔃", premium: true, action: "Collect" },
-];
+import { PremiumGate } from "@/features/premium/premiumGate";
 
 export default function OptionsPanel() {
-  // States for dialogs
   const bookmarks = useBookmarkStore((state) => state.bookmarks);
   const [showImport, setShowImport] = useState(false);
   const [showExport, setShowExport] = useState(false);
 
-  // Example: flag for premium user (true = user has premium)
-  const isPremiumUser = true;
-
-  // Action handler
-  const handleAction = (opt: (typeof options)[number]) => {
-    if (opt.premium && !isPremiumUser) {
-      alert("🚫 This feature is available for Premium users only.");
-      return;
-    }
-    switch (opt.action) {
-      case "import":
-        setShowImport(true);
-        break;
-      case "export":
-        setShowExport(true);
-        break;
-      case "settings":
-        alert("⚙️ Settings are cooming soon");
-        break;
-      case "Collect":
-        getChromeBookmarks();
-        break;
-    }
-  };
-
   return (
     <div>
-      {/* Panel with clickable options */}
-      <div className="w-full px-4 py-3 bg-white/10 rounded-2xl flex flex-col gap-1">
-        {options.map((opt, index) => (
-          <button
-            key={index}
-            onClick={() => handleAction(opt)}
-            disabled={opt.premium && !isPremiumUser}
-            className={`flex items-center justify-between text-white/90 text-sm px-1 rounded-lg transition
-              ${
-                opt.premium && !isPremiumUser
-                  ? "opacity-40 cursor-not-allowed"
-                  : "hover:bg-white/20 cursor-pointer"
-              }`}
-          >
+      {/* ✅ Container same as original */}
+      <div className="w-full bg-white/10 rounded-2xl px-1 flex flex-col">
+        {/* Import */}
+        <PremiumGate action={() => setShowImport(true)}>
+          <button className="flex items-center justify-between p-1 text-white/90 text-sm rounded-lg transition hover:bg-white/20 cursor-pointer w-full">
             <div className="flex items-center gap-2">
-              <span>{opt.icon}</span>
-              <span>{opt.label}</span>
+              <span>📥</span>
+              <span>Import</span>
             </div>
-            {opt.premium && <span className="text-white/40">👑</span>}
           </button>
-        ))}
+        </PremiumGate>
+
+        {/* Export */}
+        <PremiumGate action={() => setShowExport(true)}>
+          <button className="flex items-center justify-between text-white/90 text-sm p-1 rounded-lg transition hover:bg-white/20 cursor-pointer w-full ">
+            <div className="flex items-center gap-2">
+              <span>📤</span>
+              <span>Export</span>
+            </div>
+          </button>
+        </PremiumGate>
+
+        {/* Settings */}
+        <PremiumGate action={() => alert("⚙️ Settings are coming soon")}>
+          <button className="flex items-center justify-between text-white/90 text-sm p-1 rounded-lg transition hover:bg-white/20 cursor-pointer w-full ">
+            <div className="flex items-center gap-2">
+              <span>⚙️</span>
+              <span>Settings</span>
+            </div>
+          </button>
+        </PremiumGate>
+
+        {/* Collect */}
+        <PremiumGate action={() => getChromeBookmarks()}>
+          <button className="flex items-center justify-between text-white/90 text-sm p-1 rounded-lg transition hover:bg-white/20 cursor-pointer w-full ">
+            <div className="flex items-center gap-2">
+              <span>🔃</span>
+              <span>Collect</span>
+            </div>
+          </button>
+        </PremiumGate>
       </div>
 
-      {/* Modals */}
+      {/* ✅ Import/Export Modals */}
       {showImport && <ImportDialog onClose={() => setShowImport(false)} />}
       {showExport && (
         <ExportDialog

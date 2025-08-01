@@ -99,13 +99,22 @@ export async function setSessionStatus(status: boolean) {
 
 // Determine if the overlay should be shown at app startup
 export async function getInitialLockState(): Promise<boolean> {
-  const unlocked = await getSessionKey(); // check session
+  const unlocked = await getSessionKey(); // check if session is already unlocked
   if (unlocked) return false; // no lock if session is still active
 
   return new Promise((resolve) => {
     chrome.storage.local.get(["salt", "hash"], (result) => {
       const passwordSet = result.salt && result.hash;
-      resolve(!!passwordSet); // lock only if password exists
+
+      if (!passwordSet) {
+        // password not set yet → show overlay to create it
+        setMode("setup");
+        resolve(true);
+      } else {
+        // password exists but session is locked → ask for unlock
+        setMode("unlock");
+        resolve(true);
+      }
     });
   });
 }

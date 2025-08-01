@@ -65,8 +65,7 @@ function BookmarkList() {
       <BookmarkSearch
         onBookmarkSelect={handleBookmarkSelect}
         placeholder="🔍 Search bookmarks"
-      />
-
+      />{" "}
       {/* Bookmark list */}
       <DndContext
         sensors={sensors}

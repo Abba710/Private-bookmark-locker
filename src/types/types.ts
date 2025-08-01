@@ -33,3 +33,14 @@ export interface LockOverlayStore {
   setIsLocked: (locked: boolean) => void;
   setMode: (mode: "unlock" | "setup") => void;
 }
+
+export interface UserStore {
+  isPremium: boolean;
+  setPremium: (isPremium: boolean) => void;
+}
+
+export interface PremiumModalStore {
+  premiumOpen: boolean;
+  openPremium: () => void;
+  closePremium: () => void;
+}

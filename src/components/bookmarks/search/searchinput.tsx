@@ -26,7 +26,6 @@ export const SearchInput: FunctionalComponent<SearchInputProps> = ({
         placeholder={placeholder}
         className="w-full px-4 py-2 text-sm text-white bg-white/10 rounded-xl placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/20"
       />
-      <span className="absolute right-3 top-2.5 text-white/50">👑</span>
     </div>
   );
 };
