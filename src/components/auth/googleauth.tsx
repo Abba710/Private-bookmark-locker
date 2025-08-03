@@ -1,26 +1,18 @@
-import { useState, useEffect } from "preact/hooks";
+import { useAuthStore } from '@/storage/statelibrary'
 
 export default function GoogleAuthModal() {
-  const [isOpen, setIsOpen] = useState(true);
-
-  // Проверяем, скрывал ли пользователь окно в этой сессии
-  useEffect(() => {
-    chrome.storage.session.get(["googleAuthSkipped"], (res) => {
-      if (!res.googleAuthSkipped) setIsOpen(true);
-    });
-  }, []);
+  const modalOpen = useAuthStore((state) => state.modalOpen)
+  const setModalOpen = useAuthStore((state) => state.setModalOpen)
 
   const handleGoogleAuth = () => {
-    console.log("Google Auth clicked");
-    // TODO: добавить реальную Google OAuth авторизацию
-  };
+    console.log('Google Auth clicked')
+  }
 
   const handleLater = () => {
-    chrome.storage.session.set({ googleAuthSkipped: true });
-    setIsOpen(false);
-  };
+    setModalOpen(false)
+  }
 
-  if (!isOpen) return null;
+  if (!modalOpen) return null
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -64,5 +56,5 @@ export default function GoogleAuthModal() {
         </button>
       </div>
     </div>
-  );
+  )
 }

@@ -1,63 +1,63 @@
 // Обновленный компонент BookmarkList
-import { deleteBookmarks } from "@/features/bookmarks/bookmarkService";
-import { useBookmarkStore, useSwitchStore } from "@/storage/statelibrary";
-import { useMemo } from "preact/hooks";
-import Instructions from "./instruction";
-import { SortableContext } from "@dnd-kit/sortable";
+import { deleteBookmarks } from '@/features/bookmarks/bookmarkService'
+import { useBookmarkStore, useSwitchStore } from '@/storage/statelibrary'
+import { useMemo } from 'preact/hooks'
+import Instructions from './instruction'
+import { SortableContext } from '@dnd-kit/sortable'
 import {
   DndContext,
   closestCenter,
   PointerSensor,
   useSensor,
   useSensors,
-} from "@dnd-kit/core";
-import type { DragEndEvent } from "@dnd-kit/core";
-import { Sortable, handleDragEnd } from "@/features/bookmarks/bookmarkSort";
-import { FolderBookmark } from "./folderBookmark";
-import { LinkBookmark } from "./linkBookmark";
-import type { Bookmark } from "@/types/types";
-import { BookmarkSearch } from "./bookmarksearch";
+} from '@dnd-kit/core'
+import type { DragEndEvent } from '@dnd-kit/core'
+import { Sortable, handleDragEnd } from '@/features/bookmarks/bookmarkSort'
+import { FolderBookmark } from './folderBookmark'
+import { LinkBookmark } from './linkBookmark'
+import type { Bookmark } from '@/types/types'
+import { BookmarkSearch } from './bookmarksearch'
 
 function BookmarkList() {
-  const sensors = useSensors(useSensor(PointerSensor));
-  const bookmarks = useBookmarkStore((state) => state.bookmarks);
-  const isIncognito = useSwitchStore((state) => state.Switch);
+  const sensors = useSensors(useSensor(PointerSensor))
+  const bookmarks = useBookmarkStore((state) => state.bookmarks)
+  const isIncognito = useSwitchStore((state) => state.Switch)
 
   const filtered = useMemo(() => {
     return isIncognito
       ? bookmarks.filter((bookmark) => bookmark.incognito)
-      : bookmarks.filter((bookmark) => !bookmark.incognito);
-  }, [bookmarks, isIncognito]);
+      : bookmarks.filter((bookmark) => !bookmark.incognito)
+  }, [bookmarks, isIncognito])
 
   // Collect all IDs for SortableContext (including nested ones)
   const getAllIds = (bookmarks: Bookmark[]): string[] => {
-    let ids: string[] = [];
+    let ids: string[] = []
     for (const bookmark of bookmarks) {
-      ids.push(bookmark.id);
+      ids.push(bookmark.id)
       if (bookmark.children) {
-        ids.push(...getAllIds(bookmark.children));
+        ids.push(...getAllIds(bookmark.children))
       }
     }
-    return ids;
-  };
+    return ids
+  }
 
-  const allIds = getAllIds(filtered);
+  const allIds = getAllIds(filtered)
 
   const handleDelete = (id: string) => {
-    deleteBookmarks(bookmarks, id);
-  };
+    deleteBookmarks(bookmarks, id)
+  }
 
   // Handle bookmark selection from search results
   const handleBookmarkSelect = (bookmark: Bookmark) => {
     if (bookmark.url) {
       // Open bookmark in new tab
-      window.open(bookmark.url, "_blank");
+      window.open(bookmark.url, '_blank')
     }
     // You can add additional logic here, such as:
     // - Highlighting the selected bookmark in the list
     // - Adding to recently accessed
     // - Custom navigation logic
-  };
+  }
 
   return (
     <div className="w-full">
@@ -65,7 +65,7 @@ function BookmarkList() {
       <BookmarkSearch
         onBookmarkSelect={handleBookmarkSelect}
         placeholder="🔍 Search bookmarks"
-      />{" "}
+      />{' '}
       {/* Bookmark list */}
       <DndContext
         sensors={sensors}
@@ -73,7 +73,7 @@ function BookmarkList() {
         onDragEnd={(e: DragEndEvent) => handleDragEnd(e)}
       >
         <SortableContext items={allIds}>
-          <div className="flex flex-wrap items-start content-start overflow-x-hidden gap-1 w-full min-h-[400px] max-h-[400px] overflow-y-auto p-1">
+          <div className="flex flex-wrap items-start content-start overflow-x-hidden gap-1 w-full min-h-[70vh] max-h-[70vh] overflow-y-auto p-1">
             {filtered.length < 1 ? (
               <Instructions />
             ) : (
@@ -105,7 +105,7 @@ function BookmarkList() {
         </SortableContext>
       </DndContext>
     </div>
-  );
+  )
 }
 
-export default BookmarkList;
+export default BookmarkList
