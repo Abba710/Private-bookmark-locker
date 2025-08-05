@@ -1,18 +1,31 @@
-import { useAuthStore } from '@/storage/statelibrary'
+import { useAuthStore, useUserProfileStore } from "@/storage/statelibrary";
 
 export default function GoogleAuthModal() {
-  const modalOpen = useAuthStore((state) => state.modalOpen)
-  const setModalOpen = useAuthStore((state) => state.setModalOpen)
-
+  const modalOpen = useAuthStore((state) => state.modalOpen);
+  const setModalOpen = useAuthStore((state) => state.setModalOpen);
   const handleGoogleAuth = () => {
-    console.log('Google Auth clicked')
-  }
+    chrome.runtime.sendMessage({ type: "firebase-googleauth" }, (response) => {
+      if (response && response.user && !response.error) {
+        const { displayName, photoURL } = response.user;
+        const token = response.user.stsTokenManager?.accessToken || null;
+
+        // ✅ Update Zustand store correctly
+        useUserProfileStore
+          .getState()
+          .login(displayName || "Guest User", photoURL, token);
+
+        setModalOpen(false);
+      } else {
+        console.error("Google Auth failed", response?.error || response);
+      }
+    });
+  };
 
   const handleLater = () => {
-    setModalOpen(false)
-  }
+    setModalOpen(false);
+  };
 
-  if (!modalOpen) return null
+  if (!modalOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -56,5 +69,5 @@ export default function GoogleAuthModal() {
         </button>
       </div>
     </div>
-  )
+  );
 }

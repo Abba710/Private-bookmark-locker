@@ -1,15 +1,24 @@
-import { useUserProfileStore, useAuthStore } from '@/storage/statelibrary'
-import { useState } from 'react'
-import guestAvatar from '@/assets/guest_profile.png'
+import { useUserProfileStore, useAuthStore } from "@/storage/statelibrary";
+import { useState } from "react";
+import guestAvatar from "@/assets/guest_profile.png";
 
 function UserHeader() {
-  const [open, setOpen] = useState(false)
-  const username = useUserProfileStore((s) => s.username)
-  const avatar = useUserProfileStore((s) => s.avatar)
-  const isPremium = useUserProfileStore((s) => s.isPremium)
-  const token = useUserProfileStore((s) => s.token)
-  const logout = useUserProfileStore((s) => s.logout)
-  const setModalOpen = useAuthStore((state) => state.setModalOpen)
+  const [open, setOpen] = useState(false);
+  const username = useUserProfileStore((s) => s.username);
+  const avatar = useUserProfileStore((s) => s.avatar);
+  const isPremium = useUserProfileStore((s) => s.isPremium);
+  const token = useUserProfileStore((s) => s.token);
+  const setModalOpen = useAuthStore((state) => state.setModalOpen);
+  const logoutUser = () => {
+    chrome.runtime.sendMessage({ type: "firebase-signout" }, (res) => {
+      if (res?.success) {
+        useUserProfileStore.getState().logout();
+        console.log("✅ User signed out");
+      } else {
+        console.error("❌ Failed to sign out:", res?.error);
+      }
+    });
+  };
 
   return (
     // Wrapper container with relative positioning for dropdown
@@ -26,7 +35,7 @@ function UserHeader() {
             {username}
           </h1>
           <h2 className="text-white text-xs opacity-70 leading-none">
-            {isPremium ? 'Premium plan' : 'Free plan'}
+            {isPremium ? "Premium plan" : "Free plan"}
           </h2>
         </div>
       </div>
@@ -42,15 +51,17 @@ function UserHeader() {
       {/* Dropdown menu */}
       {open && (
         <div className="absolute top-[100%] right-0 mt-2 w-[160px] bg-white/10 backdrop-blur-sm rounded-xl shadow-lg text-sm text-white overflow-hidden z-10">
-          <button className="w-full px-4 py-2 text-left hover:bg-white/20">
-            Upgrade Plan
-          </button>
+          {!isPremium && (
+            <button className="w-full px-4 py-2 text-left hover:bg-white/20">
+              Upgrade Plan
+            </button>
+          )}
           {!token ? (
             <button
               className="w-full px-4 py-2 text-left hover:bg-white/20"
               onClick={() => {
-                setOpen(false)
-                setModalOpen(true)
+                setOpen(false);
+                setModalOpen(true); // open login modal
               }}
             >
               login
@@ -59,8 +70,8 @@ function UserHeader() {
             <button
               className="w-full px-4 py-2 text-left hover:bg-white/20"
               onClick={() => {
-                setOpen(false)
-                logout()
+                setOpen(false);
+                logoutUser();
               }}
             >
               logout
@@ -69,7 +80,7 @@ function UserHeader() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default UserHeader
+export default UserHeader;
