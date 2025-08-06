@@ -1,5 +1,5 @@
 // Public URL for your Firebase-hosted auth page
-const _URL = "https://fir-auth-312-e213.web.app/";
+const _URL = "https://pbl-firebase-2f62e.web.app/";
 
 // Create hidden iframe to run Firebase UI
 const iframe = document.createElement("iframe");
