@@ -15,7 +15,7 @@ function UserHeader() {
         useUserProfileStore.getState().logout();
         console.log("✅ User signed out");
       } else {
-        console.error("❌ Failed to sign out:", res?.error);
+        console.error("❌ Failed to sign out:", res);
       }
     });
   };

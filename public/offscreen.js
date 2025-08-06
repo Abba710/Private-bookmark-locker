@@ -30,10 +30,36 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true; // async
   }
 });
-
 // ✅ Handle LOGOUT requests (from background.js)
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.target === "offscreen-auth" && message.action === "signout") {
+    // Listen for response from iframe
+    function handleIframeLogoutMessage({ data }) {
+      try {
+        // Use the same approach as for authentication
+        if (typeof data === "object" && data !== null) {
+          // Data is already an object - just use it
+          globalThis.removeEventListener("message", handleIframeLogoutMessage);
+          sendResponse(data);
+        } else if (typeof data === "string") {
+          // Data is a JSON string - parse it
+          const parsed = JSON.parse(data);
+          if (parsed.success) {
+            console.log("Logout successful, reloading iframe");
+            iframe.src = _URL;
+          }
+          globalThis.removeEventListener("message", handleIframeLogoutMessage);
+          sendResponse(parsed);
+        }
+      } catch (e) {
+        console.error("Failed to parse iframe logout message", e);
+        sendResponse({ success: false, error: e.message });
+      }
+    }
+
+    globalThis.addEventListener("message", handleIframeLogoutMessage);
+
+    // Send logout request to iframe
     iframe.contentWindow.postMessage({ signOut: true }, new URL(_URL).origin);
     return true; // async
   }

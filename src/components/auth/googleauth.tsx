@@ -1,10 +1,15 @@
 import { useAuthStore, useUserProfileStore } from "@/storage/statelibrary";
+import { useState } from "preact/compat";
 
 export default function GoogleAuthModal() {
+  const [loading, setLoading] = useState(false);
+
   const modalOpen = useAuthStore((state) => state.modalOpen);
   const setModalOpen = useAuthStore((state) => state.setModalOpen);
   const handleGoogleAuth = () => {
+    setLoading(true);
     chrome.runtime.sendMessage({ type: "firebase-googleauth" }, (response) => {
+      setLoading(false);
       if (response && response.user && !response.error) {
         const { displayName, photoURL } = response.user;
         const token = response.user.stsTokenManager?.accessToken || null;
@@ -33,7 +38,11 @@ export default function GoogleAuthModal() {
         {/* Google Button */}
         <button
           onClick={handleGoogleAuth}
-          className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-white text-black rounded-xl text-sm font-medium hover:bg-white/90 active:scale-95 transition-transform duration-150"
+          disabled={loading}
+          className={`flex items-center justify-center gap-2 w-full px-4 py-2
+              bg-white text-black rounded-xl text-sm font-medium
+              hover:bg-white/90 active:scale-95 transition-transform duration-150
+              disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
