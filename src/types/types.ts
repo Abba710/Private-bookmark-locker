@@ -49,7 +49,8 @@ export interface UserProfile {
   login: (
     username: string,
     avatar: string | null,
-    token: string | null
+    token: string | null,
+    isPremium?: boolean
   ) => void;
   logout: () => void;
 }

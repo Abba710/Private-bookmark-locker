@@ -38,15 +38,21 @@ export const useUserProfileStore = create<UserProfile>((set) => ({
   token: null,
   isPremium: false,
   setPremium: (isPremium) => set({ isPremium }),
-  login: (username: string, avatar: string | null, token: string | null) =>
-    set({ username, avatar, token }),
-  logout: () =>
+  login: (username: string, avatar: string | null, token: string | null) => {
+    set({ username, avatar, token, isPremium: false });
+    chrome.storage.local.set({
+      user: { username, avatar, token, isPremium: false },
+    });
+  },
+  logout: () => {
     set({
       username: "Guest user",
       avatar: "",
       token: null,
       isPremium: false,
     }),
+      chrome.storage.local.remove("user");
+  },
 }));
 
 export const useAuthStore = create<AuthStore>((set) => ({

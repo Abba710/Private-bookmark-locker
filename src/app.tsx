@@ -6,7 +6,11 @@ import PremiumBlock from "./components/Premium/premium";
 import LockOverlay from "@/components/lock/lockoverlay";
 import { useEffect } from "preact/hooks";
 import AuthModal from "./components/auth/googleauth";
-import { useBookmarkStore, useLockOverlayStore } from "@/storage/statelibrary";
+import {
+  useBookmarkStore,
+  useLockOverlayStore,
+  useUserProfileStore,
+} from "@/storage/statelibrary";
 import { loadBookmarks } from "@/features/bookmarks/bookmarkService";
 import { getInitialLockState } from "@/features/lock/lockservice";
 import PremiumModal from "./components/Premium/premiumModal";
@@ -15,17 +19,21 @@ function App() {
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked);
   const isLocked = useLockOverlayStore((state) => state.isLocked);
   const setBookmarks = useBookmarkStore((state) => state.setBookmarks);
+  const login = useUserProfileStore((state) => state.login);
 
-  // Load bookmarks on startup
-  useEffect(() => {
-    loadBookmarks().then(setBookmarks);
-  }, []);
-
-  // Check session and lock status on startup
   useEffect(() => {
     (async () => {
+      const loadedBookmarks = await loadBookmarks();
+      setBookmarks(loadedBookmarks);
+
       const locked = await getInitialLockState();
       setIsLocked(locked);
+
+      const { user } = await chrome.storage.local.get("user");
+      if (user) {
+        const { username, avatar, token, isPremium } = user;
+        login(username, avatar, token, isPremium);
+      }
     })();
   }, []);
 
