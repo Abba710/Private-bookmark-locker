@@ -5,8 +5,6 @@ import {
   type SwitchStore,
   type LockOverlayStore,
   type PremiumModalStore,
-  type UserProfile,
-  type AuthStore,
 } from "@/types/types";
 
 export const useBookmarkStore = create<BookmarkStore>((set) => ({
@@ -30,32 +28,4 @@ export const usePremiumModalStore = create<PremiumModalStore>((set) => ({
   premiumOpen: false,
   openPremium: () => set({ premiumOpen: true }),
   closePremium: () => set({ premiumOpen: false }),
-}));
-
-export const useUserProfileStore = create<UserProfile>((set) => ({
-  username: "Guest user",
-  avatar: null,
-  token: null,
-  isPremium: false,
-  setPremium: (isPremium) => set({ isPremium }),
-  login: (username: string, avatar: string | null, token: string | null) => {
-    set({ username, avatar, token, isPremium: false });
-    chrome.storage.local.set({
-      user: { username, avatar, token, isPremium: false },
-    });
-  },
-  logout: () => {
-    set({
-      username: "Guest user",
-      avatar: "",
-      token: null,
-      isPremium: false,
-    }),
-      chrome.storage.local.remove("user");
-  },
-}));
-
-export const useAuthStore = create<AuthStore>((set) => ({
-  modalOpen: false,
-  setModalOpen: (open) => set({ modalOpen: open }),
 }));

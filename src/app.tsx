@@ -5,12 +5,7 @@ import OptionsPanel from "./components/optionsPanel";
 import PremiumBlock from "./components/Premium/premium";
 import LockOverlay from "@/components/lock/lockoverlay";
 import { useEffect } from "preact/hooks";
-import AuthModal from "./components/auth/googleauth";
-import {
-  useBookmarkStore,
-  useLockOverlayStore,
-  useUserProfileStore,
-} from "@/storage/statelibrary";
+import { useBookmarkStore, useLockOverlayStore } from "@/storage/statelibrary";
 import { loadBookmarks } from "@/features/bookmarks/bookmarkService";
 import { getInitialLockState } from "@/features/lock/lockservice";
 import PremiumModal from "./components/Premium/premiumModal";
@@ -19,7 +14,6 @@ function App() {
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked);
   const isLocked = useLockOverlayStore((state) => state.isLocked);
   const setBookmarks = useBookmarkStore((state) => state.setBookmarks);
-  const login = useUserProfileStore((state) => state.login);
 
   useEffect(() => {
     (async () => {
@@ -28,18 +22,11 @@ function App() {
 
       const locked = await getInitialLockState();
       setIsLocked(locked);
-
-      const { user } = await chrome.storage.local.get("user");
-      if (user) {
-        const { username, avatar, token, isPremium } = user;
-        login(username, avatar, token, isPremium);
-      }
     })();
   }, []);
 
   return (
     <div className="min-w-full min-h-screen p-4 bg-black text-white flex flex-col gap-[10px]">
-      <AuthModal />
       {isLocked ? (
         <LockOverlay />
       ) : (

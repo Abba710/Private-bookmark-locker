@@ -39,23 +39,3 @@ export interface PremiumModalStore {
   openPremium: () => void;
   closePremium: () => void;
 }
-
-export interface UserProfile {
-  username: string;
-  avatar: string | null;
-  token: string | null;
-  isPremium: boolean;
-  setPremium: (isPremium: boolean) => void;
-  login: (
-    username: string,
-    avatar: string | null,
-    token: string | null,
-    isPremium?: boolean
-  ) => void;
-  logout: () => void;
-}
-
-export interface AuthStore {
-  modalOpen: boolean;
-  setModalOpen: (open: boolean) => void;
-}
