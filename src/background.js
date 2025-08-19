@@ -1,7 +1,9 @@
-import ExtPay from "ExtPay.js";
+import ExtPay from "extpay";
+const extpay = ExtPay("fagjclghcmnfinjdkdnkejodfjgkpljd");
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
+  console.log("Extension installed");
 });
 
 function getActiveTabs(callback) {
@@ -45,8 +47,14 @@ function closeAllTabsButKeepOne() {
 // ✅ Use it inside the command listener
 chrome.commands.onCommand.addListener((command) => {
   if (command === "close_all_tabs") {
-    sendTabsToUI(); // send all tabs to UI for saving
-    closeAllTabsButKeepOne(); // close everything except one new tab
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const tabId = tabs[0]?.id;
+      if (tabId) {
+        chrome.sidePanel.open({ tabId });
+        sendTabsToUI();
+        closeAllTabsButKeepOne();
+      }
+    });
   }
 });
 
