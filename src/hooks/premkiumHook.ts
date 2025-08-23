@@ -1,14 +1,14 @@
-import { usePremiumModalStore } from "@/storage/statelibrary";
+import { usePremiumModalStore } from '@/storage/statelibrary'
 
 export function usePremiumAction(action: () => void) {
-  const isPremium = false;
-  const { openPremium } = usePremiumModalStore();
+  const isPremium = false
+  const { openPremium } = usePremiumModalStore()
 
   return () => {
     if (isPremium) {
-      action();
+      action()
     } else {
-      openPremium(); // open modal
+      openPremium() // open modal
     }
-  };
+  }
 }

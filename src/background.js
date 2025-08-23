@@ -1,68 +1,69 @@
-import ExtPay from "extpay";
-const extpay = ExtPay("fagjclghcmnfinjdkdnkejodfjgkpljd");
+import ExtPay from 'extpay'
+const extpay = ExtPay('fagjclghcmnfinjdkdnkejodfjgkpljd')
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
-  console.log("Extension installed");
-});
+  chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true })
+  console.log('Extension installed')
+})
 
 function getActiveTabs(callback) {
   chrome.tabs.query({}, (tabs) => {
     const formatted = tabs.map((tab) => ({
       id: crypto.randomUUID(),
       incognito: tab.incognito || false,
-      title: tab.title || "Untitled",
-      url: tab.url || "",
-    }));
-    callback(formatted);
-  });
+      title: tab.title || 'Untitled',
+      url: tab.url || '',
+    }))
+    callback(formatted)
+  })
 }
 
 function sendTabsToUI() {
   getActiveTabs((bookmarks) => {
-    chrome.runtime.sendMessage({ action: "save_tabs", data: bookmarks });
-  });
+    chrome.runtime.sendMessage({ action: 'save_tabs', data: bookmarks })
+  })
 }
 
 // ✅ Opens a new empty tab and closes all other tabs
 function closeAllTabsButKeepOne() {
   // 1. Open a new blank tab
-  chrome.tabs.create({ url: "chrome://newtab" }, (newTab) => {
-    const keepId = newTab.id;
+  chrome.tabs.create({ url: 'chrome://newtab' }, (newTab) => {
+    const keepId = newTab.id
 
     // 2. Query all tabs in all windows
     chrome.tabs.query({}, (tabs) => {
       // 3. Collect IDs of all tabs except the newly created one
-      const tabIds = tabs.map((t) => t.id).filter((id) => id && id !== keepId);
+      const tabIds = tabs.map((t) => t.id).filter((id) => id && id !== keepId)
 
       // 4. Close all other tabs
       if (tabIds.length > 0) {
-        chrome.tabs.remove(tabIds);
-        console.log(`✅ Closed ${tabIds.length} tabs, kept one new tab`);
+        chrome.tabs.remove(tabIds)
+        console.log(`✅ Closed ${tabIds.length} tabs, kept one new tab`)
       }
-    });
-  });
+    })
+  })
 }
 
 // ✅ Use it inside the command listener
 chrome.commands.onCommand.addListener((command) => {
-  if (command === "close_all_tabs") {
+  if (command === 'close_all_tabs') {
+    console.log('alt+p pressed')
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      const tabId = tabs[0]?.id;
+      const tabId = tabs[0]?.id
       if (tabId) {
-        chrome.sidePanel.open({ tabId });
-        sendTabsToUI();
-        closeAllTabsButKeepOne();
+        chrome.sidePanel.open({ tabId })
+        sendTabsToUI()
+        closeAllTabsButKeepOne()
       }
-    });
+    })
   }
-});
+})
 
 // import chrome bookmakrs
 function collectBookmarks() {
   return new Promise((resolve) => {
     chrome.bookmarks.getTree((nodes) => {
-      const list = [];
+      const list = []
 
       function traverse(items) {
         for (const node of items) {
@@ -72,23 +73,23 @@ function collectBookmarks() {
               incognito: false,
               title: node.title,
               url: node.url,
-            });
+            })
           }
-          if (node.children) traverse(node.children);
+          if (node.children) traverse(node.children)
         }
       }
 
-      traverse(nodes);
-      resolve(list);
-    });
-  });
+      traverse(nodes)
+      resolve(list)
+    })
+  })
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === "collect_bookmarks") {
+  if (message.action === 'collect_bookmarks') {
     collectBookmarks().then((bookmarks) => {
-      sendResponse({ data: bookmarks });
-    });
-    return true;
+      sendResponse({ data: bookmarks })
+    })
+    return true
   }
-});
+})

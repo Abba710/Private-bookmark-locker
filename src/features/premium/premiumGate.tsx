@@ -1,32 +1,32 @@
-import { usePremiumModalStore } from "@/storage/statelibrary";
-import { cloneElement, isValidElement } from "preact/compat";
-import type { VNode } from "preact";
+import { usePremiumModalStore } from '@/storage/statelibrary'
+import { cloneElement, isValidElement } from 'preact/compat'
+import type { VNode } from 'preact'
 
 export function PremiumGate({
   children,
   action,
 }: {
-  children: preact.ComponentChildren;
-  action: () => void;
+  children: preact.ComponentChildren
+  action: () => void
 }) {
-  const isPremium = false;
-  const { openPremium } = usePremiumModalStore();
+  const isPremium = false
+  const { openPremium } = usePremiumModalStore()
 
   const handleClick = (e: Event) => {
-    e.preventDefault();
-    e.stopPropagation();
+    e.preventDefault()
+    e.stopPropagation()
     if (isPremium) {
-      action();
+      action()
     } else {
-      openPremium();
+      openPremium()
     }
-  };
+  }
 
   // Проверяем, что children существует и это валидный VNode
   if (children && isValidElement(children)) {
-    const child = children as VNode<any>;
-    const originalClassName = child.props?.className || "";
-    const isSquareButton = originalClassName.includes("w-10 h-10");
+    const child = children as VNode<any>
+    const originalClassName = child.props?.className || ''
+    const isSquareButton = originalClassName.includes('w-10 h-10')
 
     // Для квадратных кнопок используем абсолютное позиционирование
     if (isSquareButton && !isPremium) {
@@ -40,7 +40,7 @@ export function PremiumGate({
             👑
           </span>
         </div>
-      );
+      )
     }
 
     // Для обычных кнопок клонируем и добавляем корону внутрь
@@ -57,7 +57,7 @@ export function PremiumGate({
           )}
         </>
       ),
-    });
+    })
   }
 
   // Fallback для других случаев (текст, множественные дети и т.д.)
@@ -70,5 +70,5 @@ export function PremiumGate({
         </span>
       )}
     </div>
-  );
+  )
 }
