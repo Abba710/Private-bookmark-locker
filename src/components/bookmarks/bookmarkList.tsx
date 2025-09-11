@@ -64,7 +64,7 @@ function BookmarkList() {
       {/* Search input */}
       <BookmarkSearch
         onBookmarkSelect={handleBookmarkSelect}
-        placeholder="🔍 Search bookmarks"
+        placeholder={`🔍 ${chrome.i18n.getMessage('app_search_placeholder')}`}
       />{' '}
       {/* Bookmark list */}
       <DndContext

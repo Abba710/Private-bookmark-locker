@@ -1,6 +1,3 @@
-import ExtPay from 'extpay'
-const extpay = ExtPay('fagjclghcmnfinjdkdnkejodfjgkpljd')
-
 chrome.runtime.onInstalled.addListener(() => {
   chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true })
   console.log('Extension installed')

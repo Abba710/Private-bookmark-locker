@@ -1,11 +1,11 @@
-import type { FunctionalComponent } from "preact";
+import type { FunctionalComponent } from 'preact'
 
 interface SearchInputProps {
-  searchQuery: string;
-  onSearchChange: (query: string) => void;
-  onFocus: () => void;
-  onBlur: () => void;
-  placeholder?: string;
+  searchQuery: string
+  onSearchChange: (query: string) => void
+  onFocus: () => void
+  onBlur: () => void
+  placeholder?: string
 }
 
 export const SearchInput: FunctionalComponent<SearchInputProps> = ({
@@ -13,7 +13,7 @@ export const SearchInput: FunctionalComponent<SearchInputProps> = ({
   onSearchChange,
   onFocus,
   onBlur,
-  placeholder = "🔍 Search",
+  placeholder,
 }) => {
   return (
     <div className="relative">
@@ -27,5 +27,5 @@ export const SearchInput: FunctionalComponent<SearchInputProps> = ({
         className="w-full px-4 py-2 text-sm text-white bg-white/10 rounded-xl placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/20"
       />
     </div>
-  );
-};
+  )
+}
