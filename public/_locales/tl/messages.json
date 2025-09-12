@@ -1,48 +1,135 @@
 {
-  "app_name": { "message": "Pribadong Bookmark Locker" },
-  "app_description": {
-    "message": "Pribadong imbakan ng bookmark. I-save at protektahan ang mga link gamit ang password — ikaw lang ang makakakita nito."
+  "app_name": {
+    "message": "Pribadong Locker ng Bookmark"
   },
-  "app_enter_password": { "message": "🔒 Ipasok ang password" },
-  "app_create_password": { "message": "🔒 Gumawa ng password" },
-  "app_set_password": { "message": "Itakda ang password" },
-  "app_create_password_placeholder": { "message": "Gumawa ng iyong password" },
-  "app_enter_password_placeholder": { "message": "Ipasok ang iyong password" },
+  "app_description": {
+    "message": "Pribadong imbakan ng bookmark. I-save at protektahan ang mga link gamit ang password — ikaw lamang ang makakakita nito."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Ipasok ang password"
+  },
+  "app_create_password": {
+    "message": "🔒 Gumawa ng password"
+  },
+  "app_create_password_placeholder": {
+    "message": "Gumawa ng iyong password"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Ipasok ang iyong password"
+  },
+  "app_unlock": {
+    "message": "🔓 I-unlock"
+  },
+  "app_create_password_button": {
+    "message": "Gumawa ng Password"
+  },
+  "app_password_empty_error": {
+    "message": "Hindi maaaring walang laman ang password"
+  },
+  "app_password_incorrect_error": {
+    "message": "Maling password"
+  },
+  "app_password_hashing_error": {
+    "message": "Nabigo ang hashing"
+  },
   "app_password_warning": {
-    "message": "⚠️ Mahalaga: Kung makalimutan mo ang iyong password, hindi ito maibabalik. Lahat ng data ay nakaimbak lamang sa device na ito at hindi maa-access kung walang tamang password."
+    "message": "⚠️ Mahalagang Paalala: Kung makalimutan mo ang iyong password, hindi ito maibabalik. Lahat ng data ay nakaimbak lamang sa device na ito at hindi maa-access nang walang tamang password."
+  },
+  "app_instruction_title": {
+    "message": "🔐 Paano gamitin ang Pribadong Locker ng Bookmark"
   },
   "app_instruction_save": {
-    "message": "📌 Para mag-save ng bookmark, i-click ang 💾 button sa header."
+    "message": "Upang mag-save ng bookmark, i-click ang 💾 button sa header."
   },
   "app_instruction_lock": {
-    "message": "🔒 Para i-lock ang mga bookmark, i-click ang 🔒 icon sa header."
+    "message": "Upang i-lock ang extension, i-click ang 🔒 icon sa header."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ Para makita ang regular na bookmark, i-click ang 👁️ icon sa header."
+    "message": "Upang tingnan ang regular na bookmarks, i-click ang 👁️ icon sa header."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ Para makita ang incognito bookmark, i-click ang 🕶️ icon sa header."
+    "message": "Upang tingnan ang incognito bookmarks, i-click ang 🕶️ icon sa header."
+  },
+  "app_instruction_create_folder": {
+    "message": "Upang gumawa ng folder, i-click ang 📁 button sa header."
   },
   "app_instruction_incognito_hint": {
-    "message": "Para gamitin ang extension sa incognito mode, i-right click ang icon, piliin ang 'Manage extension', at i-enable ang 'Allow in incognito'."
+    "message": "Upang magamit ang extension sa incognito mode, i-right-click ang icon, piliin ang 'Manage extension', at i-enable ang 'Allow in incognito'."
   },
-  "app_unlock": { "message": "🔓 I-unlock" },
-  "app_donate_using": { "message": "Salamat sa paggamit ng extension!" },
-  "app_donate_call": {
-    "message": "Ang tool na ito ay ginawa para sa privacy. Kung nakatulong ito sa iyo, suportahan ang development ☕"
+  "app_instruction_panic": {
+    "message": "Upang mag-set ng panic button, pumunta sa settings ng Chrome at mag-assign ng shortcut upang isara lahat ng tabs at i-save ang mga ito sa folder."
   },
-  "app_donate_now": { "message": "Suportahan ang proyekto ng ₱250" },
-  "app_donate_leter": { "message": "Siguro mamaya" },
-  "app_ads": {
-    "message": "📢 Hindi ka nakakakuha ng magagandang sagot mula sa AI? I-automate ang iyong mga prompt."
+  "app_instruction_import": {
+    "message": "Upang i-import ang bookmarks, i-click ang 📥 Import button sa options menu."
+  },
+  "app_instruction_export": {
+    "message": "Upang i-export ang bookmarks, i-click ang 📤 Export button sa options menu."
+  },
+  "app_instruction_collect": {
+    "message": "Upang kolektahin ang lahat ng Chrome bookmarks sa extension, i-click ang 🔃 Collect button sa options menu."
   },
   "app_pass_short_error": {
-    "message": "Ang password ay dapat hindi bababa sa 4 na character"
+    "message": "Ang password ay dapat hindi bababa sa 4 na karakter"
   },
-  "app_pass_incorrect_error": { "message": "Maling password" },
-  "app_feedback_title": { "message": "⭐ Nagugustuhan mo ba ang extension?" },
-  "app_feedback_text": { "message": "Ang mabilis na review ay mahalaga! 🙏" },
-  "app_feedback_button_review": { "message": "Mag-iwan ng review" },
-  "app_feedback_button_later": { "message": "Mamaya" },
-  "app_feedback_button_never": { "message": "Huwag ipakita muli" }
+  "app_pass_incorrect_error": {
+    "message": "Maling password"
+  },
+  "app_search_placeholder": {
+    "message": "Maghanap sa bookmarks..."
+  },
+  "app_modal_export": {
+    "message": "📤 I-export ang Bookmarks"
+  },
+  "app_options_import": {
+    "message": "📥 I-import"
+  },
+  "app_options_export": {
+    "message": "📤 I-export"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Mga Setting"
+  },
+  "app_options_settings_alert": {
+    "message": "Darating na ang mga setting!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Kolektahin"
+  },
+  "app_import_modal": {
+    "message": "📥 I-import ang Bookmarks"
+  },
+  "app_import_modal_description": {
+    "message": "I-drag & drop ang iyong file dito o i-click upang pumili"
+  },
+  "app_cancel": {
+    "message": "Kanselahin"
+  },
+  "app_export_modal_description": {
+    "message": "I-click ang button sa ibaba upang i-export ang iyong bookmarks bilang file. Maaari mo itong i-save at i-import muli kung kinakailangan."
+  },
+  "app_export_modal_button": {
+    "message": "I-export"
+  },
+  "app_panic_description": {
+    "message": "Mag-set ng panic button (default = alt+p) upang isara lahat ng tabs at i-save ang mga ito sa folder"
+  },
+  "app_ads_title": {
+    "message": "Awtomatikong idagdag at pamahalaan ang mga AI prompt"
+  },
+  "app_donate_title": {
+    "message": "💸 Suportahan ang proyekto"
+  },
+  "app_feedback_title": {
+    "message": "Gusto mo ba ang extension?"
+  },
+  "app_feedback_description": {
+    "message": "Mahalaga sa amin ang iyong opinyon! Paki-rate ang app at mag-iwan ng review sa store page."
+  },
+  "app_feedback_button_leave": {
+    "message": "Mag-iwan ng review"
+  },
+  "app_feedback_button_later": {
+    "message": "Mamaya"
+  }
 }

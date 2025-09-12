@@ -1,46 +1,135 @@
 {
-  "app_name": { "message": "Penyimpanan Bookmark Pribadi" },
-  "app_description": {
-    "message": "Penyimpanan bookmark pribadi. Simpan dan lindungi tautan dengan kata sandi — hanya Anda yang dapat melihatnya."
+  "app_name": {
+    "message": "Loker Bookmark Pribadi"
   },
-  "app_enter_password": { "message": "🔒 Masukkan kata sandi" },
-  "app_create_password": { "message": "🔒 Buat kata sandi" },
-  "app_set_password": { "message": "Setel kata sandi" },
-  "app_create_password_placeholder": { "message": "Buat kata sandi Anda" },
-  "app_enter_password_placeholder": { "message": "Masukkan kata sandi Anda" },
+  "app_description": {
+    "message": "Penyimpanan bookmark pribadi. Simpan dan lindungi tautan dengan kata sandi — hanya Anda yang bisa melihatnya."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Masukkan kata sandi"
+  },
+  "app_create_password": {
+    "message": "🔒 Buat kata sandi"
+  },
+  "app_create_password_placeholder": {
+    "message": "Buat kata sandi Anda"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Masukkan kata sandi Anda"
+  },
+  "app_unlock": {
+    "message": "🔓 Buka kunci"
+  },
+  "app_create_password_button": {
+    "message": "Buat Kata Sandi"
+  },
+  "app_password_empty_error": {
+    "message": "Kata sandi tidak boleh kosong"
+  },
+  "app_password_incorrect_error": {
+    "message": "Kata sandi salah"
+  },
+  "app_password_hashing_error": {
+    "message": "Proses hashing gagal"
+  },
   "app_password_warning": {
     "message": "⚠️ Penting: Jika Anda lupa kata sandi, tidak dapat dipulihkan. Semua data hanya disimpan di perangkat ini dan tidak dapat diakses tanpa kata sandi yang benar."
   },
+  "app_instruction_title": {
+    "message": "🔐 Cara menggunakan Loker Bookmark Pribadi"
+  },
   "app_instruction_save": {
-    "message": "📌 Untuk menyimpan bookmark, klik tombol 💾 di header."
+    "message": "Untuk menyimpan bookmark, klik tombol 💾 di header."
   },
   "app_instruction_lock": {
-    "message": "🔒 Untuk mengunci bookmark, klik ikon 🔒 di header."
+    "message": "Untuk mengunci ekstensi, klik ikon 🔒 di header."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ Untuk melihat bookmark biasa, klik ikon 👁️ di header."
+    "message": "Untuk melihat bookmark biasa, klik ikon 👁️ di header."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ Untuk melihat bookmark incognito, klik ikon 🕶️ di header."
+    "message": "Untuk melihat bookmark penyamaran, klik ikon 🕶️ di header."
+  },
+  "app_instruction_create_folder": {
+    "message": "Untuk membuat folder, klik tombol 📁 di header."
   },
   "app_instruction_incognito_hint": {
-    "message": "Untuk menggunakan ekstensi di mode incognito, klik kanan ikon, pilih 'Kelola ekstensi', dan aktifkan 'Izinkan di incognito'."
+    "message": "Untuk menggunakan ekstensi dalam mode penyamaran, klik kanan ikon, pilih 'Kelola ekstensi', lalu aktifkan 'Izinkan dalam penyamaran'."
   },
-  "app_unlock": { "message": "🔓 Buka kunci" },
-  "app_donate_using": { "message": "Terima kasih telah menggunakan ekstensi!" },
-  "app_donate_call": {
-    "message": "Alat ini dibuat dengan cinta untuk privasi. Jika bermanfaat, dukung pengembangannya ☕"
+  "app_instruction_panic": {
+    "message": "Untuk mengatur tombol panik, buka pengaturan Chrome dan tetapkan pintasan untuk menutup semua tab dan menyimpannya dalam folder."
   },
-  "app_donate_now": { "message": "Dukung proyek Rp75.000" },
-  "app_donate_leter": { "message": "Mungkin nanti" },
-  "app_ads": {
-    "message": "📢 Tidak mendapatkan jawaban bagus dari AI? Otomatiskan prompt Anda."
+  "app_instruction_import": {
+    "message": "Untuk mengimpor bookmark, klik tombol 📥 Impor di menu opsi."
   },
-  "app_pass_short_error": { "message": "Kata sandi minimal 4 karakter" },
-  "app_pass_incorrect_error": { "message": "Kata sandi salah" },
-  "app_feedback_title": { "message": "⭐ Menyukai ekstensi ini?" },
-  "app_feedback_text": { "message": "Ulasan singkat sangat berarti! 🙏" },
-  "app_feedback_button_review": { "message": "Tinggalkan ulasan" },
-  "app_feedback_button_later": { "message": "Nanti" },
-  "app_feedback_button_never": { "message": "Jangan tampilkan lagi" }
+  "app_instruction_export": {
+    "message": "Untuk mengekspor bookmark, klik tombol 📤 Ekspor di menu opsi."
+  },
+  "app_instruction_collect": {
+    "message": "Untuk mengumpulkan semua bookmark Chrome ke dalam ekstensi, klik tombol 🔃 Kumpulkan di menu opsi."
+  },
+  "app_pass_short_error": {
+    "message": "Kata sandi harus minimal 4 karakter"
+  },
+  "app_pass_incorrect_error": {
+    "message": "Kata sandi salah"
+  },
+  "app_search_placeholder": {
+    "message": "Cari bookmark..."
+  },
+  "app_modal_export": {
+    "message": "📤 Ekspor Bookmark"
+  },
+  "app_options_import": {
+    "message": "📥 Impor"
+  },
+  "app_options_export": {
+    "message": "📤 Ekspor"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Pengaturan"
+  },
+  "app_options_settings_alert": {
+    "message": "Pengaturan segera hadir!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Kumpulkan"
+  },
+  "app_import_modal": {
+    "message": "📥 Impor Bookmark"
+  },
+  "app_import_modal_description": {
+    "message": "Tarik & letakkan file Anda di sini atau klik untuk memilih"
+  },
+  "app_cancel": {
+    "message": "Batal"
+  },
+  "app_export_modal_description": {
+    "message": "Klik tombol di bawah untuk mengekspor bookmark Anda sebagai file. Anda dapat menyimpannya dan mengimpor nanti jika diperlukan."
+  },
+  "app_export_modal_button": {
+    "message": "Ekspor"
+  },
+  "app_panic_description": {
+    "message": "Atur tombol panik (default = alt+p) untuk menutup semua tab dan menyimpannya dalam folder"
+  },
+  "app_ads_title": {
+    "message": "Tambahkan dan kelola prompt AI secara otomatis"
+  },
+  "app_donate_title": {
+    "message": "💸Dukung proyek"
+  },
+  "app_feedback_title": {
+    "message": "Suka dengan ekstensi ini?"
+  },
+  "app_feedback_description": {
+    "message": "Kami menghargai pendapat Anda! Silakan beri peringkat aplikasi dan tinggalkan ulasan di halaman toko."
+  },
+  "app_feedback_button_leave": {
+    "message": "Tinggalkan ulasan"
+  },
+  "app_feedback_button_later": {
+    "message": "Nanti"
+  }
 }

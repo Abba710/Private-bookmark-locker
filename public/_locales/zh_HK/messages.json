@@ -1,44 +1,135 @@
 {
-  "app_name": { "message": "私人書籤保管箱" },
-  "app_description": {
-    "message": "私人書籤儲存。用密碼保存和保護連結 — 只有你能看到它們。"
+  "app_name": {
+    "message": "私人書籤管理器"
   },
-  "app_enter_password": { "message": "🔒 輸入密碼" },
-  "app_create_password": { "message": "🔒 創建密碼" },
-  "app_set_password": { "message": "設定密碼" },
-  "app_create_password_placeholder": { "message": "創建你的密碼" },
-  "app_enter_password_placeholder": { "message": "輸入你的密碼" },
+  "app_description": {
+    "message": "私人書籤儲存。使用密碼保存和保護連結 — 只有您可以查看。"
+  },
+
+  "app_enter_password": {
+    "message": "🔒 輸入密碼"
+  },
+  "app_create_password": {
+    "message": "🔒 創建密碼"
+  },
+  "app_create_password_placeholder": {
+    "message": "創建您的密碼"
+  },
+  "app_enter_password_placeholder": {
+    "message": "輸入您的密碼"
+  },
+  "app_unlock": {
+    "message": "🔓 解鎖"
+  },
+  "app_create_password_button": {
+    "message": "創建密碼"
+  },
+  "app_password_empty_error": {
+    "message": "密碼不能為空"
+  },
+  "app_password_incorrect_error": {
+    "message": "密碼錯誤"
+  },
+  "app_password_hashing_error": {
+    "message": "哈希失敗"
+  },
   "app_password_warning": {
-    "message": "⚠️ 重要提示：如果你忘記密碼，將無法恢復。所有資料只儲存在此裝置，沒有正確密碼無法存取。"
+    "message": "⚠️ 重要提示：如果您忘記密碼，將無法恢復。所有資料僅儲存在此設備，沒有正確密碼無法訪問。"
+  },
+  "app_instruction_title": {
+    "message": "🔐 如何使用私人書籤管理器"
   },
   "app_instruction_save": {
-    "message": "📌 要保存書籤，請點擊標題中的 💾 按鈕。"
+    "message": "要保存書籤，請點擊標題欄中的 💾 按鈕。"
   },
   "app_instruction_lock": {
-    "message": "🔒 要鎖定書籤，請點擊標題中的 🔒 圖示。"
+    "message": "要鎖定擴充功能，請點擊標題欄中的 🔒 圖示。"
   },
   "app_instruction_view_basic": {
-    "message": "👁️ 查看普通書籤，請點擊標題中的 👁️ 圖示。"
+    "message": "要查看一般書籤，請點擊標題欄中的 👁️ 圖示。"
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ 查看隱身書籤，請點擊標題中的 🕶️ 圖示。"
+    "message": "要查看隱身書籤，請點擊標題欄中的 🕶️ 圖示。"
+  },
+  "app_instruction_create_folder": {
+    "message": "要創建資料夾，請點擊標題欄中的 📁 按鈕。"
   },
   "app_instruction_incognito_hint": {
-    "message": "要在隱身模式下使用擴展，右鍵點擊圖示，選擇“管理擴展”，並啟用“允許在隱身中”。"
+    "message": "要在隱身模式下使用擴充功能，右鍵點擊圖示，選擇「管理擴充功能」，並啟用「允許在隱身模式下運行」。"
   },
-  "app_unlock": { "message": "🔓 解鎖" },
-  "app_donate_using": { "message": "感謝使用本擴展！" },
-  "app_donate_call": {
-    "message": "這個工具是為了隱私而打造。如果對你有幫助，請考慮支持開發 ☕"
+  "app_instruction_panic": {
+    "message": "要設定緊急按鈕並使用它，請進入 Chrome 設定，分配快捷鍵以關閉所有分頁並保存到資料夾。"
   },
-  "app_donate_now": { "message": "支持項目 HK💲40" },
-  "app_donate_leter": { "message": "稍後再說" },
-  "app_ads": { "message": "📢 AI 回答不理想？自動化你的提示。" },
-  "app_pass_short_error": { "message": "密碼至少需要 4 個字符" },
-  "app_pass_incorrect_error": { "message": "密碼錯誤" },
-  "app_feedback_title": { "message": "⭐ 喜歡這個擴展嗎？" },
-  "app_feedback_text": { "message": "一個簡短的評價對我們很重要！🙏" },
-  "app_feedback_button_review": { "message": "留下評價" },
-  "app_feedback_button_later": { "message": "稍後" },
-  "app_feedback_button_never": { "message": "不再顯示" }
+  "app_instruction_import": {
+    "message": "要導入書籤，請點擊選單中的 📥 導入按鈕。"
+  },
+  "app_instruction_export": {
+    "message": "要導出書籤，請點擊選單中的 📤 導出按鈕。"
+  },
+  "app_instruction_collect": {
+    "message": "要將所有 Chrome 書籤收集到擴充功能，請點擊選單中的 🔃 收集按鈕。"
+  },
+  "app_pass_short_error": {
+    "message": "密碼長度至少為 4 個字元"
+  },
+  "app_pass_incorrect_error": {
+    "message": "密碼錯誤"
+  },
+  "app_search_placeholder": {
+    "message": "搜尋書籤..."
+  },
+  "app_modal_export": {
+    "message": "📤 導出書籤"
+  },
+  "app_options_import": {
+    "message": "📥 導入"
+  },
+  "app_options_export": {
+    "message": "📤 導出"
+  },
+  "app_options_settings": {
+    "message": "⚙️ 設定"
+  },
+  "app_options_settings_alert": {
+    "message": "設定即將推出！"
+  },
+  "app_options_collect": {
+    "message": "🔃 收集"
+  },
+  "app_import_modal": {
+    "message": "📥 導入書籤"
+  },
+  "app_import_modal_description": {
+    "message": "將檔案拖放到此處或點擊選擇"
+  },
+  "app_cancel": {
+    "message": "取消"
+  },
+  "app_export_modal_description": {
+    "message": "點擊下方按鈕將書籤導出為檔案。您可以儲存並在需要時導入。"
+  },
+  "app_export_modal_button": {
+    "message": "導出"
+  },
+  "app_panic_description": {
+    "message": "設定緊急按鈕（預設 = alt+p）以關閉所有分頁並保存到資料夾"
+  },
+  "app_ads_title": {
+    "message": "自動新增和管理 AI 提示"
+  },
+  "app_donate_title": {
+    "message": "💸 支援專案"
+  },
+  "app_feedback_title": {
+    "message": "喜歡這個擴充功能嗎？"
+  },
+  "app_feedback_description": {
+    "message": "我們重視您的意見！請對應用程式評分並在商店頁面留下評論。"
+  },
+  "app_feedback_button_leave": {
+    "message": "留下評論"
+  },
+  "app_feedback_button_later": {
+    "message": "稍後"
+  }
 }

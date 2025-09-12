@@ -1,48 +1,135 @@
 {
-  "app_name": { "message": "პირადი სანიშნების საცავი" },
-  "app_description": {
-    "message": "პირადი სანიშნების შენახვა. შეინახეთ და დაიცავით ბმულები პაროლით — მხოლოდ თქვენ შეგიძლიათ ნახოთ ისინი."
+  "app_name": {
+    "message": "პირადი სანიშნის საცავი"
   },
-  "app_enter_password": { "message": "🔒 შეიყვანეთ პაროლი" },
-  "app_create_password": { "message": "🔒 შექმენით პაროლი" },
-  "app_set_password": { "message": "პაროლის დაყენება" },
-  "app_create_password_placeholder": { "message": "შექმენით თქვენი პაროლი" },
-  "app_enter_password_placeholder": { "message": "შეიყვანეთ თქვენი პაროლი" },
+  "app_description": {
+    "message": "პირადი სანიშნეების საცავი. შეინახეთ და დაიცავით ბმულები პაროლით — მხოლოდ თქვენ შეგიძლიათ მათი ნახვა."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 შეიყვანეთ პაროლი"
+  },
+  "app_create_password": {
+    "message": "🔒 შექმენით პაროლი"
+  },
+  "app_create_password_placeholder": {
+    "message": "შექმენით თქვენი პაროლი"
+  },
+  "app_enter_password_placeholder": {
+    "message": "შეიყვანეთ თქვენი პაროლი"
+  },
+  "app_unlock": {
+    "message": "🔓 განბლოკვა"
+  },
+  "app_create_password_button": {
+    "message": "პაროლის შექმნა"
+  },
+  "app_password_empty_error": {
+    "message": "პაროლი ცარიელი ვერ იქნება"
+  },
+  "app_password_incorrect_error": {
+    "message": "არასწორი პაროლი"
+  },
+  "app_password_hashing_error": {
+    "message": "ჰეშირება ვერ მოხერხდა"
+  },
   "app_password_warning": {
-    "message": "⚠️ მნიშვნელოვანია: თუ პაროლი დაგავიწყდათ, მისი აღდგენა შეუძლებელია. ყველა მონაცემი ინახება მხოლოდ ამ მოწყობილობაზე და სწორ პაროლის გარეშე მიუწვდომელია."
+    "message": "⚠️ მნიშვნელოვანია: თუ დაგავიწყდათ თქვენი პაროლი, მისი აღდგენა შეუძლებელია. ყველა მონაცემი ინახება მხოლოდ ამ მოწყობილობაზე და სწორ პაროლის გარეშე მიუწვდომელია."
+  },
+  "app_instruction_title": {
+    "message": "🔐 როგორ გამოვიყენოთ პირადი სანიშნის საცავი"
   },
   "app_instruction_save": {
-    "message": "📌 სანიშნის შესანახად დააწკაპუნეთ სათაურის 💾 ღილაკზე."
+    "message": "სანიშნის შესანახად დააჭირეთ 💾 ღილაკს თავსართში."
   },
   "app_instruction_lock": {
-    "message": "🔒 სანიშნების დასაბლოკად დააწკაპუნეთ სათაურის 🔒 ხატზე."
+    "message": "გაფართოების დასაბლოკად დააჭირეთ 🔒 ხატულას თავსართში."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ ჩვეულებრივი სანიშნების სანახავად დააწკაპუნეთ სათაურის 👁️ ხატზე."
+    "message": "ჩვეულებრივი სანიშნების სანახავად დააჭირეთ 👁️ ხატულას თავსართში."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ ინკოგნიტო სანიშნების სანახავად დააწკაპუნეთ სათაურის 🕶️ ხატზე."
+    "message": "ინკოგნიტო სანიშნების სანახავად დააჭირეთ 🕶️ ხატულას თავსართში."
+  },
+  "app_instruction_create_folder": {
+    "message": "საქაღალდის შესაქმნელად დააჭირეთ 📁 ღილაკს თავსართში."
   },
   "app_instruction_incognito_hint": {
-    "message": "გაფართოების ინკოგნიტო რეჟიმში გამოსაყენებლად, დააწკაპუნეთ ხატზე მარჯვენა ღილაკით, აირჩიეთ 'გაფართოების მართვა' და ჩართეთ 'ინკოგნიტოში დაშვება'."
+    "message": "ინკოგნიტო რეჟიმში გაფართოების გამოსაყენებლად, მარჯვენა ღილაკით დააწკაპუნეთ ხატულაზე, აირჩიეთ 'Manage extension' და ჩართეთ 'Allow in incognito'."
   },
-  "app_unlock": { "message": "🔓 განბლოკვა" },
-  "app_donate_using": { "message": "გმადლობთ გაფართოების გამოყენებისთვის!" },
-  "app_donate_call": {
-    "message": "ეს ინსტრუმენტი შექმნილია კონფიდენციალურობისთვის. თუ დაგეხმარათ, მხარი დაუჭირეთ განვითარებას ☕"
+  "app_instruction_panic": {
+    "message": "პანიკის ღილაკის დასაყენებლად გადადით Chrome-ის პარამეტრებში და მიანიჭეთ მალსახმობი ყველა ჩანართის დასახურად და საქაღალდეში შესანახად."
   },
-  "app_donate_now": { "message": "მხარი დაუჭირეთ პროექტს ₾15" },
-  "app_donate_leter": { "message": "შეიძლება მოგვიანებით" },
-  "app_ads": {
-    "message": "📢 AI-სგან კარგი პასუხები არ მიიღეთ? ავტომატიზეთ თქვენი მოთხოვნები."
+  "app_instruction_import": {
+    "message": "სანიშნების იმპორტისთვის დააჭირეთ 📥 ღილაკს პარამეტრების მენიუში."
   },
-  "app_pass_short_error": { "message": "პაროლი უნდა იყოს მინიმუმ 4 სიმბოლო" },
-  "app_pass_incorrect_error": { "message": "პაროლი არასწორია" },
-  "app_feedback_title": { "message": "⭐ მოგწონთ გაფართოება?" },
-  "app_feedback_text": {
-    "message": "მოკლე შეფასება ძალიან მნიშვნელოვანია! 🙏"
+  "app_instruction_export": {
+    "message": "სანიშნების ექსპორტისთვის დააჭირეთ 📤 ღილაკს პარამეტრების მენიუში."
   },
-  "app_feedback_button_review": { "message": "დატოვეთ შეფასება" },
-  "app_feedback_button_later": { "message": "მოგვიანებით" },
-  "app_feedback_button_never": { "message": "აღარ აჩვენო" }
+  "app_instruction_collect": {
+    "message": "ყველა Chrome სანიშნის შესაგროვებლად გაფართოებაში დააჭირეთ 🔃 ღილაკს პარამეტრების მენიუში."
+  },
+  "app_pass_short_error": {
+    "message": "პაროლი უნდა შედგებოდეს მინიმუმ 4 სიმბოლოსგან"
+  },
+  "app_pass_incorrect_error": {
+    "message": "არასწორი პაროლი"
+  },
+  "app_search_placeholder": {
+    "message": "სანიშნების ძიება..."
+  },
+  "app_modal_export": {
+    "message": "📤 სანიშნების ექსპორტი"
+  },
+  "app_options_import": {
+    "message": "📥 იმპორტი"
+  },
+  "app_options_export": {
+    "message": "📤 ექსპორტი"
+  },
+  "app_options_settings": {
+    "message": "⚙️ პარამეტრები"
+  },
+  "app_options_settings_alert": {
+    "message": "პარამეტრები მალე გამოჩნდება!"
+  },
+  "app_options_collect": {
+    "message": "🔃 შეგროვება"
+  },
+  "app_import_modal": {
+    "message": "📥 სანიშნების იმპორტი"
+  },
+  "app_import_modal_description": {
+    "message": "გადმოიტანეთ თქვენი ფაილი აქ ან დააჭირეთ არჩევისთვის"
+  },
+  "app_cancel": {
+    "message": "გაუქმება"
+  },
+  "app_export_modal_description": {
+    "message": "დააჭირეთ ქვემოთ არსებულ ღილაკს სანიშნების ფაილში ექსპორტისთვის. შეგიძლიათ შეინახოთ და შემდგომში დააინპორტოთ."
+  },
+  "app_export_modal_button": {
+    "message": "ექსპორტი"
+  },
+  "app_panic_description": {
+    "message": "დააყენეთ პანიკის ღილაკი (ნაგულისხმევი = alt+p) ყველა ჩანართის დასახურად და საქაღალდეში შესანახად"
+  },
+  "app_ads_title": {
+    "message": "ავტომატურად დაამატეთ და მართეთ AI მოთხოვნები"
+  },
+  "app_donate_title": {
+    "message": "💸 მხარი დაუჭირეთ პროექტს"
+  },
+  "app_feedback_title": {
+    "message": "გაფართოება მოგწონთ?"
+  },
+  "app_feedback_description": {
+    "message": "ჩვენთვის თქვენი აზრი მნიშვნელოვანია! გთხოვთ შეაფასეთ აპლიკაცია და დატოვეთ მიმოხილვა მაღაზიის გვერდზე."
+  },
+  "app_feedback_button_leave": {
+    "message": "მიმოხილვის დატოვება"
+  },
+  "app_feedback_button_later": {
+    "message": "მოგვიანებით"
+  }
 }

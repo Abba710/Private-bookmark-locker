@@ -1,50 +1,135 @@
 {
-  "app_name": { "message": "Cofre de Favoritos Privados" },
+  "app_name": {
+    "message": "Cofre de Favoritos Privados"
+  },
   "app_description": {
     "message": "Armazenamento privado de favoritos. Salve e proteja links com uma senha — só você pode vê-los."
   },
-  "app_enter_password": { "message": "🔒 Digite a senha" },
-  "app_create_password": { "message": "🔒 Criar senha" },
-  "app_set_password": { "message": "Definir senha" },
-  "app_create_password_placeholder": { "message": "Crie sua senha" },
-  "app_enter_password_placeholder": { "message": "Digite sua senha" },
+
+  "app_enter_password": {
+    "message": "🔒 Digitar senha"
+  },
+  "app_create_password": {
+    "message": "🔒 Criar senha"
+  },
+  "app_create_password_placeholder": {
+    "message": "Crie sua senha"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Digite sua senha"
+  },
+  "app_unlock": {
+    "message": "🔓 Desbloquear"
+  },
+  "app_create_password_button": {
+    "message": "Criar senha"
+  },
+  "app_password_empty_error": {
+    "message": "A senha não pode estar vazia"
+  },
+  "app_password_incorrect_error": {
+    "message": "Senha incorreta"
+  },
+  "app_password_hashing_error": {
+    "message": "Falha ao criptografar"
+  },
   "app_password_warning": {
     "message": "⚠️ Importante: Se você esquecer sua senha, ela não poderá ser recuperada. Todos os dados são armazenados apenas neste dispositivo e não podem ser acessados sem a senha correta."
   },
+  "app_instruction_title": {
+    "message": "🔐 Como usar o Cofre de Favoritos Privados"
+  },
   "app_instruction_save": {
-    "message": "📌 Para salvar um favorito, clique no botão 💾 no cabeçalho."
+    "message": "Para salvar um favorito, clique no botão 💾 no cabeçalho."
   },
   "app_instruction_lock": {
-    "message": "🔒 Para bloquear favoritos, clique no ícone 🔒 no cabeçalho."
+    "message": "Para bloquear a extensão, clique no ícone 🔒 no cabeçalho."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ Para ver favoritos normais, clique no ícone 👁️ no cabeçalho."
+    "message": "Para ver os favoritos normais, clique no ícone 👁️ no cabeçalho."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ Para ver favoritos anônimos, clique no ícone 🕶️ no cabeçalho."
+    "message": "Para ver os favoritos do modo anônimo, clique no ícone 🕶️ no cabeçalho."
+  },
+  "app_instruction_create_folder": {
+    "message": "Para criar uma pasta, clique no botão 📁 no cabeçalho."
   },
   "app_instruction_incognito_hint": {
     "message": "Para usar a extensão no modo anônimo, clique com o botão direito no ícone, escolha 'Gerenciar extensão' e habilite 'Permitir no modo anônimo'."
   },
-  "app_unlock": { "message": "🔓 Desbloquear" },
-  "app_donate_using": { "message": "Obrigado por usar a extensão!" },
-  "app_donate_call": {
-    "message": "Esta ferramenta foi criada com amor pela privacidade. Se foi útil para você, considere apoiar o desenvolvimento ☕"
+  "app_instruction_panic": {
+    "message": "Para configurar o botão de pânico, vá nas configurações do Chrome e atribua um atalho para fechar todas as abas e salvá-las em uma pasta."
   },
-  "app_donate_now": { "message": "Apoie o projeto por R💲25" },
-  "app_donate_leter": { "message": "Talvez depois" },
-  "app_ads": {
-    "message": "📢 Não está recebendo boas respostas da IA? Automatize seus prompts."
+  "app_instruction_import": {
+    "message": "Para importar favoritos, clique no botão 📥 Importar no menu de opções."
+  },
+  "app_instruction_export": {
+    "message": "Para exportar favoritos, clique no botão 📤 Exportar no menu de opções."
+  },
+  "app_instruction_collect": {
+    "message": "Para reunir todos os favoritos do Chrome na extensão, clique no botão 🔃 Reunir no menu de opções."
   },
   "app_pass_short_error": {
     "message": "A senha deve ter pelo menos 4 caracteres"
   },
-  "app_pass_incorrect_error": { "message": "Senha incorreta" },
-  "app_feedback_title": { "message": "⭐ Está gostando da extensão?" },
-  "app_feedback_text": {
-    "message": "Uma avaliação rápida seria muito importante! 🙏"
+  "app_pass_incorrect_error": {
+    "message": "Senha incorreta"
   },
-  "app_feedback_button_review": { "message": "Deixe uma avaliação" },
-  "app_feedback_button_later": { "message": "Depois" },
-  "app_feedback_button_never": { "message": "Não mostrar novamente" }
+  "app_search_placeholder": {
+    "message": "Buscar favoritos..."
+  },
+  "app_modal_export": {
+    "message": "📤 Exportar Favoritos"
+  },
+  "app_options_import": {
+    "message": "📥 Importar"
+  },
+  "app_options_export": {
+    "message": "📤 Exportar"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Configurações"
+  },
+  "app_options_settings_alert": {
+    "message": "Configurações em breve!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Reunir"
+  },
+  "app_import_modal": {
+    "message": "📥 Importar Favoritos"
+  },
+  "app_import_modal_description": {
+    "message": "Arraste e solte seu arquivo aqui ou clique para selecionar"
+  },
+  "app_cancel": {
+    "message": "Cancelar"
+  },
+  "app_export_modal_description": {
+    "message": "Clique no botão abaixo para exportar seus favoritos como um arquivo. Você pode salvá-lo e importar mais tarde, se necessário."
+  },
+  "app_export_modal_button": {
+    "message": "Exportar"
+  },
+  "app_panic_description": {
+    "message": "Defina o botão de pânico (padrão = alt+p) para fechar todas as abas e salvá-las em uma pasta"
+  },
+  "app_ads_title": {
+    "message": "Adicione e gerencie prompts de IA automaticamente"
+  },
+  "app_donate_title": {
+    "message": "💸 Apoie o projeto"
+  },
+  "app_feedback_title": {
+    "message": "Gostou da extensão?"
+  },
+  "app_feedback_description": {
+    "message": "Nós valorizamos sua opinião! Avalie o aplicativo e deixe um comentário na página da loja."
+  },
+  "app_feedback_button_leave": {
+    "message": "Deixar avaliação"
+  },
+  "app_feedback_button_later": {
+    "message": "Depois"
+  }
 }

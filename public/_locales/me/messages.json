@@ -1,48 +1,135 @@
 {
-  "app_name": { "message": "Privatni sef za obeleživače" },
-  "app_description": {
-    "message": "Privatno skladište obeleživača. Sačuvajte i zaštitite linkove lozinkom — samo vi ih možete videti."
+  "app_name": {
+    "message": "Privatni sef za obeleživače"
   },
-  "app_enter_password": { "message": "🔒 Unesite lozinku" },
-  "app_create_password": { "message": "🔒 Kreirajte lozinku" },
-  "app_set_password": { "message": "Postavite lozinku" },
-  "app_create_password_placeholder": { "message": "Kreirajte svoju lozinku" },
-  "app_enter_password_placeholder": { "message": "Unesite svoju lozinku" },
+  "app_description": {
+    "message": "Privatno skladište obeleživača. Sačuvajte i zaštitite linkove lozinkom — samo vi ih možete vidjeti."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Unesite lozinku"
+  },
+  "app_create_password": {
+    "message": "🔒 Kreirajte lozinku"
+  },
+  "app_create_password_placeholder": {
+    "message": "Kreirajte svoju lozinku"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Unesite svoju lozinku"
+  },
+  "app_unlock": {
+    "message": "🔓 Otključaj"
+  },
+  "app_create_password_button": {
+    "message": "Kreiraj lozinku"
+  },
+  "app_password_empty_error": {
+    "message": "Lozinka ne može biti prazna"
+  },
+  "app_password_incorrect_error": {
+    "message": "Netačna lozinka"
+  },
+  "app_password_hashing_error": {
+    "message": "Greška pri heširanju"
+  },
   "app_password_warning": {
-    "message": "⚠️ Važno: Ako zaboravite lozinku, ne može se povratiti. Svi podaci se čuvaju samo na ovom uređaju i nisu dostupni bez ispravne lozinke."
+    "message": "⚠️ Važno: Ako zaboravite lozinku, ne može se povratiti. Svi podaci se čuvaju samo na ovom uređaju i ne mogu se pristupiti bez tačne lozinke."
+  },
+  "app_instruction_title": {
+    "message": "🔐 Kako koristiti Privatni sef za obeleživače"
   },
   "app_instruction_save": {
-    "message": "📌 Da biste sačuvali obeleživač, kliknite na dugme 💾 u zaglavlju."
+    "message": "Da biste sačuvali obeleživač, kliknite na dugme 💾 u zaglavlju."
   },
   "app_instruction_lock": {
-    "message": "🔒 Da biste zaključali obeleživače, kliknite na ikonu 🔒 u zaglavlju."
+    "message": "Da zaključate ekstenziju, kliknite na ikonicu 🔒 u zaglavlju."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ Da biste videli obične obeleživače, kliknite na ikonu 👁️ u zaglavlju."
+    "message": "Da pogledate obične obeleživače, kliknite na ikonicu 👁️ u zaglavlju."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ Da biste videli incognito obeleživače, kliknite na ikonu 🕶️ u zaglavlju."
+    "message": "Da pogledate inkognito obeleživače, kliknite na ikonicu 🕶️ u zaglavlju."
+  },
+  "app_instruction_create_folder": {
+    "message": "Da kreirate folder, kliknite na dugme 📁 u zaglavlju."
   },
   "app_instruction_incognito_hint": {
-    "message": "Za korišćenje ekstenzije u incognito režimu, desnim klikom na ikonu izaberite 'Upravljaj ekstenzijom' i omogućite 'Dozvoli u incognito'."
+    "message": "Da koristite ekstenziju u inkognito režimu, kliknite desnim tasterom na ikonicu, izaberite 'Upravljanje ekstenzijom' i uključite 'Dozvoli u inkognitu'."
   },
-  "app_unlock": { "message": "🔓 Otključaj" },
-  "app_donate_using": { "message": "Hvala što koristite ekstenziju!" },
-  "app_donate_call": {
-    "message": "Ovaj alat je napravljen zbog privatnosti. Ako vam je koristan, podržite razvoj ☕"
+  "app_instruction_panic": {
+    "message": "Da podesite panic dugme, idite u Chrome podešavanja i dodelite prečicu za zatvaranje svih tabova i njihovo čuvanje u folderu."
   },
-  "app_donate_now": { "message": "Podržite projekat za 5€" },
-  "app_donate_leter": { "message": "Možda kasnije" },
-  "app_ads": {
-    "message": "📢 Ne dobijate dobre odgovore od AI? Automatizujte svoje zahteve."
+  "app_instruction_import": {
+    "message": "Da uvezete obeleživače, kliknite na 📥 Import dugme u meniju opcija."
+  },
+  "app_instruction_export": {
+    "message": "Da izvezete obeleživače, kliknite na 📤 Export dugme u meniju opcija."
+  },
+  "app_instruction_collect": {
+    "message": "Da prikupite sve Chrome obeleživače u ekstenziji, kliknite na dugme 🔃 Collect u meniju opcija."
   },
   "app_pass_short_error": {
     "message": "Lozinka mora imati najmanje 4 karaktera"
   },
-  "app_pass_incorrect_error": { "message": "Pogrešna lozinka" },
-  "app_feedback_title": { "message": "⭐ Sviđa li vam se ekstenzija?" },
-  "app_feedback_text": { "message": "Kratka recenzija mnogo znači! 🙏" },
-  "app_feedback_button_review": { "message": "Ostavite recenziju" },
-  "app_feedback_button_later": { "message": "Kasnije" },
-  "app_feedback_button_never": { "message": "Ne prikazuj više" }
+  "app_pass_incorrect_error": {
+    "message": "Netačna lozinka"
+  },
+  "app_search_placeholder": {
+    "message": "Pretraži obeleživače..."
+  },
+  "app_modal_export": {
+    "message": "📤 Izvoz obeleživača"
+  },
+  "app_options_import": {
+    "message": "📥 Uvoz"
+  },
+  "app_options_export": {
+    "message": "📤 Izvoz"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Podešavanja"
+  },
+  "app_options_settings_alert": {
+    "message": "Podešavanja uskoro!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Prikupi"
+  },
+  "app_import_modal": {
+    "message": "📥 Uvoz obeleživača"
+  },
+  "app_import_modal_description": {
+    "message": "Prevucite fajl ovdje ili kliknite da odaberete"
+  },
+  "app_cancel": {
+    "message": "Otkaži"
+  },
+  "app_export_modal_description": {
+    "message": "Kliknite na dugme ispod da izvezete obeleživače kao fajl. Možete ga sačuvati i kasnije uvesti ako bude potrebno."
+  },
+  "app_export_modal_button": {
+    "message": "Izvezi"
+  },
+  "app_panic_description": {
+    "message": "Podesite panic dugme (podrazumijevano = Alt+P) za zatvaranje svih tabova i njihovo čuvanje u folderu"
+  },
+  "app_ads_title": {
+    "message": "Automatski dodaj i upravljaj AI promptovima"
+  },
+  "app_donate_title": {
+    "message": "💸 Podržite projekat"
+  },
+  "app_feedback_title": {
+    "message": "Sviđa vam se ekstenzija?"
+  },
+  "app_feedback_description": {
+    "message": "Cijenimo vaše mišljenje! Molimo vas da ocijenite aplikaciju i ostavite recenziju na stranici prodavnice."
+  },
+  "app_feedback_button_leave": {
+    "message": "Ostavite recenziju"
+  },
+  "app_feedback_button_later": {
+    "message": "Kasnije"
+  }
 }

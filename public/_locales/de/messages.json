@@ -1,52 +1,135 @@
 {
-  "app_name": { "message": "Privater Lesezeichen-Tresor" },
-  "app_description": {
-    "message": "Privater Lesezeichen-Speicher. Speichern und schützen Sie Links mit einem Passwort – nur Sie können sie sehen."
+  "app_name": {
+    "message": "Privater Lesezeichen-Safe"
   },
-  "app_enter_password": { "message": "🔒 Passwort eingeben" },
-  "app_create_password": { "message": "🔒 Passwort erstellen" },
-  "app_set_password": { "message": "Passwort festlegen" },
+  "app_description": {
+    "message": "Privater Speicher für Lesezeichen. Speichern und schützen Sie Links mit einem Passwort — nur Sie können sie sehen."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Passwort eingeben"
+  },
+  "app_create_password": {
+    "message": "🔒 Passwort erstellen"
+  },
   "app_create_password_placeholder": {
     "message": "Erstellen Sie Ihr Passwort"
   },
-  "app_enter_password_placeholder": { "message": "Geben Sie Ihr Passwort ein" },
+  "app_enter_password_placeholder": {
+    "message": "Geben Sie Ihr Passwort ein"
+  },
+  "app_unlock": {
+    "message": "🔓 Entsperren"
+  },
+  "app_create_password_button": {
+    "message": "Passwort erstellen"
+  },
+  "app_password_empty_error": {
+    "message": "Das Passwort darf nicht leer sein"
+  },
+  "app_password_incorrect_error": {
+    "message": "Falsches Passwort"
+  },
+  "app_password_hashing_error": {
+    "message": "Hashing fehlgeschlagen"
+  },
   "app_password_warning": {
-    "message": "⚠️ Wichtig: Wenn Sie Ihr Passwort vergessen, kann es nicht wiederhergestellt werden. Alle Daten werden nur auf diesem Gerät gespeichert und sind ohne das richtige Passwort nicht zugänglich."
+    "message": "⚠️ Wichtig: Wenn Sie Ihr Passwort vergessen, kann es nicht wiederhergestellt werden. Alle Daten werden ausschließlich auf diesem Gerät gespeichert und sind ohne das richtige Passwort nicht zugänglich."
+  },
+  "app_instruction_title": {
+    "message": "🔐 So verwenden Sie den Privaten Lesezeichen-Safe"
   },
   "app_instruction_save": {
-    "message": "📌 Um ein Lesezeichen zu speichern, klicken Sie auf die 💾-Schaltfläche in der Kopfzeile."
+    "message": "Um ein Lesezeichen zu speichern, klicken Sie auf die Schaltfläche 💾 in der Kopfzeile."
   },
   "app_instruction_lock": {
-    "message": "🔒 Um Lesezeichen zu sperren, klicken Sie auf das 🔒-Symbol in der Kopfzeile."
+    "message": "Um die Erweiterung zu sperren, klicken Sie auf das Symbol 🔒 in der Kopfzeile."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ Um normale Lesezeichen anzuzeigen, klicken Sie auf das 👁️-Symbol in der Kopfzeile."
+    "message": "Um normale Lesezeichen anzuzeigen, klicken Sie auf das Symbol 👁️ in der Kopfzeile."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ Um Inkognito-Lesezeichen anzuzeigen, klicken Sie auf das 🕶️-Symbol in der Kopfzeile."
+    "message": "Um Inkognito-Lesezeichen anzuzeigen, klicken Sie auf das Symbol 🕶️ in der Kopfzeile."
+  },
+  "app_instruction_create_folder": {
+    "message": "Um einen Ordner zu erstellen, klicken Sie auf die Schaltfläche 📁 in der Kopfzeile."
   },
   "app_instruction_incognito_hint": {
-    "message": "Um die Erweiterung im Inkognito-Modus zu verwenden, klicken Sie mit der rechten Maustaste auf das Symbol, wählen Sie 'Erweiterung verwalten' und aktivieren Sie 'Im Inkognito zulassen'."
+    "message": "Um die Erweiterung im Inkognito-Modus zu verwenden, klicken Sie mit der rechten Maustaste auf das Symbol, wählen Sie 'Erweiterung verwalten' und aktivieren Sie 'Im Inkognito-Modus zulassen'."
   },
-  "app_unlock": { "message": "🔓 Entsperren" },
-  "app_donate_using": { "message": "Danke für die Nutzung der Erweiterung!" },
-  "app_donate_call": {
-    "message": "Dieses Tool wurde aus Liebe zur Privatsphäre entwickelt. Wenn es Ihnen geholfen hat, unterstützen Sie bitte die Entwicklung ☕"
+  "app_instruction_panic": {
+    "message": "Um eine Panik-Taste einzurichten und zu verwenden, öffnen Sie die Chrome-Einstellungen und weisen Sie eine Tastenkombination zum Schließen aller Tabs und Speichern in einem Ordner zu."
   },
-  "app_donate_now": { "message": "Projekt für 5💲 unterstützen" },
-  "app_donate_leter": { "message": "Vielleicht später" },
-  "app_ads": {
-    "message": "📢 Bekommen Sie keine guten Antworten von der KI? Automatisieren Sie Ihre Eingaben."
+  "app_instruction_import": {
+    "message": "Um Lesezeichen zu importieren, klicken Sie auf die Schaltfläche 📥 Import im Optionsmenü."
+  },
+  "app_instruction_export": {
+    "message": "Um Lesezeichen zu exportieren, klicken Sie auf die Schaltfläche 📤 Export im Optionsmenü."
+  },
+  "app_instruction_collect": {
+    "message": "Um alle Chrome-Lesezeichen in die Erweiterung zu übernehmen, klicken Sie auf die Schaltfläche 🔃 Sammeln im Optionsmenü."
   },
   "app_pass_short_error": {
     "message": "Das Passwort muss mindestens 4 Zeichen lang sein"
   },
-  "app_pass_incorrect_error": { "message": "Falsches Passwort" },
-  "app_feedback_title": { "message": "⭐ Gefällt Ihnen die Erweiterung?" },
-  "app_feedback_text": {
-    "message": "Eine kurze Bewertung wäre sehr hilfreich! 🙏"
+  "app_pass_incorrect_error": {
+    "message": "Falsches Passwort"
   },
-  "app_feedback_button_review": { "message": "Bewertung abgeben" },
-  "app_feedback_button_later": { "message": "Später" },
-  "app_feedback_button_never": { "message": "Nicht mehr anzeigen" }
+  "app_search_placeholder": {
+    "message": "Lesezeichen suchen..."
+  },
+  "app_modal_export": {
+    "message": "📤 Lesezeichen exportieren"
+  },
+  "app_options_import": {
+    "message": "📥 Import"
+  },
+  "app_options_export": {
+    "message": "📤 Export"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Einstellungen"
+  },
+  "app_options_settings_alert": {
+    "message": "Einstellungen sind bald verfügbar!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Sammeln"
+  },
+  "app_import_modal": {
+    "message": "📥 Lesezeichen importieren"
+  },
+  "app_import_modal_description": {
+    "message": "Ziehen Sie Ihre Datei hierher oder klicken Sie, um sie auszuwählen"
+  },
+  "app_cancel": {
+    "message": "Abbrechen"
+  },
+  "app_export_modal_description": {
+    "message": "Klicken Sie unten auf die Schaltfläche, um Ihre Lesezeichen als Datei zu exportieren. Sie können diese speichern und bei Bedarf später wieder importieren."
+  },
+  "app_export_modal_button": {
+    "message": "Exportieren"
+  },
+  "app_panic_description": {
+    "message": "Richten Sie eine Panik-Taste ein (Standard = Alt+P), um alle Tabs zu schließen und sie in einem Ordner zu speichern"
+  },
+  "app_ads_title": {
+    "message": "KI-Prompts automatisch hinzufügen und verwalten"
+  },
+  "app_donate_title": {
+    "message": "💸 Projekt unterstützen"
+  },
+  "app_feedback_title": {
+    "message": "Gefällt Ihnen die Erweiterung?"
+  },
+  "app_feedback_description": {
+    "message": "Wir schätzen Ihr Feedback! Bitte bewerten Sie die App und hinterlassen Sie eine Rezension auf der Store-Seite."
+  },
+  "app_feedback_button_leave": {
+    "message": "Rezension hinterlassen"
+  },
+  "app_feedback_button_later": {
+    "message": "Später"
+  }
 }

@@ -1,48 +1,135 @@
 {
-  "app_name": { "message": "Privat bokmärkesvalv" },
-  "app_description": {
-    "message": "Privat bokmärkeslagring. Spara och skydda länkar med ett lösenord — endast du kan se dem."
+  "app_name": {
+    "message": "Privat Bokmärkeshanterare"
   },
-  "app_enter_password": { "message": "🔒 Ange lösenord" },
-  "app_create_password": { "message": "🔒 Skapa lösenord" },
-  "app_set_password": { "message": "Ställ in lösenord" },
-  "app_create_password_placeholder": { "message": "Skapa ditt lösenord" },
-  "app_enter_password_placeholder": { "message": "Ange ditt lösenord" },
+  "app_description": {
+    "message": "Privat lagring av bokmärken. Spara och skydda länkar med ett lösenord — bara du kan se dem."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Ange lösenord"
+  },
+  "app_create_password": {
+    "message": "🔒 Skapa lösenord"
+  },
+  "app_create_password_placeholder": {
+    "message": "Skapa ditt lösenord"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Ange ditt lösenord"
+  },
+  "app_unlock": {
+    "message": "🔓 Lås upp"
+  },
+  "app_create_password_button": {
+    "message": "Skapa lösenord"
+  },
+  "app_password_empty_error": {
+    "message": "Lösenordet får inte vara tomt"
+  },
+  "app_password_incorrect_error": {
+    "message": "Felaktigt lösenord"
+  },
+  "app_password_hashing_error": {
+    "message": "Hashning misslyckades"
+  },
   "app_password_warning": {
     "message": "⚠️ Viktigt: Om du glömmer ditt lösenord kan det inte återställas. All data lagras endast på denna enhet och kan inte nås utan rätt lösenord."
   },
+  "app_instruction_title": {
+    "message": "🔐 Hur man använder Privat Bokmärkeshanterare"
+  },
   "app_instruction_save": {
-    "message": "📌 För att spara ett bokmärke, klicka på 💾-knappen i rubriken."
+    "message": "För att spara ett bokmärke, klicka på 💾-knappen i rubriken."
   },
   "app_instruction_lock": {
-    "message": "🔒 För att låsa bokmärken, klicka på 🔒-ikonen i rubriken."
+    "message": "För att låsa tillägget, klicka på 🔒-ikonen i rubriken."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ För att visa vanliga bokmärken, klicka på 👁️-ikonen i rubriken."
+    "message": "För att visa vanliga bokmärken, klicka på 👁️-ikonen i rubriken."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ För att visa inkognitobokmärken, klicka på 🕶️-ikonen i rubriken."
+    "message": "För att visa inkognitobokmärken, klicka på 🕶️-ikonen i rubriken."
+  },
+  "app_instruction_create_folder": {
+    "message": "För att skapa en mapp, klicka på 📁-knappen i rubriken."
   },
   "app_instruction_incognito_hint": {
     "message": "För att använda tillägget i inkognitoläge, högerklicka på ikonen, välj 'Hantera tillägg' och aktivera 'Tillåt i inkognito'."
   },
-  "app_unlock": { "message": "🔓 Lås upp" },
-  "app_donate_using": { "message": "Tack för att du använder tillägget!" },
-  "app_donate_call": {
-    "message": "Detta verktyg är byggt för integritet. Om det har varit till hjälp, stöd utvecklingen ☕"
+  "app_instruction_panic": {
+    "message": "För att ställa in en panikknapp och använda den, gå till Chromes inställningar och tilldela en genväg för att stänga alla flikar och spara dem i en mapp."
   },
-  "app_donate_now": { "message": "Stöd projektet för 50 kr" },
-  "app_donate_leter": { "message": "Kanske senare" },
-  "app_ads": {
-    "message": "📢 Får du inte bra svar från AI? Automatisera dina prompts."
+  "app_instruction_import": {
+    "message": "För att importera bokmärken, klicka på 📥 Import-knappen i menyn."
+  },
+  "app_instruction_export": {
+    "message": "För att exportera bokmärken, klicka på 📤 Export-knappen i menyn."
+  },
+  "app_instruction_collect": {
+    "message": "För att samla alla Chrome-bokmärken i tillägget, klicka på 🔃 Samla-knappen i menyn."
   },
   "app_pass_short_error": {
     "message": "Lösenordet måste vara minst 4 tecken långt"
   },
-  "app_pass_incorrect_error": { "message": "Fel lösenord" },
-  "app_feedback_title": { "message": "⭐ Gillar du tillägget?" },
-  "app_feedback_text": { "message": "En kort recension betyder mycket! 🙏" },
-  "app_feedback_button_review": { "message": "Lämna en recension" },
-  "app_feedback_button_later": { "message": "Senare" },
-  "app_feedback_button_never": { "message": "Visa inte igen" }
+  "app_pass_incorrect_error": {
+    "message": "Felaktigt lösenord"
+  },
+  "app_search_placeholder": {
+    "message": "Sök bokmärken..."
+  },
+  "app_modal_export": {
+    "message": "📤 Exportera bokmärken"
+  },
+  "app_options_import": {
+    "message": "📥 Importera"
+  },
+  "app_options_export": {
+    "message": "📤 Exportera"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Inställningar"
+  },
+  "app_options_settings_alert": {
+    "message": "Inställningar kommer snart!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Samla"
+  },
+  "app_import_modal": {
+    "message": "📥 Importera bokmärken"
+  },
+  "app_import_modal_description": {
+    "message": "Dra och släpp din fil här eller klicka för att välja"
+  },
+  "app_cancel": {
+    "message": "Avbryt"
+  },
+  "app_export_modal_description": {
+    "message": "Klicka på knappen nedan för att exportera dina bokmärken som en fil. Du kan spara den och importera senare om det behövs."
+  },
+  "app_export_modal_button": {
+    "message": "Exportera"
+  },
+  "app_panic_description": {
+    "message": "Ställ in panikknappen (standard = alt+p) för att stänga alla flikar och spara dem i en mapp"
+  },
+  "app_ads_title": {
+    "message": "Lägg automatiskt till och hantera AI-promptar"
+  },
+  "app_donate_title": {
+    "message": "💸 Stöd projektet"
+  },
+  "app_feedback_title": {
+    "message": "Gillar du tillägget?"
+  },
+  "app_feedback_description": {
+    "message": "Vi värdesätter din åsikt! Betygsätt appen och lämna en recension på butikssidan."
+  },
+  "app_feedback_button_leave": {
+    "message": "Lämna en recension"
+  },
+  "app_feedback_button_later": {
+    "message": "Senare"
+  }
 }

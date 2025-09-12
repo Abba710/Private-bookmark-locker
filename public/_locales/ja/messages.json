@@ -11,70 +11,124 @@
   "app_create_password": {
     "message": "🔒 パスワードを作成"
   },
-  "app_set_password": {
-    "message": "パスワードを設定"
-  },
   "app_create_password_placeholder": {
     "message": "パスワードを作成してください"
   },
   "app_enter_password_placeholder": {
     "message": "パスワードを入力してください"
   },
-  "app_password_warning": {
-    "message": "⚠️ 重要: パスワードを忘れた場合、復元やリセットはできません。データはこのデバイスのみに保存されており、正しいパスワードがないとアクセスできません。"
-  },
-  "app_instruction_save": {
-    "message": "📌 ブックマークを保存するには、上部の 💾 ボタンをクリックしてください。"
-  },
-  "app_instruction_lock": {
-    "message": "🔒 ブックマークをロックするには、🔒 アイコンをクリックしてください。"
-  },
-  "app_instruction_view_basic": {
-    "message": "👁️ 通常のブックマークを見るには、👁️ アイコンをクリックしてください。"
-  },
-  "app_instruction_view_incognito": {
-    "message": "🕶️ プライベートブックマークを見るには、🕶️ アイコンをクリックしてください。"
-  },
-  "app_instruction_incognito_hint": {
-    "message": "シークレットモードで拡張機能を使用するには、アイコンを右クリックして「拡張機能を管理」を選び、「シークレットモードでの実行を許可」を有効にしてください。"
-  },
   "app_unlock": {
     "message": "🔓 ロック解除"
   },
-  "app_donate_using": {
-    "message": "ご利用ありがとうございます！"
+  "app_create_password_button": {
+    "message": "パスワードを作成"
   },
-  "app_donate_call": {
-    "message": "このツールはプライバシーを大切にする気持ちから生まれました。もしお役に立ったなら、開発支援をご検討ください ☕"
+  "app_password_empty_error": {
+    "message": "パスワードを入力してください"
   },
-  "app_donate_now": {
-    "message": "このプロジェクトを 5💲 で支援する"
+  "app_password_incorrect_error": {
+    "message": "パスワードが正しくありません"
   },
-  "app_donate_leter": {
-    "message": "あとで"
+  "app_password_hashing_error": {
+    "message": "ハッシュ処理に失敗しました"
   },
-  "app_ads": {
-    "message": "📢 AIの回答がイマイチ？プロンプトを自動化しよう。"
+  "app_password_warning": {
+    "message": "⚠️ 重要: パスワードを忘れると復元できません。すべてのデータはこのデバイスのみに保存され、正しいパスワードなしではアクセスできません。"
+  },
+  "app_instruction_title": {
+    "message": "🔐 プライベートブックマークロッカーの使い方"
+  },
+  "app_instruction_save": {
+    "message": "ブックマークを保存するには、ヘッダーの 💾 ボタンをクリックします。"
+  },
+  "app_instruction_lock": {
+    "message": "拡張機能をロックするには、ヘッダーの 🔒 アイコンをクリックします。"
+  },
+  "app_instruction_view_basic": {
+    "message": "通常のブックマークを表示するには、ヘッダーの 👁️ アイコンをクリックします。"
+  },
+  "app_instruction_view_incognito": {
+    "message": "シークレットブックマークを表示するには、ヘッダーの 🕶️ アイコンをクリックします。"
+  },
+  "app_instruction_create_folder": {
+    "message": "フォルダを作成するには、ヘッダーの 📁 ボタンをクリックします。"
+  },
+  "app_instruction_incognito_hint": {
+    "message": "拡張機能をシークレットモードで使用するには、アイコンを右クリックし、「拡張機能を管理」を選択して「シークレット モードでの実行を許可」を有効にしてください。"
+  },
+  "app_instruction_panic": {
+    "message": "パニックボタンを設定するには、Chrome の設定でショートカットを割り当て、すべてのタブを閉じてフォルダに保存できるようにします。"
+  },
+  "app_instruction_import": {
+    "message": "ブックマークをインポートするには、オプションメニューの 📥 インポートボタンをクリックします。"
+  },
+  "app_instruction_export": {
+    "message": "ブックマークをエクスポートするには、オプションメニューの 📤 エクスポートボタンをクリックします。"
+  },
+  "app_instruction_collect": {
+    "message": "すべての Chrome ブックマークを拡張機能にまとめるには、オプションメニューの 🔃 収集ボタンをクリックします。"
   },
   "app_pass_short_error": {
-    "message": "パスワードは4文字以上である必要があります"
+    "message": "パスワードは4文字以上で入力してください"
   },
   "app_pass_incorrect_error": {
     "message": "パスワードが正しくありません"
   },
+  "app_search_placeholder": {
+    "message": "ブックマークを検索..."
+  },
+  "app_modal_export": {
+    "message": "📤 ブックマークをエクスポート"
+  },
+  "app_options_import": {
+    "message": "📥 インポート"
+  },
+  "app_options_export": {
+    "message": "📤 エクスポート"
+  },
+  "app_options_settings": {
+    "message": "⚙️ 設定"
+  },
+  "app_options_settings_alert": {
+    "message": "設定は近日公開予定です！"
+  },
+  "app_options_collect": {
+    "message": "🔃 収集"
+  },
+  "app_import_modal": {
+    "message": "📥 ブックマークをインポート"
+  },
+  "app_import_modal_description": {
+    "message": "ファイルをここにドラッグ＆ドロップするか、クリックして選択してください"
+  },
+  "app_cancel": {
+    "message": "キャンセル"
+  },
+  "app_export_modal_description": {
+    "message": "下のボタンをクリックすると、ブックマークをファイルとしてエクスポートできます。保存して、必要に応じて後でインポートできます。"
+  },
+  "app_export_modal_button": {
+    "message": "エクスポート"
+  },
+  "app_panic_description": {
+    "message": "パニックボタン（デフォルト = alt+p）を設定して、すべてのタブを閉じてフォルダに保存します"
+  },
+  "app_ads_title": {
+    "message": "AIプロンプトを自動追加・管理"
+  },
+  "app_donate_title": {
+    "message": "💸プロジェクトを支援する"
+  },
   "app_feedback_title": {
-    "message": "⭐ この拡張機能は気に入りましたか？"
+    "message": "この拡張機能は気に入りましたか？"
   },
-  "app_feedback_text": {
-    "message": "レビューを残していただけると嬉しいです！"
+  "app_feedback_description": {
+    "message": "ご意見をお待ちしています！アプリを評価し、ストアページでレビューを残してください。"
   },
-  "app_feedback_button_review": {
+  "app_feedback_button_leave": {
     "message": "レビューを書く"
   },
   "app_feedback_button_later": {
     "message": "後で"
-  },
-  "app_feedback_button_never": {
-    "message": "今後表示しない"
   }
 }

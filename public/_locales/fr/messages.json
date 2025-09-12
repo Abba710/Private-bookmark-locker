@@ -1,60 +1,73 @@
 {
   "app_name": {
-    "message": "Coffre-fort de favoris privé"
+    "message": "Coffre-fort Privé de Favoris"
   },
   "app_description": {
-    "message": "Stockage privé de favoris. Enregistre et protège les liens avec un mot de passe — toi seul peux les voir."
+    "message": "Stockage privé de favoris. Enregistrez et protégez vos liens avec un mot de passe — vous seul pouvez les voir."
   },
+
   "app_enter_password": {
-    "message": "🔒 Entrer le mot de passe"
+    "message": "🔒 Saisir le mot de passe"
   },
   "app_create_password": {
     "message": "🔒 Créer un mot de passe"
   },
-  "app_set_password": {
-    "message": "Définir le mot de passe"
-  },
   "app_create_password_placeholder": {
-    "message": "Crée ton mot de passe"
+    "message": "Créez votre mot de passe"
   },
   "app_enter_password_placeholder": {
-    "message": "Entre ton mot de passe"
-  },
-  "app_password_warning": {
-    "message": "⚠️ Important : Si tu oublies ton mot de passe, il ne pourra pas être récupéré. Toutes les données sont stockées uniquement sur cet appareil et sont inaccessibles sans le mot de passe correct."
-  },
-  "app_instruction_save": {
-    "message": "📌 Pour enregistrer un favori, clique sur le bouton 💾 en haut."
-  },
-  "app_instruction_lock": {
-    "message": "🔒 Pour verrouiller les favoris, clique sur l'icône 🔒 en haut."
-  },
-  "app_instruction_view_basic": {
-    "message": "👁️ Pour voir les favoris normaux, clique sur l'icône 👁️ en haut."
-  },
-  "app_instruction_view_incognito": {
-    "message": "🕶️ Pour voir les favoris incognito, clique sur l'icône 🕶️ en haut."
-  },
-  "app_instruction_incognito_hint": {
-    "message": "Pour utiliser l'extension en mode incognito, fais un clic droit sur l'icône, choisis « Gérer l’extension » puis active « Autoriser en navigation privée »."
+    "message": "Entrez votre mot de passe"
   },
   "app_unlock": {
     "message": "🔓 Déverrouiller"
   },
-  "app_donate_using": {
-    "message": "Merci d'utiliser l'extension !"
+  "app_create_password_button": {
+    "message": "Créer un mot de passe"
   },
-  "app_donate_call": {
-    "message": "Cet outil a été créé avec amour pour la vie privée. S'il vous a été utile, pensez à soutenir son développement ☕"
+  "app_password_empty_error": {
+    "message": "Le mot de passe ne peut pas être vide"
   },
-  "app_donate_now": {
-    "message": "Soutenir le projet pour 5💲"
+  "app_password_incorrect_error": {
+    "message": "Mot de passe incorrect"
   },
-  "app_donate_leter": {
-    "message": "Peut-être plus tard"
+  "app_password_hashing_error": {
+    "message": "Échec du hachage"
   },
-  "app_ads": {
-    "message": "📢 L'IA ne donne pas de bonnes réponses ? Automatise tes prompts."
+  "app_password_warning": {
+    "message": "⚠️ Important : Si vous oubliez votre mot de passe, il ne pourra pas être récupéré. Toutes les données sont stockées uniquement sur cet appareil et ne sont accessibles qu’avec le mot de passe correct."
+  },
+  "app_instruction_title": {
+    "message": "🔐 Comment utiliser Coffre-fort Privé de Favoris"
+  },
+  "app_instruction_save": {
+    "message": "Pour enregistrer un favori, cliquez sur le bouton 💾 dans l’en-tête."
+  },
+  "app_instruction_lock": {
+    "message": "Pour verrouiller l’extension, cliquez sur l’icône 🔒 dans l’en-tête."
+  },
+  "app_instruction_view_basic": {
+    "message": "Pour voir les favoris normaux, cliquez sur l’icône 👁️ dans l’en-tête."
+  },
+  "app_instruction_view_incognito": {
+    "message": "Pour voir les favoris en navigation privée, cliquez sur l’icône 🕶️ dans l’en-tête."
+  },
+  "app_instruction_create_folder": {
+    "message": "Pour créer un dossier, cliquez sur le bouton 📁 dans l’en-tête."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Pour utiliser l’extension en mode navigation privée, faites un clic droit sur l’icône, choisissez 'Gérer l’extension', puis activez 'Autoriser en navigation privée'."
+  },
+  "app_instruction_panic": {
+    "message": "Pour définir un bouton de panique, allez dans les paramètres de Chrome et assignez un raccourci pour fermer tous les onglets et les enregistrer dans un dossier."
+  },
+  "app_instruction_import": {
+    "message": "Pour importer des favoris, cliquez sur le bouton 📥 Importer dans le menu des options."
+  },
+  "app_instruction_export": {
+    "message": "Pour exporter des favoris, cliquez sur le bouton 📤 Exporter dans le menu des options."
+  },
+  "app_instruction_collect": {
+    "message": "Pour collecter tous les favoris Chrome dans l’extension, cliquez sur le bouton 🔃 Collecter dans le menu des options."
   },
   "app_pass_short_error": {
     "message": "Le mot de passe doit contenir au moins 4 caractères"
@@ -62,19 +75,61 @@
   "app_pass_incorrect_error": {
     "message": "Mot de passe incorrect"
   },
+  "app_search_placeholder": {
+    "message": "Rechercher des favoris..."
+  },
+  "app_modal_export": {
+    "message": "📤 Exporter les favoris"
+  },
+  "app_options_import": {
+    "message": "📥 Importer"
+  },
+  "app_options_export": {
+    "message": "📤 Exporter"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Paramètres"
+  },
+  "app_options_settings_alert": {
+    "message": "Paramètres bientôt disponibles !"
+  },
+  "app_options_collect": {
+    "message": "🔃 Collecter"
+  },
+  "app_import_modal": {
+    "message": "📥 Importer des favoris"
+  },
+  "app_import_modal_description": {
+    "message": "Glissez-déposez votre fichier ici ou cliquez pour sélectionner"
+  },
+  "app_cancel": {
+    "message": "Annuler"
+  },
+  "app_export_modal_description": {
+    "message": "Cliquez sur le bouton ci-dessous pour exporter vos favoris en tant que fichier. Vous pourrez l’enregistrer et l’importer plus tard si nécessaire."
+  },
+  "app_export_modal_button": {
+    "message": "Exporter"
+  },
+  "app_panic_description": {
+    "message": "Définissez un bouton de panique (par défaut = alt+p) pour fermer tous les onglets et les enregistrer dans un dossier"
+  },
+  "app_ads_title": {
+    "message": "Ajouter et gérer automatiquement des prompts IA"
+  },
+  "app_donate_title": {
+    "message": "💸 Soutenir le projet"
+  },
   "app_feedback_title": {
-    "message": "⭐ Tu aimes l’extension ?"
+    "message": "Vous aimez l’extension ?"
   },
-  "app_feedback_text": {
-    "message": "Nous serions ravis que tu laisses un avis !"
+  "app_feedback_description": {
+    "message": "Votre avis compte ! Veuillez noter l’application et laisser un commentaire sur la page du store."
   },
-  "app_feedback_button_review": {
+  "app_feedback_button_leave": {
     "message": "Laisser un avis"
   },
   "app_feedback_button_later": {
     "message": "Plus tard"
-  },
-  "app_feedback_button_never": {
-    "message": "Ne plus afficher"
   }
 }

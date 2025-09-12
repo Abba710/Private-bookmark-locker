@@ -1,50 +1,135 @@
 {
-  "app_name": { "message": "Cofre de Favoritos Privados" },
-  "app_description": {
-    "message": "Armazenamento privado de favoritos. Salve e proteja links com uma senha — só você pode vê-los."
+  "app_name": {
+    "message": "Cofre de Marcadores Privados"
   },
-  "app_enter_password": { "message": "🔒 Digite a senha" },
-  "app_create_password": { "message": "🔒 Criar senha" },
-  "app_set_password": { "message": "Definir senha" },
-  "app_create_password_placeholder": { "message": "Crie sua senha" },
-  "app_enter_password_placeholder": { "message": "Digite sua senha" },
+  "app_description": {
+    "message": "Armazenamento privado de marcadores. Guarde e proteja links com uma palavra-passe — só você pode vê-los."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Inserir palavra-passe"
+  },
+  "app_create_password": {
+    "message": "🔒 Criar palavra-passe"
+  },
+  "app_create_password_placeholder": {
+    "message": "Crie a sua palavra-passe"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Insira a sua palavra-passe"
+  },
+  "app_unlock": {
+    "message": "🔓 Desbloquear"
+  },
+  "app_create_password_button": {
+    "message": "Criar palavra-passe"
+  },
+  "app_password_empty_error": {
+    "message": "A palavra-passe não pode estar vazia"
+  },
+  "app_password_incorrect_error": {
+    "message": "Palavra-passe incorreta"
+  },
+  "app_password_hashing_error": {
+    "message": "Falha ao gerar hash"
+  },
   "app_password_warning": {
-    "message": "⚠️ Importante: Se você esquecer sua senha, ela não poderá ser recuperada. Todos os dados são armazenados apenas neste dispositivo e não podem ser acessados sem a senha correta."
+    "message": "⚠️ Importante: Se se esquecer da sua palavra-passe, não poderá recuperá-la. Todos os dados ficam armazenados apenas neste dispositivo e não podem ser acedidos sem a palavra-passe correta."
+  },
+  "app_instruction_title": {
+    "message": "🔐 Como usar o Cofre de Marcadores Privados"
   },
   "app_instruction_save": {
-    "message": "📌 Para salvar um favorito, clique no botão 💾 no cabeçalho."
+    "message": "Para guardar um marcador, clique no botão 💾 no cabeçalho."
   },
   "app_instruction_lock": {
-    "message": "🔒 Para bloquear favoritos, clique no ícone 🔒 no cabeçalho."
+    "message": "Para bloquear a extensão, clique no ícone 🔒 no cabeçalho."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ Para ver favoritos normais, clique no ícone 👁️ no cabeçalho."
+    "message": "Para ver marcadores normais, clique no ícone 👁️ no cabeçalho."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ Para ver favoritos anônimos, clique no ícone 🕶️ no cabeçalho."
+    "message": "Para ver marcadores anónimos, clique no ícone 🕶️ no cabeçalho."
+  },
+  "app_instruction_create_folder": {
+    "message": "Para criar uma pasta, clique no botão 📁 no cabeçalho."
   },
   "app_instruction_incognito_hint": {
-    "message": "Para usar a extensão no modo anônimo, clique com o botão direito no ícone, escolha 'Gerenciar extensão' e habilite 'Permitir no modo anônimo'."
+    "message": "Para usar a extensão no modo anónimo, clique com o botão direito no ícone, escolha 'Gerir extensão' e ative 'Permitir no modo anónimo'."
   },
-  "app_unlock": { "message": "🔓 Desbloquear" },
-  "app_donate_using": { "message": "Obrigado por usar a extensão!" },
-  "app_donate_call": {
-    "message": "Esta ferramenta foi criada com amor pela privacidade. Se foi útil para você, considere apoiar o desenvolvimento ☕"
+  "app_instruction_panic": {
+    "message": "Para configurar um botão de pânico, vá às definições do Chrome e atribua um atalho para fechar todos os separadores e guardá-los numa pasta."
   },
-  "app_donate_now": { "message": "Apoie o projeto por R💲25" },
-  "app_donate_leter": { "message": "Talvez depois" },
-  "app_ads": {
-    "message": "📢 Não está recebendo boas respostas da IA? Automatize seus prompts."
+  "app_instruction_import": {
+    "message": "Para importar marcadores, clique no botão 📥 Importar no menu de opções."
+  },
+  "app_instruction_export": {
+    "message": "Para exportar marcadores, clique no botão 📤 Exportar no menu de opções."
+  },
+  "app_instruction_collect": {
+    "message": "Para reunir todos os marcadores do Chrome na extensão, clique no botão 🔃 Recolher no menu de opções."
   },
   "app_pass_short_error": {
-    "message": "A senha deve ter pelo menos 4 caracteres"
+    "message": "A palavra-passe deve ter pelo menos 4 caracteres"
   },
-  "app_pass_incorrect_error": { "message": "Senha incorreta" },
-  "app_feedback_title": { "message": "⭐ Está gostando da extensão?" },
-  "app_feedback_text": {
-    "message": "Uma avaliação rápida seria muito importante! 🙏"
+  "app_pass_incorrect_error": {
+    "message": "Palavra-passe incorreta"
   },
-  "app_feedback_button_review": { "message": "Deixe uma avaliação" },
-  "app_feedback_button_later": { "message": "Depois" },
-  "app_feedback_button_never": { "message": "Não mostrar novamente" }
+  "app_search_placeholder": {
+    "message": "Pesquisar marcadores..."
+  },
+  "app_modal_export": {
+    "message": "📤 Exportar Marcadores"
+  },
+  "app_options_import": {
+    "message": "📥 Importar"
+  },
+  "app_options_export": {
+    "message": "📤 Exportar"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Definições"
+  },
+  "app_options_settings_alert": {
+    "message": "Definições em breve!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Recolher"
+  },
+  "app_import_modal": {
+    "message": "📥 Importar Marcadores"
+  },
+  "app_import_modal_description": {
+    "message": "Arraste e largue o seu ficheiro aqui ou clique para selecionar"
+  },
+  "app_cancel": {
+    "message": "Cancelar"
+  },
+  "app_export_modal_description": {
+    "message": "Clique no botão abaixo para exportar os seus marcadores como um ficheiro. Pode guardá-lo e importá-lo mais tarde, se necessário."
+  },
+  "app_export_modal_button": {
+    "message": "Exportar"
+  },
+  "app_panic_description": {
+    "message": "Defina um botão de pânico (padrão = alt+p) para fechar todos os separadores e guardá-los numa pasta"
+  },
+  "app_ads_title": {
+    "message": "Adicione e organize automaticamente prompts de IA"
+  },
+  "app_donate_title": {
+    "message": "💸 Apoiar o projeto"
+  },
+  "app_feedback_title": {
+    "message": "Gosta da extensão?"
+  },
+  "app_feedback_description": {
+    "message": "Valorizamos a sua opinião! Por favor, avalie a aplicação e deixe uma avaliação na loja."
+  },
+  "app_feedback_button_leave": {
+    "message": "Deixar avaliação"
+  },
+  "app_feedback_button_later": {
+    "message": "Mais tarde"
+  }
 }

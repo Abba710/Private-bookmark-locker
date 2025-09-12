@@ -1,50 +1,135 @@
 {
-  "app_name": { "message": "Loker Penanda Peribadi" },
-  "app_description": {
-    "message": "Storan penanda peribadi. Simpan dan lindungi pautan dengan kata laluan — hanya anda boleh melihatnya."
+  "app_name": {
+    "message": "Peti Simpanan Penanda Halaman Peribadi"
   },
-  "app_enter_password": { "message": "🔒 Masukkan kata laluan" },
-  "app_create_password": { "message": "🔒 Cipta kata laluan" },
-  "app_set_password": { "message": "Tetapkan kata laluan" },
-  "app_create_password_placeholder": { "message": "Cipta kata laluan anda" },
-  "app_enter_password_placeholder": { "message": "Masukkan kata laluan anda" },
+  "app_description": {
+    "message": "Ruang simpanan penanda halaman peribadi. Simpan dan lindungi pautan dengan kata laluan — hanya anda boleh melihatnya."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Masukkan kata laluan"
+  },
+  "app_create_password": {
+    "message": "🔒 Cipta kata laluan"
+  },
+  "app_create_password_placeholder": {
+    "message": "Cipta kata laluan anda"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Masukkan kata laluan anda"
+  },
+  "app_unlock": {
+    "message": "🔓 Buka kunci"
+  },
+  "app_create_password_button": {
+    "message": "Cipta Kata Laluan"
+  },
+  "app_password_empty_error": {
+    "message": "Kata laluan tidak boleh kosong"
+  },
+  "app_password_incorrect_error": {
+    "message": "Kata laluan tidak sah"
+  },
+  "app_password_hashing_error": {
+    "message": "Proses hashing gagal"
+  },
   "app_password_warning": {
-    "message": "⚠️ Penting: Jika anda terlupa kata laluan, ia tidak boleh dipulihkan. Semua data hanya disimpan pada peranti ini dan tidak boleh diakses tanpa kata laluan yang betul."
+    "message": "⚠️ Penting: Jika anda terlupa kata laluan, ia tidak boleh dipulihkan. Semua data disimpan hanya pada peranti ini dan tidak boleh diakses tanpa kata laluan yang betul."
+  },
+  "app_instruction_title": {
+    "message": "🔐 Cara menggunakan Peti Simpanan Penanda Halaman Peribadi"
   },
   "app_instruction_save": {
-    "message": "📌 Untuk menyimpan penanda, klik butang 💾 di bahagian atas."
+    "message": "Untuk menyimpan penanda halaman, klik butang 💾 di bahagian atas."
   },
   "app_instruction_lock": {
-    "message": "🔒 Untuk mengunci penanda, klik ikon 🔒 di bahagian atas."
+    "message": "Untuk mengunci sambungan, klik ikon 🔒 di bahagian atas."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ Untuk melihat penanda biasa, klik ikon 👁️ di bahagian atas."
+    "message": "Untuk melihat penanda halaman biasa, klik ikon 👁️ di bahagian atas."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ Untuk melihat penanda incognito, klik ikon 🕶️ di bahagian atas."
+    "message": "Untuk melihat penanda halaman inkognito, klik ikon 🕶️ di bahagian atas."
+  },
+  "app_instruction_create_folder": {
+    "message": "Untuk mencipta folder, klik butang 📁 di bahagian atas."
   },
   "app_instruction_incognito_hint": {
-    "message": "Untuk menggunakan sambungan dalam mod incognito, klik kanan ikon, pilih 'Urus sambungan', dan aktifkan 'Benarkan dalam incognito'."
+    "message": "Untuk menggunakan sambungan dalam mod inkognito, klik kanan ikon, pilih 'Urus sambungan', dan aktifkan 'Benarkan dalam inkognito'."
   },
-  "app_unlock": { "message": "🔓 Buka kunci" },
-  "app_donate_using": {
-    "message": "Terima kasih kerana menggunakan sambungan ini!"
+  "app_instruction_panic": {
+    "message": "Untuk menetapkan butang panik dan menggunakannya, pergi ke tetapan chrome dan tetapkan pintasan untuk menutup semua tab dan menyimpannya dalam folder."
   },
-  "app_donate_call": {
-    "message": "Alat ini dibina dengan cinta untuk privasi. Jika ia membantu anda, sokong pembangunannya ☕"
+  "app_instruction_import": {
+    "message": "Untuk mengimport penanda halaman, klik butang 📥 Import dalam menu pilihan."
   },
-  "app_donate_now": { "message": "Sokong projek RM25" },
-  "app_donate_leter": { "message": "Mungkin nanti" },
-  "app_ads": {
-    "message": "📢 Tidak mendapat jawapan baik dari AI? Automasi prompt anda."
+  "app_instruction_export": {
+    "message": "Untuk mengeksport penanda halaman, klik butang 📤 Export dalam menu pilihan."
+  },
+  "app_instruction_collect": {
+    "message": "Untuk mengumpulkan semua penanda halaman chrome ke dalam sambungan, klik butang 🔃 Collect dalam menu pilihan."
   },
   "app_pass_short_error": {
     "message": "Kata laluan mesti sekurang-kurangnya 4 aksara"
   },
-  "app_pass_incorrect_error": { "message": "Kata laluan salah" },
-  "app_feedback_title": { "message": "⭐ Suka sambungan ini?" },
-  "app_feedback_text": { "message": "Ulasan ringkas sangat bermakna! 🙏" },
-  "app_feedback_button_review": { "message": "Tinggalkan ulasan" },
-  "app_feedback_button_later": { "message": "Nanti" },
-  "app_feedback_button_never": { "message": "Jangan tunjuk lagi" }
+  "app_pass_incorrect_error": {
+    "message": "Kata laluan tidak sah"
+  },
+  "app_search_placeholder": {
+    "message": "Cari penanda halaman..."
+  },
+  "app_modal_export": {
+    "message": "📤 Eksport Penanda Halaman"
+  },
+  "app_options_import": {
+    "message": "📥 Import"
+  },
+  "app_options_export": {
+    "message": "📤 Eksport"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Tetapan"
+  },
+  "app_options_settings_alert": {
+    "message": "Tetapan akan datang!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Kumpul"
+  },
+  "app_import_modal": {
+    "message": "📥 Import Penanda Halaman"
+  },
+  "app_import_modal_description": {
+    "message": "Seret & lepas fail anda di sini atau klik untuk memilih"
+  },
+  "app_cancel": {
+    "message": "Batal"
+  },
+  "app_export_modal_description": {
+    "message": "Klik butang di bawah untuk mengeksport penanda halaman anda sebagai fail. Anda boleh menyimpannya dan mengimport semula kemudian jika perlu."
+  },
+  "app_export_modal_button": {
+    "message": "Eksport"
+  },
+  "app_panic_description": {
+    "message": "Tetapkan butang panik (lalai = alt+p) untuk menutup semua tab dan menyimpannya dalam folder"
+  },
+  "app_ads_title": {
+    "message": "Tambah dan urus arahan AI secara automatik"
+  },
+  "app_donate_title": {
+    "message": "💸 Sokong projek ini"
+  },
+  "app_feedback_title": {
+    "message": "Suka sambungan ini?"
+  },
+  "app_feedback_description": {
+    "message": "Kami menghargai pendapat anda! Sila beri penilaian dan tinggalkan ulasan di halaman gedung."
+  },
+  "app_feedback_button_leave": {
+    "message": "Tinggalkan ulasan"
+  },
+  "app_feedback_button_later": {
+    "message": "Nanti"
+  }
 }

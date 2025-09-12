@@ -1,46 +1,135 @@
 {
-  "app_name": { "message": "Súkromný správca záložiek" },
-  "app_description": {
-    "message": "Súkromné ukladanie záložiek. Uložte a chráňte odkazy heslom — iba vy ich môžete vidieť."
+  "app_name": {
+    "message": "Súkromný správca záložiek"
   },
-  "app_enter_password": { "message": "🔒 Zadajte heslo" },
-  "app_create_password": { "message": "🔒 Vytvorte heslo" },
-  "app_set_password": { "message": "Nastaviť heslo" },
-  "app_create_password_placeholder": { "message": "Vytvorte svoje heslo" },
-  "app_enter_password_placeholder": { "message": "Zadajte svoje heslo" },
+  "app_description": {
+    "message": "Súkromné úložisko záložiek. Uložte a chráňte odkazy heslom — iba vy ich môžete vidieť."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Zadajte heslo"
+  },
+  "app_create_password": {
+    "message": "🔒 Vytvorte heslo"
+  },
+  "app_create_password_placeholder": {
+    "message": "Vytvorte svoje heslo"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Zadajte svoje heslo"
+  },
+  "app_unlock": {
+    "message": "🔓 Odomknúť"
+  },
+  "app_create_password_button": {
+    "message": "Vytvoriť heslo"
+  },
+  "app_password_empty_error": {
+    "message": "Heslo nemôže byť prázdne"
+  },
+  "app_password_incorrect_error": {
+    "message": "Nesprávne heslo"
+  },
+  "app_password_hashing_error": {
+    "message": "Hashovanie zlyhalo"
+  },
   "app_password_warning": {
-    "message": "⚠️ Dôležité: Ak zabudnete heslo, nie je možné ho obnoviť. Všetky údaje sú uložené iba na tomto zariadení a nie sú dostupné bez správneho hesla."
+    "message": "⚠️ Dôležité: Ak zabudnete svoje heslo, nebude možné ho obnoviť. Všetky údaje sú uložené iba na tomto zariadení a nie je možné k nim pristúpiť bez správneho hesla."
+  },
+  "app_instruction_title": {
+    "message": "🔐 Ako používať Súkromný správca záložiek"
   },
   "app_instruction_save": {
-    "message": "📌 Na uloženie záložky kliknite na tlačidlo 💾 v hlavičke."
+    "message": "Ak chcete uložiť záložku, kliknite na tlačidlo 💾 v hlavičke."
   },
   "app_instruction_lock": {
-    "message": "🔒 Na uzamknutie záložiek kliknite na ikonu 🔒 v hlavičke."
+    "message": "Ak chcete uzamknúť rozšírenie, kliknite na ikonu 🔒 v hlavičke."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ Na zobrazenie bežných záložiek kliknite na ikonu 👁️ v hlavičke."
+    "message": "Ak chcete zobraziť bežné záložky, kliknite na ikonu 👁️ v hlavičke."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ Na zobrazenie inkognito záložiek kliknite na ikonu 🕶️ v hlavičke."
+    "message": "Ak chcete zobraziť anonymné záložky, kliknite na ikonu 🕶️ v hlavičke."
+  },
+  "app_instruction_create_folder": {
+    "message": "Ak chcete vytvoriť priečinok, kliknite na tlačidlo 📁 v hlavičke."
   },
   "app_instruction_incognito_hint": {
-    "message": "Ak chcete používať rozšírenie v inkognito režime, kliknite pravým tlačidlom na ikonu, vyberte 'Spravovať rozšírenie' a povolte 'Povoliť v inkognito'."
+    "message": "Ak chcete používať rozšírenie v anonymnom režime, kliknite pravým tlačidlom na ikonu, zvoľte 'Spravovať rozšírenie' a povoľte 'Povoliť v anonymnom režime'."
   },
-  "app_unlock": { "message": "🔓 Odomknúť" },
-  "app_donate_using": { "message": "Ďakujeme za používanie rozšírenia!" },
-  "app_donate_call": {
-    "message": "Tento nástroj bol vytvorený pre súkromie. Ak vám pomohol, podporte vývoj ☕"
+  "app_instruction_panic": {
+    "message": "Ak chcete nastaviť panikové tlačidlo a používať ho, prejdite do nastavení Chrome a priraďte skratku na zatvorenie všetkých kariet a uloženie do priečinka."
   },
-  "app_donate_now": { "message": "Podporte projekt za 5€" },
-  "app_donate_leter": { "message": "Možno neskôr" },
-  "app_ads": {
-    "message": "📢 Nedostávate dobré odpovede od AI? Automatizujte svoje požiadavky."
+  "app_instruction_import": {
+    "message": "Ak chcete importovať záložky, kliknite na tlačidlo 📥 Import v ponuke možností."
   },
-  "app_pass_short_error": { "message": "Heslo musí mať aspoň 4 znaky" },
-  "app_pass_incorrect_error": { "message": "Nesprávne heslo" },
-  "app_feedback_title": { "message": "⭐ Páči sa vám rozšírenie?" },
-  "app_feedback_text": { "message": "Krátka recenzia je veľmi dôležitá! 🙏" },
-  "app_feedback_button_review": { "message": "Zanechajte recenziu" },
-  "app_feedback_button_later": { "message": "Neskôr" },
-  "app_feedback_button_never": { "message": "Nezobrazovať znova" }
+  "app_instruction_export": {
+    "message": "Ak chcete exportovať záložky, kliknite na tlačidlo 📤 Export v ponuke možností."
+  },
+  "app_instruction_collect": {
+    "message": "Ak chcete zhromaždiť všetky záložky Chrome do rozšírenia, kliknite na tlačidlo 🔃 Zhromaždiť v ponuke možností."
+  },
+  "app_pass_short_error": {
+    "message": "Heslo musí mať aspoň 4 znaky"
+  },
+  "app_pass_incorrect_error": {
+    "message": "Nesprávne heslo"
+  },
+  "app_search_placeholder": {
+    "message": "Hľadať záložky..."
+  },
+  "app_modal_export": {
+    "message": "📤 Exportovať záložky"
+  },
+  "app_options_import": {
+    "message": "📥 Importovať"
+  },
+  "app_options_export": {
+    "message": "📤 Exportovať"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Nastavenia"
+  },
+  "app_options_settings_alert": {
+    "message": "Nastavenia už čoskoro!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Zhromaždiť"
+  },
+  "app_import_modal": {
+    "message": "📥 Importovať záložky"
+  },
+  "app_import_modal_description": {
+    "message": "Pretiahnite svoj súbor sem alebo kliknite na výber"
+  },
+  "app_cancel": {
+    "message": "Zrušiť"
+  },
+  "app_export_modal_description": {
+    "message": "Kliknite na tlačidlo nižšie pre export záložiek ako súboru. Môžete ho uložiť a neskôr importovať, ak bude potrebné."
+  },
+  "app_export_modal_button": {
+    "message": "Exportovať"
+  },
+  "app_panic_description": {
+    "message": "Nastavte panikové tlačidlo (predvolené = alt+p) na zatvorenie všetkých kariet a ich uloženie do priečinka"
+  },
+  "app_ads_title": {
+    "message": "Automaticky pridávajte a spravujte AI príkazy"
+  },
+  "app_donate_title": {
+    "message": "💸 Podporte projekt"
+  },
+  "app_feedback_title": {
+    "message": "Páči sa vám rozšírenie?"
+  },
+  "app_feedback_description": {
+    "message": "Ceníme si váš názor! Ohodnoťte aplikáciu a zanechajte recenziu na stránke obchodu."
+  },
+  "app_feedback_button_leave": {
+    "message": "Zanechať recenziu"
+  },
+  "app_feedback_button_later": {
+    "message": "Neskôr"
+  }
 }

@@ -1,60 +1,73 @@
 {
   "app_name": {
-    "message": "Gestor privado de marcadores"
+    "message": "Almacén Privado de Marcadores"
   },
   "app_description": {
-    "message": "Almacenamiento privado de marcadores. Guarda y protege enlaces con una contraseña — solo tú puedes verlos."
+    "message": "Almacenamiento privado de marcadores. Guarde y proteja enlaces con una contraseña: solo usted puede verlos."
   },
+
   "app_enter_password": {
-    "message": "🔒 Ingresar contraseña"
+    "message": "🔒 Introducir contraseña"
   },
   "app_create_password": {
     "message": "🔒 Crear contraseña"
   },
-  "app_set_password": {
-    "message": "Establecer contraseña"
-  },
   "app_create_password_placeholder": {
-    "message": "Crea tu contraseña"
+    "message": "Cree su contraseña"
   },
   "app_enter_password_placeholder": {
-    "message": "Ingresa tu contraseña"
-  },
-  "app_password_warning": {
-    "message": "⚠️ Importante: Si olvidas tu contraseña, no podrá recuperarse. Todos los datos se almacenan solo en este dispositivo y no se pueden acceder sin la contraseña correcta."
-  },
-  "app_instruction_save": {
-    "message": "📌 Para guardar un marcador, haz clic en el botón 💾 en la parte superior."
-  },
-  "app_instruction_lock": {
-    "message": "🔒 Para bloquear los marcadores, haz clic en el icono 🔒 en la parte superior."
-  },
-  "app_instruction_view_basic": {
-    "message": "👁️ Para ver los marcadores normales, haz clic en el icono 👁️ en la parte superior."
-  },
-  "app_instruction_view_incognito": {
-    "message": "🕶️ Para ver los marcadores de incógnito, haz clic en el icono 🕶️ en la parte superior."
-  },
-  "app_instruction_incognito_hint": {
-    "message": "Para usar la extensión en modo incógnito, haz clic derecho en el icono, selecciona 'Administrar extensión' y activa 'Permitir en incógnito'."
+    "message": "Introduzca su contraseña"
   },
   "app_unlock": {
     "message": "🔓 Desbloquear"
   },
-  "app_donate_using": {
-    "message": "¡Gracias por usar la extensión!"
+  "app_create_password_button": {
+    "message": "Crear contraseña"
   },
-  "app_donate_call": {
-    "message": "Esta herramienta fue creada con amor por la privacidad. Si te ha sido útil, considera apoyar su desarrollo ☕"
+  "app_password_empty_error": {
+    "message": "La contraseña no puede estar vacía"
   },
-  "app_donate_now": {
-    "message": "Apoya el proyecto con 5💲"
+  "app_password_incorrect_error": {
+    "message": "Contraseña incorrecta"
   },
-  "app_donate_leter": {
-    "message": "Tal vez después"
+  "app_password_hashing_error": {
+    "message": "Error al generar el hash"
   },
-  "app_ads": {
-    "message": "📢 ¿La IA no te da buenas respuestas? Automatiza tus prompts."
+  "app_password_warning": {
+    "message": "⚠️ Importante: Si olvida su contraseña, no se puede recuperar. Todos los datos se almacenan únicamente en este dispositivo y no se pueden acceder sin la contraseña correcta."
+  },
+  "app_instruction_title": {
+    "message": "🔐 Cómo usar Almacén Privado de Marcadores"
+  },
+  "app_instruction_save": {
+    "message": "Para guardar un marcador, haga clic en el botón 💾 en el encabezado."
+  },
+  "app_instruction_lock": {
+    "message": "Para bloquear la extensión, haga clic en el icono 🔒 en el encabezado."
+  },
+  "app_instruction_view_basic": {
+    "message": "Para ver los marcadores normales, haga clic en el icono 👁️ en el encabezado."
+  },
+  "app_instruction_view_incognito": {
+    "message": "Para ver los marcadores de incógnito, haga clic en el icono 🕶️ en el encabezado."
+  },
+  "app_instruction_create_folder": {
+    "message": "Para crear una carpeta, haga clic en el botón 📁 en el encabezado."
+  },
+  "app_instruction_incognito_hint": {
+    "message": "Para usar la extensión en modo incógnito, haga clic derecho en el icono, seleccione 'Administrar extensión' y active 'Permitir en incógnito'."
+  },
+  "app_instruction_panic": {
+    "message": "Para configurar un botón de pánico y usarlo, vaya a la configuración de Chrome y asigne un atajo para cerrar todas las pestañas y guardarlas en una carpeta."
+  },
+  "app_instruction_import": {
+    "message": "Para importar marcadores, haga clic en el botón 📥 Importar en el menú de opciones."
+  },
+  "app_instruction_export": {
+    "message": "Para exportar marcadores, haga clic en el botón 📤 Exportar en el menú de opciones."
+  },
+  "app_instruction_collect": {
+    "message": "Para recopilar todos los marcadores de Chrome en la extensión, haga clic en el botón 🔃 Recopilar en el menú de opciones."
   },
   "app_pass_short_error": {
     "message": "La contraseña debe tener al menos 4 caracteres"
@@ -62,19 +75,61 @@
   "app_pass_incorrect_error": {
     "message": "Contraseña incorrecta"
   },
+  "app_search_placeholder": {
+    "message": "Buscar marcadores..."
+  },
+  "app_modal_export": {
+    "message": "📤 Exportar marcadores"
+  },
+  "app_options_import": {
+    "message": "📥 Importar"
+  },
+  "app_options_export": {
+    "message": "📤 Exportar"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Configuración"
+  },
+  "app_options_settings_alert": {
+    "message": "¡La configuración estará disponible pronto!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Recopilar"
+  },
+  "app_import_modal": {
+    "message": "📥 Importar marcadores"
+  },
+  "app_import_modal_description": {
+    "message": "Arrastre y suelte su archivo aquí o haga clic para seleccionar"
+  },
+  "app_cancel": {
+    "message": "Cancelar"
+  },
+  "app_export_modal_description": {
+    "message": "Haga clic en el botón de abajo para exportar sus marcadores como archivo. Puede guardarlo e importarlo más tarde si es necesario."
+  },
+  "app_export_modal_button": {
+    "message": "Exportar"
+  },
+  "app_panic_description": {
+    "message": "Configure el botón de pánico (predeterminado = alt+p) para cerrar todas las pestañas y guardarlas en una carpeta"
+  },
+  "app_ads_title": {
+    "message": "Agregar y gestionar automáticamente indicaciones de IA"
+  },
+  "app_donate_title": {
+    "message": "💸 Apoyar el proyecto"
+  },
   "app_feedback_title": {
-    "message": "⭐ ¿Te gusta la extensión?"
+    "message": "¿Le gusta la extensión?"
   },
-  "app_feedback_text": {
-    "message": "¡Agradeceríamos mucho si dejas una reseña!"
+  "app_feedback_description": {
+    "message": "¡Valoramos su opinión! Califique la aplicación y deje una reseña en la página de la tienda."
   },
-  "app_feedback_button_review": {
-    "message": "Dejar reseña"
+  "app_feedback_button_leave": {
+    "message": "Dejar una reseña"
   },
   "app_feedback_button_later": {
     "message": "Más tarde"
-  },
-  "app_feedback_button_never": {
-    "message": "No mostrar de nuevo"
   }
 }

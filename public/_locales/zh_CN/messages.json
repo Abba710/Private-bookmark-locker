@@ -1,80 +1,135 @@
 {
   "app_name": {
-    "message": "私人书签保险箱"
+    "message": "私人书签管理器"
   },
   "app_description": {
-    "message": "私密存储你的书签。使用密码保存并保护链接 — 只有你能查看它们。"
+    "message": "私人书签存储。使用密码保存和保护链接——只有您可以查看。"
   },
+
   "app_enter_password": {
     "message": "🔒 输入密码"
   },
   "app_create_password": {
     "message": "🔒 创建密码"
   },
-  "app_set_password": {
-    "message": "设置密码"
-  },
   "app_create_password_placeholder": {
-    "message": "创建你的密码"
+    "message": "创建您的密码"
   },
   "app_enter_password_placeholder": {
-    "message": "请输入你的密码"
-  },
-  "app_password_warning": {
-    "message": "⚠️ 重要提示：如果你忘记了密码，将无法找回或重置。你的数据仅保存在本设备中，且无法在没有正确密码的情况下访问。"
-  },
-  "app_instruction_save": {
-    "message": "📌 要保存书签，请点击顶部的 💾 按钮。"
-  },
-  "app_instruction_lock": {
-    "message": "🔒 要锁定书签，请点击顶部的 🔒 图标。"
-  },
-  "app_instruction_view_basic": {
-    "message": "👁️ 要查看普通书签，请点击顶部的 👁️ 图标。"
-  },
-  "app_instruction_view_incognito": {
-    "message": "🕶️ 要查看私密书签，请点击顶部的 🕶️ 图标。"
-  },
-  "app_instruction_incognito_hint": {
-    "message": "要在无痕模式中使用扩展程序，请右键点击图标，选择“管理扩展程序”，然后启用“允许在无痕模式中运行”。"
+    "message": "输入您的密码"
   },
   "app_unlock": {
     "message": "🔓 解锁"
   },
-  "app_donate_using": {
-    "message": "感谢你使用此扩展程序！"
+  "app_create_password_button": {
+    "message": "创建密码"
   },
-  "app_donate_call": {
-    "message": "这个工具是出于对隐私的热爱而开发的。如果它对你有帮助，欢迎支持开发 ☕"
+  "app_password_empty_error": {
+    "message": "密码不能为空"
   },
-  "app_donate_now": {
-    "message": "赞助项目 5💲"
+  "app_password_incorrect_error": {
+    "message": "密码错误"
   },
-  "app_donate_leter": {
-    "message": "以后再说"
+  "app_password_hashing_error": {
+    "message": "哈希失败"
   },
-  "app_ads": {
-    "message": "📢 AI 回答不理想？试试自动化提示。"
+  "app_password_warning": {
+    "message": "⚠️ 重要提示：如果您忘记密码，将无法恢复。所有数据仅存储在此设备上，未经正确密码无法访问。"
+  },
+  "app_instruction_title": {
+    "message": "🔐 如何使用私人书签管理器"
+  },
+  "app_instruction_save": {
+    "message": "要保存书签，请点击标题栏中的 💾 按钮。"
+  },
+  "app_instruction_lock": {
+    "message": "要锁定扩展，请点击标题栏中的 🔒 图标。"
+  },
+  "app_instruction_view_basic": {
+    "message": "要查看普通书签，请点击标题栏中的 👁️ 图标。"
+  },
+  "app_instruction_view_incognito": {
+    "message": "要查看隐身书签，请点击标题栏中的 🕶️ 图标。"
+  },
+  "app_instruction_create_folder": {
+    "message": "要创建文件夹，请点击标题栏中的 📁 按钮。"
+  },
+  "app_instruction_incognito_hint": {
+    "message": "要在隐身模式下使用扩展，请右键点击图标，选择“管理扩展程序”，并启用“允许在隐身模式下运行”。"
+  },
+  "app_instruction_panic": {
+    "message": "要设置紧急按钮并使用它，请进入 Chrome 设置，分配快捷键以关闭所有标签并保存到文件夹。"
+  },
+  "app_instruction_import": {
+    "message": "要导入书签，请点击选项菜单中的 📥 导入按钮。"
+  },
+  "app_instruction_export": {
+    "message": "要导出书签，请点击选项菜单中的 📤 导出按钮。"
+  },
+  "app_instruction_collect": {
+    "message": "要将所有 Chrome 书签收集到扩展中，请点击选项菜单中的 🔃 收集按钮。"
   },
   "app_pass_short_error": {
-    "message": "密码至少需要 4 个字符"
+    "message": "密码长度至少为 4 个字符"
   },
   "app_pass_incorrect_error": {
     "message": "密码错误"
   },
+  "app_search_placeholder": {
+    "message": "搜索书签..."
+  },
+  "app_modal_export": {
+    "message": "📤 导出书签"
+  },
+  "app_options_import": {
+    "message": "📥 导入"
+  },
+  "app_options_export": {
+    "message": "📤 导出"
+  },
+  "app_options_settings": {
+    "message": "⚙️ 设置"
+  },
+  "app_options_settings_alert": {
+    "message": "设置即将推出！"
+  },
+  "app_options_collect": {
+    "message": "🔃 收集"
+  },
+  "app_import_modal": {
+    "message": "📥 导入书签"
+  },
+  "app_import_modal_description": {
+    "message": "将文件拖放到此处或点击选择"
+  },
+  "app_cancel": {
+    "message": "取消"
+  },
+  "app_export_modal_description": {
+    "message": "点击下面的按钮将书签导出为文件。您可以保存并在需要时导入。"
+  },
+  "app_export_modal_button": {
+    "message": "导出"
+  },
+  "app_panic_description": {
+    "message": "设置紧急按钮（默认 = alt+p）以关闭所有标签并保存到文件夹"
+  },
+  "app_ads_title": {
+    "message": "自动添加和管理 AI 提示"
+  },
+  "app_donate_title": {
+    "message": "💸 支持项目"
+  },
   "app_feedback_title": {
-    "message": "⭐ 你喜欢这个扩展吗？"
+    "message": "喜欢这个扩展吗？"
   },
-  "app_feedback_text": {
-    "message": "如果你能留下评论，我们将不胜感激！"
+  "app_feedback_description": {
+    "message": "我们重视您的意见！请对应用评分并在商店页面留下评论。"
   },
-  "app_feedback_button_review": {
+  "app_feedback_button_leave": {
     "message": "留下评论"
   },
   "app_feedback_button_later": {
-    "message": "稍后提醒"
-  },
-  "app_feedback_button_never": {
-    "message": "不再显示"
+    "message": "稍后"
   }
 }

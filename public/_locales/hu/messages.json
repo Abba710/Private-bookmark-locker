@@ -1,48 +1,135 @@
 {
-  "app_name": { "message": "Privát könyvjelző tároló" },
-  "app_description": {
-    "message": "Privát könyvjelzőtároló. Mentsd és védd a linkeket jelszóval — csak te láthatod őket."
+  "app_name": {
+    "message": "Privát Könyvjelző Tároló"
   },
-  "app_enter_password": { "message": "🔒 Jelszó megadása" },
-  "app_create_password": { "message": "🔒 Jelszó létrehozása" },
-  "app_set_password": { "message": "Jelszó beállítása" },
-  "app_create_password_placeholder": { "message": "Hozd létre a jelszavad" },
-  "app_enter_password_placeholder": { "message": "Add meg a jelszavad" },
+  "app_description": {
+    "message": "Privát könyvjelzőtárhely. Mentse és védje a linkeket jelszóval — csak Ön láthatja őket."
+  },
+
+  "app_enter_password": {
+    "message": "🔒 Jelszó megadása"
+  },
+  "app_create_password": {
+    "message": "🔒 Jelszó létrehozása"
+  },
+  "app_create_password_placeholder": {
+    "message": "Hozzon létre egy jelszót"
+  },
+  "app_enter_password_placeholder": {
+    "message": "Adja meg a jelszavát"
+  },
+  "app_unlock": {
+    "message": "🔓 Feloldás"
+  },
+  "app_create_password_button": {
+    "message": "Jelszó létrehozása"
+  },
+  "app_password_empty_error": {
+    "message": "A jelszó nem lehet üres"
+  },
+  "app_password_incorrect_error": {
+    "message": "Helytelen jelszó"
+  },
+  "app_password_hashing_error": {
+    "message": "Hash-elés sikertelen"
+  },
   "app_password_warning": {
-    "message": "⚠️ Fontos: Ha elfelejted a jelszavad, nem lehet visszaállítani. Minden adat csak ezen az eszközön tárolódik, és a helyes jelszó nélkül nem érhető el."
+    "message": "⚠️ Fontos: Ha elfelejti a jelszót, nem lehet visszaállítani. Az összes adat csak ezen az eszközön van tárolva, és a helyes jelszó nélkül nem érhető el."
+  },
+  "app_instruction_title": {
+    "message": "🔐 Hogyan használja a Privát Könyvjelző Tárolót"
   },
   "app_instruction_save": {
-    "message": "📌 Könyvjelző mentéséhez kattints a fejlécben a 💾 gombra."
+    "message": "Könyvjelző mentéséhez kattintson a fejlécben lévő 💾 gombra."
   },
   "app_instruction_lock": {
-    "message": "🔒 Könyvjelzők zárolásához kattints a fejlécben a 🔒 ikonra."
+    "message": "A bővítmény zárolásához kattintson a fejlécben lévő 🔒 ikonra."
   },
   "app_instruction_view_basic": {
-    "message": "👁️ Normál könyvjelzők megtekintéséhez kattints a fejlécben a 👁️ ikonra."
+    "message": "A normál könyvjelzők megtekintéséhez kattintson a fejlécben lévő 👁️ ikonra."
   },
   "app_instruction_view_incognito": {
-    "message": "🕶️ Inkognitó könyvjelzők megtekintéséhez kattints a fejlécben a 🕶️ ikonra."
+    "message": "Az inkognitó könyvjelzők megtekintéséhez kattintson a fejlécben lévő 🕶️ ikonra."
+  },
+  "app_instruction_create_folder": {
+    "message": "Mappa létrehozásához kattintson a fejlécben lévő 📁 gombra."
   },
   "app_instruction_incognito_hint": {
-    "message": "A bővítmény inkognitó módban való használatához kattints jobb gombbal az ikonra, válaszd a 'Bővítmény kezelése' lehetőséget, és engedélyezd az 'Engedélyezés inkognitóban' opciót."
+    "message": "Az inkognitó módban való használathoz kattintson a jobb gombbal az ikonra, válassza a 'Bővítmény kezelése' lehetőséget, és engedélyezze az 'Engedélyezés inkognitó módban' opciót."
   },
-  "app_unlock": { "message": "🔓 Feloldás" },
-  "app_donate_using": { "message": "Köszönjük, hogy használod a bővítményt!" },
-  "app_donate_call": {
-    "message": "Ez az eszköz a magánélet védelméért készült. Ha hasznos volt számodra, támogasd a fejlesztést ☕"
+  "app_instruction_panic": {
+    "message": "Pánikgomb beállításához és használatához lépjen a Chrome beállításaiba, és rendeljen gyorsbillentyűt az összes lap bezárásához és mentéséhez egy mappába."
   },
-  "app_donate_now": { "message": "Támogasd a projektet 2000 Ft-ért" },
-  "app_donate_leter": { "message": "Talán később" },
-  "app_ads": {
-    "message": "📢 Nem kapsz jó válaszokat az AI-tól? Automatizáld a promptjaidat."
+  "app_instruction_import": {
+    "message": "Könyvjelzők importálásához kattintson az 📥 Import gombra az opciók menüben."
+  },
+  "app_instruction_export": {
+    "message": "Könyvjelzők exportálásához kattintson az 📤 Export gombra az opciók menüben."
+  },
+  "app_instruction_collect": {
+    "message": "Az összes Chrome könyvjelző összegyűjtéséhez kattintson a 🔃 Gyűjtés gombra az opciók menüben."
   },
   "app_pass_short_error": {
     "message": "A jelszónak legalább 4 karakter hosszúnak kell lennie"
   },
-  "app_pass_incorrect_error": { "message": "Hibás jelszó" },
-  "app_feedback_title": { "message": "⭐ Tetszik a bővítmény?" },
-  "app_feedback_text": { "message": "Egy rövid értékelés sokat jelentene! 🙏" },
-  "app_feedback_button_review": { "message": "Értékelés írása" },
-  "app_feedback_button_later": { "message": "Később" },
-  "app_feedback_button_never": { "message": "Ne jelenjen meg többször" }
+  "app_pass_incorrect_error": {
+    "message": "Helytelen jelszó"
+  },
+  "app_search_placeholder": {
+    "message": "Könyvjelzők keresése..."
+  },
+  "app_modal_export": {
+    "message": "📤 Könyvjelzők exportálása"
+  },
+  "app_options_import": {
+    "message": "📥 Importálás"
+  },
+  "app_options_export": {
+    "message": "📤 Exportálás"
+  },
+  "app_options_settings": {
+    "message": "⚙️ Beállítások"
+  },
+  "app_options_settings_alert": {
+    "message": "A beállítások hamarosan elérhetők!"
+  },
+  "app_options_collect": {
+    "message": "🔃 Gyűjtés"
+  },
+  "app_import_modal": {
+    "message": "📥 Könyvjelzők importálása"
+  },
+  "app_import_modal_description": {
+    "message": "Húzza ide a fájlt, vagy kattintson a kiválasztáshoz"
+  },
+  "app_cancel": {
+    "message": "Mégse"
+  },
+  "app_export_modal_description": {
+    "message": "Kattintson az alábbi gombra, hogy exportálja a könyvjelzőket fájlként. Elmentheti, és később importálhatja, ha szükséges."
+  },
+  "app_export_modal_button": {
+    "message": "Exportálás"
+  },
+  "app_panic_description": {
+    "message": "Állítson be pánikgombot (alapértelmezett = alt+p), hogy bezárja az összes lapot és elmentse őket egy mappába"
+  },
+  "app_ads_title": {
+    "message": "AI promptok automatikus hozzáadása és kezelése"
+  },
+  "app_donate_title": {
+    "message": "💸 Támogassa a projektet"
+  },
+  "app_feedback_title": {
+    "message": "Tetszik a bővítmény?"
+  },
+  "app_feedback_description": {
+    "message": "Értékeljük a véleményét! Kérjük, értékelje az alkalmazást, és hagyjon értékelést az áruház oldalán."
+  },
+  "app_feedback_button_leave": {
+    "message": "Értékelés írása"
+  },
+  "app_feedback_button_later": {
+    "message": "Később"
+  }
 }

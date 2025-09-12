@@ -1,4 +1,4 @@
-import { type Bookmark } from "@/types/types";
+import { type Bookmark } from '@/types/types'
 
 export function LinkBookmark({
   bookmark,
@@ -7,32 +7,32 @@ export function LinkBookmark({
   setDroppableRef,
   onDelete,
 }: {
-  bookmark: Bookmark;
-  listeners: any;
-  attributes: any;
-  setDroppableRef: (node: HTMLElement | null) => void;
-  onDelete: (id: string) => void;
+  bookmark: Bookmark
+  listeners: any
+  attributes: any
+  setDroppableRef: (node: HTMLElement | null) => void
+  onDelete: (id: string) => void
 }) {
   // Extract favicon from URL
   const getFaviconUrl = (url?: string) => {
-    if (!url) return "🔗";
+    if (!url) return '🔗'
     try {
-      const domain = new URL(url).hostname;
-      return `https://www.google.com/s2/favicons?domain=${domain}&sz=16`;
+      const domain = new URL(url).hostname
+      return `https://www.google.com/s2/favicons?domain=${domain}&sz=16`
     } catch {
-      return "🔗";
+      return '🔗'
     }
-  };
+  }
 
   // Retrieve the domain for display
   const getDomain = (url?: string) => {
-    if (!url) return "";
+    if (!url) return ''
     try {
-      return new URL(url).hostname.replace("www.", "");
+      return new URL(url).hostname.replace('www.', '')
     } catch {
-      return url;
+      return url
     }
-  };
+  }
 
   return (
     <div className="flex items-center gap-1 w-[90vw] max-w-[300px] min-h-[32px] px-2 py-1 bg-white/10 rounded-lg hover:bg-white/20 transition group">
@@ -43,8 +43,8 @@ export function LinkBookmark({
         {...listeners}
         {...attributes}
         onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
+          e.preventDefault()
+          e.stopPropagation()
         }}
       >
         ⋮⋮
@@ -59,15 +59,15 @@ export function LinkBookmark({
               chrome.tabs.create({
                 url: bookmark.url,
                 windowId: window.id,
-              });
+              })
             } else {
               chrome.windows.create({
                 url: bookmark.url,
                 incognito: bookmark.incognito,
-              });
+              })
             }
-          });
-          e.preventDefault();
+          })
+          e.preventDefault()
         }}
         target="_blank"
         rel="noopener noreferrer"
@@ -81,11 +81,11 @@ export function LinkBookmark({
           alt=""
           className="w-4 h-4 shrink-0"
           onError={(e) => {
-            const img = e.currentTarget as HTMLImageElement;
-            const sibling = img.nextElementSibling as HTMLElement | null;
+            const img = e.currentTarget as HTMLImageElement
+            const sibling = img.nextElementSibling as HTMLElement | null
 
-            img.style.display = "none";
-            if (sibling) sibling.style.display = "inline";
+            img.style.display = 'none'
+            if (sibling) sibling.style.display = 'inline'
           }}
         />
         <span className="text-xs select-none shrink-0 hidden">🔗</span>
@@ -101,24 +101,19 @@ export function LinkBookmark({
             </span>
           )}
         </div>
-
-        {/* Incognito indicator */}
-        {bookmark.incognito && (
-          <span className="text-white/50 select-none text-xs shrink-0">🕶️</span>
-        )}
       </a>
 
       {/* Delete button */}
       <button
         className="text-white/30 select-none hover:text-white/80 text-xs shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
         onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          onDelete(bookmark.id);
+          e.preventDefault()
+          e.stopPropagation()
+          onDelete(bookmark.id)
         }}
       >
         ✕
       </button>
     </div>
-  );
+  )
 }
