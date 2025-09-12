@@ -28,7 +28,23 @@ export function loadBookmarks(): Promise<Bookmark[]> {
   return new Promise((resolve) => {
     chrome.storage.local.get(['bookmarks'], (result) => {
       const bookmarks = (result.bookmarks as Bookmark[]) || []
-      resolve(bookmarks)
+
+      let updated = false
+
+      const updatedBookmarks = bookmarks.map((b) => {
+        if (!b.id) {
+          updated = true
+          return { ...b, id: crypto.randomUUID() }
+        }
+        return b
+      })
+
+      // if new uids were added, save them back
+      if (updated) {
+        chrome.storage.local.set({ bookmarks: updatedBookmarks })
+      }
+
+      resolve(updatedBookmarks)
     })
   })
 }
