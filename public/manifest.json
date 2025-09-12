@@ -29,13 +29,13 @@
       "suggested_key": {
         "default": "Alt+P"
       },
-      "description": "Set panic button to close all tabs and save them in a folder. To save sites, the extension must be open in one of your browser windows."
+      "description": "Set panic button to close all tabs and save them in a folder."
     },
     "save_tab": {
       "suggested_key": {
         "default": "Alt+S"
       },
-      "description": "Save current tab as bookmark. To save sites, the extension must be open in one of your browser windows."
+      "description": "Save current tab as bookmark."
     }
   },
   "content_security_policy": {
