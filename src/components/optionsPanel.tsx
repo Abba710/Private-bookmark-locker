@@ -55,6 +55,16 @@ export default function OptionsPanel() {
             <span>{chrome.i18n.getMessage('app_options_collect')}</span>
           </div>
         </button>
+        <a
+          href="https://buymeacoffee.com/Abba710"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center justify-between text-white/90 text-sm p-1 rounded-lg transition hover:bg-white/20 cursor-pointer w-full "
+        >
+          <div className="flex items-center gap-2">
+            <span>{chrome.i18n.getMessage('app_donate_title')}</span>
+          </div>
+        </a>
       </div>
 
       {/* ✅ Import/Export Modals */}

@@ -7,6 +7,7 @@ import { useEffect } from 'preact/hooks'
 import { useBookmarkStore, useLockOverlayStore } from '@/storage/statelibrary'
 import { loadBookmarks } from '@/features/bookmarks/bookmarkService'
 import { getInitialLockState } from '@/features/lock/lockservice'
+import Feedback from '@/components/feedback'
 
 function App() {
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked)
@@ -33,6 +34,7 @@ function App() {
           <ControlPanel />
           <BookmarkList />
           <OptionsPanel />
+          <Feedback />
         </>
       )}
     </div>

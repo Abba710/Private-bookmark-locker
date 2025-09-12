@@ -43,7 +43,7 @@
     "message": "To save a bookmark, click the 💾 button in the header."
   },
   "app_instruction_lock": {
-    "message": "To lock bookmarks, click the 🔒 icon in the header."
+    "message": "To lock extension, click the 🔒 icon in the header."
   },
   "app_instruction_view_basic": {
     "message": "To view regular bookmarks, click the 👁️ icon in the header."
@@ -60,17 +60,20 @@
   "app_instruction_panic": {
     "message": "To set a panic button and use it, go to chrome settings and assign a shortcut to close all tabs and save them in a folder."
   },
+  "app_instruction_import": {
+    "message": "To import bookmarks, click the 📥 Import button in the options menu."
+  },
+  "app_instruction_export": {
+    "message": "To export bookmarks, click the 📤 Export button in the options menu."
+  },
+  "app_instruction_collect": {
+    "message": "To collect all chrome bookmarks into extension, click the 🔃 Collect button in the options menu."
+  },
   "app_pass_short_error": {
     "message": "Password must be at least 4 characters long"
   },
   "app_pass_incorrect_error": {
     "message": "Incorrect password"
-  },
-  "app_feedback_button_later": {
-    "message": "Later"
-  },
-  "app_feedback_button_never": {
-    "message": "Don’t show again"
   },
   "app_search_placeholder": {
     "message": "Search bookmarks..."
@@ -113,5 +116,20 @@
   },
   "app_ads_title": {
     "message": "Automatically add and manage AI prompts"
+  },
+  "app_donate_title": {
+    "message": "💸Support the project"
+  },
+  "app_feedback_title": {
+    "message": "Like the extension?"
+  },
+  "app_feedback_description": {
+    "message": "We value your opinion! Please rate the app and leave a review on the store page."
+  },
+  "app_feedback_button_leave": {
+    "message": "Leave a review"
+  },
+  "app_feedback_button_later": {
+    "message": "Later"
   }
 }

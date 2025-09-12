@@ -33,3 +33,8 @@ export interface LockOverlayStore {
   setIsLocked: (locked: boolean) => void
   setMode: (mode: 'unlock' | 'setup') => void
 }
+
+export interface FeedbackStore {
+  showFeedback: boolean
+  setShowFeedback: (show: boolean) => void
+}

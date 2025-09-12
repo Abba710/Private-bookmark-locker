@@ -4,6 +4,7 @@ import {
   type BookmarkStore,
   type SwitchStore,
   type LockOverlayStore,
+  type FeedbackStore,
 } from '@/types/types'
 
 export const useBookmarkStore = create<BookmarkStore>((set) => ({
@@ -21,4 +22,9 @@ export const useLockOverlayStore = create<LockOverlayStore>((set) => ({
   mode: 'unlock',
   setIsLocked: (locked) => set({ isLocked: locked }),
   setMode: (mode) => set({ mode }),
+}))
+
+export const useFeedbackStore = create<FeedbackStore>((set) => ({
+  showFeedback: false,
+  setShowFeedback: (show) => set({ showFeedback: show }),
 }))

@@ -29,6 +29,15 @@ function Instructions() {
       <p className="text-[16px] font-sans">
         7. {chrome.i18n.getMessage('app_instruction_panic')}
       </p>
+      <p className="text-[16px] font-sans">
+        8. {chrome.i18n.getMessage('app_instruction_import')}
+      </p>
+      <p className="text-[16px] font-sans">
+        9. {chrome.i18n.getMessage('app_instruction_export')}
+      </p>
+      <p className="text-[16px] font-sans">
+        10. {chrome.i18n.getMessage('app_instruction_collect')}
+      </p>
     </div>
   )
 }
