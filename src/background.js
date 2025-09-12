@@ -48,10 +48,32 @@ chrome.commands.onCommand.addListener((command) => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const tabId = tabs[0]?.id
       if (tabId) {
-        chrome.sidePanel.open({ tabId })
-        sendTabsToUI()
-        closeAllTabsButKeepOne()
+        chrome.sidePanel.open({ tabId }).then(() => {
+          setTimeout(() => {
+            sendTabsToUI()
+            closeAllTabsButKeepOne()
+          }, 100)
+        })
       }
+    })
+  }
+})
+
+chrome.commands.onCommand.addListener((command) => {
+  if (command === 'save_tab') {
+    console.log('alt+s pressed')
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const tabId = tabs[0]?.id
+      chrome.sidePanel
+        .open({ tabId })
+        .then(() => {
+          setTimeout(() => {
+            chrome.runtime.sendMessage({ action: 'save_current_tab' })
+          }, 100)
+        })
+        .catch((error) => {
+          console.error('Failed to open side panel:', error)
+        })
     })
   }
 })

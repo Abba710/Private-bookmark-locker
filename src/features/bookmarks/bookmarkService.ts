@@ -100,3 +100,9 @@ function feedbackCall() {
     }
   })
 }
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.action === 'save_current_tab') {
+    saveCurrentPage()
+  }
+})

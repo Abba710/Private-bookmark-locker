@@ -55,6 +55,8 @@ export default function OptionsPanel() {
             <span>{chrome.i18n.getMessage('app_options_collect')}</span>
           </div>
         </button>
+
+        {/* Donate */}
         <a
           href="https://buymeacoffee.com/Abba710"
           target="_blank"
