@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "बाद में"
+  },
+  "app_edit_title": {
+    "message": "बुकमार्क शीर्षक संपादित करें"
+  },
+  "app_create_folder": {
+    "message": "फ़ोल्डर का नाम दर्ज करें:"
   }
 }

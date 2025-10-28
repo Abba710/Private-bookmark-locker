@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Αργότερα"
+  },
+  "app_edit_title": {
+    "message": "Επεξεργασία τίτλου σελιδοδείκτη"
+  },
+  "app_create_folder": {
+    "message": "Εισαγάγετε όνομα φακέλου:"
   }
 }

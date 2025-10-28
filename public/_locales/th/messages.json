@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "ภายหลัง"
+  },
+  "app_edit_title": {
+    "message": "แก้ไขชื่อบุ๊กมาร์ก"
+  },
+  "app_create_folder": {
+    "message": "กรอกชื่อโฟลเดอร์:"
   }
 }

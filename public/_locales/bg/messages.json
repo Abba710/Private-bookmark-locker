@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "По-късно"
+  },
+  "app_edit_title": {
+    "message": "Редактиране на заглавието на отметката"
+  },
+  "app_create_folder": {
+    "message": "Въведете име на папката:"
   }
 }

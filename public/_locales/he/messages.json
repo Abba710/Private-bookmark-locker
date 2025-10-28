@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "מאוחר יותר"
+  },
+  "app_edit_title": {
+    "message": "ערוך את כותרת הסימנייה"
+  },
+  "app_create_folder": {
+    "message": "הזן שם תיקיה:"
   }
 }

@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Daha sonra"
+  },
+  "app_edit_title": {
+    "message": "Yer imi başlığını düzenle"
+  },
+  "app_create_folder": {
+    "message": "Klasör adı girin:"
   }
 }

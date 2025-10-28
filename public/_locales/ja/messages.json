@@ -130,5 +130,11 @@
   },
   "app_feedback_button_later": {
     "message": "後で"
+  },
+  "app_edit_title": {
+    "message": "ブックマークのタイトルを編集"
+  },
+  "app_create_folder": {
+    "message": "フォルダー名を入力してください:"
   }
 }

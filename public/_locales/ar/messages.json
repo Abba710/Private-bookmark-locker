@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "لاحقاً"
+  },
+  "app_edit_title": {
+    "message": "تعديل عنوان الإشارة المرجعية"
+  },
+  "app_create_folder": {
+    "message": "أدخل اسم المجلد:"
   }
 }

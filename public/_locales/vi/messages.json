@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Sau"
+  },
+  "app_edit_title": {
+    "message": "Chỉnh sửa tiêu đề dấu trang"
+  },
+  "app_create_folder": {
+    "message": "Nhập tên thư mục:"
   }
 }

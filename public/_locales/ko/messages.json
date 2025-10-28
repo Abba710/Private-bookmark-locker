@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "나중에"
+  },
+  "app_edit_title": {
+    "message": "북마크 제목 편집"
+  },
+  "app_create_folder": {
+    "message": "폴더 이름을 입력하세요:"
   }
 }

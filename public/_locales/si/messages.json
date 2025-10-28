@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "පසුව"
+  },
+  "app_edit_title": {
+    "message": "සටහන් නාමය සංස්කරණය කරන්න"
+  },
+  "app_create_folder": {
+    "message": "ෆෝල්ඩරයේ නම ඇතුළත් කරන්න:"
   }
 }

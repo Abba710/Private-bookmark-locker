@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Depois"
+  },
+  "app_edit_title": {
+    "message": "Editar título do favorito"
+  },
+  "app_create_folder": {
+    "message": "Digite o nome da pasta:"
   }
 }

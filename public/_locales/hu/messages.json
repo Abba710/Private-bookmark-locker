@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Később"
+  },
+  "app_edit_title": {
+    "message": "Könyvjelző címének szerkesztése"
+  },
+  "app_create_folder": {
+    "message": "Adja meg a mappa nevét:"
   }
 }

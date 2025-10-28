@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Neskôr"
+  },
+  "app_edit_title": {
+    "message": "Upraviť názov záložky"
+  },
+  "app_create_folder": {
+    "message": "Zadajte názov priečinka:"
   }
 }

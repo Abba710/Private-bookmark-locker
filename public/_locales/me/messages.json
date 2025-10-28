@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Kasnije"
+  },
+  "app_edit_title": {
+    "message": "Uredi naslov oznake"
+  },
+  "app_create_folder": {
+    "message": "Unesite naziv fascikle:"
   }
 }

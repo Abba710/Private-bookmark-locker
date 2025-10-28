@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Vēlāk"
+  },
+  "app_edit_title": {
+    "message": "Rediģēt grāmatzīmes nosaukumu"
+  },
+  "app_create_folder": {
+    "message": "Ievadiet mapes nosaukumu:"
   }
 }

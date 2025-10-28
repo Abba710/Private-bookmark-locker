@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Später"
+  },
+  "app_edit_title": {
+    "message": "Lesezeichen-Titel bearbeiten"
+  },
+  "app_create_folder": {
+    "message": "Ordnernamen eingeben:"
   }
 }

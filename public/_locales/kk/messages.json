@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Кейін"
+  },
+  "app_edit_title": {
+    "message": "Бетбелгі атауын өңдеу"
+  },
+  "app_create_folder": {
+    "message": "Қапшық атауын енгізіңіз:"
   }
 }

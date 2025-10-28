@@ -131,5 +131,11 @@
   },
   "app_feedback_button_later": {
     "message": "Later"
+  },
+  "app_edit_title": {
+    "message": "Bladwijzertitel bewerken"
+  },
+  "app_create_folder": {
+    "message": "Voer de mapnaam in:"
   }
 }
