@@ -1,5 +1,8 @@
 // Обновленный компонент BookmarkList
-import { deleteBookmarks } from '@/features/bookmarks/bookmarkService'
+import {
+  deleteBookmarks,
+  editBookmarkTitle,
+} from '@/features/bookmarks/bookmarkService'
 import { useBookmarkStore, useSwitchStore } from '@/storage/statelibrary'
 import { useMemo } from 'preact/hooks'
 import Instructions from './instruction'
@@ -47,6 +50,11 @@ function BookmarkList() {
     deleteBookmarks(bookmarks, id)
   }
 
+  const handleEdit = (title: string | undefined, id: string) => {
+    // Implement edit functionality here
+    editBookmarkTitle(bookmarks, title, id)
+  }
+
   // Handle bookmark selection from search results
   const handleBookmarkSelect = (bookmark: Bookmark) => {
     if (bookmark.url) {
@@ -87,6 +95,7 @@ function BookmarkList() {
                         attributes={attributes}
                         setDroppableRef={setDroppableRef}
                         onDelete={handleDelete}
+                        onEdit={handleEdit}
                       />
                     ) : (
                       <LinkBookmark
@@ -95,6 +104,7 @@ function BookmarkList() {
                         attributes={attributes}
                         setDroppableRef={setDroppableRef}
                         onDelete={handleDelete}
+                        onEdit={handleEdit}
                       />
                     )
                   }

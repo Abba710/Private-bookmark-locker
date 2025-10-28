@@ -1,7 +1,7 @@
-import { type Bookmark } from "../../types/types";
-import { LinkBookmark } from "./linkBookmark";
-import { useState } from "preact/hooks";
-import { Sortable } from "@/features/bookmarks/bookmarkSort";
+import { type Bookmark } from '../../types/types'
+import { LinkBookmark } from './linkBookmark'
+import { useState } from 'preact/hooks'
+import { Sortable } from '@/features/bookmarks/bookmarkSort'
 
 export function FolderBookmark({
   bookmark,
@@ -9,15 +9,17 @@ export function FolderBookmark({
   attributes,
   setDroppableRef,
   onDelete,
+  onEdit,
 }: {
-  bookmark: Bookmark;
-  listeners: any;
-  attributes: any;
-  setDroppableRef: (node: HTMLElement | null) => void;
-  onDelete: (id: string) => void;
+  bookmark: Bookmark
+  listeners: any
+  attributes: any
+  setDroppableRef: (node: HTMLElement | null) => void
+  onDelete: (id: string) => void
+  onEdit: (title: string | undefined, id: string) => void
 }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const childCount = bookmark.children?.length || 0;
+  const [isExpanded, setIsExpanded] = useState(false)
+  const childCount = bookmark.children?.length || 0
 
   return (
     <div className=" bg-white/10 w-[100vw] max-w-[300px] rounded-lg hover:bg-white/20">
@@ -30,8 +32,8 @@ export function FolderBookmark({
           {...listeners}
           {...attributes}
           onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
+            e.preventDefault()
+            e.stopPropagation()
           }}
         >
           ⋮⋮
@@ -44,7 +46,7 @@ export function FolderBookmark({
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <span className="text-sm select-none shrink-0">
-            {isExpanded ? "📂" : "📁"}
+            {isExpanded ? '📂' : '📁'}
           </span>
           <span className="text-white text-xs truncate flex-grow">
             {bookmark.title}
@@ -61,19 +63,31 @@ export function FolderBookmark({
           className="text-white/60 hover:text-white select-none text-xs shrink-0 w-3 h-3 flex items-center justify-center"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          {isExpanded ? "▼" : "▶"}
+          {isExpanded ? '▼' : '▶'}
+        </button>
+
+        {/* Edit button */}
+        <button
+          className="text-white/30 select-none hover:text-white/80 text-xs shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            onEdit(bookmark.title, bookmark.id)
+          }}
+        >
+          🖊
         </button>
 
         {/* Delete button */}
         <button
           className="text-white/30 select-none hover:text-white/80 text-xs shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
           onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            onDelete(bookmark.id);
+            e.preventDefault()
+            e.stopPropagation()
+            onDelete(bookmark.id)
           }}
         >
-          ✕
+          🗑
         </button>
       </div>
 
@@ -91,6 +105,7 @@ export function FolderBookmark({
                       attributes={attributes}
                       setDroppableRef={setDroppableRef}
                       onDelete={onDelete}
+                      onEdit={onEdit}
                     />
                   ) : (
                     <LinkBookmark
@@ -99,6 +114,7 @@ export function FolderBookmark({
                       attributes={attributes}
                       setDroppableRef={setDroppableRef}
                       onDelete={onDelete}
+                      onEdit={onEdit}
                     />
                   )
                 }
@@ -108,5 +124,5 @@ export function FolderBookmark({
         </div>
       )}
     </div>
-  );
+  )
 }

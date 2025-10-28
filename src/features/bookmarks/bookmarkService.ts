@@ -66,6 +66,38 @@ export function deleteBookmarks(bookmarks: Bookmark[], id?: string) {
     useBookmarkStore.getState().setBookmarks(updated)
   })
 }
+
+function updateTitleById(
+  list: Bookmark[],
+  id: string,
+  newTitle: string
+): Bookmark[] {
+  return list.map((b) =>
+    b.id === id
+      ? { ...b, title: newTitle }
+      : b.children
+      ? { ...b, children: updateTitleById(b.children, id, newTitle) }
+      : b
+  )
+}
+
+export function editBookmarkTitle(
+  bookmarks: Bookmark[],
+  title: string | undefined,
+  id: string
+) {
+  const newTitle = prompt(
+    `${chrome.i18n.getMessage('app_edit_title')}: ${title}`
+  )
+  if (newTitle === null) return
+
+  const updated = updateTitleById(bookmarks, id, newTitle)
+
+  chrome.storage.local.set({ bookmarks: updated }, () => {
+    useBookmarkStore.getState().setBookmarks(updated)
+  })
+}
+
 function createFolder(title: string, children: Bookmark[] = []): Bookmark {
   return {
     id: crypto.randomUUID(),
@@ -86,7 +118,7 @@ function addFolderToBookmarks(newFolder: Bookmark) {
 }
 
 export function createBookmarkFolder() {
-  const folderName = prompt('Enter folder name:')
+  const folderName = prompt(`${chrome.i18n.getMessage('app_create_folder')}`)
   if (folderName === null) return
 
   addFolderToBookmarks(createFolder(folderName || ''))

@@ -6,12 +6,14 @@ export function LinkBookmark({
   attributes,
   setDroppableRef,
   onDelete,
+  onEdit,
 }: {
   bookmark: Bookmark
   listeners: any
   attributes: any
   setDroppableRef: (node: HTMLElement | null) => void
   onDelete: (id: string) => void
+  onEdit: (title: string | undefined, id: string) => void
 }) {
   // Extract favicon from URL
   const getFaviconUrl = (url?: string) => {
@@ -102,7 +104,16 @@ export function LinkBookmark({
           )}
         </div>
       </a>
-
+      <button
+        className="text-white/30 select-none hover:text-white/80 text-xs shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+        onClick={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          onEdit(bookmark.title, bookmark.id)
+        }}
+      >
+        🖊
+      </button>
       {/* Delete button */}
       <button
         className="text-white/30 select-none hover:text-white/80 text-xs shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -112,7 +123,7 @@ export function LinkBookmark({
           onDelete(bookmark.id)
         }}
       >
-        ✕
+        🗑
       </button>
     </div>
   )
