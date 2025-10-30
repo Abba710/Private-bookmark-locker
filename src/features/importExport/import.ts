@@ -20,16 +20,14 @@ export async function importBookmarks(importedData: string) {
     // Create a new merged array (important for reactivity)
     const merged: Bookmark[] = [...existing]
     for (const b of imported) {
-      if (!merged.some((eb) => eb.url === b.url)) {
-        merged.push({
-          id: crypto.randomUUID(),
-          url: b.url,
-          title: b.title || 'Untitled',
-          incognito: b.incognito ?? false,
-          isFolder: b.isFolder ?? false,
-          children: b.children ? b.children : undefined,
-        })
-      }
+      merged.push({
+        id: crypto.randomUUID(),
+        url: b.url,
+        title: b.title || 'Untitled',
+        incognito: b.incognito ?? false,
+        isFolder: b.isFolder ?? false,
+        children: b.children ? b.children : undefined,
+      })
     }
 
     // Save updated list to chrome.storage
