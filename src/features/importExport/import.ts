@@ -18,16 +18,27 @@ export async function importBookmarks(importedData: string) {
     const existing: Bookmark[] = await loadBookmarks()
 
     // Create a new merged array (important for reactivity)
-    const merged: Bookmark[] = [...existing]
-    for (const b of imported) {
-      merged.push({
+    function normalizeBookmark(b: Bookmark): Bookmark {
+      return {
+        ...b,
         id: crypto.randomUUID(),
-        url: b.url,
-        title: b.title || 'Untitled',
-        incognito: b.incognito ?? false,
-        isFolder: b.isFolder ?? false,
-        children: b.children ? b.children : undefined,
-      })
+        children: b.children?.map((child) => normalizeBookmark(child)),
+      }
+    }
+
+    const merged: Bookmark[] = [...existing]
+
+    for (const b of imported) {
+      merged.push(
+        normalizeBookmark({
+          id: '',
+          url: b.url,
+          title: b.title || 'Untitled',
+          incognito: b.incognito ?? false,
+          isFolder: b.isFolder ?? false,
+          children: b.children ?? undefined,
+        })
+      )
     }
 
     // Save updated list to chrome.storage
