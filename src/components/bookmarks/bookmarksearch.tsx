@@ -1,15 +1,14 @@
-import type { FunctionalComponent } from "preact";
-import { SearchInput } from "@/components/bookmarks/search/searchinput";
-import { SearchResults } from "@/components/bookmarks/search/searchResult";
-import { useBookmarkSearch } from "@/hooks/useBookmarkSearch";
+import type { FunctionalComponent } from 'preact'
+import { SearchInput } from '@/components/bookmarks/search/searchinput'
+import { SearchResults } from '@/components/bookmarks/search/searchResult'
+import { useBookmarkSearch } from '@/hooks/useBookmarkSearch'
 
 interface BookmarkSearchProps {
-  onBookmarkSelect?: (bookmark: any) => void;
-  placeholder?: string;
+  onBookmarkSelect?: (bookmark: any) => void
+  placeholder?: string
 }
 
 export const BookmarkSearch: FunctionalComponent<BookmarkSearchProps> = ({
-  onBookmarkSelect,
   placeholder,
 }) => {
   const {
@@ -18,30 +17,35 @@ export const BookmarkSearch: FunctionalComponent<BookmarkSearchProps> = ({
     searchResults,
     setIsSearchFocused,
     showResults,
-  } = useBookmarkSearch();
+  } = useBookmarkSearch()
 
   const handleResultClick = (bookmark: any) => {
     // Handle bookmark selection
-    if (onBookmarkSelect) {
-      onBookmarkSelect(bookmark);
-    } else {
-      // Default behavior - open bookmark
-      if (bookmark.url) {
-        window.open(bookmark.url, "_blank");
+    chrome.windows.getCurrent((window) => {
+      if (window.incognito === bookmark.incognito) {
+        chrome.tabs.create({
+          url: bookmark.url,
+          windowId: window.id,
+        })
+      } else {
+        chrome.windows.create({
+          url: bookmark.url,
+          incognito: bookmark.incognito,
+        })
       }
-    }
+    })
 
     // Clear search and close results
-    setSearchQuery("");
-    setIsSearchFocused(false);
-  };
+    setSearchQuery('')
+    setIsSearchFocused(false)
+  }
 
   const handleBlur = () => {
     // Delay blur to allow click on results
     setTimeout(() => {
-      setIsSearchFocused(false);
-    }, 150);
-  };
+      setIsSearchFocused(false)
+    }, 150)
+  }
 
   return (
     <div className="relative mb-3">
@@ -60,5 +64,5 @@ export const BookmarkSearch: FunctionalComponent<BookmarkSearchProps> = ({
         searchQuery={searchQuery}
       />
     </div>
-  );
-};
+  )
+}

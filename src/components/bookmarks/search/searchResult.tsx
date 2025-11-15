@@ -1,17 +1,17 @@
-import type { FunctionalComponent } from "preact";
+import type { FunctionalComponent } from 'preact'
 
 interface SearchResult {
-  id: string;
-  title?: string;
-  url?: string;
-  incognito?: boolean;
+  id: string
+  title?: string
+  url?: string
+  incognito?: boolean
 }
 
 interface SearchResultsProps {
-  results: SearchResult[];
-  isVisible: boolean;
-  onResultClick: (bookmark: SearchResult) => void;
-  searchQuery: string;
+  results: SearchResult[]
+  isVisible: boolean
+  onResultClick: (bookmark: SearchResult) => void
+  searchQuery: string
 }
 
 export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
@@ -21,15 +21,15 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
   searchQuery,
 }) => {
   if (!isVisible || results.length === 0) {
-    return null;
+    return null
   }
 
   // Highlight matching text in title
   const highlightMatch = (text: string, query: string) => {
-    if (!query.trim()) return text;
+    if (!query.trim()) return text
 
-    const regex = new RegExp(`(${query})`, "gi");
-    const parts = text.split(regex);
+    const regex = new RegExp(`(${query})`, 'gi')
+    const parts = text.split(regex)
 
     return parts.map((part, index) =>
       regex.test(part) ? (
@@ -39,8 +39,8 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
       ) : (
         part
       )
-    );
-  };
+    )
+  }
 
   return (
     <div className="absolute top-full left-0 right-0 z-50 mt-1 bg-gray-800/95 backdrop-blur-sm border border-white/10 rounded-xl shadow-xl max-h-80 overflow-y-auto">
@@ -65,7 +65,7 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
               <div className="text-sm text-white font-medium truncate">
                 {bookmark.title
                   ? highlightMatch(bookmark.title, searchQuery)
-                  : "Untitled"}
+                  : 'Untitled'}
               </div>
               {bookmark.url && (
                 <div className="text-xs text-white/60 truncate mt-1">
@@ -77,5 +77,5 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
