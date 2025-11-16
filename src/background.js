@@ -41,6 +41,15 @@ function closeAllTabsButKeepOne() {
   })
 }
 
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === 'save_all_open') {
+    getActiveTabs((bookmarks) => {
+      sendResponse({ data: bookmarks })
+    })
+    return true // Indicates that we will send a response asynchronously
+  }
+})
+
 // ✅ Use it inside the command listener
 chrome.commands.onCommand.addListener((command) => {
   if (command === 'close_all_tabs') {

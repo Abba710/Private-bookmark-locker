@@ -137,5 +137,11 @@
   },
   "app_create_folder": {
     "message": "Enter folder name:"
+  },
+  "app_options_save_open": {
+    "message": "💾 Save all open tabs"
+  },
+  "app_report_bug": {
+    "message": "🐞 Report a bug"
   }
 }

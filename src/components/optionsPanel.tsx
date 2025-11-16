@@ -3,7 +3,10 @@ import ImportDialog from '@/components/ImportExport/import'
 import ExportDialog from '@/components/ImportExport/export'
 import { useBookmarkStore } from '@/storage/statelibrary'
 import exportBookmarks from '@/features/importExport/export'
-import { getChromeBookmarks } from '@/features/bookmarks/bookmarkService'
+import {
+  getChromeBookmarks,
+  saveAllOpenTabs,
+} from '@/features/bookmarks/bookmarkService'
 
 export default function OptionsPanel() {
   const bookmarks = useBookmarkStore((state) => state.bookmarks)
@@ -56,6 +59,16 @@ export default function OptionsPanel() {
           </div>
         </button>
 
+        {/* Save all open tabs */}
+        <button
+          onClick={() => saveAllOpenTabs()}
+          className="flex items-center justify-between text-white/90 text-sm p-1 rounded-lg transition hover:bg-white/20 cursor-pointer w-full "
+        >
+          <div className="flex items-center gap-2">
+            <span>{chrome.i18n.getMessage('app_options_save_open')}</span>
+          </div>
+        </button>
+
         {/* Donate */}
         <a
           href="https://buymeacoffee.com/Abba710"
@@ -65,6 +78,17 @@ export default function OptionsPanel() {
         >
           <div className="flex items-center gap-2">
             <span>{chrome.i18n.getMessage('app_donate_title')}</span>
+          </div>
+        </a>
+        {/* Report a bug */}
+        <a
+          href="https://github.com/Abba710/Private-bookmark-locker/issues"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center justify-between text-white/90 text-sm p-1 rounded-lg transition hover:bg-white/20 cursor-pointer w-full "
+        >
+          <div className="flex items-center gap-2">
+            <span>{chrome.i18n.getMessage('app_report_bug')}</span>
           </div>
         </a>
       </div>
