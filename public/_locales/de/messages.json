@@ -137,5 +137,11 @@
   },
   "app_create_folder": {
     "message": "Ordnernamen eingeben:"
+  },
+  "app_options_save_open": {
+    "message": "💾 Alle geöffneten Tabs speichern"
+  },
+  "app_report_bug": {
+    "message": "🐞 Fehler melden"
   }
 }

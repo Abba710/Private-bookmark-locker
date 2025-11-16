@@ -137,5 +137,11 @@
   },
   "app_create_folder": {
     "message": "输入文件夹名称："
+  },
+  "app_options_save_open": {
+    "message": "💾 保存所有打开的标签页"
+  },
+  "app_report_bug": {
+    "message": "🐞 报告错误"
   }
 }
