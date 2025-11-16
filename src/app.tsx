@@ -8,6 +8,7 @@ import { useBookmarkStore, useLockOverlayStore } from '@/storage/statelibrary'
 import { loadBookmarks } from '@/features/bookmarks/bookmarkService'
 import { getInitialLockState } from '@/features/lock/lockservice'
 import Feedback from '@/components/feedback'
+import type { StorageChanges, StorageSchema } from '@/types/types'
 
 function App() {
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked)
@@ -15,13 +16,38 @@ function App() {
   const setBookmarks = useBookmarkStore((state) => state.setBookmarks)
 
   useEffect(() => {
+    let isMounted = true
+
     ;(async () => {
       const loadedBookmarks = await loadBookmarks()
-      setBookmarks(loadedBookmarks)
+      if (isMounted) setBookmarks(loadedBookmarks)
 
       const locked = await getInitialLockState()
-      setIsLocked(locked)
+      if (isMounted) setIsLocked(locked)
     })()
+
+    function handleStorageChange(
+      changes: StorageChanges<StorageSchema>,
+      area: 'local' | 'sync' | 'managed' | 'session'
+    ) {
+      if (area !== 'local') return
+
+      const newVal = changes.bookmarks?.newValue
+      if (!newVal) return
+
+      const current = useBookmarkStore.getState().bookmarks
+
+      if (JSON.stringify(current) !== JSON.stringify(newVal)) {
+        setBookmarks(newVal)
+      }
+    }
+
+    chrome.storage.onChanged.addListener(handleStorageChange)
+
+    return () => {
+      isMounted = false
+      chrome.storage.onChanged.removeListener(handleStorageChange)
+    }
   }, [])
 
   return (

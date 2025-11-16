@@ -38,3 +38,14 @@ export interface FeedbackStore {
   showFeedback: boolean
   setShowFeedback: (show: boolean) => void
 }
+
+export type StorageSchema = {
+  bookmarks: Bookmark[]
+}
+
+export type StorageChanges<T> = {
+  [K in keyof T]?: {
+    oldValue?: T[K]
+    newValue?: T[K]
+  }
+}
