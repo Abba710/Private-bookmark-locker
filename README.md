@@ -1,34 +1,41 @@
-Clone the repository
+Вот обновленная версия README секции на английском, коротко и профессионально.
 
-git clone https://github.com/Abba710/Private-bookmark-locker.git
-cd Private-bookmark-locker
+---
 
+### Installation
 
-Install dependencies
+1. **Clone the repository**
 
-yarn
+   ```bash
+   git clone https://github.com/Abba710/Private-bookmark-locker.git
+   cd Private-bookmark-locker
+   ```
 
+2. **Install dependencies**
 
-Build the extension
-This command creates the production build for testing in the browser.
+   ```bash
+   yarn
+   ```
 
-yarn build
+3. **Build the extension**
+   This command creates the production build for testing in the browser.
 
+   ```bash
+   yarn build
+   ```
 
-Load the unpacked extension in Chrome
-Chrome is the only supported browser.
+4. **Load the unpacked extension in Chrome**
+   Chrome is the only supported browser.
 
-Open Chrome
+   * Open Chrome
+   * Go to `chrome://extensions/`
+   * Enable Developer Mode
+   * Click Load unpacked
+   * Select the `dist` folder
 
-Go to chrome://extensions/
-
-Enable Developer Mode
-
-Click Load unpacked
-
-Select the dist folder
-
-Download the product version
+### Download the product version
 
 You can download the released version of the extension directly from the Chrome Web Store:
-https://chromewebstore.google.com/detail/fagjclghcmnfinjdkdnkejodfjgkpljd?utm_source=item-share-cb
+[https://chromewebstore.google.com/detail/fagjclghcmnfinjdkdnkejodfjgkpljd?utm_source=item-share-cb](https://chromewebstore.google.com/detail/fagjclghcmnfinjdkdnkejodfjgkpljd?utm_source=item-share-cb)
+
+---
