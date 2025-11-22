@@ -142,5 +142,17 @@
   },
   "app_report_bug": {
     "message": "🐞 バグを報告する"
+  },
+  "app_donate_h2_title": {
+    "message": "この拡張機能は私が一人で開発しています。ご支援はプロジェクトの改善と無料提供の維持に役立ちます。"
+  },
+  "app_donate_qr": {
+    "message": "サポートするにはQRコードをスキャンしてください"
+  },
+  "app_donate_or": {
+    "message": "または下のボタンをクリック👇"
+  },
+  "app_donate_close": {
+    "message": "閉じる"
   }
 }

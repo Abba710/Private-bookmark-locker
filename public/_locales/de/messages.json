@@ -115,7 +115,7 @@
     "message": "Richten Sie eine Panik-Taste ein (Standard = Alt+P), um alle Tabs zu schließen und sie in einem Ordner zu speichern"
   },
   "app_ads_title": {
-    "message": "Wenn du ChatGPT benutzt, probiere diese Erweiterung aus👆"
+    "message": "Wenn Sie ChatGPT verwenden, probieren Sie diese Erweiterung aus👆"
   },
   "app_donate_title": {
     "message": "💸 Projekt unterstützen"
@@ -143,5 +143,17 @@
   },
   "app_report_bug": {
     "message": "🐞 Fehler melden"
+  },
+  "app_donate_h2_title": {
+    "message": "Ich entwickle diese Erweiterung allein; Ihre Unterstützung hilft, das Projekt zu verbessern und kostenlos zu halten."
+  },
+  "app_donate_qr": {
+    "message": "Scannen Sie den QR-Code, um mich zu unterstützen"
+  },
+  "app_donate_or": {
+    "message": "Oder klicken Sie auf die Taste👇"
+  },
+  "app_donate_close": {
+    "message": "Schließen"
   }
 }
