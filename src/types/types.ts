@@ -49,3 +49,8 @@ export type StorageChanges<T> = {
     newValue?: T[K]
   }
 }
+
+export type supportDialogProps = {
+  supportOpen: boolean
+  setSupportOpen: (open: boolean) => void
+}

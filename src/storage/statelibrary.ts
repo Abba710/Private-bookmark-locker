@@ -5,6 +5,7 @@ import {
   type SwitchStore,
   type LockOverlayStore,
   type FeedbackStore,
+  type supportDialogProps,
 } from '@/types/types'
 
 export const useBookmarkStore = create<BookmarkStore>((set) => ({
@@ -27,4 +28,9 @@ export const useLockOverlayStore = create<LockOverlayStore>((set) => ({
 export const useFeedbackStore = create<FeedbackStore>((set) => ({
   showFeedback: false,
   setShowFeedback: (show) => set({ showFeedback: show }),
+}))
+
+export const useSupportDialogStore = create<supportDialogProps>((set) => ({
+  supportOpen: false,
+  setSupportOpen: (open) => set({ supportOpen: open }),
 }))

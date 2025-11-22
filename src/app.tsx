@@ -9,8 +9,11 @@ import { loadBookmarks } from '@/features/bookmarks/bookmarkService'
 import { getInitialLockState } from '@/features/lock/lockservice'
 import Feedback from '@/components/feedback'
 import type { StorageChanges, StorageSchema } from '@/types/types'
+import SupportDialog from './components/Support/supportModal'
+import { useCallSupport } from '@/features/support/callSupport'
 
 function App() {
+  useCallSupport()
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked)
   const isLocked = useLockOverlayStore((state) => state.isLocked)
   const setBookmarks = useBookmarkStore((state) => state.setBookmarks)
@@ -61,6 +64,7 @@ function App() {
           <BookmarkList />
           <OptionsPanel />
           <Feedback />
+          <SupportDialog />
         </>
       )}
     </div>

@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks'
 import ImportDialog from '@/components/ImportExport/import'
 import ExportDialog from '@/components/ImportExport/export'
-import { useBookmarkStore } from '@/storage/statelibrary'
+import { useBookmarkStore, useSupportDialogStore } from '@/storage/statelibrary'
 import exportBookmarks from '@/features/importExport/export'
 import {
   getChromeBookmarks,
@@ -10,6 +10,7 @@ import {
 
 export default function OptionsPanel() {
   const bookmarks = useBookmarkStore((state) => state.bookmarks)
+  const setSupportOpen = useSupportDialogStore((state) => state.setSupportOpen)
   const [showImport, setShowImport] = useState(false)
   const [showExport, setShowExport] = useState(false)
 
@@ -70,16 +71,14 @@ export default function OptionsPanel() {
         </button>
 
         {/* Donate */}
-        <a
-          href="https://buymeacoffee.com/Abba710"
-          target="_blank"
-          rel="noreferrer"
+        <button
+          onClick={() => setSupportOpen(true)}
           className="flex items-center justify-between text-white/90 text-sm p-1 rounded-lg transition hover:bg-white/20 cursor-pointer w-full "
         >
           <div className="flex items-center gap-2">
             <span>{chrome.i18n.getMessage('app_donate_title')}</span>
           </div>
-        </a>
+        </button>
         {/* Report a bug */}
         <a
           href="https://github.com/Abba710/Private-bookmark-locker/issues"

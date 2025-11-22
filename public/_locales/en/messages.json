@@ -143,5 +143,17 @@
   },
   "app_report_bug": {
     "message": "🐞 Report a bug"
+  },
+  "app_donate_h2_title": {
+    "message": "I’m building this extension alone, and your support helps me improve the project and keep it free."
+  },
+  "app_donate_qr": {
+    "message": "Scan QR code to support me"
+  },
+  "app_donate_or": {
+    "message": "Or click button👇"
+  },
+  "app_donate_close": {
+    "message": "Close"
   }
 }
