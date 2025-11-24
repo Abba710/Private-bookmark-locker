@@ -15,6 +15,7 @@
     "dnd-kit-sortable-tree": "^0.1.73",
     "extpay": "^3.1.1",
     "preact": "^10.26.9",
+    "react-async-load-script": "^1.0.7",
     "zustand": "^5.0.6"
   },
   "devDependencies": {

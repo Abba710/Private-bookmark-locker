@@ -11,9 +11,12 @@ import Feedback from '@/components/feedback'
 import type { StorageChanges, StorageSchema } from '@/types/types'
 import SupportDialog from './components/Support/supportModal'
 import { useCallSupport } from '@/features/support/callSupport'
+import NotificationsModal from '@/components/notifications/notificationsModal'
+import useNotificationsDialog from '@/features/notifications/notificationsDialog'
 
 function App() {
   useCallSupport()
+  useNotificationsDialog()
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked)
   const isLocked = useLockOverlayStore((state) => state.isLocked)
   const setBookmarks = useBookmarkStore((state) => state.setBookmarks)
@@ -54,7 +57,7 @@ function App() {
   }, [])
 
   return (
-    <div className="min-w-full min-h-screen p-4 bg-black text-white flex flex-col gap-[10px]">
+    <div className="min-w-full justify-center items-center min-h-screen p-4 bg-black text-white flex flex-col gap-[10px]">
       {isLocked ? (
         <LockOverlay />
       ) : (
@@ -65,6 +68,7 @@ function App() {
           <OptionsPanel />
           <Feedback />
           <SupportDialog />
+          <NotificationsModal />
         </>
       )}
     </div>

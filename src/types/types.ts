@@ -54,3 +54,8 @@ export type supportDialogProps = {
   supportOpen: boolean
   setSupportOpen: (open: boolean) => void
 }
+
+export type notificationDialogProps = {
+  notificationOpen: boolean
+  setNotificationOpen: (open: boolean) => void
+}

@@ -81,12 +81,6 @@
   "app_modal_export": {
     "message": "📤 Export Bookmarks"
   },
-  "app_options_import": {
-    "message": "📥 Import"
-  },
-  "app_options_export": {
-    "message": "📤 Export"
-  },
   "app_options_settings": {
     "message": "⚙️ Settings"
   },
@@ -94,7 +88,7 @@
     "message": "Settings coming soon!"
   },
   "app_options_collect": {
-    "message": "🔃 Collect"
+    "message": "🔃 Collect chrome bookmarks"
   },
   "app_import_modal": {
     "message": "📥 Import Bookmarks"
@@ -139,7 +133,7 @@
     "message": "Enter folder name:"
   },
   "app_options_save_open": {
-    "message": "💾 Save all open tabs"
+    "message": "💾 Save the current session"
   },
   "app_report_bug": {
     "message": "🐞 Report a bug"
@@ -155,5 +149,17 @@
   },
   "app_donate_close": {
     "message": "Close"
+  },
+  "app_rate_extension": {
+    "message": "⭐ Rate the extension"
+  },
+  "app_share_extension": {
+    "message": "📢 Share the extension"
+  },
+  "app_community": {
+    "message": "👥 Join the community"
+  },
+  "app_changelog": {
+    "message": "📜 Changelog"
   }
 }

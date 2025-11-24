@@ -1,7 +1,7 @@
 import adsimg from '@/assets/Prompt.png'
 function UserHeader() {
   return (
-    <div className="relative flex items-center justify-between w-full h-[40px] px-4 bg-white/10 rounded-[16px]">
+    <div className="relative flex items-center justify-center w-fit h-[40px] px-4 bg-white/10 rounded-[16px]">
       <a
         className="flex items-center gap-2 hover:scale-105 transition-transform"
         target="_blank"
