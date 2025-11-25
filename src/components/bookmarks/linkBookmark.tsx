@@ -1,4 +1,6 @@
 import { type Bookmark } from '@/types/types'
+import ContextMenu from '@/components/contextMenu/contextMenu'
+import { useState } from 'react'
 
 export function LinkBookmark({
   bookmark,
@@ -15,6 +17,12 @@ export function LinkBookmark({
   onDelete: (id: string) => void
   onEdit: (title: string | undefined, id: string) => void
 }) {
+  const [menuVisible, setMenuVisible] = useState(false)
+  const [menuPos, setMenuPos] = useState({ x: 0, y: 0 })
+  const handleOpenModal = (type: string) => {
+    console.log('Open modal for', type)
+  }
+
   // Extract favicon from URL
   const getFaviconUrl = (url?: string) => {
     if (!url) return '🔗'
@@ -37,7 +45,15 @@ export function LinkBookmark({
   }
 
   return (
-    <div className="flex items-center gap-1 w-[90vw] max-w-[300px] min-h-[32px] px-2 py-1 bg-white/10 rounded-lg hover:bg-white/20 transition group">
+    <div
+      className="flex items-center gap-1 w-[90vw] max-w-[300px] min-h-[32px] px-2 py-1 bg-white/10 rounded-lg hover:bg-white/20 transition group"
+      onContextMenu={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setMenuPos({ x: e.clientX, y: e.clientY })
+        setMenuVisible(true)
+      }}
+    >
       {/* Drag handle */}
       <button
         type="button"
@@ -104,6 +120,7 @@ export function LinkBookmark({
           )}
         </div>
       </a>
+      {/* Edit button */}
       <button
         className="text-white/30 select-none hover:text-white/80 text-xs shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
         onClick={(e) => {
@@ -125,6 +142,14 @@ export function LinkBookmark({
       >
         🗑
       </button>
+      {menuVisible && (
+        <ContextMenu
+          bookmark={bookmark}
+          position={menuPos}
+          onClose={() => setMenuVisible(false)}
+          onOpenModal={handleOpenModal}
+        />
+      )}
     </div>
   )
 }

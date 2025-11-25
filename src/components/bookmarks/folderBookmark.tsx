@@ -2,6 +2,7 @@ import { type Bookmark } from '../../types/types'
 import { LinkBookmark } from './linkBookmark'
 import { useState } from 'preact/hooks'
 import { Sortable } from '@/features/bookmarks/bookmarkSort'
+import ContextMenu from '@/components/contextMenu/contextMenu'
 
 export function FolderBookmark({
   bookmark,
@@ -20,9 +21,22 @@ export function FolderBookmark({
 }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const childCount = bookmark.children?.length || 0
+  const [menuVisible, setMenuVisible] = useState(false)
+  const [menuPos, setMenuPos] = useState({ x: 0, y: 0 })
+  const handleOpenModal = (type: string) => {
+    console.log('Open modal for', type)
+  }
 
   return (
-    <div className=" bg-white/10 w-[100vw] max-w-[300px] rounded-lg hover:bg-white/20">
+    <div
+      className=" bg-white/10 w-[100vw] max-w-[300px] rounded-lg hover:bg-white/20"
+      onContextMenu={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setMenuPos({ x: e.clientX, y: e.clientY })
+        setMenuVisible(true)
+      }}
+    >
       {/* Main element folder */}
       <div className="flex items-center gap-1 px-2 py-1 transition group">
         {/* Drag handle */}
@@ -62,6 +76,10 @@ export function FolderBookmark({
         <button
           className="text-white/60 hover:text-white select-none text-xs shrink-0 w-3 h-3 flex items-center justify-center"
           onClick={() => setIsExpanded(!isExpanded)}
+          onContextMenu={(e) => {
+            console.log('Context menu opened for folder', bookmark.title)
+            e.preventDefault()
+          }}
         >
           {isExpanded ? '▼' : '▶'}
         </button>
@@ -122,6 +140,14 @@ export function FolderBookmark({
             ))}
           </div>
         </div>
+      )}
+      {menuVisible && (
+        <ContextMenu
+          bookmark={bookmark}
+          position={menuPos}
+          onClose={() => setMenuVisible(false)}
+          onOpenModal={handleOpenModal}
+        />
       )}
     </div>
   )

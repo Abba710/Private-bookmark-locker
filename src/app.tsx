@@ -13,6 +13,7 @@ import SupportDialog from './components/Support/supportModal'
 import { useCallSupport } from '@/features/support/callSupport'
 import NotificationsModal from '@/components/notifications/notificationsModal'
 import useNotificationsDialog from '@/features/notifications/notificationsDialog'
+import QrModalUi from './components/contextMenu/featuresUI/qrGenModal'
 
 function App() {
   useCallSupport()
@@ -69,6 +70,7 @@ function App() {
           <Feedback />
           <SupportDialog />
           <NotificationsModal />
+          <QrModalUi />
         </>
       )}
     </div>
