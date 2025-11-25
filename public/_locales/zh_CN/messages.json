@@ -155,5 +155,17 @@
   },
   "app_donate_close": {
     "message": "关闭"
+  },
+  "app_rate_extension": {
+    "message": "⭐ 给扩展评分"
+  },
+  "app_share_extension": {
+    "message": "📢 分享扩展"
+  },
+  "app_community": {
+    "message": "👥 加入社区"
+  },
+  "app_changelog": {
+    "message": "📜 更新日志"
   }
 }

@@ -154,5 +154,17 @@
   },
   "app_donate_close": {
     "message": "閉じる"
+  },
+  "app_rate_extension": {
+    "message": "⭐ 拡張機能を評価する"
+  },
+  "app_share_extension": {
+    "message": "📢 拡張機能を共有する"
+  },
+  "app_community": {
+    "message": "👥 コミュニティに参加する"
+  },
+  "app_changelog": {
+    "message": "📜 変更履歴"
   }
 }

@@ -155,5 +155,17 @@
   },
   "app_donate_close": {
     "message": "Schließen"
+  },
+  "app_rate_extension": {
+    "message": "⭐ Bewerte die Erweiterung"
+  },
+  "app_share_extension": {
+    "message": "📢 Erweiterung teilen"
+  },
+  "app_community": {
+    "message": "👥 Trete der Community bei"
+  },
+  "app_changelog": {
+    "message": "📜 Änderungsprotokoll"
   }
 }
