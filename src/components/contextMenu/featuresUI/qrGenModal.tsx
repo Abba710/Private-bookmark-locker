@@ -1,9 +1,9 @@
 import { useQrModalStore } from '@/components/contextMenu/contextMenuStore'
-import { QRCodeSVG } from 'qrcode.react'
+import { QRCodeCanvas } from 'qrcode.react'
 
 export default function QrModalUi() {
-  const modalOpen = useQrModalStore((state) => state.modalOpen)
-  const setModalOpen = useQrModalStore((state) => state.setModalOpen)
+  const modalOpen = useQrModalStore((state) => state.qrModalOpen)
+  const setModalOpen = useQrModalStore((state) => state.setQrModalOpen)
   const bookmark = useQrModalStore((state) => state.bookmark)
 
   if (!bookmark) return null
@@ -54,10 +54,10 @@ export default function QrModalUi() {
 
             {/* QR Block */}
             <div className="flex flex-col items-center gap-2 mb-5">
-              <QRCodeSVG value={bookmark.url} size={180} />
+              <QRCodeCanvas value={bookmark.url || ''} size={180} />
 
               <p className="text-white/60 text-xs text-center max-w-[260px]">
-                Отсканируй QR чтобы открыть ссылку на другом устройстве
+                {chrome.i18n.getMessage('app_qr_modal_info')}
               </p>
             </div>
 
@@ -66,7 +66,7 @@ export default function QrModalUi() {
               onClick={() => setModalOpen(false)}
               className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition cursor-pointer text-sm"
             >
-              Закрыть
+              {chrome.i18n.getMessage('app_close_button')}
             </button>
           </div>
         </div>

@@ -161,5 +161,11 @@
   },
   "app_changelog": {
     "message": "📜 Changelog"
+  },
+  "app_qr_modal_info": {
+    "message": "Scan the QR code to open the link on another device. You can also right click to copy or download the QR."
+  },
+  "app_close_button": {
+    "message": "Close"
   }
 }

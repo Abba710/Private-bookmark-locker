@@ -11,7 +11,7 @@ export function ContextMenu({
   onClose,
   onOpenModal,
 }: ContextMenuProps) {
-  const { setModalOpen, setSelectedBookmark } = useQrModalStore()
+  const { setQrModalOpen, setSelectedBookmark } = useQrModalStore()
   const menuRef = useRef<HTMLUListElement>(null)
   const [pos, setPos] = useState(position)
 
@@ -31,7 +31,7 @@ export function ContextMenu({
     {
       label: 'Generate QR code',
       action: () => {
-        setModalOpen(true)
+        setQrModalOpen(true)
         setSelectedBookmark(bookmark)
       },
     },

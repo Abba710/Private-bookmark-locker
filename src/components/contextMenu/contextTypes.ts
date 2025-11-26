@@ -15,6 +15,6 @@ export interface ContextMenuProps {
 export interface QrModalProps {
   bookmark: Bookmark | null
   setSelectedBookmark: (bookmark: Bookmark | null) => void
-  modalOpen: boolean
-  setModalOpen: (open: boolean) => void
+  qrModalOpen: boolean
+  setQrModalOpen: (open: boolean) => void
 }
