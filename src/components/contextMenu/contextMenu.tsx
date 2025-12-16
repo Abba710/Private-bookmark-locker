@@ -4,14 +4,16 @@ import type {
   MenuItem,
 } from '@/components/contextMenu/contextTypes'
 import { useEffect, useRef, useState } from 'preact/hooks'
-import { useQrModalStore } from '@/components/contextMenu/contextMenuStore'
+import { useContextModalStore } from '@/components/contextMenu/contextMenuStore'
+import { downloadPdf } from './features/donwloadPdf'
+
 export function ContextMenu({
   bookmark,
   position,
   onClose,
   onOpenModal,
 }: ContextMenuProps) {
-  const { setQrModalOpen, setSelectedBookmark } = useQrModalStore()
+  const { setQrModalOpen, setSelectedBookmark } = useContextModalStore()
   const menuRef = useRef<HTMLUListElement>(null)
   const [pos, setPos] = useState(position)
 
@@ -35,14 +37,21 @@ export function ContextMenu({
         setSelectedBookmark(bookmark)
       },
     },
-    { label: 'Download PDF/HTML', action: () => onOpenModal('download') },
+    {
+      label: 'Download PDF/HTML',
+      action: () => {
+        downloadPdf(bookmark)
+      },
+    },
     { label: 'Export', action: () => onOpenModal('export') },
+    { label: 'close', action: () => setQrModalOpen(false) },
   ]
 
   const folderMenuItems: MenuItem[] = [
     { label: 'Export', action: () => onOpenModal('export') },
     { label: 'Open in group', action: () => onOpenModal('group') },
     { label: 'Edit', action: () => onOpenModal('edit') },
+    { label: 'Close', action: () => setQrModalOpen(false) },
   ]
 
   const menuItems = bookmark.isFolder ? folderMenuItems : linkMenuItems
@@ -51,13 +60,22 @@ export function ContextMenu({
   useEffect(() => {
     const menuWidth = 220
     const menuHeight = menuItems.length * 36
+
     const screenW = window.innerWidth
     const screenH = window.innerHeight
 
+    const scrollX = window.scrollX
+    const scrollY = window.scrollY
+
     const x =
-      position.x + menuWidth > screenW ? screenW - menuWidth - 10 : position.x
+      position.x + menuWidth > scrollX + screenW
+        ? scrollX + screenW - menuWidth - 10
+        : position.x
+
     const y =
-      position.y + menuHeight > screenH ? screenH - menuHeight - 10 : position.y
+      position.y + menuHeight > scrollY + screenH
+        ? scrollY + screenH - menuHeight - 10
+        : position.y
 
     setPos({ x, y })
   }, [position, menuItems.length])

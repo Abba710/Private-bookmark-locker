@@ -14,8 +14,10 @@ import { useCallSupport } from '@/features/support/callSupport'
 import NotificationsModal from '@/components/notifications/notificationsModal'
 import useNotificationsDialog from '@/features/notifications/notificationsDialog'
 import QrModalUi from './components/contextMenu/featuresUI/qrGenModal'
+import { useAuth } from '@/hooks/useAuth'
 
 function App() {
+  const auth = useAuth()
   useCallSupport()
   useNotificationsDialog()
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked)
@@ -63,7 +65,12 @@ function App() {
         <LockOverlay />
       ) : (
         <>
-          <UserHeader />
+          <UserHeader
+            userData={auth.user}
+            logIn={auth.signInWithGoogle}
+            logOut={auth.logout}
+            plan="free"
+          />
           <ControlPanel />
           <BookmarkList />
           <OptionsPanel />

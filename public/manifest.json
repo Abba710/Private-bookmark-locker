@@ -4,11 +4,25 @@
   "version": "1.0.7",
   "manifest_version": 3,
   "description": "__MSG_app_description__",
-  "permissions": ["storage", "tabs", "sidePanel", "bookmarks"],
+  "permissions": [
+    "storage",
+    "tabs",
+    "sidePanel",
+    "bookmarks",
+    "downloads",
+    "identity"
+  ],
   "background": {
     "service_worker": "background.js",
     "type": "module"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
   "side_panel": {
     "default_path": "index.html"
   },
@@ -41,5 +55,9 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   },
-  "host_permissions": ["https://www.reddit.com/*"]
+  "host_permissions": ["https://www.reddit.com/*", "https://*.supabase.co/*"],
+  "oauth2": {
+    "client_id": "872667949856-rgggfos3et4lu1utu2n8beecthf2cqno.apps.googleusercontent.com",
+    "scopes": ["openid", "email", "profile"]
+  }
 }

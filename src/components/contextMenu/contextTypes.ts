@@ -17,4 +17,6 @@ export interface QrModalProps {
   setSelectedBookmark: (bookmark: Bookmark | null) => void
   qrModalOpen: boolean
   setQrModalOpen: (open: boolean) => void
+  downloadModalOpen: boolean
+  setDownloadModalOpen: (open: boolean) => void
 }

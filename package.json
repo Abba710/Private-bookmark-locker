@@ -11,12 +11,18 @@
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
+    "@supabase/supabase-js": "^2.87.1",
     "@tailwindcss/vite": "^4.1.11",
+    "class-variance-authority": "^0.7.1",
     "dnd-kit-sortable-tree": "^0.1.73",
     "extpay": "^3.1.1",
+    "jspdf": "^3.0.4",
+    "lucide-react": "^0.561.0",
     "preact": "^10.26.9",
     "qrcode.react": "^4.2.0",
+    "radix-ui": "^1.4.3",
     "react-async-load-script": "^1.0.7",
+    "tailwind-merge": "^3.4.0",
     "zustand": "^5.0.6"
   },
   "devDependencies": {

@@ -33,7 +33,7 @@ export function FolderBookmark({
       onContextMenu={(e) => {
         e.preventDefault()
         e.stopPropagation()
-        setMenuPos({ x: e.clientX, y: e.clientY })
+        setMenuPos({ x: e.pageX, y: e.pageY })
         setMenuVisible(true)
       }}
     >

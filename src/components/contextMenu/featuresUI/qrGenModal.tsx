@@ -1,10 +1,10 @@
-import { useQrModalStore } from '@/components/contextMenu/contextMenuStore'
+import { useContextModalStore } from '@/components/contextMenu/contextMenuStore'
 import { QRCodeCanvas } from 'qrcode.react'
 
 export default function QrModalUi() {
-  const modalOpen = useQrModalStore((state) => state.qrModalOpen)
-  const setModalOpen = useQrModalStore((state) => state.setQrModalOpen)
-  const bookmark = useQrModalStore((state) => state.bookmark)
+  const modalOpen = useContextModalStore((state) => state.qrModalOpen)
+  const setModalOpen = useContextModalStore((state) => state.setQrModalOpen)
+  const bookmark = useContextModalStore((state) => state.bookmark)
 
   if (!bookmark) return null
 

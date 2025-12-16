@@ -59,3 +59,8 @@ export type notificationDialogProps = {
   notificationOpen: boolean
   setNotificationOpen: (open: boolean) => void
 }
+
+export interface User {
+  id: string
+  mail: string | undefined
+}
