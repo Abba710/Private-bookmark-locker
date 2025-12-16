@@ -4,6 +4,7 @@ import {
   useSwitchStore,
   useFeedbackStore,
 } from '@/storage/statelibrary'
+import { insertData } from '@/service/insertBookmark'
 
 export function saveCurrentPage() {
   const setBookmarks = useBookmarkStore.getState().setBookmarks
@@ -16,6 +17,7 @@ export function saveCurrentPage() {
     if (!bookmarks.some((b) => b.url === url)) {
       const id = crypto.randomUUID() // Generate a unique ID for the bookmark
       bookmarks.push({ id, url, title, incognito })
+      insertData(bookmarks[-1])
       if (bookmarks.length % 5 === 0) feedbackCall()
 
       chrome.storage.local.set({ bookmarks }, () => {
