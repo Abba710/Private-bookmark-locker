@@ -15,9 +15,12 @@ import NotificationsModal from '@/components/notifications/notificationsModal'
 import useNotificationsDialog from '@/features/notifications/notificationsDialog'
 import QrModalUi from './components/contextMenu/featuresUI/qrGenModal'
 import { useAuth } from '@/hooks/useAuth'
+import { initBookmarkSync } from '@/service/supabaseSync'
+import { SyncStatus } from '@/components/syncStatus'
 
 function App() {
   const auth = useAuth()
+  initBookmarkSync()
   useCallSupport()
   useNotificationsDialog()
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked)
@@ -71,6 +74,7 @@ function App() {
             logOut={auth.logout}
             plan="free"
           />
+          <SyncStatus />
           <ControlPanel />
           <BookmarkList />
           <OptionsPanel />
