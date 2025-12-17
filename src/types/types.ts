@@ -64,3 +64,16 @@ export interface User {
   id: string
   mail: string | undefined
 }
+
+export type plan = 'free' | 'pro'
+
+export interface UserSubscription {
+  plan: plan
+  folderCount: number
+  setFolderCount?: (count: number) => void
+}
+
+export interface usePremiumModalStoreProps {
+  premiumModalOpen: boolean
+  setPremiumModalOpen: (open: boolean) => void
+}

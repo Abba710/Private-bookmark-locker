@@ -7,6 +7,7 @@ import {
   type FeedbackStore,
   type supportDialogProps,
   type notificationDialogProps,
+  type usePremiumModalStoreProps,
 } from '@/types/types'
 
 export const useBookmarkStore = create<BookmarkStore>((set) => ({
@@ -40,5 +41,12 @@ export const useNotificationDialogStore = create<notificationDialogProps>(
   (set) => ({
     notificationOpen: false,
     setNotificationOpen: (open) => set({ notificationOpen: open }),
+  })
+)
+
+export const usePremiumModalStore = create<usePremiumModalStoreProps>(
+  (set) => ({
+    premiumModalOpen: false,
+    setPremiumModalOpen: (open) => set({ premiumModalOpen: open }),
   })
 )

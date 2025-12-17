@@ -5,9 +5,25 @@ import {
 import { setSessionStatus } from '@/features/lock/lockservice'
 import { useSwitchStore, useLockOverlayStore } from '@/storage/statelibrary'
 
-function ControlPanel() {
+interface ControlPanelProps {
+  canCreateFolder: boolean
+  openPremiumModal: (open: boolean) => void
+}
+
+function ControlPanel({
+  canCreateFolder,
+  openPremiumModal,
+}: ControlPanelProps) {
   const setSwitch = useSwitchStore((state) => state.setSwitch)
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked)
+
+  function handleCreateFolder() {
+    if (!canCreateFolder) {
+      openPremiumModal(true)
+      return
+    }
+    createBookmarkFolder()
+  }
 
   return (
     <div className="flex items-center justify-center w-full rounded-2xl">
@@ -33,7 +49,7 @@ function ControlPanel() {
           🕵️
         </button>
         <button
-          onClick={createBookmarkFolder}
+          onClick={handleCreateFolder}
           className="w-10 h-10 bg-white/20 rounded-xl flex text-2xl  items-center justify-center cursor-pointer hover:bg-white/30 transition"
         >
           📁

@@ -4,7 +4,11 @@ import BookmarkList from './components/bookmarks/bookmarkList'
 import OptionsPanel from './components/optionsPanel'
 import LockOverlay from '@/components/lock/lockoverlay'
 import { useEffect } from 'preact/hooks'
-import { useBookmarkStore, useLockOverlayStore } from '@/storage/statelibrary'
+import {
+  useBookmarkStore,
+  useLockOverlayStore,
+  usePremiumModalStore,
+} from '@/storage/statelibrary'
 import { loadBookmarks } from '@/features/bookmarks/bookmarkService'
 import { getInitialLockState } from '@/features/lock/lockservice'
 import Feedback from '@/components/feedback'
@@ -17,10 +21,16 @@ import QrModalUi from './components/contextMenu/featuresUI/qrGenModal'
 import { useAuth } from '@/hooks/useAuth'
 import { initBookmarkSync } from '@/service/supabaseSync'
 import { SyncStatus } from '@/components/syncStatus'
+import useSubscribe from '@/hooks/useSubscribe'
+import UpgradeToProModal from '@/components/premium/premiumModal'
 
 function App() {
   const auth = useAuth()
-  initBookmarkSync()
+  const { setPremiumModalOpen } = usePremiumModalStore()
+  const sub = useSubscribe()
+  if (auth.user && sub.subscribe.plan !== 'free') {
+    initBookmarkSync()
+  }
   useCallSupport()
   useNotificationsDialog()
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked)
@@ -72,16 +82,21 @@ function App() {
             userData={auth.user}
             logIn={auth.signInWithGoogle}
             logOut={auth.logout}
-            plan="free"
+            plan={sub.subscribe.plan}
           />
-          <SyncStatus />
-          <ControlPanel />
+
+          {auth.user && sub.subscribe.plan != 'free' && <SyncStatus />}
+          <ControlPanel
+            canCreateFolder={sub.canCreateFolders()}
+            openPremiumModal={setPremiumModalOpen}
+          />
           <BookmarkList />
           <OptionsPanel />
           <Feedback />
           <SupportDialog />
           <NotificationsModal />
           <QrModalUi />
+          <UpgradeToProModal upgrade={sub.upgradePlan} />
         </>
       )}
     </div>
