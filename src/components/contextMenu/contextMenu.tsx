@@ -6,6 +6,7 @@ import type {
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { useContextModalStore } from '@/components/contextMenu/contextMenuStore'
 import { openBookmarkGroup } from '@/components/contextMenu/features/openInGroup'
+import exportToPDF from '@/components/contextMenu/features/downloadPdf'
 
 export function ContextMenu({
   bookmark,
@@ -35,7 +36,9 @@ export function ContextMenu({
     },
     {
       label: 'Download PDF',
-      action: async () => {},
+      action: async () => {
+        if (bookmark.url) exportToPDF(bookmark.url)
+      },
     },
     {
       label: 'AI Summary',

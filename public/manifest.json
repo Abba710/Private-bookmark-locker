@@ -13,7 +13,7 @@
     "identity",
     "tabGroups",
     "scripting",
-    "activeTab"
+    "debugger"
   ],
   "background": {
     "service_worker": "background.js",
@@ -59,7 +59,7 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   },
-  "host_permissions": ["https://www.reddit.com/*", "https://*.supabase.co/*"],
+  "host_permissions": ["<all_urls>"],
   "oauth2": {
     "client_id": "872667949856-rgggfos3et4lu1utu2n8beecthf2cqno.apps.googleusercontent.com",
     "scopes": ["openid", "email", "profile"]
