@@ -5,7 +5,7 @@ import type {
 } from '@/components/contextMenu/contextTypes'
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { useContextModalStore } from '@/components/contextMenu/contextMenuStore'
-import { downloadPdf } from './features/donwloadPdf'
+import { openBookmarkGroup } from '@/components/contextMenu/features/openInGroup'
 
 export function ContextMenu({
   bookmark,
@@ -18,10 +18,6 @@ export function ContextMenu({
   const [pos, setPos] = useState(position)
 
   const linkMenuItems: MenuItem[] = [
-    {
-      label: 'Share',
-      action: () => onOpenModal('share'),
-    },
     {
       label: 'Copy link',
       action: () => {
@@ -38,18 +34,26 @@ export function ContextMenu({
       },
     },
     {
-      label: 'Download PDF/HTML',
+      label: 'Download PDF',
+      action: async () => {},
+    },
+    {
+      label: 'AI Summary',
       action: () => {
-        downloadPdf(bookmark)
+        window.open(
+          `https://chat.openai.com/?q=Summary%20` + bookmark.url,
+          '_blank'
+        )
       },
     },
-    { label: 'Export', action: () => onOpenModal('export') },
     { label: 'close', action: () => setQrModalOpen(false) },
   ]
 
   const folderMenuItems: MenuItem[] = [
-    { label: 'Export', action: () => onOpenModal('export') },
-    { label: 'Open in group', action: () => onOpenModal('group') },
+    {
+      label: 'Open in group',
+      action: async () => await openBookmarkGroup(bookmark),
+    },
     { label: 'Edit', action: () => onOpenModal('edit') },
     { label: 'Close', action: () => setQrModalOpen(false) },
   ]
@@ -98,7 +102,7 @@ export function ContextMenu({
   return (
     <ul
       ref={menuRef}
-      className="absolute bg-white/10 backdrop-blur-md rounded-lg shadow-lg min-w-[220px] z-50 overflow-hidden"
+      className="absolute bg-white/10 backdrop-blur-md rounded-lg shadow-lg min-w-55 z-50 overflow-hidden"
       style={{ top: pos.y, left: pos.x }}
     >
       {menuItems.map((item, idx) => (
