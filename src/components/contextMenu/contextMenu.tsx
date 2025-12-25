@@ -1,12 +1,27 @@
-// ContextMenu.tsx
-import type {
-  ContextMenuProps,
-  MenuItem,
-} from '@/components/contextMenu/contextTypes'
+import type { ContextMenuProps } from '@/components/contextMenu/contextTypes'
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { useContextModalStore } from '@/components/contextMenu/contextMenuStore'
 import { openBookmarkGroup } from '@/components/contextMenu/features/openInGroup'
 import exportToPDF from '@/components/contextMenu/features/downloadPdf'
+import {
+  Copy,
+  QrCode,
+  FileDown,
+  Sparkles,
+  Layers,
+  Edit3,
+  XCircle,
+} from 'lucide-react'
+import { handleCheckPremium } from '@/util/premiumCheck'
+
+/**
+ * ContextMenu component refined for Modern Dark SaaS look.
+ * Features:
+ * 1. Glassmorphism background (#0f0f11/90 with blur).
+ * 2. Icons for every action for better scannability.
+ * 3. Smooth entrance animation.
+ * 4. Automatic positioning to prevent screen overflow.
+ */
 
 export function ContextMenu({
   bookmark,
@@ -18,30 +33,37 @@ export function ContextMenu({
   const menuRef = useRef<HTMLUListElement>(null)
   const [pos, setPos] = useState(position)
 
-  const linkMenuItems: MenuItem[] = [
+  // Define menu items with icons to match the Premium Modal look
+  const linkMenuItems = [
     {
       label: 'Copy link',
+      icon: <Copy className="w-4 h-4" />,
       action: () => {
-        if (bookmark.url) {
-          navigator.clipboard.writeText(bookmark.url)
-        }
+        if (bookmark.url) navigator.clipboard.writeText(bookmark.url)
       },
     },
     {
       label: 'Generate QR code',
+      icon: <QrCode className="w-4 h-4" />,
       action: () => {
+        if (!handleCheckPremium()) return
+
         setQrModalOpen(true)
         setSelectedBookmark(bookmark)
       },
     },
     {
       label: 'Download PDF',
+      icon: <FileDown className="w-4 h-4" />,
       action: async () => {
+        if (!handleCheckPremium()) return
+
         if (bookmark.url) exportToPDF(bookmark.url)
       },
     },
     {
       label: 'AI Summary',
+      icon: <Sparkles className="w-4 h-4 text-indigo-400" />, // Sparkles icon for AI
       action: () => {
         window.open(
           `https://chat.openai.com/?q=Summary%20` + bookmark.url,
@@ -49,40 +71,48 @@ export function ContextMenu({
         )
       },
     },
-    { label: 'close', action: () => setQrModalOpen(false) },
   ]
 
-  const folderMenuItems: MenuItem[] = [
+  const folderMenuItems = [
     {
       label: 'Open in group',
+      icon: <Layers className="w-4 h-4 text-indigo-400" />,
       action: async () => await openBookmarkGroup(bookmark),
     },
-    { label: 'Edit', action: () => onOpenModal('edit') },
-    { label: 'Close', action: () => setQrModalOpen(false) },
+    {
+      label: 'Edit Title',
+      icon: <Edit3 className="w-4 h-4" />,
+      action: () => onOpenModal('edit'),
+    },
   ]
 
-  const menuItems = bookmark.isFolder ? folderMenuItems : linkMenuItems
+  // Add a Close action to all menus with a separator look
+  const commonTailItems = [
+    {
+      label: 'Close menu',
+      icon: <XCircle className="w-4 h-4 text-gray-500" />,
+      action: () => onClose(),
+    },
+  ]
+
+  const menuItems = [
+    ...(bookmark.isFolder ? folderMenuItems : linkMenuItems),
+    ...commonTailItems,
+  ]
 
   // Adjust menu position to prevent overflow
   useEffect(() => {
-    const menuWidth = 220
-    const menuHeight = menuItems.length * 36
+    const menuWidth = 200
+    const menuHeight = menuItems.length * 38 // Approximate height per item
 
     const screenW = window.innerWidth
     const screenH = window.innerHeight
 
-    const scrollX = window.scrollX
-    const scrollY = window.scrollY
-
     const x =
-      position.x + menuWidth > scrollX + screenW
-        ? scrollX + screenW - menuWidth - 10
-        : position.x
+      position.x + menuWidth > screenW ? screenW - menuWidth - 12 : position.x
 
     const y =
-      position.y + menuHeight > scrollY + screenH
-        ? scrollY + screenH - menuHeight - 10
-        : position.y
+      position.y + menuHeight > screenH ? screenH - menuHeight - 12 : position.y
 
     setPos({ x, y })
   }, [position, menuItems.length])
@@ -105,19 +135,39 @@ export function ContextMenu({
   return (
     <ul
       ref={menuRef}
-      className="absolute bg-white/10 backdrop-blur-md rounded-lg shadow-lg min-w-55 z-50 overflow-hidden"
+      // STYLING:
+      // - bg-[#0f0f11]/90: Deep dark backdrop
+      // - border border-white/10: Thin elegant border
+      // - shadow-2xl: Deep depth
+      // - p-1.5: Modern spacing for list items
+      className="fixed bg-[#0f0f11]/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] min-w-[200px] z-[100] p-1.5 animate-in fade-in zoom-in-95 duration-150"
       style={{ top: pos.y, left: pos.x }}
     >
       {menuItems.map((item, idx) => (
         <li
           key={idx}
-          className="px-4 py-2 hover:bg-white/20 cursor-pointer text-xs text-white"
+          className={`
+            flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer text-[13px] font-medium transition-all duration-200
+            ${
+              idx === menuItems.length - 1 && menuItems.length > 2
+                ? 'mt-1 border-t border-white/5 pt-2'
+                : ''
+            }
+            hover:bg-white/10 hover:text-white text-zinc-300 group
+          `}
           onClick={() => {
             item.action?.()
             onClose()
           }}
         >
-          {item.label}
+          {/* Action Icon - Glow effect on hover */}
+          <div className="text-zinc-500 group-hover:text-indigo-400 transition-colors">
+            {item.icon}
+          </div>
+
+          <span className="flex-grow">{item.label}</span>
+
+          {/* Subtle shortcut hint or arrow could go here */}
         </li>
       ))}
     </ul>

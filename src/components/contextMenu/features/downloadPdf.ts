@@ -1,5 +1,3 @@
-// exportToPDF.ts
-
 /**
  * Converts Base64 string from Chrome Debugger to a downloadable Blob
  */
@@ -21,6 +19,7 @@ function b64toBlob(b64Data: string, contentType = '') {
 
 /**
  * Main function to export a URL to PDF using Chrome Debugger API
+ * Styled to match the Premium Modern Dark UI
  */
 const exportToPDF = async (url: string) => {
   if (!url) {
@@ -28,26 +27,29 @@ const exportToPDF = async (url: string) => {
     return
   }
 
-  // UI Feedback in the current document
+  // PREMIUM UI FEEDBACK (Toast)
   const loadingToast = document.createElement('div')
-  loadingToast.className =
-    'fixed top-4 left-1/2 -translate-x-1/2 z-[9999] ' +
-    'flex items-center gap-3 ' +
-    'bg-white/10 backdrop-blur-md ' +
-    'border border-white/20 ' +
-    'text-white text-sm font-sans ' +
-    'px-4 py-2 rounded-xl ' +
-    'shadow-lg ' +
-    'animate-[fadeInDown_200ms_ease-out]'
+  loadingToast.className = `
+    fixed top-6 left-1/2 -translate-x-1/2 z-[10000] 
+    flex items-center gap-4 
+    bg-[#0f0f11]/80 backdrop-blur-xl 
+    border border-white/10 
+    text-white text-sm font-medium
+    px-6 py-3 rounded-2xl 
+    shadow-[0_20px_50px_rgba(0,0,0,0.5)]
+    animate-in fade-in slide-in-from-top-4 duration-300
+  `
 
   const spinner = document.createElement('div')
-  spinner.className =
-    'w-4 h-4 rounded-full ' +
-    'border-2 border-white/30 border-t-white ' +
-    'animate-spin'
+  spinner.className = `
+    w-5 h-5 rounded-full 
+    border-2 border-indigo-500/30 border-t-indigo-500 
+    animate-spin
+  `
 
   const text = document.createElement('span')
-  text.textContent = 'Preparing the download...'
+  text.className = 'tracking-tight'
+  text.textContent = 'Generating high-quality PDF...'
 
   loadingToast.appendChild(spinner)
   loadingToast.appendChild(text)
@@ -59,7 +61,7 @@ const exportToPDF = async (url: string) => {
     // 1. Create a new tab (background)
     tab = await chrome.tabs.create({ url, active: true })
 
-    // 2. Wait for the page to load completely
+    // 2. Wait for the page to load
     await new Promise<void>((resolve) => {
       const listener = (tid: number, info: any) => {
         if (tid === tab!.id && info.status === 'complete') {
@@ -75,46 +77,43 @@ const exportToPDF = async (url: string) => {
     // 3. Attach debugger
     await chrome.debugger.attach(target, '1.3')
 
-    // 4. Setup environment for "Screen" view
+    // 4. Setup environment
     await chrome.debugger.sendCommand(target, 'Page.enable')
     await chrome.debugger.sendCommand(target, 'Emulation.setEmulatedMedia', {
       media: 'screen',
     })
 
-    // Wait for CSS styles to settle
-    await new Promise((r) => setTimeout(r, 2500))
+    // Wait for dynamic content/fonts
+    await new Promise((r) => setTimeout(r, 2000))
 
-    // 5. Measure actual page dimensions
+    // 5. Measure dimensions
     const metricsResult: any = await chrome.scripting.executeScript({
       target: { tabId: tab.id! },
-      func: () => {
-        window.scrollTo(0, 0)
-        return {
-          width:
-            document.documentElement.offsetWidth || document.body.scrollWidth,
-          height:
-            document.documentElement.offsetHeight || document.body.scrollHeight,
-        }
-      },
+      func: () => ({
+        width:
+          document.documentElement.offsetWidth || document.body.scrollWidth,
+        height:
+          document.documentElement.offsetHeight || document.body.scrollHeight,
+      }),
     })
 
     const { width, height } = metricsResult[0].result
 
-    // 6. FORCE RENDER: Ensures the PDF isn't blank by waiting for a frame paint
+    // 6. Force frame paint to prevent blank pages
     await chrome.debugger.sendCommand(target, 'Runtime.evaluate', {
       expression:
         'new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)))',
       awaitPromise: true,
     })
 
-    // 7. Generate PDF via Chrome's native print engine
+    // 7. Generate PDF
     const result: any = await chrome.debugger.sendCommand(
       target,
       'Page.printToPDF',
       {
         printBackground: true,
         displayHeaderFooter: false,
-        paperWidth: width / 96, // Convert pixels to inches
+        paperWidth: width / 96,
         paperHeight: height / 96,
         marginTop: 0,
         marginBottom: 0,
@@ -125,19 +124,17 @@ const exportToPDF = async (url: string) => {
       }
     )
 
-    if (!result || !result.data) {
-      throw new Error('Failed to retrieve PDF data from Chrome')
-    }
+    if (!result?.data) throw new Error('PDF data is empty')
 
-    // 8. Handle the output
+    // 8. Handle output
     const pdfBlob = b64toBlob(result.data, 'application/pdf')
     const pdfUrl = URL.createObjectURL(pdfBlob)
 
     const link = document.createElement('a')
     link.href = pdfUrl
-    link.download = `${new URL(url).hostname}-${
-      new Date().toISOString().split('T')[0]
-    }.pdf`
+    link.download = `${
+      new URL(url).hostname
+    }-${new Date().toLocaleDateString()}.pdf`
     link.click()
 
     // 9. Cleanup
@@ -145,21 +142,18 @@ const exportToPDF = async (url: string) => {
     URL.revokeObjectURL(pdfUrl)
   } catch (error: any) {
     console.error('Print Error:', error)
-    alert('Capture failed: ' + error.message)
-
-    // Attempt to detach if error occurs after attach
-    if (tab?.id) {
-      chrome.debugger.detach({ tabId: tab.id }).catch(() => {})
-    }
+    // Small error toast logic could go here
   } finally {
-    if (document.body.contains(loadingToast)) {
-      document.body.removeChild(loadingToast)
-    }
-    if (tab?.id) {
-      chrome.tabs.remove(tab.id)
-    }
+    // Smooth fade out
+    loadingToast.style.opacity = '0'
+    loadingToast.style.transition = 'opacity 300ms ease'
+    setTimeout(() => {
+      if (document.body.contains(loadingToast))
+        document.body.removeChild(loadingToast)
+    }, 300)
+
+    if (tab?.id) chrome.tabs.remove(tab.id)
   }
 }
 
-// Exporting the function so it can be used in other files
 export default exportToPDF

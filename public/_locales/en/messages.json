@@ -7,7 +7,7 @@
   },
 
   "app_enter_password": {
-    "message": "🔒 Enter password"
+    "message": "Enter password"
   },
   "app_create_password": {
     "message": "🔒 Create password"
@@ -19,7 +19,7 @@
     "message": "Enter your password"
   },
   "app_unlock": {
-    "message": "🔓 Unlock"
+    "message": "Unlock"
   },
   "app_create_password_button": {
     "message": "Create Password"
@@ -79,19 +79,19 @@
     "message": "Search bookmarks..."
   },
   "app_modal_export": {
-    "message": "📤 Export Bookmarks"
+    "message": "Export Bookmarks"
   },
-  "app_options_settings": {
-    "message": "⚙️ Settings"
+  "app_options_hotkeys": {
+    "message": "Hotkeys"
   },
   "app_options_settings_alert": {
     "message": "Settings coming soon!"
   },
   "app_options_collect": {
-    "message": "🔃 Collect chrome bookmarks"
+    "message": "Collect chrome bookmarks"
   },
   "app_import_modal": {
-    "message": "📥 Import Bookmarks"
+    "message": "Import Bookmarks"
   },
   "app_import_modal_description": {
     "message": "Drag & drop your file here or click to select"
@@ -112,7 +112,7 @@
     "message": "If you use ChatGPT, try this extension👆"
   },
   "app_donate_title": {
-    "message": "💸Support the project"
+    "message": "Support the project"
   },
   "app_feedback_title": {
     "message": "Like the extension?"
@@ -133,10 +133,10 @@
     "message": "Enter folder name:"
   },
   "app_options_save_open": {
-    "message": "💾 Save the current session"
+    "message": "Save the current session"
   },
   "app_report_bug": {
-    "message": "🐞 Report a bug"
+    "message": "Report a bug"
   },
   "app_donate_h2_title": {
     "message": "I’m building this extension alone, and your support helps me improve the project and keep it free."
@@ -151,16 +151,16 @@
     "message": "Close"
   },
   "app_rate_extension": {
-    "message": "⭐ Rate the extension"
+    "message": "Rate the extension"
   },
   "app_share_extension": {
-    "message": "📢 Share the extension"
+    "message": "Share the extension"
   },
   "app_community": {
-    "message": "👥 Join the community"
+    "message": "Join the community"
   },
   "app_changelog": {
-    "message": "📜 Changelog"
+    "message": "Changelog"
   },
   "app_qr_modal_info": {
     "message": "Scan the QR code to open the link on another device. You can also right click to copy or download the QR."

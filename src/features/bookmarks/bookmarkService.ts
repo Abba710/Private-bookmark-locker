@@ -3,19 +3,32 @@ import {
   useBookmarkStore,
   useSwitchStore,
   useFeedbackStore,
+  useSubscribePlanStore,
+  usePremiumModalStore,
 } from '@/storage/statelibrary'
+import { TombstoneService } from '@/service/sync/tombstone'
+import { supabase } from '@/service/supabase'
+
+function withTimestamp(b: Bookmark): Bookmark {
+  return { ...b, updatedAt: Date.now() }
+}
 
 export function saveCurrentPage() {
   const setBookmarks = useBookmarkStore.getState().setBookmarks
 
   chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
     const tab = tabs[0]
+    if (!tab) return
     const { url, title, incognito } = tab
 
     const bookmarks = await loadBookmarks()
     if (!bookmarks.some((b) => b.url === url)) {
-      const id = crypto.randomUUID() // Generate a unique ID for the bookmark
-      bookmarks.push({ id, url, title, incognito })
+      const id = crypto.randomUUID()
+      const dateAdded = Date.now()
+
+      // Add updatedAt during creation
+      bookmarks.push(withTimestamp({ id, url, title, incognito, dateAdded }))
+
       if (bookmarks.length % 5 === 0) feedbackCall()
 
       chrome.storage.local.set({ bookmarks }, () => {
@@ -24,6 +37,7 @@ export function saveCurrentPage() {
     }
   })
 }
+
 export function loadBookmarks(): Promise<Bookmark[]> {
   return new Promise((resolve) => {
     chrome.storage.local.get(['bookmarks'], (result) => {
@@ -39,7 +53,7 @@ export function loadBookmarks(): Promise<Bookmark[]> {
         return b
       })
 
-      // if new uids were added, save them back
+      // If new uids were added, save them back
       if (updated) {
         chrome.storage.local.set({ bookmarks: updatedBookmarks })
       }
@@ -57,9 +71,17 @@ function removeById(list: Bookmark[], id: string): Bookmark[] {
     )
 }
 
-export function deleteBookmarks(bookmarks: Bookmark[], id?: string) {
+export async function deleteBookmarks(bookmarks: Bookmark[], id?: string) {
   if (!id) return
 
+  // CHECK: Create a tombstone only if the user is authorized
+  const { data } = await supabase.auth.getSession()
+  const isPro = useSubscribePlanStore.getState().isPro
+  if (data.session?.user && !isPro) {
+    await TombstoneService.trackDeletion(id)
+  }
+
+  // Delete locally (always performed, regardless of authorization)
   const updated = removeById(bookmarks, id)
 
   chrome.storage.local.set({ bookmarks: updated }, () => {
@@ -74,7 +96,7 @@ function updateTitleById(
 ): Bookmark[] {
   return list.map((b) =>
     b.id === id
-      ? { ...b, title: newTitle }
+      ? withTimestamp({ ...b, title: newTitle }) // Update timestamp when editing
       : b.children
       ? { ...b, children: updateTitleById(b.children, id, newTitle) }
       : b
@@ -99,13 +121,17 @@ export function editBookmarkTitle(
 }
 
 function createFolder(title: string, children: Bookmark[] = []): Bookmark {
-  return {
+  const dateAdded = Date.now()
+
+  return withTimestamp({
+    // Add timestamp to the folder
     id: crypto.randomUUID(),
     title,
     incognito: useSwitchStore.getState().Switch,
     isFolder: true,
     children,
-  }
+    dateAdded,
+  })
 }
 
 function addFolderToBookmarks(newFolder: Bookmark) {
@@ -126,6 +152,12 @@ export function createBookmarkFolder() {
 
 chrome.runtime.onMessage.addListener((message) => {
   if (message.action === 'save_tabs') {
+    const isPro = useSubscribePlanStore.getState().isPro
+    const openPremiumModal = usePremiumModalStore.getState().setPremiumModalOpen
+    if (!isPro) {
+      openPremiumModal(true)
+      return
+    }
     addFolderToBookmarks(createFolder('', message.data))
   }
 })

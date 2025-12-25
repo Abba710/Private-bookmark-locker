@@ -27,6 +27,7 @@ export async function importBookmarks(importedData: string) {
     }
 
     const merged: Bookmark[] = [...existing]
+    const dateAdded = Date.now()
 
     for (const b of imported) {
       merged.push(
@@ -37,6 +38,7 @@ export async function importBookmarks(importedData: string) {
           incognito: b.incognito ?? false,
           isFolder: b.isFolder ?? false,
           children: b.children ?? undefined,
+          dateAdded: dateAdded,
         })
       )
     }

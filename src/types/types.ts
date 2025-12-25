@@ -7,7 +7,10 @@ export type Bookmark = {
   incognito?: boolean
   isFolder?: boolean
   children?: Bookmark[]
+  dateAdded?: number
+  updatedAt?: number
 }
+
 export interface BookmarkStore {
   bookmarks: Bookmark[]
   setBookmarks: (bookmarks: Bookmark[]) => void
@@ -65,15 +68,21 @@ export interface User {
   mail: string | undefined
 }
 
-export type plan = 'free' | 'pro'
-
-export interface UserSubscription {
-  plan: plan
-  folderCount: number
-  setFolderCount?: (count: number) => void
+export interface SubscribeState {
+  isPro: boolean
+  isLoading: boolean
+  // Method to check subscription status
+  checkSubscription: () => Promise<void>
+  // Method for manual status setting (optional, for optimistic UI updates)
+  setPlan: (status: boolean) => void
 }
 
 export interface usePremiumModalStoreProps {
   premiumModalOpen: boolean
   setPremiumModalOpen: (open: boolean) => void
+}
+
+export interface useSubscribePlanStoreProps {
+  isPro: boolean
+  setPlan: (p: boolean) => void
 }

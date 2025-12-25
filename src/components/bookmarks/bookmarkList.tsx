@@ -1,4 +1,3 @@
-// Обновленный компонент BookmarkList
 import {
   deleteBookmarks,
   editBookmarkTitle,
@@ -32,7 +31,6 @@ function BookmarkList() {
       : bookmarks.filter((bookmark) => !bookmark.incognito)
   }, [bookmarks, isIncognito])
 
-  // Collect all IDs for SortableContext (including nested ones)
   const getAllIds = (bookmarks: Bookmark[]): string[] => {
     let ids: string[] = []
     for (const bookmark of bookmarks) {
@@ -51,63 +49,77 @@ function BookmarkList() {
   }
 
   const handleEdit = (title: string | undefined, id: string) => {
-    // Implement edit functionality here
     editBookmarkTitle(bookmarks, title, id)
   }
 
-  // Handle bookmark selection from search results
   const handleBookmarkSelect = (bookmark: Bookmark) => {
     if (bookmark.url) {
-      // Open bookmark in new tab
       window.open(bookmark.url, '_blank')
     }
-    // You can add additional logic here, such as:
-    // - Highlighting the selected bookmark in the list
-    // - Adding to recently accessed
-    // - Custom navigation logic
   }
 
   return (
-    <div className="w-full">
-      {/* Search input */}
-      <BookmarkSearch
-        onBookmarkSelect={handleBookmarkSelect}
-        placeholder={`🔍 ${chrome.i18n.getMessage('app_search_placeholder')}`}
-      />{' '}
-      {/* Bookmark list */}
+    <div className="w-full flex flex-col gap-6 relative">
+      {/* Decorative Glow - copied modal effect for background depth behind the list */}
+      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-indigo-500/5 blur-[100px] pointer-events-none" />
+
+      {/* Search Header Section */}
+      <div className="px-1 relative z-10">
+        <BookmarkSearch
+          onBookmarkSelect={handleBookmarkSelect}
+          placeholder={chrome.i18n.getMessage('app_search_placeholder')}
+        />
+      </div>
+
+      {/* Main List Area */}
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
         onDragEnd={(e: DragEndEvent) => handleDragEnd(e)}
       >
         <SortableContext items={allIds}>
-          <div className="flex flex-wrap items-start content-start overflow-x-hidden gap-1 w-full min-h-[70vh] max-h-[70vh] overflow-y-auto p-1">
+          <div
+            className={`
+              flex flex-wrap items-start content-start justify-start gap-3 w-full 
+              min-h-[70vh] max-h-[70vh] overflow-y-auto overflow-x-hidden p-2
+              /* Custom Scrollbar - Indigo style */
+              scrollbar-thin scrollbar-thumb-white/5 scrollbar-track-transparent
+              hover:scrollbar-thumb-indigo-500/20 transition-all duration-300
+            `}
+          >
             {filtered.length < 1 ? (
-              <Instructions />
+              <div className="w-full flex justify-center animate-in fade-in zoom-in duration-500">
+                <Instructions />
+              </div>
             ) : (
               filtered.map((bookmark) => (
                 <Sortable id={bookmark.id} key={bookmark.id}>
-                  {({ listeners, attributes, setDroppableRef }) =>
-                    bookmark.isFolder ? (
-                      <FolderBookmark
-                        bookmark={bookmark}
-                        listeners={listeners}
-                        attributes={attributes}
-                        setDroppableRef={setDroppableRef}
-                        onDelete={handleDelete}
-                        onEdit={handleEdit}
-                      />
-                    ) : (
-                      <LinkBookmark
-                        bookmark={bookmark}
-                        listeners={listeners}
-                        attributes={attributes}
-                        setDroppableRef={setDroppableRef}
-                        onDelete={handleDelete}
-                        onEdit={handleEdit}
-                      />
-                    )
-                  }
+                  {({ listeners, attributes, setDroppableRef }) => (
+                    /* Card entrance animation.
+                       The bookmark layout now features consistent gaps and smooth transitions.
+                    */
+                    <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+                      {bookmark.isFolder ? (
+                        <FolderBookmark
+                          bookmark={bookmark}
+                          listeners={listeners}
+                          attributes={attributes}
+                          setDroppableRef={setDroppableRef}
+                          onDelete={handleDelete}
+                          onEdit={handleEdit}
+                        />
+                      ) : (
+                        <LinkBookmark
+                          bookmark={bookmark}
+                          listeners={listeners}
+                          attributes={attributes}
+                          setDroppableRef={setDroppableRef}
+                          onDelete={handleDelete}
+                          onEdit={handleEdit}
+                        />
+                      )}
+                    </div>
+                  )}
                 </Sortable>
               ))
             )}

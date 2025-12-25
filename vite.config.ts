@@ -15,15 +15,11 @@ export default defineConfig({
       input: {
         index: path.resolve(__dirname, 'index.html'),
         background: path.resolve(__dirname, 'src/background.js'),
-        'content-script': path.resolve(__dirname, 'src/content-script.js'),
       },
       output: {
         entryFileNames: (chunk) => {
           if (chunk.name === 'background') {
             return 'background.js'
-          }
-          if (chunk.name === 'content-script') {
-            return 'content-script.js'
           }
           return '[name].js'
         },
