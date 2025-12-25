@@ -3,15 +3,7 @@ import { useEffect, useRef, useState } from 'preact/hooks'
 import { useContextModalStore } from '@/components/contextMenu/contextMenuStore'
 import { openBookmarkGroup } from '@/components/contextMenu/features/openInGroup'
 import exportToPDF from '@/components/contextMenu/features/downloadPdf'
-import {
-  Copy,
-  QrCode,
-  FileDown,
-  Sparkles,
-  Layers,
-  Edit3,
-  XCircle,
-} from 'lucide-react'
+import { Copy, QrCode, FileDown, Sparkles, Layers, XCircle } from 'lucide-react'
 import { handleCheckPremium } from '@/util/premiumCheck'
 
 /**
@@ -23,12 +15,7 @@ import { handleCheckPremium } from '@/util/premiumCheck'
  * 4. Automatic positioning to prevent screen overflow.
  */
 
-export function ContextMenu({
-  bookmark,
-  position,
-  onClose,
-  onOpenModal,
-}: ContextMenuProps) {
+export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
   const { setQrModalOpen, setSelectedBookmark } = useContextModalStore()
   const menuRef = useRef<HTMLUListElement>(null)
   const [pos, setPos] = useState(position)
@@ -78,11 +65,6 @@ export function ContextMenu({
       label: 'Open in group',
       icon: <Layers className="w-4 h-4 text-indigo-400" />,
       action: async () => await openBookmarkGroup(bookmark),
-    },
-    {
-      label: 'Edit Title',
-      icon: <Edit3 className="w-4 h-4" />,
-      action: () => onOpenModal('edit'),
     },
   ]
 
