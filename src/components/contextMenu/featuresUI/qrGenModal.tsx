@@ -15,6 +15,11 @@ export default function QrModalUi() {
 
   if (!bookmark) return null
 
+  /**
+   * Generates favicon URL using Google's S2 service
+   * @param url Site URL
+   * @returns Favicon URL or null
+   */
   const getFaviconUrl = (url?: string) => {
     if (!url) return null
     try {
@@ -25,6 +30,11 @@ export default function QrModalUi() {
     }
   }
 
+  /**
+   * Extracts clean domain name for display
+   * @param url Site URL
+   * @returns Cleaned hostname
+   */
   const getDomain = (url?: string) => {
     if (!url) return ''
     try {
@@ -105,7 +115,7 @@ export default function QrModalUi() {
                 onClick={() => setModalOpen(false)}
                 className="w-full py-4 rounded-xl bg-white/5 border border-white/5 text-white text-sm font-semibold hover:bg-white/10 hover:border-white/10 transition-all active:scale-[0.98]"
               >
-                {chrome.i18n.getMessage('app_close_button')}
+                {chrome.i18n.getMessage('app_qr_close_button')}
               </button>
             </div>
           </div>

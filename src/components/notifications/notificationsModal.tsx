@@ -107,7 +107,7 @@ function RedditPostCard({ postUrl }: { postUrl: string }) {
   if (!post)
     return (
       <div className="text-center py-8 text-zinc-500 text-sm">
-        Content unavailable
+        {chrome.i18n.getMessage('app_changelog_unavailable')}
       </div>
     )
 
@@ -151,7 +151,7 @@ function RedditPostCard({ postUrl }: { postUrl: string }) {
 export default function ChangelogDialog() {
   const { notificationOpen, setNotificationOpen } = useNotificationDialogStore()
   const redditPostUrl =
-    'https://www.reddit.com/user/Sad-Bed-3125/comments/1p66zu1/private_bookmark_locker_changelog_v_107/'
+    'https://www.reddit.com/user/Sad-Bed-3125/comments/1pw074x/lockerprivate_bookmark_locker_changelog_v_200/'
 
   if (!notificationOpen) return null
 
@@ -179,11 +179,8 @@ export default function ChangelogDialog() {
               <ScrollText className="w-7 h-7 text-indigo-400" />
             </div>
             <h2 className="text-2xl font-bold text-white tracking-tight mb-2">
-              What's New
+              {chrome.i18n.getMessage('app_changelog_modal_title')}
             </h2>
-            <p className="text-zinc-500 text-sm font-medium">
-              Version 1.0.7 is here with new features
-            </p>
           </div>
 
           <RedditPostCard postUrl={redditPostUrl} />
@@ -195,7 +192,7 @@ export default function ChangelogDialog() {
             >
               <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
               <span className="relative flex items-center justify-center gap-2 text-sm">
-                Open Full Post on Reddit
+                {chrome.i18n.getMessage('app_changelog_open_reddit')}
                 <ExternalLink className="w-4 h-4" />
               </span>
             </button>
@@ -204,7 +201,7 @@ export default function ChangelogDialog() {
               onClick={() => setNotificationOpen(false)}
               className="w-full py-3 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
             >
-              Dismiss
+              {chrome.i18n.getMessage('app_changelog_dismiss')}
             </button>
           </div>
         </div>

@@ -64,8 +64,8 @@ export default function LockOverlay() {
 
         <p className="text-zinc-500 text-sm font-medium mb-8 text-center px-2">
           {mode === 'setup'
-            ? 'Secure your bookmarks with a master password'
-            : 'Access to your private space is restricted'}
+            ? chrome.i18n.getMessage('app_lock_setup_description')
+            : chrome.i18n.getMessage('app_lock_unlock_description')}
         </p>
 
         {/* INPUT FIELD */}
@@ -112,23 +112,23 @@ export default function LockOverlay() {
         {mode === 'setup' && (
           <div className="mt-6 text-center animate-in fade-in slide-in-from-top-2 duration-700">
             <p className="text-[11px] text-zinc-500 leading-relaxed px-4">
-              By continuing, you agree to our{' '}
+              {chrome.i18n.getMessage('app_lock_legal_agreement')}{' '}
               <a
                 href="https://abbablog.me/locker/terms-and-conditions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2"
               >
-                Terms of Service
+                {chrome.i18n.getMessage('app_lock_terms')}
               </a>{' '}
-              and{' '}
+              {chrome.i18n.getMessage('app_lock_and')}{' '}
               <a
                 href="https://abbablog.me/locker/terms-and-conditions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2"
               >
-                Privacy Policy
+                {chrome.i18n.getMessage('app_lock_privacy')}
               </a>
               .
             </p>
@@ -139,7 +139,7 @@ export default function LockOverlay() {
       {/* FOOTER WARNING */}
       <div className="fixed bottom-10 flex flex-col items-center gap-2 px-6 max-w-[400px] animate-pulse">
         <p className="text-zinc-500 text-xs font-medium text-center uppercase tracking-[0.2em]">
-          Security Notice
+          {chrome.i18n.getMessage('app_lock_security_notice')}
         </p>
         <p className="text-zinc-400 text-sm font-medium text-center leading-relaxed">
           {chrome.i18n.getMessage('app_password_warning')}

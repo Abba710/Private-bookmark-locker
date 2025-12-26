@@ -23,14 +23,14 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
   // Define menu items with icons to match the Premium Modal look
   const linkMenuItems = [
     {
-      label: 'Copy link',
+      label: chrome.i18n.getMessage('app_context_copy_link'),
       icon: <Copy className="w-4 h-4" />,
       action: () => {
         if (bookmark.url) navigator.clipboard.writeText(bookmark.url)
       },
     },
     {
-      label: 'Generate QR code',
+      label: chrome.i18n.getMessage('app_context_qr_code'),
       icon: <QrCode className="w-4 h-4" />,
       action: () => {
         if (!handleCheckPremium()) return
@@ -40,7 +40,7 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
       },
     },
     {
-      label: 'Download PDF',
+      label: chrome.i18n.getMessage('app_context_download_pdf'),
       icon: <FileDown className="w-4 h-4" />,
       action: async () => {
         if (!handleCheckPremium()) return
@@ -49,7 +49,7 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
       },
     },
     {
-      label: 'AI Summary',
+      label: chrome.i18n.getMessage('app_context_ai_summary'),
       icon: <Sparkles className="w-4 h-4 text-indigo-400" />, // Sparkles icon for AI
       action: () => {
         window.open(
@@ -62,7 +62,7 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
 
   const folderMenuItems = [
     {
-      label: 'Open in group',
+      label: chrome.i18n.getMessage('app_context_open_group'),
       icon: <Layers className="w-4 h-4 text-indigo-400" />,
       action: async () => await openBookmarkGroup(bookmark),
     },
@@ -71,7 +71,7 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
   // Add a Close action to all menus with a separator look
   const commonTailItems = [
     {
-      label: 'Close menu',
+      label: chrome.i18n.getMessage('app_context_close_menu'),
       icon: <XCircle className="w-4 h-4 text-gray-500" />,
       action: () => onClose(),
     },

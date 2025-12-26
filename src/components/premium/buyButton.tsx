@@ -41,8 +41,10 @@ export function BuyButton({
     const start = Date.now()
 
     while (Date.now() - start < timeout) {
-      if (signal.aborted) throw new Error('Canceled by user')
-      if (!navigator.onLine) throw new Error('No internet connection')
+      if (signal.aborted)
+        throw new Error(chrome.i18n.getMessage('app_buy_cancel_user'))
+      if (!navigator.onLine)
+        throw new Error(chrome.i18n.getMessage('app_buy_no_internet'))
 
       try {
         const {
@@ -57,7 +59,7 @@ export function BuyButton({
 
       await new Promise((resolve) => setTimeout(resolve, 1000))
     }
-    throw new Error('Login timed out')
+    throw new Error(chrome.i18n.getMessage('app_buy_login_timeout'))
   }
 
   const handleInteraction = async (e: TargetedEvent<HTMLButtonElement>) => {
@@ -80,7 +82,8 @@ export function BuyButton({
     abortControllerRef.current = abortController
 
     try {
-      if (!navigator.onLine) throw new Error('No internet connection')
+      if (!navigator.onLine)
+        throw new Error(chrome.i18n.getMessage('app_buy_no_internet'))
 
       // --- STAGE 1: AUTHORIZATION ---
       let {
@@ -93,24 +96,21 @@ export function BuyButton({
         try {
           await logIn()
         } catch (loginErr) {
-          throw new Error('Login window failed to open')
+          throw new Error(chrome.i18n.getMessage('app_buy_login_window_error'))
         }
 
         const user = await waitForSession(abortController.signal)
-        if (!user) throw new Error('Session check failed')
+        if (!user)
+          throw new Error(chrome.i18n.getMessage('app_buy_session_failed'))
         userId = user.id
       }
 
       // --- STAGE 2: CHECK SUBSCRIPTION AFTER LOGIN ---
-      // We check if this user already has PRO status.
       const isAlreadyPro = await checkSubscription()
 
       if (abortController.signal.aborted) return
 
       if (isAlreadyPro) {
-        // SCENARIO A: User is already PRO.
-        // We just stop loading and exit.
-        // The parent component (Modal) will close itself because isPro will become true.
         console.log('🎉 User is already PRO. Closing...')
         setLoading(false)
         return
@@ -122,18 +122,20 @@ export function BuyButton({
       const finalUrl = `${BASE_CHECKOUT_URL}?checkout[custom][user_id]=${userId}&checkout[passthrough]=${userId}`
       const win = window.open(finalUrl, '_blank', 'noopener,noreferrer')
 
-      if (!win) throw new Error('Popup blocked')
+      if (!win) throw new Error(chrome.i18n.getMessage('app_buy_popup_blocked'))
 
       setLoading(false)
     } catch (err: any) {
-      if (err.message !== 'Canceled by user') {
+      if (err.message !== chrome.i18n.getMessage('app_buy_cancel_user')) {
         console.error('❌ Purchase Error:', err)
-        if (err.message === 'No internet connection') {
-          setErrorMsg('No internet connection')
-        } else if (err.message === 'Login timed out') {
-          setErrorMsg('Login timed out')
+        if (err.message === chrome.i18n.getMessage('app_buy_no_internet')) {
+          setErrorMsg(chrome.i18n.getMessage('app_buy_no_internet'))
+        } else if (
+          err.message === chrome.i18n.getMessage('app_buy_login_timeout')
+        ) {
+          setErrorMsg(chrome.i18n.getMessage('app_buy_login_timeout'))
         } else {
-          setErrorMsg('Login failed or closed.')
+          setErrorMsg(chrome.i18n.getMessage('app_buy_login_failed'))
         }
       }
       setLoading(false)
@@ -147,8 +149,10 @@ export function BuyButton({
           <div className="flex items-center gap-2 animate-in fade-in zoom-in duration-300">
             <Loader2 className="w-5 h-5 animate-spin" />
             <span className="text-sm font-normal opacity-90">
-              Wait for Login...
-              <span className="opacity-60 text-xs ml-1">(Click to cancel)</span>
+              {chrome.i18n.getMessage('app_buy_wait_login')}
+              <span className="opacity-60 text-xs ml-1">
+                {chrome.i18n.getMessage('app_buy_click_cancel')}
+              </span>
             </span>
             <XCircle className="w-4 h-4 ml-auto text-white/50 hover:text-white transition-colors" />
           </div>
@@ -159,7 +163,7 @@ export function BuyButton({
 
       {errorMsg && (
         <div className="flex items-center justify-center gap-1.5 text-red-400 text-xs animate-in fade-in slide-in-from-top-1 bg-red-500/10 p-2 rounded-lg border border-red-500/20">
-          {errorMsg === 'No internet connection' ? (
+          {errorMsg === chrome.i18n.getMessage('app_buy_no_internet') ? (
             <WifiOff className="w-3 h-3" />
           ) : (
             <XCircle className="w-3 h-3" />

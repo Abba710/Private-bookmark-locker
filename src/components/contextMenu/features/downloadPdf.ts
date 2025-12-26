@@ -23,7 +23,7 @@ function b64toBlob(b64Data: string, contentType = '') {
  */
 const exportToPDF = async (url: string) => {
   if (!url) {
-    alert('No URL provided')
+    alert(chrome.i18n.getMessage('app_pdf_no_url'))
     return
   }
 
@@ -49,7 +49,7 @@ const exportToPDF = async (url: string) => {
 
   const text = document.createElement('span')
   text.className = 'tracking-tight'
-  text.textContent = 'Generating high-quality PDF...'
+  text.textContent = chrome.i18n.getMessage('app_pdf_generating')
 
   loadingToast.appendChild(spinner)
   loadingToast.appendChild(text)
@@ -124,7 +124,7 @@ const exportToPDF = async (url: string) => {
       }
     )
 
-    if (!result?.data) throw new Error('PDF data is empty')
+    if (!result?.data) throw new Error(chrome.i18n.getMessage('app_pdf_error'))
 
     // 8. Handle output
     const pdfBlob = b64toBlob(result.data, 'application/pdf')

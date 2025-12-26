@@ -133,7 +133,9 @@ export default function OptionsPanel() {
       {/* SECTION: PREMIUM & ACCOUNT */}
       <div className="flex flex-col gap-1 p-1.5 bg-indigo-500/[0.02] border border-indigo-500/10 rounded-2xl shadow-sm">
         <p className="px-3 pt-1 pb-2 text-[10px] font-bold text-indigo-400/70 uppercase tracking-[0.15em]">
-          {isPro ? 'Subscription Plan' : 'Go Premium'}
+          {isPro
+            ? chrome.i18n.getMessage('app_options_subscription_plan')
+            : chrome.i18n.getMessage('app_options_go_premium')}
         </p>
 
         {isPro ? (
@@ -146,7 +148,7 @@ export default function OptionsPanel() {
       {/* SECTION: DATA MANAGEMENT (PRO FEATURES) */}
       <div className="flex flex-col gap-1 p-1.5 bg-white/[0.02] border border-white/5 rounded-2xl shadow-sm">
         <p className="px-3 pt-1 pb-2 text-[10px] font-bold text-zinc-500 uppercase tracking-[0.15em]">
-          Data & Tools
+          {chrome.i18n.getMessage('app_options_data_tools')}
         </p>
         <OptionRow
           icon={Upload}
@@ -203,7 +205,7 @@ export default function OptionsPanel() {
       {/* SECTION: COMMUNITY & SUPPORT */}
       <div className="flex flex-col gap-1 p-1.5 bg-white/[0.02] border border-white/5 rounded-2xl shadow-sm">
         <p className="px-3 pt-1 pb-2 text-[10px] font-bold text-zinc-500 uppercase tracking-[0.15em]">
-          Community
+          {chrome.i18n.getMessage('app_options_community_header')}
         </p>
         <OptionRow
           icon={History}

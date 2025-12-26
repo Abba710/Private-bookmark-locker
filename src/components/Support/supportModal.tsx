@@ -81,7 +81,9 @@ export default function SupportDialog() {
             className="group relative flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-[#FFDD00] text-black font-bold shadow-lg hover:shadow-[#FFDD00]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             <Coffee className="w-5 h-5 fill-black/10" />
-            <span className="text-sm">Buy me a coffee</span>
+            <span className="text-sm">
+              {chrome.i18n.getMessage('app_donate_coffee')}
+            </span>
             <ExternalLink className="w-4 h-4 opacity-50" />
           </button>
 
@@ -90,7 +92,7 @@ export default function SupportDialog() {
             onClick={() => setSupportOpen(false)}
             className="mt-6 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
           >
-            Close
+            {chrome.i18n.getMessage('app_donate_close')}
           </button>
         </div>
       </div>

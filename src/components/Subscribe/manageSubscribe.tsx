@@ -2,6 +2,10 @@ import { useState } from 'preact/hooks'
 import { ExternalLink, Loader2, Settings2 } from 'lucide-react'
 import { supabase } from '@/service/supabase' // Path to your Supabase client
 
+/**
+ * ManageSubscriptionButton Component
+ * Allows PRO users to access their billing portal.
+ */
 export default function ManageSubscriptionButton() {
   const [isLoading, setIsLoading] = useState(false)
 
@@ -10,17 +14,17 @@ export default function ManageSubscriptionButton() {
     setIsLoading(true)
 
     try {
-      // IMPORTANT: Get the current session to pass the access token
+      // 1. Get the current session to pass the access token
       const {
         data: { session },
         error: sessionError,
       } = await supabase.auth.getSession()
 
       if (sessionError || !session) {
-        throw new Error('Not authenticated. Please log in.')
+        throw new Error(chrome.i18n.getMessage('app_sub_error_auth'))
       }
 
-      // Invoke the Edge Function with the correct authorization headers
+      // 2. Invoke the Edge Function with the correct authorization headers
       const { data, error } = await supabase.functions.invoke(
         'get-portal-url',
         {
@@ -36,18 +40,21 @@ export default function ManageSubscriptionButton() {
       }
 
       if (data?.url) {
-        // Open the portal in a new tab
+        // 3. Open the portal in a new tab
         window.open(data.url, '_blank', 'noopener,noreferrer')
       } else {
-        throw new Error('Portal URL not found in response')
+        throw new Error(chrome.i18n.getMessage('app_sub_error_url'))
       }
     } catch (err) {
       console.error('Portal Error:', err)
 
-      // Provide a more informative error message
+      // 4. Provide a more informative localized error message
       const message =
-        err instanceof Error ? err.message : 'Unknown error occurred'
-      alert(`Failed to open subscription portal: ${message}`)
+        err instanceof Error
+          ? err.message
+          : chrome.i18n.getMessage('app_sub_error_unknown')
+
+      alert(`${chrome.i18n.getMessage('app_sub_error_fail')} ${message}`)
     } finally {
       setIsLoading(false)
     }
@@ -70,8 +77,12 @@ export default function ManageSubscriptionButton() {
           <Settings2 size={18} />
         </div>
         <div className="text-left">
-          <p className="text-sm font-medium text-white">Subscription Plan</p>
-          <p className="text-xs text-zinc-500">Manage billing and invoices</p>
+          <p className="text-sm font-medium text-white">
+            {chrome.i18n.getMessage('app_sub_manage_title')}
+          </p>
+          <p className="text-xs text-zinc-500">
+            {chrome.i18n.getMessage('app_sub_manage_subtitle')}
+          </p>
         </div>
       </div>
 

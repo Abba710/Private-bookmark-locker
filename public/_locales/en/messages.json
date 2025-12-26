@@ -1,9 +1,9 @@
 {
   "app_name": {
-    "message": "Private Bookmark Locker"
+    "message": "Locker: Secure Bookmark Manager with Encrypted Cloud Sync and Incognito Mode"
   },
   "app_description": {
-    "message": "Private bookmark storage. Save and protect links with a password — only you can see them."
+    "message": "Bookmarks, Folders, PDF uploads, AI Summaries, Cloud sync and Incognito all in one Sidebar for Private tab and Bookmark management."
   },
 
   "app_enter_password": {
@@ -147,9 +147,6 @@
   "app_donate_or": {
     "message": "Or click button👇"
   },
-  "app_donate_close": {
-    "message": "Close"
-  },
   "app_rate_extension": {
     "message": "Rate the extension"
   },
@@ -162,10 +159,120 @@
   "app_changelog": {
     "message": "Changelog"
   },
-  "app_qr_modal_info": {
-    "message": "Scan the QR code to open the link on another device. You can also right click to copy or download the QR."
-  },
   "app_close_button": {
     "message": "Close"
-  }
+  },
+  "app_header_guest_name": {
+    "message": "Guest User"
+  },
+  "app_subscribe_free": {
+    "message": "Free"
+  },
+  "app_subscribe_pro": {
+    "message": "PRO"
+  },
+  "app_header_log_in": { "message": "Sign In" },
+  "app_options_subscription_plan": { "message": "Subscription Plan" },
+  "app_options_go_premium": { "message": "Go Premium" },
+  "app_options_data_tools": { "message": "Data & Tools" },
+  "app_options_community_header": { "message": "Community" },
+  "app_changelog_unavailable": { "message": "Content unavailable" },
+  "app_changelog_modal_title": { "message": "What's New" },
+  "app_changelog_open_reddit": { "message": "Open Full Post on Reddit" },
+  "app_changelog_dismiss": { "message": "Dismiss" },
+  "app_import_supported_format": {
+    "message": "Supported format: JSON configuration"
+  },
+  "app_import_click_browse": { "message": "or click to browse files" },
+  "app_import_config_file_label": { "message": "Configuration File" },
+  "app_import_standard_json": { "message": "Standard JSON format" },
+  "app_export_format_label": { "message": "Format: JSON" },
+  "app_context_copy_link": { "message": "Copy link" },
+  "app_context_qr_code": { "message": "Generate QR code" },
+  "app_context_download_pdf": { "message": "Download PDF" },
+  "app_context_ai_summary": { "message": "AI Summary" },
+  "app_context_open_group": { "message": "Open in group" },
+  "app_context_close_menu": { "message": "Close menu" },
+  "app_qr_modal_info": { "message": "Scan to open this link on your device" },
+  "app_qr_close_button": { "message": "Close" },
+  "app_pdf_no_url": { "message": "No URL provided" },
+  "app_pdf_generating": { "message": "Generating high-quality PDF..." },
+  "app_pdf_error": { "message": "PDF data is empty" },
+  "app_lock_setup_description": {
+    "message": "Secure your bookmarks with a master password"
+  },
+  "app_lock_unlock_description": {
+    "message": "Access to your private space is restricted"
+  },
+  "app_lock_legal_agreement": { "message": "By continuing, you agree to our" },
+  "app_lock_terms": { "message": "Terms of Service" },
+  "app_lock_privacy": { "message": "Privacy Policy" },
+  "app_lock_and": { "message": "and" },
+  "app_lock_security_notice": { "message": "Security Notice" },
+  "app_buy_no_internet": { "message": "No internet connection" },
+  "app_buy_login_timeout": { "message": "Login timed out" },
+  "app_buy_login_failed": { "message": "Login failed or closed." },
+  "app_buy_wait_login": { "message": "Wait for Login..." },
+  "app_buy_click_cancel": { "message": "(Click to cancel)" },
+  "app_buy_cancel_user": { "message": "Canceled by user" },
+  "app_buy_popup_blocked": { "message": "Popup blocked" },
+  "app_buy_session_failed": { "message": "Session check failed" },
+  "app_buy_login_window_error": { "message": "Login window failed to open" },
+  "app_premium_title": { "message": "Unlock" },
+  "app_premium_pro_power": { "message": "Pro Power" },
+  "app_premium_subtitle": {
+    "message": "Secure your library in the cloud and access it anywhere."
+  },
+  "app_premium_feature_unlimited": { "message": "Unlimited Folders" },
+  "app_premium_feature_sync": { "message": "Real-time Cloud Sync" },
+  "app_premium_feature_data": { "message": "Data & Tools" },
+  "app_premium_feature_data_sub1": { "message": "Import/Export" },
+  "app_premium_feature_data_sub2": { "message": "Chrome Collect" },
+  "app_premium_feature_data_sub3": { "message": "Session Saver" },
+  "app_premium_feature_toolkit": { "message": "Advanced Toolkit" },
+  "app_premium_feature_toolkit_sub1": { "message": "AI Summaries" },
+  "app_premium_feature_toolkit_sub2": { "message": "PDF Uploads" },
+  "app_premium_feature_toolkit_sub3": { "message": "QR Generator" },
+  "app_premium_btn_upgrade": { "message": "Upgrade to Pro Now" },
+  "app_premium_btn_checking": { "message": "Checking Payment..." },
+  "app_premium_btn_success": { "message": "Success! Enjoy Pro" },
+  "app_premium_btn_retry": { "message": "Retry in " },
+  "app_premium_btn_check_status": { "message": "I've Paid, Check Status" },
+  "app_premium_btn_later": { "message": "Check later" },
+  "app_premium_btn_no_thanks": {
+    "message": "No thanks, I'll stick to free plan"
+  },
+  "app_btn_get_pro_title": { "message": "Upgrade to Pro" },
+  "app_btn_get_pro_subtitle": { "message": "Get unlimited access" },
+  "app_sub_manage_title": { "message": "Subscription Plan" },
+  "app_sub_manage_subtitle": { "message": "Manage billing and invoices" },
+  "app_sub_error_auth": { "message": "Not authenticated. Please log in." },
+  "app_sub_error_url": { "message": "Portal URL not found in response" },
+  "app_sub_error_unknown": { "message": "Unknown error occurred" },
+  "app_sub_error_fail": {
+    "message": "Failed to open subscription portal: "
+  },
+  "app_donate_coffee": { "message": "Buy me a coffee" },
+  "app_donate_close": { "message": "Close" },
+  "app_sync_offline": { "message": "Offline" },
+  "app_sync_syncing": { "message": "Syncing" },
+  "app_sync_pending": { "message": "Pending" },
+  "app_sync_up_to_date": { "message": "Up to date" },
+  "app_sync_conflict_title": { "message": "Database Conflict" },
+  "app_sync_conflict_desc": {
+    "message": "Changes detected on multiple devices"
+  },
+  "app_sync_local": { "message": "Local" },
+  "app_sync_cloud": { "message": "Cloud" },
+  "app_sync_merge": { "message": "Merge" },
+  "app_sync_last": { "message": "Last:" },
+  "app_sync_force_title": { "message": "Force Cloud Sync" },
+  "app_signout_title": { "message": "Sign Out" },
+  "app_signout_description": {
+    "message": "How would you like to proceed with your local data?"
+  },
+  "app_signout_keep_data": { "message": "Logout & Keep Data" },
+  "app_signout_delete_all": { "message": "Logout & Delete All" },
+  "app_signout_or": { "message": "or" },
+  "app_signout_stay": { "message": "Stay logged in" }
 }

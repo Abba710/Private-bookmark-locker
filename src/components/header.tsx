@@ -15,7 +15,8 @@ export default function UserHeader({
   logIn,
   logOut,
 }: UserHeaderProps) {
-  const username = userData?.mail || 'Guest User'
+  const username =
+    userData?.mail || chrome.i18n.getMessage('app_header_guest_name')
 
   return (
     <div className="relative flex items-center w-full h-[48px] px-3 bg-white/[0.03] border border-white/10 rounded-2xl backdrop-blur-md">
@@ -41,7 +42,7 @@ export default function UserHeader({
               >
                 {!isPro ? (
                   <span className="text-[10px] uppercase tracking-wider font-bold">
-                    Free
+                    {chrome.i18n.getMessage('app_subscribe_free')}
                   </span>
                 ) : (
                   <div className="flex items-center gap-1 text-[10px] uppercase tracking-wider font-bold">
@@ -49,7 +50,7 @@ export default function UserHeader({
                       className="w-3 h-3 text-indigo-400"
                       fill="currentColor"
                     />
-                    PRO
+                    {chrome.i18n.getMessage('app_subscribe_pro')}
                   </div>
                 )}
               </Badge>
@@ -75,7 +76,7 @@ export default function UserHeader({
             className="ml-auto flex items-center gap-2 py-1.5 px-3 rounded-xl bg-indigo-600/10 hover:bg-indigo-600/20 text-indigo-400 border border-indigo-500/20 transition-all active:scale-95 text-sm font-semibold"
             onClick={logIn}
           >
-            <span>Sign In</span>
+            <span>{chrome.i18n.getMessage('app_header_log_in')}</span>
             <LogIn className="w-4 h-4" />
           </button>
         </div>

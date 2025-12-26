@@ -67,7 +67,7 @@ export default function ImportDialog({ onClose }: { onClose: () => void }) {
               {chrome.i18n.getMessage('app_import_modal')}
             </h2>
             <p className="text-zinc-500 text-sm font-medium">
-              Supported format: JSON configuration
+              {chrome.i18n.getMessage('app_import_supported_format')}
             </p>
           </div>
 
@@ -105,7 +105,7 @@ export default function ImportDialog({ onClose }: { onClose: () => void }) {
               {chrome.i18n.getMessage('app_import_modal_description')}
             </p>
             <p className="text-zinc-500 text-xs font-medium">
-              or click to browse files
+              {chrome.i18n.getMessage('app_import_click_browse')}
             </p>
 
             {/* Hidden Input */}
@@ -130,10 +130,10 @@ export default function ImportDialog({ onClose }: { onClose: () => void }) {
               <FileJson className="w-5 h-5 text-indigo-400 shrink-0" />
               <div className="flex flex-col">
                 <span className="text-xs text-zinc-300 font-semibold leading-tight">
-                  Configuration File
+                  {chrome.i18n.getMessage('app_import_config_file_label')}
                 </span>
                 <span className="text-[10px] text-zinc-500 font-medium leading-tight">
-                  Standard JSON format
+                  {chrome.i18n.getMessage('app_import_standard_json')}
                 </span>
               </div>
             </div>

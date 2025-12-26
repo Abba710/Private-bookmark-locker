@@ -21,6 +21,10 @@ interface UpgradeToProModalProps {
   logIn: () => void
 }
 
+/**
+ * UpgradeToProModal Component
+ * Handles the premium upgrade UI and subscription status verification.
+ */
 export default function UpgradeToProModal({
   upgrade,
   logIn,
@@ -33,7 +37,7 @@ export default function UpgradeToProModal({
   const [isChecking, setIsChecking] = useState(false)
   const [cooldown, setCooldown] = useState(0)
 
-  // Reset states
+  // Reset internal states when modal is closed
   useEffect(() => {
     if (!premiumModalOpen) {
       const timer = setTimeout(() => {
@@ -45,7 +49,7 @@ export default function UpgradeToProModal({
     }
   }, [premiumModalOpen])
 
-  // Auto-close logic (Triggers if BuyButton detects that the user is already PRO)
+  // Automatically close modal if user is detected as Pro
   useEffect(() => {
     if (isPro && premiumModalOpen) {
       const timer = setTimeout(() => setPremiumModalOpen(false), 1500)
@@ -53,7 +57,7 @@ export default function UpgradeToProModal({
     }
   }, [isPro, premiumModalOpen, setPremiumModalOpen])
 
-  // Cooldown Timer
+  // Handle the retry cooldown timer
   useEffect(() => {
     let interval: any
     if (cooldown > 0) {
@@ -64,20 +68,15 @@ export default function UpgradeToProModal({
     return () => clearInterval(interval)
   }, [cooldown])
 
+  // Switch UI to "Check status" mode after external checkout
   const handleBuySuccess = () => {
     setHasClickedBuy(true)
   }
 
-  // --- IMPORTANT FUNCTION ---
-  // This function is passed to the BuyButton. It updates data and returns the result.
+  // Verification callback for BuyButton
   const handleCheckAndUpgrade = async (): Promise<boolean> => {
     try {
-      await upgrade() // Refresh data from the DB (via App.tsx)
-
-      // Immediately check the current state of the store
-      // Note: getState() works if this is a zustand store.
-      // If useSubscribePlanStore is a hook but the store was created via create(),
-      // it should have a static getState() method.
+      await upgrade()
       const currentStatus = useSubscribePlanStore.getState().isPro
       return currentStatus
     } catch (e) {
@@ -86,6 +85,7 @@ export default function UpgradeToProModal({
     }
   }
 
+  // Manual status refresh logic
   const handleCheckStatus = async () => {
     if (cooldown > 0 || isChecking) return
     setIsChecking(true)
@@ -101,24 +101,33 @@ export default function UpgradeToProModal({
 
   if (!premiumModalOpen) return null
 
+  // Map of premium features for the list
   const features = [
     {
       icon: <Folder className="w-5 h-5 text-indigo-400" />,
-      text: 'Unlimited Folders',
+      text: chrome.i18n.getMessage('app_premium_feature_unlimited'),
     },
     {
       icon: <Globe className="w-5 h-5 text-pink-400" />,
-      text: 'Real-time Cloud Sync',
+      text: chrome.i18n.getMessage('app_premium_feature_sync'),
     },
     {
       icon: <Database className="w-5 h-5 text-emerald-400" />,
-      text: 'Data & Tools',
-      subFeatures: ['Import/Export', 'Chrome Collect', 'Session Saver'],
+      text: chrome.i18n.getMessage('app_premium_feature_data'),
+      subFeatures: [
+        chrome.i18n.getMessage('app_premium_feature_data_sub1'),
+        chrome.i18n.getMessage('app_premium_feature_data_sub2'),
+        chrome.i18n.getMessage('app_premium_feature_data_sub3'),
+      ],
     },
     {
       icon: <MousePointer2 className="w-5 h-5 text-purple-400" />,
-      text: 'Advanced Toolkit',
-      subFeatures: ['AI Summaries', 'PDF Uploads', 'QR Generator'],
+      text: chrome.i18n.getMessage('app_premium_feature_toolkit'),
+      subFeatures: [
+        chrome.i18n.getMessage('app_premium_feature_toolkit_sub1'),
+        chrome.i18n.getMessage('app_premium_feature_toolkit_sub2'),
+        chrome.i18n.getMessage('app_premium_feature_toolkit_sub3'),
+      ],
     },
   ]
 
@@ -135,11 +144,13 @@ export default function UpgradeToProModal({
 
   return (
     <div className="fixed inset-0 z-[100] min-w-full min-h-full flex items-center justify-center p-4">
+      {/* Overlay Backdrop */}
       <div
         className="absolute inset-0 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
         onClick={() => setPremiumModalOpen(false)}
       />
 
+      {/* Modal Card */}
       <div className="relative w-full max-w-[480px] bg-[#0f0f11] border border-white/10 rounded-[32px] shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-48 bg-indigo-500/10 blur-[60px] rounded-full pointer-events-none" />
 
@@ -151,18 +162,20 @@ export default function UpgradeToProModal({
         </button>
 
         <div className="relative p-8 max-h-[95vh] overflow-y-auto custom-scrollbar">
+          {/* Header */}
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-3 tracking-tight">
-              Unlock{' '}
+              {chrome.i18n.getMessage('app_premium_title')}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                Pro Power
+                {chrome.i18n.getMessage('app_premium_pro_power')}
               </span>
             </h2>
             <p className="text-zinc-400 text-sm">
-              Secure your library in the cloud and access it anywhere.
+              {chrome.i18n.getMessage('app_premium_subtitle')}
             </p>
           </div>
 
+          {/* Features List */}
           <div className="space-y-4 mb-8">
             {features.map((feature, idx) => (
               <div
@@ -195,16 +208,17 @@ export default function UpgradeToProModal({
             ))}
           </div>
 
+          {/* Footer Actions */}
           <div className="space-y-4">
             {!hasClickedBuy ? (
               <BuyButton
                 className={`${buttonBaseStyles} ${activeGradient}`}
                 onBuyClick={handleBuySuccess}
                 logIn={logIn}
-                checkSubscription={handleCheckAndUpgrade} // Pass the verification function
+                checkSubscription={handleCheckAndUpgrade}
               >
                 <span className="relative flex items-center justify-center gap-2">
-                  Upgrade to Pro Now
+                  {chrome.i18n.getMessage('app_premium_btn_upgrade')}
                   <Zap className="w-4 h-4 fill-white/50" />
                 </span>
               </BuyButton>
@@ -219,18 +233,23 @@ export default function UpgradeToProModal({
                 {isChecking ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    Checking Payment...
+                    {chrome.i18n.getMessage('app_premium_btn_checking')}
                   </>
                 ) : isPro ? (
                   <>
                     <CheckCircle2 className="w-5 h-5 text-green-400" />
-                    Success! Enjoy Pro
+                    {chrome.i18n.getMessage('app_premium_btn_success')}
                   </>
                 ) : cooldown > 0 ? (
-                  <>Retry in {cooldown}s</>
+                  <>
+                    {/* Injecting raw seconds directly into the template string */}
+                    {`${chrome.i18n.getMessage(
+                      'app_premium_btn_retry'
+                    )} ${String(cooldown)}`}
+                  </>
                 ) : (
                   <>
-                    I've Paid, Check Status
+                    {chrome.i18n.getMessage('app_premium_btn_check_status')}
                     <Zap className="w-4 h-4" />
                   </>
                 )}
@@ -242,8 +261,8 @@ export default function UpgradeToProModal({
               className="w-full py-2 text-sm text-gray-500 hover:text-white transition-colors"
             >
               {hasClickedBuy
-                ? 'Check later'
-                : "No thanks, I'll stick to free plan"}
+                ? chrome.i18n.getMessage('app_premium_btn_later')
+                : chrome.i18n.getMessage('app_premium_btn_no_thanks')}
             </button>
           </div>
         </div>

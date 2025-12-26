@@ -53,7 +53,7 @@ export default function ExportDialog({
           {/* Info Badge - subtle hint */}
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/5 border border-indigo-500/10 text-[11px] font-medium text-indigo-300/80 mb-8">
             <AlertCircle className="w-3.5 h-3.5" />
-            <span>Format: JSON</span>
+            <span>{chrome.i18n.getMessage('app_export_format_label')}</span>
           </div>
 
           {/* Action buttons */}
