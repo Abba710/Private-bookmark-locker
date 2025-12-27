@@ -24,7 +24,7 @@ export function BuyButton({
   const abortControllerRef = useRef<AbortController | null>(null)
 
   const BASE_CHECKOUT_URL =
-    'https://abba4game.lemonsqueezy.com/buy/de74906f-e252-43af-9bde-0c133f742d17'
+    'https://abba4game.lemonsqueezy.com/checkout/buy/83a76148-ccec-480d-8f25-cdcda5a332e1'
 
   useEffect(() => {
     return () => {

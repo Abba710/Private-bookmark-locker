@@ -1,13 +1,12 @@
 {
   "app_name": {
-    "message": "私人书签管理器"
+    "message": "Locker: 具备加密云同步和无痕模式的安全书签管理器"
   },
   "app_description": {
-    "message": "私人书签存储。使用密码保存和保护链接——只有您可以查看。"
+    "message": "书签、文件夹、PDF上传、AI摘要、云同步和无痕模式，一切尽在私密标签页和书签管理侧边栏中。"
   },
-
   "app_enter_password": {
-    "message": "🔒 输入密码"
+    "message": "输入密码"
   },
   "app_create_password": {
     "message": "🔒 创建密码"
@@ -19,7 +18,7 @@
     "message": "输入您的密码"
   },
   "app_unlock": {
-    "message": "🔓 解锁"
+    "message": "解锁"
   },
   "app_create_password_button": {
     "message": "创建密码"
@@ -34,43 +33,43 @@
     "message": "哈希失败"
   },
   "app_password_warning": {
-    "message": "⚠️ 重要提示：如果您忘记密码，将无法恢复。所有数据仅存储在此设备上，未经正确密码无法访问。"
+    "message": "⚠️ 重要提示：如果您忘记了密码，将无法找回。所有数据仅存储在此设备上，没有正确密码将无法访问。"
   },
   "app_instruction_title": {
-    "message": "🔐 如何使用私人书签管理器"
+    "message": "🔐 如何使用私密书签保险箱"
   },
   "app_instruction_save": {
-    "message": "要保存书签，请点击标题栏中的 💾 按钮。"
+    "message": "要保存书签，请点击顶部的 💾 按钮。"
   },
   "app_instruction_lock": {
-    "message": "要锁定扩展，请点击标题栏中的 🔒 图标。"
+    "message": "要锁定扩展程序，请点击顶部的 🔒 图标。"
   },
   "app_instruction_view_basic": {
-    "message": "要查看普通书签，请点击标题栏中的 👁️ 图标。"
+    "message": "要查看常规书签，请点击顶部的 👁️ 图标。"
   },
   "app_instruction_view_incognito": {
-    "message": "要查看隐身书签，请点击标题栏中的 🕶️ 图标。"
+    "message": "要查看无痕书签，请点击顶部的 🕶️ 图标。"
   },
   "app_instruction_create_folder": {
-    "message": "要创建文件夹，请点击标题栏中的 📁 按钮。"
+    "message": "要创建文件夹，请点击顶部的 📁 按钮。"
   },
   "app_instruction_incognito_hint": {
-    "message": "要在隐身模式下使用扩展，请右键点击图标，选择“管理扩展程序”，并启用“允许在隐身模式下运行”。"
+    "message": "要在无痕模式下使用扩展程序，请右键点击图标，选择“管理扩展程序”，然后启用“在无痕模式下允许”。"
   },
   "app_instruction_panic": {
-    "message": "要设置紧急按钮并使用它，请进入 Chrome 设置，分配快捷键以关闭所有标签并保存到文件夹。"
+    "message": "要设置紧急按钮，请前往 Chrome 设置并分配快捷键，以关闭所有标签页并将其保存到文件夹中。"
   },
   "app_instruction_import": {
-    "message": "要导入书签，请点击选项菜单中的 📥 导入按钮。"
+    "message": "要导入书签，请点击选项菜单中的 📥 导入 按钮。"
   },
   "app_instruction_export": {
-    "message": "要导出书签，请点击选项菜单中的 📤 导出按钮。"
+    "message": "要导出书签，请点击选项菜单中的 📤 导出 按钮。"
   },
   "app_instruction_collect": {
-    "message": "要将所有 Chrome 书签收集到扩展中，请点击选项菜单中的 🔃 收集按钮。"
+    "message": "要将所有 Chrome 书签收集到扩展程序中，请点击选项菜单中的 🔃 收集 按钮。"
   },
   "app_pass_short_error": {
-    "message": "密码长度至少为 4 个字符"
+    "message": "密码长度必须至少为 4 个字符"
   },
   "app_pass_incorrect_error": {
     "message": "密码错误"
@@ -79,25 +78,19 @@
     "message": "搜索书签..."
   },
   "app_modal_export": {
-    "message": "📤 导出书签"
+    "message": "导出书签"
   },
-  "app_options_import": {
-    "message": "📥 导入"
-  },
-  "app_options_export": {
-    "message": "📤 导出"
-  },
-  "app_options_settings": {
-    "message": "⚙️ 设置"
+  "app_options_hotkeys": {
+    "message": "快捷键"
   },
   "app_options_settings_alert": {
-    "message": "设置即将推出！"
+    "message": "设置功能即将推出！"
   },
   "app_options_collect": {
-    "message": "🔃 收集"
+    "message": "收集 Chrome 书签"
   },
   "app_import_modal": {
-    "message": "📥 导入书签"
+    "message": "导入书签"
   },
   "app_import_modal_description": {
     "message": "将文件拖放到此处或点击选择"
@@ -106,31 +99,31 @@
     "message": "取消"
   },
   "app_export_modal_description": {
-    "message": "点击下面的按钮将书签导出为文件。您可以保存并在需要时导入。"
+    "message": "点击下方按钮将书签导出为文件。您可以将其保存并在以后需要时导入。"
   },
   "app_export_modal_button": {
     "message": "导出"
   },
   "app_panic_description": {
-    "message": "设置紧急按钮（默认 = alt+p）以关闭所有标签并保存到文件夹"
+    "message": "设置紧急按钮（默认 = Alt+P）以关闭所有标签页并保存到文件夹"
   },
   "app_ads_title": {
-    "message": "如果您使用 ChatGPT，试试这个扩展👆"
+    "message": "如果您使用 ChatGPT，请试试这个扩展👆"
   },
   "app_donate_title": {
-    "message": "💸 支持项目"
+    "message": "支持该项目"
   },
   "app_feedback_title": {
     "message": "喜欢这个扩展吗？"
   },
   "app_feedback_description": {
-    "message": "我们重视您的意见！请对应用评分并在商店页面留下评论。"
+    "message": "我们非常重视您的意见！请为应用评分并在商店页面留下评论。"
   },
   "app_feedback_button_leave": {
     "message": "留下评论"
   },
   "app_feedback_button_later": {
-    "message": "稍后"
+    "message": "以后再说"
   },
   "app_edit_title": {
     "message": "编辑书签标题"
@@ -139,33 +132,306 @@
     "message": "输入文件夹名称："
   },
   "app_options_save_open": {
-    "message": "💾 保存所有打开的标签页"
+    "message": "保存当前会话"
   },
   "app_report_bug": {
-    "message": "🐞 报告错误"
+    "message": "报告错误"
   },
   "app_donate_h2_title": {
-    "message": "我独自开发此扩展，您的支持有助于改进项目并保持免费。"
+    "message": "我一个人在开发这个扩展，您的支持可以帮助我改进项目并保持其免费。"
   },
   "app_donate_qr": {
-    "message": "扫描二维码以支持我"
+    "message": "扫描二维码支持我"
   },
   "app_donate_or": {
-    "message": "或点击下方按钮👇"
+    "message": "或点击按钮👇"
+  },
+  "app_rate_extension": {
+    "message": "评价扩展"
+  },
+  "app_share_extension": {
+    "message": "分享扩展"
+  },
+  "app_community": {
+    "message": "加入社区"
+  },
+  "app_changelog": {
+    "message": "更新日志"
+  },
+  "app_close_button": {
+    "message": "关闭"
+  },
+  "app_header_guest_name": {
+    "message": "访客用户"
+  },
+  "app_subscribe_free": {
+    "message": "免费版"
+  },
+  "app_subscribe_pro": {
+    "message": "专业版"
+  },
+  "app_header_log_in": {
+    "message": "登录"
+  },
+  "app_options_subscription_plan": {
+    "message": "订阅方案"
+  },
+  "app_options_go_premium": {
+    "message": "升级到高级版"
+  },
+  "app_options_data_tools": {
+    "message": "数据与工具"
+  },
+  "app_options_community_header": {
+    "message": "社区"
+  },
+  "app_changelog_unavailable": {
+    "message": "内容不可用"
+  },
+  "app_changelog_modal_title": {
+    "message": "更新内容"
+  },
+  "app_changelog_open_reddit": {
+    "message": "在 Reddit 上阅读全文"
+  },
+  "app_changelog_dismiss": {
+    "message": "忽略"
+  },
+  "app_import_supported_format": {
+    "message": "支持的格式：JSON 配置"
+  },
+  "app_import_click_browse": {
+    "message": "或点击浏览文件"
+  },
+  "app_import_config_file_label": {
+    "message": "配置文件"
+  },
+  "app_import_standard_json": {
+    "message": "标准 JSON 格式"
+  },
+  "app_export_format_label": {
+    "message": "格式：JSON"
+  },
+  "app_context_copy_link": {
+    "message": "复制链接"
+  },
+  "app_context_qr_code": {
+    "message": "生成二维码"
+  },
+  "app_context_download_pdf": {
+    "message": "下载 PDF"
+  },
+  "app_context_ai_summary": {
+    "message": "AI 摘要"
+  },
+  "app_context_open_group": {
+    "message": "在组中打开"
+  },
+  "app_context_close_menu": {
+    "message": "关闭菜单"
+  },
+  "app_qr_modal_info": {
+    "message": "扫描以在您的设备上打开此链接"
+  },
+  "app_qr_close_button": {
+    "message": "关闭"
+  },
+  "app_pdf_no_url": {
+    "message": "未提供 URL"
+  },
+  "app_pdf_generating": {
+    "message": "正在生成高质量 PDF..."
+  },
+  "app_pdf_error": {
+    "message": "PDF 数据为空"
+  },
+  "app_lock_setup_description": {
+    "message": "使用主密码保护您的书签"
+  },
+  "app_lock_unlock_description": {
+    "message": "您的私密空间访问受限"
+  },
+  "app_lock_legal_agreement": {
+    "message": "继续操作即表示您同意我们的"
+  },
+  "app_lock_terms": {
+    "message": "服务条款"
+  },
+  "app_lock_privacy": {
+    "message": "隐私政策"
+  },
+  "app_lock_and": {
+    "message": "和"
+  },
+  "app_lock_security_notice": {
+    "message": "安全须知"
+  },
+  "app_buy_no_internet": {
+    "message": "无网络连接"
+  },
+  "app_buy_login_timeout": {
+    "message": "登录超时"
+  },
+  "app_buy_login_failed": {
+    "message": "登录失败或已关闭。"
+  },
+  "app_buy_wait_login": {
+    "message": "正在等待登录..."
+  },
+  "app_buy_click_cancel": {
+    "message": "(点击取消)"
+  },
+  "app_buy_cancel_user": {
+    "message": "用户已取消"
+  },
+  "app_buy_popup_blocked": {
+    "message": "弹出窗口被拦截"
+  },
+  "app_buy_session_failed": {
+    "message": "会话检查失败"
+  },
+  "app_buy_login_window_error": {
+    "message": "无法打开登录窗口"
+  },
+  "app_premium_title": {
+    "message": "解锁"
+  },
+  "app_premium_pro_power": {
+    "message": "专业版能力"
+  },
+  "app_premium_subtitle": {
+    "message": "在云端保护您的库，并随时随地访问。"
+  },
+  "app_premium_feature_unlimited": {
+    "message": "无限文件夹"
+  },
+  "app_premium_feature_sync": {
+    "message": "实时云同步"
+  },
+  "app_premium_feature_data": {
+    "message": "数据与工具"
+  },
+  "app_premium_feature_data_sub1": {
+    "message": "导入/导出"
+  },
+  "app_premium_feature_data_sub2": {
+    "message": "Chrome 收集"
+  },
+  "app_premium_feature_data_sub3": {
+    "message": "会话保存"
+  },
+  "app_premium_feature_toolkit": {
+    "message": "高级工具箱"
+  },
+  "app_premium_feature_toolkit_sub1": {
+    "message": "AI 摘要"
+  },
+  "app_premium_feature_toolkit_sub2": {
+    "message": "PDF 上传"
+  },
+  "app_premium_feature_toolkit_sub3": {
+    "message": "二维码生成器"
+  },
+  "app_premium_btn_upgrade": {
+    "message": "立即升级到专业版"
+  },
+  "app_premium_btn_checking": {
+    "message": "正在检查付款状态..."
+  },
+  "app_premium_btn_success": {
+    "message": "成功！尽情使用专业版"
+  },
+  "app_premium_btn_retry": {
+    "message": "重试时间 "
+  },
+  "app_premium_btn_check_status": {
+    "message": "我已经付款，检查状态"
+  },
+  "app_premium_btn_later": {
+    "message": "稍后检查"
+  },
+  "app_premium_btn_no_thanks": {
+    "message": "不，谢谢，我坚持使用免费计划"
+  },
+  "app_btn_get_pro_title": {
+    "message": "升级到专业版"
+  },
+  "app_btn_get_pro_subtitle": {
+    "message": "获得无限访问权限"
+  },
+  "app_sub_manage_title": {
+    "message": "订阅方案"
+  },
+  "app_sub_manage_subtitle": {
+    "message": "管理账单和发票"
+  },
+  "app_sub_error_auth": {
+    "message": "未通过身份验证。请登录。"
+  },
+  "app_sub_error_url": {
+    "message": "响应中未找到门户 URL"
+  },
+  "app_sub_error_unknown": {
+    "message": "发生未知错误"
+  },
+  "app_sub_error_fail": {
+    "message": "无法打开订阅门户："
+  },
+  "app_donate_coffee": {
+    "message": "请我喝杯咖啡"
   },
   "app_donate_close": {
     "message": "关闭"
   },
-  "app_rate_extension": {
-    "message": "⭐ 给扩展评分"
+  "app_sync_offline": {
+    "message": "离线"
   },
-  "app_share_extension": {
-    "message": "📢 分享扩展"
+  "app_sync_syncing": {
+    "message": "正在同步"
   },
-  "app_community": {
-    "message": "👥 加入社区"
+  "app_sync_pending": {
+    "message": "待处理"
   },
-  "app_changelog": {
-    "message": "📜 更新日志"
+  "app_sync_up_to_date": {
+    "message": "已是最新"
+  },
+  "app_sync_conflict_title": {
+    "message": "数据库冲突"
+  },
+  "app_sync_conflict_desc": {
+    "message": "检测到多台设备上的更改"
+  },
+  "app_sync_local": {
+    "message": "本地"
+  },
+  "app_sync_cloud": {
+    "message": "云端"
+  },
+  "app_sync_merge": {
+    "message": "合并"
+  },
+  "app_sync_last": {
+    "message": "最后同步："
+  },
+  "app_sync_force_title": {
+    "message": "强制云同步"
+  },
+  "app_signout_title": {
+    "message": "退出登录"
+  },
+  "app_signout_description": {
+    "message": "您想如何处理本地数据？"
+  },
+  "app_signout_keep_data": {
+    "message": "注销并保留数据"
+  },
+  "app_signout_delete_all": {
+    "message": "注销并删除所有内容"
+  },
+  "app_signout_or": {
+    "message": "或"
+  },
+  "app_signout_stay": {
+    "message": "保持登录状态"
   }
 }
