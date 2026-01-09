@@ -37,37 +37,7 @@
     "message": "⚠️ Important: If you forget your password, it cannot be recovered. All data is stored only on this device and cannot be accessed without the correct password."
   },
   "app_instruction_title": {
-    "message": "🔐 How to use Private Bookmark Locker"
-  },
-  "app_instruction_save": {
-    "message": "To save a bookmark, click the 💾 button in the header."
-  },
-  "app_instruction_lock": {
-    "message": "To lock extension, click the 🔒 icon in the header."
-  },
-  "app_instruction_view_basic": {
-    "message": "To view regular bookmarks, click the 👁️ icon in the header."
-  },
-  "app_instruction_view_incognito": {
-    "message": "To view incognito bookmarks, click the 🕶️ icon in the header."
-  },
-  "app_instruction_create_folder": {
-    "message": "To create a folder, click the 📁 button in the header."
-  },
-  "app_instruction_incognito_hint": {
-    "message": "To use the extension in incognito mode, right-click the icon, choose 'Manage extension', and enable 'Allow in incognito'."
-  },
-  "app_instruction_panic": {
-    "message": "To set a panic button and use it, go to chrome settings and assign a shortcut to close all tabs and save them in a folder."
-  },
-  "app_instruction_import": {
-    "message": "To import bookmarks, click the 📥 Import button in the options menu."
-  },
-  "app_instruction_export": {
-    "message": "To export bookmarks, click the 📤 Export button in the options menu."
-  },
-  "app_instruction_collect": {
-    "message": "To collect all chrome bookmarks into extension, click the 🔃 Collect button in the options menu."
+    "message": "Quick Start Guide"
   },
   "app_pass_short_error": {
     "message": "Password must be at least 4 characters long"
@@ -224,7 +194,7 @@
     "message": "Secure your library in the cloud and access it anywhere."
   },
   "app_premium_feature_unlimited": { "message": "Unlimited Folders" },
-  "app_premium_feature_sync": { "message": "Real-time Cloud Sync" },
+  "app_premium_feature_sync": { "message": "Encrypted Real-time Cloud Sync" },
   "app_premium_feature_data": { "message": "Data & Tools" },
   "app_premium_feature_data_sub1": { "message": "Import/Export" },
   "app_premium_feature_data_sub2": { "message": "Chrome Collect" },
@@ -233,7 +203,15 @@
   "app_premium_feature_toolkit_sub1": { "message": "AI Summaries" },
   "app_premium_feature_toolkit_sub2": { "message": "PDF Uploads" },
   "app_premium_feature_toolkit_sub3": { "message": "QR Generator" },
-  "app_premium_btn_upgrade": { "message": "Upgrade to Pro Now" },
+  "app_premium_feature_toolkit_sub4": { "message": "Tab Group" },
+  "app_premium_btn_upgrade": {
+    "message": "Upgrade to Pro for $PRICE$/month",
+    "placeholders": {
+      "price": {
+        "content": "$1"
+      }
+    }
+  },
   "app_premium_btn_checking": { "message": "Checking Payment..." },
   "app_premium_btn_success": { "message": "Success! Enjoy Pro" },
   "app_premium_btn_retry": { "message": "Retry in " },

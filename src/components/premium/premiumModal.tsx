@@ -127,6 +127,7 @@ export default function UpgradeToProModal({
         chrome.i18n.getMessage('app_premium_feature_toolkit_sub1'),
         chrome.i18n.getMessage('app_premium_feature_toolkit_sub2'),
         chrome.i18n.getMessage('app_premium_feature_toolkit_sub3'),
+        chrome.i18n.getMessage('app_premium_feature_toolkit_sub4'),
       ],
     },
   ]
@@ -218,7 +219,7 @@ export default function UpgradeToProModal({
                 checkSubscription={handleCheckAndUpgrade}
               >
                 <span className="relative flex items-center justify-center gap-2">
-                  {chrome.i18n.getMessage('app_premium_btn_upgrade')}
+                  {chrome.i18n.getMessage('app_premium_btn_upgrade', ['3$'])}
                   <Zap className="w-4 h-4 fill-white/50" />
                 </span>
               </BuyButton>

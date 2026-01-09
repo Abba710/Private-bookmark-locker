@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === 'install') {
-    chrome.tabs.create({ url: 'https://online.fliphtml5.com/xmufe/fvjy/' })
+    chrome.tabs.create({ url: 'https://abbablog.me/blog/quick-start' })
   } else if (details.reason === 'update') {
     // Set a flag to show update notification
     await chrome.storage.local.set({ showUpdateNotification: true })

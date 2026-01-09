@@ -1,9 +1,9 @@
 {
   "app_name": {
-    "message": "Locker: 暗号化同期とシークレットモード対応のブックマーク管理"
+    "message": "Locker: 暗号化同期とシークレットモードを備えた安全なブックマーク管理"
   },
   "app_description": {
-    "message": "ブックマーク、フォルダ、PDFアップロード、AI要約、クラウド同期、シークレットモードをすべて一つのサイドバーに統合。プライベートタブとブックマークを管理します。"
+    "message": "ブックマーク、フォルダ、PDFアップロード、AI要約、クラウド同期、シークレットモードをサイドバーに集約。プライベートなタブとブックマーク管理を実現します。"
   },
   "app_enter_password": {
     "message": "パスワードを入力"
@@ -12,7 +12,7 @@
     "message": "🔒 パスワードを作成"
   },
   "app_create_password_placeholder": {
-    "message": "パスワードを設定してください"
+    "message": "パスワードを作成してください"
   },
   "app_enter_password_placeholder": {
     "message": "パスワードを入力してください"
@@ -36,40 +36,10 @@
     "message": "⚠️ 重要: パスワードを忘れた場合、復元することはできません。すべてのデータはこのデバイスにのみ保存され、正しいパスワードなしではアクセスできません。"
   },
   "app_instruction_title": {
-    "message": "🔐 Private Bookmark Locker の使い方"
-  },
-  "app_instruction_save": {
-    "message": "ブックマークを保存するには、ヘッダーの 💾 ボタンをクリックしてください。"
-  },
-  "app_instruction_lock": {
-    "message": "拡張機能をロックするには、ヘッダーの 🔒 アイコンをクリックしてください。"
-  },
-  "app_instruction_view_basic": {
-    "message": "通常のブックマークを表示するには、ヘッダーの 👁️ アイコンをクリックしてください。"
-  },
-  "app_instruction_view_incognito": {
-    "message": "シークレットブックマークを表示するには、ヘッダーの 🕶️ アイコンをクリックしてください。"
-  },
-  "app_instruction_create_folder": {
-    "message": "フォルダを作成するには、ヘッダーの 📁 ボタンをクリックしてください。"
-  },
-  "app_instruction_incognito_hint": {
-    "message": "シークレットモードで拡張機能を使用するには、アイコンを右クリックし、「拡張機能を管理」を選択して「シークレットモードでの実行を許可する」を有効にしてください。"
-  },
-  "app_instruction_panic": {
-    "message": "パニックボタンを設定するには、Chromeの設定でショートカットを割り当て、すべてのタブを閉じてフォルダに保存するようにします。"
-  },
-  "app_instruction_import": {
-    "message": "ブックマークをインポートするには、オプションメニューの 📥 インポート ボタンをクリックしてください。"
-  },
-  "app_instruction_export": {
-    "message": "ブックマークをエクスポートするには、オプションメニューの 📤 エクスポート ボタンをクリックしてください。"
-  },
-  "app_instruction_collect": {
-    "message": "Chromeのすべてのブックマークを拡張機能に集約するには、オプションメニューの 🔃 収集 ボタンをクリックしてください。"
+    "message": "クイックスタートガイド"
   },
   "app_pass_short_error": {
-    "message": "パスワードは4文字以上で入力してください"
+    "message": "パスワードは4文字以上である必要があります"
   },
   "app_pass_incorrect_error": {
     "message": "パスワードが正しくありません"
@@ -78,7 +48,7 @@
     "message": "ブックマークを検索..."
   },
   "app_modal_export": {
-    "message": "ブックマークのエクスポート"
+    "message": "ブックマークをエクスポート"
   },
   "app_options_hotkeys": {
     "message": "ホットキー"
@@ -87,37 +57,37 @@
     "message": "設定機能は近日公開予定です！"
   },
   "app_options_collect": {
-    "message": "Chromeブックマークを収集"
+    "message": "Chromeブックマークを取り込む"
   },
   "app_import_modal": {
-    "message": "ブックマークのインポート"
+    "message": "ブックマークをインポート"
   },
   "app_import_modal_description": {
-    "message": "ファイルをここにドラッグ＆ドロップするか、クリックして選択してください"
+    "message": "ここにファイルをドラッグ＆ドロップするか、クリックして選択してください"
   },
   "app_cancel": {
     "message": "キャンセル"
   },
   "app_export_modal_description": {
-    "message": "下のボタンをクリックして、ブックマークをファイルとしてエクスポートします。保存しておけば、後でインポートできます。"
+    "message": "下のボタンをクリックして、ブックマークをファイルとしてエクスポートします。保存しておけば、後でインポートすることができます。"
   },
   "app_export_modal_button": {
     "message": "エクスポート"
   },
   "app_panic_description": {
-    "message": "パニックボタン（デフォルト：Alt+P）を設定して、すべてのタブを閉じ、フォルダに保存します"
+    "message": "パニックボタン（デフォルト：alt+p）を設定して、すべてのタブを閉じ、フォルダに保存します"
   },
   "app_ads_title": {
-    "message": "ChatGPTをお使いなら、この拡張機能を試してみてください👆"
+    "message": "ChatGPTをお使いなら、この拡張機能もお試しください👆"
   },
   "app_donate_title": {
     "message": "プロジェクトを支援する"
   },
   "app_feedback_title": {
-    "message": "拡張機能は気に入りましたか？"
+    "message": "拡張機能はお気に入りですか？"
   },
   "app_feedback_description": {
-    "message": "皆様のご意見をお聞かせください！アプリの評価やストアページへのレビューをお願いします。"
+    "message": "皆様のご意見を大切にしています！ストアページでアプリの評価やレビューをお願いします。"
   },
   "app_feedback_button_leave": {
     "message": "レビューを書く"
@@ -129,7 +99,7 @@
     "message": "ブックマークのタイトルを編集"
   },
   "app_create_folder": {
-    "message": "フォルダ名を入力:"
+    "message": "フォルダ名を入力してください:"
   },
   "app_options_save_open": {
     "message": "現在のセッションを保存"
@@ -138,7 +108,7 @@
     "message": "バグを報告"
   },
   "app_donate_h2_title": {
-    "message": "私は一人でこの拡張機能を開発しています。皆様の支援がプロジェクトの改善と無料提供の継続に繋がります。"
+    "message": "私は一人でこの拡張機能を開発しています。皆様の支援がプロジェクトの改善と無料提供の維持に繋がります。"
   },
   "app_donate_qr": {
     "message": "QRコードをスキャンして支援する"
@@ -170,268 +140,126 @@
   "app_subscribe_pro": {
     "message": "PRO"
   },
-  "app_header_log_in": {
-    "message": "サインイン"
-  },
-  "app_options_subscription_plan": {
-    "message": "サブスクリプションプラン"
-  },
-  "app_options_go_premium": {
-    "message": "プレミアムにアップグレード"
-  },
-  "app_options_data_tools": {
-    "message": "データとツール"
-  },
-  "app_options_community_header": {
-    "message": "コミュニティ"
-  },
-  "app_changelog_unavailable": {
-    "message": "コンテンツを利用できません"
-  },
-  "app_changelog_modal_title": {
-    "message": "新機能"
-  },
-  "app_changelog_open_reddit": {
-    "message": "Redditで全文を表示"
-  },
-  "app_changelog_dismiss": {
-    "message": "閉じる"
-  },
+  "app_header_log_in": { "message": "サインイン" },
+  "app_options_subscription_plan": { "message": "サブスクリプションプラン" },
+  "app_options_go_premium": { "message": "プレミアムにアップグレード" },
+  "app_options_data_tools": { "message": "データとツール" },
+  "app_options_community_header": { "message": "コミュニティ" },
+  "app_changelog_unavailable": { "message": "コンテンツを利用できません" },
+  "app_changelog_modal_title": { "message": "新着情報" },
+  "app_changelog_open_reddit": { "message": "Redditで記事全文を読む" },
+  "app_changelog_dismiss": { "message": "閉じる" },
   "app_import_supported_format": {
-    "message": "サポート形式：JSON設定ファイル"
+    "message": "サポート形式：JSON設定"
   },
-  "app_import_click_browse": {
-    "message": "またはクリックしてファイルを参照"
-  },
-  "app_import_config_file_label": {
-    "message": "設定ファイル"
-  },
-  "app_import_standard_json": {
-    "message": "標準JSON形式"
-  },
-  "app_export_format_label": {
-    "message": "形式：JSON"
-  },
-  "app_context_copy_link": {
-    "message": "リンクをコピー"
-  },
-  "app_context_qr_code": {
-    "message": "QRコードを生成"
-  },
-  "app_context_download_pdf": {
-    "message": "PDFをダウンロード"
-  },
-  "app_context_ai_summary": {
-    "message": "AI要約"
-  },
-  "app_context_open_group": {
-    "message": "グループで開く"
-  },
-  "app_context_close_menu": {
-    "message": "メニューを閉じる"
-  },
-  "app_qr_modal_info": {
-    "message": "スキャンしてデバイスでリンクを開く"
-  },
-  "app_qr_close_button": {
-    "message": "閉じる"
-  },
-  "app_pdf_no_url": {
-    "message": "URLが指定されていません"
-  },
-  "app_pdf_generating": {
-    "message": "高品質なPDFを生成中..."
-  },
-  "app_pdf_error": {
-    "message": "PDFデータが空です"
-  },
+  "app_import_click_browse": { "message": "またはクリックしてファイルを参照" },
+  "app_import_config_file_label": { "message": "設定ファイル" },
+  "app_import_standard_json": { "message": "標準JSON形式" },
+  "app_export_format_label": { "message": "形式：JSON" },
+  "app_context_copy_link": { "message": "リンクをコピー" },
+  "app_context_qr_code": { "message": "QRコードを生成" },
+  "app_context_download_pdf": { "message": "PDFをダウンロード" },
+  "app_context_ai_summary": { "message": "AI要約" },
+  "app_context_open_group": { "message": "グループで開く" },
+  "app_context_close_menu": { "message": "メニューを閉じる" },
+  "app_qr_modal_info": { "message": "スキャンしてデバイスでリンクを開く" },
+  "app_qr_close_button": { "message": "閉じる" },
+  "app_pdf_no_url": { "message": "URLが指定されていません" },
+  "app_pdf_generating": { "message": "高品質なPDFを生成中..." },
+  "app_pdf_error": { "message": "PDFデータが空です" },
   "app_lock_setup_description": {
-    "message": "マスターパスワードでブックマークを保護します"
+    "message": "マスターパスワードでブックマークを保護する"
   },
   "app_lock_unlock_description": {
-    "message": "プライベートスペースへのアクセスは制限されています"
+    "message": "プライベートスペースへのアクセスが制限されています"
   },
   "app_lock_legal_agreement": {
-    "message": "続行することで、以下に同意したことになります："
+    "message": "続行することにより、以下に同意したものとみなされます："
   },
-  "app_lock_terms": {
-    "message": "利用規約"
-  },
-  "app_lock_privacy": {
-    "message": "プライバシーポリシー"
-  },
-  "app_lock_and": {
-    "message": "および"
-  },
-  "app_lock_security_notice": {
-    "message": "セキュリティ通知"
-  },
-  "app_buy_no_internet": {
-    "message": "インターネット接続がありません"
-  },
-  "app_buy_login_timeout": {
-    "message": "ログインがタイムアウトしました"
-  },
+  "app_lock_terms": { "message": "利用規約" },
+  "app_lock_privacy": { "message": "プライバシーポリシー" },
+  "app_lock_and": { "message": "および" },
+  "app_lock_security_notice": { "message": "セキュリティに関する通知" },
+  "app_buy_no_internet": { "message": "インターネット接続がありません" },
+  "app_buy_login_timeout": { "message": "ログインがタイムアウトしました" },
   "app_buy_login_failed": {
     "message": "ログインに失敗したか、閉じられました。"
   },
-  "app_buy_wait_login": {
-    "message": "ログイン待機中..."
-  },
-  "app_buy_click_cancel": {
-    "message": "（クリックでキャンセル）"
-  },
-  "app_buy_cancel_user": {
-    "message": "ユーザーによりキャンセルされました"
-  },
-  "app_buy_popup_blocked": {
-    "message": "ポップアップがブロックされました"
-  },
-  "app_buy_session_failed": {
-    "message": "セッション確認に失敗しました"
-  },
+  "app_buy_wait_login": { "message": "ログインを待機中..." },
+  "app_buy_click_cancel": { "message": "（クリックしてキャンセル）" },
+  "app_buy_cancel_user": { "message": "ユーザーによりキャンセルされました" },
+  "app_buy_popup_blocked": { "message": "ポップアップがブロックされました" },
+  "app_buy_session_failed": { "message": "セッション確認に失敗しました" },
   "app_buy_login_window_error": {
     "message": "ログインウィンドウを開けませんでした"
   },
-  "app_premium_title": {
-    "message": "アンロック"
-  },
-  "app_premium_pro_power": {
-    "message": "Proの機能"
-  },
+  "app_premium_title": { "message": "アンロック" },
+  "app_premium_pro_power": { "message": "Proのパワー" },
   "app_premium_subtitle": {
-    "message": "ライブラリをクラウドで保護し、どこからでもアクセスできるようにします。"
+    "message": "ライブラリをクラウドで安全に保護し、どこからでもアクセス可能に。"
   },
-  "app_premium_feature_unlimited": {
-    "message": "フォルダ作成無制限"
-  },
+  "app_premium_feature_unlimited": { "message": "フォルダ無制限" },
   "app_premium_feature_sync": {
-    "message": "リアルタイムクラウド同期"
+    "message": "暗号化されたリアルタイムクラウド同期"
   },
-  "app_premium_feature_data": {
-    "message": "データとツール"
-  },
-  "app_premium_feature_data_sub1": {
-    "message": "インポート/エクスポート"
-  },
-  "app_premium_feature_data_sub2": {
-    "message": "Chrome収集機能"
-  },
-  "app_premium_feature_data_sub3": {
-    "message": "セッション保存"
-  },
-  "app_premium_feature_toolkit": {
-    "message": "高度なツールキット"
-  },
-  "app_premium_feature_toolkit_sub1": {
-    "message": "AI要約"
-  },
-  "app_premium_feature_toolkit_sub2": {
-    "message": "PDFアップロード"
-  },
-  "app_premium_feature_toolkit_sub3": {
-    "message": "QRジェネレーター"
-  },
+  "app_premium_feature_data": { "message": "データとツール" },
+  "app_premium_feature_data_sub1": { "message": "インポート / エクスポート" },
+  "app_premium_feature_data_sub2": { "message": "Chromeからの取り込み" },
+  "app_premium_feature_data_sub3": { "message": "セッション保存" },
+  "app_premium_feature_toolkit": { "message": "高度なツールキット" },
+  "app_premium_feature_toolkit_sub1": { "message": "AI要約" },
+  "app_premium_feature_toolkit_sub2": { "message": "PDFアップロード" },
+  "app_premium_feature_toolkit_sub3": { "message": "QRコード生成" },
+  "app_premium_feature_toolkit_sub4": { "message": "タブグループ" },
   "app_premium_btn_upgrade": {
-    "message": "今すぐProにアップグレード"
+    "message": "月額 $PRICE$ でProにアップグレード",
+    "placeholders": {
+      "price": {
+        "content": "$1"
+      }
+    }
   },
-  "app_premium_btn_checking": {
-    "message": "支払いを確認中..."
-  },
-  "app_premium_btn_success": {
-    "message": "成功！Proプランをお楽しみください"
-  },
-  "app_premium_btn_retry": {
-    "message": "再試行まで "
-  },
-  "app_premium_btn_check_status": {
-    "message": "支払い済み、ステータスを確認"
-  },
-  "app_premium_btn_later": {
-    "message": "後で確認"
-  },
+  "app_premium_btn_checking": { "message": "支払いを確認中..." },
+  "app_premium_btn_success": { "message": "成功！Proプランをお楽しみください" },
+  "app_premium_btn_retry": { "message": "再試行まで " },
+  "app_premium_btn_check_status": { "message": "支払い済み、ステータスを確認" },
+  "app_premium_btn_later": { "message": "後で確認" },
   "app_premium_btn_no_thanks": {
     "message": "いいえ、無料プランを継続します"
   },
-  "app_btn_get_pro_title": {
-    "message": "Proへアップグレード"
-  },
-  "app_btn_get_pro_subtitle": {
-    "message": "無制限のアクセス権を取得"
-  },
-  "app_sub_manage_title": {
-    "message": "サブスクリプションプラン"
-  },
-  "app_sub_manage_subtitle": {
-    "message": "請求と請求書の管理"
-  },
+  "app_btn_get_pro_title": { "message": "Proにアップグレード" },
+  "app_btn_get_pro_subtitle": { "message": "無制限アクセスを取得" },
+  "app_sub_manage_title": { "message": "サブスクリプションプラン" },
+  "app_sub_manage_subtitle": { "message": "請求と請求書の管理" },
   "app_sub_error_auth": {
     "message": "認証されていません。ログインしてください。"
   },
-  "app_sub_error_url": {
-    "message": "レスポンスにポータルURLが見つかりません"
-  },
-  "app_sub_error_unknown": {
-    "message": "不明なエラーが発生しました"
-  },
+  "app_sub_error_url": { "message": "レスポンスにポータルURLが見つかりません" },
+  "app_sub_error_unknown": { "message": "不明なエラーが発生しました" },
   "app_sub_error_fail": {
-    "message": "サブスクリプションポータルを開けませんでした: "
+    "message": "サブスクリプションポータルを開けませんでした： "
   },
-  "app_donate_coffee": {
-    "message": "コーヒーをおごる"
-  },
-  "app_donate_close": {
-    "message": "閉じる"
-  },
-  "app_sync_offline": {
-    "message": "オフライン"
-  },
-  "app_sync_syncing": {
-    "message": "同期中"
-  },
-  "app_sync_pending": {
-    "message": "待機中"
-  },
-  "app_sync_up_to_date": {
-    "message": "最新の状態"
-  },
-  "app_sync_conflict_title": {
-    "message": "データベースの競合"
-  },
+  "app_donate_coffee": { "message": "コーヒーを一杯おごる" },
+  "app_donate_close": { "message": "閉じる" },
+  "app_sync_offline": { "message": "オフライン" },
+  "app_sync_syncing": { "message": "同期中" },
+  "app_sync_pending": { "message": "保留中" },
+  "app_sync_up_to_date": { "message": "最新の状態" },
+  "app_sync_conflict_title": { "message": "データベースの競合" },
   "app_sync_conflict_desc": {
     "message": "複数のデバイスで変更が検出されました"
   },
-  "app_sync_local": {
-    "message": "ローカル"
-  },
-  "app_sync_cloud": {
-    "message": "クラウド"
-  },
-  "app_sync_merge": {
-    "message": "マージ"
-  },
-  "app_sync_last": {
-    "message": "最終同期:"
-  },
-  "app_sync_force_title": {
-    "message": "クラウド同期を強制"
-  },
-  "app_signout_title": {
-    "message": "サインアウト"
-  },
+  "app_sync_local": { "message": "ローカル" },
+  "app_sync_cloud": { "message": "クラウド" },
+  "app_sync_merge": { "message": "マージ" },
+  "app_sync_last": { "message": "最終：" },
+  "app_sync_force_title": { "message": "クラウド同期を強制" },
+  "app_signout_title": { "message": "サインアウト" },
   "app_signout_description": {
-    "message": "ローカルデータの処理方法を選択してください"
+    "message": "ローカルデータをどのように処理しますか？"
   },
-  "app_signout_keep_data": {
-    "message": "ログアウトしてデータを保持"
-  },
-  "app_signout_delete_all": {
-    "message": "ログアウトしてすべて削除"
-  },
-  "app_signout_or": {
-    "message": "または"
-  },
-  "app_signout_stay": {
-    "message": "ログインしたままにする"
-  }
+  "app_signout_keep_data": { "message": "サインアウトしてデータを保持" },
+  "app_signout_delete_all": { "message": "サインアウトしてすべて削除" },
+  "app_signout_or": { "message": "または" },
+  "app_signout_stay": { "message": "ログインを継続" }
 }

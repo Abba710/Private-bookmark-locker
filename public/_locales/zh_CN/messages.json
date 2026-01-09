@@ -1,9 +1,9 @@
 {
   "app_name": {
-    "message": "Locker: 支持加密同步和无痕模式的安全书签管理器"
+    "message": "Locker: 支持加密同步与隐身模式的安全书签管理器"
   },
   "app_description": {
-    "message": "书签、文件夹、PDF上传、AI摘要、云同步和无痕模式，一切尽在私密标签页和书签管理侧边栏中。"
+    "message": "集书签、文件夹、PDF 上传、AI 摘要、云同步和隐身模式于一体的侧边栏，专为私密标签页和书签管理而设计。"
   },
   "app_enter_password": {
     "message": "输入密码"
@@ -30,43 +30,13 @@
     "message": "密码错误"
   },
   "app_password_hashing_error": {
-    "message": "哈希失败"
+    "message": "哈希处理失败"
   },
   "app_password_warning": {
-    "message": "⚠️ 重要提示：如果您忘记了密码，将无法找回。所有数据仅存储在此设备上，没有正确密码将无法访问。"
+    "message": "⚠️ 重要提示：如果您忘记密码，将无法找回。所有数据仅存储在此设备上，没有正确密码无法访问。"
   },
   "app_instruction_title": {
-    "message": "🔐 如何使用私密书签保险箱"
-  },
-  "app_instruction_save": {
-    "message": "要保存书签，请点击顶部的 💾 按钮。"
-  },
-  "app_instruction_lock": {
-    "message": "要锁定扩展程序，请点击顶部的 🔒 图标。"
-  },
-  "app_instruction_view_basic": {
-    "message": "要查看常规书签，请点击顶部的 👁️ 图标。"
-  },
-  "app_instruction_view_incognito": {
-    "message": "要查看无痕书签，请点击顶部的 🕶️ 图标。"
-  },
-  "app_instruction_create_folder": {
-    "message": "要创建文件夹，请点击顶部的 📁 按钮。"
-  },
-  "app_instruction_incognito_hint": {
-    "message": "要在无痕模式下使用扩展程序，请右键点击图标，选择“管理扩展程序”，然后启用“在无痕模式下允许”。"
-  },
-  "app_instruction_panic": {
-    "message": "要设置紧急按钮，请前往 Chrome 设置并分配快捷键，以关闭所有标签页并将其保存到文件夹中。"
-  },
-  "app_instruction_import": {
-    "message": "要导入书签，请点击选项菜单中的 📥 导入 按钮。"
-  },
-  "app_instruction_export": {
-    "message": "要导出书签，请点击选项菜单中的 📤 导出 按钮。"
-  },
-  "app_instruction_collect": {
-    "message": "要将所有 Chrome 书签收集到扩展程序中，请点击选项菜单中的 🔃 收集 按钮。"
+    "message": "快速入门指南"
   },
   "app_pass_short_error": {
     "message": "密码长度必须至少为 4 个字符"
@@ -81,19 +51,19 @@
     "message": "导出书签"
   },
   "app_options_hotkeys": {
-    "message": "快捷键"
+    "message": "热键"
   },
   "app_options_settings_alert": {
     "message": "设置功能即将推出！"
   },
   "app_options_collect": {
-    "message": "收集 Chrome 书签"
+    "message": "采集 Chrome 书签"
   },
   "app_import_modal": {
     "message": "导入书签"
   },
   "app_import_modal_description": {
-    "message": "将文件拖放到此处或点击选择"
+    "message": "将文件拖放到此处，或点击进行选择"
   },
   "app_cancel": {
     "message": "取消"
@@ -105,7 +75,7 @@
     "message": "导出"
   },
   "app_panic_description": {
-    "message": "设置紧急按钮（默认 = Alt+P）以关闭所有标签页并保存到文件夹"
+    "message": "设置紧急按钮（默认 alt+p）以关闭所有标签页并将其保存到文件夹中"
   },
   "app_ads_title": {
     "message": "如果您使用 ChatGPT，请试试这个扩展👆"
@@ -117,13 +87,13 @@
     "message": "喜欢这个扩展吗？"
   },
   "app_feedback_description": {
-    "message": "我们非常重视您的意见！请为应用评分并在商店页面留下评论。"
+    "message": "我们非常看重您的意见！请在商店页面对应用进行评分并留下评论。"
   },
   "app_feedback_button_leave": {
     "message": "留下评论"
   },
   "app_feedback_button_later": {
-    "message": "以后再说"
+    "message": "稍后"
   },
   "app_edit_title": {
     "message": "编辑书签标题"
@@ -135,10 +105,10 @@
     "message": "保存当前会话"
   },
   "app_report_bug": {
-    "message": "报告错误"
+    "message": "报告漏洞"
   },
   "app_donate_h2_title": {
-    "message": "我一个人在开发这个扩展，您的支持可以帮助我改进项目并保持其免费。"
+    "message": "我正在独自开发这个扩展，您的支持可以帮助我改进项目并保持其免费。"
   },
   "app_donate_qr": {
     "message": "扫描二维码支持我"
@@ -147,7 +117,7 @@
     "message": "或点击按钮👇"
   },
   "app_rate_extension": {
-    "message": "评价扩展"
+    "message": "为扩展评分"
   },
   "app_share_extension": {
     "message": "分享扩展"
@@ -174,7 +144,7 @@
     "message": "登录"
   },
   "app_options_subscription_plan": {
-    "message": "订阅方案"
+    "message": "订阅计划"
   },
   "app_options_go_premium": {
     "message": "升级到高级版"
@@ -195,7 +165,7 @@
     "message": "在 Reddit 上阅读全文"
   },
   "app_changelog_dismiss": {
-    "message": "忽略"
+    "message": "关闭"
   },
   "app_import_supported_format": {
     "message": "支持的格式：JSON 配置"
@@ -231,7 +201,7 @@
     "message": "关闭菜单"
   },
   "app_qr_modal_info": {
-    "message": "扫描以在您的设备上打开此链接"
+    "message": "扫描二维码在您的设备上打开此链接"
   },
   "app_qr_close_button": {
     "message": "关闭"
@@ -249,7 +219,7 @@
     "message": "使用主密码保护您的书签"
   },
   "app_lock_unlock_description": {
-    "message": "您的私密空间访问受限"
+    "message": "您的私人空间访问受限"
   },
   "app_lock_legal_agreement": {
     "message": "继续操作即表示您同意我们的"
@@ -264,7 +234,7 @@
     "message": "和"
   },
   "app_lock_security_notice": {
-    "message": "安全须知"
+    "message": "安全公告"
   },
   "app_buy_no_internet": {
     "message": "无网络连接"
@@ -276,37 +246,37 @@
     "message": "登录失败或已关闭。"
   },
   "app_buy_wait_login": {
-    "message": "正在等待登录..."
+    "message": "等待登录..."
   },
   "app_buy_click_cancel": {
-    "message": "(点击取消)"
+    "message": "（点击以取消）"
   },
   "app_buy_cancel_user": {
     "message": "用户已取消"
   },
   "app_buy_popup_blocked": {
-    "message": "弹出窗口被拦截"
+    "message": "弹窗被拦截"
   },
   "app_buy_session_failed": {
     "message": "会话检查失败"
   },
   "app_buy_login_window_error": {
-    "message": "无法打开登录窗口"
+    "message": "登录窗口无法打开"
   },
   "app_premium_title": {
     "message": "解锁"
   },
   "app_premium_pro_power": {
-    "message": "专业版能力"
+    "message": "专业版功能"
   },
   "app_premium_subtitle": {
-    "message": "在云端保护您的库，并随时随地访问。"
+    "message": "将您的库安全地保存在云端，随时随地访问。"
   },
   "app_premium_feature_unlimited": {
     "message": "无限文件夹"
   },
   "app_premium_feature_sync": {
-    "message": "实时云同步"
+    "message": "加密实时云同步"
   },
   "app_premium_feature_data": {
     "message": "数据与工具"
@@ -315,7 +285,7 @@
     "message": "导入/导出"
   },
   "app_premium_feature_data_sub2": {
-    "message": "Chrome 收集"
+    "message": "Chrome 采集"
   },
   "app_premium_feature_data_sub3": {
     "message": "会话保存"
@@ -332,35 +302,43 @@
   "app_premium_feature_toolkit_sub3": {
     "message": "二维码生成器"
   },
+  "app_premium_feature_toolkit_sub4": {
+    "message": "标签页组"
+  },
   "app_premium_btn_upgrade": {
-    "message": "立即升级到专业版"
+    "message": "以 $PRICE$/月 升级至专业版",
+    "placeholders": {
+      "price": {
+        "content": "$1"
+      }
+    }
   },
   "app_premium_btn_checking": {
-    "message": "正在检查付款状态..."
+    "message": "正在检查支付状态..."
   },
   "app_premium_btn_success": {
-    "message": "成功！尽情使用专业版"
+    "message": "成功！请尽情使用专业版"
   },
   "app_premium_btn_retry": {
-    "message": "重试时间 "
+    "message": "重试剩余时间 "
   },
   "app_premium_btn_check_status": {
-    "message": "我已经付款，检查状态"
+    "message": "我已支付，检查状态"
   },
   "app_premium_btn_later": {
     "message": "稍后检查"
   },
   "app_premium_btn_no_thanks": {
-    "message": "不，谢谢，我坚持使用免费计划"
+    "message": "不用了，我将坚持使用免费计划"
   },
   "app_btn_get_pro_title": {
     "message": "升级到专业版"
   },
   "app_btn_get_pro_subtitle": {
-    "message": "获得无限访问权限"
+    "message": "获取无限访问权限"
   },
   "app_sub_manage_title": {
-    "message": "订阅方案"
+    "message": "订阅计划"
   },
   "app_sub_manage_subtitle": {
     "message": "管理账单和发票"
@@ -375,7 +353,7 @@
     "message": "发生未知错误"
   },
   "app_sub_error_fail": {
-    "message": "无法打开订阅门户："
+    "message": "打开订阅门户失败： "
   },
   "app_donate_coffee": {
     "message": "请我喝杯咖啡"
@@ -387,10 +365,10 @@
     "message": "离线"
   },
   "app_sync_syncing": {
-    "message": "正在同步"
+    "message": "同步中"
   },
   "app_sync_pending": {
-    "message": "待处理"
+    "message": "等待中"
   },
   "app_sync_up_to_date": {
     "message": "已是最新"
@@ -399,7 +377,7 @@
     "message": "数据库冲突"
   },
   "app_sync_conflict_desc": {
-    "message": "检测到多台设备上的更改"
+    "message": "在多个设备上检测到更改"
   },
   "app_sync_local": {
     "message": "本地"
@@ -411,7 +389,7 @@
     "message": "合并"
   },
   "app_sync_last": {
-    "message": "最后同步："
+    "message": "最后一次："
   },
   "app_sync_force_title": {
     "message": "强制云同步"
@@ -420,16 +398,16 @@
     "message": "退出登录"
   },
   "app_signout_description": {
-    "message": "您想如何处理本地数据？"
+    "message": "您希望如何处理本地数据？"
   },
   "app_signout_keep_data": {
-    "message": "注销并保留数据"
+    "message": "退出并保留数据"
   },
   "app_signout_delete_all": {
-    "message": "注销并删除所有内容"
+    "message": "退出并删除所有数据"
   },
   "app_signout_or": {
-    "message": "或"
+    "message": "或者"
   },
   "app_signout_stay": {
     "message": "保持登录状态"

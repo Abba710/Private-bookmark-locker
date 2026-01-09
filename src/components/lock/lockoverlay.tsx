@@ -114,7 +114,7 @@ export default function LockOverlay() {
             <p className="text-[11px] text-zinc-500 leading-relaxed px-4">
               {chrome.i18n.getMessage('app_lock_legal_agreement')}{' '}
               <a
-                href="https://abbablog.me/locker/terms-and-conditions"
+                href="https://abbablog.me/projects/locker/terms"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2"
@@ -123,7 +123,7 @@ export default function LockOverlay() {
               </a>{' '}
               {chrome.i18n.getMessage('app_lock_and')}{' '}
               <a
-                href="https://abbablog.me/locker/terms-and-conditions"
+                href="https://abbablog.me/projects/locker/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2"
