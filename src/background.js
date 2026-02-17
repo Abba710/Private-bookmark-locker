@@ -13,7 +13,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
 chrome.runtime.setUninstallURL('https://forms.gle/XpMKk9XjGLPMhhri8')
 
 function getActiveTabs(callback) {
-  chrome.tabs.query({}, (tabs) => {
+  chrome.tabs.query({ currentWindow: true }, (tabs) => {
     const formatted = tabs.map((tab) => ({
       id: crypto.randomUUID(),
       incognito: tab.incognito || false,
