@@ -161,6 +161,9 @@
   "app_context_qr_code": { "message": "Generate QR code" },
   "app_context_download_pdf": { "message": "Download PDF" },
   "app_context_ai_summary": { "message": "AI Summary" },
+  "app_context_save_in_current_folder": {
+    "message": "Save in current follder"
+  },
   "app_context_open_group": { "message": "Open in group" },
   "app_context_close_menu": { "message": "Close menu" },
   "app_qr_modal_info": { "message": "Scan to open this link on your device" },

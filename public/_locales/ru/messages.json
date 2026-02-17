@@ -194,6 +194,9 @@
   "app_context_ai_summary": {
     "message": "AI-саммари"
   },
+  "app_context_save_in_current_folder": {
+    "message": "Сохранить в текущей папке"
+  },
   "app_context_open_group": {
     "message": "Открыть в группе"
   },

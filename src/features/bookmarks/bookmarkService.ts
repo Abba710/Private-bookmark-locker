@@ -9,7 +9,7 @@ import {
 import { TombstoneService } from '@/service/sync/tombstone'
 import { supabase } from '@/service/supabase'
 
-function withTimestamp(b: Bookmark): Bookmark {
+export function withTimestamp(b: Bookmark): Bookmark {
   return { ...b, updatedAt: Date.now() }
 }
 
@@ -98,8 +98,8 @@ function updateTitleById(
     b.id === id
       ? withTimestamp({ ...b, title: newTitle }) // Update timestamp when editing
       : b.children
-      ? { ...b, children: updateTitleById(b.children, id, newTitle) }
-      : b
+        ? { ...b, children: updateTitleById(b.children, id, newTitle) }
+        : b
   )
 }
 

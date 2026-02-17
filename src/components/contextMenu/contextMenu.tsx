@@ -3,8 +3,17 @@ import { useEffect, useRef, useState } from 'preact/hooks'
 import { useContextModalStore } from '@/components/contextMenu/contextMenuStore'
 import { openBookmarkGroup } from '@/components/contextMenu/features/openInGroup'
 import exportToPDF from '@/components/contextMenu/features/downloadPdf'
-import { Copy, QrCode, FileDown, Sparkles, Layers, XCircle } from 'lucide-react'
+import {
+  Copy,
+  QrCode,
+  FileDown,
+  Sparkles,
+  Layers,
+  XCircle,
+  Save,
+} from 'lucide-react'
 import { handleCheckPremium } from '@/util/premiumCheck'
+import { saveInCurrentFolder } from '@/components/contextMenu/features/saveInCurrentFolder'
 
 /**
  * ContextMenu component refined for Modern Dark SaaS look.
@@ -61,6 +70,11 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
   ]
 
   const folderMenuItems = [
+    {
+      label: chrome.i18n.getMessage('app_context_save_in_current_folder'),
+      icon: <Save className="w-4 h-4 text-indigo-400" />,
+      action: async () => await saveInCurrentFolder(bookmark),
+    },
     {
       label: chrome.i18n.getMessage('app_context_open_group'),
       icon: <Layers className="w-4 h-4 text-indigo-400" />,
