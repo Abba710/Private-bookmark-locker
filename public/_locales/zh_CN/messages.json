@@ -194,6 +194,9 @@
   "app_context_ai_summary": {
     "message": "AI 摘要"
   },
+  "app_context_save_in_current_folder": {
+    "message": "保存到当前文件夹"
+  },
   "app_context_open_group": {
     "message": "在组中打开"
   },

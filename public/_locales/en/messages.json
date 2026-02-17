@@ -162,7 +162,7 @@
   "app_context_download_pdf": { "message": "Download PDF" },
   "app_context_ai_summary": { "message": "AI Summary" },
   "app_context_save_in_current_folder": {
-    "message": "Save in current follder"
+    "message": "Save in current folder"
   },
   "app_context_open_group": { "message": "Open in group" },
   "app_context_close_menu": { "message": "Close menu" },
@@ -206,7 +206,6 @@
   "app_premium_feature_toolkit_sub1": { "message": "AI Summaries" },
   "app_premium_feature_toolkit_sub2": { "message": "PDF Uploads" },
   "app_premium_feature_toolkit_sub3": { "message": "QR Generator" },
-  "app_premium_feature_toolkit_sub4": { "message": "Tab Group" },
   "app_premium_btn_upgrade": {
     "message": "Upgrade to Pro for $PRICE$/month",
     "placeholders": {

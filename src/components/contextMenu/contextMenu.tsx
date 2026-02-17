@@ -61,6 +61,8 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
       label: chrome.i18n.getMessage('app_context_ai_summary'),
       icon: <Sparkles className="w-4 h-4 text-indigo-400" />, // Sparkles icon for AI
       action: () => {
+        if (!handleCheckPremium()) return
+
         window.open(
           `https://chat.openai.com/?q=Summary%20` + bookmark.url,
           '_blank'

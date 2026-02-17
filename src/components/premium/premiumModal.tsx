@@ -127,7 +127,6 @@ export default function UpgradeToProModal({
         chrome.i18n.getMessage('app_premium_feature_toolkit_sub1'),
         chrome.i18n.getMessage('app_premium_feature_toolkit_sub2'),
         chrome.i18n.getMessage('app_premium_feature_toolkit_sub3'),
-        chrome.i18n.getMessage('app_premium_feature_toolkit_sub4'),
       ],
     },
   ]

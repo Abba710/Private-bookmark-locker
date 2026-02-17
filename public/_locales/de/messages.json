@@ -33,7 +33,7 @@
     "message": "Hashing fehlgeschlagen"
   },
   "app_password_warning": {
-    "message": "⚠️ Wichtig: Wenn Sie Ihr Passwort vergessen, kann es nicht wiederhergestellt werden. Alle Daten werden nur auf diesem Gerät gespeichert und der Zugriff ohne das korrekte Passwort ist nicht möglich."
+    "message": "⚠️ Wichtig: Wenn Sie Ihr Passwort vergessen, kann es nicht wiederhergestellt werden. Alle Daten werden nur auf diesem Gerät gespeichert und sind ohne das korrekte Passwort nicht zugänglich."
   },
   "app_instruction_title": {
     "message": "Kurzanleitung"
@@ -193,6 +193,9 @@
   },
   "app_context_ai_summary": {
     "message": "KI-Zusammenfassung"
+  },
+  "app_context_save_in_current_folder": {
+    "message": "Im aktuellen Ordner speichern"
   },
   "app_context_open_group": {
     "message": "In Gruppe öffnen"
