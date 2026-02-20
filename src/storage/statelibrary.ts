@@ -90,7 +90,7 @@ export const useSubscribePlanStore = create<SubscribeState>()(
             .from('profiles')
             .select('is_pro')
             .eq('id', user.id)
-            .single()
+            .maybeSingle()
 
           if (error) throw error
 
