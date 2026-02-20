@@ -2,6 +2,7 @@ import type { TargetedEvent } from 'preact/compat'
 import { useState, useRef, useEffect } from 'preact/hooks'
 import { supabase } from '@/service/supabase'
 import { Loader2, XCircle, WifiOff } from 'lucide-react'
+import usePartnerId from '@/hooks/usePartnerId'
 
 interface BuyButtonProps {
   className?: string
@@ -22,6 +23,7 @@ export function BuyButton({
   const [errorMsg, setErrorMsg] = useState<string | null>(null)
 
   const abortControllerRef = useRef<AbortController | null>(null)
+  const partnerId = usePartnerId()
 
   const BASE_CHECKOUT_URL =
     'https://abba4game.lemonsqueezy.com/checkout/buy/83a76148-ccec-480d-8f25-cdcda5a332e1'
@@ -117,10 +119,13 @@ export function BuyButton({
       }
 
       // --- STAGE 3: OPEN CHECKOUT (If not PRO) ---
-      if (onBuyClick) onBuyClick()
+      if (onBuyClick) {
+        onBuyClick()
+      }
 
-      const finalUrl = `${BASE_CHECKOUT_URL}?checkout[custom][user_id]=${userId}&checkout[passthrough]=${userId}`
-      const win = window.open(finalUrl, '_blank', 'noopener,noreferrer')
+      const finalUrl = `${BASE_CHECKOUT_URL}?checkout[custom][user_id]=${userId}&checkout[passthrough]=${userId}&aff=${partnerId}`
+      console.log(finalUrl)
+      const win = window.open(finalUrl, '_blank')
 
       if (!win) throw new Error(chrome.i18n.getMessage('app_buy_popup_blocked'))
 

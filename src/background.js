@@ -1,5 +1,18 @@
 chrome.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === 'install') {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const tab = tabs[0]
+      if (!tab) return
+
+      const url = tab.url
+      const params = new URLSearchParams(new URL(url).search)
+      const partnerId = params.get('aff')
+
+      if (partnerId) {
+        chrome.storage.local.set({ 'partner-id': partnerId })
+        console.log('Partner ID:', partnerId)
+      }
+    })
     chrome.tabs.create({ url: 'https://abbablog.me/blog/quick-start' })
   } else if (details.reason === 'update') {
     // Set a flag to show update notification
