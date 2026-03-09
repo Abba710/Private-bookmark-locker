@@ -135,6 +135,7 @@
   "app_premium_feature_data_sub1": { "message": "インポート / エクスポート" },
   "app_premium_feature_data_sub2": { "message": "Chromeからの取り込み" },
   "app_premium_feature_data_sub3": { "message": "セッション保存" },
+  "app_premium_feature_data_sub4": { "message": "パニックボタン" },
   "app_premium_feature_toolkit": { "message": "高度なツールキット" },
   "app_premium_feature_toolkit_sub1": { "message": "AI要約" },
   "app_premium_feature_toolkit_sub2": { "message": "PDFアップロード" },

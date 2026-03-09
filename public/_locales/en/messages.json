@@ -202,6 +202,8 @@
   "app_premium_feature_data_sub1": { "message": "Import/Export" },
   "app_premium_feature_data_sub2": { "message": "Chrome Collect" },
   "app_premium_feature_data_sub3": { "message": "Session Saver" },
+  "app_premium_feature_data_sub4": { "message": "Panic button" },
+
   "app_premium_feature_toolkit": { "message": "Advanced Toolkit" },
   "app_premium_feature_toolkit_sub1": { "message": "AI Summaries" },
   "app_premium_feature_toolkit_sub2": { "message": "PDF Uploads" },

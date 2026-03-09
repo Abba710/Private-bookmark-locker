@@ -150,14 +150,19 @@ export function createBookmarkFolder() {
   addFolderToBookmarks(createFolder(folderName || ''))
 }
 
-chrome.runtime.onMessage.addListener((message) => {
-  if (message.action === 'save_tabs') {
+chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+  if (message.action === 'check_pro') {
     const isPro = useSubscribePlanStore.getState().isPro
     const openPremiumModal = usePremiumModalStore.getState().setPremiumModalOpen
     if (!isPro) {
       openPremiumModal(true)
-      return
+      sendResponse({ reply: isPro })
     }
+  }
+})
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.action === 'save_tabs') {
     addFolderToBookmarks(createFolder('', message.data))
   }
 })

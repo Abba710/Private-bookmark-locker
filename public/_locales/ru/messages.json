@@ -133,6 +133,7 @@
   "app_premium_feature_data_sub1": { "message": "Импорт/Экспорт" },
   "app_premium_feature_data_sub2": { "message": "Сбор закладок Chrome" },
   "app_premium_feature_data_sub3": { "message": "Сохранение сессий" },
+  "app_premium_feature_data_sub4": { "message": "Кнопка паники" },
   "app_premium_feature_toolkit": { "message": "Продвинутый инструментарий" },
   "app_premium_feature_toolkit_sub1": { "message": "AI-саммари" },
   "app_premium_feature_toolkit_sub2": { "message": "Загрузка PDF" },

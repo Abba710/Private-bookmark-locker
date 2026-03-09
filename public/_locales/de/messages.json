@@ -293,6 +293,8 @@
   "app_premium_feature_data_sub3": {
     "message": "Session Saver"
   },
+  "app_premium_feature_data_sub4": { "message": "Panikknopf" },
+
   "app_premium_feature_toolkit": {
     "message": "Erweitertes Toolkit"
   },

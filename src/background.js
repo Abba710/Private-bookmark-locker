@@ -50,7 +50,7 @@ function closeAllTabsButKeepOne() {
     const keepId = newTab.id
 
     // 2. Query all tabs in all windows
-    chrome.tabs.query({}, (tabs) => {
+    chrome.tabs.query({ currentWindow: true }, (tabs) => {
       // 3. Collect IDs of all tabs except the newly created one
       const tabIds = tabs.map((t) => t.id).filter((id) => id && id !== keepId)
 
@@ -72,20 +72,25 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 })
 
-// ✅ Use it inside the command listener
 chrome.commands.onCommand.addListener((command) => {
   if (command === 'close_all_tabs') {
-    console.log('alt+p pressed')
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      const tabId = tabs[0]?.id
-      if (tabId) {
-        chrome.sidePanel.open({ tabId }).then(() => {
-          setTimeout(() => {
-            sendTabsToUI()
-            closeAllTabsButKeepOne()
-          }, 100)
-        })
-      }
+    // Get all tabs in all windows
+    chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
+      const firstTabId = tabs[0]?.id
+      if (!firstTabId) return
+
+      // Open sidePanel on the first tab of the first window
+      chrome.sidePanel.open({ tabId: firstTabId }).then(() => {
+        setTimeout(() => {
+          chrome.runtime.sendMessage({ action: 'check_pro' }, (response) => {
+            if (response?.reply === false) return
+
+            // Execute actions for all tabs
+            sendTabsToUI() // make sure your function handles all windows
+            closeAllTabsButKeepOne() // also handle all windows
+          })
+        }, 100)
+      })
     })
   }
 })

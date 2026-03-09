@@ -293,6 +293,7 @@
   "app_premium_feature_data_sub3": {
     "message": "会话保存"
   },
+  "app_premium_feature_data_sub4": { "message": "紧急按钮" },
   "app_premium_feature_toolkit": {
     "message": "高级工具箱"
   },
