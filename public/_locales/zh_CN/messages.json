@@ -1,9 +1,9 @@
 {
   "app_name": {
-    "message": "Locker: 支持加密同步与隐身模式的安全书签管理器"
+    "message": "Locker – 隐藏和锁定标签页，私密书签"
   },
   "app_description": {
-    "message": "集书签、文件夹、PDF 上传、AI 摘要、云同步和隐身模式于一体的侧边栏，专为私密标签页和书签管理而设计。"
+    "message": "保护您的标签页和书签。一键隐藏所有内容——即使在无痕模式下也可使用。"
   },
   "app_enter_password": {
     "message": "输入密码"

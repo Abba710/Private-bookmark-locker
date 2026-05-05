@@ -1,9 +1,9 @@
 {
   "app_name": {
-    "message": "Locker: Secure Bookmark Manager with Encrypted Sync and Incognito"
+    "message": "Locker – Hide & Lock Tabs, Private Bookmarks"
   },
   "app_description": {
-    "message": "Bookmarks, Folders, PDF uploads, AI Summaries, Cloud sync and Incognito all in one Sidebar for Private tab and Bookmark management."
+    "message": "Protect your tabs and bookmarks. Hide everything in one click — even in incognito."
   },
 
   "app_enter_password": {

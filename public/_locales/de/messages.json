@@ -1,9 +1,9 @@
 {
   "app_name": {
-    "message": "Locker: Sicherer Lesezeichen Manager mit Inkognito Modus und Sync"
+    "message": "Locker – Tabs verbergen & sperren, private Lesezeichen"
   },
   "app_description": {
-    "message": "Lesezeichen, Ordner, PDF-Uploads, KI-Zusammenfassungen, Cloud-Synchronisierung und Inkognito in einer Seitenleiste für privates Tab- und Lesezeichen-Management."
+    "message": "Schütze deine Tabs und Lesezeichen. Verberge alles mit einem Klick — sogar im Inkognito-Modus."
   },
   "app_enter_password": {
     "message": "Passwort eingeben"
