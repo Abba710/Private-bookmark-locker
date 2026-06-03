@@ -54,6 +54,38 @@
   "app_options_hotkeys": {
     "message": "Hotkeys"
   },
+  "app_options_PH": {
+    "message": "Get 50% Discount"
+  },
+  "app_options_PH_Title": { "message": "Help Private Bookmark Locker grow 🚀" },
+  "app_options_PH_sub_title": {
+    "message": "If you enjoy using this extension, a quick upvote on Product Hunt helps a lot. Plus, there is an exclusive"
+  },
+  "app_options_PH_sub_title_discount": {
+    "message": "50% discount"
+  },
+  "app_options_PH_sub_title_supporter": {
+    "message": "available for supporters."
+  },
+  "app_options_PH_helps1": {
+    "message": "• Reach more users"
+  },
+  "app_options_PH_helps2": {
+    "message": "• Improve future features"
+  },
+  "app_options_PH_helps3": {
+    "message": "• Keep the project growing"
+  },
+  "app_options_PH_helps4": {
+    "message": "• Get 50% discount"
+  },
+  "app_options_PH_cta": {
+    "message": "Support + Get 50% Off"
+  },
+  "app_options_PH_cta_later": {
+    "message": "Maybe later"
+  },
+
   "app_options_settings_alert": {
     "message": "Settings coming soon!"
   },

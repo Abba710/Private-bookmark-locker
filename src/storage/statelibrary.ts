@@ -10,6 +10,7 @@ import type {
   notificationDialogProps,
   usePremiumModalStoreProps,
   SubscribeState,
+  promoteProps,
 } from '@/types/types'
 import { supabase } from '@/service/supabase'
 
@@ -38,6 +39,11 @@ export const useFeedbackStore = create<FeedbackStore>((set) => ({
 export const useSupportDialogStore = create<supportDialogProps>((set) => ({
   supportOpen: false,
   setSupportOpen: (open) => set({ supportOpen: open }),
+}))
+
+export const usePromoteStore = create<promoteProps>((set) => ({
+  promoteOpen: false,
+  setPromoteOpen: (open) => set({ promoteOpen: open }),
 }))
 
 export const useNotificationDialogStore = create<notificationDialogProps>(

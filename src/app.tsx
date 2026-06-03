@@ -11,6 +11,7 @@ import QrModalUi from './components/contextMenu/featuresUI/qrGenModal'
 import UpgradeToProModal from '@/components/premium/premiumModal'
 import DeleteAllBookmarksModal from '@/util/deleteModal'
 import { SyncStatus } from '@/components/syncStatus'
+import PhDialog from '@/components/promotepanel'
 
 // Import Stores directly for App-level logic (Performance optimization)
 import {
@@ -192,6 +193,7 @@ function App() {
           <Feedback />
           <SupportDialog />
           <NotificationsModal />
+          <PhDialog />
           <QrModalUi />
 
           {/* Modals */}
