@@ -168,9 +168,15 @@ chrome.runtime.onMessage.addListener((message) => {
 })
 
 export function getChromeBookmarks() {
+  const bookmarks = useBookmarkStore.getState().bookmarks
   chrome.runtime.sendMessage({ action: 'collect_bookmarks' }, (response) => {
     if (response?.data) {
-      addFolderToBookmarks(createFolder('ChromeBookmarks', response.data))
+      console.log('response chrome', response.data)
+      const updated = [...bookmarks, ...response.data]
+
+      chrome.storage.local.set({ bookmarks: updated }, () => {
+        useBookmarkStore.getState().setBookmarks(updated)
+      })
     }
   })
 }

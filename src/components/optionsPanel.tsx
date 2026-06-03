@@ -7,6 +7,7 @@ import {
   useNotificationDialogStore,
   useSubscribePlanStore,
   usePremiumModalStore,
+  usePromoteStore,
 } from '@/storage/statelibrary'
 import exportBookmarks from '@/features/importExport/export'
 import {
@@ -32,6 +33,7 @@ import {
   Heart,
   Bug,
   ChevronRight,
+  ChevronUp,
 } from 'lucide-react'
 
 import { handleCheckPremium } from '@/util/premiumCheck'
@@ -45,6 +47,7 @@ export default function OptionsPanel() {
   // Global States
   const bookmarks = useBookmarkStore((state) => state.bookmarks)
   const isPro = useSubscribePlanStore((state) => state.isPro)
+  const promoteOpen = usePromoteStore((state) => state.setPromoteOpen)
 
   // Modal Actions
   const setPremiumModalOpen = usePremiumModalStore(
@@ -68,6 +71,7 @@ export default function OptionsPanel() {
     pink: 'group-hover:border-pink-500/30 group-hover:text-pink-400',
     red: 'group-hover:border-red-500/30 group-hover:text-red-400',
     blue: 'group-hover:border-blue-500/30 group-hover:text-blue-400',
+    orange: 'group-hover:border-orange-500/30 group-hover:text-orange-400',
   }
 
   /**
@@ -182,10 +186,9 @@ export default function OptionsPanel() {
         />
         <OptionRow
           icon={Library}
-          isPremium={true}
+          isPremium={false}
           label={chrome.i18n.getMessage('app_options_collect')}
           onClick={() => {
-            if (!handleCheckPremium()) return
             getChromeBookmarks()
           }}
           color="indigo"
@@ -212,6 +215,12 @@ export default function OptionsPanel() {
           label={chrome.i18n.getMessage('app_changelog')}
           onClick={() => setNotificationOpen(true)}
           color="indigo"
+        />
+        <OptionRow
+          icon={ChevronUp}
+          label={chrome.i18n.getMessage('app_options_PH')}
+          onClick={() => promoteOpen(true)}
+          color="orange"
         />
         <OptionRow
           icon={Users}
