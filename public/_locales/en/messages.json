@@ -36,28 +36,370 @@
   "app_password_warning": {
     "message": "⚠️ Important: If you forget your password, it cannot be recovered. All data is stored only on this device and cannot be accessed without the correct password."
   },
-  "app_instruction_title": {
-    "message": "Quick Start Guide"
-  },
   "app_pass_short_error": {
     "message": "Password must be at least 4 characters long"
   },
   "app_pass_incorrect_error": {
     "message": "Incorrect password"
   },
+
+  "app_lock_setup_description": {
+    "message": "Secure your bookmarks with a master password"
+  },
+  "app_lock_unlock_description": {
+    "message": "Access to your private space is restricted"
+  },
+  "app_lock_legal_agreement": {
+    "message": "By continuing, you agree to our"
+  },
+  "app_lock_terms": {
+    "message": "Terms of Service"
+  },
+  "app_lock_privacy": {
+    "message": "Privacy Policy"
+  },
+  "app_lock_and": {
+    "message": "and"
+  },
+  "app_lock_security_notice": {
+    "message": "Security Notice"
+  },
+
+  "app_instruction_title": {
+    "message": "Quick Start Guide"
+  },
   "app_search_placeholder": {
     "message": "Search bookmarks..."
   },
-  "app_modal_export": {
-    "message": "Export Bookmarks"
+  "app_cancel": {
+    "message": "Cancel"
   },
+  "app_close_button": {
+    "message": "Close"
+  },
+  "app_edit_title": {
+    "message": "Edit bookmark title"
+  },
+  "app_create_folder": {
+    "message": "Enter folder name:"
+  },
+
+  "app_header_guest_name": {
+    "message": "Guest User"
+  },
+  "app_header_log_in": {
+    "message": "Sign In"
+  },
+  "app_subscribe_free": {
+    "message": "Free"
+  },
+  "app_subscribe_pro": {
+    "message": "PRO"
+  },
+
   "app_options_hotkeys": {
     "message": "Hotkeys"
   },
+  "app_options_settings_alert": {
+    "message": "Settings coming soon!"
+  },
+  "app_options_collect": {
+    "message": "Collect chrome bookmarks"
+  },
+  "app_options_save_open": {
+    "message": "Save the current session"
+  },
+  "app_options_subscription_plan": {
+    "message": "Subscription Plan"
+  },
+  "app_options_go_premium": {
+    "message": "Go Premium"
+  },
+  "app_options_data_tools": {
+    "message": "Data & Tools"
+  },
+  "app_options_community_header": {
+    "message": "Community"
+  },
+
+  "app_modal_export": {
+    "message": "Export Bookmarks"
+  },
+  "app_export_modal_description": {
+    "message": "Click the button below to export your bookmarks as a file. You cansave it and import later if needed."
+  },
+  "app_export_modal_button": {
+    "message": "Export"
+  },
+  "app_export_format_label": {
+    "message": "Format: JSON"
+  },
+  "app_import_modal": {
+    "message": "Import Bookmarks"
+  },
+  "app_import_modal_description": {
+    "message": "Drag & drop your file here or click to select"
+  },
+  "app_import_supported_format": {
+    "message": "Supported format: JSON configuration"
+  },
+  "app_import_click_browse": {
+    "message": "or click to browse files"
+  },
+  "app_import_config_file_label": {
+    "message": "Configuration File"
+  },
+  "app_import_standard_json": {
+    "message": "Standard JSON format"
+  },
+  "app_import_chrome_title": {
+    "message": "Import Chrome Bookmarks?"
+  },
+  "app_import_chrome_sub_title": {
+    "message": "What will be imported:"
+  },
+  "app_import_chrome_a1": {
+    "message": "All bookmarks"
+  },
+  "app_import_chrome_a2": {
+    "message": "Title and Urls"
+  },
+  "app_import_chrome_a3": {
+    "message": "Bookmarks from your bookmarks bar"
+  },
+  "app_import_chrome_a4": {
+    "message": "Your data stays on your device"
+  },
+  "app_import_chrome_CTA": {
+    "message": "Import Chrome Bookmarks"
+  },
+  "app_import_chrome_later": {
+    "message": "Maybe Later"
+  },
+
+  "app_context_copy_link": {
+    "message": "Copy link"
+  },
+  "app_context_qr_code": {
+    "message": "Generate QR code"
+  },
+  "app_context_download_pdf": {
+    "message": "Download PDF"
+  },
+  "app_context_ai_summary": {
+    "message": "AI Summary"
+  },
+  "app_context_save_in_current_folder": {
+    "message": "Save in current folder"
+  },
+  "app_context_open_group": {
+    "message": "Open in group"
+  },
+  "app_context_close_menu": {
+    "message": "Close menu"
+  },
+
+  "app_qr_modal_info": {
+    "message": "Scan to open this link on your device"
+  },
+  "app_qr_close_button": {
+    "message": "Close"
+  },
+
+  "app_pdf_no_url": {
+    "message": "No URL provided"
+  },
+  "app_pdf_generating": {
+    "message": "Generating high-quality PDF..."
+  },
+  "app_pdf_error": {
+    "message": "PDF data is empty"
+  },
+
+  "app_panic_description": {
+    "message": "Set panic button (default = alt+p) to close all tabs and save them in folder"
+  },
+
+  "app_sync_offline": {
+    "message": "Offline"
+  },
+  "app_sync_syncing": {
+    "message": "Syncing"
+  },
+  "app_sync_pending": {
+    "message": "Pending"
+  },
+  "app_sync_up_to_date": {
+    "message": "Up to date"
+  },
+  "app_sync_conflict_title": {
+    "message": "Database Conflict"
+  },
+  "app_sync_conflict_desc": {
+    "message": "Changes detected on multiple devices"
+  },
+  "app_sync_local": {
+    "message": "Local"
+  },
+  "app_sync_cloud": {
+    "message": "Cloud"
+  },
+  "app_sync_merge": {
+    "message": "Merge"
+  },
+  "app_sync_last": {
+    "message": "Last:"
+  },
+  "app_sync_force_title": {
+    "message": "Force Cloud Sync"
+  },
+
+  "app_signout_title": {
+    "message": "Sign Out"
+  },
+  "app_signout_description": {
+    "message": "How would you like to proceed with your local data?"
+  },
+  "app_signout_keep_data": {
+    "message": "Logout & Keep Data"
+  },
+  "app_signout_delete_all": {
+    "message": "Logout & Delete All"
+  },
+  "app_signout_or": {
+    "message": "or"
+  },
+  "app_signout_stay": {
+    "message": "Stay logged in"
+  },
+
+  "app_premium_title": {
+    "message": "Unlock"
+  },
+  "app_premium_pro_power": {
+    "message": "Pro Power"
+  },
+  "app_premium_subtitle": {
+    "message": "Secure your library in the cloud and access it anywhere."
+  },
+  "app_premium_feature_unlimited": {
+    "message": "Unlimited Folders"
+  },
+  "app_premium_feature_sync": {
+    "message": "Encrypted Real-time Cloud Sync"
+  },
+  "app_premium_feature_data": {
+    "message": "Data & Tools"
+  },
+  "app_premium_feature_data_sub1": {
+    "message": "Import/Export"
+  },
+  "app_premium_feature_data_sub2": {
+    "message": "Chrome Collect"
+  },
+  "app_premium_feature_data_sub3": {
+    "message": "Session Saver"
+  },
+  "app_premium_feature_data_sub4": {
+    "message": "Panic button"
+  },
+  "app_premium_feature_toolkit": {
+    "message": "Advanced Toolkit"
+  },
+  "app_premium_feature_toolkit_sub1": {
+    "message": "AI Summaries"
+  },
+  "app_premium_feature_toolkit_sub2": {
+    "message": "PDF Uploads"
+  },
+  "app_premium_feature_toolkit_sub3": {
+    "message": "QR Generator"
+  },
+  "app_premium_btn_upgrade": {
+    "message": "Upgrade to Pro for $PRICE$/month",
+    "placeholders": {
+      "price": {
+        "content": "$1"
+      }
+    }
+  },
+  "app_premium_btn_checking": {
+    "message": "Checking Payment..."
+  },
+  "app_premium_btn_success": {
+    "message": "Success! Enjoy Pro"
+  },
+  "app_premium_btn_retry": {
+    "message": "Retry in "
+  },
+  "app_premium_btn_check_status": {
+    "message": "I've Paid, Check Status"
+  },
+  "app_premium_btn_later": {
+    "message": "Check later"
+  },
+  "app_premium_btn_no_thanks": {
+    "message": "No thanks, I'll stick to free plan"
+  },
+  "app_btn_get_pro_title": {
+    "message": "Upgrade to Pro"
+  },
+  "app_btn_get_pro_subtitle": {
+    "message": "Get unlimited access"
+  },
+  "app_sub_manage_title": {
+    "message": "Subscription Plan"
+  },
+  "app_sub_manage_subtitle": {
+    "message": "Manage billing and invoices"
+  },
+  "app_sub_error_auth": {
+    "message": "Not authenticated. Please log in."
+  },
+  "app_sub_error_url": {
+    "message": "Portal URL not found in response"
+  },
+  "app_sub_error_unknown": {
+    "message": "Unknown error occurred"
+  },
+  "app_sub_error_fail": {
+    "message": "Failed to open subscription portal: "
+  },
+
+  "app_buy_no_internet": {
+    "message": "No internet connection"
+  },
+  "app_buy_login_timeout": {
+    "message": "Login timed out"
+  },
+  "app_buy_login_failed": {
+    "message": "Login failed or closed."
+  },
+  "app_buy_wait_login": {
+    "message": "Wait for Login..."
+  },
+  "app_buy_click_cancel": {
+    "message": "(Click to cancel)"
+  },
+  "app_buy_cancel_user": {
+    "message": "Canceled by user"
+  },
+  "app_buy_popup_blocked": {
+    "message": "Popup blocked"
+  },
+  "app_buy_session_failed": {
+    "message": "Session check failed"
+  },
+  "app_buy_login_window_error": {
+    "message": "Login window failed to open"
+  },
+
   "app_options_PH": {
     "message": "Get 50% Discount"
   },
-  "app_options_PH_Title": { "message": "Help Private Bookmark Locker grow 🚀" },
+  "app_options_PH_Title": {
+    "message": "Help Private Bookmark Locker grow 🚀"
+  },
   "app_options_PH_sub_title": {
     "message": "If you enjoy using this extension, a quick upvote on Product Hunt helps a lot. Plus, there is an exclusive"
   },
@@ -89,35 +431,32 @@
     "message": "Maybe later"
   },
 
-  "app_options_settings_alert": {
-    "message": "Settings coming soon!"
+  "app_changelog": {
+    "message": "Changelog"
   },
-  "app_options_collect": {
-    "message": "Collect chrome bookmarks"
+  "app_changelog_unavailable": {
+    "message": "Content unavailable"
   },
-  "app_import_modal": {
-    "message": "Import Bookmarks"
+  "app_changelog_modal_title": {
+    "message": "What's New"
   },
-  "app_import_modal_description": {
-    "message": "Drag & drop your file here or click to select"
+  "app_changelog_open_reddit": {
+    "message": "Open Full Post on Reddit"
   },
-  "app_cancel": {
-    "message": "Cancel"
+  "app_changelog_dismiss": {
+    "message": "Dismiss"
   },
-  "app_export_modal_description": {
-    "message": "Click the button below to export your bookmarks as a file. You cansave it and import later if needed."
+  "app_rate_extension": {
+    "message": "Rate the extension"
   },
-  "app_export_modal_button": {
-    "message": "Export"
+  "app_share_extension": {
+    "message": "Share the extension"
   },
-  "app_panic_description": {
-    "message": "Set panic button (default = alt+p) to close all tabs and save them in folder"
+  "app_community": {
+    "message": "Join the community"
   },
-  "app_ads_title": {
-    "message": "If you use ChatGPT, try this extension👆"
-  },
-  "app_donate_title": {
-    "message": "Support the project"
+  "app_report_bug": {
+    "message": "Report a bug"
   },
   "app_feedback_title": {
     "message": "Like the extension?"
@@ -131,20 +470,12 @@
   "app_feedback_button_later": {
     "message": "Later"
   },
-  "app_edit_title": {
-    "message": "Edit bookmark title"
-  },
-  "app_create_folder": {
-    "message": "Enter folder name:"
-  },
-  "app_options_save_open": {
-    "message": "Save the current session"
-  },
-  "app_report_bug": {
-    "message": "Report a bug"
+
+  "app_donate_title": {
+    "message": "Support the project"
   },
   "app_donate_h2_title": {
-    "message": "I’m building this extension alone, and your support helps me improve the project and keep it free."
+    "message": "I'm building this extension alone, and your support helps me improve the project and keep it free."
   },
   "app_donate_qr": {
     "message": "Scan QR code to support me"
@@ -152,152 +483,14 @@
   "app_donate_or": {
     "message": "Or click button👇"
   },
-  "app_rate_extension": {
-    "message": "Rate the extension"
+  "app_donate_coffee": {
+    "message": "Buy me a coffee"
   },
-  "app_share_extension": {
-    "message": "Share the extension"
-  },
-  "app_community": {
-    "message": "Join the community"
-  },
-  "app_changelog": {
-    "message": "Changelog"
-  },
-  "app_close_button": {
+  "app_donate_close": {
     "message": "Close"
   },
-  "app_header_guest_name": {
-    "message": "Guest User"
-  },
-  "app_subscribe_free": {
-    "message": "Free"
-  },
-  "app_subscribe_pro": {
-    "message": "PRO"
-  },
-  "app_header_log_in": { "message": "Sign In" },
-  "app_options_subscription_plan": { "message": "Subscription Plan" },
-  "app_options_go_premium": { "message": "Go Premium" },
-  "app_options_data_tools": { "message": "Data & Tools" },
-  "app_options_community_header": { "message": "Community" },
-  "app_changelog_unavailable": { "message": "Content unavailable" },
-  "app_changelog_modal_title": { "message": "What's New" },
-  "app_changelog_open_reddit": { "message": "Open Full Post on Reddit" },
-  "app_changelog_dismiss": { "message": "Dismiss" },
-  "app_import_supported_format": {
-    "message": "Supported format: JSON configuration"
-  },
-  "app_import_click_browse": { "message": "or click to browse files" },
-  "app_import_config_file_label": { "message": "Configuration File" },
-  "app_import_standard_json": { "message": "Standard JSON format" },
-  "app_export_format_label": { "message": "Format: JSON" },
-  "app_context_copy_link": { "message": "Copy link" },
-  "app_context_qr_code": { "message": "Generate QR code" },
-  "app_context_download_pdf": { "message": "Download PDF" },
-  "app_context_ai_summary": { "message": "AI Summary" },
-  "app_context_save_in_current_folder": {
-    "message": "Save in current folder"
-  },
-  "app_context_open_group": { "message": "Open in group" },
-  "app_context_close_menu": { "message": "Close menu" },
-  "app_qr_modal_info": { "message": "Scan to open this link on your device" },
-  "app_qr_close_button": { "message": "Close" },
-  "app_pdf_no_url": { "message": "No URL provided" },
-  "app_pdf_generating": { "message": "Generating high-quality PDF..." },
-  "app_pdf_error": { "message": "PDF data is empty" },
-  "app_lock_setup_description": {
-    "message": "Secure your bookmarks with a master password"
-  },
-  "app_lock_unlock_description": {
-    "message": "Access to your private space is restricted"
-  },
-  "app_lock_legal_agreement": { "message": "By continuing, you agree to our" },
-  "app_lock_terms": { "message": "Terms of Service" },
-  "app_lock_privacy": { "message": "Privacy Policy" },
-  "app_lock_and": { "message": "and" },
-  "app_lock_security_notice": { "message": "Security Notice" },
-  "app_buy_no_internet": { "message": "No internet connection" },
-  "app_buy_login_timeout": { "message": "Login timed out" },
-  "app_buy_login_failed": { "message": "Login failed or closed." },
-  "app_buy_wait_login": { "message": "Wait for Login..." },
-  "app_buy_click_cancel": { "message": "(Click to cancel)" },
-  "app_buy_cancel_user": { "message": "Canceled by user" },
-  "app_buy_popup_blocked": { "message": "Popup blocked" },
-  "app_buy_session_failed": { "message": "Session check failed" },
-  "app_buy_login_window_error": { "message": "Login window failed to open" },
-  "app_premium_title": { "message": "Unlock" },
-  "app_premium_pro_power": { "message": "Pro Power" },
-  "app_premium_subtitle": {
-    "message": "Secure your library in the cloud and access it anywhere."
-  },
-  "app_premium_feature_unlimited": { "message": "Unlimited Folders" },
-  "app_premium_feature_sync": { "message": "Encrypted Real-time Cloud Sync" },
-  "app_premium_feature_data": { "message": "Data & Tools" },
-  "app_premium_feature_data_sub1": { "message": "Import/Export" },
-  "app_premium_feature_data_sub2": { "message": "Chrome Collect" },
-  "app_premium_feature_data_sub3": { "message": "Session Saver" },
-  "app_premium_feature_data_sub4": { "message": "Panic button" },
 
-  "app_premium_feature_toolkit": { "message": "Advanced Toolkit" },
-  "app_premium_feature_toolkit_sub1": { "message": "AI Summaries" },
-  "app_premium_feature_toolkit_sub2": { "message": "PDF Uploads" },
-  "app_premium_feature_toolkit_sub3": { "message": "QR Generator" },
-  "app_premium_btn_upgrade": {
-    "message": "Upgrade to Pro for $PRICE$/month",
-    "placeholders": {
-      "price": {
-        "content": "$1"
-      }
-    }
-  },
-  "app_premium_btn_checking": { "message": "Checking Payment..." },
-  "app_premium_btn_success": { "message": "Success! Enjoy Pro" },
-  "app_premium_btn_retry": { "message": "Retry in " },
-  "app_premium_btn_check_status": { "message": "I've Paid, Check Status" },
-  "app_premium_btn_later": { "message": "Check later" },
-  "app_premium_btn_no_thanks": {
-    "message": "No thanks, I'll stick to free plan"
-  },
-  "app_btn_get_pro_title": { "message": "Upgrade to Pro" },
-  "app_btn_get_pro_subtitle": { "message": "Get unlimited access" },
-  "app_sub_manage_title": { "message": "Subscription Plan" },
-  "app_sub_manage_subtitle": { "message": "Manage billing and invoices" },
-  "app_sub_error_auth": { "message": "Not authenticated. Please log in." },
-  "app_sub_error_url": { "message": "Portal URL not found in response" },
-  "app_sub_error_unknown": { "message": "Unknown error occurred" },
-  "app_sub_error_fail": {
-    "message": "Failed to open subscription portal: "
-  },
-  "app_donate_coffee": { "message": "Buy me a coffee" },
-  "app_donate_close": { "message": "Close" },
-  "app_sync_offline": { "message": "Offline" },
-  "app_sync_syncing": { "message": "Syncing" },
-  "app_sync_pending": { "message": "Pending" },
-  "app_sync_up_to_date": { "message": "Up to date" },
-  "app_sync_conflict_title": { "message": "Database Conflict" },
-  "app_sync_conflict_desc": {
-    "message": "Changes detected on multiple devices"
-  },
-  "app_sync_local": { "message": "Local" },
-  "app_sync_cloud": { "message": "Cloud" },
-  "app_sync_merge": { "message": "Merge" },
-  "app_sync_last": { "message": "Last:" },
-  "app_sync_force_title": { "message": "Force Cloud Sync" },
-  "app_signout_title": { "message": "Sign Out" },
-  "app_signout_description": {
-    "message": "How would you like to proceed with your local data?"
-  },
-  "app_signout_keep_data": { "message": "Logout & Keep Data" },
-  "app_signout_delete_all": { "message": "Logout & Delete All" },
-  "app_signout_or": { "message": "or" },
-  "app_signout_stay": { "message": "Stay logged in" },
-  "app_import_chrome_title": { "message": "Import Chrome Bookmarks?" },
-  "app_import_chrome_sub_title": { "message": "What will be imported:" },
-  "app_import_chrome_a1": { "message": "All bookmarks" },
-  "app_import_chrome_a2": { "message": "Title and Urls" },
-  "app_import_chrome_a3": { "message": "Bookmarks from your bookmarks bar" },
-  "app_import_chrome_a4": { "message": "Your data stays on your device" },
-  "app_import_chrome_CTA": { "message": "Import Chrome Bookmarks" },
-  "app_import_chrome_later": { "message": "Maybe Later" }
+  "app_ads_title": {
+    "message": "If you use ChatGPT, try this extension👆"
+  }
 }

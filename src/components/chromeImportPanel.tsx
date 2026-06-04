@@ -56,7 +56,7 @@ export default function ImportBookmarksDialog() {
             </div>
 
             <h2 className="text-2xl font-bold text-white tracking-tight mb-3">
-              {chrome.i18n.getMessage('app_import_chrome')}
+              {chrome.i18n.getMessage('app_import_chrome_title')}
             </h2>
           </div>
 

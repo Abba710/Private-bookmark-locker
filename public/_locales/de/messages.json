@@ -1,10 +1,11 @@
 {
   "app_name": {
-    "message": "Locker – Tabs verbergen & sperren, private Lesezeichen"
+    "message": "Locker – Tabs ausblenden und sperren, private Lesezeichen"
   },
   "app_description": {
-    "message": "Schütze deine Tabs und Lesezeichen. Verberge alles mit einem Klick — sogar im Inkognito-Modus."
+    "message": "Schütze deine Tabs und Lesezeichen. Alles mit einem Klick ausblenden, sogar im Inkognito-Modus."
   },
+
   "app_enter_password": {
     "message": "Passwort eingeben"
   },
@@ -12,10 +13,10 @@
     "message": "🔒 Passwort erstellen"
   },
   "app_create_password_placeholder": {
-    "message": "Erstellen Sie Ihr Passwort"
+    "message": "Erstelle dein Passwort"
   },
   "app_enter_password_placeholder": {
-    "message": "Geben Sie Ihr Passwort ein"
+    "message": "Gib dein Passwort ein"
   },
   "app_unlock": {
     "message": "Entsperren"
@@ -33,67 +34,48 @@
     "message": "Hashing fehlgeschlagen"
   },
   "app_password_warning": {
-    "message": "⚠️ Wichtig: Wenn Sie Ihr Passwort vergessen, kann es nicht wiederhergestellt werden. Alle Daten werden nur auf diesem Gerät gespeichert und sind ohne das korrekte Passwort nicht zugänglich."
-  },
-  "app_instruction_title": {
-    "message": "Kurzanleitung"
+    "message": "⚠️ Wichtig: Wenn du dein Passwort vergisst, kann es nicht wiederhergestellt werden. Alle Daten werden nur auf diesem Gerät gespeichert und sind ohne korrektes Passwort nicht zugänglich."
   },
   "app_pass_short_error": {
-    "message": "Das Passwort muss mindestens 4 Zeichen lang sein"
+    "message": "Passwort muss mindestens 4 Zeichen lang sein"
   },
   "app_pass_incorrect_error": {
     "message": "Falsches Passwort"
   },
+
+  "app_lock_setup_description": {
+    "message": "Schütze deine Lesezeichen mit einem Master-Passwort"
+  },
+  "app_lock_unlock_description": {
+    "message": "Der Zugriff auf deinen privaten Bereich ist eingeschränkt"
+  },
+  "app_lock_legal_agreement": {
+    "message": "Wenn du fortfährst, stimmst du unseren"
+  },
+  "app_lock_terms": {
+    "message": "Nutzungsbedingungen"
+  },
+  "app_lock_privacy": {
+    "message": "Datenschutzrichtlinie"
+  },
+  "app_lock_and": {
+    "message": "und"
+  },
+  "app_lock_security_notice": {
+    "message": "Sicherheitshinweis"
+  },
+
+  "app_instruction_title": {
+    "message": "Schnellstart-Anleitung"
+  },
   "app_search_placeholder": {
     "message": "Lesezeichen suchen..."
-  },
-  "app_modal_export": {
-    "message": "Lesezeichen exportieren"
-  },
-  "app_options_hotkeys": {
-    "message": "Hotkeys"
-  },
-  "app_options_settings_alert": {
-    "message": "Einstellungen kommen bald!"
-  },
-  "app_options_collect": {
-    "message": "Chrome-Lesezeichen sammeln"
-  },
-  "app_import_modal": {
-    "message": "Lesezeichen importieren"
-  },
-  "app_import_modal_description": {
-    "message": "Datei hierher ziehen oder zum Auswählen klicken"
   },
   "app_cancel": {
     "message": "Abbrechen"
   },
-  "app_export_modal_description": {
-    "message": "Klicken Sie auf die Schaltfläche unten, um Ihre Lesezeichen als Datei zu exportieren. Sie können diese speichern und später bei Bedarf wieder importieren."
-  },
-  "app_export_modal_button": {
-    "message": "Exportieren"
-  },
-  "app_panic_description": {
-    "message": "Panic-Button einstellen (Standard = alt+p), um alle Tabs zu schließen und in einem Ordner zu speichern"
-  },
-  "app_ads_title": {
-    "message": "Wenn Sie ChatGPT nutzen, probieren Sie diese Erweiterung 👆"
-  },
-  "app_donate_title": {
-    "message": "Projekt unterstützen"
-  },
-  "app_feedback_title": {
-    "message": "Gefällt Ihnen die Erweiterung?"
-  },
-  "app_feedback_description": {
-    "message": "Ihre Meinung ist uns wichtig! Bitte bewerten Sie die App und hinterlassen Sie eine Rezension auf der Store-Seite."
-  },
-  "app_feedback_button_leave": {
-    "message": "Rezension schreiben"
-  },
-  "app_feedback_button_later": {
-    "message": "Später"
+  "app_close_button": {
+    "message": "Schließen"
   },
   "app_edit_title": {
     "message": "Lesezeichentitel bearbeiten"
@@ -101,38 +83,12 @@
   "app_create_folder": {
     "message": "Ordnernamen eingeben:"
   },
-  "app_options_save_open": {
-    "message": "Aktuelle Sitzung speichern"
-  },
-  "app_report_bug": {
-    "message": "Fehler melden"
-  },
-  "app_donate_h2_title": {
-    "message": "Ich entwickle diese Erweiterung allein, und Ihre Unterstützung hilft mir, das Projekt zu verbessern und es kostenlos zu halten."
-  },
-  "app_donate_qr": {
-    "message": "QR-Code scannen, um mich zu unterstützen"
-  },
-  "app_donate_or": {
-    "message": "Oder Button klicken 👇"
-  },
-  "app_rate_extension": {
-    "message": "Erweiterung bewerten"
-  },
-  "app_share_extension": {
-    "message": "Erweiterung teilen"
-  },
-  "app_community": {
-    "message": "Der Community beitreten"
-  },
-  "app_changelog": {
-    "message": "Änderungsprotokoll"
-  },
-  "app_close_button": {
-    "message": "Schließen"
-  },
+
   "app_header_guest_name": {
-    "message": "Gast-Benutzer"
+    "message": "Gastbenutzer"
+  },
+  "app_header_log_in": {
+    "message": "Anmelden"
   },
   "app_subscribe_free": {
     "message": "Kostenlos"
@@ -140,14 +96,24 @@
   "app_subscribe_pro": {
     "message": "PRO"
   },
-  "app_header_log_in": {
-    "message": "Anmelden"
+
+  "app_options_hotkeys": {
+    "message": "Tastenkürzel"
+  },
+  "app_options_settings_alert": {
+    "message": "Einstellungen kommen bald!"
+  },
+  "app_options_collect": {
+    "message": "Chrome-Lesezeichen importieren"
+  },
+  "app_options_save_open": {
+    "message": "Aktuelle Sitzung speichern"
   },
   "app_options_subscription_plan": {
-    "message": "Abonnement-Plan"
+    "message": "Abonnementplan"
   },
   "app_options_go_premium": {
-    "message": "Premium holen"
+    "message": "Premium aktivieren"
   },
   "app_options_data_tools": {
     "message": "Daten & Tools"
@@ -155,23 +121,30 @@
   "app_options_community_header": {
     "message": "Community"
   },
-  "app_changelog_unavailable": {
-    "message": "Inhalt nicht verfügbar"
+
+  "app_modal_export": {
+    "message": "Lesezeichen exportieren"
   },
-  "app_changelog_modal_title": {
-    "message": "Was gibt's Neues"
+  "app_export_modal_description": {
+    "message": "Klicke unten, um deine Lesezeichen als Datei zu exportieren. Du kannst sie speichern und später wieder importieren."
   },
-  "app_changelog_open_reddit": {
-    "message": "Vollständigen Beitrag auf Reddit öffnen"
+  "app_export_modal_button": {
+    "message": "Exportieren"
   },
-  "app_changelog_dismiss": {
-    "message": "Schließen"
+  "app_export_format_label": {
+    "message": "Format: JSON"
+  },
+  "app_import_modal": {
+    "message": "Lesezeichen importieren"
+  },
+  "app_import_modal_description": {
+    "message": "Ziehe deine Datei hierher oder klicke zum Auswählen"
   },
   "app_import_supported_format": {
     "message": "Unterstütztes Format: JSON-Konfiguration"
   },
   "app_import_click_browse": {
-    "message": "oder klicken, um Dateien zu durchsuchen"
+    "message": "oder klicken zum Durchsuchen"
   },
   "app_import_config_file_label": {
     "message": "Konfigurationsdatei"
@@ -179,9 +152,31 @@
   "app_import_standard_json": {
     "message": "Standard-JSON-Format"
   },
-  "app_export_format_label": {
-    "message": "Format: JSON"
+  "app_import_chrome_title": {
+    "message": "Chrome-Lesezeichen importieren?"
   },
+  "app_import_chrome_sub_title": {
+    "message": "Was importiert wird:"
+  },
+  "app_import_chrome_a1": {
+    "message": "Alle Lesezeichen"
+  },
+  "app_import_chrome_a2": {
+    "message": "Titel und URLs"
+  },
+  "app_import_chrome_a3": {
+    "message": "Lesezeichen aus der Lesezeichenleiste"
+  },
+  "app_import_chrome_a4": {
+    "message": "Deine Daten bleiben auf deinem Gerät"
+  },
+  "app_import_chrome_CTA": {
+    "message": "Chrome-Lesezeichen importieren"
+  },
+  "app_import_chrome_later": {
+    "message": "Vielleicht später"
+  },
+
   "app_context_copy_link": {
     "message": "Link kopieren"
   },
@@ -203,169 +198,28 @@
   "app_context_close_menu": {
     "message": "Menü schließen"
   },
+
   "app_qr_modal_info": {
-    "message": "Scannen, um diesen Link auf Ihrem Gerät zu öffnen"
+    "message": "Scannen, um den Link auf deinem Gerät zu öffnen"
   },
   "app_qr_close_button": {
     "message": "Schließen"
   },
+
   "app_pdf_no_url": {
     "message": "Keine URL angegeben"
   },
   "app_pdf_generating": {
-    "message": "Hochwertiges PDF wird generiert..."
+    "message": "Hochwertiges PDF wird erstellt..."
   },
   "app_pdf_error": {
     "message": "PDF-Daten sind leer"
   },
-  "app_lock_setup_description": {
-    "message": "Sichern Sie Ihre Lesezeichen mit einem Master-Passwort"
-  },
-  "app_lock_unlock_description": {
-    "message": "Der Zugriff auf Ihren privaten Bereich ist eingeschränkt"
-  },
-  "app_lock_legal_agreement": {
-    "message": "Durch Fortfahren akzeptieren Sie unsere"
-  },
-  "app_lock_terms": {
-    "message": "Nutzungsbedingungen"
-  },
-  "app_lock_privacy": {
-    "message": "Datenschutzerklärung"
-  },
-  "app_lock_and": {
-    "message": "und"
-  },
-  "app_lock_security_notice": {
-    "message": "Sicherheitshinweis"
-  },
-  "app_buy_no_internet": {
-    "message": "Keine Internetverbindung"
-  },
-  "app_buy_login_timeout": {
-    "message": "Anmeldung Zeitüberschreitung"
-  },
-  "app_buy_login_failed": {
-    "message": "Anmeldung fehlgeschlagen oder Fenster geschlossen."
-  },
-  "app_buy_wait_login": {
-    "message": "Warten auf Anmeldung..."
-  },
-  "app_buy_click_cancel": {
-    "message": "(Klicken zum Abbrechen)"
-  },
-  "app_buy_cancel_user": {
-    "message": "Vom Benutzer abgebrochen"
-  },
-  "app_buy_popup_blocked": {
-    "message": "Pop-up blockiert"
-  },
-  "app_buy_session_failed": {
-    "message": "Sitzungsprüfung fehlgeschlagen"
-  },
-  "app_buy_login_window_error": {
-    "message": "Anmeldefenster konnte nicht geöffnet werden"
-  },
-  "app_premium_title": {
-    "message": "Freischalten"
-  },
-  "app_premium_pro_power": {
-    "message": "Pro Power"
-  },
-  "app_premium_subtitle": {
-    "message": "Sichern Sie Ihre Bibliothek in der Cloud und greifen Sie von überall darauf zu."
-  },
-  "app_premium_feature_unlimited": {
-    "message": "Unbegrenzte Ordner"
-  },
-  "app_premium_feature_sync": {
-    "message": "Verschlüsselte Cloud-Synchronisierung in Echtzeit"
-  },
-  "app_premium_feature_data": {
-    "message": "Daten & Tools"
-  },
-  "app_premium_feature_data_sub1": {
-    "message": "Import/Export"
-  },
-  "app_premium_feature_data_sub2": {
-    "message": "Chrome Collect"
-  },
-  "app_premium_feature_data_sub3": {
-    "message": "Session Saver"
-  },
-  "app_premium_feature_data_sub4": { "message": "Panikknopf" },
 
-  "app_premium_feature_toolkit": {
-    "message": "Erweitertes Toolkit"
+  "app_panic_description": {
+    "message": "Panik-Button festlegen (Standard = Alt+P), um alle Tabs zu schließen und in einem Ordner zu speichern"
   },
-  "app_premium_feature_toolkit_sub1": {
-    "message": "KI-Zusammenfassungen"
-  },
-  "app_premium_feature_toolkit_sub2": {
-    "message": "PDF-Uploads"
-  },
-  "app_premium_feature_toolkit_sub3": {
-    "message": "QR-Generator"
-  },
-  "app_premium_feature_toolkit_sub4": {
-    "message": "Tab-Gruppe"
-  },
-  "app_premium_btn_upgrade": {
-    "message": "Upgrade auf Pro für $PRICE$/Monat",
-    "placeholders": {
-      "price": {
-        "content": "$1"
-      }
-    }
-  },
-  "app_premium_btn_checking": {
-    "message": "Zahlung wird geprüft..."
-  },
-  "app_premium_btn_success": {
-    "message": "Erfolg! Viel Spaß mit Pro"
-  },
-  "app_premium_btn_retry": {
-    "message": "Wiederholen in "
-  },
-  "app_premium_btn_check_status": {
-    "message": "Ich habe bezahlt, Status prüfen"
-  },
-  "app_premium_btn_later": {
-    "message": "Später prüfen"
-  },
-  "app_premium_btn_no_thanks": {
-    "message": "Nein danke, ich bleibe beim kostenlosen Plan"
-  },
-  "app_btn_get_pro_title": {
-    "message": "Upgrade auf Pro"
-  },
-  "app_btn_get_pro_subtitle": {
-    "message": "Unbegrenzten Zugriff erhalten"
-  },
-  "app_sub_manage_title": {
-    "message": "Abonnement-Plan"
-  },
-  "app_sub_manage_subtitle": {
-    "message": "Abrechnung und Rechnungen verwalten"
-  },
-  "app_sub_error_auth": {
-    "message": "Nicht authentifiziert. Bitte anmelden."
-  },
-  "app_sub_error_url": {
-    "message": "Portal-URL in der Antwort nicht gefunden"
-  },
-  "app_sub_error_unknown": {
-    "message": "Ein unbekannter Fehler ist aufgetreten"
-  },
-  "app_sub_error_fail": {
-    "message": "Abonnement-Portal konnte nicht geöffnet werden: "
-  },
-  "app_donate_coffee": {
-    "message": "Spendier mir einen Kaffee"
-  },
-  "app_donate_close": {
-    "message": "Schließen"
-  },
+
   "app_sync_offline": {
     "message": "Offline"
   },
@@ -379,7 +233,7 @@
     "message": "Aktuell"
   },
   "app_sync_conflict_title": {
-    "message": "Datenbank-Konflikt"
+    "message": "Datenbankkonflikt"
   },
   "app_sync_conflict_desc": {
     "message": "Änderungen auf mehreren Geräten erkannt"
@@ -394,27 +248,249 @@
     "message": "Zusammenführen"
   },
   "app_sync_last": {
-    "message": "Zuletzt:"
+    "message": "Letztes:"
   },
   "app_sync_force_title": {
-    "message": "Cloud-Sync erzwingen"
+    "message": "Cloud-Synchronisierung erzwingen"
   },
+
   "app_signout_title": {
     "message": "Abmelden"
   },
   "app_signout_description": {
-    "message": "Wie möchten Sie mit Ihren lokalen Daten verfahren?"
+    "message": "Wie möchtest du mit deinen lokalen Daten fortfahren?"
   },
   "app_signout_keep_data": {
-    "message": "Abmelden & Daten behalten"
+    "message": "Abmelden und Daten behalten"
   },
   "app_signout_delete_all": {
-    "message": "Abmelden & Alles löschen"
+    "message": "Abmelden und alle Daten löschen"
   },
   "app_signout_or": {
     "message": "oder"
   },
   "app_signout_stay": {
-    "message": "Angemeldet bleiben"
+    "message": "Eingeloggt bleiben"
+  },
+
+  "app_premium_title": {
+    "message": "Freischalten"
+  },
+  "app_premium_pro_power": {
+    "message": "Pro-Power"
+  },
+  "app_premium_subtitle": {
+    "message": "Speichere deine Bibliothek in der Cloud und greife überall darauf zu."
+  },
+  "app_premium_feature_unlimited": {
+    "message": "Unbegrenzte Ordner"
+  },
+  "app_premium_feature_sync": {
+    "message": "Verschlüsselte Echtzeit-Cloud-Synchronisierung"
+  },
+  "app_premium_feature_data": {
+    "message": "Daten & Tools"
+  },
+  "app_premium_feature_data_sub1": {
+    "message": "Import/Export"
+  },
+  "app_premium_feature_data_sub2": {
+    "message": "Chrome-Sammlung"
+  },
+  "app_premium_feature_data_sub3": {
+    "message": "Sitzungsspeicher"
+  },
+  "app_premium_feature_data_sub4": {
+    "message": "Panik-Button"
+  },
+  "app_premium_feature_toolkit": {
+    "message": "Erweitertes Toolkit"
+  },
+  "app_premium_feature_toolkit_sub1": {
+    "message": "KI-Zusammenfassungen"
+  },
+  "app_premium_feature_toolkit_sub2": {
+    "message": "PDF-Uploads"
+  },
+  "app_premium_feature_toolkit_sub3": {
+    "message": "QR-Generator"
+  },
+  "app_premium_btn_upgrade": {
+    "message": "Upgrade auf Pro für $PRICE$/Monat",
+    "placeholders": {
+      "price": {
+        "content": "$1"
+      }
+    }
+  },
+  "app_premium_btn_checking": {
+    "message": "Zahlung wird geprüft..."
+  },
+  "app_premium_btn_success": {
+    "message": "Erfolgreich! Viel Spaß mit Pro"
+  },
+  "app_premium_btn_retry": {
+    "message": "Erneut versuchen in "
+  },
+  "app_premium_btn_check_status": {
+    "message": "Ich habe bezahlt, Status prüfen"
+  },
+  "app_premium_btn_later": {
+    "message": "Später prüfen"
+  },
+  "app_premium_btn_no_thanks": {
+    "message": "Nein danke, ich bleibe beim kostenlosen Plan"
+  },
+  "app_btn_get_pro_title": {
+    "message": "Auf Pro upgraden"
+  },
+  "app_btn_get_pro_subtitle": {
+    "message": "Unbegrenzter Zugriff"
+  },
+  "app_sub_manage_title": {
+    "message": "Abonnementplan"
+  },
+  "app_sub_manage_subtitle": {
+    "message": "Abrechnung und Rechnungen verwalten"
+  },
+  "app_sub_error_auth": {
+    "message": "Nicht angemeldet. Bitte einloggen."
+  },
+  "app_sub_error_url": {
+    "message": "Portal-URL nicht in der Antwort gefunden"
+  },
+  "app_sub_error_unknown": {
+    "message": "Unbekannter Fehler aufgetreten"
+  },
+  "app_sub_error_fail": {
+    "message": "Fehler beim Öffnen des Abonnement-Portals: "
+  },
+
+  "app_buy_no_internet": {
+    "message": "Keine Internetverbindung"
+  },
+  "app_buy_login_timeout": {
+    "message": "Login-Zeitüberschreitung"
+  },
+  "app_buy_login_failed": {
+    "message": "Anmeldung fehlgeschlagen oder abgebrochen"
+  },
+  "app_buy_wait_login": {
+    "message": "Warte auf Anmeldung..."
+  },
+  "app_buy_click_cancel": {
+    "message": "(Zum Abbrechen klicken)"
+  },
+  "app_buy_cancel_user": {
+    "message": "Vom Benutzer abgebrochen"
+  },
+  "app_buy_popup_blocked": {
+    "message": "Popup blockiert"
+  },
+  "app_buy_session_failed": {
+    "message": "Sitzungsprüfung fehlgeschlagen"
+  },
+  "app_buy_login_window_error": {
+    "message": "Anmeldefenster konnte nicht geöffnet werden"
+  },
+
+  "app_options_PH": {
+    "message": "50 Prozent Rabatt erhalten"
+  },
+  "app_options_PH_Title": {
+    "message": "Hilf Private Bookmark Locker beim Wachsen 🚀"
+  },
+  "app_options_PH_sub_title": {
+    "message": "Wenn dir diese Erweiterung gefällt, hilft ein Upvote auf Product Hunt sehr. Außerdem gibt es einen exklusiven"
+  },
+  "app_options_PH_sub_title_discount": {
+    "message": "50 Prozent Rabatt"
+  },
+  "app_options_PH_sub_title_supporter": {
+    "message": "Deine Unterstützung hilft:"
+  },
+  "app_options_PH_helps_title": {
+    "message": "verfügbar auf der Product Hunt Seite"
+  },
+  "app_options_PH_helps1": {
+    "message": "• Mehr Nutzer erreichen"
+  },
+  "app_options_PH_helps2": {
+    "message": "• Zukünftige Funktionen verbessern"
+  },
+  "app_options_PH_helps3": {
+    "message": "• Das Projekt weiter wachsen lassen"
+  },
+  "app_options_PH_helps4": {
+    "message": "• 50 Prozent Rabatt erhalten"
+  },
+  "app_options_PH_cta": {
+    "message": "Unterstützen + 50 Prozent Rabatt sichern"
+  },
+  "app_options_PH_cta_later": {
+    "message": "Vielleicht später"
+  },
+
+  "app_changelog": {
+    "message": "Änderungsprotokoll"
+  },
+  "app_changelog_unavailable": {
+    "message": "Inhalt nicht verfügbar"
+  },
+  "app_changelog_modal_title": {
+    "message": "Was ist neu"
+  },
+  "app_changelog_open_reddit": {
+    "message": "Vollen Beitrag auf Reddit öffnen"
+  },
+  "app_changelog_dismiss": {
+    "message": "Schließen"
+  },
+  "app_rate_extension": {
+    "message": "Erweiterung bewerten"
+  },
+  "app_share_extension": {
+    "message": "Erweiterung teilen"
+  },
+  "app_community": {
+    "message": "Community beitreten"
+  },
+  "app_report_bug": {
+    "message": "Fehler melden"
+  },
+  "app_feedback_title": {
+    "message": "Gefällt dir die Erweiterung?"
+  },
+  "app_feedback_description": {
+    "message": "Wir freuen uns über deine Meinung. Bitte bewerte die App im Store und hinterlasse eine Rezension."
+  },
+  "app_feedback_button_leave": {
+    "message": "Bewertung abgeben"
+  },
+  "app_feedback_button_later": {
+    "message": "Später"
+  },
+
+  "app_donate_title": {
+    "message": "Projekt unterstützen"
+  },
+  "app_donate_h2_title": {
+    "message": "Ich entwickle diese Erweiterung allein und deine Unterstützung hilft mir, das Projekt zu verbessern und kostenlos zu halten."
+  },
+  "app_donate_qr": {
+    "message": "QR-Code scannen, um zu unterstützen"
+  },
+  "app_donate_or": {
+    "message": "Oder Button klicken👇"
+  },
+  "app_donate_coffee": {
+    "message": "Kauf mir einen Kaffee"
+  },
+  "app_donate_close": {
+    "message": "Schließen"
+  },
+
+  "app_ads_title": {
+    "message": "Wenn du ChatGPT nutzt, probiere diese Erweiterung👆"
   }
 }
