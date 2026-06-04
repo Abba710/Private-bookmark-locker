@@ -14,6 +14,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
       }
     })
     chrome.tabs.create({ url: 'https://abbablog.me/blog/quick-start' })
+    await chrome.storage.local.set({ showImportChromeBookmarks: true })
   } else if (details.reason === 'update') {
     // Set a flag to show update notification
     await chrome.storage.local.set({ showUpdateNotification: true })

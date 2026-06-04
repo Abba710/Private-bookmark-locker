@@ -65,7 +65,10 @@
     "message": "50% discount"
   },
   "app_options_PH_sub_title_supporter": {
-    "message": "available for supporters."
+    "message": "Your support helps: "
+  },
+  "app_options_PH_helps_title": {
+    "message": "available on product hunt page"
   },
   "app_options_PH_helps1": {
     "message": "• Reach more users"
@@ -288,5 +291,13 @@
   "app_signout_keep_data": { "message": "Logout & Keep Data" },
   "app_signout_delete_all": { "message": "Logout & Delete All" },
   "app_signout_or": { "message": "or" },
-  "app_signout_stay": { "message": "Stay logged in" }
+  "app_signout_stay": { "message": "Stay logged in" },
+  "app_import_chrome_title": { "message": "Import Chrome Bookmarks?" },
+  "app_import_chrome_sub_title": { "message": "What will be imported:" },
+  "app_import_chrome_a1": { "message": "All bookmarks" },
+  "app_import_chrome_a2": { "message": "Title and Urls" },
+  "app_import_chrome_a3": { "message": "Bookmarks from your bookmarks bar" },
+  "app_import_chrome_a4": { "message": "Your data stays on your device" },
+  "app_import_chrome_CTA": { "message": "Import Chrome Bookmarks" },
+  "app_import_chrome_later": { "message": "Maybe Later" }
 }

@@ -32,6 +32,7 @@ import { initSync, stopSync } from '@/service/sync'
 import { TombstoneService } from '@/service/sync/tombstone'
 import deleteBookmarks from '@/util/deleteBookmarks'
 import type { StorageChanges, StorageSchema } from '@/types/types'
+import ImportBookmarksDialog from '@/components/chromeImportPanel'
 
 function App() {
   const auth = useAuth()
@@ -195,6 +196,7 @@ function App() {
           <NotificationsModal />
           <PhDialog />
           <QrModalUi />
+          <ImportBookmarksDialog />
 
           {/* Modals */}
           <UpgradeToProModal

@@ -47,7 +47,7 @@ export default function PhDialog() {
                   'app_options_PH_sub_title_discount'
                 )}{' '}
               </span>
-              {chrome.i18n.getMessage('app_options_PH_sub_title_supporter')}
+              {chrome.i18n.getMessage('app_options_PH_helps_title')}
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export default function PhDialog() {
               <TrendingUp className="w-5 h-5 text-orange-400" />
 
               <span className="text-sm text-white font-medium">
-                Your support helps:
+                {chrome.i18n.getMessage('app_options_PH_sub_title_supporter')}
               </span>
             </div>
 
@@ -65,7 +65,6 @@ export default function PhDialog() {
               <div>{chrome.i18n.getMessage('app_options_PH_helps1')}</div>
               <div>{chrome.i18n.getMessage('app_options_PH_helps2')}</div>
               <div>{chrome.i18n.getMessage('app_options_PH_helps3')}</div>
-              <div>{chrome.i18n.getMessage('app_options_PH_helps4')}</div>
             </div>
           </div>
 
