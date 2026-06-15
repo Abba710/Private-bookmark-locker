@@ -4,6 +4,7 @@
   "version": "2.0.7",
   "manifest_version": 3,
   "description": "__MSG_app_description__",
+
   "permissions": [
     "storage",
     "tabs",
@@ -14,13 +15,16 @@
     "scripting",
     "debugger"
   ],
+
   "background": {
-    "service_worker": "background.js",
+    "service_worker": "src/background.js",
     "type": "module"
   },
+
   "side_panel": {
     "default_path": "index.html"
   },
+
   "action": {
     "default_icon": {
       "16": "images/icon16.png",
@@ -28,11 +32,13 @@
       "128": "images/icon128.png"
     }
   },
+
   "icons": {
     "16": "images/icon16.png",
     "48": "images/icon48.png",
     "128": "images/icon128.png"
   },
+
   "commands": {
     "close_all_tabs": {
       "suggested_key": {
@@ -47,10 +53,31 @@
       "description": "Save current tab as bookmark."
     }
   },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content_script.tsx"]
+    }
+  ],
+
+  "host_permissions": ["<all_urls>"],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/icon16.png",
+        "images/icon48.png",
+        "images/icon128.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   },
-  "host_permissions": ["<all_urls>"],
+
   "oauth2": {
     "client_id": "872667949856-rgggfos3et4lu1utu2n8beecthf2cqno.apps.googleusercontent.com",
     "scopes": ["openid", "email", "profile"]

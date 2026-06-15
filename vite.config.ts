@@ -2,28 +2,14 @@ import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
+import { crx } from '@crxjs/vite-plugin'
+import manifest from './manifest.json'
 
 export default defineConfig({
-  plugins: [preact(), tailwindcss()],
+  plugins: [preact(), tailwindcss(), crx({ manifest })],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-    },
-  },
-  build: {
-    rollupOptions: {
-      input: {
-        index: path.resolve(__dirname, 'index.html'),
-        background: path.resolve(__dirname, 'src/background.js'),
-      },
-      output: {
-        entryFileNames: (chunk) => {
-          if (chunk.name === 'background') {
-            return 'background.js'
-          }
-          return '[name].js'
-        },
-      },
     },
   },
 })
