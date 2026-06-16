@@ -109,6 +109,10 @@
   "app_options_save_open": {
     "message": "Aktuelle Sitzung speichern"
   },
+  "app_options_widget_show": { "message": "Widget anzeigen" },
+  "app_options_widget_hide": { "message": "Widget ausblenden" },
+  "app_options_widget_save": { "message": "Seite speichern" },
+  "app_options_widget_open": { "message": "Seitenleiste öffnen" },
   "app_options_subscription_plan": {
     "message": "Abonnementplan"
   },

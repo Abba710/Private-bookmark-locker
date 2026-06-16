@@ -109,6 +109,10 @@
   "app_options_save_open": {
     "message": "Сохранить текущую сессию"
   },
+  "app_options_widget_show": { "message": "Показать виджет" },
+  "app_options_widget_hide": { "message": "Скрыть виджет" },
+  "app_options_widget_save": { "message": "Сохранить страницу" },
+  "app_options_widget_open": { "message": "Открыть боковую панель" },
   "app_options_subscription_plan": {
     "message": "Тарифный план"
   },

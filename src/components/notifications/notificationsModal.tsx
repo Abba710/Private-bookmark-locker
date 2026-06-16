@@ -151,7 +151,7 @@ function RedditPostCard({ postUrl }: { postUrl: string }) {
 export default function ChangelogDialog() {
   const { notificationOpen, setNotificationOpen } = useNotificationDialogStore()
   const redditPostUrl =
-    'https://www.reddit.com/user/Sad-Bed-3125/comments/1twj3gw/locker_private_bookmark_locker_v207_update_chrome/'
+    'https://www.reddit.com/user/Sad-Bed-3125/comments/1u7a1k3/locker_private_bookmark_locker_v210_add_side/'
 
   if (!notificationOpen) return null
 

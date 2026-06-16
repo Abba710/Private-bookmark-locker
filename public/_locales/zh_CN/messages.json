@@ -109,6 +109,10 @@
   "app_options_save_open": {
     "message": "保存当前会话"
   },
+  "app_options_widget_show": { "message": "显示小组件" },
+  "app_options_widget_hide": { "message": "隐藏小组件" },
+  "app_options_widget_save": { "message": "保存页面" },
+  "app_options_widget_open": { "message": "打开侧边栏" },
   "app_options_subscription_plan": {
     "message": "订阅方案"
   },

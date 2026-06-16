@@ -110,10 +110,16 @@
     "message": "Save the current session"
   },
   "app_options_widget_show": {
-    "message": "Show Widget"
+    "message": "Show widget"
   },
   "app_options_widget_hide": {
-    "message": "Hide Widget"
+    "message": "Hide widget"
+  },
+  "app_options_widget_save": {
+    "message": "Save page"
+  },
+  "app_options_widget_open": {
+    "message": "Sidepanel open"
   },
   "app_options_subscription_plan": {
     "message": "Subscription Plan"

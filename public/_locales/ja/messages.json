@@ -109,6 +109,10 @@
   "app_options_save_open": {
     "message": "現在のセッションを保存"
   },
+  "app_options_widget_show": { "message": "ウィジェットを表示" },
+  "app_options_widget_hide": { "message": "ウィジェットを非表示" },
+  "app_options_widget_save": { "message": "ページを保存" },
+  "app_options_widget_open": { "message": "サイドパネルを開く" },
   "app_options_subscription_plan": {
     "message": "サブスクリプションプラン"
   },

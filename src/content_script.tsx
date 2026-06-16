@@ -75,18 +75,18 @@ function FloatingWidget() {
   const buttons: ActionButton[] = [
     {
       icon: <PanelRight size={14} strokeWidth={1.8} />,
-      label: 'Open side panel',
+      label: chrome.i18n.getMessage('app_options_widget_open'),
       onClick: handleOpenSidePanel,
     },
     {
       icon: <BookmarkPlus size={14} strokeWidth={1.8} />,
-      label: 'Save page',
+      label: chrome.i18n.getMessage('app_options_widget_save'),
       onClick: handleSavePage,
       variant: 'primary',
     },
     {
       icon: <EyeOff size={13} strokeWidth={1.8} />,
-      label: 'Hide widget',
+      label: chrome.i18n.getMessage('app_options_widget_hide'),
       onClick: handleHide,
       variant: 'danger',
     },
