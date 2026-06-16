@@ -1,14 +1,7 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BookmarkPlus, EyeOff, PanelRight } from 'lucide-react'
-
-// ── Action stubs ─────────────────────────────────────────────────────────────
-const handleOpenSidePanel = () => console.log('[Locker] Open side panel')
-const handleSavePage = () => console.log('[Locker] Save page')
-const handleHideWidget = (hide: () => void) => {
-  console.log('[Locker] Hide')
-  hide()
-}
+import { useFloatWidgetStore } from '@/storage/statelibrary'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 interface ActionButton {
@@ -20,8 +13,44 @@ interface ActionButton {
 
 // ── Widget ───────────────────────────────────────────────────────────────────
 function FloatingWidget() {
+  const hidden = useFloatWidgetStore((s) => s.hidden)
+  const setHidden = useFloatWidgetStore((s) => s.setHidden)
+
+  // ── Action stubs ─────────────────────────────────────────────────────────────
+  const handleOpenSidePanel = () => {
+    chrome.runtime.sendMessage({ action: 'open_sidepanel' })
+  }
+  const handleSavePage = () => {
+    chrome.runtime.sendMessage({ action: 'save_tab' })
+  }
+
+  const handleHide = () => {
+    setExpanded(false)
+    setHidden(true)
+    chrome.storage.local.set({ widgetStatus: false })
+  }
+
+  useEffect(() => {
+    chrome.storage.local.get('widgetStatus').then(({ widgetStatus }) => {
+      if (widgetStatus === undefined) {
+        chrome.storage.local.set({ widgetStatus: true })
+        setHidden(false)
+      } else {
+        setHidden(!widgetStatus)
+      }
+    })
+
+    const listener = (changes: any) => {
+      if ('widgetStatus' in changes) {
+        setHidden(!changes.widgetStatus.newValue)
+      }
+    }
+
+    chrome.storage.onChanged.addListener(listener)
+    return () => chrome.storage.onChanged.removeListener(listener)
+  }, [])
+
   const [expanded, setExpanded] = useState(false)
-  const [hidden, setHidden] = useState(false)
   const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const iconUrl = chrome.runtime.getURL('images/icon48.png')
 
@@ -58,7 +87,7 @@ function FloatingWidget() {
     {
       icon: <EyeOff size={13} strokeWidth={1.8} />,
       label: 'Hide widget',
-      onClick: () => handleHideWidget(() => setHidden(true)),
+      onClick: handleHide,
       variant: 'danger',
     },
   ]

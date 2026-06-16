@@ -1,16 +1,17 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
-import type {
-  Bookmark,
-  BookmarkStore,
-  SwitchStore,
-  LockOverlayStore,
-  FeedbackStore,
-  supportDialogProps,
-  notificationDialogProps,
-  usePremiumModalStoreProps,
-  SubscribeState,
-  promoteProps,
+import {
+  type Bookmark,
+  type BookmarkStore,
+  type SwitchStore,
+  type LockOverlayStore,
+  type FeedbackStore,
+  type supportDialogProps,
+  type notificationDialogProps,
+  type usePremiumModalStoreProps,
+  type SubscribeState,
+  type promoteProps,
+  type useFloatWidgetStoreProps,
 } from '@/types/types'
 import { supabase } from '@/service/supabase'
 
@@ -126,3 +127,8 @@ export const useSubscribePlanStore = create<SubscribeState>()(
     }
   )
 )
+
+export const useFloatWidgetStore = create<useFloatWidgetStoreProps>((set) => ({
+  hidden: true,
+  setHidden: (hidden) => set({ hidden }),
+}))

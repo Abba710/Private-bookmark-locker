@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks'
+import { useState, useEffect } from 'react'
 import ImportDialog from '@/components/ImportExport/import'
 import ExportDialog from '@/components/ImportExport/export'
 import {
@@ -8,6 +8,7 @@ import {
   useSubscribePlanStore,
   usePremiumModalStore,
   usePromoteStore,
+  useFloatWidgetStore,
 } from '@/storage/statelibrary'
 import exportBookmarks from '@/features/importExport/export'
 import {
@@ -32,6 +33,7 @@ import {
   Share2,
   Heart,
   Bug,
+  Eye,
   ChevronRight,
   ChevronUp,
 } from 'lucide-react'
@@ -48,7 +50,8 @@ export default function OptionsPanel() {
   const bookmarks = useBookmarkStore((state) => state.bookmarks)
   const isPro = useSubscribePlanStore((state) => state.isPro)
   const promoteOpen = usePromoteStore((state) => state.setPromoteOpen)
-
+  const hidden = useFloatWidgetStore((s) => s.hidden)
+  const setHidden = useFloatWidgetStore((s) => s.setHidden)
   // Modal Actions
   const setPremiumModalOpen = usePremiumModalStore(
     (state) => state.setPremiumModalOpen
@@ -62,6 +65,25 @@ export default function OptionsPanel() {
   const [showImport, setShowImport] = useState(false)
   const [showExport, setShowExport] = useState(false)
 
+  useEffect(() => {
+    chrome.storage.local.get('widgetStatus').then(({ widgetStatus }) => {
+      if (widgetStatus === undefined) {
+        chrome.storage.local.set({ widgetStatus: true })
+        setHidden(false)
+      } else {
+        setHidden(!widgetStatus)
+      }
+    })
+
+    const listener = (changes: any) => {
+      if ('widgetStatus' in changes) {
+        setHidden(!changes.widgetStatus.newValue)
+      }
+    }
+
+    chrome.storage.onChanged.addListener(listener)
+    return () => chrome.storage.onChanged.removeListener(listener)
+  }, [])
   /**
    * Style mapping for dynamic color themes
    */
@@ -202,6 +224,21 @@ export default function OptionsPanel() {
             saveAllOpenTabs()
           }}
           color="indigo"
+        />
+        <OptionRow
+          icon={Eye}
+          isPremium={false}
+          label={
+            hidden
+              ? chrome.i18n.getMessage('app_options_widget_show')
+              : chrome.i18n.getMessage('app_options_widget_hide')
+          }
+          onClick={() => {
+            const next = !hidden
+            setHidden(next)
+            chrome.storage.local.set({ widgetStatus: !next }) // widgetStatus = true означает "виджет показан"
+          }}
+          color="orange"
         />
       </div>
 

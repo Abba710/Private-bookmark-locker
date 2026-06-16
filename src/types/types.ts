@@ -91,3 +91,8 @@ export interface useSubscribePlanStoreProps {
   isPro: boolean
   setPlan: (p: boolean) => void
 }
+
+export interface useFloatWidgetStoreProps {
+  hidden: boolean
+  setHidden: (hidden: boolean) => void
+}

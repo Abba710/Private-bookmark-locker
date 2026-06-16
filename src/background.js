@@ -96,22 +96,40 @@ chrome.commands.onCommand.addListener((command) => {
   }
 })
 
+function save_tab() {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    const tabId = tabs[0]?.id
+    chrome.sidePanel
+      .open({ tabId })
+      .then(() => {
+        setTimeout(() => {
+          chrome.runtime.sendMessage({ action: 'save_current_tab' })
+        }, 100)
+      })
+      .catch((error) => {
+        console.error('Failed to open side panel:', error)
+      })
+  })
+}
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.action === 'open_sidepanel') {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const tabId = tabs[0]?.id
+      chrome.sidePanel.open({ tabId })
+    })
+  }
+})
 chrome.commands.onCommand.addListener((command) => {
   if (command === 'save_tab') {
     console.log('alt+s pressed')
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      const tabId = tabs[0]?.id
-      chrome.sidePanel
-        .open({ tabId })
-        .then(() => {
-          setTimeout(() => {
-            chrome.runtime.sendMessage({ action: 'save_current_tab' })
-          }, 100)
-        })
-        .catch((error) => {
-          console.error('Failed to open side panel:', error)
-        })
-    })
+    save_tab()
+  }
+})
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.action === 'save_tab') {
+    save_tab()
   }
 })
 

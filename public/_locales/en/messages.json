@@ -109,6 +109,12 @@
   "app_options_save_open": {
     "message": "Save the current session"
   },
+  "app_options_widget_show": {
+    "message": "Show Widget"
+  },
+  "app_options_widget_hide": {
+    "message": "Hide Widget"
+  },
   "app_options_subscription_plan": {
     "message": "Subscription Plan"
   },
