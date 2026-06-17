@@ -287,6 +287,15 @@ const CSS = `
 // ── Shadow DOM mount ──────────────────────────────────────────────────────────
 function mount() {
   if (document.getElementById('lk-host')) return
+  document.addEventListener('fullscreenchange', () => {
+    const host = document.getElementById('lk-host')
+
+    if (document.fullscreenElement) {
+      if (host) host.remove()
+    } else {
+      mount()
+    }
+  })
 
   const host = document.createElement('div')
   host.id = 'lk-host'
