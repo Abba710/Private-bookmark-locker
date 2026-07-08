@@ -1,17 +1,16 @@
-import { type Bookmark } from '../../types/types'
-import { LinkBookmark } from './linkBookmark'
-import { useState } from 'preact/hooks'
-import { Sortable } from '@/features/bookmarks/bookmarkSort'
-import ContextMenu from '@/components/contextMenu/contextMenu'
+import { type Bookmark } from "../../types/types";
+import { LinkBookmark } from "./linkBookmark";
+import { useState } from "preact/hooks";
+import { Sortable } from "@/features/bookmarks/bookmarkSort";
+import ContextMenu from "@/components/contextMenu/contextMenu";
 import {
   Folder,
   FolderOpen,
-  ChevronRight,
-  ChevronDown,
   GripVertical,
   Pencil,
   Trash2,
-} from 'lucide-react'
+  Menu,
+} from "lucide-react";
 
 export function FolderBookmark({
   bookmark,
@@ -21,17 +20,26 @@ export function FolderBookmark({
   onDelete,
   onEdit,
 }: {
-  bookmark: Bookmark
-  listeners: any
-  attributes: any
-  setDroppableRef: (node: HTMLElement | null) => void
-  onDelete: (id: string) => void
-  onEdit: (title: string | undefined, id: string) => void
+  bookmark: Bookmark;
+  listeners: any;
+  attributes: any;
+  setDroppableRef: (node: HTMLElement | null) => void;
+  onDelete: (id: string) => void;
+  onEdit: (title: string | undefined, id: string) => void;
 }) {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const childCount = bookmark.children?.length || 0
-  const [menuVisible, setMenuVisible] = useState(false)
-  const [menuPos, setMenuPos] = useState({ x: 0, y: 0 })
+  const [isExpanded, setIsExpanded] = useState(false);
+  const childCount = bookmark.children?.length || 0;
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [menuPos, setMenuPos] = useState({ x: 0, y: 0 });
+
+  function handleMenuClick(
+    e: React.MouseEvent<HTMLDivElement | HTMLButtonElement>,
+  ) {
+    e.preventDefault();
+    e.stopPropagation();
+    setMenuPos({ x: e.clientX, y: e.clientY });
+    setMenuVisible(true);
+  }
 
   return (
     <div className="flex flex-col gap-1 w-[90vw] max-w-[300px]">
@@ -40,15 +48,12 @@ export function FolderBookmark({
           relative flex items-center gap-0 min-h-[52px] px-3 py-2 transition-all duration-300 group rounded-2xl border overflow-hidden
           ${
             isExpanded
-              ? 'bg-white/[0.08] border-indigo-500/30 shadow-[0_0_15px_rgba(99,102,241,0.1)]'
-              : 'bg-white/[0.04] border-white/[0.05] hover:bg-white/[0.08] hover:border-white/10'
+              ? "bg-white/[0.08] border-indigo-500/30 shadow-[0_0_15px_rgba(99,102,241,0.1)]"
+              : "bg-white/[0.04] border-white/[0.05] hover:bg-white/[0.08] hover:border-white/10"
           }
         `}
         onContextMenu={(e) => {
-          e.preventDefault()
-          e.stopPropagation()
-          setMenuPos({ x: e.clientX, y: e.clientY })
-          setMenuVisible(true)
+          handleMenuClick(e);
         }}
       >
         {/* Drag Handle */}
@@ -90,29 +95,25 @@ export function FolderBookmark({
         <div className="flex items-center w-0 group-hover:w-[110px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0">
           <div className="flex items-center gap-0.5 pl-2 border-l border-white/5">
             <button
-              className="p-1.5 text-gray-500 hover:text-white transition-colors"
-              onClick={() => setIsExpanded(!isExpanded)}
+              className="p-1.5 text-gray-500 hover:text-emerald-400 cursor-pointer transition-colors"
+              onClick={(e) => handleMenuClick(e)}
             >
-              {isExpanded ? (
-                <ChevronDown className="w-4 h-4" />
-              ) : (
-                <ChevronRight className="w-4 h-4" />
-              )}
+              <Menu className="w-4 h-4" />
             </button>
             <button
-              className="p-1.5 text-gray-400 hover:text-white transition-colors"
+              className="p-1.5 text-gray-400 hover:text-indigo-500 transition-colors cursor-pointer"
               onClick={(e) => {
-                e.stopPropagation()
-                onEdit(bookmark.title, bookmark.id)
+                e.stopPropagation();
+                onEdit(bookmark.title, bookmark.id);
               }}
             >
               <Pencil className="w-4 h-4" />
             </button>
             <button
-              className="p-1.5 text-gray-400 hover:text-red-400 transition-colors"
+              className="p-1.5 text-gray-400 hover:text-red-400 transition-colors cursor-pointer"
               onClick={(e) => {
-                e.stopPropagation()
-                onDelete(bookmark.id)
+                e.stopPropagation();
+                onDelete(bookmark.id);
               }}
             >
               <Trash2 className="w-4 h-4" />
@@ -156,5 +157,5 @@ export function FolderBookmark({
         />
       )}
     </div>
-  )
+  );
 }

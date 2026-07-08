@@ -1,10 +1,10 @@
-import { useLockOverlayStore } from '@/storage/statelibrary'
+import { useLockOverlayStore } from "@/storage/statelibrary";
 import {
   getLockStatus,
   handleSubmitPassword,
-} from '@/features/lock/lockservice'
-import { useEffect, useState } from 'preact/hooks'
-import { Lock, ShieldCheck, AlertCircle } from 'lucide-react'
+} from "@/features/lock/lockservice";
+import { useEffect, useState } from "preact/hooks";
+import { Lock, ShieldCheck, AlertCircle } from "lucide-react";
 
 /**
  * LockOverlay Component
@@ -13,29 +13,29 @@ import { Lock, ShieldCheck, AlertCircle } from 'lucide-react'
  */
 
 export default function LockOverlay() {
-  const mode = useLockOverlayStore((state) => state.mode)
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+  const mode = useLockOverlayStore((state) => state.mode);
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    ;(async () => {
-      await getLockStatus()
-    })()
-  }, [])
+    (async () => {
+      await getLockStatus();
+    })();
+  }, []);
 
   const submitPassword = async () => {
     if (!password.trim()) {
-      setError(chrome.i18n.getMessage('app_password_empty_error'))
-      return
+      setError(chrome.i18n.getMessage("app_password_empty_error"));
+      return;
     }
 
     try {
-      await handleSubmitPassword(password)
-      setError('')
+      await handleSubmitPassword(password);
+      setError("");
     } catch (err) {
-      setError(String(err))
+      setError(String(err));
     }
-  }
+  };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-[#09090b]/80 backdrop-blur-xl z-[100] p-4 animate-in fade-in duration-500">
@@ -48,7 +48,7 @@ export default function LockOverlay() {
 
         {/* SECURITY ICON BOX */}
         <div className="relative w-16 h-16 rounded-2xl bg-[#1a1a1a] border border-white/10 flex items-center justify-center mb-6 shadow-inner ring-1 ring-white/5">
-          {mode === 'setup' ? (
+          {mode === "setup" ? (
             <ShieldCheck className="w-8 h-8 text-indigo-400" />
           ) : (
             <Lock className="w-8 h-8 text-indigo-400" />
@@ -57,15 +57,15 @@ export default function LockOverlay() {
 
         {/* HEADER */}
         <h2 className="text-2xl font-bold text-white tracking-tight mb-2 text-center leading-tight">
-          {mode === 'setup'
-            ? chrome.i18n.getMessage('app_create_password')
-            : chrome.i18n.getMessage('app_enter_password')}
+          {mode === "setup"
+            ? chrome.i18n.getMessage("app_create_password")
+            : chrome.i18n.getMessage("app_enter_password")}
         </h2>
 
         <p className="text-zinc-500 text-sm font-medium mb-8 text-center px-2">
-          {mode === 'setup'
-            ? chrome.i18n.getMessage('app_lock_setup_description')
-            : chrome.i18n.getMessage('app_lock_unlock_description')}
+          {mode === "setup"
+            ? chrome.i18n.getMessage("app_lock_setup_description")
+            : chrome.i18n.getMessage("app_lock_unlock_description")}
         </p>
 
         {/* INPUT FIELD */}
@@ -75,11 +75,11 @@ export default function LockOverlay() {
             autoFocus
             value={password}
             onInput={(e) => setPassword((e.target as HTMLInputElement).value)}
-            onKeyDown={(e) => e.key === 'Enter' && submitPassword()}
+            onKeyDown={(e) => e.key === "Enter" && submitPassword()}
             placeholder={
-              mode === 'setup'
-                ? chrome.i18n.getMessage('app_create_password_placeholder')
-                : chrome.i18n.getMessage('app_enter_password_placeholder')
+              mode === "setup"
+                ? chrome.i18n.getMessage("app_create_password_placeholder")
+                : chrome.i18n.getMessage("app_enter_password_placeholder")
             }
             className="w-full px-4 py-4 rounded-xl bg-white/[0.03] border border-white/10 text-white text-sm placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/50 transition-all"
           />
@@ -88,7 +88,7 @@ export default function LockOverlay() {
         {/* ERROR MESSAGE */}
         <div
           className={`flex items-center gap-2 overflow-hidden transition-all duration-300 ${
-            error ? 'h-6 opacity-100 mb-4' : 'h-0 opacity-0'
+            error ? "h-6 opacity-100 mb-4" : "h-0 opacity-0"
           }`}
         >
           <AlertCircle className="w-3.5 h-3.5 text-red-400" />
@@ -102,33 +102,33 @@ export default function LockOverlay() {
         >
           <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
           <span className="relative flex items-center justify-center gap-2">
-            {mode === 'setup'
-              ? chrome.i18n.getMessage('app_create_password_button')
-              : chrome.i18n.getMessage('app_unlock')}
+            {mode === "setup"
+              ? chrome.i18n.getMessage("app_create_password_button")
+              : chrome.i18n.getMessage("app_unlock")}
           </span>
         </button>
 
         {/* LEGAL LINKS: Only visible in setup mode */}
-        {mode === 'setup' && (
+        {mode === "setup" && (
           <div className="mt-6 text-center animate-in fade-in slide-in-from-top-2 duration-700">
             <p className="text-[11px] text-zinc-500 leading-relaxed px-4">
-              {chrome.i18n.getMessage('app_lock_legal_agreement')}{' '}
+              {chrome.i18n.getMessage("app_lock_legal_agreement")}{" "}
               <a
-                href="https://abbablog.me/projects/locker/terms"
+                href="https://abbablog.me/projects/locker/terms/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2"
               >
-                {chrome.i18n.getMessage('app_lock_terms')}
-              </a>{' '}
-              {chrome.i18n.getMessage('app_lock_and')}{' '}
+                {chrome.i18n.getMessage("app_lock_terms")}
+              </a>{" "}
+              {chrome.i18n.getMessage("app_lock_and")}{" "}
               <a
-                href="https://abbablog.me/projects/locker/privacy"
+                href="https://abbablog.me/projects/locker/privacy/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2"
               >
-                {chrome.i18n.getMessage('app_lock_privacy')}
+                {chrome.i18n.getMessage("app_lock_privacy")}
               </a>
               .
             </p>
@@ -139,12 +139,12 @@ export default function LockOverlay() {
       {/* FOOTER WARNING */}
       <div className="fixed bottom-10 flex flex-col items-center gap-2 px-6 max-w-[400px] animate-pulse">
         <p className="text-zinc-500 text-xs font-medium text-center uppercase tracking-[0.2em]">
-          {chrome.i18n.getMessage('app_lock_security_notice')}
+          {chrome.i18n.getMessage("app_lock_security_notice")}
         </p>
         <p className="text-zinc-400 text-sm font-medium text-center leading-relaxed">
-          {chrome.i18n.getMessage('app_password_warning')}
+          {chrome.i18n.getMessage("app_password_warning")}
         </p>
       </div>
     </div>
-  )
+  );
 }

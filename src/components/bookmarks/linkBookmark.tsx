@@ -1,7 +1,7 @@
-import { type Bookmark } from '@/types/types'
-import ContextMenu from '@/components/contextMenu/contextMenu'
-import { useState } from 'preact/hooks'
-import { GripVertical, Pencil, Trash2, Globe } from 'lucide-react'
+import { type Bookmark } from "@/types/types";
+import ContextMenu from "@/components/contextMenu/contextMenu";
+import { useState } from "preact/hooks";
+import { GripVertical, Pencil, Trash2, Globe, Menu } from "lucide-react";
 
 /**
  * LinkBookmark with dynamic title sliding.
@@ -19,44 +19,47 @@ export function LinkBookmark({
   onDelete,
   onEdit,
 }: {
-  bookmark: Bookmark
-  listeners: any
-  attributes: any
-  setDroppableRef: (node: HTMLElement | null) => void
-  onDelete: (id: string) => void
-  onEdit: (title: string | undefined, id: string) => void
+  bookmark: Bookmark;
+  listeners: any;
+  attributes: any;
+  setDroppableRef: (node: HTMLElement | null) => void;
+  onDelete: (id: string) => void;
+  onEdit: (title: string | undefined, id: string) => void;
 }) {
-  const [menuVisible, setMenuVisible] = useState(false)
-  const [menuPos, setMenuPos] = useState({ x: 0, y: 0 })
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [menuPos, setMenuPos] = useState({ x: 0, y: 0 });
 
   const getFaviconUrl = (url?: string) => {
-    if (!url) return ''
+    if (!url) return "";
     try {
-      const domain = new URL(url).hostname
-      return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`
+      const domain = new URL(url).hostname;
+      return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     } catch {
-      return ''
+      return "";
     }
-  }
+  };
 
   const getDomain = (url?: string) => {
-    if (!url) return ''
+    if (!url) return "";
     try {
-      return new URL(url).hostname.replace('www.', '')
+      return new URL(url).hostname.replace("www.", "");
     } catch {
-      return url
+      return url;
     }
+  };
+  function handleMenuClick(
+    e: React.MouseEvent<HTMLDivElement | HTMLButtonElement>,
+  ) {
+    e.preventDefault();
+    e.stopPropagation();
+    setMenuPos({ x: e.clientX, y: e.clientY });
+    setMenuVisible(true);
   }
 
   return (
     <div
       className="group relative flex items-center gap-0 w-[90vw] max-w-[300px] min-h-[52px] px-3 py-2 bg-white/[0.04] border border-white/[0.05] rounded-2xl hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300 overflow-hidden"
-      onContextMenu={(e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        setMenuPos({ x: e.clientX, y: e.clientY })
-        setMenuVisible(true)
-      }}
+      onContextMenu={(e) => handleMenuClick(e)}
     >
       {/* Drag handle - Absolute positioned to not take space */}
       <div
@@ -70,17 +73,17 @@ export function LinkBookmark({
       <a
         href={bookmark.url}
         onClick={(e) => {
-          e.preventDefault()
+          e.preventDefault();
           chrome.windows.getCurrent((window) => {
             if (window.incognito === bookmark.incognito) {
-              chrome.tabs.create({ url: bookmark.url, windowId: window.id })
+              chrome.tabs.create({ url: bookmark.url, windowId: window.id });
             } else {
               chrome.windows.create({
                 url: bookmark.url,
                 incognito: bookmark.incognito,
-              })
+              });
             }
-          })
+          });
         }}
         target="_blank"
         rel="noopener noreferrer"
@@ -111,12 +114,18 @@ export function LinkBookmark({
       </a>
 
       {/* DYNAMIC ACTIONS: Slide in effect */}
-      <div className="flex items-center w-0 group-hover:w-[76px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0">
+      <div className="flex items-center w-0 group-hover:w-[110px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0">
         <div className="flex items-center gap-0.5 pl-2 border-l border-white/5">
           <button
+            className="p-1.5 text-gray-500 hover:text-emerald-400 cursor-pointer transition-colors"
+            onClick={(e) => handleMenuClick(e)}
+          >
+            <Menu className="w-4 h-4" />
+          </button>
+          <button
             onClick={(e) => {
-              e.stopPropagation()
-              onEdit(bookmark.title, bookmark.id)
+              e.stopPropagation();
+              onEdit(bookmark.title, bookmark.id);
             }}
             className="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
           >
@@ -124,8 +133,8 @@ export function LinkBookmark({
           </button>
           <button
             onClick={(e) => {
-              e.stopPropagation()
-              onDelete(bookmark.id)
+              e.stopPropagation();
+              onDelete(bookmark.id);
             }}
             className="p-2 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
           >
@@ -143,5 +152,5 @@ export function LinkBookmark({
         />
       )}
     </div>
-  )
+  );
 }
