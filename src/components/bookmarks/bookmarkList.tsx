@@ -18,7 +18,6 @@ import { Sortable, handleDragEnd } from '@/features/bookmarks/bookmarkSort'
 import { FolderBookmark } from './folderBookmark'
 import { LinkBookmark } from './linkBookmark'
 import type { Bookmark } from '@/types/types'
-import { BookmarkSearch } from './bookmarksearch'
 
 function BookmarkList() {
   const sensors = useSensors(useSensor(PointerSensor))
@@ -52,24 +51,10 @@ function BookmarkList() {
     editBookmarkTitle(bookmarks, title, id)
   }
 
-  const handleBookmarkSelect = (bookmark: Bookmark) => {
-    if (bookmark.url) {
-      window.open(bookmark.url, '_blank')
-    }
-  }
-
   return (
-    <div className="w-full flex flex-col gap-6 relative">
+    <div className="w-full h-full flex flex-col gap-6 relative mb-10">
       {/* Decorative Glow - copied modal effect for background depth behind the list */}
       <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-indigo-500/5 blur-[100px] pointer-events-none" />
-
-      {/* Search Header Section */}
-      <div className="px-1 relative z-10">
-        <BookmarkSearch
-          onBookmarkSelect={handleBookmarkSelect}
-          placeholder={chrome.i18n.getMessage('app_search_placeholder')}
-        />
-      </div>
 
       {/* Main List Area */}
       <DndContext
@@ -80,8 +65,8 @@ function BookmarkList() {
         <SortableContext items={allIds}>
           <div
             className={`
-              flex flex-wrap items-start content-start justify-start gap-3 w-full 
-              min-h-[70vh] max-h-[100vh] overflow-y-auto overflow-x-hidden p-2
+              flex flex-wrap items-start content-start justify-start gap-1 w-full
+              h-full min-h-0 overflow-y-auto overflow-x-hidden py-2
               /* Custom Scrollbar - Indigo style */
               scrollbar-thin scrollbar-thumb-white/5 scrollbar-track-transparent
               hover:scrollbar-thumb-indigo-500/20 transition-all duration-300
@@ -98,7 +83,7 @@ function BookmarkList() {
                     /* Card entrance animation.
                        The bookmark layout now features consistent gaps and smooth transitions.
                     */
-                    <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+                    <div className="animate-in h-full fade-in slide-in-from-bottom-2 duration-300">
                       {bookmark.isFolder ? (
                         <FolderBookmark
                           bookmark={bookmark}

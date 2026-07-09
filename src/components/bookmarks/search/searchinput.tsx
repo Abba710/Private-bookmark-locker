@@ -17,7 +17,7 @@ export const SearchInput: FunctionalComponent<SearchInputProps> = ({
   placeholder = 'Search bookmarks...',
 }) => {
   return (
-    <div className="relative group w-full">
+    <div className="relative group min-w-full">
       {/* Search Icon */}
       <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none">
         <Search className="w-4 h-4 text-gray-500 group-focus-within:text-indigo-400 transition-colors duration-200" />
@@ -31,11 +31,11 @@ export const SearchInput: FunctionalComponent<SearchInputProps> = ({
         onBlur={onBlur}
         placeholder={placeholder}
         className={`
-          w-full h-[44px] pl-10 pr-12 text-sm text-white 
-          bg-white/[0.03] border border-white/10 rounded-2xl 
+          w-full h-10 pl-10 pr-12 text-sm text-white
+          bg-white/[0.03] border border-white/10
           placeholder:text-gray-500
           transition-all duration-200 ease-out
-          focus:outline-none focus:bg-white/[0.07] focus:border-indigo-500/40 
+          focus:outline-none focus:bg-white/[0.07] focus:border-indigo-500/40
           focus:ring-4 focus:ring-indigo-500/10
         `}
       />

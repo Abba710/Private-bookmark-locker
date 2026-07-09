@@ -1,6 +1,9 @@
-import { LogIn, LogOut, Crown, User as UserIcon } from 'lucide-react'
+import { LogIn, LogOut, Crown, Settings } from 'lucide-react'
 import { Badge } from './ui/badge'
 import type { User } from '@/types/types'
+import { useNavigate } from "react-router-dom";
+
+
 
 interface UserHeaderProps {
   userData: User | null
@@ -17,69 +20,78 @@ export default function UserHeader({
 }: UserHeaderProps) {
   const username =
     userData?.mail || chrome.i18n.getMessage('app_header_guest_name')
-
+  const navigate = useNavigate();
   return (
-    <div className="relative flex items-center w-full h-[48px] px-3 bg-white/[0.03] border border-white/10 rounded-2xl backdrop-blur-md">
+    <div className="flex items-center h-12 px-3 border-b border-white/5 bg-white/[0.03] backdrop-blur-md shrink-0">
       {userData ? (
-        <div className="flex w-full items-center gap-3">
-          <div className="flex items-center gap-3 overflow-hidden">
-            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center">
-              <UserIcon className="w-4 h-4 text-indigo-300" />
-            </div>
+        <>
+          <div className="flex min-w-0 items-center gap-2">
+            <p className="truncate text-sm font-medium text-white max-w-[140px]">
+              {username}
+            </p>
 
-            <div className="flex items-center gap-2 overflow-hidden">
-              <p className="text-white text-sm font-medium truncate max-w-[120px]">
-                {username}
-              </p>
-
-              <Badge
-                variant="outline"
-                className={`cursor-pointer transition-colors ${
-                  !isPro
-                    ? 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10'
-                    : 'bg-indigo-500/10 text-indigo-300 border-indigo-500/30 shadow-[0_0_10px_rgba(99,102,241,0.1)]'
-                }`}
-              >
-                {!isPro ? (
-                  <span className="text-[10px] uppercase tracking-wider font-bold">
-                    {chrome.i18n.getMessage('app_subscribe_free')}
-                  </span>
-                ) : (
-                  <div className="flex items-center gap-1 text-[10px] uppercase tracking-wider font-bold">
-                    <Crown
-                      className="w-3 h-3 text-indigo-400"
-                      fill="currentColor"
-                    />
-                    {chrome.i18n.getMessage('app_subscribe_pro')}
-                  </div>
-                )}
-              </Badge>
-            </div>
+            <Badge
+              variant="outline"
+              className={
+                isPro
+                  ? "border-indigo-500/30 bg-indigo-500/10 text-indigo-300"
+                  : "border-white/10 bg-white/5 text-gray-400"
+              }
+            >
+              {isPro ? (
+                <span className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider">
+                  <Crown className="h-3 w-3 fill-current" />
+                  PRO
+                </span>
+              ) : (
+                <span className="text-[10px] font-semibold uppercase tracking-wider">
+                  FREE
+                </span>
+              )}
+            </Badge>
           </div>
 
-          <button
-            className="ml-auto p-2 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-all active:scale-95"
-            onClick={logOut}
-          >
-            <LogOut className="w-5 h-5" />
-          </button>
-        </div>
+          <div className="ml-auto flex items-center gap-1">
+            <button
+              onClick={() => navigate('/settings')}
+              className="flex h-9 w-9 items-center justify-center rounded-xl text-zinc-400 transition hover:bg-white/5 hover:text-white"
+            >
+              <Settings className="h-4 w-4" />
+            </button>
+
+            <button
+              onClick={logOut}
+              className="flex h-9 w-9 items-center justify-center rounded-xl text-zinc-400 transition hover:bg-red-500/10 hover:text-red-300"
+            >
+              <LogOut className="h-4 w-4" />
+            </button>
+          </div>
+        </>
       ) : (
-        <div className="flex w-full items-center gap-3">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-gray-500">
-              <UserIcon className="w-4 h-4" />
-            </div>
-            <p className="text-gray-400 text-sm font-medium">{username}</p>
+        <>
+          <div className="min-w-0">
+            <p className="truncate text-sm text-zinc-400">
+              {username}
+            </p>
           </div>
-          <button
-            className="ml-auto flex items-center gap-2 py-1.5 px-3 rounded-xl bg-indigo-600/10 hover:bg-indigo-600/20 text-indigo-400 border border-indigo-500/20 transition-all active:scale-95 text-sm font-semibold"
-            onClick={logIn}
-          >
-            <span>{chrome.i18n.getMessage('app_header_log_in')}</span>
-            <LogIn className="w-4 h-4" />
-          </button>
-        </div>
+
+          <div className="ml-auto flex items-center gap-2">
+            <button
+              onClick={() => navigate('/settings')}
+              className="flex h-9 w-9 items-center justify-center rounded-xl text-zinc-400 transition hover:bg-white/5 hover:text-white"
+            >
+              <Settings className="h-4 w-4" />
+            </button>
+
+            <button
+              onClick={logIn}
+              className="flex items-center gap-2 rounded-xl border border-indigo-500/20 bg-indigo-500/10 px-3 py-2 text-sm font-medium text-indigo-300 transition hover:bg-indigo-500/20"
+            >
+              <LogIn className="h-4 w-4" />
+              <span>{chrome.i18n.getMessage('app_header_log_in')}</span>
+            </button>
+          </div>
+        </>
       )}
     </div>
   )

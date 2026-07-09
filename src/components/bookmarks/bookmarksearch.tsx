@@ -4,7 +4,6 @@ import { SearchResults } from '@/components/bookmarks/search/searchResult'
 import { useBookmarkSearch } from '@/hooks/useBookmarkSearch'
 
 interface BookmarkSearchProps {
-  onBookmarkSelect?: (bookmark: any) => void
   placeholder?: string
 }
 
@@ -48,7 +47,7 @@ export const BookmarkSearch: FunctionalComponent<BookmarkSearchProps> = ({
   }
 
   return (
-    <div className="relative mb-3">
+    <div className="relative ">
       <SearchInput
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}

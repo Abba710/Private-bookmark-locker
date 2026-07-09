@@ -19,9 +19,11 @@
 }
 
 /* Smooth scroll behavior */
-html {
+html, body, #app, #root {
   background-color: black;
   scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100%;
 }
 
 @keyframes fadeInDown {

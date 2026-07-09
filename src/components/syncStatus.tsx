@@ -6,7 +6,6 @@ import {
   AlertTriangle,
   Loader2,
   WifiOff,
-  History,
 } from 'lucide-react'
 import { Badge } from './ui/badge'
 import {
@@ -77,7 +76,7 @@ export function SyncStatus() {
   // --- UI Helpers ---
   const getStatusBadge = () => {
     const baseClass =
-      'flex items-center gap-1.5 px-2.5 py-1 border transition-all duration-300 shadow-sm'
+      'flex items-center gap-1.5 w-[38.5px] h-[40px] px-2.5 py-1 transition-all duration-300 shadow-sm'
 
     if (!status.isOnline) {
       return (
@@ -99,9 +98,6 @@ export function SyncStatus() {
           className={`${baseClass} bg-indigo-500/10 text-indigo-400 border-indigo-500/20 shadow-indigo-500/5`}
         >
           <Loader2 className="w-3.5 h-3.5 animate-spin" />
-          <span className="text-[11px] font-semibold uppercase tracking-tight">
-            {chrome.i18n.getMessage('app_sync_syncing')}
-          </span>
         </Badge>
       )
     }
@@ -112,9 +108,6 @@ export function SyncStatus() {
           className={`${baseClass} bg-amber-500/10 text-amber-400 border-amber-500/20 shadow-amber-500/5`}
         >
           <Cloud className="w-3.5 h-3.5" />
-          <span className="text-[11px] font-semibold uppercase tracking-tight">
-            {status.changeCounter} {chrome.i18n.getMessage('app_sync_pending')}
-          </span>
         </Badge>
       )
     }
@@ -124,9 +117,7 @@ export function SyncStatus() {
         className={`${baseClass} bg-emerald-500/10 text-emerald-400 border-emerald-500/20 shadow-emerald-500/5`}
       >
         <Check className="w-3.5 h-3.5" />
-        <span className="text-[11px] font-semibold uppercase tracking-tight">
-          {chrome.i18n.getMessage('app_sync_up_to_date')}
-        </span>
+
       </Badge>
     )
   }
@@ -179,25 +170,8 @@ export function SyncStatus() {
   }
 
   return (
-    <div className="group relative flex items-center w-full h-[44px] px-3 bg-white/[0.03] border border-white/10 rounded-2xl backdrop-blur-md transition-all hover:bg-white/[0.05]">
-      <div className="flex w-full items-center gap-3">
+      <div className="flex items-center gap-0.2">
         {getStatusBadge()}
-
-        {/* Last Sync Info */}
-        <div className="flex items-center gap-2 text-gray-500">
-          <History className="w-3 h-3 opacity-50" />
-          <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-medium">
-            <span className="opacity-50">
-              {chrome.i18n.getMessage('app_sync_last')}
-            </span>
-            <span className="text-gray-300 font-mono tracking-normal">
-              {status.lastSyncTime.toLocaleTimeString([], {
-                hour: '2-digit',
-                minute: '2-digit',
-              })}
-            </span>
-          </div>
-        </div>
 
         {/* Sync Action */}
         <button
@@ -213,6 +187,5 @@ export function SyncStatus() {
           />
         </button>
       </div>
-    </div>
   )
 }

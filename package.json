@@ -24,6 +24,7 @@
     "qrcode.react": "^4.2.0",
     "radix-ui": "^1.4.3",
     "react-async-load-script": "^1.0.7",
+    "react-router-dom": "^7.18.1",
     "tailwind-merge": "^3.4.0",
     "zustand": "^5.0.6"
   },

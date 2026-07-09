@@ -241,9 +241,6 @@
   "app_sync_pending": {
     "message": "Pending"
   },
-  "app_sync_up_to_date": {
-    "message": "Up to date"
-  },
   "app_sync_conflict_title": {
     "message": "Database Conflict"
   },
