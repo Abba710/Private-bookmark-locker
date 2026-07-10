@@ -48,7 +48,7 @@ interface SizeBase {
 }
 
 const FOLDER_BASE: SizeBase & { font: number } = {
-  height: 32,
+  height: 34,
   icon: 24,
   font: 12,
   actionIcon: 14,
@@ -263,30 +263,30 @@ function ControlCard({
         </span>
       </div>
 
-      <SliderRow label="Row height" value={height} min={HEIGHT_MIN} max={HEIGHT_MAX} onChange={onHeightChange} />
+      <SliderRow label={chrome.i18n.getMessage('app_setting_row_height')} value={height} min={HEIGHT_MIN} max={HEIGHT_MAX} onChange={onHeightChange} />
 
       <div className="grid grid-cols-2 gap-1.5">
         {isFolderMetrics(metrics) ? (
           <>
-            <MetricBadge label="Font" value={`${metrics.font}px`} />
-            <MetricBadge label="Icon" value={`${metrics.icon}px`} />
+            <MetricBadge label={chrome.i18n.getMessage('app_setting_font')} value={`${metrics.font}px`} />
+            <MetricBadge label={chrome.i18n.getMessage('app_setting_icon')} value={`${metrics.icon}px`} />
           </>
         ) : (
           <>
-            <MetricBadge label="Title" value={`${metrics.titleFont}px`} />
-            <MetricBadge label="URL" value={`${metrics.urlFont}px`} />
+            <MetricBadge label={chrome.i18n.getMessage('app_setting_title')} value={`${metrics.titleFont}px`} />
+            <MetricBadge label={chrome.i18n.getMessage('app_setting_url')} value={`${metrics.urlFont}px`} />
           </>
         )}
       </div>
 
       <div className="flex flex-col gap-0.5 pt-1" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-        <Toggle checked={iconEnabled} onChange={onIconToggle} label="Show icon" />
+        <Toggle checked={iconEnabled} onChange={onIconToggle} label={chrome.i18n.getMessage('app_setting_show_icons')} />
         {onShowUrlToggle && (
           <Toggle
             checked={!!showUrl}
             onChange={onShowUrlToggle}
-            label="Show URL"
-            hint="bookmarks only"
+            label={chrome.i18n.getMessage('app_setting_show_url')}
+            hint={chrome.i18n.getMessage('app_setting_show_URL_sub')}
           />
         )}
       </div>
@@ -353,13 +353,13 @@ export default function BookmarkFolderControls({
       <div className="flex items-center gap-2 px-1">
         <SlidersHorizontal className="w-3.5 h-3.5 text-indigo-400" />
         <span style={{ fontSize: 12 }} className="text-white font-semibold">
-          List appearance
+          {chrome.i18n.getMessage('app_setting_list_title')}
         </span>
       </div>
 
       <ControlCard
         icon={Folder}
-        title="Folders"
+        title={chrome.i18n.getMessage('app_setting_folders_title')}
         height={settings.folder.height}
         onHeightChange={(v) => updateFolder({ height: v })}
         iconEnabled={settings.folder.iconEnabled}
@@ -369,7 +369,7 @@ export default function BookmarkFolderControls({
 
       <ControlCard
         icon={LinkIcon}
-        title="Bookmarks"
+        title={chrome.i18n.getMessage('app_setting_bookmarks_title')}
         height={settings.bookmark.height}
         onHeightChange={(v) => updateBookmark({ height: v })}
         iconEnabled={settings.bookmark.iconEnabled}
@@ -402,12 +402,12 @@ export default function BookmarkFolderControls({
         {justSaved ? (
           <>
             <Check className="w-3.5 h-3.5" />
-            Saved
+            {chrome.i18n.getMessage('app_setting_saved')}
           </>
         ) : (
           <>
             <Save className="w-3.5 h-3.5" />
-            Save settings
+            {chrome.i18n.getMessage('app_settings_save_settings')}
           </>
         )}
       </button>

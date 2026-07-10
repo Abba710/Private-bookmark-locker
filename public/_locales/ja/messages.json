@@ -3,9 +3,14 @@
     "message": "Locker – タブの非表示・ロック、プライベートブックマーク"
   },
   "app_description": {
-    "message": "タブとブックマークを保護。ワンクリックですべて非表示に — シークレットモードでも対応。"
+    "message": "タブとブックマークを保護。ワンクリックですべて非表示に - シークレットモードでも。"
   },
-
+  "app_open_fullscreen": {
+    "message": "全画面表示"
+  },
+  "app_settings_title": {
+    "message": "設定"
+  },
   "app_enter_password": {
     "message": "パスワードを入力"
   },
@@ -25,32 +30,31 @@
     "message": "パスワードを作成"
   },
   "app_password_empty_error": {
-    "message": "パスワードを入力してください"
+    "message": "パスワードは空にできません"
   },
   "app_password_incorrect_error": {
-    "message": "パスワードが違います"
+    "message": "パスワードが間違っています"
   },
   "app_password_hashing_error": {
     "message": "ハッシュ化に失敗しました"
   },
   "app_password_warning": {
-    "message": "⚠️ 重要：パスワードを忘れた場合、復元することはできません。すべてのデータはこのデバイスにのみ保存され、正しいパスワードなしではアクセスできません。"
+    "message": "⚠️ 重要：パスワードを忘れた場合、回復できません。すべてのデータはこのデバイスにのみ保存され、正しいパスワードなしではアクセスできません。"
   },
   "app_pass_short_error": {
-    "message": "パスワードは4文字以上で入力してください"
+    "message": "パスワードは4文字以上必要です"
   },
   "app_pass_incorrect_error": {
-    "message": "パスワードが違います"
+    "message": "パスワードが間違っています"
   },
-
   "app_lock_setup_description": {
-    "message": "マスターパスワードでブックマークを保護する"
+    "message": "マスターパスワードでブックマークを保護"
   },
   "app_lock_unlock_description": {
     "message": "プライベートスペースへのアクセスは制限されています"
   },
   "app_lock_legal_agreement": {
-    "message": "続行することで、以下に同意したものとみなされます："
+    "message": "続行すると、以下に同意したことになります"
   },
   "app_lock_terms": {
     "message": "利用規約"
@@ -62,9 +66,8 @@
     "message": "および"
   },
   "app_lock_security_notice": {
-    "message": "セキュリティに関するお知らせ"
+    "message": "セキュリティ通知"
   },
-
   "app_instruction_title": {
     "message": "クイックスタートガイド"
   },
@@ -78,12 +81,11 @@
     "message": "閉じる"
   },
   "app_edit_title": {
-    "message": "ブックマーク名を編集"
+    "message": "ブックマークのタイトルを編集"
   },
   "app_create_folder": {
     "message": "フォルダ名を入力："
   },
-
   "app_header_guest_name": {
     "message": "ゲストユーザー"
   },
@@ -96,41 +98,47 @@
   "app_subscribe_pro": {
     "message": "PRO"
   },
-
   "app_options_hotkeys": {
     "message": "ホットキー"
   },
   "app_options_settings_alert": {
-    "message": "設定は近日公開予定です！"
+    "message": "設定は近日公開！"
   },
   "app_options_collect": {
-    "message": "Chromeのブックマークを取得"
+    "message": "Chromeブックマークをインポート"
   },
   "app_options_save_open": {
     "message": "現在のセッションを保存"
   },
-  "app_options_widget_show": { "message": "ウィジェットを表示" },
-  "app_options_widget_hide": { "message": "ウィジェットを非表示" },
-  "app_options_widget_save": { "message": "ページを保存" },
-  "app_options_widget_open": { "message": "サイドパネルを開く" },
+  "app_options_widget_show": {
+    "message": "ウィジェットを表示"
+  },
+  "app_options_widget_hide": {
+    "message": "ウィジェットを非表示"
+  },
+  "app_options_widget_save": {
+    "message": "ページを保存"
+  },
+  "app_options_widget_open": {
+    "message": "サイドパネルを開く"
+  },
   "app_options_subscription_plan": {
     "message": "サブスクリプションプラン"
   },
   "app_options_go_premium": {
-    "message": "Premiumにアップグレード"
+    "message": "プレミアムにアップグレード"
   },
   "app_options_data_tools": {
-    "message": "データとツール"
+    "message": "データ＆ツール"
   },
   "app_options_community_header": {
     "message": "コミュニティ"
   },
-
   "app_modal_export": {
     "message": "ブックマークをエクスポート"
   },
   "app_export_modal_description": {
-    "message": "下のボタンをクリックして、ブックマークをファイルとしてエクスポートします。保存しておけば後でインポートできます。"
+    "message": "下のボタンをクリックしてブックマークをファイルにエクスポートします。保存して後でインポートできます。"
   },
   "app_export_modal_button": {
     "message": "エクスポート"
@@ -145,22 +153,22 @@
     "message": "ファイルをここにドラッグ＆ドロップするか、クリックして選択"
   },
   "app_import_supported_format": {
-    "message": "対応形式：JSON設定ファイル"
+    "message": "サポート形式：JSON設定ファイル"
   },
   "app_import_click_browse": {
-    "message": "またはクリックしてファイルを選択"
+    "message": "またはクリックしてファイルを参照"
   },
   "app_import_config_file_label": {
     "message": "設定ファイル"
   },
   "app_import_standard_json": {
-    "message": "標準JSONフォーマット"
+    "message": "標準JSON形式"
   },
   "app_import_chrome_title": {
-    "message": "Chromeのブックマークをインポートしますか？"
+    "message": "Chromeブックマークをインポートしますか？"
   },
   "app_import_chrome_sub_title": {
-    "message": "インポートされる内容："
+    "message": "インポートされるもの："
   },
   "app_import_chrome_a1": {
     "message": "すべてのブックマーク"
@@ -169,18 +177,17 @@
     "message": "タイトルとURL"
   },
   "app_import_chrome_a3": {
-    "message": "ブックマークバーのブックマーク"
+    "message": "ブックマークバーからのブックマーク"
   },
   "app_import_chrome_a4": {
-    "message": "データはデバイス上にのみ保存されます"
+    "message": "データはお使いのデバイスに残ります"
   },
   "app_import_chrome_CTA": {
-    "message": "Chromeのブックマークをインポート"
+    "message": "Chromeブックマークをインポート"
   },
   "app_import_chrome_later": {
     "message": "後で"
   },
-
   "app_context_copy_link": {
     "message": "リンクをコピー"
   },
@@ -202,14 +209,12 @@
   "app_context_close_menu": {
     "message": "メニューを閉じる"
   },
-
   "app_qr_modal_info": {
-    "message": "スキャンしてデバイスでリンクを開く"
+    "message": "スキャンしてこのリンクをデバイスで開く"
   },
   "app_qr_close_button": {
     "message": "閉じる"
   },
-
   "app_pdf_no_url": {
     "message": "URLが指定されていません"
   },
@@ -219,11 +224,9 @@
   "app_pdf_error": {
     "message": "PDFデータが空です"
   },
-
   "app_panic_description": {
-    "message": "パニックボタン（デフォルト：alt+p）を設定して、すべてのタブを閉じてフォルダに保存"
+    "message": "パニックボタンを設定（デフォルト：alt+p）して、すべてのタブを閉じてフォルダに保存"
   },
-
   "app_sync_offline": {
     "message": "オフライン"
   },
@@ -231,10 +234,7 @@
     "message": "同期中"
   },
   "app_sync_pending": {
-    "message": "待機中"
-  },
-  "app_sync_up_to_date": {
-    "message": "最新の状態"
+    "message": "保留中"
   },
   "app_sync_conflict_title": {
     "message": "データベースの競合"
@@ -252,17 +252,16 @@
     "message": "マージ"
   },
   "app_sync_last": {
-    "message": "最終："
+    "message": "最終同期："
   },
   "app_sync_force_title": {
-    "message": "クラウドへ強制同期"
+    "message": "クラウド同期を強制"
   },
-
   "app_signout_title": {
     "message": "サインアウト"
   },
   "app_signout_description": {
-    "message": "ローカルデータをどのように処理しますか？"
+    "message": "ローカルデータをどう処理しますか？"
   },
   "app_signout_keep_data": {
     "message": "ログアウトしてデータを保持"
@@ -274,35 +273,31 @@
     "message": "または"
   },
   "app_signout_stay": {
-    "message": "ログインを維持"
+    "message": "ログインしたまま"
   },
-
   "app_premium_title": {
-    "message": "アンロック"
+    "message": "ロック解除"
   },
   "app_premium_pro_power": {
-    "message": "Proの機能"
+    "message": "プロのパワー"
   },
   "app_premium_subtitle": {
-    "message": "コレクションをクラウドに安全に保存して、どこからでもアクセス。"
+    "message": "ライブラリをクラウドで保護し、どこからでもアクセスできます。"
   },
   "app_premium_feature_unlimited": {
-    "message": "フォルダ数無制限"
+    "message": "無制限のフォルダ"
   },
   "app_premium_feature_sync": {
-    "message": "暗号化リアルタイムクラウド同期"
+    "message": "暗号化されたリアルタイムクラウド同期"
   },
   "app_premium_feature_data": {
-    "message": "データとツール"
+    "message": "データ＆ツール"
   },
   "app_premium_feature_data_sub1": {
     "message": "インポート/エクスポート"
   },
-  "app_premium_feature_data_sub2": {
-    "message": "Chrome収集"
-  },
   "app_premium_feature_data_sub3": {
-    "message": "セッション保存"
+    "message": "セッションセーバー"
   },
   "app_premium_feature_data_sub4": {
     "message": "パニックボタン"
@@ -317,10 +312,10 @@
     "message": "PDFアップロード"
   },
   "app_premium_feature_toolkit_sub3": {
-    "message": "QRコード生成"
+    "message": "QRジェネレーター"
   },
   "app_premium_btn_upgrade": {
-    "message": "Proにアップグレード（月額$PRICE$）",
+    "message": "月額$PRICE$でProにアップグレード",
     "placeholders": {
       "price": {
         "content": "$1"
@@ -331,37 +326,37 @@
     "message": "支払いを確認中..."
   },
   "app_premium_btn_success": {
-    "message": "完了！Proをお楽しみください"
+    "message": "成功！Proをお楽しみください"
   },
   "app_premium_btn_retry": {
     "message": "再試行まで "
   },
   "app_premium_btn_check_status": {
-    "message": "支払済み、ステータスを確認"
+    "message": "支払い済み、ステータスを確認"
   },
   "app_premium_btn_later": {
     "message": "後で確認"
   },
   "app_premium_btn_no_thanks": {
-    "message": "いいえ、無料プランのままにします"
+    "message": "いいえ、無料プランのままです"
   },
   "app_btn_get_pro_title": {
     "message": "Proにアップグレード"
   },
   "app_btn_get_pro_subtitle": {
-    "message": "フルアクセスを取得"
+    "message": "無制限アクセスを取得"
   },
   "app_sub_manage_title": {
     "message": "サブスクリプションプラン"
   },
   "app_sub_manage_subtitle": {
-    "message": "請求と請求書を管理"
+    "message": "請求と請求書の管理"
   },
   "app_sub_error_auth": {
     "message": "認証されていません。ログインしてください。"
   },
   "app_sub_error_url": {
-    "message": "レスポンスにポータルURLが見つかりません"
+    "message": "応答にポータルURLが見つかりません"
   },
   "app_sub_error_unknown": {
     "message": "不明なエラーが発生しました"
@@ -369,92 +364,89 @@
   "app_sub_error_fail": {
     "message": "サブスクリプションポータルを開けませんでした："
   },
-
   "app_buy_no_internet": {
-    "message": "インターネットに接続されていません"
+    "message": "インターネット接続がありません"
   },
   "app_buy_login_timeout": {
     "message": "ログインがタイムアウトしました"
   },
   "app_buy_login_failed": {
-    "message": "ログインに失敗したか、ウィンドウが閉じられました。"
+    "message": "ログインに失敗するか閉じられました。"
   },
   "app_buy_wait_login": {
-    "message": "ログインを待機中..."
+    "message": "ログイン待機中..."
   },
   "app_buy_click_cancel": {
-    "message": "（クリックでキャンセル）"
+    "message": "（クリックしてキャンセル）"
   },
   "app_buy_cancel_user": {
-    "message": "ユーザーによりキャンセルされました"
+    "message": "ユーザーによってキャンセルされました"
   },
   "app_buy_popup_blocked": {
     "message": "ポップアップがブロックされました"
   },
   "app_buy_session_failed": {
-    "message": "セッション確認に失敗しました"
+    "message": "セッションチェックに失敗しました"
   },
   "app_buy_login_window_error": {
     "message": "ログインウィンドウを開けませんでした"
   },
-
   "app_options_PH": {
     "message": "50%割引を取得"
   },
   "app_options_PH_Title": {
-    "message": "Private Bookmark Lockerの成長を応援してください 🚀"
+    "message": "Private Bookmark Lockerの成長を支援 🚀"
   },
   "app_options_PH_sub_title": {
-    "message": "このエクステンションが気に入ったら、Product Huntへの投票が大きな助けになります。さらに限定"
+    "message": "この拡張機能をお楽しみいただける場合、Product Huntでのクイックアップボートが大いに役立ちます。さらに、限定の"
   },
   "app_options_PH_sub_title_discount": {
     "message": "50%割引"
   },
   "app_options_PH_sub_title_supporter": {
-    "message": "あなたのサポートが役立つこと："
+    "message": "あなたのサポートが役立ちます："
   },
   "app_options_PH_helps_title": {
-    "message": "Product Huntページで利用可能"
+    "message": "Product Huntページで入手可能"
   },
   "app_options_PH_helps1": {
-    "message": "• より多くのユーザーにリーチ"
+    "message": "• より多くのユーザーに届く"
   },
   "app_options_PH_helps2": {
-    "message": "• 機能の改善"
+    "message": "• 将来の機能を改善"
   },
   "app_options_PH_helps3": {
-    "message": "• プロジェクトの成長"
+    "message": "• プロジェクトの成長を維持"
   },
   "app_options_PH_helps4": {
-    "message": "• 50%割引の取得"
+    "message": "• 50%割引を取得"
   },
   "app_options_PH_cta": {
-    "message": "応援する＋50%オフを取得"
+    "message": "サポート + 50%オフを取得"
   },
   "app_options_PH_cta_later": {
     "message": "後で"
   },
-
   "app_changelog": {
     "message": "変更履歴"
   },
   "app_changelog_unavailable": {
-    "message": "コンテンツを利用できません"
+    "message": "コンテンツが利用できません"
   },
   "app_changelog_modal_title": {
-    "message": "新着情報"
+    "message": "新機能"
   },
   "app_changelog_open_reddit": {
-    "message": "Redditで全文を開く"
+    "message": "Redditで完全な投稿を開く"
   },
   "app_changelog_dismiss": {
     "message": "閉じる"
   },
   "app_rate_extension": {
-    "message": "拡張機能を評価する"
+    "message": "拡張機能を評価"
   },
   "app_share_extension": {
-    "message": "拡張機能をシェア"
+    "message": "拡張機能を共有"
   },
   "app_community": {
     "message": "コミュニティに参加"
@@ -463,10 +455,10 @@
     "message": "バグを報告"
   },
   "app_feedback_title": {
-    "message": "拡張機能は気に入りましたか？"
+    "message": "拡張機能はお好きですか？"
   },
   "app_feedback_description": {
-    "message": "ご意見をお聞かせください！ストアページでアプリを評価し、レビューをお寄せください。"
+    "message": "お客様のご意見を大切にしています！アプリを評価して、ストアページにレビューを残してください。"
   },
   "app_feedback_button_leave": {
     "message": "レビューを書く"
@@ -474,12 +466,11 @@
   "app_feedback_button_later": {
     "message": "後で"
   },
-
   "app_donate_title": {
     "message": "プロジェクトを支援"
   },
   "app_donate_h2_title": {
-    "message": "この拡張機能は一人で開発しています。あなたのサポートが改善と無料公開の継続につながります。"
+    "message": "私はこの拡張機能を一人で開発しています。あなたのサポートはプロジェクトの改善と無料維持に役立ちます。"
   },
   "app_donate_qr": {
     "message": "QRコードをスキャンして支援"
@@ -488,13 +479,51 @@
     "message": "またはボタンをクリック👇"
   },
   "app_donate_coffee": {
-    "message": "コーヒーを奢る"
+    "message": "コーヒーをおごる"
   },
   "app_donate_close": {
     "message": "閉じる"
   },
-
   "app_ads_title": {
-    "message": "ChatGPTを使っているなら、この拡張機能も試してみて👆"
+    "message": "ChatGPTを使用している場合、この拡張機能を試してみてください👆"
+  },
+  "app_setting_list_title": {
+    "message": "リストの表示"
+  },
+  "app_setting_folders_title": {
+    "message": "フォルダ"
+  },
+  "app_setting_bookmarks_title": {
+    "message": "ブックマーク"
+  },
+  "app_setting_font": {
+    "message": "フォント"
+  },
+  "app_setting_icon": {
+    "message": "アイコン"
+  },
+  "app_setting_title": {
+    "message": "タイトル"
+  },
+  "app_setting_url": {
+    "message": "URL"
+  },
+  "app_setting_show_URL": {
+    "message": "URLを表示"
+  },
+  "app_setting_show_URL_sub": {
+    "message": "ブックマークのみ"
+  },
+  "app_settings_save_settings": {
+    "message": "設定を保存"
+  },
+  "app_setting_saved": {
+    "message": "保存しました"
+  },
+  "app_setting_show_icons": {
+    "message": "アイコンを表示"
+  },
+  "app_setting_row_height": {
+    "message": "行の高さ"
   }
 }

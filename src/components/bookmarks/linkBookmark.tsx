@@ -2,6 +2,8 @@ import { type Bookmark } from "@/types/types";
 import ContextMenu from "@/components/contextMenu/contextMenu";
 import { useState } from "preact/hooks";
 import { GripVertical, Pencil, Trash2, Globe, Menu, Check } from "lucide-react";
+import { computeBookmarkMetrics, type BookmarkRowSettings } from "@/components/settings/bookmarks/controls";
+
 
 export function LinkBookmark({
   bookmark,
@@ -11,6 +13,7 @@ export function LinkBookmark({
   onDelete,
   confirmDeleteId,
   onEdit,
+  settingsBookmark,
 }: {
   bookmark: Bookmark;
   listeners: any;
@@ -19,9 +22,11 @@ export function LinkBookmark({
   onDelete: (id: string) => void;
   confirmDeleteId: string | null;
   onEdit: (title: string | undefined, id: string) => void;
+  settingsBookmark: BookmarkRowSettings;
 }) {
   const [menuVisible, setMenuVisible] = useState(false);
   const [menuPos, setMenuPos] = useState({ x: 0, y: 0 });
+  const { icon, titleFont, urlFont, actionIcon, dragIcon } = computeBookmarkMetrics(settingsBookmark.height)
 
   const getFaviconUrl = (url?: string) => {
     if (!url) return "";
@@ -53,6 +58,7 @@ export function LinkBookmark({
 
   return (
     <div
+      style={{ height: settingsBookmark.height }}
       className="group relative flex items-center gap-0 w-[100vw] max-w-[350px] min-h-[36px] px-2 py-1 bg-white/[0.04] border border-white/[0.05] hover:bg-white/[0.08] hover:border-white/10 transition-all duration-300 overflow-hidden"
       onContextMenu={(e) => handleMenuClick(e)}
     >
@@ -62,7 +68,7 @@ export function LinkBookmark({
         {...listeners}
         {...attributes}
       >
-        <GripVertical className="w-3 h-3" />
+        <GripVertical style={{ width: dragIcon, height: dragIcon }} />
       </div>
 
 
@@ -85,55 +91,56 @@ export function LinkBookmark({
           className="flex items-center select-none gap-2 flex-1 min-w-0 no-underline pl-1 group-hover:pl-2.5 transition-all duration-300"
           ref={setDroppableRef}
         >
-        <div className="flex-shrink-0 w-6 h-6 rounded-md bg-[#1a1a1a] border border-white/10 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-indigo-500/30 transition-colors">
+        {settingsBookmark.iconEnabled && <div style={{ width: icon + 2, height: icon + 2 }} className="flex-shrink-0 rounded-md bg-[#1a1a1a] border border-white/10 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-indigo-500/30 transition-colors">
           {getFaviconUrl(bookmark.url) ? (
             <img
               src={getFaviconUrl(bookmark.url)}
               alt=""
-              className="w-3.5 h-3.5 object-contain"
+              className="object-contain"
+              style={{ width: icon * 0.58, height: icon * 0.58 }}
             />
           ) : (
-            <Globe className="w-3.5 h-3.5 text-indigo-400/60" />
+            <Globe className="text-indigo-400/60" style={{ width: icon * 0.58, height: icon * 0.58 }} />
           )}
-        </div>
+        </div>}
 
         {/* TEXT AREA: Grows and shrinks smoothly */}
         <div className="flex flex-col justify-center min-w-0 flex-1 transition-all duration-300">
-          <span className="text-white text-[12px] font-semibold truncate leading-tight group-hover:text-indigo-300 transition-colors">
+          <span style={{ fontSize: titleFont }} className="text-white font-semibold truncate leading-tight group-hover:text-indigo-300 transition-colors">
             {bookmark.title || getDomain(bookmark.url)}
           </span>
-          <span className="text-gray-400 text-[10px] truncate leading-none mt-0.5 font-medium opacity-80">
+          {settingsBookmark.showUrl && (<span style={{ fontSize: urlFont }} className="text-gray-400 truncate leading-none mt-0.5 font-medium opacity-80">
             {getDomain(bookmark.url)}
-          </span>
+          </span>)}
         </div>
       </a>
 
       {/* DYNAMIC ACTIONS: Slide in effect */}
-      <div className="flex items-center w-0 group-hover:w-[78px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0">
+      <div style={{ "--actions-width": `${(actionIcon * 3) + 25}px` } as React.CSSProperties} className={`flex items-center w-0 group-hover:w-[var(--actions-width)] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0`}>
         <div className="flex items-center gap-0 pl-1 border-l border-white/5">
           <button
             className="p-1 text-gray-500 hover:text-emerald-400 cursor-pointer transition-colors"
             onClick={(e) => handleMenuClick(e)}
           >
-            <Menu className="w-3.5 h-3.5" />
+            <Menu style={{ width: actionIcon, height: actionIcon }} />
           </button>
           <button
             onClick={(e) => {
               e.stopPropagation();
               onEdit(bookmark.title, bookmark.id);
             }}
-            className="p-1 text-gray-400 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+            className="p-1 text-gray-400 hover:text-white hover:bg-white/10 cursor-pointer rounded-md transition-colors"
           >
-            <Pencil className="w-3.5 h-3.5" />
+            <Pencil style={{ width: actionIcon, height: actionIcon }} />
           </button>
           <button
             onClick={(e) => {
               e.stopPropagation();
               onDelete(bookmark.id);
             }}
-            className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded-md transition-colors"
+            className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 cursor-pointer rounded-md transition-colors"
           >
-            {confirmDeleteId === bookmark.id ? <Check className="w-3.5 h-3.5" /> : <Trash2 className="w-3.5 h-3.5" />}
+            {confirmDeleteId === bookmark.id ? <Check style={{ width: actionIcon, height: actionIcon }} /> : <Trash2 style={{ width: actionIcon, height: actionIcon }} />}
           </button>
         </div>
       </div>

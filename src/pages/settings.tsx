@@ -1,7 +1,5 @@
 import OptionsPanel from '@/components/optionsPanel'
 import SupportDialog from '@/components/Support/supportModal'
-import NotificationsModal from '@/components/notifications/notificationsModal'
-import QrModalUi from '@/components/contextMenu/featuresUI/qrGenModal'
 import PhDialog from '@/components/promotepanel'
 import { ArrowLeft, Settings } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
@@ -12,7 +10,7 @@ import { BookmarkExample, FolderExample, Controls } from '@/components/settings/
 import { DEFAULT_SETTINGS, type ControlsSettings } from '@/components/settings/bookmarks/controls.tsx'
 import { useEffect, useState } from 'react'
 
-const STORAGE_KEY = 'rowSettings'
+export const SETTINGS_STORAGE_KEY = 'rowSettings'
 
 export default function SettingsPage() {
   const auth = useAuth()
@@ -24,8 +22,8 @@ export default function SettingsPage() {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    chrome.storage.sync.get(STORAGE_KEY, (res) => {
-      const initial = res[STORAGE_KEY] ?? DEFAULT_SETTINGS
+    chrome.storage.sync.get(SETTINGS_STORAGE_KEY, (res) => {
+      const initial = res[SETTINGS_STORAGE_KEY] ?? DEFAULT_SETTINGS
       setSaved(initial)
       setLive(initial) // preview starts in sync with what's persisted
       setLoaded(true)
@@ -34,7 +32,7 @@ export default function SettingsPage() {
 
   const handleSave = (settings: ControlsSettings) => {
     setSaved(settings)
-    chrome.storage.sync.set({ [STORAGE_KEY]: settings })
+    chrome.storage.sync.set({ [SETTINGS_STORAGE_KEY]: settings })
   }
 
   return (
@@ -69,12 +67,10 @@ export default function SettingsPage() {
           </div>
 
           <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4">
-            <OptionsPanel />
+          <OptionsPanel />
           </div>
           <SupportDialog />
-          <NotificationsModal />
           <PhDialog />
-          <QrModalUi />
 
           {/* Modals */}
           <UpgradeToProModal

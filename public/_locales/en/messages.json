@@ -503,5 +503,44 @@
 
   "app_ads_title": {
     "message": "If you use ChatGPT, try this extension👆"
+  },
+  "app_setting_list_title": {
+    "message": "List appearance"
+  },
+  "app_setting_folders_title": {
+    "message": "Folders"
+  },
+  "app_setting_bookmarks_title": {
+    "message": "Bookmarks"
+  },
+  "app_setting_font": {
+    "message": "Font"
+  },
+  "app_setting_icon": {
+    "message": "Icon"
+  },
+  "app_setting_title": {
+    "message": "Title"
+  },
+  "app_setting_url": {
+    "message": "URL"
+  },
+  "app_setting_show_URL": {
+    "message": "Show URL"
+  },
+  "app_setting_show_URL_sub": {
+    "message": "Bookmarks only"
+  },
+  "app_settings_save_settings": {
+    "message": "Save settings"
+  },
+  "app_setting_saved": {
+    "message": "Saved"
+  },
+  "app_setting_show_icons": {
+    "message": "Show icon"
+  },
+  "app_setting_row_height": {
+    "message": "Row height"
   }
 }

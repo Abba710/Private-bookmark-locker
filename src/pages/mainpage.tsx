@@ -7,6 +7,9 @@ import UpgradeToProModal from '@/components/premium/premiumModal'
 import DeleteAllBookmarksModal from '@/util/deleteModal'
 import ImportBookmarksDialog from '@/components/chromeImportPanel'
 import Feedback from '@/components/feedback'
+import QrModalUi from '@/components/contextMenu/featuresUI/qrGenModal'
+import NotificationsModal from '@/components/notifications/notificationsModal'
+
 
 // Import Stores directly for App-level logic (Performance optimization)
 import {
@@ -191,6 +194,8 @@ function MainPage() {
                 logIn={auth.signInWithGoogle}
               />
               <ImportBookmarksDialog />
+              <QrModalUi />
+              <NotificationsModal />
 
               <DeleteAllBookmarksModal
                 isOpen={isLogoutModalOpen}

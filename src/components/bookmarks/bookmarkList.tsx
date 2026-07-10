@@ -18,8 +18,21 @@ import { Sortable, handleDragEnd } from '@/features/bookmarks/bookmarkSort'
 import { FolderBookmark } from './folderBookmark'
 import { LinkBookmark } from './linkBookmark'
 import type { Bookmark } from '@/types/types'
+import { DEFAULT_SETTINGS, type ControlsSettings } from '@/components/settings/bookmarks/controls.tsx'
+import { SETTINGS_STORAGE_KEY } from '@/pages/settings'
+import { useEffect } from 'preact/hooks'
+
+
 
 function BookmarkList() {
+  const [live, setLive] = useState<ControlsSettings>(DEFAULT_SETTINGS)
+
+  useEffect(() => {
+    chrome.storage.sync.get(SETTINGS_STORAGE_KEY, (res) => {
+      setLive(res[SETTINGS_STORAGE_KEY] ?? DEFAULT_SETTINGS)
+    })
+  }, [])
+
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const sensors = useSensors(useSensor(PointerSensor))
   const bookmarks = useBookmarkStore((state) => state.bookmarks)
@@ -104,6 +117,8 @@ function BookmarkList() {
                           onDelete={handleDelete}
                           confirmDeleteId={confirmDeleteId}
                           onEdit={handleEdit}
+                          settingsFolder={live.folder}
+                          settingsBookmark={live.bookmark}
                         />
                       ) : (
                         <LinkBookmark
@@ -114,6 +129,7 @@ function BookmarkList() {
                           onDelete={handleDelete}
                           confirmDeleteId={confirmDeleteId}
                           onEdit={handleEdit}
+                          settingsBookmark={live.bookmark}
                         />
                       )}
                     </div>
