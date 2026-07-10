@@ -33,14 +33,14 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
   const linkMenuItems = [
     {
       label: chrome.i18n.getMessage('app_context_copy_link'),
-      icon: <Copy className="w-4 h-4" />,
+      icon: <Copy className="w-3.5 h-3.5" />,
       action: () => {
         if (bookmark.url) navigator.clipboard.writeText(bookmark.url)
       },
     },
     {
       label: chrome.i18n.getMessage('app_context_qr_code'),
-      icon: <QrCode className="w-4 h-4" />,
+      icon: <QrCode className="w-3.5 h-3.5" />,
       action: () => {
         if (!handleCheckPremium()) return
 
@@ -50,7 +50,7 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
     },
     {
       label: chrome.i18n.getMessage('app_context_download_pdf'),
-      icon: <FileDown className="w-4 h-4" />,
+      icon: <FileDown className="w-3.5 h-3.5" />,
       action: async () => {
         if (!handleCheckPremium()) return
 
@@ -59,7 +59,7 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
     },
     {
       label: chrome.i18n.getMessage('app_context_ai_summary'),
-      icon: <Sparkles className="w-4 h-4 text-indigo-400" />, // Sparkles icon for AI
+      icon: <Sparkles className="w-3.5 h-3.5 text-indigo-400" />,
       action: () => {
         if (!handleCheckPremium()) return
 
@@ -74,12 +74,12 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
   const folderMenuItems = [
     {
       label: chrome.i18n.getMessage('app_context_save_in_current_folder'),
-      icon: <Save className="w-4 h-4 text-indigo-400" />,
+      icon: <Save className="w-3.5 h-3.5 text-indigo-400" />,
       action: async () => await saveInCurrentFolder(bookmark),
     },
     {
       label: chrome.i18n.getMessage('app_context_open_group'),
-      icon: <Layers className="w-4 h-4 text-indigo-400" />,
+      icon: <Layers className="w-3.5 h-3.5 text-indigo-400" />,
       action: async () => await openBookmarkGroup(bookmark),
     },
   ]
@@ -88,7 +88,7 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
   const commonTailItems = [
     {
       label: chrome.i18n.getMessage('app_context_close_menu'),
-      icon: <XCircle className="w-4 h-4 text-gray-500" />,
+      icon: <XCircle className="w-3.5 h-3.5 text-gray-500" />,
       action: () => onClose(),
     },
   ]
@@ -145,10 +145,10 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
         <li
           key={idx}
           className={`
-            flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer text-[13px] font-medium transition-all duration-200
+            flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl cursor-pointer text-[12px] font-semibold transition-all duration-200
             ${
               idx === menuItems.length - 1 && menuItems.length > 2
-                ? 'mt-1 border-t border-white/5 pt-2'
+                ? 'mt-1 border-t border-white/5 pt-1.5'
                 : ''
             }
             hover:bg-white/10 hover:text-white text-zinc-300 group

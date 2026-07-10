@@ -99,45 +99,44 @@ export default function OptionsPanel() {
   /**
    * Reusable Row Component with Premium Indicator Logic
    */
-  const OptionRow = ({
-    icon: Icon,
-    label,
-    onClick,
-    href,
-    color = 'indigo',
-    isPremium = false, // New prop to show the indicator
-  }: any) => {
-    const activeColorClasses = colorMap[color] || colorMap.indigo
+   const OptionRow = ({
+     icon: Icon,
+     label,
+     onClick,
+     href,
+     color = 'indigo',
+     isPremium = false,
+   }: any) => {
+     const activeColorClasses = colorMap[color] || colorMap.indigo
 
-    const Content = (
-      <>
-        <div className="flex items-center gap-3">
-          <div
-            className={`relative p-1.5 rounded-lg bg-white/5 border border-white/5 transition-colors duration-300 ${
-              activeColorClasses.split(' ')[0]
-            }`}
-          >
-            <Icon
-              className={`w-4 h-4 text-zinc-400 transition-colors duration-300 ${
-                activeColorClasses.split(' ')[1]
-              }`}
-            />
+     const Content = (
+       <>
+         <div className="flex items-center gap-2.5">
+           <div
+             className={`relative p-1 rounded-lg bg-white/5 border border-white/5 transition-colors duration-300 ${
+               activeColorClasses.split(' ')[0]
+             }`}
+           >
+             <Icon
+               className={`w-3.5 h-3.5 text-zinc-400 transition-colors duration-300 ${
+                 activeColorClasses.split(' ')[1]
+               }`}
+             />
 
-            {/* PREMIUM INDICATOR: Pulsing dot if feature is Pro and user is Free */}
-            {isPremium && !isPro && (
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-indigo-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
-            )}
-          </div>
-          <span className="text-zinc-300 group-hover:text-white font-medium transition-colors duration-200">
-            {label}
-          </span>
-        </div>
-        <ChevronRight className="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-0.5 transition-all duration-300" />
-      </>
-    )
+             {isPremium && !isPro && (
+               <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
+             )}
+           </div>
+           <span className="text-zinc-300 group-hover:text-white text-[12px] font-semibold transition-colors duration-200">
+             {label}
+           </span>
+         </div>
+         <ChevronRight className="w-3 h-3 text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-0.5 transition-all duration-300" />
+       </>
+     )
 
-    const classes =
-      'group flex items-center justify-between p-2 rounded-xl transition-all duration-200 hover:bg-white/[0.04] cursor-pointer w-full text-sm'
+     const classes =
+       'group flex items-center justify-between p-1.5 rounded-xl transition-all duration-200 hover:bg-white/[0.04] cursor-pointer w-full text-[12px]'
 
     if (href) {
       return (

@@ -6,6 +6,7 @@ import LockOverlay from '@/components/lock/lockoverlay'
 import UpgradeToProModal from '@/components/premium/premiumModal'
 import DeleteAllBookmarksModal from '@/util/deleteModal'
 import ImportBookmarksDialog from '@/components/chromeImportPanel'
+import Feedback from '@/components/feedback'
 
 // Import Stores directly for App-level logic (Performance optimization)
 import {
@@ -196,7 +197,9 @@ function MainPage() {
                 onClose={() => setIsLogoutModalOpen(false)}
                 onConfirmLogoutOnly={handleSimpleLogout}
                 onConfirmDelete={handleFullCleanupLogout}
-                />
+              />
+              <Feedback />
+
             </div>
 
             <ControlPanel
