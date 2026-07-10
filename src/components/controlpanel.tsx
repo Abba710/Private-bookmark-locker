@@ -48,7 +48,7 @@ function ControlPanel({
           </button>
           <button
             onClick={handleCreateFolder}
-            className={`${squareBtn} ${
+            className={`${squareBtn} cursor-pointer ${
               !canCreateFolder
                 ? 'hover:text-indigo-400'
                 : 'hover:text-emerald-400'
@@ -71,7 +71,7 @@ function ControlPanel({
           />
 
           <button
-            className={`relative z-10 w-10 h-8 flex items-center justify-center transition-colors duration-300
+            className={`relative cursor-pointer z-10 w-10 h-8 flex items-center justify-center transition-colors duration-300
               ${
                 !isIncognitoView
                   ? 'text-blue-400'
@@ -84,7 +84,7 @@ function ControlPanel({
           </button>
 
           <button
-            className={`relative z-10 w-10 h-8 flex items-center justify-center transition-colors duration-300
+            className={`relative cursor-pointer z-10 w-10 h-8 flex items-center justify-center transition-colors duration-300
               ${
                 isIncognitoView
                   ? 'text-purple-400'
@@ -107,7 +107,7 @@ function ControlPanel({
         {/* GROUP 3: LOCK MANAGEMENT */}
         <div className="pr-2 border-r border-white/5 ml-auto">
           <button
-            className={`${squareBtn} hover:text-amber-400 hover:shadow-[0_0_15px_rgba(251,191,36,0.1)]`}
+            className={`${squareBtn} hover:text-amber-400 cursor-pointer hover:shadow-[0_0_15px_rgba(251,191,36,0.1)]`}
             onClick={() => {
               setSessionStatus(false)
               setIsLocked(true)

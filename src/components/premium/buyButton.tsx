@@ -92,6 +92,7 @@ export function BuyButton({
         data: { session },
       } = await supabase.auth.getSession()
       let userId = session?.user?.id
+      let userEmail = session?.user?.email
 
       if (!userId) {
         console.log('👤 No user found. Triggering login...')
@@ -122,8 +123,14 @@ export function BuyButton({
       if (onBuyClick) {
         onBuyClick()
       }
+      const url = new URL(BASE_CHECKOUT_URL);
 
-      const finalUrl = `${BASE_CHECKOUT_URL}?checkout[custom][user_id]=${userId}&checkout[passthrough]=${userId}&aff=${partnerId}`
+      url.searchParams.set("checkout[custom][user_id]", userId);
+      url.searchParams.set("checkout[passthrough]", userId);
+      if (userEmail) url.searchParams.set("checkout[email]", userEmail);
+      url.searchParams.set("aff", partnerId);
+      const finalUrl = url.toString();
+
       console.log(finalUrl)
       const win = window.open(finalUrl, '_blank')
 

@@ -5,6 +5,7 @@ import BookmarkList from '@/components/bookmarks/bookmarkList'
 import LockOverlay from '@/components/lock/lockoverlay'
 import UpgradeToProModal from '@/components/premium/premiumModal'
 import DeleteAllBookmarksModal from '@/util/deleteModal'
+import ImportBookmarksDialog from '@/components/chromeImportPanel'
 
 // Import Stores directly for App-level logic (Performance optimization)
 import {
@@ -188,6 +189,7 @@ function MainPage() {
                 upgrade={refreshSubscription} // Trigger re-check after payment
                 logIn={auth.signInWithGoogle}
               />
+              <ImportBookmarksDialog />
 
               <DeleteAllBookmarksModal
                 isOpen={isLogoutModalOpen}

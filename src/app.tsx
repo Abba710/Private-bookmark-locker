@@ -9,6 +9,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/settings" element={<SettingsPage />} />
       </Routes>
+
     </div>
   );
 }

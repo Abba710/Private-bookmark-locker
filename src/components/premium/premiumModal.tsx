@@ -132,8 +132,8 @@ export default function UpgradeToProModal({
   ]
 
   const buttonBaseStyles = `
-    group relative w-full py-4 px-6 rounded-xl 
-    font-semibold shadow-lg transition-all duration-200 
+    group relative w-full py-4 px-6 rounded-xl cursor-pointer
+    font-semibold shadow-lg transition-all duration-200
     overflow-hidden flex items-center justify-center gap-2
     select-none
   `
@@ -156,7 +156,7 @@ export default function UpgradeToProModal({
 
         <button
           onClick={() => setPremiumModalOpen(false)}
-          className="absolute top-5 right-5 p-2 text-gray-400 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
+          className="absolute cursor-pointer top-5 right-5 p-2 text-gray-400 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
         >
           <X className="w-5 h-5" />
         </button>
@@ -258,7 +258,7 @@ export default function UpgradeToProModal({
 
             <button
               onClick={() => setPremiumModalOpen(false)}
-              className="w-full py-2 text-sm text-gray-500 hover:text-white transition-colors"
+              className="w-full cursor-pointer py-2 text-sm text-gray-500 hover:text-white transition-colors"
             >
               {hasClickedBuy
                 ? chrome.i18n.getMessage('app_premium_btn_later')

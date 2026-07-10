@@ -1,7 +1,7 @@
 import { type Bookmark } from "@/types/types";
 import ContextMenu from "@/components/contextMenu/contextMenu";
 import { useState } from "preact/hooks";
-import { GripVertical, Pencil, Trash2, Globe, Menu } from "lucide-react";
+import { GripVertical, Pencil, Trash2, Globe, Menu, Check } from "lucide-react";
 
 export function LinkBookmark({
   bookmark,
@@ -9,6 +9,7 @@ export function LinkBookmark({
   attributes,
   setDroppableRef,
   onDelete,
+  confirmDeleteId,
   onEdit,
 }: {
   bookmark: Bookmark;
@@ -16,6 +17,7 @@ export function LinkBookmark({
   attributes: any;
   setDroppableRef: (node: HTMLElement | null) => void;
   onDelete: (id: string) => void;
+  confirmDeleteId: string | null;
   onEdit: (title: string | undefined, id: string) => void;
 }) {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -131,7 +133,7 @@ export function LinkBookmark({
             }}
             className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded-md transition-colors"
           >
-            <Trash2 className="w-3.5 h-3.5" />
+            {confirmDeleteId === bookmark.id ? <Check className="w-3.5 h-3.5" /> : <Trash2 className="w-3.5 h-3.5" />}
           </button>
         </div>
       </div>

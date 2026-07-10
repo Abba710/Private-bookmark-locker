@@ -82,6 +82,7 @@ export function SyncStatus() {
       return (
         <Badge
           variant="outline"
+          title={chrome.i18n.getMessage('app_sync_offline')}
           className={`${baseClass} bg-red-500/10 text-red-400 border-red-500/20 shadow-red-500/5`}
         >
           <WifiOff className="w-3.5 h-3.5" />
@@ -95,6 +96,7 @@ export function SyncStatus() {
       return (
         <Badge
           variant="outline"
+          title={chrome.i18n.getMessage('app_sync_syncing')}
           className={`${baseClass} bg-indigo-500/10 text-indigo-400 border-indigo-500/20 shadow-indigo-500/5`}
         >
           <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -105,6 +107,7 @@ export function SyncStatus() {
       return (
         <Badge
           variant="outline"
+          title={chrome.i18n.getMessage('app_sync_pending')}
           className={`${baseClass} bg-amber-500/10 text-amber-400 border-amber-500/20 shadow-amber-500/5`}
         >
           <Cloud className="w-3.5 h-3.5" />
@@ -114,6 +117,7 @@ export function SyncStatus() {
     return (
       <Badge
         variant="outline"
+        title={`${chrome.i18n.getMessage('app_sync_last')} ${status.lastSyncTime}`}
         className={`${baseClass} bg-emerald-500/10 text-emerald-400 border-emerald-500/20 shadow-emerald-500/5`}
       >
         <Check className="w-3.5 h-3.5" />
@@ -127,15 +131,9 @@ export function SyncStatus() {
       <div className="relative flex flex-col w-full gap-4 p-4 bg-[#1a1612] rounded-2xl border border-amber-500/20 shadow-2xl animate-in zoom-in-95 duration-300">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20">
-            <AlertTriangle className="w-5 h-5 text-amber-500" />
+            <AlertTriangle title={chrome.i18n.getMessage('app_sync_conflict_title')} className="w-5 h-5 text-amber-500" />
           </div>
           <div>
-            <h3 className="text-white text-sm font-bold tracking-tight">
-              {chrome.i18n.getMessage('app_sync_conflict_title')}
-            </h3>
-            <p className="text-[11px] text-amber-200/50">
-              {chrome.i18n.getMessage('app_sync_conflict_desc')}
-            </p>
           </div>
         </div>
 
@@ -177,7 +175,7 @@ export function SyncStatus() {
         <button
           onClick={handleForceSync}
           disabled={syncing || !status.isOnline}
-          className="ml-auto p-2 text-gray-500 hover:text-white hover:bg-white/5 rounded-xl transition-all active:scale-90 disabled:opacity-20 disabled:cursor-not-allowed"
+          className="ml-auto cursor-pointer p-2 text-gray-500 hover:text-white hover:bg-white/5 rounded-xl transition-all active:scale-90 disabled:opacity-20 disabled:cursor-not-allowed"
           title={chrome.i18n.getMessage('app_sync_force_title')}
         >
           <RefreshCw

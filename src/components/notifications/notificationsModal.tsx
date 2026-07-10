@@ -168,7 +168,7 @@ export default function ChangelogDialog() {
 
         <button
           onClick={() => setNotificationOpen(false)}
-          className="absolute top-6 right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
+          className="absolute cursor-pointer top-6 right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
         >
           <X className="w-5 h-5" />
         </button>
@@ -188,7 +188,7 @@ export default function ChangelogDialog() {
           <div className="mt-8 space-y-3">
             <button
               onClick={() => window.open(redditPostUrl, '_blank')}
-              className="group relative w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-200 overflow-hidden"
+              className="group relative cursor-pointer w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-200 overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
               <span className="relative flex items-center justify-center gap-2 text-sm">
@@ -199,7 +199,7 @@ export default function ChangelogDialog() {
 
             <button
               onClick={() => setNotificationOpen(false)}
-              className="w-full py-3 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
+              className="w-full cursor-pointer py-3 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
             >
               {chrome.i18n.getMessage('app_changelog_dismiss')}
             </button>

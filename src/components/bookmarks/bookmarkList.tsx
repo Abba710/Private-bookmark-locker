@@ -3,7 +3,7 @@ import {
   editBookmarkTitle,
 } from '@/features/bookmarks/bookmarkService'
 import { useBookmarkStore, useSwitchStore } from '@/storage/statelibrary'
-import { useMemo } from 'preact/hooks'
+import { useMemo, useState } from 'preact/hooks'
 import Instructions from './instruction'
 import { SortableContext } from '@dnd-kit/sortable'
 import {
@@ -20,6 +20,7 @@ import { LinkBookmark } from './linkBookmark'
 import type { Bookmark } from '@/types/types'
 
 function BookmarkList() {
+  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const sensors = useSensors(useSensor(PointerSensor))
   const bookmarks = useBookmarkStore((state) => state.bookmarks)
   const isIncognito = useSwitchStore((state) => state.Switch)
@@ -44,7 +45,17 @@ function BookmarkList() {
   const allIds = getAllIds(filtered)
 
   const handleDelete = (id: string) => {
-    deleteBookmarks(bookmarks, id)
+    if (confirmDeleteId === id) {
+        deleteBookmarks(bookmarks, id);
+        setConfirmDeleteId(null);
+        return;
+      }
+
+      setConfirmDeleteId(id);
+
+      setTimeout(() => {
+        setConfirmDeleteId((prev) => (prev === id ? null : prev));
+      }, 3000);
   }
 
   const handleEdit = (title: string | undefined, id: string) => {
@@ -91,6 +102,7 @@ function BookmarkList() {
                           attributes={attributes}
                           setDroppableRef={setDroppableRef}
                           onDelete={handleDelete}
+                          confirmDeleteId={confirmDeleteId}
                           onEdit={handleEdit}
                         />
                       ) : (
@@ -100,6 +112,7 @@ function BookmarkList() {
                           attributes={attributes}
                           setDroppableRef={setDroppableRef}
                           onDelete={handleDelete}
+                          confirmDeleteId={confirmDeleteId}
                           onEdit={handleEdit}
                         />
                       )}

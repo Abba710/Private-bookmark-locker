@@ -23,7 +23,7 @@ export default function PhDialog() {
         {/* Close */}
         <button
           onClick={() => setPromoteOpen(false)}
-          className="absolute top-6 right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
+          className="absolute cursor-pointer top-6 right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
         >
           <X className="w-5 h-5" />
         </button>
@@ -78,7 +78,7 @@ export default function PhDialog() {
 
               setPromoteOpen(false)
             }}
-            className="group flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-[#FF6154] text-white font-bold shadow-lg hover:shadow-[#FF6154]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+            className="group cursor-pointer flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-[#FF6154] text-white font-bold shadow-lg hover:shadow-[#FF6154]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             <Rocket className="w-5 h-5" />
 
@@ -90,7 +90,7 @@ export default function PhDialog() {
           {/* Secondary action */}
           <button
             onClick={() => setPromoteOpen(false)}
-            className="mt-6 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
+            className="mt-6 text-sm cursor-pointer font-semibold text-zinc-500 hover:text-white transition-colors"
           >
             {chrome.i18n.getMessage('app_options_PH_cta_later')}
           </button>

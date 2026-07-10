@@ -29,7 +29,7 @@ export default function ExportDialog({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
+          className="absolute cursor-pointer top-5 right-5 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
         >
           <X className="w-5 h-5" />
         </button>
@@ -60,7 +60,7 @@ export default function ExportDialog({
           <div className="flex flex-col w-full gap-3">
             <button
               onClick={onExport}
-              className="group relative w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 overflow-hidden"
+              className="group cursor-pointer relative w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 overflow-hidden"
             >
               {/* Shine effect on hover */}
               <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
@@ -72,7 +72,7 @@ export default function ExportDialog({
 
             <button
               onClick={onClose}
-              className="w-full py-3 text-sm font-medium text-zinc-500 hover:text-white transition-colors"
+              className="w-full cursor-pointer py-3 text-sm font-medium text-zinc-500 hover:text-white transition-colors"
             >
               {chrome.i18n.getMessage('app_cancel')}
             </button>

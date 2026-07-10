@@ -30,7 +30,7 @@ export default function SupportDialog() {
         {/* Close Button */}
         <button
           onClick={() => setSupportOpen(false)}
-          className="absolute top-6 right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
+          className="absolute cursor-pointer top-6 right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
         >
           <X className="w-5 h-5" />
         </button>
@@ -78,7 +78,7 @@ export default function SupportDialog() {
               window.open('https://buymeacoffee.com/abba710', '_blank')
               setSupportOpen(false)
             }}
-            className="group relative flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-[#FFDD00] text-black font-bold shadow-lg hover:shadow-[#FFDD00]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+            className="group relative cursor-pointer flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-[#FFDD00] text-black font-bold shadow-lg hover:shadow-[#FFDD00]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             <Coffee className="w-5 h-5 fill-black/10" />
             <span className="text-sm">
@@ -90,7 +90,7 @@ export default function SupportDialog() {
           {/* Secondary Close Action */}
           <button
             onClick={() => setSupportOpen(false)}
-            className="mt-6 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
+            className="mt-6 cursor-pointer text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
           >
             {chrome.i18n.getMessage('app_donate_close')}
           </button>

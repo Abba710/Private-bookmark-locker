@@ -55,7 +55,7 @@ export default function ImportDialog({ onClose }: { onClose: () => void }) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
+          className="absolute cursor-pointer top-5 right-5 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
         >
           <X className="w-5 h-5" />
         </button>
@@ -140,7 +140,7 @@ export default function ImportDialog({ onClose }: { onClose: () => void }) {
 
             <button
               onClick={onClose}
-              className="w-full py-3 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
+              className="w-full cursor-pointer py-3 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
             >
               {chrome.i18n.getMessage('app_cancel')}
             </button>

@@ -77,7 +77,7 @@ export default function DeleteAllBookmarksModal({
           <button
             onClick={() => handleAction('logout')}
             disabled={!!loadingType}
-            className={`${buttonBase} bg-zinc-800 text-white hover:bg-zinc-700 border border-white/5`}
+            className={`${buttonBase} bg-zinc-800 cursor-pointer text-white hover:bg-zinc-700 border border-white/5`}
           >
             {loadingType === 'logout' ? (
               <Loader2 className="w-5 h-5 animate-spin" />
@@ -93,7 +93,7 @@ export default function DeleteAllBookmarksModal({
           <button
             onClick={() => handleAction('delete')}
             disabled={!!loadingType}
-            className={`${buttonBase} bg-gradient-to-r from-red-600 to-orange-600 text-white hover:opacity-90`}
+            className={`${buttonBase} bg-gradient-to-r cursor-pointer from-red-600 to-orange-600 text-white hover:opacity-90`}
           >
             {loadingType === 'delete' ? (
               <Loader2 className="w-5 h-5 animate-spin" />
@@ -118,7 +118,7 @@ export default function DeleteAllBookmarksModal({
           <button
             onClick={onClose}
             disabled={!!loadingType}
-            className="w-full py-2 text-sm text-zinc-500 hover:text-white transition-colors"
+            className="w-full py-2 text-sm text-zinc-500 cursor-pointer hover:text-white transition-colors"
           >
             {chrome.i18n.getMessage('app_signout_stay')}
           </button>

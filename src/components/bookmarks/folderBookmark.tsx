@@ -10,6 +10,7 @@ import {
   Pencil,
   Trash2,
   Menu,
+  Check,
 } from "lucide-react";
 
 export function FolderBookmark({
@@ -18,6 +19,7 @@ export function FolderBookmark({
   attributes,
   setDroppableRef,
   onDelete,
+  confirmDeleteId,
   onEdit,
 }: {
   bookmark: Bookmark;
@@ -25,6 +27,7 @@ export function FolderBookmark({
   attributes: any;
   setDroppableRef: (node: HTMLElement | null) => void;
   onDelete: (id: string) => void;
+  confirmDeleteId: string | null;
   onEdit: (title: string | undefined, id: string) => void;
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -116,7 +119,7 @@ export function FolderBookmark({
                 onDelete(bookmark.id);
               }}
             >
-              <Trash2 className="w-3.5 h-3.5" />
+              {confirmDeleteId === bookmark.id ? <Check className="w-3.5 h-3.5" /> : <Trash2 className="w-3.5 h-3.5" />}
             </button>
           </div>
         </div>
@@ -132,6 +135,7 @@ export function FolderBookmark({
                     {...props}
                     bookmark={child}
                     onDelete={onDelete}
+                    confirmDeleteId={confirmDeleteId}
                     onEdit={onEdit}
                   />
                 ) : (
@@ -139,6 +143,7 @@ export function FolderBookmark({
                     {...props}
                     bookmark={child}
                     onDelete={onDelete}
+                    confirmDeleteId={confirmDeleteId}
                     onEdit={onEdit}
                   />
                 )

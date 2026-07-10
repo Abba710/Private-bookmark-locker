@@ -1,7 +1,7 @@
-import { LogIn, LogOut, Crown, Settings } from 'lucide-react'
+import { LogIn, LogOut, Crown, Settings, Maximize2 } from 'lucide-react'
 import { Badge } from './ui/badge'
 import type { User } from '@/types/types'
-import { useNavigate } from "react-router-dom";
+import { useNavigate,  } from "react-router-dom";
 
 
 
@@ -53,15 +53,25 @@ export default function UserHeader({
 
           <div className="ml-auto flex items-center gap-1">
             <button
+              title={chrome.i18n.getMessage("app_open_fullscreen")}
+              onClick={() => {chrome.tabs.create({
+                url: chrome.runtime.getURL("index.html")
+              });
+              }}
+              className="flex h-9 w-9 items-center cursor-pointer justify-center rounded-xl text-zinc-400 transition hover:bg-white/5 hover:text-white"
+            >
+              <Maximize2 className="h-4 w-4" />
+            </button>
+            <button
               onClick={() => navigate('/settings')}
-              className="flex h-9 w-9 items-center justify-center rounded-xl text-zinc-400 transition hover:bg-white/5 hover:text-white"
+              className="flex h-9 w-9 items-center cursor-pointer justify-center rounded-xl text-zinc-400 transition hover:bg-white/5 hover:text-white"
             >
               <Settings className="h-4 w-4" />
             </button>
 
             <button
               onClick={logOut}
-              className="flex h-9 w-9 items-center justify-center rounded-xl text-zinc-400 transition hover:bg-red-500/10 hover:text-red-300"
+              className="flex h-9 w-9 items-center cursor-pointer justify-center rounded-xl text-zinc-400 transition hover:bg-red-500/10 hover:text-red-300"
             >
               <LogOut className="h-4 w-4" />
             </button>
@@ -78,14 +88,14 @@ export default function UserHeader({
           <div className="ml-auto flex items-center gap-2">
             <button
               onClick={() => navigate('/settings')}
-              className="flex h-9 w-9 items-center justify-center rounded-xl text-zinc-400 transition hover:bg-white/5 hover:text-white"
+              className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl text-zinc-400 transition hover:bg-white/5 hover:text-white"
             >
               <Settings className="h-4 w-4" />
             </button>
 
             <button
               onClick={logIn}
-              className="flex items-center gap-2 rounded-xl border border-indigo-500/20 bg-indigo-500/10 px-3 py-2 text-sm font-medium text-indigo-300 transition hover:bg-indigo-500/20"
+              className="flex items-center gap-2 cursor-pointer rounded-xl border border-indigo-500/20 bg-indigo-500/10 px-3 py-2 text-sm font-medium text-indigo-300 transition hover:bg-indigo-500/20"
             >
               <LogIn className="h-4 w-4" />
               <span>{chrome.i18n.getMessage('app_header_log_in')}</span>

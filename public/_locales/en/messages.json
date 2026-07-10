@@ -5,7 +5,12 @@
   "app_description": {
     "message": "Protect your tabs and bookmarks. Hide everything in one click — even in incognito."
   },
-
+  "app_open_fullscreen": {
+    "message": "Open fullscreen"
+  },
+  "app_settings_title": {
+    "message": "Settings"
+  },
   "app_enter_password": {
     "message": "Enter password"
   },
@@ -104,7 +109,7 @@
     "message": "Settings coming soon!"
   },
   "app_options_collect": {
-    "message": "Collect chrome bookmarks"
+    "message": "Chrome bookmarks import"
   },
   "app_options_save_open": {
     "message": "Save the current session"
@@ -257,7 +262,7 @@
     "message": "Merge"
   },
   "app_sync_last": {
-    "message": "Last:"
+    "message": "Last sync:"
   },
   "app_sync_force_title": {
     "message": "Force Cloud Sync"
@@ -302,9 +307,6 @@
   },
   "app_premium_feature_data_sub1": {
     "message": "Import/Export"
-  },
-  "app_premium_feature_data_sub2": {
-    "message": "Chrome Collect"
   },
   "app_premium_feature_data_sub3": {
     "message": "Session Saver"
