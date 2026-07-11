@@ -1,9 +1,9 @@
 {
   "app_name": {
-    "message": "Locker – Hide & Lock Tabs, Private Bookmarks"
+    "message": "Locker: Bookmark Manager & Sidebar with Incognito Support"
   },
   "app_description": {
-    "message": "Protect your tabs and bookmarks. Hide everything in one click — even in incognito."
+    "message": "Bookmark manager and session manager for Chromium. Save, organize, protect, and restore bookmarks with full Incognito support"
   },
   "app_open_fullscreen": {
     "message": "Open fullscreen"

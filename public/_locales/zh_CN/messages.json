@@ -1,9 +1,9 @@
 {
   "app_name": {
-    "message": "Locker – 隐藏和锁定标签页、私人书签"
-  },
-  "app_description": {
-    "message": "保护您的标签页和书签。一键隐藏所有内容 — 即使在隐身模式下也有效。"
+      "message": "Locker：书签管理器与侧边栏（支持无痕模式）"
+    },
+    "app_description": {
+      "message": "Chromium的书签和会话管理器。保存、整理、保护、恢复书签，完全支持无痕模式。"
   },
   "app_open_fullscreen": {
     "message": "全屏打开"

@@ -1,10 +1,10 @@
 {
   "app_name": {
-    "message": "Locker – Tabs ausblenden & sperren, Private Lesezeichen"
-  },
-  "app_description": {
-    "message": "Schützen Sie Ihre Tabs und Lesezeichen. Blenden Sie alles mit einem Klick aus – sogar im Inkognito-Modus."
-  },
+     "message": "Locker: Lesezeichenverwaltung & Seitenleiste mit Incognito-Unterstützung"
+   },
+   "app_description": {
+     "message": "Lesezeichen- und Sitzungsmanager für Chromium. Speichern, ordnen, schützen & wiederherstellen mit Inkognito-Unterstützung."
+   },
   "app_open_fullscreen": {
     "message": "Vollbild öffnen"
   },

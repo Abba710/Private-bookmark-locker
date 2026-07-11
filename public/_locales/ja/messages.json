@@ -1,10 +1,10 @@
 {
   "app_name": {
-    "message": "Locker – タブの非表示・ロック、プライベートブックマーク"
-  },
-  "app_description": {
-    "message": "タブとブックマークを保護。ワンクリックですべて非表示に - シークレットモードでも。"
-  },
+      "message": "Locker: ブックマークマネージャー＆サイドバー（シークレットモード対応）"
+    },
+    "app_description": {
+      "message": "Chromium用ブックマーク＆セッションマネージャー。保存・整理・保護・復元、シークレットモード完全対応。"
+    },
   "app_open_fullscreen": {
     "message": "全画面表示"
   },
