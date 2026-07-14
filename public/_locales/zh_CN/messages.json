@@ -1,9 +1,15 @@
 {
   "app_name": {
-      "message": "Locker：书签管理器与侧边栏（支持无痕模式）"
-    },
-    "app_description": {
-      "message": "Chromium的书签和会话管理器。保存、整理、保护、恢复书签，完全支持无痕模式。"
+    "message": "Locker：书签管理器与侧边栏（支持无痕模式）"
+  },
+  "app_description": {
+    "message": "Chromium的书签和会话管理器。保存、整理、保护、恢复书签，完全支持无痕模式。"
+  },
+  "app_affiliate_title": {
+    "message": "成为推广合伙人"
+  },
+  "app_affiliate_description": {
+    "message": "每售出一单，即可赚取40%的佣金。"
   },
   "app_open_fullscreen": {
     "message": "全屏打开"

@@ -1,10 +1,16 @@
 {
   "app_name": {
-      "message": "Locker: ブックマークマネージャー＆サイドバー（シークレットモード対応）"
-    },
-    "app_description": {
-      "message": "Chromium用ブックマーク＆セッションマネージャー。保存・整理・保護・復元、シークレットモード完全対応。"
-    },
+    "message": "Locker: ブックマークマネージャー＆サイドバー（シークレットモード対応）"
+  },
+  "app_description": {
+    "message": "Chromium用ブックマーク＆セッションマネージャー。保存・整理・保護・復元、シークレットモード完全対応。"
+  },
+  "app_affiliate_title": {
+    "message": "アフィリエイトパートナーになる"
+  },
+  "app_affiliate_description": {
+    "message": "販売ごとに40%の手数料を獲得できます。"
+  },
   "app_open_fullscreen": {
     "message": "全画面表示"
   },

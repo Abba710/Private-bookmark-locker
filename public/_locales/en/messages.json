@@ -5,6 +5,12 @@
   "app_description": {
     "message": "Bookmark manager and session manager for Chromium. Save, organize, protect, and restore bookmarks with full Incognito support"
   },
+  "app_affiliate_title": {
+    "message": "Become an Affiliate"
+  },
+  "app_affiliate_description": {
+    "message": "Earn 40% commission for every sale."
+  },
   "app_open_fullscreen": {
     "message": "Open fullscreen"
   },

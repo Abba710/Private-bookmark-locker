@@ -36,6 +36,7 @@ import {
   Eye,
   ChevronRight,
   ChevronUp,
+  HandCoins
 } from 'lucide-react'
 
 import { handleCheckPremium } from '@/util/premiumCheck'
@@ -251,6 +252,16 @@ export default function OptionsPanel() {
           label={chrome.i18n.getMessage('app_changelog')}
           onClick={() => setNotificationOpen(true)}
           color="indigo"
+        />
+        <OptionRow
+          icon={HandCoins}
+          label={chrome.i18n.getMessage('app_affiliate_title')}
+          onClick={() => {
+            chrome.tabs.create({
+              url: 'https://abba4game.lemonsqueezy.com/affiliates?utm_source=aff_flow',
+            })
+          }}
+          color="amber"
         />
         <OptionRow
           icon={ChevronUp}

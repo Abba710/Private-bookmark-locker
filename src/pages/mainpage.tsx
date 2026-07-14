@@ -9,16 +9,6 @@ import ImportBookmarksDialog from '@/components/chromeImportPanel'
 import Feedback from '@/components/feedback'
 import QrModalUi from '@/components/contextMenu/featuresUI/qrGenModal'
 import NotificationsModal from '@/components/notifications/notificationsModal'
-
-
-// Import Stores directly for App-level logic (Performance optimization)
-import {
-  useBookmarkStore,
-  useLockOverlayStore,
-  usePremiumModalStore,
-  useSubscribePlanStore,
-} from '@/storage/statelibrary'
-
 // Import Hook only for passing down logic if needed
 import useSubscription from '@/hooks/useSubscribe'
 
@@ -31,7 +21,15 @@ import { TombstoneService } from '@/service/sync/tombstone'
 import deleteBookmarks from '@/util/deleteBookmarks'
 import type { StorageChanges, StorageSchema } from '@/types/types'
 import {BookmarkSearch} from '@/components/bookmarks/bookmarksearch'
+import Affiliate from '@/components/affiliate'
 
+// Import Stores directly for App-level logic (Performance optimization)
+import {
+  useBookmarkStore,
+  useLockOverlayStore,
+  usePremiumModalStore,
+  useSubscribePlanStore,
+} from '@/storage/statelibrary'
 
 function MainPage() {
   const auth = useAuth()
@@ -206,7 +204,7 @@ function MainPage() {
               <Feedback />
 
             </div>
-
+            <Affiliate />
             <ControlPanel
               canCreateFolder={canCreateFolders()} // Calculated via hook
               openPremiumModal={setPremiumModalOpen}

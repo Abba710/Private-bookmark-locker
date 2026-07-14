@@ -1,10 +1,16 @@
 {
   "app_name": {
-     "message": "Locker: Lesezeichenverwaltung & Seitenleiste mit Incognito-Unterstützung"
-   },
-   "app_description": {
-     "message": "Lesezeichen- und Sitzungsmanager für Chromium. Speichern, ordnen, schützen & wiederherstellen mit Inkognito-Unterstützung."
-   },
+    "message": "Locker: Lesezeichenverwaltung & Seitenleiste mit Incognito-Unterstützung"
+  },
+  "app_description": {
+    "message": "Lesezeichen- und Sitzungsmanager für Chromium. Speichern, ordnen, schützen & wiederherstellen mit Inkognito-Unterstützung."
+  },
+  "app_affiliate_title": {
+    "message": "Werden Sie Affiliate-Partner"
+  },
+  "app_affiliate_description": {
+    "message": "Verdienen Sie 40 % Provision für jeden Verkauf."
+  },
   "app_open_fullscreen": {
     "message": "Vollbild öffnen"
   },

@@ -85,13 +85,24 @@ export default function UserHeader({
             </p>
           </div>
 
-          <div className="ml-auto flex items-center gap-2">
+            <div className="ml-auto flex items-center gap-2">
+              <button
+                title={chrome.i18n.getMessage("app_open_fullscreen")}
+                onClick={() => {chrome.tabs.create({
+                  url: chrome.runtime.getURL("index.html")
+                });
+                }}
+                className="flex h-9 w-9 items-center cursor-pointer justify-center rounded-xl text-zinc-400 transition hover:bg-white/5 hover:text-white"
+              >
+                <Maximize2 className="h-4 w-4" />
+              </button>
+
             <button
               onClick={() => navigate('/settings')}
               className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl text-zinc-400 transition hover:bg-white/5 hover:text-white"
             >
               <Settings className="h-4 w-4" />
-            </button>
+              </button>
 
             <button
               onClick={logIn}
