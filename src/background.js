@@ -1,3 +1,7 @@
+const WELCOME_URL = import.meta.env.DEV
+  ? "chrome-extension://mnfekpehiijgccmpgcmecpefpofeaogj/index.html/#/welcome"
+  : "chrome-extension://fagjclghcmnfinjdkdnkejodfjgkpljd/index.html/#/welcome";
+
 chrome.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === "install") {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -13,7 +17,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
         console.log("Partner ID:", partnerId);
       }
     });
-    chrome.tabs.create({ url: "https://abbablog.me/posts/quick-start/" });
+    chrome.tabs.create({ url: WELCOME_URL });
     await chrome.storage.local.set({ showImportChromeBookmarks: true });
   } else if (details.reason === "update") {
     // Set a flag to show update notification

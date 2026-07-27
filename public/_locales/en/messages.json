@@ -447,7 +447,9 @@
   "app_options_PH_cta_later": {
     "message": "Maybe later"
   },
-
+  "app_options_faq": {
+    "message": "FAQ"
+  },
   "app_changelog": {
     "message": "Changelog"
   },
@@ -548,5 +550,146 @@
   },
   "app_setting_row_height": {
     "message": "Row height"
+  },
+  "app_slides_intro_title": {
+    "message": "New browser features unlocked",
+    "description": "Title of the first introduction slide"
+  },
+  "app_slides_intro_subtitle": {
+    "message": "Explore new capabilities",
+    "description": "Subtitle of the first introduction slide"
+  },
+  "app_slides_intro_content": {
+    "message": "Locker now brings to your browser.",
+    "description": "Content text for the first slide"
+  },
+  "app_slides_step1_title": {
+    "message": "Step 1",
+    "description": "Title of step 1 slide"
+  },
+  "app_slides_step1_content": {
+    "message": "Pin the extension",
+    "description": "Content for step 1"
+  },
+  "app_slides_step2_title": {
+    "message": "Step 2",
+    "description": "Title of step 2 slide"
+  },
+  "app_slides_step2_content": {
+    "message": "Allow incognito",
+    "description": "Content for step 2"
+  },
+  "app_slides_step3_title": {
+    "message": "Step 3",
+    "description": "Title of step 3 slide"
+  },
+  "app_slides_step3_content": {
+    "message": "Set shortcuts",
+    "description": "Content for step 3"
+  },
+  "app_slides_explore_title": {
+    "message": "Explore",
+    "description": "Title of the final explore slide"
+  },
+  "app_slides_explore_content": {
+    "message": "Locker features",
+    "description": "Content for the final explore slide"
+  },
+
+  "app_features_save_bookmarks_title": {
+    "message": "Save Bookmarks",
+    "description": "Feature title for saving bookmarks"
+  },
+  "app_features_save_bookmarks_description": {
+    "message": "Save bookmarks with a single click using the sidebar, floating widget, or your custom keyboard shortcut.",
+    "description": "Description for Save Bookmarks feature"
+  },
+  "app_features_create_folders_title": {
+    "message": "Create Folders",
+    "description": "Feature title for creating folders"
+  },
+  "app_features_create_folders_description": {
+    "message": "Create folders from the sidebar to organize your bookmarks into projects, workspaces, or personal collections.",
+    "description": "Description for Create Folders feature"
+  },
+  "app_features_incognito_mode_title": {
+    "message": "Incognito Mode",
+    "description": "Feature title for Incognito Mode"
+  },
+  "app_features_incognito_mode_description": {
+    "message": "Save bookmarks from Incognito windows and keep them separated from your regular browsing without adding entries to your browser history.",
+    "description": "Description for Incognito Mode"
+  },
+  "app_features_search_title": {
+    "message": "Search",
+    "description": "Feature title for Search"
+  },
+  "app_features_search_description": {
+    "message": "Instantly find bookmarks by searching their titles.",
+    "description": "Description for Search feature"
+  },
+  "app_features_fullscreen_mode_title": {
+    "message": "Fullscreen Mode",
+    "description": "Feature title for Fullscreen Mode"
+  },
+  "app_features_fullscreen_mode_description": {
+    "message": "Switch to fullscreen mode for a larger, distraction-free bookmark management experience.",
+    "description": "Description for Fullscreen Mode"
+  },
+  "app_features_customize_title": {
+    "message": "Customize",
+    "description": "Feature title for Customize"
+  },
+  "app_features_customize_description": {
+    "message": "Customize bookmark and folder colors to organize your workspace the way you prefer.",
+    "description": "Description for Customize feature"
+  },
+  "app_features_import_export_title": {
+    "message": "Import & Export",
+    "description": "Feature title for Import & Export"
+  },
+  "app_features_import_export_description": {
+    "message": "Import or export your bookmarks in JSON format for backups or migration.",
+    "description": "Description for Import & Export"
+  },
+  "app_features_import_from_browser_title": {
+    "message": "Import from Browser",
+    "description": "Feature title for Import from Browser"
+  },
+  "app_features_import_from_browser_description": {
+    "message": "Import your existing browser bookmarks with support for Chromium-based browsers.",
+    "description": "Description for Import from Browser"
+  },
+  "app_features_session_manager_title": {
+    "message": "Session Manager",
+    "description": "Feature title for Session Manager"
+  },
+  "app_features_session_manager_description": {
+    "message": "Save browser sessions and restore every tab with just two clicks whenever you need them again.",
+    "description": "Description for Session Manager"
+  },
+  "app_features_qr_generator_title": {
+    "message": "QR Generator",
+    "description": "Feature title for QR Generator"
+  },
+  "app_features_qr_generator_description": {
+    "message": "Generate QR codes for your bookmarks and instantly open them on another device.",
+    "description": "Description for QR Generator"
+  },
+  "app_features_save_as_pdf_title": {
+    "message": "Save as PDF",
+    "description": "Feature title for Save as PDF"
+  },
+  "app_features_save_as_pdf_description": {
+    "message": "Save webpages and their content as PDF documents for offline access or sharing.",
+    "description": "Description for Save as PDF"
+  },
+  "app_features_ai_summary_title": {
+    "message": "AI Summary",
+    "description": "Feature title for AI Summary"
+  },
+  "app_features_ai_summary_description": {
+    "message": "Generate concise AI-powered summaries of articles and webpages using GPT.",
+    "description": "Description for AI Summary"
   }
 }

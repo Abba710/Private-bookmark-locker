@@ -447,6 +447,9 @@
   "app_options_PH_cta_later": {
     "message": "Vielleicht später"
   },
+  "app_options_faq": {
+    "message": "FAQ"
+  },
 
   "app_changelog": {
     "message": "Änderungsprotokoll"
@@ -548,5 +551,146 @@
   },
   "app_setting_row_height": {
     "message": "Zeilenhöhe"
+  },
+  "app_slides_intro_title": {
+    "message": "Neue Browser-Funktionen freigeschaltet",
+    "description": "Title of the first introduction slide"
+  },
+  "app_slides_intro_subtitle": {
+    "message": "Entdecken Sie neue Möglichkeiten",
+    "description": "Subtitle of the first introduction slide"
+  },
+  "app_slides_intro_content": {
+    "message": "Locker bringt es jetzt in Ihren Browser.",
+    "description": "Content text for the first slide"
+  },
+  "app_slides_step1_title": {
+    "message": "Schritt 1",
+    "description": "Title of step 1 slide"
+  },
+  "app_slides_step1_content": {
+    "message": "Erweiterung anheften",
+    "description": "Content for step 1"
+  },
+  "app_slides_step2_title": {
+    "message": "Schritt 2",
+    "description": "Title of step 2 slide"
+  },
+  "app_slides_step2_content": {
+    "message": "Inkognito-Modus zulassen",
+    "description": "Content for step 2"
+  },
+  "app_slides_step3_title": {
+    "message": "Schritt 3",
+    "description": "Title of step 3 slide"
+  },
+  "app_slides_step3_content": {
+    "message": "Tastenkürzel festlegen",
+    "description": "Content for step 3"
+  },
+  "app_slides_explore_title": {
+    "message": "Entdecken",
+    "description": "Title of the final explore slide"
+  },
+  "app_slides_explore_content": {
+    "message": "Locker-Funktionen",
+    "description": "Content for the final explore slide"
+  },
+
+  "app_features_save_bookmarks_title": {
+    "message": "Lesezeichen speichern",
+    "description": "Feature title for saving bookmarks"
+  },
+  "app_features_save_bookmarks_description": {
+    "message": "Speichern Sie Lesezeichen mit einem Klick über die Seitenleiste, das schwebende Widget oder Ihr eigenes Tastaturkürzel.",
+    "description": "Description for Save Bookmarks feature"
+  },
+  "app_features_create_folders_title": {
+    "message": "Ordner erstellen",
+    "description": "Feature title for creating folders"
+  },
+  "app_features_create_folders_description": {
+    "message": "Erstellen Sie Ordner aus der Seitenleiste, um Ihre Lesezeichen in Projekte, Arbeitsbereiche oder persönliche Sammlungen zu organisieren.",
+    "description": "Description for Create Folders feature"
+  },
+  "app_features_incognito_mode_title": {
+    "message": "Inkognito-Modus",
+    "description": "Feature title for Incognito Mode"
+  },
+  "app_features_incognito_mode_description": {
+    "message": "Speichern Sie Lesezeichen aus Inkognito-Fenstern und halten Sie sie getrennt von Ihrem normalen Surfen, ohne Einträge zum Browserverlauf hinzuzufügen.",
+    "description": "Description for Incognito Mode"
+  },
+  "app_features_search_title": {
+    "message": "Suche",
+    "description": "Feature title for Search"
+  },
+  "app_features_search_description": {
+    "message": "Finden Sie Lesezeichen sofort, indem Sie nach ihren Titeln suchen.",
+    "description": "Description for Search feature"
+  },
+  "app_features_fullscreen_mode_title": {
+    "message": "Vollbildmodus",
+    "description": "Feature title for Fullscreen Mode"
+  },
+  "app_features_fullscreen_mode_description": {
+    "message": "Wechseln Sie in den Vollbildmodus für eine größere, ablenkungsfreie Lesezeichenverwaltung.",
+    "description": "Description for Fullscreen Mode"
+  },
+  "app_features_customize_title": {
+    "message": "Anpassen",
+    "description": "Feature title for Customize"
+  },
+  "app_features_customize_description": {
+    "message": "Passen Sie Lesezeichen- und Ordnerfarben an, um Ihren Arbeitsbereich nach Ihren Wünschen zu organisieren.",
+    "description": "Description for Customize feature"
+  },
+  "app_features_import_export_title": {
+    "message": "Importieren & Exportieren",
+    "description": "Feature title for Import & Export"
+  },
+  "app_features_import_export_description": {
+    "message": "Importieren oder exportieren Sie Ihre Lesezeichen im JSON-Format für Backups oder Migration.",
+    "description": "Description for Import & Export"
+  },
+  "app_features_import_from_browser_title": {
+    "message": "Aus Browser importieren",
+    "description": "Feature title for Import from Browser"
+  },
+  "app_features_import_from_browser_description": {
+    "message": "Importieren Sie Ihre vorhandenen Browser-Lesezeichen mit Unterstützung für Chromium-basierte Browser.",
+    "description": "Description for Import from Browser"
+  },
+  "app_features_session_manager_title": {
+    "message": "Sitzungsverwaltung",
+    "description": "Feature title for Session Manager"
+  },
+  "app_features_session_manager_description": {
+    "message": "Speichern Sie Browsersitzungen und stellen Sie mit nur zwei Klicks alle Tabs wieder her, wenn Sie sie erneut benötigen.",
+    "description": "Description for Session Manager"
+  },
+  "app_features_qr_generator_title": {
+    "message": "QR-Generator",
+    "description": "Feature title for QR Generator"
+  },
+  "app_features_qr_generator_description": {
+    "message": "Generieren Sie QR-Codes für Ihre Lesezeichen und öffnen Sie sie sofort auf einem anderen Gerät.",
+    "description": "Description for QR Generator"
+  },
+  "app_features_save_as_pdf_title": {
+    "message": "Als PDF speichern",
+    "description": "Feature title for Save as PDF"
+  },
+  "app_features_save_as_pdf_description": {
+    "message": "Speichern Sie Webseiten und deren Inhalte als PDF-Dokumente für den Offline-Zugriff oder zum Teilen.",
+    "description": "Description for Save as PDF"
+  },
+  "app_features_ai_summary_title": {
+    "message": "KI-Zusammenfassung",
+    "description": "Feature title for AI Summary"
+  },
+  "app_features_ai_summary_description": {
+    "message": "Generieren Sie prägnante KI-gestützte Zusammenfassungen von Artikeln und Webseiten mit GPT.",
+    "description": "Description for AI Summary"
   }
 }

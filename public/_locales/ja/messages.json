@@ -433,6 +433,9 @@
   "app_options_PH_cta_later": {
     "message": "後で"
   },
+  "app_options_faq": {
+    "message": "FAQ"
+  },
   "app_changelog": {
     "message": "変更履歴"
   },
@@ -531,5 +534,145 @@
   },
   "app_setting_row_height": {
     "message": "行の高さ"
-  }
+  },"app_slides_intro_title": {
+      "message": "新しいブラウザ機能が解放されました",
+      "description": "Title of the first introduction slide"
+    },
+    "app_slides_intro_subtitle": {
+      "message": "新しい機能を探索する",
+      "description": "Subtitle of the first introduction slide"
+    },
+    "app_slides_intro_content": {
+      "message": "Lockerがあなたのブラウザにもたらします。",
+      "description": "Content text for the first slide"
+    },
+    "app_slides_step1_title": {
+      "message": "ステップ1",
+      "description": "Title of step 1 slide"
+    },
+    "app_slides_step1_content": {
+      "message": "拡張機能をピン留めする",
+      "description": "Content for step 1"
+    },
+    "app_slides_step2_title": {
+      "message": "ステップ2",
+      "description": "Title of step 2 slide"
+    },
+    "app_slides_step2_content": {
+      "message": "シークレットモードを許可する",
+      "description": "Content for step 2"
+    },
+    "app_slides_step3_title": {
+      "message": "ステップ3",
+      "description": "Title of step 3 slide"
+    },
+    "app_slides_step3_content": {
+      "message": "ショートカットを設定する",
+      "description": "Content for step 3"
+    },
+    "app_slides_explore_title": {
+      "message": "探索する",
+      "description": "Title of the final explore slide"
+    },
+    "app_slides_explore_content": {
+      "message": "Lockerの機能",
+      "description": "Content for the final explore slide"
+    },
+
+    "app_features_save_bookmarks_title": {
+      "message": "ブックマークを保存",
+      "description": "Feature title for saving bookmarks"
+    },
+    "app_features_save_bookmarks_description": {
+      "message": "サイドバー、フローティングウィジェット、またはカスタムキーボードショートカットを使用して、ワンクリックでブックマークを保存します。",
+      "description": "Description for Save Bookmarks feature"
+    },
+    "app_features_create_folders_title": {
+      "message": "フォルダを作成",
+      "description": "Feature title for creating folders"
+    },
+    "app_features_create_folders_description": {
+      "message": "サイドバーからフォルダを作成して、ブックマークをプロジェクト、ワークスペース、または個人コレクションに整理します。",
+      "description": "Description for Create Folders feature"
+    },
+    "app_features_incognito_mode_title": {
+      "message": "シークレットモード",
+      "description": "Feature title for Incognito Mode"
+    },
+    "app_features_incognito_mode_description": {
+      "message": "シークレットウィンドウからブックマークを保存し、ブラウザ履歴にエントリを追加せずに通常のブラウジングから分離しておきます。",
+      "description": "Description for Incognito Mode"
+    },
+    "app_features_search_title": {
+      "message": "検索",
+      "description": "Feature title for Search"
+    },
+    "app_features_search_description": {
+      "message": "タイトルを検索してブックマークを即座に見つけます。",
+      "description": "Description for Search feature"
+    },
+    "app_features_fullscreen_mode_title": {
+      "message": "全画面モード",
+      "description": "Feature title for Fullscreen Mode"
+    },
+    "app_features_fullscreen_mode_description": {
+      "message": "より大きく、気が散らないブックマーク管理体験のために全画面モードに切り替えます。",
+      "description": "Description for Fullscreen Mode"
+    },
+    "app_features_customize_title": {
+      "message": "カスタマイズ",
+      "description": "Feature title for Customize"
+    },
+    "app_features_customize_description": {
+      "message": "ブックマークとフォルダの色をカスタマイズして、好みの方法でワークスペースを整理します。",
+      "description": "Description for Customize feature"
+    },
+    "app_features_import_export_title": {
+      "message": "インポートとエクスポート",
+      "description": "Feature title for Import & Export"
+    },
+    "app_features_import_export_description": {
+      "message": "バックアップや移行のために、ブックマークをJSON形式でインポートまたはエクスポートします。",
+      "description": "Description for Import & Export"
+    },
+    "app_features_import_from_browser_title": {
+      "message": "ブラウザからインポート",
+      "description": "Feature title for Import from Browser"
+    },
+    "app_features_import_from_browser_description": {
+      "message": "Chromiumベースのブラウザをサポートして、既存のブラウザのブックマークをインポートします。",
+      "description": "Description for Import from Browser"
+    },
+    "app_features_session_manager_title": {
+      "message": "セッションマネージャー",
+      "description": "Feature title for Session Manager"
+    },
+    "app_features_session_manager_description": {
+      "message": "ブラウザセッションを保存し、必要に応じてわずか2クリックで全てのタブを復元します。",
+      "description": "Description for Session Manager"
+    },
+    "app_features_qr_generator_title": {
+      "message": "QRジェネレーター",
+      "description": "Feature title for QR Generator"
+    },
+    "app_features_qr_generator_description": {
+      "message": "ブックマークのQRコードを生成し、別のデバイスで即座に開きます。",
+      "description": "Description for QR Generator"
+    },
+    "app_features_save_as_pdf_title": {
+      "message": "PDFとして保存",
+      "description": "Feature title for Save as PDF"
+    },
+    "app_features_save_as_pdf_description": {
+      "message": "ウェブページとそのコンテンツをPDFドキュメントとして保存し、オフラインアクセスや共有に利用します。",
+      "description": "Description for Save as PDF"
+    },
+    "app_features_ai_summary_title": {
+      "message": "AI要約",
+      "description": "Feature title for AI Summary"
+    },
+    "app_features_ai_summary_description": {
+      "message": "GPTを使用して、記事やウェブページの簡潔なAI要約を生成します。",
+      "description": "Description for AI Summary"
+    }
 }

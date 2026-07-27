@@ -433,6 +433,9 @@
   "app_options_PH_cta_later": {
     "message": "稍后再说"
   },
+  "app_options_faq": {
+    "message": "FAQ"
+  },
   "app_changelog": {
     "message": "更新日志"
   },
@@ -531,5 +534,146 @@
   },
   "app_setting_row_height": {
     "message": "行高"
-  }
+  },
+  "app_slides_intro_title": {
+      "message": "解锁了新的浏览器功能",
+      "description": "Title of the first introduction slide"
+    },
+    "app_slides_intro_subtitle": {
+      "message": "探索新功能",
+      "description": "Subtitle of the first introduction slide"
+    },
+    "app_slides_intro_content": {
+      "message": "Locker现已带到您的浏览器。",
+      "description": "Content text for the first slide"
+    },
+    "app_slides_step1_title": {
+      "message": "第一步",
+      "description": "Title of step 1 slide"
+    },
+    "app_slides_step1_content": {
+      "message": "固定扩展程序",
+      "description": "Content for step 1"
+    },
+    "app_slides_step2_title": {
+      "message": "第二步",
+      "description": "Title of step 2 slide"
+    },
+    "app_slides_step2_content": {
+      "message": "允许无痕模式",
+      "description": "Content for step 2"
+    },
+    "app_slides_step3_title": {
+      "message": "第三步",
+      "description": "Title of step 3 slide"
+    },
+    "app_slides_step3_content": {
+      "message": "设置快捷键",
+      "description": "Content for step 3"
+    },
+    "app_slides_explore_title": {
+      "message": "探索",
+      "description": "Title of the final explore slide"
+    },
+    "app_slides_explore_content": {
+      "message": "Locker功能",
+      "description": "Content for the final explore slide"
+    },
+
+    "app_features_save_bookmarks_title": {
+      "message": "保存书签",
+      "description": "Feature title for saving bookmarks"
+    },
+    "app_features_save_bookmarks_description": {
+      "message": "使用侧边栏、浮动小部件或自定义键盘快捷键，一键保存书签。",
+      "description": "Description for Save Bookmarks feature"
+    },
+    "app_features_create_folders_title": {
+      "message": "创建文件夹",
+      "description": "Feature title for creating folders"
+    },
+    "app_features_create_folders_description": {
+      "message": "从侧边栏创建文件夹，将书签组织到项目、工作区或个人收藏中。",
+      "description": "Description for Create Folders feature"
+    },
+    "app_features_incognito_mode_title": {
+      "message": "无痕模式",
+      "description": "Feature title for Incognito Mode"
+    },
+    "app_features_incognito_mode_description": {
+      "message": "从无痕窗口保存书签，并将其与常规浏览分开，不会添加到浏览器历史记录中。",
+      "description": "Description for Incognito Mode"
+    },
+    "app_features_search_title": {
+      "message": "搜索",
+      "description": "Feature title for Search"
+    },
+    "app_features_search_description": {
+      "message": "通过搜索标题即时查找书签。",
+      "description": "Description for Search feature"
+    },
+    "app_features_fullscreen_mode_title": {
+      "message": "全屏模式",
+      "description": "Feature title for Fullscreen Mode"
+    },
+    "app_features_fullscreen_mode_description": {
+      "message": "切换到全屏模式，获得更大、无干扰的书签管理体验。",
+      "description": "Description for Fullscreen Mode"
+    },
+    "app_features_customize_title": {
+      "message": "自定义",
+      "description": "Feature title for Customize"
+    },
+    "app_features_customize_description": {
+      "message": "自定义书签和文件夹颜色，按您喜欢的方式组织工作区。",
+      "description": "Description for Customize feature"
+    },
+    "app_features_import_export_title": {
+      "message": "导入和导出",
+      "description": "Feature title for Import & Export"
+    },
+    "app_features_import_export_description": {
+      "message": "以JSON格式导入或导出书签，用于备份或迁移。",
+      "description": "Description for Import & Export"
+    },
+    "app_features_import_from_browser_title": {
+      "message": "从浏览器导入",
+      "description": "Feature title for Import from Browser"
+    },
+    "app_features_import_from_browser_description": {
+      "message": "导入现有的浏览器书签，支持基于Chromium的浏览器。",
+      "description": "Description for Import from Browser"
+    },
+    "app_features_session_manager_title": {
+      "message": "会话管理器",
+      "description": "Feature title for Session Manager"
+    },
+    "app_features_session_manager_description": {
+      "message": "保存浏览器会话，只需两次点击即可恢复所有标签页。",
+      "description": "Description for Session Manager"
+    },
+    "app_features_qr_generator_title": {
+      "message": "QR码生成器",
+      "description": "Feature title for QR Generator"
+    },
+    "app_features_qr_generator_description": {
+      "message": "为书签生成QR码，并立即在另一设备上打开。",
+      "description": "Description for QR Generator"
+    },
+    "app_features_save_as_pdf_title": {
+      "message": "保存为PDF",
+      "description": "Feature title for Save as PDF"
+    },
+    "app_features_save_as_pdf_description": {
+      "message": "将网页及其内容保存为PDF文档，以便离线访问或共享。",
+      "description": "Description for Save as PDF"
+    },
+    "app_features_ai_summary_title": {
+      "message": "AI摘要",
+      "description": "Feature title for AI Summary"
+    },
+    "app_features_ai_summary_description": {
+      "message": "使用GPT生成文章和网页的简洁AI摘要。",
+      "description": "Description for AI Summary"
+    }
 }

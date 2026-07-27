@@ -23,6 +23,7 @@ import GetProButton from '@/components/Subscribe/getPro'
 
 import {
   Upload,
+  CircleQuestionMark,
   Download,
   Settings,
   Library,
@@ -47,6 +48,9 @@ import { handleCheckPremium } from '@/util/premiumCheck'
  */
 
 export default function OptionsPanel() {
+  const WELCOME_URL = import.meta.env.DEV
+    ? "chrome-extension://mnfekpehiijgccmpgcmecpefpofeaogj/index.html/#/welcome"
+    : "chrome-extension://fagjclghcmnfinjdkdnkejodfjgkpljd/index.html/#/welcome";
   // Global States
   const bookmarks = useBookmarkStore((state) => state.bookmarks)
   const isPro = useSubscribePlanStore((state) => state.isPro)
@@ -222,6 +226,16 @@ export default function OptionsPanel() {
           onClick={() => {
             if (!handleCheckPremium()) return
             saveAllOpenTabs()
+          }}
+          color="indigo"
+        />
+        <OptionRow
+          icon={CircleQuestionMark}
+          isPremium={false}
+          label={chrome.i18n.getMessage('app_options_faq')}
+          onClick={() => {
+            window.open(WELCOME_URL)
+
           }}
           color="indigo"
         />

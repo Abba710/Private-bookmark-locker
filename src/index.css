@@ -20,6 +20,7 @@
 
 /* Smooth scroll behavior */
 html, body, #app, #root {
+  font-family: "Segoe UI", Tahoma, sans-serif;
   background-color: black;
   scroll-behavior: smooth;
   overflow: hidden;
