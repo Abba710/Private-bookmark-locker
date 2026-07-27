@@ -21,7 +21,7 @@
     "message": "Enter password"
   },
   "app_create_password": {
-    "message": "🔒 Create password"
+    "message": "Create password"
   },
   "app_create_password_placeholder": {
     "message": "Create your password"
@@ -45,7 +45,7 @@
     "message": "Hashing failed"
   },
   "app_password_warning": {
-    "message": "⚠️ Important: If you forget your password, it cannot be recovered. All data is stored only on this device and cannot be accessed without the correct password."
+    "message": "Important: If you forget your password, it cannot be recovered."
   },
   "app_pass_short_error": {
     "message": "Password must be at least 4 characters long"

@@ -68,7 +68,9 @@ export const InstructionModal = ({
 
             <div className="relative p-7 flex flex-col items-center text-center">
               {Icon && (
-                <div className={`flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 mb-4 text-current ${accent}`}>
+                <div
+                  className={`flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 mb-4 text-current ${accent}`}
+                >
                   <Icon size={22} strokeWidth={1.75} />
                 </div>
               )}

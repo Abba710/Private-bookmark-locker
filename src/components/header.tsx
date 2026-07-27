@@ -22,7 +22,7 @@ export default function UserHeader({
     userData?.mail || chrome.i18n.getMessage('app_header_guest_name')
   const navigate = useNavigate();
   return (
-    <div className="flex items-center h-12 px-3 border-b border-white/5 bg-white/[0.03] backdrop-blur-md shrink-0">
+    <div className="flex top-0 items-center h-12 px-3 border-b border-white/5 bg-white/[0.03] backdrop-blur-md shrink-0">
       {userData ? (
         <>
           <div className="flex min-w-0 items-center gap-2">
