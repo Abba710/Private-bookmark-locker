@@ -1,20 +1,31 @@
-import { Info } from "lucide-react";
+import { Bookmark, CircleQuestionMark } from "lucide-react";
 
-function Instructions() {
+interface InstructionsProps {
+  isIncognito: boolean;
+}
+
+function Instructions({ isIncognito }: InstructionsProps) {
   return (
-    <a
-      href="https://abbablog.me/posts/quick-start/"
-      target="_blank"
-      rel="noreferrer"
-      className="w-full flex items-center p-5 justify-center bg-white/[0.03] border border-white/5 rounded-2xl animate-in fade-in hover:scale-[1.02] hover:bg-white/[0.06] hover:border-white/10 transition-all duration-200 group"
-    >
-      <div className="flex items-center justify-center gap-2 text-indigo-400 group-hover:text-indigo-300 transition-colors">
-        <Info className="w-5 h-5" />
-        <h2 className="text-xl font-bold">
-          {chrome.i18n.getMessage("app_instruction_title")}
-        </h2>
+    <div className="ds-card !rounded-none" style={{ width: "100%" }}>
+      <div className="ds-empty">
+        <div className="ds-empty-icon">
+          <Bookmark size={24} />
+        </div>
+        <h3 className="ds-empty-title">No bookmarks yet</h3>
+        <p className="ds-empty-desc">
+          {isIncognito
+            ? "You haven't saved any bookmarks in incognito mode yet. Save your first one or read the FAQ to get started."
+            : "You haven't saved any bookmarks yet. Save your first one or read the FAQ to get started."}
+        </p>
+        <button
+          className="btn btn--primary"
+          style={{ marginTop: "var(--ds-sp-2)" }}
+        >
+          <CircleQuestionMark size={14} />{" "}
+          {chrome.i18n.getMessage("app_options_faq")}
+        </button>
       </div>
-    </a>
+    </div>
   );
 }
 

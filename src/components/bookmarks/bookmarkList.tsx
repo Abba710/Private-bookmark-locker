@@ -99,7 +99,7 @@ function BookmarkList() {
           >
             {filtered.length < 1 ? (
               <div className="w-full flex justify-center animate-in fade-in zoom-in duration-500">
-                <Instructions />
+                <Instructions isIncognito={isIncognito} />
               </div>
             ) : (
               filtered.map((bookmark) => (

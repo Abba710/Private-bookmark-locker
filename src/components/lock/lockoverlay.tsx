@@ -82,14 +82,19 @@ export default function LockOverlay() {
               </span>{" "}
               Locker
             </div>
-            <div className="ds-login-header">
-              <h2 className="ds-login-title ds-text-danger">
-                {" "}
-                {chrome.i18n.getMessage("app_lock_security_notice")}
-              </h2>
-              <p className="ds-login-sub">
-                {chrome.i18n.getMessage("app_password_warning")}
-              </p>
+            <div className="ds-alert ds-alert--danger">
+              <div className="ds-alert-body">
+                <span className="ds-alert-icon  flex gap-2">
+                  <AlertCircle size={15} />
+                  <div className="ds-alert-title">
+                    {" "}
+                    {chrome.i18n.getMessage("app_lock_security_notice")}
+                  </div>
+                </span>
+                <div className="ds-alert-desc">
+                  {chrome.i18n.getMessage("app_password_warning")}
+                </div>
+              </div>
             </div>
             <motion.div
               initial={{ opacity: 0, y: 12, scale: 0.94 }}

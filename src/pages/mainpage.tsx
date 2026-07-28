@@ -207,7 +207,7 @@ function MainPage() {
           <ControlPanel
             canCreateFolder={canCreateFolders()} // Calculated via hook
             openPremiumModal={setPremiumModalOpen}
-            isPro={isPro} // Passed directly from store selector
+            isPro={isPro} // Passed direc tly from store selector
           />
         </div>
       )}
