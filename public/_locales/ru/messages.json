@@ -536,144 +536,144 @@
     "message": "Высота строки"
   },
   "app_slides_intro_title": {
-      "message": "Новые функции браузера разблокированы",
-      "description": "Title of the first introduction slide"
-    },
-    "app_slides_intro_subtitle": {
-      "message": "Изучите новые возможности",
-      "description": "Subtitle of the first introduction slide"
-    },
-    "app_slides_intro_content": {
-      "message": "Locker теперь в вашем браузере.",
-      "description": "Content text for the first slide"
-    },
-    "app_slides_step1_title": {
-      "message": "Шаг 1",
-      "description": "Title of step 1 slide"
-    },
-    "app_slides_step1_content": {
-      "message": "Закрепите расширение",
-      "description": "Content for step 1"
-    },
-    "app_slides_step2_title": {
-      "message": "Шаг 2",
-      "description": "Title of step 2 slide"
-    },
-    "app_slides_step2_content": {
-      "message": "Разрешить инкогнито",
-      "description": "Content for step 2"
-    },
-    "app_slides_step3_title": {
-      "message": "Шаг 3",
-      "description": "Title of step 3 slide"
-    },
-    "app_slides_step3_content": {
-      "message": "Настройте горячие клавиши",
-      "description": "Content for step 3"
-    },
-    "app_slides_explore_title": {
-      "message": "Изучить",
-      "description": "Title of the final explore slide"
-    },
-    "app_slides_explore_content": {
-      "message": "Функции Locker",
-      "description": "Content for the final explore slide"
-    },
+    "message": "Новые функции браузера разблокированы",
+    "description": "Title of the first introduction slide"
+  },
+  "app_slides_intro_subtitle": {
+    "message": "Изучите новые возможности",
+    "description": "Subtitle of the first introduction slide"
+  },
+  "app_slides_intro_content": {
+    "message": "Locker теперь в вашем браузере.",
+    "description": "Content text for the first slide"
+  },
+  "app_slides_step1_title": {
+    "message": "Шаг 1",
+    "description": "Title of step 1 slide"
+  },
+  "app_slides_step1_content": {
+    "message": "Закрепите расширение",
+    "description": "Content for step 1"
+  },
+  "app_slides_step2_title": {
+    "message": "Шаг 2",
+    "description": "Title of step 2 slide"
+  },
+  "app_slides_step2_content": {
+    "message": "Разрешить инкогнито",
+    "description": "Content for step 2"
+  },
+  "app_slides_step3_title": {
+    "message": "Шаг 3",
+    "description": "Title of step 3 slide"
+  },
+  "app_slides_step3_content": {
+    "message": "Настройте горячие клавиши",
+    "description": "Content for step 3"
+  },
+  "app_slides_explore_title": {
+    "message": "Изучить",
+    "description": "Title of the final explore slide"
+  },
+  "app_slides_explore_content": {
+    "message": "Функции Locker",
+    "description": "Content for the final explore slide"
+  },
 
-    "app_features_save_bookmarks_title": {
-      "message": "Сохранять закладки",
-      "description": "Feature title for saving bookmarks"
-    },
-    "app_features_save_bookmarks_description": {
-      "message": "Сохраняйте закладки одним щелчком мыши с помощью боковой панели, плавающего виджета или собственной комбинации клавиш.",
-      "description": "Description for Save Bookmarks feature"
-    },
-    "app_features_create_folders_title": {
-      "message": "Создавать папки",
-      "description": "Feature title for creating folders"
-    },
-    "app_features_create_folders_description": {
-      "message": "Создавайте папки из боковой панели, чтобы организовать закладки по проектам, рабочим пространствам или личным коллекциям.",
-      "description": "Description for Create Folders feature"
-    },
-    "app_features_incognito_mode_title": {
-      "message": "Режим инкогнито",
-      "description": "Feature title for Incognito Mode"
-    },
-    "app_features_incognito_mode_description": {
-      "message": "Сохраняйте закладки из окон инкогнито и храните их отдельно от обычного просмотра, не добавляя записи в историю браузера.",
-      "description": "Description for Incognito Mode"
-    },
-    "app_features_search_title": {
-      "message": "Поиск",
-      "description": "Feature title for Search"
-    },
-    "app_features_search_description": {
-      "message": "Мгновенно находите закладки по их названиям.",
-      "description": "Description for Search feature"
-    },
-    "app_features_fullscreen_mode_title": {
-      "message": "Полноэкранный режим",
-      "description": "Feature title for Fullscreen Mode"
-    },
-    "app_features_fullscreen_mode_description": {
-      "message": "Переключитесь в полноэкранный режим для более удобного управления закладками без отвлекающих факторов.",
-      "description": "Description for Fullscreen Mode"
-    },
-    "app_features_customize_title": {
-      "message": "Настройка",
-      "description": "Feature title for Customize"
-    },
-    "app_features_customize_description": {
-      "message": "Настройте цвета закладок и папок, чтобы организовать рабочее пространство по своему усмотрению.",
-      "description": "Description for Customize feature"
-    },
-    "app_features_import_export_title": {
-      "message": "Импорт и экспорт",
-      "description": "Feature title for Import & Export"
-    },
-    "app_features_import_export_description": {
-      "message": "Импортируйте или экспортируйте закладки в формате JSON для резервного копирования или переноса.",
-      "description": "Description for Import & Export"
-    },
-    "app_features_import_from_browser_title": {
-      "message": "Импорт из браузера",
-      "description": "Feature title for Import from Browser"
-    },
-    "app_features_import_from_browser_description": {
-      "message": "Импортируйте существующие закладки браузера с поддержкой браузеров на основе Chromium.",
-      "description": "Description for Import from Browser"
-    },
-    "app_features_session_manager_title": {
-      "message": "Менеджер сессий",
-      "description": "Feature title for Session Manager"
-    },
-    "app_features_session_manager_description": {
-      "message": "Сохраняйте сеансы браузера и восстанавливайте все вкладки двумя щелчками мыши, когда они снова понадобятся.",
-      "description": "Description for Session Manager"
-    },
-    "app_features_qr_generator_title": {
-      "message": "Генератор QR-кодов",
-      "description": "Feature title for QR Generator"
-    },
-    "app_features_qr_generator_description": {
-      "message": "Создавайте QR-коды для закладок и мгновенно открывайте их на другом устройстве.",
-      "description": "Description for QR Generator"
-    },
-    "app_features_save_as_pdf_title": {
-      "message": "Сохранить как PDF",
-      "description": "Feature title for Save as PDF"
-    },
-    "app_features_save_as_pdf_description": {
-      "message": "Сохраняйте веб-страницы и их содержимое в формате PDF для офлайн-доступа или обмена.",
-      "description": "Description for Save as PDF"
-    },
-    "app_features_ai_summary_title": {
-      "message": "ИИ-резюме",
-      "description": "Feature title for AI Summary"
-    },
-    "app_features_ai_summary_description": {
-      "message": "Создавайте краткие резюме статей и веб-страниц на основе ИИ с помощью GPT.",
-      "description": "Description for AI Summary"
-    }
+  "app_features_save_bookmarks_title": {
+    "message": "Сохранять закладки",
+    "description": "Feature title for saving bookmarks"
+  },
+  "app_features_save_bookmarks_description": {
+    "message": "Сохраняйте закладки одним щелчком мыши с помощью боковой панели, плавающего виджета или собственной комбинации клавиш.",
+    "description": "Description for Save Bookmarks feature"
+  },
+  "app_features_create_folders_title": {
+    "message": "Создавать папки",
+    "description": "Feature title for creating folders"
+  },
+  "app_features_create_folders_description": {
+    "message": "Создавайте папки из боковой панели, чтобы организовать закладки по проектам, рабочим пространствам или личным коллекциям.",
+    "description": "Description for Create Folders feature"
+  },
+  "app_features_incognito_mode_title": {
+    "message": "Режим инкогнито",
+    "description": "Feature title for Incognito Mode"
+  },
+  "app_features_incognito_mode_description": {
+    "message": "Сохраняйте закладки из окон инкогнито и храните их отдельно от обычного просмотра, не добавляя записи в историю браузера.",
+    "description": "Description for Incognito Mode"
+  },
+  "app_features_search_title": {
+    "message": "Поиск",
+    "description": "Feature title for Search"
+  },
+  "app_features_search_description": {
+    "message": "Мгновенно находите закладки по их названиям.",
+    "description": "Description for Search feature"
+  },
+  "app_features_fullscreen_mode_title": {
+    "message": "Полноэкранный режим",
+    "description": "Feature title for Fullscreen Mode"
+  },
+  "app_features_fullscreen_mode_description": {
+    "message": "Переключитесь в полноэкранный режим для более удобного управления закладками без отвлекающих факторов.",
+    "description": "Description for Fullscreen Mode"
+  },
+  "app_features_customize_title": {
+    "message": "Настройка",
+    "description": "Feature title for Customize"
+  },
+  "app_features_customize_description": {
+    "message": "Настройте цвета закладок и папок, чтобы организовать рабочее пространство по своему усмотрению.",
+    "description": "Description for Customize feature"
+  },
+  "app_features_import_export_title": {
+    "message": "Импорт и экспорт",
+    "description": "Feature title for Import & Export"
+  },
+  "app_features_import_export_description": {
+    "message": "Импортируйте или экспортируйте закладки в формате JSON для резервного копирования или переноса.",
+    "description": "Description for Import & Export"
+  },
+  "app_features_import_from_browser_title": {
+    "message": "Импорт из браузера",
+    "description": "Feature title for Import from Browser"
+  },
+  "app_features_import_from_browser_description": {
+    "message": "Импортируйте существующие закладки браузера с поддержкой браузеров на основе Chromium.",
+    "description": "Description for Import from Browser"
+  },
+  "app_features_session_manager_title": {
+    "message": "Менеджер сессий",
+    "description": "Feature title for Session Manager"
+  },
+  "app_features_session_manager_description": {
+    "message": "Сохраняйте сеансы браузера и восстанавливайте все вкладки двумя щелчками мыши, когда они снова понадобятся.",
+    "description": "Description for Session Manager"
+  },
+  "app_features_qr_generator_title": {
+    "message": "Генератор QR-кодов",
+    "description": "Feature title for QR Generator"
+  },
+  "app_features_qr_generator_description": {
+    "message": "Создавайте QR-коды для закладок и мгновенно открывайте их на другом устройстве.",
+    "description": "Description for QR Generator"
+  },
+  "app_features_save_as_pdf_title": {
+    "message": "Сохранить как PDF",
+    "description": "Feature title for Save as PDF"
+  },
+  "app_features_save_as_pdf_description": {
+    "message": "Сохраняйте веб-страницы и их содержимое в формате PDF для офлайн-доступа или обмена.",
+    "description": "Description for Save as PDF"
+  },
+  "app_features_ai_summary_title": {
+    "message": "ИИ-резюме",
+    "description": "Feature title for AI Summary"
+  },
+  "app_features_ai_summary_description": {
+    "message": "Создавайте краткие резюме статей и веб-страниц на основе ИИ с помощью GPT.",
+    "description": "Description for AI Summary"
+  }
 }

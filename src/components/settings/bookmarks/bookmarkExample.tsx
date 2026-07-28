@@ -11,7 +11,8 @@ interface BookmarkExampleProps {
 }
 
 function BookmarkExample({ settings, name, url }: BookmarkExampleProps) {
-  const { icon, titleFont, urlFont, actionIcon, dragIcon } = computeBookmarkMetrics(settings.height);
+  const { icon, titleFont, urlFont, actionIcon, dragIcon } =
+    computeBookmarkMetrics(settings.height);
 
   return (
     <div

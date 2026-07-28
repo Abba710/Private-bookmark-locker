@@ -1,8 +1,8 @@
-import type { ContextMenuProps } from '@/components/contextMenu/contextTypes'
-import { useEffect, useRef, useState } from 'preact/hooks'
-import { useContextModalStore } from '@/components/contextMenu/contextMenuStore'
-import { openBookmarkGroup } from '@/components/contextMenu/features/openInGroup'
-import exportToPDF from '@/components/contextMenu/features/downloadPdf'
+import type { ContextMenuProps } from "@/components/contextMenu/contextTypes";
+import { useEffect, useRef, useState } from "preact/hooks";
+import { useContextModalStore } from "@/components/contextMenu/contextMenuStore";
+import { openBookmarkGroup } from "@/components/contextMenu/features/openInGroup";
+import exportToPDF from "@/components/contextMenu/features/downloadPdf";
 import {
   Copy,
   QrCode,
@@ -11,9 +11,9 @@ import {
   Layers,
   XCircle,
   Save,
-} from 'lucide-react'
-import { handleCheckPremium } from '@/util/premiumCheck'
-import { saveInCurrentFolder } from '@/components/contextMenu/features/saveInCurrentFolder'
+} from "lucide-react";
+import { handleCheckPremium } from "@/util/premiumCheck";
+import { saveInCurrentFolder } from "@/components/contextMenu/features/saveInCurrentFolder";
 
 /**
  * ContextMenu component refined for Modern Dark SaaS look.
@@ -25,110 +25,112 @@ import { saveInCurrentFolder } from '@/components/contextMenu/features/saveInCur
  */
 
 export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
-  const { setQrModalOpen, setSelectedBookmark } = useContextModalStore()
-  const menuRef = useRef<HTMLUListElement>(null)
-  const [pos, setPos] = useState(position)
+  const { setQrModalOpen, setSelectedBookmark } = useContextModalStore();
+  const menuRef = useRef<HTMLUListElement>(null);
+  const [pos, setPos] = useState(position);
 
   // Define menu items with icons to match the Premium Modal look
   const linkMenuItems = [
     {
-      label: chrome.i18n.getMessage('app_context_copy_link'),
+      label: chrome.i18n.getMessage("app_context_copy_link"),
       icon: <Copy className="w-3.5 h-3.5" />,
       action: () => {
-        if (bookmark.url) navigator.clipboard.writeText(bookmark.url)
+        if (bookmark.url) navigator.clipboard.writeText(bookmark.url);
       },
     },
     {
-      label: chrome.i18n.getMessage('app_context_qr_code'),
+      label: chrome.i18n.getMessage("app_context_qr_code"),
       icon: <QrCode className="w-3.5 h-3.5" />,
       action: () => {
-        if (!handleCheckPremium()) return
+        if (!handleCheckPremium()) return;
 
-        setQrModalOpen(true)
-        setSelectedBookmark(bookmark)
+        setQrModalOpen(true);
+        setSelectedBookmark(bookmark);
       },
     },
     {
-      label: chrome.i18n.getMessage('app_context_download_pdf'),
+      label: chrome.i18n.getMessage("app_context_download_pdf"),
       icon: <FileDown className="w-3.5 h-3.5" />,
       action: async () => {
-        if (!handleCheckPremium()) return
+        if (!handleCheckPremium()) return;
 
-        if (bookmark.url) exportToPDF(bookmark.url)
+        if (bookmark.url) exportToPDF(bookmark.url);
       },
     },
     {
-      label: chrome.i18n.getMessage('app_context_ai_summary'),
+      label: chrome.i18n.getMessage("app_context_ai_summary"),
       icon: <Sparkles className="w-3.5 h-3.5 text-indigo-400" />,
       action: () => {
-        if (!handleCheckPremium()) return
+        if (!handleCheckPremium()) return;
 
         window.open(
           `https://chat.openai.com/?q=Summary%20` + bookmark.url,
-          '_blank'
-        )
+          "_blank",
+        );
       },
     },
-  ]
+  ];
 
   const folderMenuItems = [
     {
-      label: chrome.i18n.getMessage('app_context_save_in_current_folder'),
+      label: chrome.i18n.getMessage("app_context_save_in_current_folder"),
       icon: <Save className="w-3.5 h-3.5 text-indigo-400" />,
       action: async () => await saveInCurrentFolder(bookmark),
     },
     {
-      label: chrome.i18n.getMessage('app_context_open_group'),
+      label: chrome.i18n.getMessage("app_context_open_group"),
       icon: <Layers className="w-3.5 h-3.5 text-indigo-400" />,
       action: async () => await openBookmarkGroup(bookmark),
     },
-  ]
+  ];
 
   // Add a Close action to all menus with a separator look
   const commonTailItems = [
     {
-      label: chrome.i18n.getMessage('app_context_close_menu'),
+      label: chrome.i18n.getMessage("app_context_close_menu"),
       icon: <XCircle className="w-3.5 h-3.5 text-gray-500" />,
       action: () => onClose(),
     },
-  ]
+  ];
 
   const menuItems = [
     ...(bookmark.isFolder ? folderMenuItems : linkMenuItems),
     ...commonTailItems,
-  ]
+  ];
 
   // Adjust menu position to prevent overflow
   useEffect(() => {
-    const menuWidth = 200
-    const menuHeight = menuItems.length * 38 // Approximate height per item
+    const menuWidth = 200;
+    const menuHeight = menuItems.length * 38; // Approximate height per item
 
-    const screenW = window.innerWidth
-    const screenH = window.innerHeight
+    const screenW = window.innerWidth;
+    const screenH = window.innerHeight;
 
     const x =
-      position.x + menuWidth > screenW ? screenW - menuWidth - 12 : position.x
+      position.x + menuWidth > screenW ? screenW - menuWidth - 12 : position.x;
 
     const y =
-      position.y + menuHeight > screenH ? screenH - menuHeight - 12 : position.y
+      position.y + menuHeight > screenH
+        ? screenH - menuHeight - 12
+        : position.y;
 
-    setPos({ x, y })
-  }, [position, menuItems.length])
+    setPos({ x, y });
+  }, [position, menuItems.length]);
 
   // Close menu on any click outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        onClose()
+        onClose();
       }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    document.addEventListener('contextmenu', handleClickOutside)
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("contextmenu", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-      document.removeEventListener('contextmenu', handleClickOutside)
-    }
-  }, [onClose])
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("contextmenu", handleClickOutside);
+    };
+  }, [onClose]);
 
   return (
     <ul
@@ -148,14 +150,14 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
             flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl cursor-pointer text-[12px] font-semibold transition-all duration-200
             ${
               idx === menuItems.length - 1 && menuItems.length > 2
-                ? 'mt-1 border-t border-white/5 pt-1.5'
-                : ''
+                ? "mt-1 border-t border-white/5 pt-1.5"
+                : ""
             }
             hover:bg-white/10 hover:text-white text-zinc-300 group
           `}
           onClick={() => {
-            item.action?.()
-            onClose()
+            item.action?.();
+            onClose();
           }}
         >
           {/* Action Icon - Glow effect on hover */}
@@ -169,7 +171,7 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
         </li>
       ))}
     </ul>
-  )
+  );
 }
 
-export default ContextMenu
+export default ContextMenu;

@@ -1,4 +1,4 @@
-import { X, Download, AlertCircle } from 'lucide-react'
+import { X, Download, AlertCircle } from "lucide-react";
 
 /**
  * ExportDialog Component
@@ -10,8 +10,8 @@ export default function ExportDialog({
   onClose,
   onExport,
 }: {
-  onClose: () => void
-  onExport: () => void
+  onClose: () => void;
+  onExport: () => void;
 }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -42,18 +42,18 @@ export default function ExportDialog({
 
           {/* Modal title */}
           <h2 className="text-2xl font-bold text-white tracking-tight mb-3">
-            {chrome.i18n.getMessage('app_modal_export')}
+            {chrome.i18n.getMessage("app_modal_export")}
           </h2>
 
           {/* Export description */}
           <p className="text-zinc-400 text-sm leading-relaxed mb-8 px-2">
-            {chrome.i18n.getMessage('app_export_modal_description')}
+            {chrome.i18n.getMessage("app_export_modal_description")}
           </p>
 
           {/* Info Badge - subtle hint */}
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/5 border border-indigo-500/10 text-[11px] font-medium text-indigo-300/80 mb-8">
             <AlertCircle className="w-3.5 h-3.5" />
-            <span>{chrome.i18n.getMessage('app_export_format_label')}</span>
+            <span>{chrome.i18n.getMessage("app_export_format_label")}</span>
           </div>
 
           {/* Action buttons */}
@@ -65,7 +65,7 @@ export default function ExportDialog({
               {/* Shine effect on hover */}
               <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
               <span className="relative flex items-center justify-center gap-2">
-                {chrome.i18n.getMessage('app_export_modal_button')}
+                {chrome.i18n.getMessage("app_export_modal_button")}
                 <Download className="w-4 h-4" />
               </span>
             </button>
@@ -74,11 +74,11 @@ export default function ExportDialog({
               onClick={onClose}
               className="w-full cursor-pointer py-3 text-sm font-medium text-zinc-500 hover:text-white transition-colors"
             >
-              {chrome.i18n.getMessage('app_cancel')}
+              {chrome.i18n.getMessage("app_cancel")}
             </button>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

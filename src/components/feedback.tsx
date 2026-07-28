@@ -1,5 +1,5 @@
-import { useFeedbackStore } from '@/storage/statelibrary'
-import { X, Star, MessageSquareHeart, ExternalLink } from 'lucide-react'
+import { useFeedbackStore } from "@/storage/statelibrary";
+import { X, Star, MessageSquareHeart, ExternalLink } from "lucide-react";
 
 /**
  * Feedback Component
@@ -8,18 +8,18 @@ import { X, Star, MessageSquareHeart, ExternalLink } from 'lucide-react'
  */
 
 export default function Feedback() {
-  const showFeedback = useFeedbackStore((state) => state.showFeedback)
-  const setShowFeedback = useFeedbackStore((state) => state.setShowFeedback)
+  const showFeedback = useFeedbackStore((state) => state.showFeedback);
+  const setShowFeedback = useFeedbackStore((state) => state.setShowFeedback);
 
-  if (!showFeedback) return null
+  if (!showFeedback) return null;
 
   const handleLeaveFeedback = () => {
-    chrome.storage.local.set({ feedbackGiven: true })
-    setShowFeedback(false)
+    chrome.storage.local.set({ feedbackGiven: true });
+    setShowFeedback(false);
     chrome.tabs.create({
-      url: 'https://chromewebstore.google.com/detail/private-bookmark-locker/fagjclghcmnfinjdkdnkejodfjgkpljd/reviews',
-    })
-  }
+      url: "https://chromewebstore.google.com/detail/private-bookmark-locker/fagjclghcmnfinjdkdnkejodfjgkpljd/reviews",
+    });
+  };
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -50,12 +50,12 @@ export default function Feedback() {
 
           {/* Modal title */}
           <h2 className="text-2xl font-bold text-white tracking-tight mb-3">
-            {chrome.i18n.getMessage('app_feedback_title')}
+            {chrome.i18n.getMessage("app_feedback_title")}
           </h2>
 
           {/* Review description */}
           <p className="text-zinc-400 text-base leading-relaxed mb-8 px-2 font-medium">
-            {chrome.i18n.getMessage('app_feedback_description')}
+            {chrome.i18n.getMessage("app_feedback_description")}
           </p>
 
           {/* Star Rating Visualization */}
@@ -78,7 +78,7 @@ export default function Feedback() {
               {/* Shine effect */}
               <div className="absolute inset-0 bg-white/30 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
               <span className="relative flex items-center justify-center gap-2">
-                {chrome.i18n.getMessage('app_feedback_button_leave')}
+                {chrome.i18n.getMessage("app_feedback_button_leave")}
                 <ExternalLink className="w-4 h-4" />
               </span>
             </button>
@@ -87,11 +87,11 @@ export default function Feedback() {
               onClick={() => setShowFeedback(false)}
               className="w-full py-3 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
             >
-              {chrome.i18n.getMessage('app_feedback_button_later')}
+              {chrome.i18n.getMessage("app_feedback_button_later")}
             </button>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

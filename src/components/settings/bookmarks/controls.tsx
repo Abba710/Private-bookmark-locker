@@ -1,5 +1,12 @@
 import { useState, useEffect, useMemo } from "react";
-import { Folder, Check, Save, SlidersHorizontal, Link as LinkIcon, type LucideIcon } from "lucide-react";
+import {
+  Folder,
+  Check,
+  Save,
+  SlidersHorizontal,
+  Link as LinkIcon,
+  type LucideIcon,
+} from "lucide-react";
 
 /* ---------------------------------------------------------------
    Base proportions derived from the existing FolderExample / BookmarkExample:
@@ -66,7 +73,8 @@ const BOOKMARK_BASE: SizeBase & { titleFont: number; urlFont: number } = {
 const HEIGHT_MIN = 24;
 const HEIGHT_MAX = 56;
 
-const clamp = (v: number, min: number, max: number): number => Math.min(max, Math.max(min, v));
+const clamp = (v: number, min: number, max: number): number =>
+  Math.min(max, Math.max(min, v));
 const round1 = (v: number): number => Math.round(v * 10) / 10;
 
 export function computeFolderMetrics(height: number): FolderMetrics {
@@ -112,10 +120,16 @@ function Toggle({ checked, onChange, label, hint, disabled }: ToggleProps) {
       onClick={() => !disabled && onChange(!checked)}
       disabled={disabled}
       className="flex items-center justify-between w-full py-1 group"
-      style={{ opacity: disabled ? 0.4 : 1, cursor: disabled ? "default" : "pointer" }}
+      style={{
+        opacity: disabled ? 0.4 : 1,
+        cursor: disabled ? "default" : "pointer",
+      }}
     >
       <span className="flex flex-col items-start">
-        <span style={{ fontSize: 11 }} className="text-gray-300 font-semibold select-none">
+        <span
+          style={{ fontSize: 11 }}
+          className="text-gray-300 font-semibold select-none"
+        >
           {label}
         </span>
         {hint && (
@@ -130,7 +144,9 @@ function Toggle({ checked, onChange, label, hint, disabled }: ToggleProps) {
           height: 16,
           borderRadius: 999,
           flexShrink: 0,
-          background: checked ? "rgba(129,140,248,0.85)" : "rgba(255,255,255,0.08)",
+          background: checked
+            ? "rgba(129,140,248,0.85)"
+            : "rgba(255,255,255,0.08)",
           border: "1px solid rgba(255,255,255,0.08)",
           position: "relative",
           transition: "background 0.2s ease",
@@ -163,11 +179,24 @@ interface SliderRowProps {
   disabled?: boolean;
 }
 
-function SliderRow({ label, value, min, max, onChange, disabled }: SliderRowProps) {
+function SliderRow({
+  label,
+  value,
+  min,
+  max,
+  onChange,
+  disabled,
+}: SliderRowProps) {
   return (
-    <div className="flex flex-col gap-1.5 w-full" style={{ opacity: disabled ? 0.4 : 1 }}>
+    <div
+      className="flex flex-col gap-1.5 w-full"
+      style={{ opacity: disabled ? 0.4 : 1 }}
+    >
       <div className="flex items-center justify-between">
-        <span style={{ fontSize: 11 }} className="text-gray-300 font-semibold select-none">
+        <span
+          style={{ fontSize: 11 }}
+          className="text-gray-300 font-semibold select-none"
+        >
           {label}
         </span>
         <span
@@ -189,7 +218,9 @@ function SliderRow({ label, value, min, max, onChange, disabled }: SliderRowProp
         step={1}
         value={value}
         disabled={disabled}
-        onChange={(e) => onChange(Number((e.currentTarget as HTMLInputElement).value))}
+        onChange={(e) =>
+          onChange(Number((e.currentTarget as HTMLInputElement).value))
+        }
         style={{ width: "100%", height: 4, accentColor: "#818cf8" }}
       />
     </div>
@@ -205,12 +236,18 @@ function MetricBadge({ label, value }: MetricBadgeProps) {
   return (
     <div
       className="flex items-center justify-between px-2 py-1 rounded"
-      style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)" }}
+      style={{
+        background: "rgba(255,255,255,0.03)",
+        border: "1px solid rgba(255,255,255,0.05)",
+      }}
     >
       <span style={{ fontSize: 10 }} className="text-gray-500 select-none">
         {label}
       </span>
-      <span style={{ fontSize: 10, fontFamily: "ui-monospace, monospace" }} className="text-indigo-300">
+      <span
+        style={{ fontSize: 10, fontFamily: "ui-monospace, monospace" }}
+        className="text-indigo-300"
+      >
         {value}
       </span>
     </div>
@@ -231,7 +268,9 @@ interface ControlCardProps {
   metrics: FolderMetrics | BookmarkMetrics;
 }
 
-function isFolderMetrics(m: FolderMetrics | BookmarkMetrics): m is FolderMetrics {
+function isFolderMetrics(
+  m: FolderMetrics | BookmarkMetrics,
+): m is FolderMetrics {
   return "font" in m;
 }
 
@@ -249,12 +288,18 @@ function ControlCard({
   return (
     <div
       className="flex flex-col gap-3 p-3 rounded-lg"
-      style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}
+      style={{
+        background: "rgba(255,255,255,0.02)",
+        border: "1px solid rgba(255,255,255,0.05)",
+      }}
     >
       <div className="flex items-center gap-2">
         <div
           className="flex-shrink-0 w-6 h-6 rounded-md flex items-center justify-center"
-          style={{ background: "#1a1a1a", border: "1px solid rgba(255,255,255,0.1)" }}
+          style={{
+            background: "#1a1a1a",
+            border: "1px solid rgba(255,255,255,0.1)",
+          }}
         >
           <Icon className="w-3.5 h-3.5 text-indigo-400" />
         </div>
@@ -263,30 +308,55 @@ function ControlCard({
         </span>
       </div>
 
-      <SliderRow label={chrome.i18n.getMessage('app_setting_row_height')} value={height} min={HEIGHT_MIN} max={HEIGHT_MAX} onChange={onHeightChange} />
+      <SliderRow
+        label={chrome.i18n.getMessage("app_setting_row_height")}
+        value={height}
+        min={HEIGHT_MIN}
+        max={HEIGHT_MAX}
+        onChange={onHeightChange}
+      />
 
       <div className="grid grid-cols-2 gap-1.5">
         {isFolderMetrics(metrics) ? (
           <>
-            <MetricBadge label={chrome.i18n.getMessage('app_setting_font')} value={`${metrics.font}px`} />
-            <MetricBadge label={chrome.i18n.getMessage('app_setting_icon')} value={`${metrics.icon}px`} />
+            <MetricBadge
+              label={chrome.i18n.getMessage("app_setting_font")}
+              value={`${metrics.font}px`}
+            />
+            <MetricBadge
+              label={chrome.i18n.getMessage("app_setting_icon")}
+              value={`${metrics.icon}px`}
+            />
           </>
         ) : (
           <>
-            <MetricBadge label={chrome.i18n.getMessage('app_setting_title')} value={`${metrics.titleFont}px`} />
-            <MetricBadge label={chrome.i18n.getMessage('app_setting_url')} value={`${metrics.urlFont}px`} />
+            <MetricBadge
+              label={chrome.i18n.getMessage("app_setting_title")}
+              value={`${metrics.titleFont}px`}
+            />
+            <MetricBadge
+              label={chrome.i18n.getMessage("app_setting_url")}
+              value={`${metrics.urlFont}px`}
+            />
           </>
         )}
       </div>
 
-      <div className="flex flex-col gap-0.5 pt-1" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-        <Toggle checked={iconEnabled} onChange={onIconToggle} label={chrome.i18n.getMessage('app_setting_show_icons')} />
+      <div
+        className="flex flex-col gap-0.5 pt-1"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+      >
+        <Toggle
+          checked={iconEnabled}
+          onChange={onIconToggle}
+          label={chrome.i18n.getMessage("app_setting_show_icons")}
+        />
         {onShowUrlToggle && (
           <Toggle
             checked={!!showUrl}
             onChange={onShowUrlToggle}
-            label={chrome.i18n.getMessage('app_setting_show_url')}
-            hint={chrome.i18n.getMessage('app_setting_show_URL_sub')}
+            label={chrome.i18n.getMessage("app_setting_show_url")}
+            hint={chrome.i18n.getMessage("app_setting_show_URL_sub")}
           />
         )}
       </div>
@@ -310,13 +380,16 @@ export default function BookmarkFolderControls({
   onChange,
   onSave,
 }: BookmarkFolderControlsProps) {
-  const [settings, setSettings] = useState<ControlsSettings>(initialSettings ?? DEFAULT_SETTINGS);
-  const [savedSettings, setSavedSettings] = useState<ControlsSettings>(settings);
+  const [settings, setSettings] = useState<ControlsSettings>(
+    initialSettings ?? DEFAULT_SETTINGS,
+  );
+  const [savedSettings, setSavedSettings] =
+    useState<ControlsSettings>(settings);
   const [justSaved, setJustSaved] = useState(false);
 
   const isDirty = useMemo(
     () => JSON.stringify(settings) !== JSON.stringify(savedSettings),
-    [settings, savedSettings]
+    [settings, savedSettings],
   );
 
   useEffect(() => {
@@ -348,18 +421,21 @@ export default function BookmarkFolderControls({
   return (
     <div
       className="w-full max-w-md flex flex-col gap-3 p-3 rounded-xl"
-      style={{ background: "#0a0a0a", border: "1px solid rgba(255,255,255,0.06)" }}
+      style={{
+        background: "#0a0a0a",
+        border: "1px solid rgba(255,255,255,0.06)",
+      }}
     >
       <div className="flex items-center gap-2 px-1">
         <SlidersHorizontal className="w-3.5 h-3.5 text-indigo-400" />
         <span style={{ fontSize: 12 }} className="text-white font-semibold">
-          {chrome.i18n.getMessage('app_setting_list_title')}
+          {chrome.i18n.getMessage("app_setting_list_title")}
         </span>
       </div>
 
       <ControlCard
         icon={Folder}
-        title={chrome.i18n.getMessage('app_setting_folders_title')}
+        title={chrome.i18n.getMessage("app_setting_folders_title")}
         height={settings.folder.height}
         onHeightChange={(v) => updateFolder({ height: v })}
         iconEnabled={settings.folder.iconEnabled}
@@ -369,7 +445,7 @@ export default function BookmarkFolderControls({
 
       <ControlCard
         icon={LinkIcon}
-        title={chrome.i18n.getMessage('app_setting_bookmarks_title')}
+        title={chrome.i18n.getMessage("app_setting_bookmarks_title")}
         height={settings.bookmark.height}
         onHeightChange={(v) => updateBookmark({ height: v })}
         iconEnabled={settings.bookmark.iconEnabled}
@@ -390,10 +466,14 @@ export default function BookmarkFolderControls({
           background: justSaved
             ? "rgba(74,222,128,0.15)"
             : isDirty
-            ? "rgba(129,140,248,0.15)"
-            : "rgba(255,255,255,0.03)",
+              ? "rgba(129,140,248,0.15)"
+              : "rgba(255,255,255,0.03)",
           border: `1px solid ${
-            justSaved ? "rgba(74,222,128,0.3)" : isDirty ? "rgba(129,140,248,0.3)" : "rgba(255,255,255,0.06)"
+            justSaved
+              ? "rgba(74,222,128,0.3)"
+              : isDirty
+                ? "rgba(129,140,248,0.3)"
+                : "rgba(255,255,255,0.06)"
           }`,
           color: justSaved ? "#4ade80" : isDirty ? "#a5b4fc" : "#6b7280",
           cursor: isDirty ? "pointer" : "default",
@@ -402,12 +482,12 @@ export default function BookmarkFolderControls({
         {justSaved ? (
           <>
             <Check className="w-3.5 h-3.5" />
-            {chrome.i18n.getMessage('app_setting_saved')}
+            {chrome.i18n.getMessage("app_setting_saved")}
           </>
         ) : (
           <>
             <Save className="w-3.5 h-3.5" />
-            {chrome.i18n.getMessage('app_settings_save_settings')}
+            {chrome.i18n.getMessage("app_settings_save_settings")}
           </>
         )}
       </button>

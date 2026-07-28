@@ -1,19 +1,19 @@
-import { useEffect } from 'preact/hooks'
-import type { FunctionalComponent } from 'preact'
-import { Link2, ShieldAlert, Globe, ArrowRight } from 'lucide-react'
+import { useEffect } from "preact/hooks";
+import type { FunctionalComponent } from "preact";
+import { Link2, ShieldAlert, Globe, ArrowRight } from "lucide-react";
 
 interface SearchResult {
-  id: string
-  title?: string
-  url?: string
-  incognito?: boolean
+  id: string;
+  title?: string;
+  url?: string;
+  incognito?: boolean;
 }
 
 interface SearchResultsProps {
-  results: SearchResult[]
-  isVisible: boolean
-  onResultClick: (bookmark: SearchResult) => void
-  searchQuery: string
+  results: SearchResult[];
+  isVisible: boolean;
+  onResultClick: (bookmark: SearchResult) => void;
+  searchQuery: string;
 }
 
 export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
@@ -25,21 +25,21 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
   // Handle "Enter" key to open the first result
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (isVisible && results.length > 0 && e.key === 'Enter') {
-        onResultClick(results[0])
+      if (isVisible && results.length > 0 && e.key === "Enter") {
+        onResultClick(results[0]);
       }
-    }
+    };
 
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [isVisible, results, onResultClick])
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isVisible, results, onResultClick]);
 
-  if (!isVisible || results.length === 0) return null
+  if (!isVisible || results.length === 0) return null;
 
   const highlightMatch = (text: string, query: string) => {
-    if (!query.trim()) return text
-    const regex = new RegExp(`(${query})`, 'gi')
-    const parts = text.split(regex)
+    if (!query.trim()) return text;
+    const regex = new RegExp(`(${query})`, "gi");
+    const parts = text.split(regex);
 
     return parts.map((part, index) =>
       regex.test(part) ? (
@@ -51,9 +51,9 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
         </span>
       ) : (
         part
-      )
-    )
-  }
+      ),
+    );
+  };
 
   return (
     <div className="absolute top-[calc(100%+8px)] left-0 right-0 z-[100] bg-[#121214]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] max-h-[420px] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
@@ -79,8 +79,8 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
               group relative px-3 py-2.5 rounded-xl cursor-pointer transition-all active:scale-[0.98] flex items-center gap-4
               ${
                 index === 0
-                  ? 'bg-white/[0.06] ring-1 ring-white/10 shadow-inner'
-                  : 'hover:bg-white/5 border-transparent'
+                  ? "bg-white/[0.06] ring-1 ring-white/10 shadow-inner"
+                  : "hover:bg-white/5 border-transparent"
               }
             `}
           >
@@ -90,8 +90,8 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
               flex-shrink-0 w-9 h-9 rounded-lg border flex items-center justify-center transition-colors
               ${
                 bookmark.incognito
-                  ? 'bg-purple-500/10 border-purple-500/20 text-purple-400'
-                  : 'bg-indigo-500/10 border-indigo-500/20 text-indigo-400'
+                  ? "bg-purple-500/10 border-purple-500/20 text-purple-400"
+                  : "bg-indigo-500/10 border-indigo-500/20 text-indigo-400"
               }
             `}
             >
@@ -107,14 +107,14 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
               <div className="text-sm text-gray-200 font-medium truncate group-hover:text-white transition-colors">
                 {bookmark.title
                   ? highlightMatch(bookmark.title, searchQuery)
-                  : 'Untitled Bookmark'}
+                  : "Untitled Bookmark"}
               </div>
 
               {bookmark.url && (
                 <div className="flex items-center gap-1.5 text-xs text-gray-500 truncate mt-0.5">
                   <Globe className="w-3 h-3 opacity-50" />
                   <span className="truncate group-hover:text-gray-400 transition-colors">
-                    {bookmark.url.replace(/^https?:\/\//, '')}
+                    {bookmark.url.replace(/^https?:\/\//, "")}
                   </span>
                 </div>
               )}
@@ -124,8 +124,8 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
             <div
               className={`transition-opacity pr-2 text-indigo-400 ${
                 index === 0
-                  ? 'opacity-100'
-                  : 'opacity-0 group-hover:opacity-100'
+                  ? "opacity-100"
+                  : "opacity-0 group-hover:opacity-100"
               }`}
             >
               <ArrowRight className="w-4 h-4" />
@@ -146,5 +146,5 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

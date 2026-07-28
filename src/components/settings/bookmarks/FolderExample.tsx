@@ -1,8 +1,5 @@
 import { Folder, GripVertical, Pencil, Trash2, Menu } from "lucide-react";
-import {
-  computeFolderMetrics,
-  type FolderRowSettings,
-} from "./controls.tsx";
+import { computeFolderMetrics, type FolderRowSettings } from "./controls.tsx";
 
 interface FolderExampleProps {
   settings: FolderRowSettings;
@@ -11,7 +8,9 @@ interface FolderExampleProps {
 }
 
 function FolderExample({ settings, name, count }: FolderExampleProps) {
-  const { icon, font, actionIcon, dragIcon } = computeFolderMetrics(settings.height);
+  const { icon, font, actionIcon, dragIcon } = computeFolderMetrics(
+    settings.height,
+  );
 
   return (
     <div className="flex flex-col gap-0.5 w-full">
@@ -30,7 +29,10 @@ function FolderExample({ settings, name, count }: FolderExampleProps) {
               className="flex-shrink-0 rounded-md bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-inner group-hover:border-indigo-500/30 transition-colors"
               style={{ width: icon + 2, height: icon + 2 }}
             >
-              <Folder style={{ width: icon * 0.58, height: icon * 0.58 }} className="text-indigo-400" />
+              <Folder
+                style={{ width: icon * 0.58, height: icon * 0.58 }}
+                className="text-indigo-400"
+              />
             </div>
           )}
 

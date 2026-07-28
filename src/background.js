@@ -1,6 +1,6 @@
 const WELCOME_URL = import.meta.env.DEV
   ? "chrome-extension://mnfekpehiijgccmpgcmecpefpofeaogj/index.html/#/welcome"
-  : "chrome-extension://fagjclghcmnfinjdkdnkejodfjgkpljd/index.html/#/welcome";
+  : "chrome-extension://fagjclghcmnfinjdkdnkejodfjgkpljd/index.html#/welcome";
 
 chrome.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === "install") {

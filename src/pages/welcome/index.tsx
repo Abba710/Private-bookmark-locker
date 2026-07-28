@@ -3,8 +3,22 @@ import { motion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "preact/hooks";
 import "./index.css";
 import {
-  Pin, HatGlasses, Keyboard, ArrowUpRight, Save, EyeOff, Search, Monitor,
-  Palette, ArrowLeftRight, Download, Layers, QrCode, FileText, Sparkles, FolderPlus,
+  Pin,
+  HatGlasses,
+  Keyboard,
+  ArrowUpRight,
+  Save,
+  EyeOff,
+  Search,
+  Monitor,
+  Palette,
+  ArrowLeftRight,
+  Download,
+  Layers,
+  QrCode,
+  FileText,
+  Sparkles,
+  FolderPlus,
 } from "lucide-react";
 import { InstructionModal } from "./instructionModal";
 
@@ -30,130 +44,145 @@ const LOCKER_ICON = "/images/icon128.png";
 
 const SLIDES: Slide[] = [
   {
-    title: chrome.i18n.getMessage('app_slides_intro_title'),
-    subtitle: chrome.i18n.getMessage('app_slides_intro_subtitle'),
+    title: chrome.i18n.getMessage("app_slides_intro_title"),
+    subtitle: chrome.i18n.getMessage("app_slides_intro_subtitle"),
     icon: LOCKER_ICON,
-    content: chrome.i18n.getMessage('app_slides_intro_content'),
-    color: 'text-indigo-400',
-    video: '',
+    content: chrome.i18n.getMessage("app_slides_intro_content"),
+    color: "text-indigo-400",
+    video: "",
   },
   {
-    title: chrome.i18n.getMessage('app_slides_step1_title'),
+    title: chrome.i18n.getMessage("app_slides_step1_title"),
     icon: Pin,
-    content: chrome.i18n.getMessage('app_slides_step1_content'),
-    video: 'https://media.abbablog.me/locker/pin.mp4',
-    color: 'text-emerald-400',
+    content: chrome.i18n.getMessage("app_slides_step1_content"),
+    video: "https://media.abbablog.me/locker/pin.mp4",
+    color: "text-emerald-400",
   },
   {
-    title: chrome.i18n.getMessage('app_slides_step2_title'),
+    title: chrome.i18n.getMessage("app_slides_step2_title"),
     icon: HatGlasses,
-    content: chrome.i18n.getMessage('app_slides_step2_content'),
-    video: 'https://media.abbablog.me/locker/allowIncognito.mp4',
-    color: 'text-violet-400',
+    content: chrome.i18n.getMessage("app_slides_step2_content"),
+    video: "https://media.abbablog.me/locker/allowIncognito.mp4",
+    color: "text-violet-400",
   },
   {
-    title: chrome.i18n.getMessage('app_slides_step3_title'),
+    title: chrome.i18n.getMessage("app_slides_step3_title"),
     icon: Keyboard,
-    content: chrome.i18n.getMessage('app_slides_step3_content'),
-    video: 'https://media.abbablog.me/locker/shortcut.mp4',
-    color: 'text-sky-400',
+    content: chrome.i18n.getMessage("app_slides_step3_content"),
+    video: "https://media.abbablog.me/locker/shortcut.mp4",
+    color: "text-sky-400",
   },
   {
-    title: chrome.i18n.getMessage('app_slides_explore_title'),
+    title: chrome.i18n.getMessage("app_slides_explore_title"),
     icon: LOCKER_ICON,
-    content: chrome.i18n.getMessage('app_slides_explore_content'),
-    video: '',
+    content: chrome.i18n.getMessage("app_slides_explore_content"),
+    video: "",
     isLast: true,
   },
 ];
 
 const FEATURES: Features[] = [
   {
-    title: chrome.i18n.getMessage('app_features_save_bookmarks_title'),
-    color: 'hover:text-emerald-400',
-    description: chrome.i18n.getMessage('app_features_save_bookmarks_description'),
+    title: chrome.i18n.getMessage("app_features_save_bookmarks_title"),
+    color: "hover:text-emerald-400",
+    description: chrome.i18n.getMessage(
+      "app_features_save_bookmarks_description",
+    ),
     icon: Save,
-    video: 'https://media.abbablog.me/locker/savebookmark.mp4',
+    video: "https://media.abbablog.me/locker/savebookmark.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_create_folders_title'),
-    color: 'hover:text-indigo-400',
-    description: chrome.i18n.getMessage('app_features_create_folders_description'),
+    title: chrome.i18n.getMessage("app_features_create_folders_title"),
+    color: "hover:text-indigo-400",
+    description: chrome.i18n.getMessage(
+      "app_features_create_folders_description",
+    ),
     icon: FolderPlus,
-    video: 'https://media.abbablog.me/locker/folders.mp4',
+    video: "https://media.abbablog.me/locker/folders.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_incognito_mode_title'),
-    color: 'hover:text-violet-400',
-    description: chrome.i18n.getMessage('app_features_incognito_mode_description'),
+    title: chrome.i18n.getMessage("app_features_incognito_mode_title"),
+    color: "hover:text-violet-400",
+    description: chrome.i18n.getMessage(
+      "app_features_incognito_mode_description",
+    ),
     icon: EyeOff,
-    video: 'https://media.abbablog.me/locker/incognitoShowcase.mp4',
+    video: "https://media.abbablog.me/locker/incognitoShowcase.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_search_title'),
-    color: 'hover:text-sky-400',
-    description: chrome.i18n.getMessage('app_features_search_description'),
+    title: chrome.i18n.getMessage("app_features_search_title"),
+    color: "hover:text-sky-400",
+    description: chrome.i18n.getMessage("app_features_search_description"),
     icon: Search,
-    video: 'https://media.abbablog.me/locker/search.mp4',
+    video: "https://media.abbablog.me/locker/search.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_fullscreen_mode_title'),
-    color: 'hover:text-orange-400',
-    description: chrome.i18n.getMessage('app_features_fullscreen_mode_description'),
+    title: chrome.i18n.getMessage("app_features_fullscreen_mode_title"),
+    color: "hover:text-orange-400",
+    description: chrome.i18n.getMessage(
+      "app_features_fullscreen_mode_description",
+    ),
     icon: Monitor,
-    video: 'https://media.abbablog.me/locker/fullscrn.mp4',
+    video: "https://media.abbablog.me/locker/fullscrn.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_customize_title'),
-    color: 'hover:text-pink-400',
-    description: chrome.i18n.getMessage('app_features_customize_description'),
+    title: chrome.i18n.getMessage("app_features_customize_title"),
+    color: "hover:text-pink-400",
+    description: chrome.i18n.getMessage("app_features_customize_description"),
     icon: Palette,
-    video: 'https://media.abbablog.me/locker/customize.mp4',
+    video: "https://media.abbablog.me/locker/customize.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_import_export_title'),
-    color: 'hover:text-amber-400',
-    description: chrome.i18n.getMessage('app_features_import_export_description'),
+    title: chrome.i18n.getMessage("app_features_import_export_title"),
+    color: "hover:text-amber-400",
+    description: chrome.i18n.getMessage(
+      "app_features_import_export_description",
+    ),
     icon: ArrowLeftRight,
-    video: 'https://media.abbablog.me/locker/importexport.mp4',
+    video: "https://media.abbablog.me/locker/importexport.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_import_from_browser_title'),
-    color: 'hover:text-blue-400',
-    description: chrome.i18n.getMessage('app_features_import_from_browser_description'),
+    title: chrome.i18n.getMessage("app_features_import_from_browser_title"),
+    color: "hover:text-blue-400",
+    description: chrome.i18n.getMessage(
+      "app_features_import_from_browser_description",
+    ),
     icon: Download,
-    video: 'https://media.abbablog.me/locker/importfrombrowser.mp4',
+    video: "https://media.abbablog.me/locker/importfrombrowser.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_session_manager_title'),
-    color: 'hover:text-cyan-400',
-    description: chrome.i18n.getMessage('app_features_session_manager_description'),
+    title: chrome.i18n.getMessage("app_features_session_manager_title"),
+    color: "hover:text-cyan-400",
+    description: chrome.i18n.getMessage(
+      "app_features_session_manager_description",
+    ),
     icon: Layers,
-    video: 'https://media.abbablog.me/locker/sessionmanager.mp4',
+    video: "https://media.abbablog.me/locker/sessionmanager.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_qr_generator_title'),
-    color: 'hover:text-lime-400',
-    description: chrome.i18n.getMessage('app_features_qr_generator_description'),
+    title: chrome.i18n.getMessage("app_features_qr_generator_title"),
+    color: "hover:text-lime-400",
+    description: chrome.i18n.getMessage(
+      "app_features_qr_generator_description",
+    ),
     icon: QrCode,
-    video: 'https://media.abbablog.me/locker/qr.mp4',
+    video: "https://media.abbablog.me/locker/qr.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_save_as_pdf_title'),
-    color: 'hover:text-red-400',
-    description: chrome.i18n.getMessage('app_features_save_as_pdf_description'),
+    title: chrome.i18n.getMessage("app_features_save_as_pdf_title"),
+    color: "hover:text-red-400",
+    description: chrome.i18n.getMessage("app_features_save_as_pdf_description"),
     icon: FileText,
-    video: 'https://media.abbablog.me/locker/pdf.mp4',
+    video: "https://media.abbablog.me/locker/pdf.mp4",
   },
   {
-    title: chrome.i18n.getMessage('app_features_ai_summary_title'),
-    color: 'hover:text-fuchsia-400',
-    description: chrome.i18n.getMessage('app_features_ai_summary_description'),
+    title: chrome.i18n.getMessage("app_features_ai_summary_title"),
+    color: "hover:text-fuchsia-400",
+    description: chrome.i18n.getMessage("app_features_ai_summary_description"),
     icon: Sparkles,
-    video: 'https://media.abbablog.me/locker/aisummary.mp4',
+    video: "https://media.abbablog.me/locker/aisummary.mp4",
   },
 ];
-
 
 function SlideVideo({ src, isActive }: { src: string; isActive: boolean }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -209,21 +238,27 @@ export default function WelcomePage() {
     });
   }, []);
 
-  const handleWheel = useCallback((event: WheelEvent) => {
-    event.preventDefault();
-    if (Math.abs(event.deltaY) < 10) return;
-    goTo(index + (event.deltaY > 0 ? 1 : -1));
-  }, [index, goTo]);
+  const handleWheel = useCallback(
+    (event: WheelEvent) => {
+      event.preventDefault();
+      if (Math.abs(event.deltaY) < 10) return;
+      goTo(index + (event.deltaY > 0 ? 1 : -1));
+    },
+    [index, goTo],
+  );
 
-  const handleKeyDown = useCallback((event: KeyboardEvent) => {
-    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
-      event.preventDefault();
-      goTo(index + 1);
-    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
-      event.preventDefault();
-      goTo(index - 1);
-    }
-  }, [index, goTo]);
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        event.preventDefault();
+        goTo(index + 1);
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        event.preventDefault();
+        goTo(index - 1);
+      }
+    },
+    [index, goTo],
+  );
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
@@ -245,22 +280,45 @@ export default function WelcomePage() {
           // snappier, less "floaty" spring — high stiffness + high damping
           // settles fast with almost no overshoot, reads as premium/fast
           // rather than the slow bouncy feel of low stiffness/damping
-          transition={{ type: "spring", stiffness: 420, damping: 42, mass: 0.9 }}
+          transition={{
+            type: "spring",
+            stiffness: 420,
+            damping: 42,
+            mass: 0.9,
+          }}
         >
           {SLIDES.map((label, slideIndex) => (
-            <section key={label.title} className="slide flex flex-col items-center justify-center">
+            <section
+              key={label.title}
+              className="slide flex flex-col items-center justify-center"
+            >
               <motion.div
                 initial={{ opacity: 0, y: 12, scale: 0.94 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 32, mass: 0.7 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 32,
+                  mass: 0.7,
+                }}
                 style={{ willChange: "transform, opacity" }}
                 className={`relative flex items-center justify-center w-20 h-20 rounded-3xl bg-white/[0.03] border border-white/[0.06] ${label.color ?? "text-indigo-400"}`}
               >
                 <div className="absolute inset-0 rounded-3xl bg-current opacity-[0.12] blur-2xl pointer-events-none" />
                 {typeof label.icon === "string" ? (
-                  <img src={label.icon} alt={label.title} className="relative h-10 w-10 object-contain" />
+                  <img
+                    src={label.icon}
+                    alt={label.title}
+                    className="relative h-10 w-10 object-contain"
+                  />
                 ) : (
-                  label.icon && <label.icon size={36} strokeWidth={1.5} className="relative text-current" />
+                  label.icon && (
+                    <label.icon
+                      size={36}
+                      strokeWidth={1.5}
+                      className="relative text-current"
+                    />
+                  )
                 )}
               </motion.div>
 
@@ -289,7 +347,11 @@ export default function WelcomePage() {
                         key={item.title}
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.02, duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{
+                          delay: i * 0.02,
+                          duration: 0.22,
+                          ease: [0.16, 1, 0.3, 1],
+                        }}
                         onClick={() => {
                           setSelectedFeature(item);
                           setModalOpen(true);

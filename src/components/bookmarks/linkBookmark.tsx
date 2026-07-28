@@ -2,8 +2,10 @@ import { type Bookmark } from "@/types/types";
 import ContextMenu from "@/components/contextMenu/contextMenu";
 import { useState } from "preact/hooks";
 import { GripVertical, Pencil, Trash2, Globe, Menu, Check } from "lucide-react";
-import { computeBookmarkMetrics, type BookmarkRowSettings } from "@/components/settings/bookmarks/controls";
-
+import {
+  computeBookmarkMetrics,
+  type BookmarkRowSettings,
+} from "@/components/settings/bookmarks/controls";
 
 export function LinkBookmark({
   bookmark,
@@ -26,7 +28,8 @@ export function LinkBookmark({
 }) {
   const [menuVisible, setMenuVisible] = useState(false);
   const [menuPos, setMenuPos] = useState({ x: 0, y: 0 });
-  const { icon, titleFont, urlFont, actionIcon, dragIcon } = computeBookmarkMetrics(settingsBookmark.height)
+  const { icon, titleFont, urlFont, actionIcon, dragIcon } =
+    computeBookmarkMetrics(settingsBookmark.height);
 
   const getFaviconUrl = (url?: string) => {
     if (!url) return "";
@@ -71,52 +74,75 @@ export function LinkBookmark({
         <GripVertical style={{ width: dragIcon, height: dragIcon }} />
       </div>
 
-
-        <a href={bookmark.url}
-          onClick={(e) => {
-            e.preventDefault();
-            chrome.windows.getCurrent((window) => {
-              if (window.incognito === bookmark.incognito) {
-                chrome.tabs.create({ url: bookmark.url, windowId: window.id });
-              } else {
-                chrome.windows.create({
-                  url: bookmark.url,
-                  incognito: bookmark.incognito,
-                });
-              }
-            });
-          }}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center select-none gap-2 flex-1 min-w-0 no-underline pl-1 group-hover:pl-2.5 transition-all duration-300"
-          ref={setDroppableRef}
-        >
-        {settingsBookmark.iconEnabled && <div style={{ width: icon + 2, height: icon + 2 }} className="flex-shrink-0 rounded-md bg-[#1a1a1a] border border-white/10 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-indigo-500/30 transition-colors">
-          {getFaviconUrl(bookmark.url) ? (
-            <img
-              src={getFaviconUrl(bookmark.url)}
-              alt=""
-              className="object-contain"
-              style={{ width: icon * 0.58, height: icon * 0.58 }}
-            />
-          ) : (
-            <Globe className="text-indigo-400/60" style={{ width: icon * 0.58, height: icon * 0.58 }} />
-          )}
-        </div>}
+      <a
+        href={bookmark.url}
+        onClick={(e) => {
+          e.preventDefault();
+          chrome.windows.getCurrent((window) => {
+            if (window.incognito === bookmark.incognito) {
+              chrome.tabs.create({ url: bookmark.url, windowId: window.id });
+            } else {
+              chrome.windows.create({
+                url: bookmark.url,
+                incognito: bookmark.incognito,
+              });
+            }
+          });
+        }}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center select-none gap-2 flex-1 min-w-0 no-underline pl-1 group-hover:pl-2.5 transition-all duration-300"
+        ref={setDroppableRef}
+      >
+        {settingsBookmark.iconEnabled && (
+          <div
+            style={{ width: icon + 2, height: icon + 2 }}
+            className="flex-shrink-0 rounded-md bg-[#1a1a1a] border border-white/10 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-indigo-500/30 transition-colors"
+          >
+            {getFaviconUrl(bookmark.url) ? (
+              <img
+                src={getFaviconUrl(bookmark.url)}
+                alt=""
+                className="object-contain"
+                style={{ width: icon * 0.58, height: icon * 0.58 }}
+              />
+            ) : (
+              <Globe
+                className="text-indigo-400/60"
+                style={{ width: icon * 0.58, height: icon * 0.58 }}
+              />
+            )}
+          </div>
+        )}
 
         {/* TEXT AREA: Grows and shrinks smoothly */}
         <div className="flex flex-col justify-center min-w-0 flex-1 transition-all duration-300">
-          <span style={{ fontSize: titleFont }} className="text-white font-semibold truncate leading-tight group-hover:text-indigo-300 transition-colors">
+          <span
+            style={{ fontSize: titleFont }}
+            className="text-white font-semibold truncate leading-tight group-hover:text-indigo-300 transition-colors"
+          >
             {bookmark.title || getDomain(bookmark.url)}
           </span>
-          {settingsBookmark.showUrl && (<span style={{ fontSize: urlFont }} className="text-gray-400 truncate leading-none mt-0.5 font-medium opacity-80">
-            {getDomain(bookmark.url)}
-          </span>)}
+          {settingsBookmark.showUrl && (
+            <span
+              style={{ fontSize: urlFont }}
+              className="text-gray-400 truncate leading-none mt-0.5 font-medium opacity-80"
+            >
+              {getDomain(bookmark.url)}
+            </span>
+          )}
         </div>
       </a>
 
       {/* DYNAMIC ACTIONS: Slide in effect */}
-      <div style={{ "--actions-width": `${(actionIcon * 3) + 25}px` } as React.CSSProperties} className={`flex items-center w-0 group-hover:w-[var(--actions-width)] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0`}>
+      <div
+        style={
+          {
+            "--actions-width": `${actionIcon * 3 + 25}px`,
+          } as React.CSSProperties
+        }
+        className={`flex items-center w-0 group-hover:w-[var(--actions-width)] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0`}
+      >
         <div className="flex items-center gap-0 pl-1 border-l border-white/5">
           <button
             className="p-1 text-gray-500 hover:text-emerald-400 cursor-pointer transition-colors"
@@ -140,7 +166,11 @@ export function LinkBookmark({
             }}
             className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 cursor-pointer rounded-md transition-colors"
           >
-            {confirmDeleteId === bookmark.id ? <Check style={{ width: actionIcon, height: actionIcon }} /> : <Trash2 style={{ width: actionIcon, height: actionIcon }} />}
+            {confirmDeleteId === bookmark.id ? (
+              <Check style={{ width: actionIcon, height: actionIcon }} />
+            ) : (
+              <Trash2 style={{ width: actionIcon, height: actionIcon }} />
+            )}
           </button>
         </div>
       </div>

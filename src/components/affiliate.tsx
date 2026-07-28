@@ -1,49 +1,49 @@
-import { useState, useEffect } from 'preact/hooks'
-import { X, HandCoins } from 'lucide-react'
+import { useState, useEffect } from "preact/hooks";
+import { X, HandCoins } from "lucide-react";
 
 export default function Affiliate() {
-  const AFFILIATE_KEY = 'AFFILIATE'
+  const AFFILIATE_KEY = "AFFILIATE";
 
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       chrome.storage.local.get(AFFILIATE_KEY, (result) => {
-        const value = result[AFFILIATE_KEY]
+        const value = result[AFFILIATE_KEY];
 
         if (value === undefined) {
           chrome.storage.local.set({
             [AFFILIATE_KEY]: true,
-          })
+          });
 
-          setVisible(true)
-          return
+          setVisible(true);
+          return;
         }
 
-        setVisible(value)
-      })
-    }, 1500)
+        setVisible(value);
+      });
+    }, 1500);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   const closeBanner = (e: MouseEvent) => {
-    e.stopPropagation()
+    e.stopPropagation();
 
     chrome.storage.local.set({
       [AFFILIATE_KEY]: false,
-    })
+    });
 
-    setVisible(false)
-  }
+    setVisible(false);
+  };
 
   const openAffiliate = () => {
     chrome.tabs.create({
-      url: 'https://abba4game.lemonsqueezy.com/affiliates?utm_source=aff_flow',
-    })
-  }
+      url: "https://abba4game.lemonsqueezy.com/affiliates?utm_source=aff_flow",
+    });
+  };
 
-  if (!visible) return null
+  if (!visible) return null;
 
   return (
     <div
@@ -94,14 +94,14 @@ export default function Affiliate() {
 
         <div className="flex-1">
           <div className="text-base font-semibold">
-            {chrome.i18n.getMessage('app_affiliate_title')}
+            {chrome.i18n.getMessage("app_affiliate_title")}
           </div>
 
           <div className="text-sm text-white/80">
-            {chrome.i18n.getMessage('app_affiliate_description')}
+            {chrome.i18n.getMessage("app_affiliate_description")}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

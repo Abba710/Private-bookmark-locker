@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'preact/hooks'
+import { useState, useEffect } from "preact/hooks";
 import {
   Cloud,
   RefreshCw,
@@ -6,184 +6,183 @@ import {
   AlertTriangle,
   Loader2,
   WifiOff,
-} from 'lucide-react'
-import { Badge } from './ui/badge'
+} from "lucide-react";
+import { Badge } from "./ui/badge";
 import {
   getSyncStatus,
   forceSyncBookmarks,
   resolveConflict,
-} from '@/service/sync/manager'
+} from "@/service/sync/manager";
 
 /**
  * SyncStatus Component
  * Manages UI for cloud synchronization status, pending changes, and database conflicts.
  */
 export function SyncStatus() {
-  const [status, setStatus] = useState(getSyncStatus())
-  const [syncing, setSyncing] = useState(false)
-  const [conflict, setConflict] = useState<any>(null)
+  const [status, setStatus] = useState(getSyncStatus());
+  const [syncing, setSyncing] = useState(false);
+  const [conflict, setConflict] = useState<any>(null);
 
   useEffect(() => {
     // Refresh status every second for the timer/counter
     const interval = setInterval(() => {
-      setStatus(getSyncStatus())
-    }, 1000)
+      setStatus(getSyncStatus());
+    }, 1000);
 
     // Check for existing conflicts on mount
-    chrome.storage.local.get(['bookmarkConflict'], (result) => {
-      if (result.bookmarkConflict) setConflict(result.bookmarkConflict)
-    })
+    chrome.storage.local.get(["bookmarkConflict"], (result) => {
+      if (result.bookmarkConflict) setConflict(result.bookmarkConflict);
+    });
 
     // Listen for messages from background or manager
     const messageListener = (message: any) => {
-      if (message.action === 'bookmark_conflict') {
-        setConflict(message.data)
+      if (message.action === "bookmark_conflict") {
+        setConflict(message.data);
       }
-      if (message.action === 'sync_status') {
-        setStatus(message.status)
+      if (message.action === "sync_status") {
+        setStatus(message.status);
       }
-    }
+    };
 
-    chrome.runtime.onMessage.addListener(messageListener)
+    chrome.runtime.onMessage.addListener(messageListener);
 
     return () => {
-      clearInterval(interval)
-      chrome.runtime.onMessage.removeListener(messageListener)
-    }
-  }, [])
+      clearInterval(interval);
+      chrome.runtime.onMessage.removeListener(messageListener);
+    };
+  }, []);
 
   // Manually trigger sync process
   const handleForceSync = async () => {
-    setSyncing(true)
+    setSyncing(true);
     try {
-      const success = await forceSyncBookmarks()
-      if (!success) console.warn('Sync skipped: manager inactive or busy')
+      const success = await forceSyncBookmarks();
+      if (!success) console.warn("Sync skipped: manager inactive or busy");
     } finally {
-      setSyncing(false)
-      setStatus(getSyncStatus())
+      setSyncing(false);
+      setStatus(getSyncStatus());
     }
-  }
+  };
 
   // Resolve DB conflicts manually
-  const handleResolve = async (choice: 'local' | 'server' | 'merge') => {
-    setSyncing(true)
-    await resolveConflict(choice)
-    setConflict(null)
-    setSyncing(false)
-    setStatus(getSyncStatus())
-  }
+  const handleResolve = async (choice: "local" | "server" | "merge") => {
+    setSyncing(true);
+    await resolveConflict(choice);
+    setConflict(null);
+    setSyncing(false);
+    setStatus(getSyncStatus());
+  };
 
   // --- UI Helpers ---
   const getStatusBadge = () => {
     const baseClass =
-      'flex items-center gap-1.5 w-[38.5px] h-[40px] px-2.5 py-1 transition-all duration-300 shadow-sm'
+      "flex items-center gap-1.5 w-[38.5px] h-[40px] px-2.5 py-1 transition-all duration-300 shadow-sm";
 
     if (!status.isOnline) {
       return (
         <Badge
           variant="outline"
-          title={chrome.i18n.getMessage('app_sync_offline')}
+          title={chrome.i18n.getMessage("app_sync_offline")}
           className={`${baseClass} bg-red-500/10 text-red-400 border-red-500/20 shadow-red-500/5`}
         >
           <WifiOff className="w-3.5 h-3.5" />
           <span className="text-[11px] font-semibold uppercase tracking-tight">
-            {chrome.i18n.getMessage('app_sync_offline')}
+            {chrome.i18n.getMessage("app_sync_offline")}
           </span>
         </Badge>
-      )
+      );
     }
     if (status.isSyncing || syncing) {
       return (
         <Badge
           variant="outline"
-          title={chrome.i18n.getMessage('app_sync_syncing')}
+          title={chrome.i18n.getMessage("app_sync_syncing")}
           className={`${baseClass} bg-indigo-500/10 text-indigo-400 border-indigo-500/20 shadow-indigo-500/5`}
         >
           <Loader2 className="w-3.5 h-3.5 animate-spin" />
         </Badge>
-      )
+      );
     }
     if (status.hasPendingChanges) {
       return (
         <Badge
           variant="outline"
-          title={chrome.i18n.getMessage('app_sync_pending')}
+          title={chrome.i18n.getMessage("app_sync_pending")}
           className={`${baseClass} bg-amber-500/10 text-amber-400 border-amber-500/20 shadow-amber-500/5`}
         >
           <Cloud className="w-3.5 h-3.5" />
         </Badge>
-      )
+      );
     }
     return (
       <Badge
         variant="outline"
-        title={`${chrome.i18n.getMessage('app_sync_last')} ${status.lastSyncTime}`}
+        title={`${chrome.i18n.getMessage("app_sync_last")} ${status.lastSyncTime}`}
         className={`${baseClass} bg-emerald-500/10 text-emerald-400 border-emerald-500/20 shadow-emerald-500/5`}
       >
         <Check className="w-3.5 h-3.5" />
-
       </Badge>
-    )
-  }
+    );
+  };
 
   if (conflict) {
     return (
       <div className="relative flex flex-col w-full gap-4 p-4 bg-[#1a1612] rounded-2xl border border-amber-500/20 shadow-2xl animate-in zoom-in-95 duration-300">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20">
-            <AlertTriangle title={chrome.i18n.getMessage('app_sync_conflict_title')} className="w-5 h-5 text-amber-500" />
+            <AlertTriangle
+              title={chrome.i18n.getMessage("app_sync_conflict_title")}
+              className="w-5 h-5 text-amber-500"
+            />
           </div>
-          <div>
-          </div>
+          <div></div>
         </div>
 
         <div className="grid grid-cols-3 gap-2">
           <button
-            onClick={() => handleResolve('local')}
+            onClick={() => handleResolve("local")}
             className="flex flex-col items-center gap-1 px-2 py-2.5 bg-white/[0.03] hover:bg-white/10 text-[10px] text-gray-400 hover:text-white rounded-xl border border-white/5 transition-all"
           >
             <span className="font-bold text-white uppercase">
               {conflict.localCount}
             </span>
-            {chrome.i18n.getMessage('app_sync_local')}
+            {chrome.i18n.getMessage("app_sync_local")}
           </button>
           <button
-            onClick={() => handleResolve('server')}
+            onClick={() => handleResolve("server")}
             className="flex flex-col items-center gap-1 px-2 py-2.5 bg-white/[0.03] hover:bg-white/10 text-[10px] text-gray-400 hover:text-white rounded-xl border border-white/5 transition-all"
           >
             <span className="font-bold text-white uppercase">
               {conflict.serverCount}
             </span>
-            {chrome.i18n.getMessage('app_sync_cloud')}
+            {chrome.i18n.getMessage("app_sync_cloud")}
           </button>
           <button
-            onClick={() => handleResolve('merge')}
+            onClick={() => handleResolve("merge")}
             className="flex flex-col items-center justify-center gap-1 px-2 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-[10px] text-white font-bold rounded-xl shadow-lg shadow-indigo-600/20 transition-all active:scale-95 uppercase tracking-wider"
           >
-            {chrome.i18n.getMessage('app_sync_merge')}
+            {chrome.i18n.getMessage("app_sync_merge")}
           </button>
         </div>
       </div>
-    )
+    );
   }
 
   return (
-      <div className="flex items-center gap-0.2">
-        {getStatusBadge()}
+    <div className="flex items-center gap-0.2">
+      {getStatusBadge()}
 
-        {/* Sync Action */}
-        <button
-          onClick={handleForceSync}
-          disabled={syncing || !status.isOnline}
-          className="ml-auto cursor-pointer p-2 text-gray-500 hover:text-white hover:bg-white/5 rounded-xl transition-all active:scale-90 disabled:opacity-20 disabled:cursor-not-allowed"
-          title={chrome.i18n.getMessage('app_sync_force_title')}
-        >
-          <RefreshCw
-            className={`w-4 h-4 ${
-              syncing ? 'animate-spin text-indigo-400' : ''
-            }`}
-          />
-        </button>
-      </div>
-  )
+      {/* Sync Action */}
+      <button
+        onClick={handleForceSync}
+        disabled={syncing || !status.isOnline}
+        className="ml-auto cursor-pointer p-2 text-gray-500 hover:text-white hover:bg-white/5 rounded-xl transition-all active:scale-90 disabled:opacity-20 disabled:cursor-not-allowed"
+        title={chrome.i18n.getMessage("app_sync_force_title")}
+      >
+        <RefreshCw
+          className={`w-4 h-4 ${syncing ? "animate-spin text-indigo-400" : ""}`}
+        />
+      </button>
+    </div>
+  );
 }

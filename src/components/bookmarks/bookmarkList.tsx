@@ -1,79 +1,80 @@
 import {
   deleteBookmarks,
   editBookmarkTitle,
-} from '@/features/bookmarks/bookmarkService'
-import { useBookmarkStore, useSwitchStore } from '@/storage/statelibrary'
-import { useMemo, useState } from 'preact/hooks'
-import Instructions from './instruction'
-import { SortableContext } from '@dnd-kit/sortable'
+} from "@/features/bookmarks/bookmarkService";
+import { useBookmarkStore, useSwitchStore } from "@/storage/statelibrary";
+import { useMemo, useState } from "preact/hooks";
+import Instructions from "./instruction";
+import { SortableContext } from "@dnd-kit/sortable";
 import {
   DndContext,
   closestCenter,
   PointerSensor,
   useSensor,
   useSensors,
-} from '@dnd-kit/core'
-import type { DragEndEvent } from '@dnd-kit/core'
-import { Sortable, handleDragEnd } from '@/features/bookmarks/bookmarkSort'
-import { FolderBookmark } from './folderBookmark'
-import { LinkBookmark } from './linkBookmark'
-import type { Bookmark } from '@/types/types'
-import { DEFAULT_SETTINGS, type ControlsSettings } from '@/components/settings/bookmarks/controls.tsx'
-import { SETTINGS_STORAGE_KEY } from '@/pages/settings'
-import { useEffect } from 'preact/hooks'
-
-
+} from "@dnd-kit/core";
+import type { DragEndEvent } from "@dnd-kit/core";
+import { Sortable, handleDragEnd } from "@/features/bookmarks/bookmarkSort";
+import { FolderBookmark } from "./folderBookmark";
+import { LinkBookmark } from "./linkBookmark";
+import type { Bookmark } from "@/types/types";
+import {
+  DEFAULT_SETTINGS,
+  type ControlsSettings,
+} from "@/components/settings/bookmarks/controls.tsx";
+import { SETTINGS_STORAGE_KEY } from "@/pages/settings";
+import { useEffect } from "preact/hooks";
 
 function BookmarkList() {
-  const [live, setLive] = useState<ControlsSettings>(DEFAULT_SETTINGS)
+  const [live, setLive] = useState<ControlsSettings>(DEFAULT_SETTINGS);
 
   useEffect(() => {
     chrome.storage.sync.get(SETTINGS_STORAGE_KEY, (res) => {
-      setLive(res[SETTINGS_STORAGE_KEY] ?? DEFAULT_SETTINGS)
-    })
-  }, [])
+      setLive(res[SETTINGS_STORAGE_KEY] ?? DEFAULT_SETTINGS);
+    });
+  }, []);
 
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
-  const sensors = useSensors(useSensor(PointerSensor))
-  const bookmarks = useBookmarkStore((state) => state.bookmarks)
-  const isIncognito = useSwitchStore((state) => state.Switch)
+  const sensors = useSensors(useSensor(PointerSensor));
+  const bookmarks = useBookmarkStore((state) => state.bookmarks);
+  const isIncognito = useSwitchStore((state) => state.Switch);
 
   const filtered = useMemo(() => {
     return isIncognito
       ? bookmarks.filter((bookmark) => bookmark.incognito)
-      : bookmarks.filter((bookmark) => !bookmark.incognito)
-  }, [bookmarks, isIncognito])
+      : bookmarks.filter((bookmark) => !bookmark.incognito);
+  }, [bookmarks, isIncognito]);
 
   const getAllIds = (bookmarks: Bookmark[]): string[] => {
-    let ids: string[] = []
+    let ids: string[] = [];
     for (const bookmark of bookmarks) {
-      ids.push(bookmark.id)
+      ids.push(bookmark.id);
       if (bookmark.children) {
-        ids.push(...getAllIds(bookmark.children))
+        ids.push(...getAllIds(bookmark.children));
       }
     }
-    return ids
-  }
+    return ids;
+  };
 
-  const allIds = getAllIds(filtered)
+  const allIds = getAllIds(filtered);
 
   const handleDelete = (id: string) => {
     if (confirmDeleteId === id) {
-        deleteBookmarks(bookmarks, id);
-        setConfirmDeleteId(null);
-        return;
-      }
+      deleteBookmarks(bookmarks, id);
+      setConfirmDeleteId(null);
+      return;
+    }
 
-      setConfirmDeleteId(id);
+    setConfirmDeleteId(id);
 
-      setTimeout(() => {
-        setConfirmDeleteId((prev) => (prev === id ? null : prev));
-      }, 3000);
-  }
+    setTimeout(() => {
+      setConfirmDeleteId((prev) => (prev === id ? null : prev));
+    }, 3000);
+  };
 
   const handleEdit = (title: string | undefined, id: string) => {
-    editBookmarkTitle(bookmarks, title, id)
-  }
+    editBookmarkTitle(bookmarks, title, id);
+  };
 
   return (
     <div className="w-full h-full flex flex-col gap-6 relative mb-10">
@@ -141,7 +142,7 @@ function BookmarkList() {
         </SortableContext>
       </DndContext>
     </div>
-  )
+  );
 }
 
-export default BookmarkList
+export default BookmarkList;

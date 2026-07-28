@@ -1,6 +1,6 @@
-import { useContextModalStore } from '@/components/contextMenu/contextMenuStore'
-import { QRCodeCanvas } from 'qrcode.react'
-import { X, Share2, Globe } from 'lucide-react'
+import { useContextModalStore } from "@/components/contextMenu/contextMenuStore";
+import { QRCodeCanvas } from "qrcode.react";
+import { X, Share2, Globe } from "lucide-react";
 
 /**
  * QrModalUi Component
@@ -9,11 +9,11 @@ import { X, Share2, Globe } from 'lucide-react'
  */
 
 export default function QrModalUi() {
-  const modalOpen = useContextModalStore((state) => state.qrModalOpen)
-  const setModalOpen = useContextModalStore((state) => state.setQrModalOpen)
-  const bookmark = useContextModalStore((state) => state.bookmark)
+  const modalOpen = useContextModalStore((state) => state.qrModalOpen);
+  const setModalOpen = useContextModalStore((state) => state.setQrModalOpen);
+  const bookmark = useContextModalStore((state) => state.bookmark);
 
-  if (!bookmark) return null
+  if (!bookmark) return null;
 
   /**
    * Generates favicon URL using Google's S2 service
@@ -21,14 +21,14 @@ export default function QrModalUi() {
    * @returns Favicon URL or null
    */
   const getFaviconUrl = (url?: string) => {
-    if (!url) return null
+    if (!url) return null;
     try {
-      const domain = new URL(url).hostname
-      return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`
+      const domain = new URL(url).hostname;
+      return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
     } catch {
-      return null
+      return null;
     }
-  }
+  };
 
   /**
    * Extracts clean domain name for display
@@ -36,13 +36,13 @@ export default function QrModalUi() {
    * @returns Cleaned hostname
    */
   const getDomain = (url?: string) => {
-    if (!url) return ''
+    if (!url) return "";
     try {
-      return new URL(url).hostname.replace('www.', '')
+      return new URL(url).hostname.replace("www.", "");
     } catch {
-      return url
+      return url;
     }
-  }
+  };
 
   return (
     <>
@@ -93,7 +93,7 @@ export default function QrModalUi() {
               {/* QR Block - High Contrast Container */}
               <div className="relative p-5 bg-white rounded-[24px] shadow-[0_0_30px_rgba(99,102,241,0.15)] mb-8">
                 <QRCodeCanvas
-                  value={bookmark.url || ''}
+                  value={bookmark.url || ""}
                   size={180}
                   level="H" // High error correction
                   bgColor="#FFFFFF"
@@ -106,7 +106,7 @@ export default function QrModalUi() {
               <div className="flex items-center gap-2 mb-8 text-zinc-400">
                 <Share2 className="w-4 h-4 text-indigo-400" />
                 <p className="text-xs font-medium">
-                  {chrome.i18n.getMessage('app_qr_modal_info')}
+                  {chrome.i18n.getMessage("app_qr_modal_info")}
                 </p>
               </div>
 
@@ -115,12 +115,12 @@ export default function QrModalUi() {
                 onClick={() => setModalOpen(false)}
                 className="w-full py-4 rounded-xl cursor-pointer bg-white/5 border border-white/5 text-white text-sm font-semibold hover:bg-white/10 hover:border-white/10 transition-all active:scale-[0.98]"
               >
-                {chrome.i18n.getMessage('app_qr_close_button')}
+                {chrome.i18n.getMessage("app_qr_close_button")}
               </button>
             </div>
           </div>
         </div>
       )}
     </>
-  )
+  );
 }

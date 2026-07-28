@@ -1,5 +1,5 @@
-import { create } from 'zustand'
-import { persist, createJSONStorage } from 'zustand/middleware'
+import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
 import {
   type Bookmark,
   type BookmarkStore,
@@ -12,54 +12,54 @@ import {
   type SubscribeState,
   type promoteProps,
   type useFloatWidgetStoreProps,
-} from '@/types/types'
-import { supabase } from '@/service/supabase'
+} from "@/types/types";
+import { supabase } from "@/service/supabase";
 
 export const useBookmarkStore = create<BookmarkStore>((set) => ({
   bookmarks: [],
   setBookmarks: (bookmarks: Bookmark[]) => set({ bookmarks }),
-}))
+}));
 
 export const useSwitchStore = create<SwitchStore>((set) => ({
   Switch: false,
   setSwitch: (filtered: boolean) => set({ Switch: filtered }),
-}))
+}));
 
 export const useLockOverlayStore = create<LockOverlayStore>((set) => ({
   isLocked: true,
-  mode: 'unlock',
+  mode: "unlock",
   setIsLocked: (locked) => set({ isLocked: locked }),
   setMode: (mode) => set({ mode }),
-}))
+}));
 
 export const useFeedbackStore = create<FeedbackStore>((set) => ({
   showFeedback: false,
   setShowFeedback: (show) => set({ showFeedback: show }),
-}))
+}));
 
 export const useSupportDialogStore = create<supportDialogProps>((set) => ({
   supportOpen: false,
   setSupportOpen: (open) => set({ supportOpen: open }),
-}))
+}));
 
 export const usePromoteStore = create<promoteProps>((set) => ({
   promoteOpen: false,
   setPromoteOpen: (open) => set({ promoteOpen: open }),
-}))
+}));
 
 export const useNotificationDialogStore = create<notificationDialogProps>(
   (set) => ({
     notificationOpen: false,
     setNotificationOpen: (open) => set({ notificationOpen: open }),
-  })
-)
+  }),
+);
 
 export const usePremiumModalStore = create<usePremiumModalStoreProps>(
   (set) => ({
     premiumModalOpen: false,
     setPremiumModalOpen: (open) => set({ premiumModalOpen: open }),
-  })
-)
+  }),
+);
 
 export const useSubscribePlanStore = create<SubscribeState>()(
   persist(
@@ -70,7 +70,7 @@ export const useSubscribePlanStore = create<SubscribeState>()(
       setPlan: (status) => set({ isPro: status }),
 
       checkSubscription: async () => {
-        const currentIsPro = get().isPro
+        const currentIsPro = get().isPro;
 
         /**
          * UX Optimization:
@@ -79,44 +79,44 @@ export const useSubscribePlanStore = create<SubscribeState>()(
          * or showing a spinner to a user who is already known to be Pro.
          */
         if (!currentIsPro) {
-          set({ isLoading: true })
+          set({ isLoading: true });
         }
 
         try {
           const {
             data: { user },
-          } = await supabase.auth.getUser()
+          } = await supabase.auth.getUser();
 
           if (!user) {
             // User is not logged in -> definitely not Pro
-            set({ isPro: false, isLoading: false })
-            return
+            set({ isPro: false, isLoading: false });
+            return;
           }
 
           const { data, error } = await supabase
-            .from('profiles')
-            .select('is_pro')
-            .eq('id', user.id)
-            .maybeSingle()
+            .from("profiles")
+            .select("is_pro")
+            .eq("id", user.id)
+            .maybeSingle();
 
-          if (error) throw error
+          if (error) throw error;
 
           // Update store with authoritative server data
-          set({ isPro: data?.is_pro ?? false, isLoading: false })
+          set({ isPro: data?.is_pro ?? false, isLoading: false });
         } catch (error) {
-          console.error('Subscription check error:', error)
+          console.error("Subscription check error:", error);
           /**
            * Safety Fallback:
            * If the network fails, it is safer to assume false for new checks,
            * OR keep the existing state if you want "offline pro" mode.
            * Here we reset to false to prevent abuse.
            */
-          set({ isPro: false, isLoading: false })
+          set({ isPro: false, isLoading: false });
         }
       },
     }),
     {
-      name: 'subscription-storage', // Key in localStorage
+      name: "subscription-storage", // Key in localStorage
       storage: createJSONStorage(() => localStorage),
 
       /**
@@ -124,11 +124,11 @@ export const useSubscribePlanStore = create<SubscribeState>()(
        * 'isLoading' should reset on page reload to ensure logic runs correctly.
        */
       partialize: (state) => ({ isPro: state.isPro }),
-    }
-  )
-)
+    },
+  ),
+);
 
 export const useFloatWidgetStore = create<useFloatWidgetStoreProps>((set) => ({
   hidden: true,
   setHidden: (hidden) => set({ hidden }),
-}))
+}));

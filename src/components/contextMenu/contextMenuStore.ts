@@ -1,5 +1,5 @@
-import { create } from 'zustand'
-import type { QrModalProps } from '@/components/contextMenu/contextTypes'
+import { create } from "zustand";
+import type { QrModalProps } from "@/components/contextMenu/contextTypes";
 
 export const useContextModalStore = create<QrModalProps>((set) => ({
   bookmark: null,
@@ -8,4 +8,4 @@ export const useContextModalStore = create<QrModalProps>((set) => ({
   setQrModalOpen: (open) => set({ qrModalOpen: open }),
   downloadModalOpen: false,
   setDownloadModalOpen: (open) => set({ downloadModalOpen: open }),
-}))
+}));

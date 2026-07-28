@@ -1,19 +1,19 @@
-import { getChromeBookmarks } from '@/features/bookmarks/bookmarkService'
-import { X, Download, ChevronRight, Activity } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { getChromeBookmarks } from "@/features/bookmarks/bookmarkService";
+import { X, Download, ChevronRight, Activity } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function ImportBookmarksDialog() {
-  const [importOpen, setImportOpen] = useState(false)
+  const [importOpen, setImportOpen] = useState(false);
   useEffect(() => {
-    chrome.storage.local.get('showImportChromeBookmarks', (result) => {
+    chrome.storage.local.get("showImportChromeBookmarks", (result) => {
       if (result.showImportChromeBookmarks === true) {
-        setImportOpen(true)
-        chrome.storage.local.set({ showImportChromeBookmarks: false })
+        setImportOpen(true);
+        chrome.storage.local.set({ showImportChromeBookmarks: false });
       }
-    })
-  }, [])
+    });
+  }, []);
 
-  if (!importOpen) return null
+  if (!importOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -56,7 +56,7 @@ export default function ImportBookmarksDialog() {
             </div>
 
             <h2 className="text-2xl font-bold text-white tracking-tight mb-3">
-              {chrome.i18n.getMessage('app_import_chrome_title')}
+              {chrome.i18n.getMessage("app_import_chrome_title")}
             </h2>
           </div>
 
@@ -64,26 +64,26 @@ export default function ImportBookmarksDialog() {
             <div className="flex items-center gap-3 mb-4">
               <Activity className="w-5 h-5 text-blue-400" />
               <span className="text-sm text-white font-medium">
-                {chrome.i18n.getMessage('app_import_chrome_sub_title')}
+                {chrome.i18n.getMessage("app_import_chrome_sub_title")}
               </span>
             </div>
             <div className="space-y-3 text-sm text-zinc-400">
-              <div>{chrome.i18n.getMessage('app_import_chrome_a1')}</div>
-              <div>{chrome.i18n.getMessage('app_import_chrome_a2')}</div>
-              <div>{chrome.i18n.getMessage('app_import_chrome_a3')}</div>
-              <div>{chrome.i18n.getMessage('app_import_chrome_a4')}</div>
+              <div>{chrome.i18n.getMessage("app_import_chrome_a1")}</div>
+              <div>{chrome.i18n.getMessage("app_import_chrome_a2")}</div>
+              <div>{chrome.i18n.getMessage("app_import_chrome_a3")}</div>
+              <div>{chrome.i18n.getMessage("app_import_chrome_a4")}</div>
             </div>
           </div>
 
           <button
             onClick={() => {
-              getChromeBookmarks()
-              setImportOpen(false)
+              getChromeBookmarks();
+              setImportOpen(false);
             }}
             className="group cursor-pointer flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-blue-600 text-white font-bold shadow-lg hover:shadow-blue-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             <Download className="w-5 h-5" />
-            <span>{chrome.i18n.getMessage('app_import_chrome_CTA')}</span>
+            <span>{chrome.i18n.getMessage("app_import_chrome_CTA")}</span>
             <ChevronRight className="w-4 h-4 opacity-60" />
           </button>
 
@@ -91,10 +91,10 @@ export default function ImportBookmarksDialog() {
             onClick={() => setImportOpen(false)}
             className="mt-6 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
           >
-            {chrome.i18n.getMessage('app_import_chrome_later')}
+            {chrome.i18n.getMessage("app_import_chrome_later")}
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 }

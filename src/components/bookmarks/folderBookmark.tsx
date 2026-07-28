@@ -44,7 +44,9 @@ export function FolderBookmark({
   const childCount = bookmark.children?.length || 0;
   const [menuVisible, setMenuVisible] = useState(false);
   const [menuPos, setMenuPos] = useState({ x: 0, y: 0 });
-  const { icon, font, actionIcon, dragIcon } = computeFolderMetrics(settingsFolder.height);
+  const { icon, font, actionIcon, dragIcon } = computeFolderMetrics(
+    settingsFolder.height,
+  );
 
   function handleMenuClick(
     e: React.MouseEvent<HTMLDivElement | HTMLButtonElement>,
@@ -86,30 +88,52 @@ export function FolderBookmark({
           onClick={() => setIsExpanded(!isExpanded)}
         >
           {settingsFolder.iconEnabled && (
-            <div  style={{ width: icon + 2, height: icon + 2 }} className="flex-shrink-0 rounded-md bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-inner group-hover:border-indigo-500/30 transition-colors">
+            <div
+              style={{ width: icon + 2, height: icon + 2 }}
+              className="flex-shrink-0 rounded-md bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-inner group-hover:border-indigo-500/30 transition-colors"
+            >
               {isExpanded ? (
-                <FolderOpen style={{ width: icon * 0.58, height: icon * 0.58 }}  className="text-indigo-400" />
+                <FolderOpen
+                  style={{ width: icon * 0.58, height: icon * 0.58 }}
+                  className="text-indigo-400"
+                />
               ) : (
-                <Folder style={{ width: icon * 0.58, height: icon * 0.58 }}  className="text-indigo-400" />
+                <Folder
+                  style={{ width: icon * 0.58, height: icon * 0.58 }}
+                  className="text-indigo-400"
+                />
               )}
             </div>
           )}
 
           <div className="flex flex-col justify-center min-w-0 flex-grow transition-all duration-300">
-            <span style={{ fontSize: font }} className="text-white font-semibold truncate group-hover:text-indigo-300 transition-colors">
+            <span
+              style={{ fontSize: font }}
+              className="text-white font-semibold truncate group-hover:text-indigo-300 transition-colors"
+            >
               {bookmark.title}
             </span>
           </div>
 
           {childCount > 0 && !isExpanded && (
-            <span style={{ fontSize: Math.max(font - 2, 8) }} className="font-mono text-gray-400 bg-black/30 px-1.5 py-0.5 rounded border border-white/5 shrink-0 transition-opacity group-hover:opacity-0">
+            <span
+              style={{ fontSize: Math.max(font - 2, 8) }}
+              className="font-mono text-gray-400 bg-black/30 px-1.5 py-0.5 rounded border border-white/5 shrink-0 transition-opacity group-hover:opacity-0"
+            >
               {childCount}
             </span>
           )}
         </div>
 
         {/* ACTIONS & TOGGLE: Slide in together */}
-        <div style={{ "--actions-width": `${(actionIcon * 3) + 25}px` } as React.CSSProperties} className={`flex items-center w-0 group-hover:w-[var(--actions-width)] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0`}>
+        <div
+          style={
+            {
+              "--actions-width": `${actionIcon * 3 + 25}px`,
+            } as React.CSSProperties
+          }
+          className={`flex items-center w-0 group-hover:w-[var(--actions-width)] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0`}
+        >
           <div className="flex items-center gap-0 pl-1 border-l border-white/5">
             <button
               className="p-1 text-gray-500 hover:text-emerald-400 cursor-pointer transition-colors"
@@ -133,7 +157,11 @@ export function FolderBookmark({
                 onDelete(bookmark.id);
               }}
             >
-              {confirmDeleteId === bookmark.id ? <Check style={{ width: actionIcon, height: actionIcon }} /> : <Trash2 style={{ width: actionIcon, height: actionIcon }} />}
+              {confirmDeleteId === bookmark.id ? (
+                <Check style={{ width: actionIcon, height: actionIcon }} />
+              ) : (
+                <Trash2 style={{ width: actionIcon, height: actionIcon }} />
+              )}
             </button>
           </div>
         </div>

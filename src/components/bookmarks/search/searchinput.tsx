@@ -1,12 +1,12 @@
-import type { FunctionalComponent } from 'preact'
-import { Search } from 'lucide-react'
+import type { FunctionalComponent } from "preact";
+import { Search } from "lucide-react";
 
 interface SearchInputProps {
-  searchQuery: string
-  onSearchChange: (query: string) => void
-  onFocus: () => void
-  onBlur: () => void
-  placeholder?: string
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
+  onFocus: () => void;
+  onBlur: () => void;
+  placeholder?: string;
 }
 
 export const SearchInput: FunctionalComponent<SearchInputProps> = ({
@@ -14,7 +14,7 @@ export const SearchInput: FunctionalComponent<SearchInputProps> = ({
   onSearchChange,
   onFocus,
   onBlur,
-  placeholder = 'Search bookmarks...',
+  placeholder = "Search bookmarks...",
 }) => {
   return (
     <div className="relative group min-w-full">
@@ -43,5 +43,5 @@ export const SearchInput: FunctionalComponent<SearchInputProps> = ({
       {/* Subtle bottom highlight on hover */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
     </div>
-  )
-}
+  );
+};

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import ImportDialog from '@/components/ImportExport/import'
-import ExportDialog from '@/components/ImportExport/export'
+import { useState, useEffect } from "react";
+import ImportDialog from "@/components/ImportExport/import";
+import ExportDialog from "@/components/ImportExport/export";
 import {
   useBookmarkStore,
   useSupportDialogStore,
@@ -9,17 +9,17 @@ import {
   usePremiumModalStore,
   usePromoteStore,
   useFloatWidgetStore,
-} from '@/storage/statelibrary'
-import exportBookmarks from '@/features/importExport/export'
+} from "@/storage/statelibrary";
+import exportBookmarks from "@/features/importExport/export";
 import {
   getChromeBookmarks,
   saveAllOpenTabs,
-} from '@/features/bookmarks/bookmarkService'
-import { share } from '@/features/options/share'
+} from "@/features/bookmarks/bookmarkService";
+import { share } from "@/features/options/share";
 
 // Component Imports
-import ManageSubscriptionButton from '@/components/Subscribe/manageSubscribe'
-import GetProButton from '@/components/Subscribe/getPro'
+import ManageSubscriptionButton from "@/components/Subscribe/manageSubscribe";
+import GetProButton from "@/components/Subscribe/getPro";
 
 import {
   Upload,
@@ -37,10 +37,10 @@ import {
   Eye,
   ChevronRight,
   ChevronUp,
-  HandCoins
-} from 'lucide-react'
+  HandCoins,
+} from "lucide-react";
 
-import { handleCheckPremium } from '@/util/premiumCheck'
+import { handleCheckPremium } from "@/util/premiumCheck";
 
 /**
  * OptionsPanel Component
@@ -50,113 +50,113 @@ import { handleCheckPremium } from '@/util/premiumCheck'
 export default function OptionsPanel() {
   const WELCOME_URL = import.meta.env.DEV
     ? "chrome-extension://mnfekpehiijgccmpgcmecpefpofeaogj/index.html/#/welcome"
-    : "chrome-extension://fagjclghcmnfinjdkdnkejodfjgkpljd/index.html/#/welcome";
+    : "chrome-extension://fagjclghcmnfinjdkdnkejodfjgkpljd/index.html#/welcome";
   // Global States
-  const bookmarks = useBookmarkStore((state) => state.bookmarks)
-  const isPro = useSubscribePlanStore((state) => state.isPro)
-  const promoteOpen = usePromoteStore((state) => state.setPromoteOpen)
-  const hidden = useFloatWidgetStore((s) => s.hidden)
-  const setHidden = useFloatWidgetStore((s) => s.setHidden)
+  const bookmarks = useBookmarkStore((state) => state.bookmarks);
+  const isPro = useSubscribePlanStore((state) => state.isPro);
+  const promoteOpen = usePromoteStore((state) => state.setPromoteOpen);
+  const hidden = useFloatWidgetStore((s) => s.hidden);
+  const setHidden = useFloatWidgetStore((s) => s.setHidden);
   // Modal Actions
   const setPremiumModalOpen = usePremiumModalStore(
-    (state) => state.setPremiumModalOpen
-  )
-  const setSupportOpen = useSupportDialogStore((state) => state.setSupportOpen)
+    (state) => state.setPremiumModalOpen,
+  );
+  const setSupportOpen = useSupportDialogStore((state) => state.setSupportOpen);
   const setNotificationOpen = useNotificationDialogStore(
-    (state) => state.setNotificationOpen
-  )
+    (state) => state.setNotificationOpen,
+  );
 
   // Local UI States
-  const [showImport, setShowImport] = useState(false)
-  const [showExport, setShowExport] = useState(false)
+  const [showImport, setShowImport] = useState(false);
+  const [showExport, setShowExport] = useState(false);
 
   useEffect(() => {
-    chrome.storage.local.get('widgetStatus').then(({ widgetStatus }) => {
+    chrome.storage.local.get("widgetStatus").then(({ widgetStatus }) => {
       if (widgetStatus === undefined) {
-        chrome.storage.local.set({ widgetStatus: true })
-        setHidden(false)
+        chrome.storage.local.set({ widgetStatus: true });
+        setHidden(false);
       } else {
-        setHidden(!widgetStatus)
+        setHidden(!widgetStatus);
       }
-    })
+    });
 
     const listener = (changes: any) => {
-      if ('widgetStatus' in changes) {
-        setHidden(!changes.widgetStatus.newValue)
+      if ("widgetStatus" in changes) {
+        setHidden(!changes.widgetStatus.newValue);
       }
-    }
+    };
 
-    chrome.storage.onChanged.addListener(listener)
-    return () => chrome.storage.onChanged.removeListener(listener)
-  }, [])
+    chrome.storage.onChanged.addListener(listener);
+    return () => chrome.storage.onChanged.removeListener(listener);
+  }, []);
   /**
    * Style mapping for dynamic color themes
    */
   const colorMap: Record<string, string> = {
-    indigo: 'group-hover:border-indigo-500/30 group-hover:text-indigo-400',
-    amber: 'group-hover:border-amber-500/30 group-hover:text-amber-400',
-    pink: 'group-hover:border-pink-500/30 group-hover:text-pink-400',
-    red: 'group-hover:border-red-500/30 group-hover:text-red-400',
-    blue: 'group-hover:border-blue-500/30 group-hover:text-blue-400',
-    orange: 'group-hover:border-orange-500/30 group-hover:text-orange-400',
-  }
+    indigo: "group-hover:border-indigo-500/30 group-hover:text-indigo-400",
+    amber: "group-hover:border-amber-500/30 group-hover:text-amber-400",
+    pink: "group-hover:border-pink-500/30 group-hover:text-pink-400",
+    red: "group-hover:border-red-500/30 group-hover:text-red-400",
+    blue: "group-hover:border-blue-500/30 group-hover:text-blue-400",
+    orange: "group-hover:border-orange-500/30 group-hover:text-orange-400",
+  };
 
   /**
    * Reusable Row Component with Premium Indicator Logic
    */
-   const OptionRow = ({
-     icon: Icon,
-     label,
-     onClick,
-     href,
-     color = 'indigo',
-     isPremium = false,
-   }: any) => {
-     const activeColorClasses = colorMap[color] || colorMap.indigo
+  const OptionRow = ({
+    icon: Icon,
+    label,
+    onClick,
+    href,
+    color = "indigo",
+    isPremium = false,
+  }: any) => {
+    const activeColorClasses = colorMap[color] || colorMap.indigo;
 
-     const Content = (
-       <>
-         <div className="flex items-center gap-2.5">
-           <div
-             className={`relative p-1 rounded-lg bg-white/5 border border-white/5 transition-colors duration-300 ${
-               activeColorClasses.split(' ')[0]
-             }`}
-           >
-             <Icon
-               className={`w-3.5 h-3.5 text-zinc-400 transition-colors duration-300 ${
-                 activeColorClasses.split(' ')[1]
-               }`}
-             />
+    const Content = (
+      <>
+        <div className="flex items-center gap-2.5">
+          <div
+            className={`relative p-1 rounded-lg bg-white/5 border border-white/5 transition-colors duration-300 ${
+              activeColorClasses.split(" ")[0]
+            }`}
+          >
+            <Icon
+              className={`w-3.5 h-3.5 text-zinc-400 transition-colors duration-300 ${
+                activeColorClasses.split(" ")[1]
+              }`}
+            />
 
-             {isPremium && !isPro && (
-               <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
-             )}
-           </div>
-           <span className="text-zinc-300 group-hover:text-white text-[12px] font-semibold transition-colors duration-200">
-             {label}
-           </span>
-         </div>
-         <ChevronRight className="w-3 h-3 text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-0.5 transition-all duration-300" />
-       </>
-     )
+            {isPremium && !isPro && (
+              <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
+            )}
+          </div>
+          <span className="text-zinc-300 group-hover:text-white text-[12px] font-semibold transition-colors duration-200">
+            {label}
+          </span>
+        </div>
+        <ChevronRight className="w-3 h-3 text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-0.5 transition-all duration-300" />
+      </>
+    );
 
-     const classes =
-       'group flex items-center justify-between p-1.5 rounded-xl transition-all duration-200 hover:bg-white/[0.04] cursor-pointer w-full text-[12px]'
+    const classes =
+      "group flex items-center justify-between p-1.5 rounded-xl transition-all duration-200 hover:bg-white/[0.04] cursor-pointer w-full text-[12px]";
 
     if (href) {
       return (
         <a href={href} target="_blank" rel="noreferrer" className={classes}>
           {Content}
         </a>
-      )
+      );
     }
 
     return (
       <button onClick={onClick} className={classes}>
         {Content}
       </button>
-    )
-  }
+    );
+  };
 
   return (
     <div className="w-full flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-6">
@@ -164,8 +164,8 @@ export default function OptionsPanel() {
       <div className="flex flex-col gap-1 p-1.5 bg-indigo-500/[0.02] border border-indigo-500/10 rounded-2xl shadow-sm">
         <p className="px-3 pt-1 pb-2 text-[10px] font-bold text-indigo-400/70 uppercase tracking-[0.15em]">
           {isPro
-            ? chrome.i18n.getMessage('app_options_subscription_plan')
-            : chrome.i18n.getMessage('app_options_go_premium')}
+            ? chrome.i18n.getMessage("app_options_subscription_plan")
+            : chrome.i18n.getMessage("app_options_go_premium")}
         </p>
 
         {isPro ? (
@@ -178,64 +178,63 @@ export default function OptionsPanel() {
       {/* SECTION: DATA MANAGEMENT (PRO FEATURES) */}
       <div className="flex flex-col gap-1 p-1.5 bg-white/[0.02] border border-white/5 rounded-2xl shadow-sm">
         <p className="px-3 pt-1 pb-2 text-[10px] font-bold text-zinc-500 uppercase tracking-[0.15em]">
-          {chrome.i18n.getMessage('app_options_data_tools')}
+          {chrome.i18n.getMessage("app_options_data_tools")}
         </p>
         <OptionRow
           icon={Upload}
           isPremium={true}
-          label={chrome.i18n.getMessage('app_import_modal')}
+          label={chrome.i18n.getMessage("app_import_modal")}
           onClick={() => {
-            if (!handleCheckPremium()) return
-            setShowImport(true)
+            if (!handleCheckPremium()) return;
+            setShowImport(true);
           }}
           color="blue"
         />
         <OptionRow
           icon={Download}
           isPremium={true}
-          label={chrome.i18n.getMessage('app_modal_export')}
+          label={chrome.i18n.getMessage("app_modal_export")}
           onClick={() => {
-            if (!handleCheckPremium()) return
-            setShowExport(true)
+            if (!handleCheckPremium()) return;
+            setShowExport(true);
           }}
           color="blue"
         />
         <OptionRow
           icon={Settings}
           isPremium={true}
-          label={chrome.i18n.getMessage('app_options_hotkeys')}
+          label={chrome.i18n.getMessage("app_options_hotkeys")}
           onClick={() => {
-            if (!handleCheckPremium()) return
-            chrome.tabs.create({ url: 'chrome://extensions/shortcuts' })
+            if (!handleCheckPremium()) return;
+            chrome.tabs.create({ url: "chrome://extensions/shortcuts" });
           }}
           color="indigo"
         />
         <OptionRow
           icon={Library}
           isPremium={false}
-          label={chrome.i18n.getMessage('app_options_collect')}
+          label={chrome.i18n.getMessage("app_options_collect")}
           onClick={() => {
-            getChromeBookmarks()
+            getChromeBookmarks();
           }}
           color="indigo"
         />
         <OptionRow
           icon={Save}
           isPremium={true}
-          label={chrome.i18n.getMessage('app_options_save_open')}
+          label={chrome.i18n.getMessage("app_options_save_open")}
           onClick={() => {
-            if (!handleCheckPremium()) return
-            saveAllOpenTabs()
+            if (!handleCheckPremium()) return;
+            saveAllOpenTabs();
           }}
           color="indigo"
         />
         <OptionRow
           icon={CircleQuestionMark}
           isPremium={false}
-          label={chrome.i18n.getMessage('app_options_faq')}
+          label={chrome.i18n.getMessage("app_options_faq")}
           onClick={() => {
-            window.open(WELCOME_URL)
-
+            window.open(WELCOME_URL);
           }}
           color="indigo"
         />
@@ -244,13 +243,13 @@ export default function OptionsPanel() {
           isPremium={false}
           label={
             hidden
-              ? chrome.i18n.getMessage('app_options_widget_show')
-              : chrome.i18n.getMessage('app_options_widget_hide')
+              ? chrome.i18n.getMessage("app_options_widget_show")
+              : chrome.i18n.getMessage("app_options_widget_hide")
           }
           onClick={() => {
-            const next = !hidden
-            setHidden(next)
-            chrome.storage.local.set({ widgetStatus: !next }) // widgetStatus = true означает "виджет показан"
+            const next = !hidden;
+            setHidden(next);
+            chrome.storage.local.set({ widgetStatus: !next }); // widgetStatus = true означает "виджет показан"
           }}
           color="orange"
         />
@@ -259,57 +258,57 @@ export default function OptionsPanel() {
       {/* SECTION: COMMUNITY & SUPPORT */}
       <div className="flex flex-col gap-1 p-1.5 bg-white/[0.02] border border-white/5 rounded-2xl shadow-sm">
         <p className="px-3 pt-1 pb-2 text-[10px] font-bold text-zinc-500 uppercase tracking-[0.15em]">
-          {chrome.i18n.getMessage('app_options_community_header')}
+          {chrome.i18n.getMessage("app_options_community_header")}
         </p>
         <OptionRow
           icon={History}
-          label={chrome.i18n.getMessage('app_changelog')}
+          label={chrome.i18n.getMessage("app_changelog")}
           onClick={() => setNotificationOpen(true)}
           color="indigo"
         />
         <OptionRow
           icon={HandCoins}
-          label={chrome.i18n.getMessage('app_affiliate_title')}
+          label={chrome.i18n.getMessage("app_affiliate_title")}
           onClick={() => {
             chrome.tabs.create({
-              url: 'https://abba4game.lemonsqueezy.com/affiliates?utm_source=aff_flow',
-            })
+              url: "https://abba4game.lemonsqueezy.com/affiliates?utm_source=aff_flow",
+            });
           }}
           color="amber"
         />
         <OptionRow
           icon={ChevronUp}
-          label={chrome.i18n.getMessage('app_options_PH')}
+          label={chrome.i18n.getMessage("app_options_PH")}
           onClick={() => promoteOpen(true)}
           color="orange"
         />
         <OptionRow
           icon={Users}
-          label={chrome.i18n.getMessage('app_community')}
+          label={chrome.i18n.getMessage("app_community")}
           href="https://www.reddit.com/user/Sad-Bed-3125/submitted/"
           color="indigo"
         />
         <OptionRow
           icon={Star}
-          label={chrome.i18n.getMessage('app_rate_extension')}
+          label={chrome.i18n.getMessage("app_rate_extension")}
           href="https://chromewebstore.google.com/detail/fagjclghcmnfinjdkdnkejodfjgkpljd/reviews"
           color="amber"
         />
         <OptionRow
           icon={Share2}
-          label={chrome.i18n.getMessage('app_share_extension')}
+          label={chrome.i18n.getMessage("app_share_extension")}
           onClick={() => share()}
           color="indigo"
         />
         <OptionRow
           icon={Heart}
-          label={chrome.i18n.getMessage('app_donate_title')}
+          label={chrome.i18n.getMessage("app_donate_title")}
           onClick={() => setSupportOpen(true)}
           color="pink"
         />
         <OptionRow
           icon={Bug}
-          label={chrome.i18n.getMessage('app_report_bug')}
+          label={chrome.i18n.getMessage("app_report_bug")}
           href="https://github.com/Abba710/Private-bookmark-locker/issues"
           color="red"
         />
@@ -321,11 +320,11 @@ export default function OptionsPanel() {
         <ExportDialog
           onClose={() => setShowExport(false)}
           onExport={() => {
-            exportBookmarks(bookmarks)
-            setShowExport(false)
+            exportBookmarks(bookmarks);
+            setShowExport(false);
           }}
         />
       )}
     </div>
-  )
+  );
 }

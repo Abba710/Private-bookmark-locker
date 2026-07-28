@@ -1,10 +1,10 @@
-import { useBookmarkStore } from '@/storage/statelibrary'
+import { useBookmarkStore } from "@/storage/statelibrary";
 
 async function deleteBookmarks() {
-  const updated: any = []
+  const updated: any = [];
   chrome.storage.local.set({ bookmarks: updated }, () => {
-    useBookmarkStore.getState().setBookmarks(updated)
-  })
+    useBookmarkStore.getState().setBookmarks(updated);
+  });
 }
 
-export default deleteBookmarks
+export default deleteBookmarks;

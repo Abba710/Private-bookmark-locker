@@ -1,4 +1,4 @@
-import { Sparkles, ChevronRight } from 'lucide-react'
+import { Sparkles, ChevronRight } from "lucide-react";
 
 /**
  * GetProButton Component
@@ -6,7 +6,7 @@ import { Sparkles, ChevronRight } from 'lucide-react'
  */
 
 interface GetProButtonProps {
-  onClick: () => void
+  onClick: () => void;
 }
 
 export default function GetProButton({ onClick }: GetProButtonProps) {
@@ -34,10 +34,10 @@ export default function GetProButton({ onClick }: GetProButtonProps) {
         </div>
         <div className="text-left">
           <p className="text-sm font-bold text-white">
-            {chrome.i18n.getMessage('app_btn_get_pro_title')}
+            {chrome.i18n.getMessage("app_btn_get_pro_title")}
           </p>
           <p className="text-xs text-indigo-100/80">
-            {chrome.i18n.getMessage('app_btn_get_pro_subtitle')}
+            {chrome.i18n.getMessage("app_btn_get_pro_subtitle")}
           </p>
         </div>
       </div>
@@ -46,5 +46,5 @@ export default function GetProButton({ onClick }: GetProButtonProps) {
         <ChevronRight className="w-5 h-5 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all" />
       </div>
     </button>
-  )
+  );
 }

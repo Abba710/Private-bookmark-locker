@@ -1,12 +1,12 @@
-import { useNotificationDialogStore } from '@/storage/statelibrary'
-import { useState, useEffect } from 'preact/hooks'
+import { useNotificationDialogStore } from "@/storage/statelibrary";
+import { useState, useEffect } from "preact/hooks";
 import {
   X,
   MessageSquare,
   ThumbsUp,
   ExternalLink,
   ScrollText,
-} from 'lucide-react'
+} from "lucide-react";
 
 /**
  * MarkdownRenderer
@@ -14,62 +14,62 @@ import {
  */
 function MarkdownRenderer({ text }: { text: string }) {
   const parseMarkdown = (markdown: string) => {
-    let html = markdown
+    let html = markdown;
     // Headers
     html = html.replace(
       /^### (.*$)/gim,
-      '<h3 class="text-sm font-bold text-white mt-4 mb-2">$1</h3>'
-    )
+      '<h3 class="text-sm font-bold text-white mt-4 mb-2">$1</h3>',
+    );
     html = html.replace(
       /^## (.*$)/gim,
-      '<h2 class="text-base font-bold text-white mt-5 mb-2">$2</h2>'
-    )
+      '<h2 class="text-base font-bold text-white mt-5 mb-2">$2</h2>',
+    );
 
     // Formatting
     html = html.replace(
       /\*\*(.*?)\*\*/g,
-      '<strong class="font-bold text-zinc-100">$1</strong>'
-    )
+      '<strong class="font-bold text-zinc-100">$1</strong>',
+    );
     html = html.replace(
       /\*(.*?)\*/g,
-      '<em class="italic text-zinc-300">$1</em>'
-    )
+      '<em class="italic text-zinc-300">$1</em>',
+    );
 
     // Inline Code
     html = html.replace(
       /`([^`]+)`/g,
-      '<code class="bg-white/10 px-1.5 py-0.5 rounded text-[11px] font-mono text-indigo-300">$1</code>'
-    )
+      '<code class="bg-white/10 px-1.5 py-0.5 rounded text-[11px] font-mono text-indigo-300">$1</code>',
+    );
 
     // Lists
     html = html.replace(
       /^\* (.*$)/gim,
-      '<li class="ml-4 list-disc text-zinc-400 mb-1">$1</li>'
-    )
+      '<li class="ml-4 list-disc text-zinc-400 mb-1">$1</li>',
+    );
     html = html.replace(
       /^- (.*$)/gim,
-      '<li class="ml-4 list-disc text-zinc-400 mb-1">$1</li>'
-    )
+      '<li class="ml-4 list-disc text-zinc-400 mb-1">$1</li>',
+    );
 
     // Links
     html = html.replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" target="_blank" class="text-indigo-400 hover:underline">$1</a>'
-    )
+      '<a href="$2" target="_blank" class="text-indigo-400 hover:underline">$1</a>',
+    );
 
     const paragraphs = html
-      .split('\n\n')
-      .map((p) => (p.trim() ? `<p class="mb-3">${p}</p>` : ''))
-      .join('')
-    return paragraphs
-  }
+      .split("\n\n")
+      .map((p) => (p.trim() ? `<p class="mb-3">${p}</p>` : ""))
+      .join("");
+    return paragraphs;
+  };
 
   return (
     <div
       className="text-zinc-400 text-[13px] leading-relaxed select-text"
       dangerouslySetInnerHTML={{ __html: parseMarkdown(text) }}
     />
-  )
+  );
 }
 
 /**
@@ -77,39 +77,39 @@ function MarkdownRenderer({ text }: { text: string }) {
  * Premium card for Reddit content integration.
  */
 function RedditPostCard({ postUrl }: { postUrl: string }) {
-  const [post, setPost] = useState<any>(null)
-  const [loading, setLoading] = useState(true)
+  const [post, setPost] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const urlObj = new URL(postUrl)
-        const jsonUrl = `https://www.reddit.com${urlObj.pathname}.json`
-        const response = await fetch(jsonUrl)
-        const data = await response.json()
-        setPost(data[0].data.children[0].data)
+        const urlObj = new URL(postUrl);
+        const jsonUrl = `https://www.reddit.com${urlObj.pathname}.json`;
+        const response = await fetch(jsonUrl);
+        const data = await response.json();
+        setPost(data[0].data.children[0].data);
       } catch (e) {
-        console.error(e)
+        console.error(e);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
-    fetchPost()
-  }, [postUrl])
+    };
+    fetchPost();
+  }, [postUrl]);
 
   if (loading)
     return (
       <div className="flex items-center justify-center py-20 bg-white/[0.02] rounded-2xl border border-white/5">
         <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-indigo-500" />
       </div>
-    )
+    );
 
   if (!post)
     return (
       <div className="text-center py-8 text-zinc-500 text-sm">
-        {chrome.i18n.getMessage('app_changelog_unavailable')}
+        {chrome.i18n.getMessage("app_changelog_unavailable")}
       </div>
-    )
+    );
 
   return (
     <div className="bg-[#161618] border border-white/5 rounded-2xl p-5 max-h-[380px] overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 shadow-inner">
@@ -141,7 +141,7 @@ function RedditPostCard({ postUrl }: { postUrl: string }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 /**
@@ -149,9 +149,11 @@ function RedditPostCard({ postUrl }: { postUrl: string }) {
  * The main notification/update modal.
  */
 export default function ChangelogDialog() {
-  const { notificationOpen, setNotificationOpen } = useNotificationDialogStore()
-  const redditPostUrl = "https://www.reddit.com/user/Sad-Bed-3125/comments/1usmqr9/locker_private_bookmark_locker_v220_fullscreen/"
-  if (!notificationOpen) return null
+  const { notificationOpen, setNotificationOpen } =
+    useNotificationDialogStore();
+  const redditPostUrl =
+    "https://www.reddit.com/user/Sad-Bed-3125/comments/1usmqr9/locker_private_bookmark_locker_v220_fullscreen/";
+  if (!notificationOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -177,7 +179,7 @@ export default function ChangelogDialog() {
               <ScrollText className="w-7 h-7 text-indigo-400" />
             </div>
             <h2 className="text-2xl font-bold text-white tracking-tight mb-2">
-              {chrome.i18n.getMessage('app_changelog_modal_title')}
+              {chrome.i18n.getMessage("app_changelog_modal_title")}
             </h2>
           </div>
 
@@ -185,12 +187,12 @@ export default function ChangelogDialog() {
 
           <div className="mt-8 space-y-3">
             <button
-              onClick={() => window.open(redditPostUrl, '_blank')}
+              onClick={() => window.open(redditPostUrl, "_blank")}
               className="group relative cursor-pointer w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-200 overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
               <span className="relative flex items-center justify-center gap-2 text-sm">
-                {chrome.i18n.getMessage('app_changelog_open_reddit')}
+                {chrome.i18n.getMessage("app_changelog_open_reddit")}
                 <ExternalLink className="w-4 h-4" />
               </span>
             </button>
@@ -199,11 +201,11 @@ export default function ChangelogDialog() {
               onClick={() => setNotificationOpen(false)}
               className="w-full cursor-pointer py-3 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
             >
-              {chrome.i18n.getMessage('app_changelog_dismiss')}
+              {chrome.i18n.getMessage("app_changelog_dismiss")}
             </button>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

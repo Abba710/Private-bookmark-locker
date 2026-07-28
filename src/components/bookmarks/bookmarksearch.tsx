@@ -1,10 +1,10 @@
-import type { FunctionalComponent } from 'preact'
-import { SearchInput } from '@/components/bookmarks/search/searchinput'
-import { SearchResults } from '@/components/bookmarks/search/searchResult'
-import { useBookmarkSearch } from '@/hooks/useBookmarkSearch'
+import type { FunctionalComponent } from "preact";
+import { SearchInput } from "@/components/bookmarks/search/searchinput";
+import { SearchResults } from "@/components/bookmarks/search/searchResult";
+import { useBookmarkSearch } from "@/hooks/useBookmarkSearch";
 
 interface BookmarkSearchProps {
-  placeholder?: string
+  placeholder?: string;
 }
 
 export const BookmarkSearch: FunctionalComponent<BookmarkSearchProps> = ({
@@ -16,7 +16,7 @@ export const BookmarkSearch: FunctionalComponent<BookmarkSearchProps> = ({
     searchResults,
     setIsSearchFocused,
     showResults,
-  } = useBookmarkSearch()
+  } = useBookmarkSearch();
 
   const handleResultClick = (bookmark: any) => {
     // Handle bookmark selection
@@ -25,26 +25,26 @@ export const BookmarkSearch: FunctionalComponent<BookmarkSearchProps> = ({
         chrome.tabs.create({
           url: bookmark.url,
           windowId: window.id,
-        })
+        });
       } else {
         chrome.windows.create({
           url: bookmark.url,
           incognito: bookmark.incognito,
-        })
+        });
       }
-    })
+    });
 
     // Clear search and close results
-    setSearchQuery('')
-    setIsSearchFocused(false)
-  }
+    setSearchQuery("");
+    setIsSearchFocused(false);
+  };
 
   const handleBlur = () => {
     // Delay blur to allow click on results
     setTimeout(() => {
-      setIsSearchFocused(false)
-    }, 150)
-  }
+      setIsSearchFocused(false);
+    }, 150);
+  };
 
   return (
     <div className="relative ">
@@ -63,5 +63,5 @@ export const BookmarkSearch: FunctionalComponent<BookmarkSearchProps> = ({
         searchQuery={searchQuery}
       />
     </div>
-  )
-}
+  );
+};

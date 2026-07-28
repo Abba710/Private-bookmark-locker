@@ -7,4 +7,4 @@ export const SYNC_CONFIG = {
   maxRetries: 3,
   retryDelay: 5000,
   appSecret: import.meta.env.VITE_APP_SECRET_KEY,
-}
+};

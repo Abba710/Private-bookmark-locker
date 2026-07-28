@@ -1,11 +1,11 @@
-import { X, Rocket, ExternalLink, TrendingUp } from 'lucide-react'
-import { usePromoteStore } from '@/storage/statelibrary'
+import { X, Rocket, ExternalLink, TrendingUp } from "lucide-react";
+import { usePromoteStore } from "@/storage/statelibrary";
 
 export default function PhDialog() {
-  const promoteOpen = usePromoteStore((state) => state.promoteOpen)
-  const setPromoteOpen = usePromoteStore((state) => state.setPromoteOpen)
+  const promoteOpen = usePromoteStore((state) => state.promoteOpen);
+  const setPromoteOpen = usePromoteStore((state) => state.setPromoteOpen);
 
-  if (!promoteOpen) return null
+  if (!promoteOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -36,18 +36,18 @@ export default function PhDialog() {
             </div>
 
             <h2 className="text-2xl font-bold text-white tracking-tight mb-3">
-              {chrome.i18n.getMessage('app_options_PH_Title')}
+              {chrome.i18n.getMessage("app_options_PH_Title")}
             </h2>
 
             <p className="text-zinc-500 text-sm leading-relaxed px-3">
-              {chrome.i18n.getMessage('app_options_PH_sub_title')}
+              {chrome.i18n.getMessage("app_options_PH_sub_title")}
               <span className="text-orange-400 font-semibold">
-                {' '}
+                {" "}
                 {chrome.i18n.getMessage(
-                  'app_options_PH_sub_title_discount'
-                )}{' '}
+                  "app_options_PH_sub_title_discount",
+                )}{" "}
               </span>
-              {chrome.i18n.getMessage('app_options_PH_helps_title')}
+              {chrome.i18n.getMessage("app_options_PH_helps_title")}
             </p>
           </div>
 
@@ -57,14 +57,14 @@ export default function PhDialog() {
               <TrendingUp className="w-5 h-5 text-orange-400" />
 
               <span className="text-sm text-white font-medium">
-                {chrome.i18n.getMessage('app_options_PH_sub_title_supporter')}
+                {chrome.i18n.getMessage("app_options_PH_sub_title_supporter")}
               </span>
             </div>
 
             <div className="space-y-3 text-sm text-zinc-400">
-              <div>{chrome.i18n.getMessage('app_options_PH_helps1')}</div>
-              <div>{chrome.i18n.getMessage('app_options_PH_helps2')}</div>
-              <div>{chrome.i18n.getMessage('app_options_PH_helps3')}</div>
+              <div>{chrome.i18n.getMessage("app_options_PH_helps1")}</div>
+              <div>{chrome.i18n.getMessage("app_options_PH_helps2")}</div>
+              <div>{chrome.i18n.getMessage("app_options_PH_helps3")}</div>
             </div>
           </div>
 
@@ -72,17 +72,17 @@ export default function PhDialog() {
           <button
             onClick={() => {
               window.open(
-                'https://www.producthunt.com/products/private-bookmark-locker-beta?utm_source=extension&utm_medium=promote',
-                '_blank'
-              )
+                "https://www.producthunt.com/products/private-bookmark-locker-beta?utm_source=extension&utm_medium=promote",
+                "_blank",
+              );
 
-              setPromoteOpen(false)
+              setPromoteOpen(false);
             }}
             className="group cursor-pointer flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-[#FF6154] text-white font-bold shadow-lg hover:shadow-[#FF6154]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             <Rocket className="w-5 h-5" />
 
-            <span>{chrome.i18n.getMessage('app_options_PH_cta')}</span>
+            <span>{chrome.i18n.getMessage("app_options_PH_cta")}</span>
 
             <ExternalLink className="w-4 h-4 opacity-60" />
           </button>
@@ -92,10 +92,10 @@ export default function PhDialog() {
             onClick={() => setPromoteOpen(false)}
             className="mt-6 text-sm cursor-pointer font-semibold text-zinc-500 hover:text-white transition-colors"
           >
-            {chrome.i18n.getMessage('app_options_PH_cta_later')}
+            {chrome.i18n.getMessage("app_options_PH_cta_later")}
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 }

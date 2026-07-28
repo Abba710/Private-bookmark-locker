@@ -1,98 +1,98 @@
-import type { JSX } from 'preact/jsx-runtime'
+import type { JSX } from "preact/jsx-runtime";
 
 export type Bookmark = {
-  id: string
-  url?: string
-  title?: string
-  incognito?: boolean
-  isFolder?: boolean
-  children?: Bookmark[]
-  dateAdded?: number
-  updatedAt?: number
-}
+  id: string;
+  url?: string;
+  title?: string;
+  incognito?: boolean;
+  isFolder?: boolean;
+  children?: Bookmark[];
+  dateAdded?: number;
+  updatedAt?: number;
+};
 
 export interface BookmarkStore {
-  bookmarks: Bookmark[]
-  setBookmarks: (bookmarks: Bookmark[]) => void
+  bookmarks: Bookmark[];
+  setBookmarks: (bookmarks: Bookmark[]) => void;
 }
 
 export interface SwitchStore {
-  Switch: boolean
-  setSwitch: (filtered: boolean) => void
+  Switch: boolean;
+  setSwitch: (filtered: boolean) => void;
 }
 
 export type DraggableItemProps = {
-  id: string
+  id: string;
   children: (props: {
-    listeners: Record<string, any>
-    attributes: Record<string, any>
-    setDroppableRef?: (node: HTMLElement | null) => void
-  }) => JSX.Element
-}
+    listeners: Record<string, any>;
+    attributes: Record<string, any>;
+    setDroppableRef?: (node: HTMLElement | null) => void;
+  }) => JSX.Element;
+};
 
 export interface LockOverlayStore {
-  isLocked: boolean
-  mode: 'unlock' | 'setup'
-  setIsLocked: (locked: boolean) => void
-  setMode: (mode: 'unlock' | 'setup') => void
+  isLocked: boolean;
+  mode: "unlock" | "setup";
+  setIsLocked: (locked: boolean) => void;
+  setMode: (mode: "unlock" | "setup") => void;
 }
 
 export interface FeedbackStore {
-  showFeedback: boolean
-  setShowFeedback: (show: boolean) => void
+  showFeedback: boolean;
+  setShowFeedback: (show: boolean) => void;
 }
 
 export type StorageSchema = {
-  bookmarks: Bookmark[]
-}
+  bookmarks: Bookmark[];
+};
 
 export type StorageChanges<T> = {
   [K in keyof T]?: {
-    oldValue?: T[K]
-    newValue?: T[K]
-  }
-}
+    oldValue?: T[K];
+    newValue?: T[K];
+  };
+};
 
 export type supportDialogProps = {
-  supportOpen: boolean
-  setSupportOpen: (open: boolean) => void
-}
+  supportOpen: boolean;
+  setSupportOpen: (open: boolean) => void;
+};
 
 export type promoteProps = {
-  promoteOpen: boolean
-  setPromoteOpen: (open: boolean) => void
-}
+  promoteOpen: boolean;
+  setPromoteOpen: (open: boolean) => void;
+};
 
 export type notificationDialogProps = {
-  notificationOpen: boolean
-  setNotificationOpen: (open: boolean) => void
-}
+  notificationOpen: boolean;
+  setNotificationOpen: (open: boolean) => void;
+};
 
 export interface User {
-  id: string
-  mail: string | undefined
+  id: string;
+  mail: string | undefined;
 }
 
 export interface SubscribeState {
-  isPro: boolean
-  isLoading: boolean
+  isPro: boolean;
+  isLoading: boolean;
   // Method to check subscription status
-  checkSubscription: () => Promise<void>
+  checkSubscription: () => Promise<void>;
   // Method for manual status setting (optional, for optimistic UI updates)
-  setPlan: (status: boolean) => void
+  setPlan: (status: boolean) => void;
 }
 
 export interface usePremiumModalStoreProps {
-  premiumModalOpen: boolean
-  setPremiumModalOpen: (open: boolean) => void
+  premiumModalOpen: boolean;
+  setPremiumModalOpen: (open: boolean) => void;
 }
 
 export interface useSubscribePlanStoreProps {
-  isPro: boolean
-  setPlan: (p: boolean) => void
+  isPro: boolean;
+  setPlan: (p: boolean) => void;
 }
 
 export interface useFloatWidgetStoreProps {
-  hidden: boolean
-  setHidden: (hidden: boolean) => void
+  hidden: boolean;
+  setHidden: (hidden: boolean) => void;
 }

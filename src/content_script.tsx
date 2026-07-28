@@ -1,96 +1,96 @@
-import { useRef, useState, useEffect } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BookmarkPlus, EyeOff, PanelRight } from 'lucide-react'
-import { useFloatWidgetStore } from '@/storage/statelibrary'
+import { useRef, useState, useEffect } from "react";
+import { createRoot } from "react-dom/client";
+import { BookmarkPlus, EyeOff, PanelRight } from "lucide-react";
+import { useFloatWidgetStore } from "@/storage/statelibrary";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 interface ActionButton {
-  icon: React.ReactNode
-  label: string
-  onClick: () => void
-  variant?: 'default' | 'primary' | 'danger'
+  icon: React.ReactNode;
+  label: string;
+  onClick: () => void;
+  variant?: "default" | "primary" | "danger";
 }
 
 // ── Widget ───────────────────────────────────────────────────────────────────
 function FloatingWidget() {
-  const hidden = useFloatWidgetStore((s) => s.hidden)
-  const setHidden = useFloatWidgetStore((s) => s.setHidden)
+  const hidden = useFloatWidgetStore((s) => s.hidden);
+  const setHidden = useFloatWidgetStore((s) => s.setHidden);
 
   // ── Action stubs ─────────────────────────────────────────────────────────────
   const handleOpenSidePanel = () => {
-    chrome.runtime.sendMessage({ action: 'open_sidepanel' })
-  }
+    chrome.runtime.sendMessage({ action: "open_sidepanel" });
+  };
   const handleSavePage = () => {
-    chrome.runtime.sendMessage({ action: 'save_tab' })
-  }
+    chrome.runtime.sendMessage({ action: "save_tab" });
+  };
 
   const handleHide = () => {
-    setExpanded(false)
-    setHidden(true)
-    chrome.storage.local.set({ widgetStatus: false })
-  }
+    setExpanded(false);
+    setHidden(true);
+    chrome.storage.local.set({ widgetStatus: false });
+  };
 
   useEffect(() => {
-    chrome.storage.local.get('widgetStatus').then(({ widgetStatus }) => {
+    chrome.storage.local.get("widgetStatus").then(({ widgetStatus }) => {
       if (widgetStatus === undefined) {
-        chrome.storage.local.set({ widgetStatus: true })
-        setHidden(false)
+        chrome.storage.local.set({ widgetStatus: true });
+        setHidden(false);
       } else {
-        setHidden(!widgetStatus)
+        setHidden(!widgetStatus);
       }
-    })
+    });
 
     const listener = (changes: any) => {
-      if ('widgetStatus' in changes) {
-        setHidden(!changes.widgetStatus.newValue)
+      if ("widgetStatus" in changes) {
+        setHidden(!changes.widgetStatus.newValue);
       }
-    }
+    };
 
-    chrome.storage.onChanged.addListener(listener)
-    return () => chrome.storage.onChanged.removeListener(listener)
-  }, [])
+    chrome.storage.onChanged.addListener(listener);
+    return () => chrome.storage.onChanged.removeListener(listener);
+  }, []);
 
-  const [expanded, setExpanded] = useState(false)
-  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const iconUrl = chrome.runtime.getURL('images/icon48.png')
+  const [expanded, setExpanded] = useState(false);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const iconUrl = chrome.runtime.getURL("images/icon48.png");
 
-  if (hidden) return null
+  if (hidden) return null;
 
   // Only the trigger opens the panel
   const onTriggerEnter = () => {
-    if (leaveTimer.current) clearTimeout(leaveTimer.current)
-    setExpanded(true)
-  }
+    if (leaveTimer.current) clearTimeout(leaveTimer.current);
+    setExpanded(true);
+  };
 
   // Leaving trigger OR panel starts close countdown
   const onLeave = () => {
-    leaveTimer.current = setTimeout(() => setExpanded(false), 150)
-  }
+    leaveTimer.current = setTimeout(() => setExpanded(false), 150);
+  };
 
   // Entering the panel cancels the countdown
   const onPanelEnter = () => {
-    if (leaveTimer.current) clearTimeout(leaveTimer.current)
-  }
+    if (leaveTimer.current) clearTimeout(leaveTimer.current);
+  };
 
   const buttons: ActionButton[] = [
     {
       icon: <PanelRight size={14} strokeWidth={1.8} />,
-      label: chrome.i18n.getMessage('app_options_widget_open'),
+      label: chrome.i18n.getMessage("app_options_widget_open"),
       onClick: handleOpenSidePanel,
     },
     {
       icon: <BookmarkPlus size={14} strokeWidth={1.8} />,
-      label: chrome.i18n.getMessage('app_options_widget_save'),
+      label: chrome.i18n.getMessage("app_options_widget_save"),
       onClick: handleSavePage,
-      variant: 'primary',
+      variant: "primary",
     },
     {
       icon: <EyeOff size={13} strokeWidth={1.8} />,
-      label: chrome.i18n.getMessage('app_options_widget_hide'),
+      label: chrome.i18n.getMessage("app_options_widget_hide"),
       onClick: handleHide,
-      variant: 'danger',
+      variant: "danger",
     },
-  ]
+  ];
 
   return (
     <>
@@ -100,18 +100,18 @@ function FloatingWidget() {
       <div className="lk-wrap">
         {/* Panel — hover сюда отменяет закрытие */}
         <div
-          className={`lk-panel${expanded ? ' lk-panel--open' : ''}`}
+          className={`lk-panel${expanded ? " lk-panel--open" : ""}`}
           onMouseEnter={onPanelEnter}
           onMouseLeave={onLeave}
         >
           {buttons.map((btn, i) => (
             <button
               key={btn.label}
-              className={`lk-action lk-action--${btn.variant ?? 'default'}`}
+              className={`lk-action lk-action--${btn.variant ?? "default"}`}
               style={
                 expanded
                   ? { transitionDelay: `${i * 45}ms` }
-                  : { transitionDelay: '0ms' }
+                  : { transitionDelay: "0ms" }
               }
               onClick={btn.onClick}
             >
@@ -123,7 +123,7 @@ function FloatingWidget() {
 
         {/* Trigger — единственная точка входа */}
         <button
-          className={`lk-trigger${expanded ? ' lk-trigger--open' : ''}`}
+          className={`lk-trigger${expanded ? " lk-trigger--open" : ""}`}
           onMouseEnter={onTriggerEnter}
           onMouseLeave={onLeave}
           onClick={() => setExpanded((v) => !v)}
@@ -133,7 +133,7 @@ function FloatingWidget() {
         </button>
       </div>
     </>
-  )
+  );
 }
 
 // ── CSS ───────────────────────────────────────────────────────────────────────
@@ -282,32 +282,32 @@ const CSS = `
   }
   .lk-action:hover .lk-action-icon { opacity: 1; }
   .lk-action-label { line-height: 1; }
-`
+`;
 
 // ── Shadow DOM mount ──────────────────────────────────────────────────────────
 function mount() {
-  if (document.getElementById('lk-host')) return
-  document.addEventListener('fullscreenchange', () => {
-    const host = document.getElementById('lk-host')
+  if (document.getElementById("lk-host")) return;
+  document.addEventListener("fullscreenchange", () => {
+    const host = document.getElementById("lk-host");
 
     if (document.fullscreenElement) {
-      if (host) host.remove()
+      if (host) host.remove();
     } else {
-      mount()
+      mount();
     }
-  })
+  });
 
-  const host = document.createElement('div')
-  host.id = 'lk-host'
+  const host = document.createElement("div");
+  host.id = "lk-host";
   host.style.cssText =
-    'position:fixed;top:0;left:0;width:0;height:0;overflow:visible;z-index:2147483647;pointer-events:none;'
-  document.body.appendChild(host)
+    "position:fixed;top:0;left:0;width:0;height:0;overflow:visible;z-index:2147483647;pointer-events:none;";
+  document.body.appendChild(host);
 
-  const shadow = host.attachShadow({ mode: 'open' })
-  const mountPoint = document.createElement('div')
-  shadow.appendChild(mountPoint)
+  const shadow = host.attachShadow({ mode: "open" });
+  const mountPoint = document.createElement("div");
+  shadow.appendChild(mountPoint);
 
-  createRoot(mountPoint).render(<FloatingWidget />)
+  createRoot(mountPoint).render(<FloatingWidget />);
 }
 
-mount()
+mount();
