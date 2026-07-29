@@ -107,19 +107,22 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body,
+#app,
+#root {
   font-family: var(--ds-sans);
+  background: var(--ds-bg);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-}
-
-body {
   background: var(--ds-bg);
   color: var(--ds-t1);
   margin: 0;
   line-height: 1.5;
+  height: 100%;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -386,30 +389,11 @@ body {
   margin: 0 0 var(--ds-sp-6) 0;
 }
 
-.ds-demo {
-  background: var(--ds-s2);
-  border: 1px solid var(--ds-b);
-  border-radius: var(--ds-r-lg);
-  padding: var(--ds-sp-6);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-sp-3);
-  align-items: center;
-}
-
-.ds-demo--col {
-  flex-direction: column;
-  align-items: flex-start;
-}
-.ds-demo--grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--ds-sp-4);
-}
-
 /* ─── Typography Utilities ───────────────────────────────────────────────── */
 .ds-text-primary {
   color: var(--ds-t1);
+  font-size: var(--ds-t-15);
+  font-weight: 500;
 }
 .ds-text-secondary {
   color: var(--ds-t2);
@@ -489,8 +473,15 @@ body {
   pointer-events: none;
 }
 
+.btn--xs {
+  height: 24px;
+  padding: 0 var(--ds-sp-2);
+  font-size: var(--ds-t-11);
+  border-radius: var(--ds-r-sm);
+}
+
 .btn--sm {
-  height: 28px;
+  height: 32px;
   padding: 0 var(--ds-sp-3);
   font-size: var(--ds-t-12);
   border-radius: var(--ds-r-sm);
@@ -621,6 +612,32 @@ body {
   color: var(--ds-red);
 }
 
+/* ─── Icon ──────────────────────────────────────────────────────────────── */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  border: 1px solid transparent;
+  border-radius: var(--ds-r-md);
+  cursor: default;
+  padding: 0;
+  background: transparent;
+  transition:
+    background var(--ds-dur-base) var(--ds-ease),
+    color var(--ds-dur-base) var(--ds-ease),
+    border-color var(--ds-dur-base) var(--ds-ease);
+}
+
+.icon--primary {
+  color: var(--ds-a);
+  opacity: 0.85;
+}
+
+.icon--left {
+  width: 20px;
+}
+
 /* ─── Input ──────────────────────────────────────────────────────────────── */
 .ds-input-wrap {
   position: relative;
@@ -637,10 +654,10 @@ body {
   display: flex;
 }
 .ds-input-icon-left {
-  left: 11px;
+  left: 5px;
 }
 .ds-input-icon-right {
-  right: 11px;
+  right: 10px;
 }
 
 .ds-input {

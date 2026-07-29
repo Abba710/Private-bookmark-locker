@@ -5,7 +5,7 @@ import WelcomePage from "@/pages/welcome";
 
 function App() {
   return (
-    <div className="ds-section ds-section-marker">
+    <div className="ds-section ds-section-marker h-full">
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/settings" element={<SettingsPage />} />

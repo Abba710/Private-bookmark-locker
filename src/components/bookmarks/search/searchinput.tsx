@@ -17,11 +17,10 @@ export const SearchInput: FunctionalComponent<SearchInputProps> = ({
   placeholder = "Search bookmarks...",
 }) => {
   return (
-    <div className="relative group min-w-full">
+    <div className="ds-input-wrap">
       {/* Search Icon */}
-      <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none">
-        <Search className="w-4 h-4 text-gray-500 group-focus-within:text-indigo-400 transition-colors duration-200" />
-      </div>
+
+      <Search className="ds-input-icon-left" />
 
       <input
         type="text"
@@ -30,18 +29,8 @@ export const SearchInput: FunctionalComponent<SearchInputProps> = ({
         onFocus={onFocus}
         onBlur={onBlur}
         placeholder={placeholder}
-        className={`
-          w-full h-10 pl-10 pr-12 text-sm text-white
-          bg-white/[0.03] border border-white/10
-          placeholder:text-gray-500
-          transition-all duration-200 ease-out
-          focus:outline-none focus:bg-white/[0.07] focus:border-indigo-500/40
-          focus:ring-4 focus:ring-indigo-500/10
-        `}
+        className="ds-input ds-input--has-left !rounded-none"
       />
-
-      {/* Subtle bottom highlight on hover */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
     </div>
   );
 };
