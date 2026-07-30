@@ -7,7 +7,6 @@ import {
   Loader2,
   WifiOff,
 } from "lucide-react";
-import { Badge } from "./ui/badge";
 import {
   getSyncStatus,
   forceSyncBookmarks,
@@ -75,91 +74,89 @@ export function SyncStatus() {
 
   // --- UI Helpers ---
   const getStatusBadge = () => {
-    const baseClass =
-      "flex items-center gap-1.5 w-[38.5px] h-[40px] px-2.5 py-1 transition-all duration-300 shadow-sm";
-
     if (!status.isOnline) {
       return (
-        <Badge
-          variant="outline"
+        <div
           title={chrome.i18n.getMessage("app_sync_offline")}
-          className={`${baseClass} bg-red-500/10 text-red-400 border-red-500/20 shadow-red-500/5`}
+          className="ds-sync-badge ds-sync-badge--offline ds-sync-badge--labeled"
         >
-          <WifiOff className="w-3.5 h-3.5" />
-          <span className="text-[11px] font-semibold uppercase tracking-tight">
+          <WifiOff />
+          <span className="ds-sync-badge-label">
             {chrome.i18n.getMessage("app_sync_offline")}
           </span>
-        </Badge>
+        </div>
       );
     }
     if (status.isSyncing || syncing) {
       return (
-        <Badge
-          variant="outline"
+        <div
           title={chrome.i18n.getMessage("app_sync_syncing")}
-          className={`${baseClass} bg-indigo-500/10 text-indigo-400 border-indigo-500/20 shadow-indigo-500/5`}
+          className="ds-sync-badge ds-sync-badge--syncing"
         >
-          <Loader2 className="w-3.5 h-3.5 animate-spin" />
-        </Badge>
+          <Loader2 className="animate-spin" />
+        </div>
       );
     }
     if (status.hasPendingChanges) {
       return (
-        <Badge
-          variant="outline"
+        <div
           title={chrome.i18n.getMessage("app_sync_pending")}
-          className={`${baseClass} bg-amber-500/10 text-amber-400 border-amber-500/20 shadow-amber-500/5`}
+          className="ds-sync-badge ds-sync-badge--pending"
         >
-          <Cloud className="w-3.5 h-3.5" />
-        </Badge>
+          <Cloud />
+        </div>
       );
     }
     return (
-      <Badge
-        variant="outline"
+      <div
         title={`${chrome.i18n.getMessage("app_sync_last")} ${status.lastSyncTime}`}
-        className={`${baseClass} bg-emerald-500/10 text-emerald-400 border-emerald-500/20 shadow-emerald-500/5`}
+        className="ds-sync-badge ds-sync-badge--synced"
       >
-        <Check className="w-3.5 h-3.5" />
-      </Badge>
+        <Check />
+      </div>
     );
   };
 
   if (conflict) {
     return (
-      <div className="relative flex flex-col w-full gap-4 p-4 bg-[#1a1612] rounded-2xl border border-amber-500/20 shadow-2xl animate-in zoom-in-95 duration-300">
-        <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20">
+      <div className="ds-sync-conflict">
+        <div className="ds-sync-conflict-header">
+          <div className="ds-sync-conflict-icon">
             <AlertTriangle
               title={chrome.i18n.getMessage("app_sync_conflict_title")}
-              className="w-5 h-5 text-amber-500"
+              style={{
+                width: "var(--ds-icon-lg)",
+                height: "var(--ds-icon-lg)",
+              }}
             />
           </div>
-          <div></div>
+          <span className="ds-sync-conflict-title">
+            {chrome.i18n.getMessage("app_sync_conflict_title")}
+          </span>
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
+        <div className="ds-sync-conflict-grid">
           <button
             onClick={() => handleResolve("local")}
-            className="flex flex-col items-center gap-1 px-2 py-2.5 bg-white/[0.03] hover:bg-white/10 text-[10px] text-gray-400 hover:text-white rounded-xl border border-white/5 transition-all"
+            className="ds-sync-conflict-option"
           >
-            <span className="font-bold text-white uppercase">
+            <span className="ds-sync-conflict-option-count">
               {conflict.localCount}
             </span>
             {chrome.i18n.getMessage("app_sync_local")}
           </button>
           <button
             onClick={() => handleResolve("server")}
-            className="flex flex-col items-center gap-1 px-2 py-2.5 bg-white/[0.03] hover:bg-white/10 text-[10px] text-gray-400 hover:text-white rounded-xl border border-white/5 transition-all"
+            className="ds-sync-conflict-option"
           >
-            <span className="font-bold text-white uppercase">
+            <span className="ds-sync-conflict-option-count">
               {conflict.serverCount}
             </span>
             {chrome.i18n.getMessage("app_sync_cloud")}
           </button>
           <button
             onClick={() => handleResolve("merge")}
-            className="flex flex-col items-center justify-center gap-1 px-2 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-[10px] text-white font-bold rounded-xl shadow-lg shadow-indigo-600/20 transition-all active:scale-95 uppercase tracking-wider"
+            className="ds-sync-conflict-option ds-sync-conflict-option--merge"
           >
             {chrome.i18n.getMessage("app_sync_merge")}
           </button>
@@ -169,19 +166,19 @@ export function SyncStatus() {
   }
 
   return (
-    <div className="flex items-center gap-0.2">
+    <div className="ds-sync">
       {getStatusBadge()}
 
       {/* Sync Action */}
       <button
         onClick={handleForceSync}
         disabled={syncing || !status.isOnline}
-        className="ml-auto cursor-pointer p-2 text-gray-500 hover:text-white hover:bg-white/5 rounded-xl transition-all active:scale-90 disabled:opacity-20 disabled:cursor-not-allowed"
+        className={`btn-icon btn-icon--outline ds-sync-refresh ${
+          syncing ? "ds-sync-refresh--active" : ""
+        }`}
         title={chrome.i18n.getMessage("app_sync_force_title")}
       >
-        <RefreshCw
-          className={`w-4 h-4 ${syncing ? "animate-spin text-indigo-400" : ""}`}
-        />
+        <RefreshCw className={syncing ? "animate-spin" : ""} />
       </button>
     </div>
   );

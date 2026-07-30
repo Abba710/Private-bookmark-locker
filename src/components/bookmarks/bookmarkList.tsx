@@ -91,10 +91,7 @@ function BookmarkList() {
           <div
             className={`
               flex flex-wrap items-start content-start justify-start gap-1 w-full
-              h-full min-h-0 overflow-y-auto overflow-x-hidden py-2
-              /* Custom Scrollbar - Indigo style */
-              scrollbar-thin scrollbar-thumb-white/5 scrollbar-track-transparent
-              hover:scrollbar-thumb-indigo-500/20 transition-all duration-300
+              h-full min-h-0 overflow-y-auto overflow-x-hidden py-2 mb-10
             `}
           >
             {filtered.length < 1 ? (

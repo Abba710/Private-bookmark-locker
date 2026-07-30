@@ -145,14 +145,6 @@ body,
   outline-offset: 2px;
 }
 
-/* ─── App Shell ──────────────────────────────────────────────────────────── */
-.ds-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: var(--ds-bg);
-}
-
 /* ─── Top Bar ────────────────────────────────────────────────────────────── */
 .ds-topbar {
   position: sticky;
@@ -163,7 +155,7 @@ body,
   justify-content: space-between;
   height: 52px;
   padding: 0 var(--ds-sp-4);
-  background: rgba(7, 7, 10, 0.9);
+  background: var(--ds-s1);
   border-bottom: 1px solid var(--ds-b);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -665,8 +657,7 @@ body,
   height: 34px;
   font-family: var(--ds-sans);
   font-size: var(--ds-t-13);
-  color: var(--ds-t1);
-  background: var(--ds-s3);
+  background: var(--ds-s1);
   border: 1px solid var(--ds-b-md);
   border-radius: var(--ds-r-md);
   padding: 0 var(--ds-sp-3);
@@ -2485,4 +2476,305 @@ body,
 }
 .ds-section-marker {
   scroll-margin-top: 72px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   DESIGN SYSTEM — ui.css additions
+   Sync Status widget. Sized to sit next to .btn-icon (34x34) in the
+   control panel — reuses existing tokens only, no Tailwind.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.ds-sync {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ─── Status badge ────────────────────────────────────────────────────────
+   Square (34x34) for icon-only states, expands to fit content when a
+   text label is shown (offline state only).
+   ────────────────────────────────────────────────────────────────────── */
+.ds-sync-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: var(--ds-r-md);
+  border: 1px solid transparent;
+  transition:
+    background var(--ds-dur-base) var(--ds-ease),
+    border-color var(--ds-dur-base) var(--ds-ease),
+    color var(--ds-dur-base) var(--ds-ease);
+}
+.ds-sync-badge--labeled {
+  width: auto;
+  justify-content: flex-start;
+  padding: 0 var(--ds-sp-2);
+}
+.ds-sync-badge svg {
+  width: var(--ds-icon-sm);
+  height: var(--ds-icon-sm);
+  flex-shrink: 0;
+}
+.ds-sync-badge-label {
+  font-size: var(--ds-t-11);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ds-sync-badge--offline {
+  background: var(--ds-red-sub);
+  color: var(--ds-red);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+.ds-sync-badge--syncing {
+  background: var(--ds-a-sub);
+  color: var(--ds-a);
+  border-color: var(--ds-a-sub-md);
+}
+.ds-sync-badge--pending {
+  background: var(--ds-yellow-sub);
+  color: var(--ds-yellow);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+.ds-sync-badge--synced {
+  background: var(--ds-green-sub);
+  color: var(--ds-green);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+/* ─── Refresh button ──────────────────────────────────────────────────────
+   Just a .btn-icon.btn-icon--ghost under the hood — this only sets the
+   icon size and the spinning/active tint.
+   ────────────────────────────────────────────────────────────────────── */
+.ds-sync-refresh svg {
+  width: var(--ds-icon-md);
+  height: var(--ds-icon-md);
+  transition: color var(--ds-dur-base) var(--ds-ease);
+}
+.ds-sync-refresh--active svg {
+  color: var(--ds-a);
+}
+
+/* ─── Conflict panel ──────────────────────────────────────────────────────
+   Replaces the SyncStatus badge/refresh row when a merge conflict exists.
+   ────────────────────────────────────────────────────────────────────── */
+.ds-sync-conflict {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-sp-4);
+  width: 100%;
+  padding: var(--ds-sp-4);
+  background: var(--ds-s2);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--ds-r-xl);
+  box-shadow: var(--ds-elev-3);
+  animation: ds-modal-in var(--ds-dur-slow) var(--ds-ease) both;
+}
+.ds-sync-conflict-header {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-sp-3);
+}
+.ds-sync-conflict-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ds-sp-2);
+  background: var(--ds-yellow-sub);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: var(--ds-r-md);
+  color: var(--ds-yellow);
+}
+.ds-sync-conflict-title {
+  font-size: var(--ds-t-13);
+  font-weight: 600;
+  color: var(--ds-t1);
+}
+
+.ds-sync-conflict-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ds-sp-2);
+}
+.ds-sync-conflict-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: var(--ds-sp-2) var(--ds-sp-1);
+  background: var(--ds-ov-1);
+  border: 1px solid var(--ds-b);
+  border-radius: var(--ds-r-lg);
+  color: var(--ds-t2);
+  font-size: var(--ds-t-11);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-family: var(--ds-sans);
+  cursor: pointer;
+  transition:
+    background var(--ds-dur-base) var(--ds-ease),
+    color var(--ds-dur-base) var(--ds-ease);
+}
+.ds-sync-conflict-option:hover {
+  background: var(--ds-ov-2);
+  color: var(--ds-t1);
+}
+.ds-sync-conflict-option-count {
+  font-weight: 700;
+  color: var(--ds-t1);
+  text-transform: none;
+  font-size: var(--ds-t-13);
+}
+.ds-sync-conflict-option--merge {
+  background: var(--ds-a);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 700;
+}
+.ds-sync-conflict-option--merge:hover {
+  background: var(--ds-a-h);
+}
+.ds-sync-conflict-option--merge:active {
+  transform: scale(0.97);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   DESIGN SYSTEM — ui.css additions
+   Control Panel — replaces the previous .ds-footer-* set entirely.
+   Layout: [save][folder] ·········· [switcher][sync][lock]
+   Achieved with two `margin-left: auto` groups (standard flex technique:
+   free space gets absorbed before each auto-margin item, so both the
+   switcher group and the end group land flush right, adjacent to
+   each other, while the create-actions group stays flush left).
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.ds-control-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--ds-sp-2) var(--ds-sp-3);
+  background: var(--ds-bg);
+  border-top: 1px solid var(--ds-b);
+}
+
+.ds-control-panel-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: var(--ds-sp-2);
+}
+.ds-control-panel-group--push {
+  margin-left: auto;
+}
+
+/* Icon sizing shared by every button in the panel (was `w-4 h-4`) */
+.ds-icon-md {
+  width: var(--ds-icon-md);
+  height: var(--ds-icon-md);
+  transition: transform var(--ds-dur-base) var(--ds-ease);
+}
+
+/* Premium-locked indicator dot on the "create folder" button */
+.ds-control-panel-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--ds-r-full);
+  background: var(--ds-a);
+  box-shadow: 0 0 8px var(--ds-a-sub-md);
+  animation: ds-control-panel-pulse 1.8s infinite;
+}
+@keyframes ds-control-panel-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* ─── Segmented view switcher (Standard / Incognito) ─────────────────── */
+.ds-switcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--ds-b);
+  border-radius: var(--ds-r-lg);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+.ds-switcher-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 34px;
+  width: 34px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--ds-b-md);
+  border-radius: var(--ds-r-md);
+  box-shadow: var(--ds-elev-1);
+  transform: translateX(0);
+  transition: transform var(--ds-dur-base) var(--ds-ease-out);
+}
+.ds-switcher-highlight--right {
+  transform: translateX(34px);
+}
+.ds-switcher-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  color: var(--ds-t3);
+  cursor: pointer;
+  transition: color var(--ds-dur-base) var(--ds-ease);
+}
+.ds-switcher-btn:hover {
+  color: var(--ds-t2);
+}
+.ds-switcher-btn--standard.ds-switcher-btn--active {
+  color: var(--ds-blue);
+}
+.ds-switcher-btn--incognito.ds-switcher-btn--active {
+  color: var(--ds-purple);
+}
+
+/* ─── Sync wrap ───────────────────────────────────────────────────────
+   Same pill treatment as the switcher, so the two read as one family.
+   ────────────────────────────────────────────────────────────────── */
+.ds-sync-wrap {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--ds-b);
+  border-radius: var(--ds-r-lg);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+/* ─── Lock button hover rotate ────────────────────────────────────────
+   `.btn-icon.btn-icon--outline` already provides the button chrome;
+   this just adds the icon-rotate flourish on hover.
+   ────────────────────────────────────────────────────────────────── */
+.ds-lock-btn:hover .ds-icon-md {
+  transform: rotate(12deg);
 }

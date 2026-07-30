@@ -183,7 +183,7 @@ function MainPage() {
               placeholder={chrome.i18n.getMessage("app_search_placeholder")}
             />
           </div>
-          <div className="flex-1 h-full mb-15 overflow-hidden">
+          <div className="flex-1 h-full overflow-hidden">
             <BookmarkList />
 
             {/* Modals */}
