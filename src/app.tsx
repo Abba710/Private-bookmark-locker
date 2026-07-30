@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import MainPage from "@/pages/mainpage";
-import SettingsPage from "@/pages/settings";
+import SettingsPage from "@/pages/settings/index.tsx";
 import WelcomePage from "@/pages/welcome";
 
 function App() {

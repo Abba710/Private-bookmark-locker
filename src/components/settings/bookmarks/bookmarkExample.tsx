@@ -58,7 +58,14 @@ function BookmarkExample({ settings, name, url }: BookmarkExampleProps) {
       </div>
 
       {/* Preview actions */}
-      <div className="flex items-center w-0 group-hover:w-[78px] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0">
+      <div
+        style={
+          {
+            "--actions-width": `${actionIcon * 3 + 25}px`,
+          } as React.CSSProperties
+        }
+        className={`flex items-center w-0 group-hover:w-[var(--actions-width)] opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shrink-0`}
+      >
         <div className="flex items-center gap-0 pl-1 border-l border-white/5">
           <button disabled className="p-1 text-gray-500 cursor-default">
             <Menu style={{ width: actionIcon, height: actionIcon }} />

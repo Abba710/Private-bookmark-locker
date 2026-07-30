@@ -119,52 +119,18 @@ function Toggle({ checked, onChange, label, hint, disabled }: ToggleProps) {
       type="button"
       onClick={() => !disabled && onChange(!checked)}
       disabled={disabled}
-      className="flex items-center justify-between w-full py-1 group"
-      style={{
-        opacity: disabled ? 0.4 : 1,
-        cursor: disabled ? "default" : "pointer",
-      }}
+      className="ds-toggle-btn"
     >
-      <span className="flex flex-col items-start">
-        <span
-          style={{ fontSize: 11 }}
-          className="text-gray-300 font-semibold select-none"
-        >
-          {label}
-        </span>
+      <span className="ds-toggle-text">
+        <span className="ds-toggle-label ds-text-secondary">{label}</span>
         {hint && (
-          <span style={{ fontSize: 10 }} className="text-gray-500 select-none">
-            {hint}
-          </span>
+          <span className="ds-toggle-hint ds-text-tertiary">{hint}</span>
         )}
       </span>
       <span
-        style={{
-          width: 30,
-          height: 16,
-          borderRadius: 999,
-          flexShrink: 0,
-          background: checked
-            ? "rgba(129,140,248,0.85)"
-            : "rgba(255,255,255,0.08)",
-          border: "1px solid rgba(255,255,255,0.08)",
-          position: "relative",
-          transition: "background 0.2s ease",
-        }}
+        className={`ds-toggle-track${checked ? " ds-toggle-track--on" : ""}`}
       >
-        <span
-          style={{
-            position: "absolute",
-            top: 1,
-            left: checked ? 15 : 1,
-            width: 12,
-            height: 12,
-            borderRadius: 999,
-            background: "#fff",
-            transition: "left 0.2s ease",
-            boxShadow: "0 1px 2px rgba(0,0,0,0.4)",
-          }}
-        />
+        <span className="ds-toggle-thumb" />
       </span>
     </button>
   );
@@ -189,27 +155,11 @@ function SliderRow({
 }: SliderRowProps) {
   return (
     <div
-      className="flex flex-col gap-1.5 w-full"
-      style={{ opacity: disabled ? 0.4 : 1 }}
+      className={`ds-slider-row${disabled ? " ds-slider-row--disabled" : ""}`}
     >
-      <div className="flex items-center justify-between">
-        <span
-          style={{ fontSize: 11 }}
-          className="text-gray-300 font-semibold select-none"
-        >
-          {label}
-        </span>
-        <span
-          style={{
-            fontSize: 10,
-            fontFamily: "ui-monospace, monospace",
-            background: "rgba(0,0,0,0.3)",
-            border: "1px solid rgba(255,255,255,0.05)",
-          }}
-          className="text-gray-300 px-1.5 py-0.5 rounded"
-        >
-          {value}px
-        </span>
+      <div className="ds-slider-head">
+        <span className="ds-slider-label">{label}</span>
+        <span className="ds-slider-value">{value}px</span>
       </div>
       <input
         type="range"
@@ -221,7 +171,7 @@ function SliderRow({
         onChange={(e) =>
           onChange(Number((e.currentTarget as HTMLInputElement).value))
         }
-        style={{ width: "100%", height: 4, accentColor: "#818cf8" }}
+        className="ds-range"
       />
     </div>
   );
@@ -234,22 +184,9 @@ interface MetricBadgeProps {
 
 function MetricBadge({ label, value }: MetricBadgeProps) {
   return (
-    <div
-      className="flex items-center justify-between px-2 py-1 rounded"
-      style={{
-        background: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(255,255,255,0.05)",
-      }}
-    >
-      <span style={{ fontSize: 10 }} className="text-gray-500 select-none">
-        {label}
-      </span>
-      <span
-        style={{ fontSize: 10, fontFamily: "ui-monospace, monospace" }}
-        className="text-indigo-300"
-      >
-        {value}
-      </span>
+    <div className="ds-metric">
+      <span className="ds-metric-label">{label}</span>
+      <span className="ds-metric-value">{value}</span>
     </div>
   );
 }
@@ -286,26 +223,12 @@ function ControlCard({
   metrics,
 }: ControlCardProps) {
   return (
-    <div
-      className="flex flex-col gap-3 p-3 rounded-lg"
-      style={{
-        background: "rgba(255,255,255,0.02)",
-        border: "1px solid rgba(255,255,255,0.05)",
-      }}
-    >
-      <div className="flex items-center gap-2">
-        <div
-          className="flex-shrink-0 w-6 h-6 rounded-md flex items-center justify-center"
-          style={{
-            background: "#1a1a1a",
-            border: "1px solid rgba(255,255,255,0.1)",
-          }}
-        >
-          <Icon className="w-3.5 h-3.5 text-indigo-400" />
+    <div className="ds-control-card">
+      <div className="ds-control-card-header">
+        <div className="ds-control-card-icon">
+          <Icon className="icon--primary ds-icon-sm" />
         </div>
-        <span style={{ fontSize: 12 }} className="text-white font-semibold">
-          {title}
-        </span>
+        <span className="ds-control-card-title">{title}</span>
       </div>
 
       <SliderRow
@@ -316,7 +239,7 @@ function ControlCard({
         onChange={onHeightChange}
       />
 
-      <div className="grid grid-cols-2 gap-1.5">
+      <div className="ds-control-card-metrics">
         {isFolderMetrics(metrics) ? (
           <>
             <MetricBadge
@@ -342,10 +265,7 @@ function ControlCard({
         )}
       </div>
 
-      <div
-        className="flex flex-col gap-0.5 pt-1"
-        style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
-      >
+      <div className="ds-control-card-toggles">
         <Toggle
           checked={iconEnabled}
           onChange={onIconToggle}
@@ -419,16 +339,10 @@ export default function BookmarkFolderControls({
   };
 
   return (
-    <div
-      className="w-full max-w-md flex flex-col gap-3 p-3 rounded-xl"
-      style={{
-        background: "#0a0a0a",
-        border: "1px solid rgba(255,255,255,0.06)",
-      }}
-    >
-      <div className="flex items-center gap-2 px-1">
-        <SlidersHorizontal className="w-3.5 h-3.5 text-indigo-400" />
-        <span style={{ fontSize: 12 }} className="text-white font-semibold">
+    <div className="ds-settings-panel">
+      <div className="ds-settings-panel-header">
+        <SlidersHorizontal className="icon--primary ds-icon-md" />
+        <span className="ds-text-primary">
           {chrome.i18n.getMessage("app_setting_list_title")}
         </span>
       </div>
@@ -459,34 +373,22 @@ export default function BookmarkFolderControls({
         type="button"
         onClick={handleSave}
         disabled={!isDirty && !justSaved}
-        className="flex items-center justify-center gap-1.5 w-full py-1.5 rounded-md transition-colors"
-        style={{
-          fontSize: 11,
-          fontWeight: 600,
-          background: justSaved
-            ? "rgba(74,222,128,0.15)"
+        className={`btn btn--primary ${
+          justSaved
+            ? " ds-save-btn--saved"
             : isDirty
-              ? "rgba(129,140,248,0.15)"
-              : "rgba(255,255,255,0.03)",
-          border: `1px solid ${
-            justSaved
-              ? "rgba(74,222,128,0.3)"
-              : isDirty
-                ? "rgba(129,140,248,0.3)"
-                : "rgba(255,255,255,0.06)"
-          }`,
-          color: justSaved ? "#4ade80" : isDirty ? "#a5b4fc" : "#6b7280",
-          cursor: isDirty ? "pointer" : "default",
-        }}
+              ? " ds-save-btn--dirty"
+              : ""
+        }`}
       >
         {justSaved ? (
           <>
-            <Check className="w-3.5 h-3.5" />
+            <Check className="ds-icon-sm" />
             {chrome.i18n.getMessage("app_setting_saved")}
           </>
         ) : (
           <>
-            <Save className="w-3.5 h-3.5" />
+            <Save className="ds-icon-sm" />
             {chrome.i18n.getMessage("app_settings_save_settings")}
           </>
         )}

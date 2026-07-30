@@ -110,7 +110,8 @@
 html,
 body,
 #app,
-#root {
+#root,
+.settings {
   font-family: var(--ds-sans);
   background: var(--ds-bg);
   font-size: 16px;
@@ -2778,3 +2779,209 @@ body,
 .ds-lock-btn:hover .ds-icon-md {
   transform: rotate(12deg);
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   DESIGN SYSTEM — ui.css additions
+   Bookmark / Folder settings panel (controls.tsx).
+   Every color below is either an existing --ds-* variable, or (where no
+   variable exists) a literal value already used elsewhere in ui.css —
+   e.g. rgba(255,255,255,0.04) is the same value .ds-sidebar-item:hover
+   already uses. Nothing new was introduced.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.ds-icon-sm {
+  width: var(--ds-icon-sm);
+  height: var(--ds-icon-sm);
+}
+.ds-icon-md {
+  width: var(--ds-icon-md);
+  height: var(--ds-icon-md);
+}
+
+/* ─── Toggle (bespoke small switch, 30x15 — same visual size as the
+   original, distinct from the global 36x20 .ds-switch) ────────────── */
+.ds-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 0;
+  background: none;
+  border: none;
+  font-family: var(--ds-sans);
+  cursor: pointer;
+}
+.ds-toggle-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.ds-toggle-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ds-toggle-label {
+  font-size: var(--ds-t-12);
+}
+.ds-toggle-hint {
+  font-size: var(--ds-t-11);
+}
+.ds-toggle-track {
+  flex-shrink: 0;
+  width: 30px;
+  height: 15px;
+  border-radius: var(--ds-r-full);
+  background: var(--ds-s5);
+  border: 1px solid var(--ds-s5);
+  position: relative;
+  transition: background var(--ds-dur-base) var(--ds-ease);
+}
+.ds-toggle-track--on {
+  background: var(--ds-a);
+  border-color: var(--ds-a);
+}
+.ds-toggle-thumb {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--ds-r-full);
+  /* same white thumb color .ds-switch-thumb already uses */
+  background: #fff;
+  box-shadow: var(--ds-elev-1);
+  transition: left var(--ds-dur-base) var(--ds-ease);
+}
+.ds-toggle-track--on .ds-toggle-thumb {
+  left: 15px;
+}
+
+/* ─── Slider row ──────────────────────────────────────────────────────── */
+.ds-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.ds-slider-row--disabled {
+  opacity: 0.4;
+}
+.ds-slider-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ds-slider-label {
+  font-size: var(--ds-t-14);
+  color: var(--ds-t1);
+}
+.ds-slider-value {
+  font-size: var(--ds-t-11);
+  color: var(--ds-t1);
+  background: var(--ds-s5);
+  border: 1px solid var(--ds-b);
+  border-radius: var(--ds-r-sm);
+  padding: 2px 6px;
+}
+.ds-range {
+  width: 100%;
+  height: 4px;
+  accent-color: var(--ds-a);
+  cursor: pointer;
+}
+.ds-range:disabled {
+  cursor: not-allowed;
+}
+
+/* ─── Metric badge ────────────────────────────────────────────────────── */
+.ds-metric {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-radius: var(--ds-r-sm);
+  background: var(--ds-s5);
+  border: 1px solid var(--ds-b);
+}
+.ds-metric-label {
+  font-size: var(--ds-t-11);
+  color: var(--ds-t3);
+  user-select: none;
+}
+.ds-metric-value {
+  font-size: var(--ds-t-11);
+  color: var(--ds-a-h);
+  font-family: var(--ds-mono);
+}
+
+/* ─── Control card ────────────────────────────────────────────────────
+   Panel is --ds-s2; the card sits one step down the elevation stack at
+   --ds-s1, and the icon chip drops to --ds-bg — same "each level = one
+   surface token darker" logic the rest of ui.css already follows.
+   ────────────────────────────────────────────────────────────────── */
+.ds-control-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-sp-3);
+  padding: var(--ds-sp-3);
+  border-radius: var(--ds-r-lg);
+  background: var(--ds-s1);
+  border: 1px solid var(--ds-b);
+}
+.ds-control-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-sp-2);
+}
+.ds-control-card-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--ds-r-md);
+  background: var(--ds-bg);
+  border: 1px solid var(--ds-b-md);
+}
+.ds-control-card-title {
+  font-size: var(--ds-t-12);
+  font-weight: 600;
+  color: var(--ds-t1);
+}
+.ds-control-card-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+.ds-control-card-toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 4px;
+  border-top: 1px solid var(--ds-b);
+}
+
+/* ─── Panel shell ─────────────────────────────────────────────────────── */
+.ds-settings-panel {
+  width: 100%;
+  max-width: 448px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-sp-3);
+  padding: var(--ds-sp-3);
+  background: var(--ds-s2);
+  border: 1px solid var(--ds-b);
+}
+.ds-settings-panel-header {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-sp-2);
+  padding: 0 4px;
+}
+
+/* ─── Save button ─────────────────────────────────────────────────────
+   Same 3 states as .ds-badge/.ds-alert already use elsewhere: neutral =
+   --ds-s3/--ds-b/--ds-t3, accent = --ds-a-sub family, success = --ds-green
+   family (0.25 border opacity matches .ds-badge--success exactly).
+   ────────────────────────────────────────────────────────────────── */
