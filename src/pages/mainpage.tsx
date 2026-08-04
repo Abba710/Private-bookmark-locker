@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "preact/hooks";
 import UserHeader from "@/components/header";
 import ControlPanel from "@/components/controlpanel";
 import BookmarkList from "@/components/bookmarks/bookmarkList";
-import LockOverlay from "@/components/lock/lockoverlay";
 import UpgradeToProModal from "@/components/premium/premiumModal";
 import DeleteAllBookmarksModal from "@/util/deleteModal";
 import Feedback from "@/components/feedback";
@@ -43,7 +42,6 @@ function MainPage() {
   const setPlan = useSubscribePlanStore((state) => state.setPlan);
 
   const setIsLocked = useLockOverlayStore((state) => state.setIsLocked);
-  const isLocked = useLockOverlayStore((state) => state.isLocked);
   const setBookmarks = useBookmarkStore((state) => state.setBookmarks);
 
   // Use the hook primarily for passing handlers like 'refreshSubscription' to modals
@@ -163,48 +161,43 @@ function MainPage() {
         <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-indigo-500/[0.08] blur-[120px] rounded-full" />
         <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-purple-500/[0.08] blur-[120px] rounded-full" />
       </div>
-
-      {isLocked ? (
-        <LockOverlay />
-      ) : (
-        <div className="relative z-10 flex flex-col h-full">
-          <UserHeader
-            userData={auth.user}
-            logIn={auth.signInWithGoogle}
-            logOut={() => setIsLogoutModalOpen(true)}
-            isPro={isPro} // Passed directly from store selector
-          />{" "}
-          {/* Search Header Section */}
-          <div className="relative z-10">
-            <BookmarkSearch
-              placeholder={chrome.i18n.getMessage("app_search_placeholder")}
-            />
-          </div>
-          <div className="flex-1 h-full overflow-hidden">
-            <BookmarkList />
-
-            {/* Modals */}
-            <UpgradeToProModal
-              upgrade={refreshSubscription} // Trigger re-check after payment
-              logIn={auth.signInWithGoogle}
-            />
-
-            <DeleteAllBookmarksModal
-              isOpen={isLogoutModalOpen}
-              onClose={() => setIsLogoutModalOpen(false)}
-              onConfirmLogoutOnly={handleSimpleLogout}
-              onConfirmDelete={handleFullCleanupLogout}
-            />
-            <Feedback />
-          </div>
-          <Affiliate />
-          <ControlPanel
-            canCreateFolder={canCreateFolders()} // Calculated via hook
-            openPremiumModal={setPremiumModalOpen}
-            isPro={isPro} // Passed direc tly from store selector
+      <div className="relative z-10 flex flex-col h-full">
+        <UserHeader
+          userData={auth.user}
+          logIn={auth.signInWithGoogle}
+          logOut={() => setIsLogoutModalOpen(true)}
+          isPro={isPro} // Passed directly from store selector
+        />{" "}
+        {/* Search Header Section */}
+        <div className="relative z-10">
+          <BookmarkSearch
+            placeholder={chrome.i18n.getMessage("app_search_placeholder")}
           />
         </div>
-      )}
+        <div className="flex-1 h-full overflow-hidden">
+          <BookmarkList />
+
+          {/* Modals */}
+          <UpgradeToProModal
+            upgrade={refreshSubscription} // Trigger re-check after payment
+            logIn={auth.signInWithGoogle}
+          />
+
+          <DeleteAllBookmarksModal
+            isOpen={isLogoutModalOpen}
+            onClose={() => setIsLogoutModalOpen(false)}
+            onConfirmLogoutOnly={handleSimpleLogout}
+            onConfirmDelete={handleFullCleanupLogout}
+          />
+          <Feedback />
+        </div>
+        <Affiliate />
+        <ControlPanel
+          canCreateFolder={canCreateFolders()} // Calculated via hook
+          openPremiumModal={setPremiumModalOpen}
+          isPro={isPro} // Passed direc tly from store selector
+        />
+      </div>
     </div>
   );
 }
