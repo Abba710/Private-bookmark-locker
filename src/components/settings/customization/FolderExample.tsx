@@ -16,7 +16,7 @@ function FolderExample({ settings, name, count }: FolderExampleProps) {
     <div className="flex flex-col gap-0.5 w-full">
       <div
         style={{ height: settings.height }}
-        className="relative flex items-center gap-0 w-full px-2 bg-white/[0.04] border border-white/[0.05] overflow-hidden group"
+        className="relative flex items-center gap-0 w-full max-w-[350px] px-2 bg-white/[0.04] border border-white/[0.05] overflow-hidden group"
       >
         {/* Drag Handle */}
         <div className="absolute left-0.5 opacity-0 group-hover:opacity-100 transition-opacity text-white/20 p-0.5 z-10">

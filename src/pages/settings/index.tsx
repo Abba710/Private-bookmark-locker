@@ -61,7 +61,7 @@ export default function SettingsPage() {
           {activeWindow === "customize" && (
             <div className="w-full gap-2 border border-white/5 bg-[var(--ds-s1)] p-4">
               {loaded && (
-                <>
+                <div className={"max-w-[350px]"}>
                   <div className={"mb-2"}>
                     <FolderExample
                       settings={live.folder}
@@ -79,7 +79,7 @@ export default function SettingsPage() {
                     onChange={setLive}
                     onSave={handleSave}
                   />
-                </>
+                </div>
               )}
             </div>
           )}

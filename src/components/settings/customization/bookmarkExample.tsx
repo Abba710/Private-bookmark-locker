@@ -17,7 +17,7 @@ function BookmarkExample({ settings, name, url }: BookmarkExampleProps) {
   return (
     <div
       style={{ height: settings.height }}
-      className="group relative flex items-center gap-0 w-full px-2 bg-white/[0.04] border border-white/[0.05] overflow-hidden"
+      className="group relative flex items-center gap-0 w-full max-w-[350px] mt-2 px-2 bg-white/[0.04] border border-white/[0.05] overflow-hidden"
     >
       {/* Drag handle */}
       <div className="absolute left-0.5 opacity-0 group-hover:opacity-100 transition-opacity text-white/20 p-0.5 z-10">
