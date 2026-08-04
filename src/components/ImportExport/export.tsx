@@ -1,11 +1,11 @@
 import { X, Download, AlertCircle } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 /**
  * ExportDialog Component
  * Style: Modern Dark SaaS / Premium Look
  * Description: A confirmation dialog for exporting data with visual consistency.
  */
-
 export default function ExportDialog({
   onClose,
   onExport,
@@ -14,71 +14,74 @@ export default function ExportDialog({
   onExport: () => void;
 }) {
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      {/* Backdrop with blur - standard for our app */}
-      <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
-        onClick={onClose}
-      />
+    <AnimatePresence>
+      <div className="ds-section ds-section-marker h-full">
+        <div className="fixed inset-0 bg-[var(--ds-bg)] backdrop-blur-md z-[100] flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0"
+            onClick={onClose}
+          />
 
-      {/* Modal container */}
-      <div className="relative w-full max-w-[400px] bg-[#0f0f11] border border-white/10 rounded-[32px] shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-        {/* Decorative Top Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-32 bg-indigo-500/10 blur-[50px] rounded-full pointer-events-none" />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 8 }}
+            transition={{ type: "spring", stiffness: 350, damping: 30 }}
+            className="ds-tpl-login"
+          >
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-40 text-indigo-400 opacity-[0.08] blur-[60px] rounded-full pointer-events-none" />
 
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute cursor-pointer top-5 right-5 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
-        >
-          <X className="w-5 h-5" />
-        </button>
+            <div className="ds-login-card relative">
+              <button
+                onClick={onClose}
+                className="absolute top-6 cursor-pointer right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors"
+                aria-label={chrome.i18n.getMessage("app_cancel")}
+              >
+                <X size={18} />
+              </button>
 
-        <div className="relative p-8 pt-10 flex flex-col items-center text-center">
-          {/* Header Icon - Using Download icon in a premium box */}
-          <div className="w-16 h-16 rounded-2xl bg-[#1a1a1a] border border-white/10 flex items-center justify-center mb-6 shadow-inner ring-1 ring-white/5">
-            <Download className="w-8 h-8 text-indigo-400" />
-          </div>
+              <div className="ds-login-logo">
+                <span className="ds-login-logo-mark">
+                  <Download size={16} className="text-indigo-400" />
+                </span>
+              </div>
 
-          {/* Modal title */}
-          <h2 className="text-2xl font-bold text-white tracking-tight mb-3">
-            {chrome.i18n.getMessage("app_modal_export")}
-          </h2>
+              <div className="ds-login-header">
+                <h2 className="ds-login-title">
+                  {chrome.i18n.getMessage("app_modal_export")}
+                </h2>
+                <p className="ds-login-sub">
+                  {chrome.i18n.getMessage("app_export_modal_description")}
+                </p>
+              </div>
 
-          {/* Export description */}
-          <p className="text-zinc-400 text-sm leading-relaxed mb-8 px-2">
-            {chrome.i18n.getMessage("app_export_modal_description")}
-          </p>
+              {/* Info badge — kept as-is, no ds equivalent for an inline hint pill */}
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/5 border border-indigo-500/10 text-[11px] font-medium text-indigo-300/80 mb-2">
+                <AlertCircle className="w-3.5 h-3.5" />
+                <span>{chrome.i18n.getMessage("app_export_format_label")}</span>
+              </div>
 
-          {/* Info Badge - subtle hint */}
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/5 border border-indigo-500/10 text-[11px] font-medium text-indigo-300/80 mb-8">
-            <AlertCircle className="w-3.5 h-3.5" />
-            <span>{chrome.i18n.getMessage("app_export_format_label")}</span>
-          </div>
+              <button onClick={onExport} className="btn btn--primary mt-2">
+                <span className="flex items-center justify-center gap-2">
+                  {chrome.i18n.getMessage("app_export_modal_button")}
+                  <Download size={16} />
+                </span>
+              </button>
 
-          {/* Action buttons */}
-          <div className="flex flex-col w-full gap-3">
-            <button
-              onClick={onExport}
-              className="group cursor-pointer relative w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 overflow-hidden"
-            >
-              {/* Shine effect on hover */}
-              <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
-              <span className="relative flex items-center justify-center gap-2">
-                {chrome.i18n.getMessage("app_export_modal_button")}
-                <Download className="w-4 h-4" />
-              </span>
-            </button>
-
-            <button
-              onClick={onClose}
-              className="w-full cursor-pointer py-3 text-sm font-medium text-zinc-500 hover:text-white transition-colors"
-            >
-              {chrome.i18n.getMessage("app_cancel")}
-            </button>
-          </div>
+              <p
+                onClick={onClose}
+                className="ds-text-tertiary text-center cursor-pointer hover:text-white transition-colors mt-2"
+              >
+                {chrome.i18n.getMessage("app_cancel")}
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 }

@@ -14,6 +14,7 @@ import {
   CheckCircle2,
   Database,
 } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import { BuyButton } from "@/components/premium/buyButton";
 
 interface UpgradeToProModalProps {
@@ -131,142 +132,149 @@ export default function UpgradeToProModal({
     },
   ];
 
-  const buttonBaseStyles = `
-    group relative w-full py-4 px-6 rounded-xl cursor-pointer
-    font-semibold shadow-lg transition-all duration-200
-    overflow-hidden flex items-center justify-center gap-2
-    select-none
-  `;
-  const activeGradient =
-    "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98]";
-  const cooldownStyles =
-    "bg-zinc-800 text-zinc-400 cursor-not-allowed border border-white/5";
-
   return (
-    <div className="fixed inset-0 z-[100] min-w-full min-h-full flex items-center justify-center p-4">
-      {/* Overlay Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
-        onClick={() => setPremiumModalOpen(false)}
-      />
+    <AnimatePresence>
+      <div className="ds-section ds-section-marker h-full">
+        <div className="fixed inset-0 bg-[var(--ds-bg)] backdrop-blur-md z-[100] flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0"
+            onClick={() => setPremiumModalOpen(false)}
+          />
 
-      {/* Modal Card */}
-      <div className="relative w-full max-w-[480px] bg-[#0f0f11] border border-white/10 rounded-[32px] shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-48 bg-indigo-500/10 blur-[60px] rounded-full pointer-events-none" />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 8 }}
+            transition={{ type: "spring", stiffness: 350, damping: 30 }}
+            className="ds-tpl-login"
+          >
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-40 text-indigo-400 opacity-[0.08] blur-[60px] rounded-full pointer-events-none" />
 
-        <button
-          onClick={() => setPremiumModalOpen(false)}
-          className="absolute cursor-pointer top-5 right-5 p-2 text-gray-400 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="relative p-8 max-h-[95vh] overflow-y-auto custom-scrollbar">
-          {/* Header */}
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-white mb-3 tracking-tight">
-              {chrome.i18n.getMessage("app_premium_title")}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                {chrome.i18n.getMessage("app_premium_pro_power")}
-              </span>
-            </h2>
-            <p className="text-zinc-400 text-sm">
-              {chrome.i18n.getMessage("app_premium_subtitle")}
-            </p>
-          </div>
-
-          {/* Features List */}
-          <div className="space-y-4 mb-8">
-            {features.map((feature, idx) => (
-              <div
-                key={idx}
-                className="group p-4 rounded-2xl bg-white/[0.04] border border-white/5 hover:border-white/10 transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-[#1a1a1a] border border-white/5 shadow-inner">
-                    {feature.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-white font-semibold text-sm mb-0.5">
-                      {feature.text}
-                    </h3>
-                    {feature.subFeatures && (
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {feature.subFeatures.map((sub, sIdx) => (
-                          <span
-                            key={sIdx}
-                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-[11px] font-medium text-indigo-300"
-                          >
-                            <Star className="w-3 h-3" /> {sub}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Footer Actions */}
-          <div className="space-y-4">
-            {!hasClickedBuy ? (
-              <BuyButton
-                className={`${buttonBaseStyles} ${activeGradient}`}
-                onBuyClick={handleBuySuccess}
-                logIn={logIn}
-                checkSubscription={handleCheckAndUpgrade}
-              >
-                <span className="relative flex items-center justify-center gap-2">
-                  {chrome.i18n.getMessage("app_premium_btn_upgrade", ["3$"])}
-                  <Zap className="w-4 h-4 fill-white/50" />
-                </span>
-              </BuyButton>
-            ) : (
+            <div className="ds-login-card relative max-h-[95vh] overflow-y-auto custom-scrollbar">
               <button
-                onClick={handleCheckStatus}
-                disabled={cooldown > 0 || isChecking || isPro}
-                className={`${buttonBaseStyles} ${
-                  cooldown > 0 || isChecking ? cooldownStyles : activeGradient
-                }`}
+                onClick={() => setPremiumModalOpen(false)}
+                className="absolute top-6 cursor-pointer right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors"
+                aria-label={chrome.i18n.getMessage("app_premium_btn_no_thanks")}
               >
-                {isChecking ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    {chrome.i18n.getMessage("app_premium_btn_checking")}
-                  </>
-                ) : isPro ? (
-                  <>
-                    <CheckCircle2 className="w-5 h-5 text-green-400" />
-                    {chrome.i18n.getMessage("app_premium_btn_success")}
-                  </>
-                ) : cooldown > 0 ? (
-                  <>
-                    {/* Injecting raw seconds directly into the template string */}
-                    {`${chrome.i18n.getMessage(
-                      "app_premium_btn_retry",
-                    )} ${String(cooldown)}`}
-                  </>
-                ) : (
-                  <>
-                    {chrome.i18n.getMessage("app_premium_btn_check_status")}
-                    <Zap className="w-4 h-4" />
-                  </>
-                )}
+                <X size={18} />
               </button>
-            )}
 
-            <button
-              onClick={() => setPremiumModalOpen(false)}
-              className="w-full cursor-pointer py-2 text-sm text-gray-500 hover:text-white transition-colors"
-            >
-              {hasClickedBuy
-                ? chrome.i18n.getMessage("app_premium_btn_later")
-                : chrome.i18n.getMessage("app_premium_btn_no_thanks")}
-            </button>
-          </div>
+              <div className="ds-login-logo">
+                <span className="ds-login-logo-mark">
+                  <Zap size={16} className="text-indigo-400" />
+                </span>
+              </div>
+
+              <div className="ds-login-header">
+                <h2 className="ds-login-title">
+                  {chrome.i18n.getMessage("app_premium_title")}{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                    {chrome.i18n.getMessage("app_premium_pro_power")}
+                  </span>
+                </h2>
+                <p className="ds-login-sub">
+                  {chrome.i18n.getMessage("app_premium_subtitle")}
+                </p>
+              </div>
+
+              {/* Features list — kept as-is, no ds equivalent for a bulleted
+                  feature card grid */}
+              <div className="w-full space-y-4 mb-2">
+                {features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    className="group p-4 rounded-2xl bg-white/[0.04] border border-white/5 hover:border-white/10 transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 rounded-lg bg-[#1a1a1a] border border-white/5 shadow-inner">
+                        {feature.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-white font-semibold text-sm mb-0.5">
+                          {feature.text}
+                        </h3>
+                        {feature.subFeatures && (
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {feature.subFeatures.map((sub, sIdx) => (
+                              <span
+                                key={sIdx}
+                                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-[11px] font-medium text-indigo-300"
+                              >
+                                <Star className="w-3 h-3" /> {sub}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Footer Actions */}
+              <div className="w-full flex flex-col items-center justify-center space-y-3">
+                {!hasClickedBuy ? (
+                  <BuyButton
+                    className="btn btn--primary"
+                    onBuyClick={handleBuySuccess}
+                    logIn={logIn}
+                    checkSubscription={handleCheckAndUpgrade}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      {chrome.i18n.getMessage("app_premium_btn_upgrade", [
+                        "3$",
+                      ])}
+                      <Zap className="w-4 h-4 fill-white/50" />
+                    </span>
+                  </BuyButton>
+                ) : (
+                  <button
+                    onClick={handleCheckStatus}
+                    disabled={cooldown > 0 || isChecking || isPro}
+                    className="btn btn--primary"
+                  >
+                    {isChecking ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        {chrome.i18n.getMessage("app_premium_btn_checking")}
+                      </span>
+                    ) : isPro ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <CheckCircle2 className="w-5 h-5 text-green-400" />
+                        {chrome.i18n.getMessage("app_premium_btn_success")}
+                      </span>
+                    ) : cooldown > 0 ? (
+                      <span>
+                        {`${chrome.i18n.getMessage(
+                          "app_premium_btn_retry",
+                        )} ${String(cooldown)}`}
+                      </span>
+                    ) : (
+                      <span className="flex items-center justify-center gap-2">
+                        {chrome.i18n.getMessage("app_premium_btn_check_status")}
+                        <Zap className="w-4 h-4" />
+                      </span>
+                    )}
+                  </button>
+                )}
+
+                <p
+                  onClick={() => setPremiumModalOpen(false)}
+                  className="ds-text-tertiary text-center cursor-pointer hover:text-white transition-colors"
+                >
+                  {hasClickedBuy
+                    ? chrome.i18n.getMessage("app_premium_btn_later")
+                    : chrome.i18n.getMessage("app_premium_btn_no_thanks")}
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 }

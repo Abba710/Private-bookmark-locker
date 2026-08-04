@@ -21,6 +21,7 @@ import {
   useSubscribePlanStore,
 } from "@/storage/statelibrary";
 import ImportBookmarksDialog from "@/components/chromeImportPanel";
+import QrModalUi from "@/components/contextMenu/featuresUI/qrGenModal";
 
 function MainPage() {
   const auth = useAuth();
@@ -148,6 +149,7 @@ function MainPage() {
       />
       <ImportBookmarksDialog />
       <Feedback />
+      <QrModalUi />
     </div>
   );
 }
