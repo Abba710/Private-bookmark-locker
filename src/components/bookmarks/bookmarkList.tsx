@@ -21,7 +21,7 @@ import type { Bookmark } from "@/types/types";
 import {
   DEFAULT_SETTINGS,
   type ControlsSettings,
-} from "@/components/settings/bookmarks/controls.tsx";
+} from "@/components/settings/customization/controls";
 import { SETTINGS_STORAGE_KEY } from "@/pages/settings";
 import { useEffect } from "preact/hooks";
 

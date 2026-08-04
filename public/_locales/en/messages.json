@@ -5,9 +5,6 @@
   "app_description": {
     "message": "Bookmark manager and session manager for Chromium. Save, organize, protect, and restore bookmarks with full Incognito support"
   },
-  "app_affiliate_title": {
-    "message": "Become an Affiliate"
-  },
   "app_affiliate_description": {
     "message": "Earn 40% commission for every sale."
   },
@@ -108,23 +105,8 @@
     "message": "PRO"
   },
 
-  "app_options_hotkeys": {
-    "message": "Hotkeys"
-  },
   "app_options_settings_alert": {
     "message": "Settings coming soon!"
-  },
-  "app_options_collect": {
-    "message": "Chrome bookmarks import"
-  },
-  "app_options_save_open": {
-    "message": "Save the current session"
-  },
-  "app_options_widget_show": {
-    "message": "Show widget"
-  },
-  "app_options_widget_hide": {
-    "message": "Hide widget"
   },
   "app_options_widget_save": {
     "message": "Save page"
@@ -145,9 +127,6 @@
     "message": "Community"
   },
 
-  "app_modal_export": {
-    "message": "Export Bookmarks"
-  },
   "app_export_modal_description": {
     "message": "Click the button below to export your bookmarks as a file. You cansave it and import later if needed."
   },
@@ -156,9 +135,6 @@
   },
   "app_export_format_label": {
     "message": "Format: JSON"
-  },
-  "app_import_modal": {
-    "message": "Import Bookmarks"
   },
   "app_import_modal_description": {
     "message": "Drag & drop your file here or click to select"
@@ -411,9 +387,6 @@
     "message": "Login window failed to open"
   },
 
-  "app_options_PH": {
-    "message": "Get 50% Discount"
-  },
   "app_options_PH_Title": {
     "message": "Help Private Bookmark Locker grow 🚀"
   },
@@ -447,12 +420,6 @@
   "app_options_PH_cta_later": {
     "message": "Maybe later"
   },
-  "app_options_faq": {
-    "message": "FAQ"
-  },
-  "app_changelog": {
-    "message": "Changelog"
-  },
   "app_changelog_unavailable": {
     "message": "Content unavailable"
   },
@@ -464,18 +431,6 @@
   },
   "app_changelog_dismiss": {
     "message": "Dismiss"
-  },
-  "app_rate_extension": {
-    "message": "Rate the extension"
-  },
-  "app_share_extension": {
-    "message": "Share the extension"
-  },
-  "app_community": {
-    "message": "Join the community"
-  },
-  "app_report_bug": {
-    "message": "Report a bug"
   },
   "app_feedback_title": {
     "message": "Like the extension?"
@@ -490,9 +445,6 @@
     "message": "Later"
   },
 
-  "app_donate_title": {
-    "message": "Support the project"
-  },
   "app_donate_h2_title": {
     "message": "I'm building this extension alone, and your support helps me improve the project and keep it free."
   },
@@ -691,5 +643,195 @@
   "app_features_ai_summary_description": {
     "message": "Generate concise AI-powered summaries of articles and webpages using GPT.",
     "description": "Description for AI Summary"
+  },
+  "app_import_modal": {
+    "message": "Import",
+    "description": "Label for import modal button"
+  },
+  "app_import_modal_desc": {
+    "message": "Import bookmarks from an JSON file",
+    "description": "Description for import feature"
+  },
+  "app_import_modal_btn": {
+    "message": "Choose file",
+    "description": "Button text for import"
+  },
+  "app_modal_export": {
+    "message": "Export",
+    "description": "Label for export modal"
+  },
+  "app_modal_export_desc": {
+    "message": "Export your bookmarks as an JSON file",
+    "description": "Description for export feature"
+  },
+  "app_modal_export_btn": {
+    "message": "Export",
+    "description": "Button text for export"
+  },
+  "app_options_hotkeys": {
+    "message": "Shortcuts",
+    "description": "Label for hotkeys settings"
+  },
+  "app_options_hotkeys_desc": {
+    "message": "Configure extension shortcuts",
+    "description": "Description for hotkeys"
+  },
+  "app_options_hotkeys_btn": {
+    "message": "Open shortcuts",
+    "description": "Button text for hotkeys"
+  },
+  "app_options_collect": {
+    "message": "Collect bookmarks",
+    "description": "Label for collect bookmarks feature"
+  },
+  "app_options_collect_desc": {
+    "message": "Import all your browser bookmarks",
+    "description": "Description for collect feature"
+  },
+  "app_options_collect_btn": {
+    "message": "Collect",
+    "description": "Button text for collect"
+  },
+  "app_options_save_open": {
+    "message": "Save current session",
+    "description": "Label for saving open tabs"
+  },
+  "app_options_save_open_desc": {
+    "message": "Save current session",
+    "description": "Description for save open tabs"
+  },
+  "app_options_save_open_btn": {
+    "message": "Save session",
+    "description": "Button text for save open tabs"
+  },
+  "app_options_faq": {
+    "message": "FAQ",
+    "description": "Label for FAQ"
+  },
+  "app_options_faq_desc": {
+    "message": "Frequently asked questions and help",
+    "description": "Description for FAQ"
+  },
+  "app_options_faq_btn": {
+    "message": "Open FAQ",
+    "description": "Button text for FAQ"
+  },
+  "app_options_widget_show": {
+    "message": "Show widget",
+    "description": "Label for showing the widget"
+  },
+  "app_options_widget_hide": {
+    "message": "Hide widget",
+    "description": "Label for hiding the widget"
+  },
+  "app_options_widget_hide_desc": {
+    "message": "Toggle widget visibility",
+    "description": "Description for widget toggle"
+  },
+  "app_options_widget_hide_btn": {
+    "message": "Toggle",
+    "description": "Button text for widget toggle"
+  },
+  "app_changelog": {
+    "message": "Changelog",
+    "description": "Label for changelog/version history"
+  },
+  "app_changelog_desc": {
+    "message": "See what's new in the latest version",
+    "description": "Description for changelog"
+  },
+  "app_changelog_btn": {
+    "message": "Open changelog",
+    "description": "Button text for changelog"
+  },
+  "app_affiliate_title": {
+    "message": "Affiliate Program",
+    "description": "Label for affiliate program"
+  },
+  "app_affiliate_desc": {
+    "message": "Earn commissions by referring others",
+    "description": "Description for affiliate program"
+  },
+  "app_affiliate_btn": {
+    "message": "Join affiliate",
+    "description": "Button text for affiliate program"
+  },
+
+  "app_options_PH": {
+    "message": "Product Hunt – 50% OFF",
+    "description": "Label for Product Hunt promotion with 50% discount"
+  },
+  "app_options_PH_desc": {
+    "message": "Get a 50% discount on our Product Hunt launch",
+    "description": "Description for Product Hunt promotion"
+  },
+  "app_options_PH_btn": {
+    "message": "Claim discount",
+    "description": "Button text for Product Hunt offer"
+  },
+
+  "app_community": {
+    "message": "Community",
+    "description": "Label for community/forum"
+  },
+  "app_community_desc": {
+    "message": "Join our Reddit community for tips and support",
+    "description": "Description for community link"
+  },
+  "app_community_btn": {
+    "message": "Visit Reddit",
+    "description": "Button text for community"
+  },
+
+  "app_rate_extension": {
+    "message": "Rate the Extension",
+    "description": "Label for rating the extension"
+  },
+  "app_rate_extension_desc": {
+    "message": "Leave a review on the Chrome Web Store",
+    "description": "Description for rating"
+  },
+  "app_rate_extension_btn": {
+    "message": "Write review",
+    "description": "Button text for rating"
+  },
+
+  "app_share_extension": {
+    "message": "Share",
+    "description": "Label for sharing the extension"
+  },
+  "app_share_extension_desc": {
+    "message": "Share this extension with your friends",
+    "description": "Description for share"
+  },
+  "app_share_extension_btn": {
+    "message": "Share now",
+    "description": "Button text for share"
+  },
+
+  "app_donate_title": {
+    "message": "Donate",
+    "description": "Label for donation"
+  },
+  "app_donate_desc": {
+    "message": "Support the development with a donation",
+    "description": "Description for donation"
+  },
+  "app_donate_btn": {
+    "message": "Donate",
+    "description": "Button text for donation"
+  },
+
+  "app_report_bug": {
+    "message": "Report Bug",
+    "description": "Label for reporting a bug"
+  },
+  "app_report_bug_desc": {
+    "message": "Found an issue? Let us know on GitHub",
+    "description": "Description for bug report"
+  },
+  "app_report_bug_btn": {
+    "message": "Report on GitHub",
+    "description": "Button text for bug report"
   }
 }

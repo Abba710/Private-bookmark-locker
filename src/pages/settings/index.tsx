@@ -1,4 +1,4 @@
-import OptionsPanel from "@/components/optionsPanel";
+import DataTools from "@/components/settings/datatools/datatools";
 import SupportDialog from "@/components/Support/supportModal";
 import PhDialog from "@/components/promotepanel";
 import { useNavigate } from "react-router-dom";
@@ -9,14 +9,15 @@ import {
   BookmarkExample,
   FolderExample,
   Controls,
-} from "@/components/settings/bookmarks";
+} from "@/components/settings/customization";
 import {
   DEFAULT_SETTINGS,
   type ControlsSettings,
-} from "@/components/settings/bookmarks/controls.tsx";
+} from "@/components/settings/customization/controls";
 import { useEffect, useState } from "react";
 import { Header } from "@/pages/settings/components/index.ts";
 import type { SettingWindow } from "@/pages/settings/types/index.ts";
+import Community from "@/components/settings/community/community";
 
 export const SETTINGS_STORAGE_KEY = "rowSettings";
 
@@ -85,7 +86,13 @@ export default function SettingsPage() {
 
           {activeWindow === "data" && (
             <div className="border border-white/5 bg-white/[0.02] p-4">
-              <OptionsPanel />
+              <DataTools />
+            </div>
+          )}
+
+          {activeWindow === "community" && (
+            <div className="border border-white/5 bg-white/[0.02] p-4">
+              <Community />
             </div>
           )}
           <SupportDialog />

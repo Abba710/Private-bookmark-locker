@@ -2980,8 +2980,60 @@ body,
   padding: 0 4px;
 }
 
-/* ─── Save button ─────────────────────────────────────────────────────
-   Same 3 states as .ds-badge/.ds-alert already use elsewhere: neutral =
-   --ds-s3/--ds-b/--ds-t3, accent = --ds-a-sub family, success = --ds-green
-   family (0.25 border opacity matches .ds-badge--success exactly).
-   ────────────────────────────────────────────────────────────────── */
+/* ─── Settings Screen ────────────────────────────────────────────────────── */
+.ds-settings-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  height: 100%;
+  overflow: hidden;
+}
+.ds-settings-nav {
+  padding: var(--ds-sp-4) var(--ds-sp-3);
+  border-right: 1px solid var(--ds-b);
+  background: var(--ds-s1);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ds-settings-content {
+  padding: var(--ds-sp-6);
+  overflow-y: auto;
+}
+.ds-settings-section {
+  margin-bottom: var(--ds-sp-8);
+}
+.ds-settings-section-title {
+  font-size: var(--ds-t-17);
+  font-weight: 600;
+  color: var(--ds-t1);
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--ds-sp-5) 0;
+  padding-bottom: var(--ds-sp-4);
+  border-bottom: 1px solid var(--ds-b);
+}
+.ds-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ds-sp-4) 0;
+  border-bottom: 1px solid var(--ds-b);
+  gap: var(--ds-sp-6);
+}
+.ds-setting-row:last-child {
+  border-bottom: none;
+}
+.ds-setting-info {
+  flex: 1;
+  min-width: 0;
+}
+.ds-setting-label {
+  font-size: var(--ds-t-14);
+  font-weight: 500;
+  color: var(--ds-t1);
+}
+.ds-setting-desc {
+  font-size: var(--ds-t-13);
+  color: var(--ds-t2);
+  margin-top: 2px;
+  line-height: 1.5;
+}

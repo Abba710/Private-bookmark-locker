@@ -5,7 +5,7 @@ import { GripVertical, Pencil, Trash2, Globe, Menu, Check } from "lucide-react";
 import {
   computeBookmarkMetrics,
   type BookmarkRowSettings,
-} from "@/components/settings/bookmarks/controls";
+} from "@/components/settings/customization/controls";
 
 export function LinkBookmark({
   bookmark,

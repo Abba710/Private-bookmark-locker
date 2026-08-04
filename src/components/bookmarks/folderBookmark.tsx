@@ -7,7 +7,7 @@ import {
   computeFolderMetrics,
   type BookmarkRowSettings,
   type FolderRowSettings,
-} from "@/components/settings/bookmarks/controls.tsx";
+} from "@/components/settings/customization/controls";
 
 import {
   Folder,
