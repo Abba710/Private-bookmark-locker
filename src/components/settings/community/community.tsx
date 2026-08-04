@@ -100,7 +100,7 @@ export default function Community() {
   return (
     <div className="ds-settings-section">
       <div className="ds-settings-section-title ">
-        {chrome.i18n.getMessage("app_options_data_tools")}
+        {chrome.i18n.getMessage("app_community")}
       </div>
 
       <div className="bm-settings-section">

@@ -5,10 +5,7 @@ import BookmarkList from "@/components/bookmarks/bookmarkList";
 import LockOverlay from "@/components/lock/lockoverlay";
 import UpgradeToProModal from "@/components/premium/premiumModal";
 import DeleteAllBookmarksModal from "@/util/deleteModal";
-import ImportBookmarksDialog from "@/components/chromeImportPanel";
 import Feedback from "@/components/feedback";
-import QrModalUi from "@/components/contextMenu/featuresUI/qrGenModal";
-import NotificationsModal from "@/components/notifications/notificationsModal";
 // Import Hook only for passing down logic if needed
 import useSubscription from "@/hooks/useSubscribe";
 
@@ -191,9 +188,6 @@ function MainPage() {
               upgrade={refreshSubscription} // Trigger re-check after payment
               logIn={auth.signInWithGoogle}
             />
-            <ImportBookmarksDialog />
-            <QrModalUi />
-            <NotificationsModal />
 
             <DeleteAllBookmarksModal
               isOpen={isLogoutModalOpen}
