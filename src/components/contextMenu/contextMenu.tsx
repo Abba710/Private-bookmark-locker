@@ -135,40 +135,19 @@ export function ContextMenu({ bookmark, position, onClose }: ContextMenuProps) {
   return (
     <ul
       ref={menuRef}
-      // STYLING:
-      // - bg-[#0f0f11]/90: Deep dark backdrop
-      // - border border-white/10: Thin elegant border
-      // - shadow-2xl: Deep depth
-      // - p-1.5: Modern spacing for list items
-      className="fixed bg-[#0f0f11]/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] min-w-[200px] z-[100] p-1.5 animate-in fade-in zoom-in-95 duration-150"
+      className={"ds-context-menu"}
       style={{ top: pos.y, left: pos.x }}
     >
-      {menuItems.map((item, idx) => (
-        <li
-          key={idx}
-          className={`
-            flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl cursor-pointer text-[12px] font-semibold transition-all duration-200
-            ${
-              idx === menuItems.length - 1 && menuItems.length > 2
-                ? "mt-1 border-t border-white/5 pt-1.5"
-                : ""
-            }
-            hover:bg-white/10 hover:text-white text-zinc-300 group
-          `}
+      {menuItems.map((item) => (
+        <button
+          className="ds-context-item"
           onClick={() => {
             item.action?.();
             onClose();
           }}
         >
-          {/* Action Icon - Glow effect on hover */}
-          <div className="text-zinc-500 group-hover:text-indigo-400 transition-colors">
-            {item.icon}
-          </div>
-
-          <span className="flex-grow">{item.label}</span>
-
-          {/* Subtle shortcut hint or arrow could go here */}
-        </li>
+          {item.icon} {item.label}
+        </button>
       ))}
     </ul>
   );
