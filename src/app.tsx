@@ -67,6 +67,7 @@ function App() {
         <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-indigo-500/[0.08] blur-[120px] rounded-full" />
         <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-purple-500/[0.08] blur-[120px] rounded-full" />
       </div>
+
       <NotificationsModal />
     </div>
   );

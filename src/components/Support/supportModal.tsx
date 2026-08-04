@@ -1,6 +1,7 @@
 import qrCode from "@/assets/qr-code.png";
 import { useSupportDialogStore } from "@/storage/statelibrary";
 import { X, Heart, Coffee, ExternalLink } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 /**
  * SupportDialog Component
@@ -15,88 +16,98 @@ export default function SupportDialog() {
   if (!supportOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      {/* Backdrop with standard blur */}
-      <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
-        onClick={() => setSupportOpen(false)}
-      />
-
-      {/* Modal Container */}
-      <div className="relative w-full max-w-[420px] bg-[#0f0f11] border border-white/10 rounded-[32px] shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-        {/* Top Decorative Glow (Pink/Indigo mix for "Support" feel) */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-32 bg-pink-500/10 blur-[50px] rounded-full pointer-events-none" />
-
-        {/* Close Button */}
-        <button
-          onClick={() => setSupportOpen(false)}
-          className="absolute cursor-pointer top-6 right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="relative p-8 flex flex-col items-center">
-          {/* Header Section */}
-          <div className="flex flex-col items-center text-center mb-8 pt-4">
-            <div className="w-16 h-16 rounded-2xl bg-[#1a1a1a] border border-white/10 flex items-center justify-center mb-5 shadow-inner ring-1 ring-white/5">
-              <Heart className="w-8 h-8 text-pink-500 fill-pink-500/10" />
-            </div>
-
-            <h2 className="text-2xl font-bold text-white tracking-tight mb-2">
-              {chrome.i18n.getMessage("app_donate_h2_title")}
-            </h2>
-            <p className="text-zinc-500 text-sm font-medium px-4 leading-relaxed">
-              {chrome.i18n.getMessage("app_donate_qr")}
-            </p>
-          </div>
-
-          {/* QR Code Section - High contrast for scannability */}
-          <div className="relative group mb-6 p-4 bg-white rounded-[24px] shadow-[0_0_30px_rgba(236,72,153,0.15)] transition-transform duration-300 hover:scale-[1.02]">
-            <img
-              src={qrCode}
-              className="w-[160px] h-[160px] rounded-lg"
-              alt="Donation QR code"
-            />
-            {/* Corner decoration */}
-            <div className="absolute -bottom-2 -right-2 bg-pink-500 p-2 rounded-xl shadow-lg border-2 border-[#0f0f11]">
-              <Share2 className="w-3 h-3 text-white" />
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="flex items-center gap-4 w-full mb-6">
-            <div className="h-px bg-white/5 flex-grow" />
-            <span className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">
-              {chrome.i18n.getMessage("app_donate_or")}
-            </span>
-            <div className="h-px bg-white/5 flex-grow" />
-          </div>
-
-          {/* External Support Button */}
-          <button
-            onClick={() => {
-              window.open("https://buymeacoffee.com/abba710", "_blank");
-              setSupportOpen(false);
-            }}
-            className="group relative cursor-pointer flex items-center justify-center gap-3 w-full py-4 px-6 rounded-xl bg-[#FFDD00] text-black font-bold shadow-lg hover:shadow-[#FFDD00]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-          >
-            <Coffee className="w-5 h-5 fill-black/10" />
-            <span className="text-sm">
-              {chrome.i18n.getMessage("app_donate_coffee")}
-            </span>
-            <ExternalLink className="w-4 h-4 opacity-50" />
-          </button>
-
-          {/* Secondary Close Action */}
-          <button
+    <AnimatePresence>
+      <div className="ds-section ds-section-marker h-full">
+        <div className="fixed inset-0 bg-[var(--ds-bg)] backdrop-blur-md z-[100] flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0"
             onClick={() => setSupportOpen(false)}
-            className="mt-6 cursor-pointer text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
+          />
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 8 }}
+            transition={{ type: "spring", stiffness: 350, damping: 30 }}
+            className="ds-tpl-login"
           >
-            {chrome.i18n.getMessage("app_donate_close")}
-          </button>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-40 text-pink-400 opacity-[0.08] blur-[60px] rounded-full pointer-events-none" />
+
+            <div className="ds-login-card relative">
+              <button
+                onClick={() => setSupportOpen(false)}
+                className="absolute top-6 cursor-pointer right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors"
+                aria-label={chrome.i18n.getMessage("app_donate_close")}
+              >
+                <X size={18} />
+              </button>
+
+              <div className="ds-login-logo">
+                <span className="ds-login-logo-mark">
+                  <Heart size={16} className="text-pink-500 fill-pink-500/10" />
+                </span>
+              </div>
+
+              <div className="ds-login-header">
+                <h2 className="ds-login-title">
+                  {chrome.i18n.getMessage("app_donate_qr")}
+                </h2>
+                <p className="ds-login-sub">
+                  {chrome.i18n.getMessage("app_donate_h2_title")}
+                </p>
+              </div>
+
+              {/* QR Code Section - kept high-contrast white card, no ds equivalent for this */}
+              <div className="flex justify-center">
+                <div className="relative w-[200px] group mb-2 p-4 bg-white rounded-[24px] shadow-[0_0_30px_rgba(236,72,153,0.15)] transition-transform duration-300 hover:scale-[1.02]">
+                  <img
+                    src={qrCode}
+                    className="w-[160px] h-[160px] rounded-lg"
+                    alt="Donation QR code"
+                  />
+                  <div className="absolute -bottom-2 -right-2 bg-pink-500 p-2 rounded-xl shadow-lg border-2 border-[#0f0f11]">
+                    <Share2 className="w-3 h-3 text-white" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 w-full mb-2">
+                <div className="h-px bg-white/5 flex-grow" />
+                <span className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">
+                  {chrome.i18n.getMessage("app_donate_or")}
+                </span>
+                <div className="h-px bg-white/5 flex-grow" />
+              </div>
+
+              <button
+                onClick={() => {
+                  window.open("https://buymeacoffee.com/abba710", "_blank");
+                  setSupportOpen(false);
+                }}
+                className="btn btn--primary mt-2"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  <Coffee size={16} className="fill-black/10" />
+                  {chrome.i18n.getMessage("app_donate_coffee")}
+                  <ExternalLink size={16} className="opacity-50" />
+                </span>
+              </button>
+
+              <p
+                onClick={() => setSupportOpen(false)}
+                className="ds-text-tertiary text-center cursor-pointer hover:text-white transition-colors mt-2"
+              >
+                {chrome.i18n.getMessage("app_donate_close")}
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 }
 

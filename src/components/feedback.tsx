@@ -1,5 +1,6 @@
 import { useFeedbackStore } from "@/storage/statelibrary";
 import { X, Star, MessageSquareHeart, ExternalLink } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 /**
  * Feedback Component
@@ -22,76 +23,85 @@ export default function Feedback() {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      {/* Backdrop with standard blur */}
-      <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
-        onClick={() => setShowFeedback(false)}
-      />
+    <AnimatePresence>
+      <div className="ds-section ds-section-marker h-full">
+        <div className="fixed inset-0 bg-[var(--ds-bg)] backdrop-blur-md z-[100] flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0"
+            onClick={() => setShowFeedback(false)}
+          />
 
-      {/* Modal Container */}
-      <div className="relative w-full max-w-[400px] bg-[#0f0f11] border border-white/10 rounded-[32px] shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-        {/* Decorative Top Glow (Amber/Gold for stars) */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-32 bg-amber-500/10 blur-[50px] rounded-full pointer-events-none" />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 8 }}
+            transition={{ type: "spring", stiffness: 350, damping: 30 }}
+            className="ds-tpl-login"
+          >
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-40 text-amber-400 opacity-[0.08] blur-[60px] rounded-full pointer-events-none" />
 
-        {/* Close Button */}
-        <button
-          onClick={() => setShowFeedback(false)}
-          className="absolute top-6 right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
-        >
-          <X className="w-5 h-5" />
-        </button>
+            <div className="ds-login-card relative">
+              <button
+                onClick={() => setShowFeedback(false)}
+                className="absolute top-6 cursor-pointer right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors"
+                aria-label={chrome.i18n.getMessage("app_feedback_button_later")}
+              >
+                <X size={18} />
+              </button>
 
-        <div className="relative p-8 flex flex-col items-center text-center">
-          {/* Header Icon Section */}
-          <div className="w-16 h-16 rounded-2xl bg-[#1a1a1a] border border-white/10 flex items-center justify-center mb-6 shadow-inner ring-1 ring-white/5">
-            <MessageSquareHeart className="w-8 h-8 text-amber-400 fill-amber-400/10" />
-          </div>
+              <div className="ds-login-logo">
+                <span className="ds-login-logo-mark">
+                  <MessageSquareHeart
+                    size={16}
+                    className="text-amber-400 fill-amber-400/10"
+                  />
+                </span>
+              </div>
 
-          {/* Modal title */}
-          <h2 className="text-2xl font-bold text-white tracking-tight mb-3">
-            {chrome.i18n.getMessage("app_feedback_title")}
-          </h2>
+              <div className="ds-login-header">
+                <h2 className="ds-login-title">
+                  {chrome.i18n.getMessage("app_feedback_title")}
+                </h2>
+                <p className="ds-login-sub">
+                  {chrome.i18n.getMessage("app_feedback_description")}
+                </p>
+              </div>
 
-          {/* Review description */}
-          <p className="text-zinc-400 text-base leading-relaxed mb-8 px-2 font-medium">
-            {chrome.i18n.getMessage("app_feedback_description")}
-          </p>
+              {/* Star rating visual — kept as-is, no ds equivalent for this */}
+              <div className="flex gap-1.5 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-5 h-5 text-amber-400 fill-amber-400 animate-pulse"
+                    style={{ animationDelay: `${i * 150}ms` }}
+                  />
+                ))}
+              </div>
 
-          {/* Star Rating Visualization */}
-          <div className="flex gap-1.5 mb-8">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className="w-5 h-5 text-amber-400 fill-amber-400 animate-pulse"
-                style={{ animationDelay: `${i * 150}ms` }}
-              />
-            ))}
-          </div>
+              <button
+                onClick={handleLeaveFeedback}
+                className="btn btn--primary mt-2"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  {chrome.i18n.getMessage("app_feedback_button_leave")}
+                  <ExternalLink size={16} />
+                </span>
+              </button>
 
-          {/* Action buttons */}
-          <div className="flex flex-col w-full gap-3">
-            <button
-              onClick={handleLeaveFeedback}
-              className="group relative w-full py-4 px-6 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 overflow-hidden"
-            >
-              {/* Shine effect */}
-              <div className="absolute inset-0 bg-white/30 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
-              <span className="relative flex items-center justify-center gap-2">
-                {chrome.i18n.getMessage("app_feedback_button_leave")}
-                <ExternalLink className="w-4 h-4" />
-              </span>
-            </button>
-
-            <button
-              onClick={() => setShowFeedback(false)}
-              className="w-full py-3 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
-            >
-              {chrome.i18n.getMessage("app_feedback_button_later")}
-            </button>
-          </div>
+              <p
+                onClick={() => setShowFeedback(false)}
+                className="ds-text-tertiary text-center cursor-pointer hover:text-white transition-colors mt-2"
+              >
+                {chrome.i18n.getMessage("app_feedback_button_later")}
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 }

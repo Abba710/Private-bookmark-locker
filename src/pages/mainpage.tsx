@@ -7,9 +7,6 @@ import DeleteAllBookmarksModal from "@/util/deleteModal";
 import Feedback from "@/components/feedback";
 // Import Hook only for passing down logic if needed
 import useSubscription from "@/hooks/useSubscribe";
-
-import { loadBookmarks } from "@/features/bookmarks/bookmarkService";
-import { getInitialLockState } from "@/features/lock/lockservice";
 import useNotificationsDialog from "@/features/notifications/notificationsDialog";
 import { useAuth } from "@/hooks/useAuth";
 import { initSync, stopSync } from "@/service/sync";
@@ -23,6 +20,7 @@ import {
   usePremiumModalStore,
   useSubscribePlanStore,
 } from "@/storage/statelibrary";
+import ImportBookmarksDialog from "@/components/chromeImportPanel";
 
 function MainPage() {
   const auth = useAuth();
@@ -128,20 +126,6 @@ function MainPage() {
         </div>
         <div className="flex-1 h-full overflow-hidden">
           <BookmarkList />
-
-          {/* Modals */}
-          <UpgradeToProModal
-            upgrade={refreshSubscription} // Trigger re-check after payment
-            logIn={auth.signInWithGoogle}
-          />
-
-          <DeleteAllBookmarksModal
-            isOpen={isLogoutModalOpen}
-            onClose={() => setIsLogoutModalOpen(false)}
-            onConfirmLogoutOnly={handleSimpleLogout}
-            onConfirmDelete={handleFullCleanupLogout}
-          />
-          <Feedback />
         </div>
         <Affiliate />
         <ControlPanel
@@ -150,6 +134,20 @@ function MainPage() {
           isPro={isPro} // Passed direc tly from store selector
         />
       </div>
+      {/* Modals */}
+      <UpgradeToProModal
+        upgrade={refreshSubscription} // Trigger re-check after payment
+        logIn={auth.signInWithGoogle}
+      />
+
+      <DeleteAllBookmarksModal
+        isOpen={isLogoutModalOpen}
+        onClose={() => setIsLogoutModalOpen(false)}
+        onConfirmLogoutOnly={handleSimpleLogout}
+        onConfirmDelete={handleFullCleanupLogout}
+      />
+      <ImportBookmarksDialog />
+      <Feedback />
     </div>
   );
 }

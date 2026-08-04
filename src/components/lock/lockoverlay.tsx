@@ -73,8 +73,6 @@ export default function LockOverlay() {
           transition={{ type: "spring", stiffness: 350, damping: 30 }}
           className="ds-tpl-login"
         >
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-40 bg-current text-indigo-400 opacity-[0.08] blur-[60px] rounded-full pointer-events-none" />
-
           <div className="ds-login-card">
             <div className="ds-login-logo">
               <span className="ds-login-logo-mark">

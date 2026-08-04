@@ -1,5 +1,6 @@
 import { useNotificationDialogStore } from "@/storage/statelibrary";
 import { useState, useEffect } from "preact/hooks";
+import { AnimatePresence, motion } from "motion/react";
 import {
   X,
   MessageSquare,
@@ -22,7 +23,7 @@ function MarkdownRenderer({ text }: { text: string }) {
     );
     html = html.replace(
       /^## (.*$)/gim,
-      '<h2 class="text-base font-bold text-white mt-5 mb-2">$2</h2>',
+      '<h2 class="text-base font-bold text-white mt-5 mb-2">$1</h2>',
     );
 
     // Formatting
@@ -51,10 +52,10 @@ function MarkdownRenderer({ text }: { text: string }) {
       '<li class="ml-4 list-disc text-zinc-400 mb-1">$1</li>',
     );
 
-    // Links
+    // Links — reuse the same accent link style as the login modal's terms/privacy links
     html = html.replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" target="_blank" class="text-indigo-400 hover:underline">$1</a>',
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="ds-link--accent">$1</a>',
     );
 
     const paragraphs = html
@@ -74,7 +75,9 @@ function MarkdownRenderer({ text }: { text: string }) {
 
 /**
  * RedditPostCard
- * Premium card for Reddit content integration.
+ * Content well inside the ds-login-card. No new component classes invented —
+ * just the same subtle white/5 border + white/[0.02] fill already used for
+ * secondary surfaces in this app.
  */
 function RedditPostCard({ postUrl }: { postUrl: string }) {
   const [post, setPost] = useState<any>(null);
@@ -99,20 +102,20 @@ function RedditPostCard({ postUrl }: { postUrl: string }) {
 
   if (loading)
     return (
-      <div className="flex items-center justify-center py-20 bg-white/[0.02] rounded-2xl border border-white/5">
+      <div className="flex items-center justify-center py-20 bg-white/[0.02] border border-white/5 rounded-2xl">
         <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-indigo-500" />
       </div>
     );
 
   if (!post)
     return (
-      <div className="text-center py-8 text-zinc-500 text-sm">
+      <div className="ds-text-tertiary text-center py-8 text-sm">
         {chrome.i18n.getMessage("app_changelog_unavailable")}
       </div>
     );
 
   return (
-    <div className="bg-[#161618] border border-white/5 rounded-2xl p-5 max-h-[380px] overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 shadow-inner">
+    <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-5 max-h-[380px] overflow-y-auto">
       <div className="mb-4">
         <h3 className="text-[15px] font-bold text-white leading-snug tracking-tight">
           {post.title}
@@ -130,13 +133,13 @@ function RedditPostCard({ postUrl }: { postUrl: string }) {
         </div>
       )}
 
-      <div className="flex items-center gap-4 pt-4 border-t border-white/5">
-        <div className="flex items-center gap-1.5 text-zinc-500 text-[11px] font-bold">
-          <ThumbsUp className="w-3.5 h-3.5" />
+      <div className="flex items-center gap-4 pt-4 border-t border-white/5 text-zinc-500 text-[11px] font-bold">
+        <div className="flex items-center gap-1.5">
+          <ThumbsUp size={14} />
           {post.score}
         </div>
-        <div className="flex items-center gap-1.5 text-zinc-500 text-[11px] font-bold">
-          <MessageSquare className="w-3.5 h-3.5" />
+        <div className="flex items-center gap-1.5">
+          <MessageSquare size={14} />
           {post.num_comments}
         </div>
       </div>
@@ -146,66 +149,85 @@ function RedditPostCard({ postUrl }: { postUrl: string }) {
 
 /**
  * ChangelogDialog
- * The main notification/update modal.
+ * The main notification/update modal — now built on the same ds-tpl-login /
+ * ds-login-card shell as LockOverlay: same glass card, top accent glow,
+ * spring transitions, and typography scale.
  */
 export default function ChangelogDialog() {
   const { notificationOpen, setNotificationOpen } =
     useNotificationDialogStore();
   const redditPostUrl =
     "https://www.reddit.com/user/Sad-Bed-3125/comments/1usmqr9/locker_private_bookmark_locker_v220_fullscreen/";
+
   if (!notificationOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
-        onClick={() => setNotificationOpen(false)}
-      />
+    <AnimatePresence>
+      <div className="ds-section ds-section-marker h-full">
+        <div className="fixed inset-0 bg-[var(--ds-bg)] backdrop-blur-md z-[100] flex items-center justify-center p-4">
+          {/* same backdrop treatment as before — LockOverlay has no backdrop of its own
+            since it can't be dismissed, but this modal needs one */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 "
+            onClick={() => setNotificationOpen(false)}
+          />
 
-      <div className="relative w-full max-w-[500px] bg-[#0f0f11] border border-white/10 rounded-[32px] shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-        {/* Top Accent Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-32 bg-indigo-500/10 blur-[50px] rounded-full pointer-events-none" />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 8 }}
+            transition={{ type: "spring", stiffness: 350, damping: 30 }}
+            className="ds-tpl-login"
+          >
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-40  text-indigo-400 opacity-[0.08] blur-[60px] rounded-full pointer-events-none" />
 
-        <button
-          onClick={() => setNotificationOpen(false)}
-          className="absolute cursor-pointer top-6 right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors z-10"
-        >
-          <X className="w-5 h-5" />
-        </button>
+            <div className="ds-login-card relative">
+              <button
+                onClick={() => setNotificationOpen(false)}
+                className="absolute top-6 cursor-pointer right-6 p-2 text-zinc-500 hover:text-white hover:bg-white/5 rounded-full transition-colors"
+                aria-label={chrome.i18n.getMessage("app_changelog_dismiss")}
+              >
+                <X size={18} />
+              </button>
 
-        <div className="relative p-8">
-          <div className="flex flex-col items-center text-center mb-8 pt-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#1a1a1a] border border-white/10 flex items-center justify-center mb-5 shadow-inner ring-1 ring-white/5">
-              <ScrollText className="w-7 h-7 text-indigo-400" />
+              <div className="ds-login-logo">
+                <span className="ds-login-logo-mark">
+                  <ScrollText size={16} className="text-indigo-400" />
+                </span>
+              </div>
+
+              <div className="ds-login-header">
+                <h2 className="ds-login-title">
+                  {chrome.i18n.getMessage("app_changelog_modal_title")}
+                </h2>
+              </div>
+
+              <RedditPostCard postUrl={redditPostUrl} />
+
+              <button
+                onClick={() => window.open(redditPostUrl, "_blank")}
+                className="btn btn--primary mt-4"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  {chrome.i18n.getMessage("app_changelog_open_reddit")}
+                  <ExternalLink size={16} />
+                </span>
+              </button>
+
+              <p
+                onClick={() => setNotificationOpen(false)}
+                className="ds-text-tertiary text-center cursor-pointer hover:text-white transition-colors mt-2"
+              >
+                {chrome.i18n.getMessage("app_changelog_dismiss")}
+              </p>
             </div>
-            <h2 className="text-2xl font-bold text-white tracking-tight mb-2">
-              {chrome.i18n.getMessage("app_changelog_modal_title")}
-            </h2>
-          </div>
-
-          <RedditPostCard postUrl={redditPostUrl} />
-
-          <div className="mt-8 space-y-3">
-            <button
-              onClick={() => window.open(redditPostUrl, "_blank")}
-              className="group relative cursor-pointer w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-200 overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full duration-500 transition-transform -skew-x-12 -translate-x-full" />
-              <span className="relative flex items-center justify-center gap-2 text-sm">
-                {chrome.i18n.getMessage("app_changelog_open_reddit")}
-                <ExternalLink className="w-4 h-4" />
-              </span>
-            </button>
-
-            <button
-              onClick={() => setNotificationOpen(false)}
-              className="w-full cursor-pointer py-3 text-sm font-semibold text-zinc-500 hover:text-white transition-colors"
-            >
-              {chrome.i18n.getMessage("app_changelog_dismiss")}
-            </button>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 }
