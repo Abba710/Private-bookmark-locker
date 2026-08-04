@@ -15,14 +15,11 @@ import { useAuth } from "@/hooks/useAuth";
 import { initSync, stopSync } from "@/service/sync";
 import { TombstoneService } from "@/service/sync/tombstone";
 import deleteBookmarks from "@/util/deleteBookmarks";
-import type { StorageChanges, StorageSchema } from "@/types/types";
 import { BookmarkSearch } from "@/components/bookmarks/bookmarksearch";
 import Affiliate from "@/components/affiliate";
 
 // Import Stores directly for App-level logic (Performance optimization)
 import {
-  useBookmarkStore,
-  useLockOverlayStore,
   usePremiumModalStore,
   useSubscribePlanStore,
 } from "@/storage/statelibrary";
@@ -40,9 +37,6 @@ function MainPage() {
     (state) => state.checkSubscription,
   );
   const setPlan = useSubscribePlanStore((state) => state.setPlan);
-
-  const setIsLocked = useLockOverlayStore((state) => state.setIsLocked);
-  const setBookmarks = useBookmarkStore((state) => state.setBookmarks);
 
   // Use the hook primarily for passing handlers like 'refreshSubscription' to modals
   const { canCreateFolders, refreshSubscription } = useSubscription();
@@ -116,51 +110,9 @@ function MainPage() {
     return () => stopSync();
   }, [auth.user, isPro]);
 
-  // --- LIFECYCLE 3: Initial Data & Storage Listeners ---
-
-  useEffect(() => {
-    let isMounted = true;
-
-    // Initial Load
-    (async () => {
-      const bookmarks = await loadBookmarks();
-      if (isMounted) setBookmarks(bookmarks);
-
-      const locked = await getInitialLockState();
-      if (isMounted) setIsLocked(locked);
-    })();
-
-    // Chrome Storage Listener
-    function handleStorageChange(
-      changes: StorageChanges<StorageSchema>,
-      area: "local" | "sync" | "managed" | "session",
-    ) {
-      if (area !== "local") return;
-
-      const next = changes.bookmarks?.newValue;
-      if (!next) return;
-
-      // Compare with current state to avoid loops
-      const current = useBookmarkStore.getState().bookmarks;
-      if (JSON.stringify(current) !== JSON.stringify(next)) {
-        setBookmarks(next);
-      }
-    }
-
-    chrome.storage.onChanged.addListener(handleStorageChange);
-    return () => {
-      isMounted = false;
-      chrome.storage.onChanged.removeListener(handleStorageChange);
-    };
-  }, [setBookmarks, setIsLocked]);
-
   return (
     <div className="relative w-full h-full antialiased selection:bg-indigo-500/30">
       {/* Background visual effects */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-indigo-500/[0.08] blur-[120px] rounded-full" />
-        <div className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-purple-500/[0.08] blur-[120px] rounded-full" />
-      </div>
       <div className="relative z-10 flex flex-col h-full">
         <UserHeader
           userData={auth.user}
