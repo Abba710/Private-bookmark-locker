@@ -1,18 +1,15 @@
 {
   "app_name": {
-    "message": "Locker：书签管理器与侧边栏（支持无痕模式）"
+    "message": "Locker：书签管理器与侧边栏，支持隐身模式"
   },
   "app_description": {
-    "message": "Chromium的书签和会话管理器。保存、整理、保护、恢复书签，完全支持无痕模式。"
-  },
-  "app_affiliate_title": {
-    "message": "成为推广合伙人"
+    "message": "适用于 Chromium 的书签和会话管理器。保存、整理、保护并恢复书签，全面支持隐身模式"
   },
   "app_affiliate_description": {
-    "message": "每售出一单，即可赚取40%的佣金。"
+    "message": "每笔销售获得 40% 佣金。"
   },
   "app_open_fullscreen": {
-    "message": "全屏打开"
+    "message": "打开全屏"
   },
   "app_settings_title": {
     "message": "设置"
@@ -21,13 +18,13 @@
     "message": "输入密码"
   },
   "app_create_password": {
-    "message": "🔒 创建密码"
+    "message": "创建密码"
   },
   "app_create_password_placeholder": {
     "message": "创建您的密码"
   },
   "app_enter_password_placeholder": {
-    "message": "请输入您的密码"
+    "message": "输入您的密码"
   },
   "app_unlock": {
     "message": "解锁"
@@ -42,10 +39,10 @@
     "message": "密码错误"
   },
   "app_password_hashing_error": {
-    "message": "哈希加密失败"
+    "message": "哈希失败"
   },
   "app_password_warning": {
-    "message": "⚠️ 重要提示：如果忘记密码，将无法恢复。所有数据仅存储在此设备上，没有正确密码无法访问。"
+    "message": "重要提示：如果忘记密码，将无法恢复。"
   },
   "app_pass_short_error": {
     "message": "密码长度至少为 4 个字符"
@@ -53,11 +50,12 @@
   "app_pass_incorrect_error": {
     "message": "密码错误"
   },
+
   "app_lock_setup_description": {
     "message": "使用主密码保护您的书签"
   },
   "app_lock_unlock_description": {
-    "message": "访问您的私人空间受到限制"
+    "message": "您的私人空间访问受限"
   },
   "app_lock_legal_agreement": {
     "message": "继续即表示您同意我们的"
@@ -74,6 +72,7 @@
   "app_lock_security_notice": {
     "message": "安全通知"
   },
+
   "app_instruction_title": {
     "message": "快速入门指南"
   },
@@ -92,6 +91,7 @@
   "app_create_folder": {
     "message": "输入文件夹名称："
   },
+
   "app_header_guest_name": {
     "message": "访客用户"
   },
@@ -102,49 +102,33 @@
     "message": "免费"
   },
   "app_subscribe_pro": {
-    "message": "专业版"
+    "message": "PRO"
   },
-  "app_options_hotkeys": {
-    "message": "快捷键"
-  },
+
   "app_options_settings_alert": {
     "message": "设置即将推出！"
-  },
-  "app_options_collect": {
-    "message": "导入 Chrome 书签"
-  },
-  "app_options_save_open": {
-    "message": "保存当前会话"
-  },
-  "app_options_widget_show": {
-    "message": "显示小部件"
-  },
-  "app_options_widget_hide": {
-    "message": "隐藏小部件"
   },
   "app_options_widget_save": {
     "message": "保存页面"
   },
   "app_options_widget_open": {
-    "message": "打开侧面板"
+    "message": "打开侧边栏"
   },
   "app_options_subscription_plan": {
-    "message": "订阅计划"
+    "message": "订阅方案"
   },
   "app_options_go_premium": {
     "message": "升级到高级版"
   },
   "app_options_data_tools": {
-    "message": "数据和工具"
+    "message": "数据与工具"
   },
   "app_options_community_header": {
     "message": "社区"
   },
-  "app_modal_export": {
-    "message": "导出书签"
-  },
+
   "app_export_modal_description": {
-    "message": "点击下方按钮将书签导出为文件。您可以保存它，需要时再导入。"
+    "message": "点击下方按钮将书签导出为文件。您可以保存该文件，并在需要时导入。"
   },
   "app_export_modal_button": {
     "message": "导出"
@@ -152,11 +136,8 @@
   "app_export_format_label": {
     "message": "格式：JSON"
   },
-  "app_import_modal": {
-    "message": "导入书签"
-  },
   "app_import_modal_description": {
-    "message": "将文件拖放到此处，或点击选择"
+    "message": "将文件拖放到此处，或点击选择文件"
   },
   "app_import_supported_format": {
     "message": "支持的格式：JSON 配置"
@@ -186,7 +167,7 @@
     "message": "书签栏中的书签"
   },
   "app_import_chrome_a4": {
-    "message": "您的数据将保留在您的设备上"
+    "message": "您的数据保留在设备上"
   },
   "app_import_chrome_CTA": {
     "message": "导入 Chrome 书签"
@@ -194,6 +175,7 @@
   "app_import_chrome_later": {
     "message": "稍后再说"
   },
+
   "app_context_copy_link": {
     "message": "复制链接"
   },
@@ -207,7 +189,7 @@
     "message": "AI 摘要"
   },
   "app_context_save_in_current_folder": {
-    "message": "保存到当前文件夹"
+    "message": "在此保存标签页"
   },
   "app_context_open_group": {
     "message": "在分组中打开"
@@ -215,12 +197,14 @@
   "app_context_close_menu": {
     "message": "关闭菜单"
   },
+
   "app_qr_modal_info": {
-    "message": "扫描以在您的设备上打开此链接"
+    "message": "扫描即可在您的设备上打开此链接"
   },
   "app_qr_close_button": {
     "message": "关闭"
   },
+
   "app_pdf_no_url": {
     "message": "未提供 URL"
   },
@@ -230,9 +214,11 @@
   "app_pdf_error": {
     "message": "PDF 数据为空"
   },
+
   "app_panic_description": {
-    "message": "设置紧急按钮（默认为 alt+p），可关闭所有标签页并将其保存到文件夹中"
+    "message": "设置紧急按钮（默认 = Alt+P），关闭所有标签页并将其保存到文件夹中"
   },
+
   "app_sync_offline": {
     "message": "离线"
   },
@@ -263,6 +249,7 @@
   "app_sync_force_title": {
     "message": "强制云端同步"
   },
+
   "app_signout_title": {
     "message": "退出登录"
   },
@@ -279,31 +266,32 @@
     "message": "或"
   },
   "app_signout_stay": {
-    "message": "保持登录状态"
+    "message": "保持登录"
   },
+
   "app_premium_title": {
     "message": "解锁"
   },
   "app_premium_pro_power": {
-    "message": "专业版强大功能"
+    "message": "Pro 功能"
   },
   "app_premium_subtitle": {
-    "message": "将您的书库安全保存在云端，随时随地访问。"
+    "message": "将您的库安全存储在云端，随时随地访问。"
   },
   "app_premium_feature_unlimited": {
     "message": "无限文件夹"
   },
   "app_premium_feature_sync": {
-    "message": "加密实时云端同步"
+    "message": "加密实时云同步"
   },
   "app_premium_feature_data": {
-    "message": "数据和工具"
+    "message": "数据与工具"
   },
   "app_premium_feature_data_sub1": {
     "message": "导入/导出"
   },
   "app_premium_feature_data_sub3": {
-    "message": "会话保存"
+    "message": "会话保存器"
   },
   "app_premium_feature_data_sub4": {
     "message": "紧急按钮"
@@ -321,7 +309,7 @@
     "message": "二维码生成器"
   },
   "app_premium_btn_upgrade": {
-    "message": "以每月 $PRICE$ 升级到专业版",
+    "message": "升级至 Pro，每月 $PRICE$",
     "placeholders": {
       "price": {
         "content": "$1"
@@ -332,10 +320,10 @@
     "message": "正在检查付款..."
   },
   "app_premium_btn_success": {
-    "message": "成功！尽情享用专业版"
+    "message": "成功！享受 Pro 吧"
   },
   "app_premium_btn_retry": {
-    "message": "重试于 "
+    "message": "重试倒计时 "
   },
   "app_premium_btn_check_status": {
     "message": "我已付款，检查状态"
@@ -344,25 +332,25 @@
     "message": "稍后检查"
   },
   "app_premium_btn_no_thanks": {
-    "message": "不了，谢谢，我继续使用免费计划"
+    "message": "不用了，我继续使用免费方案"
   },
   "app_btn_get_pro_title": {
-    "message": "升级到专业版"
+    "message": "升级到 Pro"
   },
   "app_btn_get_pro_subtitle": {
-    "message": "获得无限访问权限"
+    "message": "获取无限访问"
   },
   "app_sub_manage_title": {
-    "message": "订阅计划"
+    "message": "订阅方案"
   },
   "app_sub_manage_subtitle": {
     "message": "管理账单和发票"
   },
   "app_sub_error_auth": {
-    "message": "未认证。请登录。"
+    "message": "未认证，请登录。"
   },
   "app_sub_error_url": {
-    "message": "响应中未找到门户 URL"
+    "message": "在响应中未找到门户 URL"
   },
   "app_sub_error_unknown": {
     "message": "发生未知错误"
@@ -370,6 +358,7 @@
   "app_sub_error_fail": {
     "message": "无法打开订阅门户："
   },
+
   "app_buy_no_internet": {
     "message": "无网络连接"
   },
@@ -389,103 +378,81 @@
     "message": "用户已取消"
   },
   "app_buy_popup_blocked": {
-    "message": "弹出窗口被阻止"
+    "message": "弹窗被阻止"
   },
   "app_buy_session_failed": {
     "message": "会话检查失败"
   },
   "app_buy_login_window_error": {
-    "message": "登录窗口无法打开"
+    "message": "无法打开登录窗口"
   },
-  "app_options_PH": {
-    "message": "获取 50% 折扣"
-  },
+
   "app_options_PH_Title": {
     "message": "帮助 Private Bookmark Locker 成长 🚀"
   },
   "app_options_PH_sub_title": {
-    "message": "如果您喜欢使用此扩展，在 Product Hunt 上快速点赞会有很大帮助。此外，还有独家"
+    "message": "如果您喜欢这个扩展，在 Product Hunt 上快速点赞会大有帮助。此外，还有专属的"
   },
   "app_options_PH_sub_title_discount": {
-    "message": "50% 折扣"
+    "message": "5折优惠"
   },
   "app_options_PH_sub_title_supporter": {
     "message": "您的支持有助于："
   },
   "app_options_PH_helps_title": {
-    "message": "在 Product Hunt 页面上可用"
+    "message": "可在 Product Hunt 页面获取"
   },
   "app_options_PH_helps1": {
-    "message": "• 触达更多用户"
+    "message": "• 触及更多用户"
   },
   "app_options_PH_helps2": {
     "message": "• 改进未来功能"
   },
   "app_options_PH_helps3": {
-    "message": "• 保持项目持续发展"
+    "message": "• 让项目持续发展"
   },
   "app_options_PH_helps4": {
-    "message": "• 获得 50% 折扣"
+    "message": "• 获得 5 折优惠"
   },
   "app_options_PH_cta": {
-    "message": "支持 + 获得 50% 优惠"
+    "message": "支持并享受 5 折"
   },
   "app_options_PH_cta_later": {
     "message": "稍后再说"
-  },
-  "app_options_faq": {
-    "message": "FAQ"
-  },
-  "app_changelog": {
-    "message": "更新日志"
   },
   "app_changelog_unavailable": {
     "message": "内容不可用"
   },
   "app_changelog_modal_title": {
-    "message": "新功能"
+    "message": "新特性"
   },
   "app_changelog_open_reddit": {
-    "message": "在 Reddit 上打开完整帖子"
+    "message": "在 Reddit 上查看完整帖子"
   },
   "app_changelog_dismiss": {
     "message": "关闭"
-  },
-  "app_rate_extension": {
-    "message": "评价扩展"
-  },
-  "app_share_extension": {
-    "message": "分享扩展"
-  },
-  "app_community": {
-    "message": "加入社区"
-  },
-  "app_report_bug": {
-    "message": "报告错误"
   },
   "app_feedback_title": {
     "message": "喜欢这个扩展吗？"
   },
   "app_feedback_description": {
-    "message": "我们重视您的意见！请为应用评分并在商店页面留下评论。"
+    "message": "我们重视您的意见！请给应用评分并在商店页面留下评论。"
   },
   "app_feedback_button_leave": {
-    "message": "发表评论"
+    "message": "留下评论"
   },
   "app_feedback_button_later": {
     "message": "稍后"
   },
-  "app_donate_title": {
-    "message": "支持项目"
-  },
+
   "app_donate_h2_title": {
-    "message": "我独自开发此扩展，您的支持有助于我改进项目并保持免费。"
+    "message": "我独自开发这个扩展，您的支持帮助我改进项目并保持免费。"
   },
   "app_donate_qr": {
     "message": "扫描二维码支持我"
   },
   "app_donate_or": {
-    "message": "或点击按钮👇"
+    "message": "或点击下方按钮👇"
   },
   "app_donate_coffee": {
     "message": "请我喝杯咖啡"
@@ -493,6 +460,7 @@
   "app_donate_close": {
     "message": "关闭"
   },
+
   "app_ads_title": {
     "message": "如果您使用 ChatGPT，试试这个扩展👆"
   },
@@ -536,19 +504,19 @@
     "message": "行高"
   },
   "app_slides_intro_title": {
-    "message": "解锁了新的浏览器功能",
+    "message": "新浏览器功能已解锁",
     "description": "Title of the first introduction slide"
   },
   "app_slides_intro_subtitle": {
-    "message": "探索新功能",
+    "message": "探索新能力",
     "description": "Subtitle of the first introduction slide"
   },
   "app_slides_intro_content": {
-    "message": "Locker现已带到您的浏览器。",
+    "message": "Locker 现已在您的浏览器中启用。",
     "description": "Content text for the first slide"
   },
   "app_slides_step1_title": {
-    "message": "第一步",
+    "message": "第 1 步",
     "description": "Title of step 1 slide"
   },
   "app_slides_step1_content": {
@@ -556,15 +524,15 @@
     "description": "Content for step 1"
   },
   "app_slides_step2_title": {
-    "message": "第二步",
+    "message": "第 2 步",
     "description": "Title of step 2 slide"
   },
   "app_slides_step2_content": {
-    "message": "允许无痕模式",
+    "message": "允许隐身模式",
     "description": "Content for step 2"
   },
   "app_slides_step3_title": {
-    "message": "第三步",
+    "message": "第 3 步",
     "description": "Title of step 3 slide"
   },
   "app_slides_step3_content": {
@@ -576,7 +544,7 @@
     "description": "Title of the final explore slide"
   },
   "app_slides_explore_content": {
-    "message": "Locker功能",
+    "message": "Locker 功能",
     "description": "Content for the final explore slide"
   },
 
@@ -585,7 +553,7 @@
     "description": "Feature title for saving bookmarks"
   },
   "app_features_save_bookmarks_description": {
-    "message": "使用侧边栏、浮动小部件或自定义键盘快捷键，一键保存书签。",
+    "message": "使用侧边栏、浮动小部件或自定义键盘快捷键一键保存书签。",
     "description": "Description for Save Bookmarks feature"
   },
   "app_features_create_folders_title": {
@@ -593,15 +561,15 @@
     "description": "Feature title for creating folders"
   },
   "app_features_create_folders_description": {
-    "message": "从侧边栏创建文件夹，将书签组织到项目、工作区或个人收藏中。",
+    "message": "从侧边栏创建文件夹，将书签整理到项目、工作区或个人收藏中。",
     "description": "Description for Create Folders feature"
   },
   "app_features_incognito_mode_title": {
-    "message": "无痕模式",
+    "message": "隐身模式",
     "description": "Feature title for Incognito Mode"
   },
   "app_features_incognito_mode_description": {
-    "message": "从无痕窗口保存书签，并将其与常规浏览分开，不会添加到浏览器历史记录中。",
+    "message": "从隐身窗口保存书签，并将其与常规浏览分开，不会在浏览器历史记录中添加条目。",
     "description": "Description for Incognito Mode"
   },
   "app_features_search_title": {
@@ -625,7 +593,7 @@
     "description": "Feature title for Customize"
   },
   "app_features_customize_description": {
-    "message": "自定义书签和文件夹颜色，按您喜欢的方式组织工作区。",
+    "message": "自定义书签和文件夹颜色，按您喜欢的方式整理工作区。",
     "description": "Description for Customize feature"
   },
   "app_features_import_export_title": {
@@ -633,7 +601,7 @@
     "description": "Feature title for Import & Export"
   },
   "app_features_import_export_description": {
-    "message": "以JSON格式导入或导出书签，用于备份或迁移。",
+    "message": "以 JSON 格式导入或导出书签，用于备份或迁移。",
     "description": "Description for Import & Export"
   },
   "app_features_import_from_browser_title": {
@@ -641,7 +609,7 @@
     "description": "Feature title for Import from Browser"
   },
   "app_features_import_from_browser_description": {
-    "message": "导入现有的浏览器书签，支持基于Chromium的浏览器。",
+    "message": "导入现有浏览器书签，支持基于 Chromium 的浏览器。",
     "description": "Description for Import from Browser"
   },
   "app_features_session_manager_title": {
@@ -649,31 +617,221 @@
     "description": "Feature title for Session Manager"
   },
   "app_features_session_manager_description": {
-    "message": "保存浏览器会话，只需两次点击即可恢复所有标签页。",
+    "message": "保存浏览器会话，并在需要时仅需两次点击即可恢复所有标签页。",
     "description": "Description for Session Manager"
   },
   "app_features_qr_generator_title": {
-    "message": "QR码生成器",
+    "message": "二维码生成器",
     "description": "Feature title for QR Generator"
   },
   "app_features_qr_generator_description": {
-    "message": "为书签生成QR码，并立即在另一设备上打开。",
+    "message": "为书签生成二维码，并立即在另一台设备上打开。",
     "description": "Description for QR Generator"
   },
   "app_features_save_as_pdf_title": {
-    "message": "保存为PDF",
+    "message": "保存为 PDF",
     "description": "Feature title for Save as PDF"
   },
   "app_features_save_as_pdf_description": {
-    "message": "将网页及其内容保存为PDF文档，以便离线访问或共享。",
+    "message": "将网页及其内容保存为 PDF 文档，以便离线访问或共享。",
     "description": "Description for Save as PDF"
   },
   "app_features_ai_summary_title": {
-    "message": "AI摘要",
+    "message": "AI 摘要",
     "description": "Feature title for AI Summary"
   },
   "app_features_ai_summary_description": {
-    "message": "使用GPT生成文章和网页的简洁AI摘要。",
+    "message": "使用 GPT 生成文章和网页的简明 AI 摘要。",
     "description": "Description for AI Summary"
+  },
+  "app_import_modal": {
+    "message": "导入",
+    "description": "Label for import modal button"
+  },
+  "app_import_modal_desc": {
+    "message": "从 JSON 文件导入书签",
+    "description": "Description for import feature"
+  },
+  "app_import_modal_btn": {
+    "message": "选择文件",
+    "description": "Button text for import"
+  },
+  "app_modal_export": {
+    "message": "导出",
+    "description": "Label for export modal"
+  },
+  "app_modal_export_desc": {
+    "message": "将书签导出为 JSON 文件",
+    "description": "Description for export feature"
+  },
+  "app_modal_export_btn": {
+    "message": "导出",
+    "description": "Button text for export"
+  },
+  "app_options_hotkeys": {
+    "message": "快捷键",
+    "description": "Label for hotkeys settings"
+  },
+  "app_options_hotkeys_desc": {
+    "message": "配置扩展程序快捷键",
+    "description": "Description for hotkeys"
+  },
+  "app_options_hotkeys_btn": {
+    "message": "打开快捷键",
+    "description": "Button text for hotkeys"
+  },
+  "app_options_collect": {
+    "message": "收集书签",
+    "description": "Label for collect bookmarks feature"
+  },
+  "app_options_collect_desc": {
+    "message": "导入所有浏览器书签",
+    "description": "Description for collect feature"
+  },
+  "app_options_collect_btn": {
+    "message": "收集",
+    "description": "Button text for collect"
+  },
+  "app_options_save_open": {
+    "message": "保存当前会话",
+    "description": "Label for saving open tabs"
+  },
+  "app_options_save_open_desc": {
+    "message": "保存当前会话",
+    "description": "Description for save open tabs"
+  },
+  "app_options_save_open_btn": {
+    "message": "保存会话",
+    "description": "Button text for save open tabs"
+  },
+  "app_options_faq": {
+    "message": "常见问题",
+    "description": "Label for FAQ"
+  },
+  "app_options_faq_desc": {
+    "message": "常见问题与帮助",
+    "description": "Description for FAQ"
+  },
+  "app_options_faq_btn": {
+    "message": "打开常见问题",
+    "description": "Button text for FAQ"
+  },
+  "app_options_widget_show": {
+    "message": "显示小部件",
+    "description": "Label for showing the widget"
+  },
+  "app_options_widget_hide": {
+    "message": "隐藏小部件",
+    "description": "Label for hiding the widget"
+  },
+  "app_options_widget_hide_desc": {
+    "message": "切换小部件可见性",
+    "description": "Description for widget toggle"
+  },
+  "app_options_widget_hide_btn": {
+    "message": "切换",
+    "description": "Button text for widget toggle"
+  },
+  "app_changelog": {
+    "message": "更新日志",
+    "description": "Label for changelog/version history"
+  },
+  "app_changelog_desc": {
+    "message": "查看最新版本的新内容",
+    "description": "Description for changelog"
+  },
+  "app_changelog_btn": {
+    "message": "打开更新日志",
+    "description": "Button text for changelog"
+  },
+  "app_affiliate_title": {
+    "message": "联盟计划",
+    "description": "Label for affiliate program"
+  },
+  "app_affiliate_desc": {
+    "message": "通过推荐他人赚取佣金",
+    "description": "Description for affiliate program"
+  },
+  "app_affiliate_btn": {
+    "message": "加入联盟",
+    "description": "Button text for affiliate program"
+  },
+
+  "app_options_PH": {
+    "message": "Product Hunt – 5折优惠",
+    "description": "Label for Product Hunt promotion with 50% discount"
+  },
+  "app_options_PH_desc": {
+    "message": "在我们的 Product Hunt 发布中享受 5 折优惠",
+    "description": "Description for Product Hunt promotion"
+  },
+  "app_options_PH_btn": {
+    "message": "领取折扣",
+    "description": "Button text for Product Hunt offer"
+  },
+
+  "app_community": {
+    "message": "社区",
+    "description": "Label for community/forum"
+  },
+  "app_community_desc": {
+    "message": "加入我们的 Reddit 社区获取提示和支持",
+    "description": "Description for community link"
+  },
+  "app_community_btn": {
+    "message": "访问 Reddit",
+    "description": "Button text for community"
+  },
+
+  "app_rate_extension": {
+    "message": "给扩展评分",
+    "description": "Label for rating the extension"
+  },
+  "app_rate_extension_desc": {
+    "message": "在 Chrome 网上应用店留下评论",
+    "description": "Description for rating"
+  },
+  "app_rate_extension_btn": {
+    "message": "写评论",
+    "description": "Button text for rating"
+  },
+
+  "app_share_extension": {
+    "message": "分享",
+    "description": "Label for sharing the extension"
+  },
+  "app_share_extension_desc": {
+    "message": "与朋友分享此扩展",
+    "description": "Description for share"
+  },
+  "app_share_extension_btn": {
+    "message": "立即分享",
+    "description": "Button text for share"
+  },
+
+  "app_donate_title": {
+    "message": "捐赠",
+    "description": "Label for donation"
+  },
+  "app_donate_desc": {
+    "message": "通过捐赠支持开发",
+    "description": "Description for donation"
+  },
+  "app_donate_btn": {
+    "message": "捐赠",
+    "description": "Button text for donation"
+  },
+
+  "app_report_bug": {
+    "message": "报告错误",
+    "description": "Label for reporting a bug"
+  },
+  "app_report_bug_desc": {
+    "message": "发现问题了吗？在 GitHub 上告诉我们",
+    "description": "Description for bug report"
+  },
+  "app_report_bug_btn": {
+    "message": "在 GitHub 上报告",
+    "description": "Button text for bug report"
   }
 }

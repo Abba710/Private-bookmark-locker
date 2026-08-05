@@ -1,12 +1,9 @@
 {
   "app_name": {
-    "message": "Locker: Менеджер закладок и боковая панель с поддержкой режима инкогнито"
+    "message": "Locker: Менеджер закладок и боковая панель с поддержкой инкогнито"
   },
   "app_description": {
-    "message": "Менеджер закладок и сессий для Chromium. Сохраняйте, организуйте, защищайте и восстанавливайте закладки с полной поддержкой инкогнито."
-  },
-  "app_affiliate_title": {
-    "message": "Стать партнёром"
+    "message": "Менеджер закладок и сессий для Chromium. Сохраняйте, организуйте, защищайте и восстанавливайте закладки с полной поддержкой режима инкогнито"
   },
   "app_affiliate_description": {
     "message": "Зарабатывайте 40% комиссионных с каждой продажи."
@@ -21,7 +18,7 @@
     "message": "Введите пароль"
   },
   "app_create_password": {
-    "message": "🔒 Создать пароль"
+    "message": "Создать пароль"
   },
   "app_create_password_placeholder": {
     "message": "Придумайте пароль"
@@ -45,7 +42,7 @@
     "message": "Ошибка хеширования"
   },
   "app_password_warning": {
-    "message": "⚠️ Важно: если вы забудете пароль, восстановить его будет невозможно. Все данные хранятся только на этом устройстве и не могут быть доступны без правильного пароля."
+    "message": "Важно: если вы забудете пароль, его невозможно восстановить."
   },
   "app_pass_short_error": {
     "message": "Пароль должен содержать не менее 4 символов"
@@ -53,11 +50,12 @@
   "app_pass_incorrect_error": {
     "message": "Неверный пароль"
   },
+
   "app_lock_setup_description": {
-    "message": "Защитите свои закладки с помощью мастер-пароля"
+    "message": "Защитите свои закладки мастер-паролем"
   },
   "app_lock_unlock_description": {
-    "message": "Доступ к вашему приватному пространству ограничен"
+    "message": "Доступ к личному пространству ограничен"
   },
   "app_lock_legal_agreement": {
     "message": "Продолжая, вы соглашаетесь с нашими"
@@ -72,10 +70,11 @@
     "message": "и"
   },
   "app_lock_security_notice": {
-    "message": "Уведомление о безопасности"
+    "message": "Уведомление безопасности"
   },
+
   "app_instruction_title": {
-    "message": "Краткое руководство"
+    "message": "Быстрый старт"
   },
   "app_search_placeholder": {
     "message": "Поиск закладок..."
@@ -87,11 +86,12 @@
     "message": "Закрыть"
   },
   "app_edit_title": {
-    "message": "Редактировать название закладки"
+    "message": "Изменить название закладки"
   },
   "app_create_folder": {
     "message": "Введите имя папки:"
   },
+
   "app_header_guest_name": {
     "message": "Гость"
   },
@@ -104,23 +104,9 @@
   "app_subscribe_pro": {
     "message": "PRO"
   },
-  "app_options_hotkeys": {
-    "message": "Горячие клавиши"
-  },
+
   "app_options_settings_alert": {
     "message": "Настройки скоро появятся!"
-  },
-  "app_options_collect": {
-    "message": "Импорт закладок из Chrome"
-  },
-  "app_options_save_open": {
-    "message": "Сохранить текущую сессию"
-  },
-  "app_options_widget_show": {
-    "message": "Показать виджет"
-  },
-  "app_options_widget_hide": {
-    "message": "Скрыть виджет"
   },
   "app_options_widget_save": {
     "message": "Сохранить страницу"
@@ -140,11 +126,9 @@
   "app_options_community_header": {
     "message": "Сообщество"
   },
-  "app_modal_export": {
-    "message": "Экспорт закладок"
-  },
+
   "app_export_modal_description": {
-    "message": "Нажмите кнопку ниже, чтобы экспортировать закладки в файл. Вы можете сохранить его и позже импортировать при необходимости."
+    "message": "Нажмите кнопку ниже, чтобы экспортировать закладки в файл. Вы можете сохранить его и импортировать позже при необходимости."
   },
   "app_export_modal_button": {
     "message": "Экспорт"
@@ -152,14 +136,11 @@
   "app_export_format_label": {
     "message": "Формат: JSON"
   },
-  "app_import_modal": {
-    "message": "Импорт закладок"
-  },
   "app_import_modal_description": {
-    "message": "Перетащите файл сюда или нажмите, чтобы выбрать"
+    "message": "Перетащите файл сюда или нажмите для выбора"
   },
   "app_import_supported_format": {
-    "message": "Поддерживаемый формат: JSON-конфигурация"
+    "message": "Поддерживаемый формат: конфигурация JSON"
   },
   "app_import_click_browse": {
     "message": "или нажмите, чтобы выбрать файлы"
@@ -174,7 +155,7 @@
     "message": "Импортировать закладки Chrome?"
   },
   "app_import_chrome_sub_title": {
-    "message": "Будет импортировано:"
+    "message": "Что будет импортировано:"
   },
   "app_import_chrome_a1": {
     "message": "Все закладки"
@@ -183,17 +164,18 @@
     "message": "Названия и URL-адреса"
   },
   "app_import_chrome_a3": {
-    "message": "Закладки из панели закладок"
+    "message": "Закладки с панели закладок"
   },
   "app_import_chrome_a4": {
-    "message": "Ваши данные остаются на вашем устройстве"
+    "message": "Ваши данные останутся на устройстве"
   },
   "app_import_chrome_CTA": {
     "message": "Импортировать закладки Chrome"
   },
   "app_import_chrome_later": {
-    "message": "Позже"
+    "message": "Возможно позже"
   },
+
   "app_context_copy_link": {
     "message": "Копировать ссылку"
   },
@@ -204,10 +186,10 @@
     "message": "Скачать PDF"
   },
   "app_context_ai_summary": {
-    "message": "ИИ-краткое содержание"
+    "message": "Краткий пересказ AI"
   },
   "app_context_save_in_current_folder": {
-    "message": "Сохранить в текущей папке"
+    "message": "Сохранить вкладку сюда"
   },
   "app_context_open_group": {
     "message": "Открыть в группе"
@@ -215,24 +197,28 @@
   "app_context_close_menu": {
     "message": "Закрыть меню"
   },
+
   "app_qr_modal_info": {
-    "message": "Отсканируйте, чтобы открыть эту ссылку на вашем устройстве"
+    "message": "Отсканируйте, чтобы открыть ссылку на вашем устройстве"
   },
   "app_qr_close_button": {
     "message": "Закрыть"
   },
+
   "app_pdf_no_url": {
-    "message": "URL-адрес не указан"
+    "message": "URL не указан"
   },
   "app_pdf_generating": {
     "message": "Генерация высококачественного PDF..."
   },
   "app_pdf_error": {
-    "message": "Данные PDF пусты"
+    "message": "PDF-данные пусты"
   },
+
   "app_panic_description": {
-    "message": "Настройка кнопки паники (по умолчанию Alt+P) для закрытия всех вкладок и сохранения их в папке"
+    "message": "Настройте тревожную кнопку (по умолчанию alt+p) для закрытия всех вкладок и сохранения их в папку"
   },
+
   "app_sync_offline": {
     "message": "Офлайн"
   },
@@ -263,11 +249,12 @@
   "app_sync_force_title": {
     "message": "Принудительная синхронизация с облаком"
   },
+
   "app_signout_title": {
     "message": "Выйти"
   },
   "app_signout_description": {
-    "message": "Как вы хотите поступить с локальными данными?"
+    "message": "Что вы хотите сделать с локальными данными?"
   },
   "app_signout_keep_data": {
     "message": "Выйти и сохранить данные"
@@ -281,20 +268,21 @@
   "app_signout_stay": {
     "message": "Остаться в системе"
   },
+
   "app_premium_title": {
     "message": "Разблокировать"
   },
   "app_premium_pro_power": {
-    "message": "Мощь Pro"
+    "message": "Pro-возможности"
   },
   "app_premium_subtitle": {
-    "message": "Защитите свою библиотеку в облаке и получайте к ней доступ где угодно."
+    "message": "Защитите свою библиотеку в облаке и получайте доступ откуда угодно."
   },
   "app_premium_feature_unlimited": {
-    "message": "Неограниченное количество папок"
+    "message": "Безлимитные папки"
   },
   "app_premium_feature_sync": {
-    "message": "Зашифрованная синхронизация с облаком в реальном времени"
+    "message": "Зашифрованная облачная синхронизация в реальном времени"
   },
   "app_premium_feature_data": {
     "message": "Данные и инструменты"
@@ -303,22 +291,22 @@
     "message": "Импорт/Экспорт"
   },
   "app_premium_feature_data_sub3": {
-    "message": "Сохранение сессии"
+    "message": "Сохранение сессий"
   },
   "app_premium_feature_data_sub4": {
-    "message": "Кнопка паники"
+    "message": "Тревожная кнопка"
   },
   "app_premium_feature_toolkit": {
-    "message": "Расширенный набор инструментов"
+    "message": "Продвинутый инструментарий"
   },
   "app_premium_feature_toolkit_sub1": {
-    "message": "ИИ-краткие содержания"
+    "message": "Краткие пересказы AI"
   },
   "app_premium_feature_toolkit_sub2": {
     "message": "Загрузка PDF"
   },
   "app_premium_feature_toolkit_sub3": {
-    "message": "Генератор QR-кодов"
+    "message": "QR-генератор"
   },
   "app_premium_btn_upgrade": {
     "message": "Перейти на Pro за $PRICE$/месяц",
@@ -329,13 +317,13 @@
     }
   },
   "app_premium_btn_checking": {
-    "message": "Проверка платежа..."
+    "message": "Проверка оплаты..."
   },
   "app_premium_btn_success": {
-    "message": "Успешно! Наслаждайтесь Pro"
+    "message": "Готово! Наслаждайтесь Pro"
   },
   "app_premium_btn_retry": {
-    "message": "Повторить через "
+    "message": "Повтор через "
   },
   "app_premium_btn_check_status": {
     "message": "Я оплатил, проверить статус"
@@ -344,22 +332,22 @@
     "message": "Проверить позже"
   },
   "app_premium_btn_no_thanks": {
-    "message": "Нет, спасибо, останусь на бесплатном тарифе"
+    "message": "Нет, спасибо, останусь на бесплатном плане"
   },
   "app_btn_get_pro_title": {
     "message": "Перейти на Pro"
   },
   "app_btn_get_pro_subtitle": {
-    "message": "Получить неограниченный доступ"
+    "message": "Получите неограниченный доступ"
   },
   "app_sub_manage_title": {
     "message": "План подписки"
   },
   "app_sub_manage_subtitle": {
-    "message": "Управление оплатой и счетами"
+    "message": "Управление платежами и счетами"
   },
   "app_sub_error_auth": {
-    "message": "Не авторизован. Пожалуйста, войдите."
+    "message": "Не авторизованы. Пожалуйста, войдите."
   },
   "app_sub_error_url": {
     "message": "URL портала не найден в ответе"
@@ -370,6 +358,7 @@
   "app_sub_error_fail": {
     "message": "Не удалось открыть портал подписки: "
   },
+
   "app_buy_no_internet": {
     "message": "Нет подключения к интернету"
   },
@@ -377,13 +366,13 @@
     "message": "Время входа истекло"
   },
   "app_buy_login_failed": {
-    "message": "Не удалось войти или окно закрыто."
+    "message": "Вход не выполнен или окно закрыто."
   },
   "app_buy_wait_login": {
     "message": "Ожидание входа..."
   },
   "app_buy_click_cancel": {
-    "message": "(Нажмите, чтобы отменить)"
+    "message": "(Нажмите для отмены)"
   },
   "app_buy_cancel_user": {
     "message": "Отменено пользователем"
@@ -392,19 +381,17 @@
     "message": "Всплывающее окно заблокировано"
   },
   "app_buy_session_failed": {
-    "message": "Не удалось проверить сессию"
+    "message": "Проверка сессии не удалась"
   },
   "app_buy_login_window_error": {
     "message": "Не удалось открыть окно входа"
   },
-  "app_options_PH": {
-    "message": "Получить скидку 50%"
-  },
+
   "app_options_PH_Title": {
-    "message": "Помогите Private Bookmark Locker расти 🚀"
+    "message": "Помогите развитию Private Bookmark Locker 🚀"
   },
   "app_options_PH_sub_title": {
-    "message": "Если вам нравится это расширение, быстрый апвоут на Product Hunt очень помогает. Кроме того, доступна эксклюзивная"
+    "message": "Если вам нравится это расширение, быстрый голос на Product Hunt очень поможет. Кроме того, действует эксклюзивная"
   },
   "app_options_PH_sub_title_discount": {
     "message": "скидка 50%"
@@ -413,61 +400,43 @@
     "message": "Ваша поддержка помогает: "
   },
   "app_options_PH_helps_title": {
-    "message": "доступна на странице Product Hunt"
+    "message": "доступно на странице Product Hunt"
   },
   "app_options_PH_helps1": {
-    "message": "• Привлечь больше пользователей"
+    "message": "• Охватить больше пользователей"
   },
   "app_options_PH_helps2": {
     "message": "• Улучшить будущие функции"
   },
   "app_options_PH_helps3": {
-    "message": "• Поддерживать рост проекта"
+    "message": "• Продолжать развитие проекта"
   },
   "app_options_PH_helps4": {
     "message": "• Получить скидку 50%"
   },
   "app_options_PH_cta": {
-    "message": "Поддержать + получить скидку 50%"
+    "message": "Поддержать + скидка 50%"
   },
   "app_options_PH_cta_later": {
-    "message": "Позже"
-  },
-  "app_options_faq": {
-    "message": "FAQ"
-  },
-  "app_changelog": {
-    "message": "История изменений"
+    "message": "Возможно позже"
   },
   "app_changelog_unavailable": {
-    "message": "Содержимое недоступно"
+    "message": "Контент недоступен"
   },
   "app_changelog_modal_title": {
     "message": "Что нового"
   },
   "app_changelog_open_reddit": {
-    "message": "Открыть полный пост на Reddit"
+    "message": "Открыть полную публикацию на Reddit"
   },
   "app_changelog_dismiss": {
     "message": "Закрыть"
-  },
-  "app_rate_extension": {
-    "message": "Оценить расширение"
-  },
-  "app_share_extension": {
-    "message": "Поделиться расширением"
-  },
-  "app_community": {
-    "message": "Присоединиться к сообществу"
-  },
-  "app_report_bug": {
-    "message": "Сообщить об ошибке"
   },
   "app_feedback_title": {
     "message": "Нравится расширение?"
   },
   "app_feedback_description": {
-    "message": "Нам важно ваше мнение! Пожалуйста, оцените приложение и оставьте отзыв на странице в магазине."
+    "message": "Нам важно ваше мнение! Оцените приложение и оставьте отзыв на странице магазина."
   },
   "app_feedback_button_leave": {
     "message": "Оставить отзыв"
@@ -475,11 +444,9 @@
   "app_feedback_button_later": {
     "message": "Позже"
   },
-  "app_donate_title": {
-    "message": "Поддержать проект"
-  },
+
   "app_donate_h2_title": {
-    "message": "Я разрабатываю это расширение один, и ваша поддержка помогает мне улучшать проект и сохранять его бесплатным."
+    "message": "Я разрабатываю это расширение в одиночку, и ваша поддержка помогает улучшать проект и сохранять его бесплатным."
   },
   "app_donate_qr": {
     "message": "Отсканируйте QR-код, чтобы поддержать меня"
@@ -488,13 +455,14 @@
     "message": "Или нажмите кнопку👇"
   },
   "app_donate_coffee": {
-    "message": "Купите мне кофе"
+    "message": "Угостить кофе"
   },
   "app_donate_close": {
     "message": "Закрыть"
   },
+
   "app_ads_title": {
-    "message": "Если вы используете ChatGPT, попробуйте это расширение👆"
+    "message": "Если вы пользуетесь ChatGPT, попробуйте это расширение👆"
   },
   "app_setting_list_title": {
     "message": "Внешний вид списка"
@@ -521,7 +489,7 @@
     "message": "Показывать URL"
   },
   "app_setting_show_URL_sub": {
-    "message": "Только для закладок"
+    "message": "Только закладки"
   },
   "app_settings_save_settings": {
     "message": "Сохранить настройки"
@@ -540,11 +508,11 @@
     "description": "Title of the first introduction slide"
   },
   "app_slides_intro_subtitle": {
-    "message": "Изучите новые возможности",
+    "message": "Откройте новые возможности",
     "description": "Subtitle of the first introduction slide"
   },
   "app_slides_intro_content": {
-    "message": "Locker теперь в вашем браузере.",
+    "message": "Теперь Locker в вашем браузере.",
     "description": "Content text for the first slide"
   },
   "app_slides_step1_title": {
@@ -560,7 +528,7 @@
     "description": "Title of step 2 slide"
   },
   "app_slides_step2_content": {
-    "message": "Разрешить инкогнито",
+    "message": "Разрешите инкогнито",
     "description": "Content for step 2"
   },
   "app_slides_step3_title": {
@@ -572,28 +540,28 @@
     "description": "Content for step 3"
   },
   "app_slides_explore_title": {
-    "message": "Изучить",
+    "message": "Изучите",
     "description": "Title of the final explore slide"
   },
   "app_slides_explore_content": {
-    "message": "Функции Locker",
+    "message": "Возможности Locker",
     "description": "Content for the final explore slide"
   },
 
   "app_features_save_bookmarks_title": {
-    "message": "Сохранять закладки",
+    "message": "Сохранение закладок",
     "description": "Feature title for saving bookmarks"
   },
   "app_features_save_bookmarks_description": {
-    "message": "Сохраняйте закладки одним щелчком мыши с помощью боковой панели, плавающего виджета или собственной комбинации клавиш.",
+    "message": "Сохраняйте закладки в один клик через боковую панель, плавающий виджет или свою комбинацию клавиш.",
     "description": "Description for Save Bookmarks feature"
   },
   "app_features_create_folders_title": {
-    "message": "Создавать папки",
+    "message": "Создание папок",
     "description": "Feature title for creating folders"
   },
   "app_features_create_folders_description": {
-    "message": "Создавайте папки из боковой панели, чтобы организовать закладки по проектам, рабочим пространствам или личным коллекциям.",
+    "message": "Создавайте папки на боковой панели, чтобы упорядочить закладки по проектам, рабочим пространствам или личным коллекциям.",
     "description": "Description for Create Folders feature"
   },
   "app_features_incognito_mode_title": {
@@ -601,7 +569,7 @@
     "description": "Feature title for Incognito Mode"
   },
   "app_features_incognito_mode_description": {
-    "message": "Сохраняйте закладки из окон инкогнито и храните их отдельно от обычного просмотра, не добавляя записи в историю браузера.",
+    "message": "Сохраняйте закладки из окон инкогнито, не смешивая их с обычным просмотром и не оставляя следов в истории браузера.",
     "description": "Description for Incognito Mode"
   },
   "app_features_search_title": {
@@ -617,7 +585,7 @@
     "description": "Feature title for Fullscreen Mode"
   },
   "app_features_fullscreen_mode_description": {
-    "message": "Переключитесь в полноэкранный режим для более удобного управления закладками без отвлекающих факторов.",
+    "message": "Переключайтесь в полноэкранный режим для большего пространства и управления закладками без отвлекающих факторов.",
     "description": "Description for Fullscreen Mode"
   },
   "app_features_customize_title": {
@@ -625,7 +593,7 @@
     "description": "Feature title for Customize"
   },
   "app_features_customize_description": {
-    "message": "Настройте цвета закладок и папок, чтобы организовать рабочее пространство по своему усмотрению.",
+    "message": "Настраивайте цвета закладок и папок так, как удобно вам.",
     "description": "Description for Customize feature"
   },
   "app_features_import_export_title": {
@@ -641,7 +609,7 @@
     "description": "Feature title for Import from Browser"
   },
   "app_features_import_from_browser_description": {
-    "message": "Импортируйте существующие закладки браузера с поддержкой браузеров на основе Chromium.",
+    "message": "Импортируйте существующие закладки браузера, поддерживаются браузеры на основе Chromium.",
     "description": "Description for Import from Browser"
   },
   "app_features_session_manager_title": {
@@ -649,7 +617,7 @@
     "description": "Feature title for Session Manager"
   },
   "app_features_session_manager_description": {
-    "message": "Сохраняйте сеансы браузера и восстанавливайте все вкладки двумя щелчками мыши, когда они снова понадобятся.",
+    "message": "Сохраняйте сеансы браузера и восстанавливайте все вкладки всего в два клика, когда они снова понадобятся.",
     "description": "Description for Session Manager"
   },
   "app_features_qr_generator_title": {
@@ -661,19 +629,209 @@
     "description": "Description for QR Generator"
   },
   "app_features_save_as_pdf_title": {
-    "message": "Сохранить как PDF",
+    "message": "Сохранение в PDF",
     "description": "Feature title for Save as PDF"
   },
   "app_features_save_as_pdf_description": {
-    "message": "Сохраняйте веб-страницы и их содержимое в формате PDF для офлайн-доступа или обмена.",
+    "message": "Сохраняйте веб-страницы и их содержимое как PDF-документы для офлайн-доступа или обмена.",
     "description": "Description for Save as PDF"
   },
   "app_features_ai_summary_title": {
-    "message": "ИИ-резюме",
+    "message": "Краткий пересказ AI",
     "description": "Feature title for AI Summary"
   },
   "app_features_ai_summary_description": {
-    "message": "Создавайте краткие резюме статей и веб-страниц на основе ИИ с помощью GPT.",
+    "message": "Генерируйте краткие резюме статей и веб-страниц с помощью GPT.",
     "description": "Description for AI Summary"
+  },
+  "app_import_modal": {
+    "message": "Импорт",
+    "description": "Label for import modal button"
+  },
+  "app_import_modal_desc": {
+    "message": "Импорт закладок из JSON-файла",
+    "description": "Description for import feature"
+  },
+  "app_import_modal_btn": {
+    "message": "Выбрать файл",
+    "description": "Button text for import"
+  },
+  "app_modal_export": {
+    "message": "Экспорт",
+    "description": "Label for export modal"
+  },
+  "app_modal_export_desc": {
+    "message": "Экспорт ваших закладок в JSON-файл",
+    "description": "Description for export feature"
+  },
+  "app_modal_export_btn": {
+    "message": "Экспорт",
+    "description": "Button text for export"
+  },
+  "app_options_hotkeys": {
+    "message": "Горячие клавиши",
+    "description": "Label for hotkeys settings"
+  },
+  "app_options_hotkeys_desc": {
+    "message": "Настройка горячих клавиш расширения",
+    "description": "Description for hotkeys"
+  },
+  "app_options_hotkeys_btn": {
+    "message": "Открыть горячие клавиши",
+    "description": "Button text for hotkeys"
+  },
+  "app_options_collect": {
+    "message": "Собрать закладки",
+    "description": "Label for collect bookmarks feature"
+  },
+  "app_options_collect_desc": {
+    "message": "Импортировать все закладки браузера",
+    "description": "Description for collect feature"
+  },
+  "app_options_collect_btn": {
+    "message": "Собрать",
+    "description": "Button text for collect"
+  },
+  "app_options_save_open": {
+    "message": "Сохранить текущую сессию",
+    "description": "Label for saving open tabs"
+  },
+  "app_options_save_open_desc": {
+    "message": "Сохранить текущую сессию",
+    "description": "Description for save open tabs"
+  },
+  "app_options_save_open_btn": {
+    "message": "Сохранить сессию",
+    "description": "Button text for save open tabs"
+  },
+  "app_options_faq": {
+    "message": "FAQ",
+    "description": "Label for FAQ"
+  },
+  "app_options_faq_desc": {
+    "message": "Часто задаваемые вопросы и помощь",
+    "description": "Description for FAQ"
+  },
+  "app_options_faq_btn": {
+    "message": "Открыть FAQ",
+    "description": "Button text for FAQ"
+  },
+  "app_options_widget_show": {
+    "message": "Показать виджет",
+    "description": "Label for showing the widget"
+  },
+  "app_options_widget_hide": {
+    "message": "Скрыть виджет",
+    "description": "Label for hiding the widget"
+  },
+  "app_options_widget_hide_desc": {
+    "message": "Переключить видимость виджета",
+    "description": "Description for widget toggle"
+  },
+  "app_options_widget_hide_btn": {
+    "message": "Переключить",
+    "description": "Button text for widget toggle"
+  },
+  "app_changelog": {
+    "message": "История изменений",
+    "description": "Label for changelog/version history"
+  },
+  "app_changelog_desc": {
+    "message": "Узнайте, что нового в последней версии",
+    "description": "Description for changelog"
+  },
+  "app_changelog_btn": {
+    "message": "Открыть историю изменений",
+    "description": "Button text for changelog"
+  },
+  "app_affiliate_title": {
+    "message": "Партнёрская программа",
+    "description": "Label for affiliate program"
+  },
+  "app_affiliate_desc": {
+    "message": "Зарабатывайте комиссионные, приглашая других",
+    "description": "Description for affiliate program"
+  },
+  "app_affiliate_btn": {
+    "message": "Присоединиться к партнёрам",
+    "description": "Button text for affiliate program"
+  },
+
+  "app_options_PH": {
+    "message": "Product Hunt – скидка 50%",
+    "description": "Label for Product Hunt promotion with 50% discount"
+  },
+  "app_options_PH_desc": {
+    "message": "Получите скидку 50% на запуске Product Hunt",
+    "description": "Description for Product Hunt promotion"
+  },
+  "app_options_PH_btn": {
+    "message": "Получить скидку",
+    "description": "Button text for Product Hunt offer"
+  },
+
+  "app_community": {
+    "message": "Сообщество",
+    "description": "Label for community/forum"
+  },
+  "app_community_desc": {
+    "message": "Присоединяйтесь к нашему сообществу на Reddit за советами и поддержкой",
+    "description": "Description for community link"
+  },
+  "app_community_btn": {
+    "message": "Перейти на Reddit",
+    "description": "Button text for community"
+  },
+
+  "app_rate_extension": {
+    "message": "Оценить расширение",
+    "description": "Label for rating the extension"
+  },
+  "app_rate_extension_desc": {
+    "message": "Оставьте отзыв в Chrome Web Store",
+    "description": "Description for rating"
+  },
+  "app_rate_extension_btn": {
+    "message": "Написать отзыв",
+    "description": "Button text for rating"
+  },
+
+  "app_share_extension": {
+    "message": "Поделиться",
+    "description": "Label for sharing the extension"
+  },
+  "app_share_extension_desc": {
+    "message": "Поделитесь расширением с друзьями",
+    "description": "Description for share"
+  },
+  "app_share_extension_btn": {
+    "message": "Поделиться сейчас",
+    "description": "Button text for share"
+  },
+
+  "app_donate_title": {
+    "message": "Пожертвование",
+    "description": "Label for donation"
+  },
+  "app_donate_desc": {
+    "message": "Поддержите разработку пожертвованием",
+    "description": "Description for donation"
+  },
+  "app_donate_btn": {
+    "message": "Пожертвовать",
+    "description": "Button text for donation"
+  },
+
+  "app_report_bug": {
+    "message": "Сообщить об ошибке",
+    "description": "Label for reporting a bug"
+  },
+  "app_report_bug_desc": {
+    "message": "Нашли проблему? Сообщите нам на GitHub",
+    "description": "Description for bug report"
+  },
+  "app_report_bug_btn": {
+    "message": "Сообщить на GitHub",
+    "description": "Button text for bug report"
   }
 }
