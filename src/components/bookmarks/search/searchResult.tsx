@@ -1,6 +1,7 @@
 import { useEffect } from "preact/hooks";
 import type { FunctionalComponent } from "preact";
-import { Link2, ShieldAlert, Globe, ArrowRight } from "lucide-react";
+import { Globe, ArrowRight } from "lucide-react";
+import { getFaviconUrl } from "@/components/bookmarks/utils/getFavIcon";
 
 interface SearchResult {
   id: string;
@@ -56,9 +57,9 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
   };
 
   return (
-    <div className="absolute top-[calc(100%+8px)] left-0 right-0 z-[100] bg-[#121214]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] max-h-[420px] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
+    <div className="absolute top-[calc(100%+8px)] left-0 right-0 z-[100] bg-[var(--ds-s1)] backdrop-blur-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] max-h-[420px] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
       {/* Header */}
-      <div className="px-4 py-2 border-b border-white/5 bg-white/[0.02] flex justify-between items-center">
+      <div className="px-4 py-2 border-b border-white/5 bg-[var(--ds-s2)] flex justify-between items-center">
         <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500">
           Search Results ({results.length})
         </span>
@@ -76,10 +77,10 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
             onClick={() => onResultClick(bookmark)}
             /* Added ring-1 and background for the first item to indicate it's auto-selected */
             className={`
-              group relative px-3 py-2.5 rounded-xl cursor-pointer transition-all active:scale-[0.98] flex items-center gap-4
+              group relative px-3 py-2.5 cursor-pointer transition-all active:scale-[0.98] flex items-center gap-4
               ${
                 index === 0
-                  ? "bg-white/[0.06] ring-1 ring-white/10 shadow-inner"
+                  ? "bg-[var(--ds-s2)] ring-1 ring-white/10 shadow-inner"
                   : "hover:bg-white/5 border-transparent"
               }
             `}
@@ -87,7 +88,7 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
             {/* Icon Container */}
             <div
               className={`
-              flex-shrink-0 w-9 h-9 rounded-lg border flex items-center justify-center transition-colors
+              icon
               ${
                 bookmark.incognito
                   ? "bg-purple-500/10 border-purple-500/20 text-purple-400"
@@ -95,10 +96,14 @@ export const SearchResults: FunctionalComponent<SearchResultsProps> = ({
               }
             `}
             >
-              {bookmark.incognito ? (
-                <ShieldAlert className="w-4 h-4" />
+              {getFaviconUrl(bookmark.url) ? (
+                <img
+                  src={getFaviconUrl(bookmark.url)}
+                  alt=""
+                  className="object-contain w-6 h-6"
+                />
               ) : (
-                <Link2 className="w-4 h-4" />
+                <Globe className="text-indigo-400/60" />
               )}
             </div>
 

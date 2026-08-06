@@ -6,6 +6,7 @@ import {
   computeBookmarkMetrics,
   type BookmarkRowSettings,
 } from "@/components/settings/customization/controls";
+import { getFaviconUrl } from "@/components/bookmarks/utils/getFavIcon";
 
 export function LinkBookmark({
   bookmark,
@@ -30,16 +31,6 @@ export function LinkBookmark({
   const [menuPos, setMenuPos] = useState({ x: 0, y: 0 });
   const { icon, titleFont, urlFont, actionIcon, dragIcon } =
     computeBookmarkMetrics(settingsBookmark.height);
-
-  const getFaviconUrl = (url?: string) => {
-    if (!url) return "";
-    try {
-      const domain = new URL(url).hostname;
-      return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-    } catch {
-      return "";
-    }
-  };
 
   const getDomain = (url?: string) => {
     if (!url) return "";
@@ -104,12 +95,12 @@ export function LinkBookmark({
                 src={getFaviconUrl(bookmark.url)}
                 alt=""
                 className="object-contain"
-                style={{ width: icon * 0.58, height: icon * 0.58 }}
+                style={{ width: icon * 0.7, height: icon * 0.7 }}
               />
             ) : (
               <Globe
                 className="text-indigo-400/60"
-                style={{ width: icon * 0.58, height: icon * 0.58 }}
+                style={{ width: icon * 0.7, height: icon * 0.7 }}
               />
             )}
           </div>
