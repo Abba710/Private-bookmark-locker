@@ -1,1 +1,1 @@
-export type SettingWindow = "customize" | "data" | "community";
+export type SettingWindow = "customize" | "data" | "community" | "billing";

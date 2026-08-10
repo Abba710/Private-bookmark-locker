@@ -18,6 +18,9 @@ import { useEffect, useState } from "react";
 import { Header } from "@/pages/settings/components/index.ts";
 import type { SettingWindow } from "@/pages/settings/types/index.ts";
 import Community from "@/components/settings/community/community";
+import ManageSubscriptionButton from "@/components/settings/Subscribe/manageSubscribe";
+import GetProButton from "@/components/settings/Subscribe/getPro";
+import { usePremiumModalStore } from "@/storage/statelibrary";
 
 export const SETTINGS_STORAGE_KEY = "rowSettings";
 
@@ -26,7 +29,11 @@ export default function SettingsPage() {
 
   const auth = useAuth();
   const navigate = useNavigate();
-  const { refreshSubscription } = useSubscription();
+  const setPremiumModalOpen = usePremiumModalStore(
+    (state) => state.setPremiumModalOpen,
+  );
+
+  const { isPro, refreshSubscription } = useSubscription();
 
   const [saved, setSaved] = useState<ControlsSettings>(DEFAULT_SETTINGS);
   const [live, setLive] = useState<ControlsSettings>(DEFAULT_SETTINGS);
@@ -95,6 +102,20 @@ export default function SettingsPage() {
               <Community />
             </div>
           )}
+
+          {activeWindow === "billing" && (
+            <div className="border border-white/5 bg-white/[0.02] p-4">
+              <div className="ds-settings-section-title ">
+                {chrome.i18n.getMessage("app_options_billing")}
+              </div>
+              {isPro ? (
+                <ManageSubscriptionButton />
+              ) : (
+                <GetProButton onClick={() => setPremiumModalOpen(true)} />
+              )}
+            </div>
+          )}
+
           <SupportDialog />
           <PhDialog />
 

@@ -729,5 +729,17 @@
   },
   "app_report_bug_btn": {
     "message": "Auf GitHub melden"
+  },
+  "app_sub_manage_btn": {
+    "message": "Verwalten"
+  },
+  "app_sub_manage_btn_loading": {
+    "message": "Lädt…"
+  },
+  "app_options_billing": {
+    "message": "Zahlungen"
+  },
+  "app_sub_explore_btn": {
+    "message": "Entdecken"
   }
 }

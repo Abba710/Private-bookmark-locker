@@ -1,4 +1,11 @@
-import { ArrowLeft, Settings, Palette, Database, Users } from "lucide-react";
+import {
+  ArrowLeft,
+  Settings,
+  Palette,
+  Database,
+  Users,
+  CreditCard,
+} from "lucide-react";
 import type { SettingWindow } from "@/pages/settings/types/index.ts";
 
 interface HeaderProps {
@@ -36,6 +43,12 @@ export default function Header({
           className={`btn-icon ${activeWindow == "community" ? "btn-icon--primary" : "btn-icon--ghost"}`}
         >
           <Users className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => setActiveWindow("billing")}
+          className={`btn-icon ${activeWindow == "billing" ? "btn-icon--primary" : "btn-icon--ghost"}`}
+        >
+          <CreditCard className="w-5 h-5" />
         </button>
       </div>
       <div className="ds-topbar-right">

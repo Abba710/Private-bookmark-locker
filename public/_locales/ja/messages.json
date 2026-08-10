@@ -810,5 +810,17 @@
   "app_report_bug_btn": {
     "message": "GitHubで報告",
     "description": "Button text for bug report"
+  },
+  "app_sub_manage_btn": {
+    "message": "管理"
+  },
+  "app_sub_manage_btn_loading": {
+    "message": "読み込み中…"
+  },
+  "app_options_billing": {
+    "message": "支払い"
+  },
+  "app_sub_explore_btn": {
+    "message": "探索"
   }
 }
