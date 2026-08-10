@@ -157,7 +157,7 @@ export default function ChangelogDialog() {
   const { notificationOpen, setNotificationOpen } =
     useNotificationDialogStore();
   const redditPostUrl =
-    "https://www.reddit.com/user/Sad-Bed-3125/comments/1usmqr9/locker_private_bookmark_locker_v220_fullscreen/";
+    "https://www.reddit.com/user/Sad-Bed-3125/comments/1vgy7bj/locker_private_bookmark_locker_v230_professional/";
 
   if (!notificationOpen) return null;
 
